@@ -1,0 +1,21 @@
+{
+    "name": "sohophp/schema-org",
+    "description": "schema.org php library",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "sohophp",
+            "email": "sohophp@gmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "symfony/console": "^4.1",
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": { "Sohophp\\SchemaOrg\\": "src\\" }
+    },
+    "minimum-stability": "dev"
+}
