@@ -2,6 +2,10 @@
 
 namespace Sohophp\SchemaOrg;
 
+/**
+ * Class Autoloader
+ * @package Sohophp\SchemaOrg
+ */
 class Autoloader
 {
     public static function register()

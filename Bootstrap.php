@@ -1,7 +1,9 @@
 <?php
 
+namespace Sohophp\SchemaOrg;
+
 include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Autoloader.php');
-\Sohophp\StruacturedData\Autoloader::register();
+Autoloader::register();
 
 class Bootstrap
 {
