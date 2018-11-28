@@ -23,6 +23,7 @@ class Organization extends Thing
      * @param $value
      * @return $this
      */
+
     public function logo($value)
     {
         if (is_string($value)) {
@@ -31,5 +32,6 @@ class Organization extends Thing
         $this->setProperty('logo', $value);
         return $this;
     }
+
 
 }
