@@ -9,7 +9,9 @@
             "email": "sohophp@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+	
+    },
     "require-dev": {
         "symfony/console": "^4.1",
         "phpunit/phpunit": "^7.0"
