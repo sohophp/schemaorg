@@ -35,6 +35,12 @@ class BaseType implements \ArrayAccess, \JsonSerializable
         return $this->toArray();
     }
 
+    public function __call($name, $arguments)
+    {
+        $this->setProperty($name,$arguments[0]);
+        return $this;
+    }
+
     public function toArray()
     {
         $vars = $this->properties;
