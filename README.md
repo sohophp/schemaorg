@@ -4,7 +4,7 @@ schema.org PHP library
 
 ##特点:
 
-支持自动生成类目PHP类文件,现有版本schema.org v3.4可生成597个类,1万多属性
+支持自动生成类目PHP类文件,现schema.org版本v3.4有598个类,877个属性,136个其它
 
 强类型检查
 
