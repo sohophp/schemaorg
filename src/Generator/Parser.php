@@ -61,6 +61,8 @@ class Parser
             }
         }
 
+        //var_dump(count($this->dataTypes),count($this->properties),count($this->classes),count($this->relateds));
+        //exit;
 
     }
 
