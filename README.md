@@ -1,4 +1,5 @@
-# sohophp-schemaorg
+# phpschemaorg
+
 schema.org PHP library
 
 ##特点:
@@ -44,6 +45,9 @@ echo $script;
 </pre>
 
 ##官方网址:
+
 https://schema.org
+
 ##中文网址:
+
 https://schema.org.cn
