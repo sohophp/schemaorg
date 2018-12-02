@@ -1,15 +1,18 @@
 <?php
 
+declare (strict_types=1);
+
 namespace Sohophp\SchemaOrg\Thing\CreativeWork\WebPage;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork\WebPage;
-
 /**
- * Class ProfilePage
- * @package Sohophp\SchemaOrg\Thing\CreativeWork\WebPage
- * @see https://schema.org/ProfilePage
- */
+* Web page type: Profile page.
+* @see http://schema.org/ProfilePage
+* @package Sohophp\SchemaOrg\Thing\CreativeWork\WebPage
+*/
 class ProfilePage extends WebPage
 {
 
+     
 }
+

@@ -1,0 +1,6 @@
+#!/usr/bin/env php
+<?php
+require(dirname(__DIR__) . DIRECTORY_SEPARATOR . 'bootstrap.php');
+$application = new \Symfony\Component\Console\Application();
+$application->add(new \Sohophp\SchemaOrg\Command\GeneratorCommand());
+$application->run();

@@ -1,23 +1,43 @@
 {
-    "name": "sohophp/schema-org",
-    "description": "schema.org php library",
-    "type": "library",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "sohophp",
-            "email": "sohophp@gmail.com"
-        }
-    ],
-    "require": {
-	
-    },
-    "require-dev": {
-        "symfony/console": "^4.1",
-        "phpunit/phpunit": "^7.0"
-    },
-    "autoload": {
-        "psr-4": { "Sohophp\\SchemaOrg\\": "src\\" }
-    },
-    "minimum-stability": "dev"
+  "name": "sohophp/schema-org",
+  "description": "schema.org php library",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "sohophp",
+      "email": "sohophp@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">7.2",
+    "ext-curl": "*",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "symfony/console": "^4.1",
+    "phpunit/phpunit": "^7.0",
+    "symfony/templating": "^4.3@dev",
+    "twig/twig": "2.0",
+    "doctrine/inflector": "^2.0@dev"
+  },
+  "autoload": {
+    "psr-4": {
+      "Sohophp\\SchemaOrg\\": "src\\"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Sohophp\\SchemaOrg\\Tests\\": "tests\\",
+      "Sohophp\\SchemaOrg\\Examples\\": "examples\\"
+    }
+  },
+
+  "minimum-stability": "dev",
+  "repositories": {
+    "packagist": {
+      "type": "composer",
+      "url": "https://packagist.phpcomposer.com"
+    }
+  }
 }

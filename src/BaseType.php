@@ -1,9 +1,8 @@
 <?php
 
-namespace Sohophp\SchemaOrg;
+declare(strict_types=1);
 
-use Sohophp\SchemaOrg\DataType;
-use \ReflectionClass;
+namespace Sohophp\SchemaOrg;
 
 class BaseType implements \ArrayAccess, \JsonSerializable
 {
@@ -37,7 +36,7 @@ class BaseType implements \ArrayAccess, \JsonSerializable
 
     public function __call($name, $arguments)
     {
-        $this->setProperty($name,$arguments[0]);
+        $this->setProperty($name, $arguments[0]);
         return $this;
     }
 
@@ -82,7 +81,7 @@ class BaseType implements \ArrayAccess, \JsonSerializable
 
     public function getType()
     {
-        return $this->type ?? (new ReflectionClass($this))->getShortName();
+        return $this->type ?? (new \ReflectionClass($this))->getShortName();
     }
 
     public function toJson($options = JSON_UNESCAPED_UNICODE)
@@ -90,7 +89,7 @@ class BaseType implements \ArrayAccess, \JsonSerializable
         return json_encode(array_merge(['@context' => $this->getContext()], $this->toArray()), $options);
     }
 
-    public function toScript($options = JSON_UNESCAPED_UNICODE )
+    public function toScript(int $options = JSON_UNESCAPED_UNICODE)
     {
         $script = [];
         $script[] = '<script type="application/ld+json">';

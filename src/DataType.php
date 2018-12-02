@@ -17,4 +17,5 @@ class DataType
     {
         return $this->value;
     }
+
 }

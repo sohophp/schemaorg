@@ -1,63 +1,45 @@
 <?php
 
+declare (strict_types=1);
+
 namespace Sohophp\SchemaOrg\Thing\CreativeWork\MediaObject;
 
-use Sohophp\SchemaOrg\DataType\Text;
 use Sohophp\SchemaOrg\Thing\CreativeWork\MediaObject;
-use Sohophp\StruacturedData\Thing\Intangible\StructuredValue\PropertyValue;
-
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\PropertyValue;
 /**
- * Class ImageObject
- * @package Sohophp\SchemaOrg\Thing\CreativeWork\MediaObject
- * @see https://schema.org/ImageObject
- */
+* An image file.
+* @see http://schema.org/ImageObject
+* @package Sohophp\SchemaOrg\Thing\CreativeWork\MediaObject
+*/
 class ImageObject extends MediaObject
 {
-    public function __construct(?string $image)
-    {
-        if (!is_null($image)) {
-            $this->url($image);
-        }
-    }
 
-    /**
-     * @param Text|string $value
+     
+     /**
+     * exif data for this object.
+     * @param string|PropertyValue $value
      * @return $this
      */
-    public function caption($value)
-    {
-        $this->setProperty('caption', $value);
-        return $this;
-    }
 
-    /**
-     * @param PropertyValue|Text|string $value
-     * @return $this
-     */
-    public function exifData($value)
-    {
-        $this->setProperty('exifData', $value);
+     public function exifData( $value):self
+     {
+        $this->setProperty("exifData",$value);
         return $this;
-    }
+     }
 
-    /**
+     
+     /**
+     * Indicates whether this image is representative of the content of the page.
      * @param bool $value
      * @return $this
      */
-    public function representativeOfPage(bool $value)
-    {
-        $this->setProperty('representativeOfPage', $value);
-        return $this;
 
-    }
-
-    /**
-     * @param ImageObject $value
-     * @return $this
-     */
-    public function thumbnail(ImageObject $value)
-    {
-        $this->setProperty('thumbnail', $value);
+     public function representativeOfPage(?bool $value):self
+     {
+        $this->setProperty("representativeOfPage",$value);
         return $this;
-    }
+     }
+
+     
 }
+

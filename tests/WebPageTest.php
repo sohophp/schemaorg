@@ -1,6 +1,9 @@
 <?php
 
-class WebPageTest extends \Sohophp\SchemaOrg\TestCase
+namespace Sohophp\SchemaOrg\test;
+use Sohophp\SchemaOrg\Tests\TestCase;
+
+class WebPageTest extends TestCase
 {
 
 }

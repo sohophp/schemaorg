@@ -1,0 +1,36 @@
+<?php
+namespace {{ $package }};
+
+{% for(u in uses) %}
+use u;
+{% endfor %}
+
+/**
+* class {{ name }}
+* {{bread}}
+* {{description}}
+* @see {{see}}
+* @package {{package}}
+*/
+
+class {{ name }} extends {{ extend }}
+{
+
+    {% for property in properties %}
+    /**
+    * class {{ property.name }}
+    * {{ property.description }}
+    * @see {{ property.source }}
+    * @param {{ property.ects }} $value
+    * @return $this
+    */
+    public function {{ property.name }}($value)
+    {
+       $this->setProperty("{{ property.name }}",$value);
+       return $this;
+    }
+
+    {% endfor %}
+
+}
+

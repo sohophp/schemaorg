@@ -1,91 +1,59 @@
 <?php
 
+declare (strict_types=1);
+
 namespace Sohophp\SchemaOrg\Thing\CreativeWork;
 
-use Sohophp\SchemaOrg\DataType\Text\Url;
 use Sohophp\SchemaOrg\Thing\CreativeWork;
-use Sohophp\SchemaOrg\Thing\Intangible\SpeakableSpecification;
+/**
+* An article, such as a news article or piece of investigative report. Newspapers and magazines have articles of many different types and this is intended to cover them all.<br/><br/>
 
+See also <a href="http://blog.schema.org/2014/09/schemaorg-support-for-bibliographic_2.html">blog post</a>.
+* @see http://schema.org/Article
+* @package Sohophp\SchemaOrg\Thing\CreativeWork
+*/
 class Article extends CreativeWork
 {
-    /**
+
+     
+     /**
+     * Articles may belong to one or more 'sections' in a magazine or newspaper, such as Sports, Lifestyle, etc.
      * @param string $value
      * @return $this
      */
-    public function articleBody(string $value)
-    {
-        $this->setProperty('articleBody', $value);
-        return $this;
-    }
 
-    /**
+     public function articleSection(?string $value):self
+     {
+        $this->setProperty("articleSection",$value);
+        return $this;
+     }
+
+     
+     /**
+     * The actual body of the article.
      * @param string $value
      * @return $this
      */
-    public function articleSection(string $value)
-    {
-        $this->setProperty('articleSection', $value);
+
+     public function articleBody(?string $value):self
+     {
+        $this->setProperty("articleBody",$value);
         return $this;
-    }
+     }
 
-
-    /**
-     * @param string|CreativeWork $value
+     
+     /**
+     * The number of words in the text of the Article.
+     * @param int $value
      * @return $this
      */
-    public function backstory($value)
-    {
-        $this->setProperty('backstory', $value);
-        return $this;
-    }
 
-    /**
-     * @param integer|string $value
-     * @return $this
-     */
-    public function pageEnd($value)
-    {
-        $this->setProperty('pageEnd', $value);
+     public function wordCount(?int $value):self
+     {
+        $this->setProperty("wordCount",$value);
         return $this;
-    }
+     }
 
-    /**
-     * @param integer|string $value
-     * @return $this
-     */
-    public function pageStart($value)
-    {
-        $this->setProperty('pageStart', $value);
-        return $this;
-    }
-
-    /**
-     * @param string $value
-     * @return $this
-     */
-    public function pagination(string $value)
-    {
-        $this->setProperty('pagination', $value);
-        return $this;
-    }
-
-    /**
-     * @param string|SpeakableSpecification|Url $value
-     * @return $this
-     */
-    public function speakable($value)
-    {
-        $this->setProperty('speakable', $value);
-        return $this;
-    }
-
-    /**
-     * @param integer $value
-     * @return $this
-     */
-    public function wordCount(int $value)
-    {
-        $this->setProperty('wordCount', $value);
-        return $this;
-    }
+     
 }
+

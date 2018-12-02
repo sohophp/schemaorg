@@ -1,15 +1,18 @@
 <?php
 
+declare (strict_types=1);
+
 namespace Sohophp\SchemaOrg\Thing\CreativeWork\WebPage;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork\WebPage;
-
 /**
- * Class AboutPage
- * @package Sohophp\SchemaOrg\Thing\CreativeWork\WebPage
- * @see https://schema.org/AboutPage
- */
+* Web page type: About page.
+* @see http://schema.org/AboutPage
+* @package Sohophp\SchemaOrg\Thing\CreativeWork\WebPage
+*/
 class AboutPage extends WebPage
 {
 
+     
 }
+

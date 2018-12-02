@@ -1,0 +1,38 @@
+<?php
+
+declare (strict_types=1);
+
+namespace {{ class.namespace }};
+
+{% for use in class.uses %}
+use {{ use }};
+{% endfor %}
+/**
+{% for annotation in class.annotations %}
+* {{ annotation }}
+{% endfor %}
+* @package {{ class.namespace }}
+*/
+class {{ class.name }} extends {{ class.parent }}
+{
+
+     {% for property in class.properties %}
+
+     /**
+{% for annotation in property.annotations %}
+     * {{ annotation }}
+{% endfor %}
+     * @param {{ property.range }} $value
+     * @return $this
+     */
+
+     public function {{ property.name }}({{ property.range_default }} $value):self
+     {
+        $this->setProperty("{{ property.name }}",$value);
+        return $this;
+     }
+
+     {% endfor %}
+
+}
+
