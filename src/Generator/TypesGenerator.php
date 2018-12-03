@@ -2,6 +2,14 @@
 
 namespace Sohophp\SchemaOrg\Generator;
 
+use PhpCsFixer\Cache\NullCacheManager;
+use PhpCsFixer\Differ\NullDiffer;
+use PhpCsFixer\Error\ErrorsManager;
+use PhpCsFixer\FixerFactory;
+use PhpCsFixer\Linter\Linter;
+use PhpCsFixer\RuleSet;
+use PhpCsFixer\Runner\Runner;
+
 class TypesGenerator
 {
     /**
@@ -28,12 +36,17 @@ class TypesGenerator
     public function generate()
     {
 
+        $classFiles = [];
         /**
          * @var ParserItem $graph
          */
         foreach ($this->parser->getClasses() as $i => $graph) {
-            echo $i."\n";
-            echo $graph->getId() . "\n";
+
+            if ($this->configure->get('consoleMessage')) {
+                echo ($i+1) . "\n";
+                echo $graph->getId() . "\n";
+            }
+
             $class = [];
             $class['name'] = $graph->getName();
             $class['annotations'] = [];
@@ -72,6 +85,8 @@ class TypesGenerator
                     }
                 }
                 $range = array_filter($range);//rangeString可能有null
+                $range = array_values($range);
+
                 $class['properties'][] = [
                     'name' => $property->getName(),
                     'annotations' => [$property->getComment()],
@@ -84,7 +99,10 @@ class TypesGenerator
 
             $dir = $this->itemToDir($graph);
             $filename = $dir . DIRECTORY_SEPARATOR . $graph->getName() . '.php';
-            echo $filename."\n";
+
+            if ($this->configure->get('consoleMessage')) {
+                echo $filename . "\n";
+            }
 
             if (!is_dir($dir)) {
                 if (!mkdir($dir, 0777, true)) {
@@ -93,12 +111,19 @@ class TypesGenerator
                 }
             }
 
-            if (!file_put_contents($filename,  $this->twig->render('class.php.twig', ['class' => $class]))) {
+            if (!file_put_contents($filename, $this->twig->render('class.php.twig', ['class' => $class]))) {
                 throw new \Exception('Can not create file ' . $dir . DIRECTORY_SEPARATOR . $graph->getName() . '.php');
                 return false;
             }
+
+            $classFiles[] = $filename;
         }
 
+        if ($this->configure->getFixCs()) {
+            $this->fixCs($classFiles);
+        }
+
+        return $classFiles;
     }
 
     public function itemToDir(ParserItem $item): string
@@ -135,5 +160,38 @@ class TypesGenerator
     public function fullNamespace($namespace): string
     {
         return trim($this->configure->getNamespace() . '\\' . trim($namespace, '\\'), '\\');
+    }
+
+
+    /**
+     * Uses PHP CS Fixer to make generated files following PSR and Symfony Coding Standards.
+     */
+    private function fixCs(array $files): void
+    {
+        $fileInfos = [];
+        foreach ($files as $file) {
+            $fileInfos[] = new \SplFileInfo($file);
+        }
+        $fixers = (new FixerFactory())
+            ->registerBuiltInFixers()
+            ->useRuleSet(new RuleSet([
+                '@Symfony' => true,
+                'array_syntax' => ['syntax' => 'short'],
+                'phpdoc_order' => true,
+                'declare_strict_types' => true,
+            ]))
+            ->getFixers();
+
+        $runner = new Runner(
+            new \ArrayIterator($fileInfos),
+            $fixers,
+            new NullDiffer(),
+            null,
+            new ErrorsManager(),
+            new Linter(),
+            false,
+            new NullCacheManager()
+        );
+        $runner->fix();
     }
 }

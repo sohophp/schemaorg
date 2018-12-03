@@ -1,18 +1,16 @@
 <?php
 
-declare (strict_types=1);
+declare(strict_types=1);
 
 namespace Sohophp\SchemaOrg\Thing\Action\CreateAction;
 
 use Sohophp\SchemaOrg\Thing\Action\CreateAction;
+
 /**
-* The act of capturing sound and moving images on film, video, or digitally.
-* @see http://schema.org/FilmAction
-* @package Sohophp\SchemaOrg\Thing\Action\CreateAction
-*/
+ * The act of capturing sound and moving images on film, video, or digitally.
+ *
+ * @see http://schema.org/FilmAction
+ */
 class FilmAction extends CreateAction
 {
-
-     
 }
-

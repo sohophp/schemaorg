@@ -1,13 +1,13 @@
 <?php
 
-declare (strict_types=1);
+declare(strict_types=1);
 
 namespace Sohophp\SchemaOrg\Thing\Intangible\Enumeration;
 
 use Sohophp\SchemaOrg\Thing\Intangible\Enumeration;
-/**
-* A business entity type is a conceptual entity representing the legal form, the size, the main line of business, the position in the value chain, or any combination thereof, of an organization or business person.<br/><br/>
 
+/**
+ * A business entity type is a conceptual entity representing the legal form, the size, the main line of business, the position in the value chain, or any combination thereof, of an organization or business person.<br/><br/>.
 Commonly used values:<br/><br/>
 
 <ul>
@@ -17,12 +17,8 @@ Commonly used values:<br/><br/>
 <li>http://purl.org/goodrelations/v1#Reseller</li>
 </ul>
 
-* @see http://schema.org/BusinessEntityType
-* @package Sohophp\SchemaOrg\Thing\Intangible\Enumeration
-*/
+ * @see http://schema.org/BusinessEntityType
+ */
 class BusinessEntityType extends Enumeration
 {
-
-     
 }
-

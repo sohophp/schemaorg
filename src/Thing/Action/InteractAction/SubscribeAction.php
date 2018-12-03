@@ -1,13 +1,13 @@
 <?php
 
-declare (strict_types=1);
+declare(strict_types=1);
 
 namespace Sohophp\SchemaOrg\Thing\Action\InteractAction;
 
 use Sohophp\SchemaOrg\Thing\Action\InteractAction;
-/**
-* The act of forming a personal connection with someone/something (object) unidirectionally/asymmetrically to get updates pushed to.<br/><br/>
 
+/**
+ * The act of forming a personal connection with someone/something (object) unidirectionally/asymmetrically to get updates pushed to.<br/><br/>.
 Related actions:<br/><br/>
 
 <ul>
@@ -16,12 +16,8 @@ Related actions:<br/><br/>
 <li><a class="localLink" href="http://schema.org/JoinAction">JoinAction</a>: Unlike JoinAction, SubscribeAction implies that the agent is interested in continuing receiving updates from the object.</li>
 </ul>
 
-* @see http://schema.org/SubscribeAction
-* @package Sohophp\SchemaOrg\Thing\Action\InteractAction
-*/
+ * @see http://schema.org/SubscribeAction
+ */
 class SubscribeAction extends InteractAction
 {
-
-     
 }
-

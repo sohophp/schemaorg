@@ -1,18 +1,16 @@
 <?php
 
-declare (strict_types=1);
+declare(strict_types=1);
 
 namespace Sohophp\SchemaOrg\Thing\Place\Landform\BodyOfWater;
 
 use Sohophp\SchemaOrg\Thing\Place\Landform\BodyOfWater;
+
 /**
-* A river (for example, the broad majestic Shannon).
-* @see http://schema.org/RiverBodyOfWater
-* @package Sohophp\SchemaOrg\Thing\Place\Landform\BodyOfWater
-*/
+ * A river (for example, the broad majestic Shannon).
+ *
+ * @see http://schema.org/RiverBodyOfWater
+ */
 class RiverBodyOfWater extends BodyOfWater
 {
-
-     
 }
-

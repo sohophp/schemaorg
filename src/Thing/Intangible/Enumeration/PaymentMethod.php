@@ -1,13 +1,13 @@
 <?php
 
-declare (strict_types=1);
+declare(strict_types=1);
 
 namespace Sohophp\SchemaOrg\Thing\Intangible\Enumeration;
 
 use Sohophp\SchemaOrg\Thing\Intangible\Enumeration;
-/**
-* A payment method is a standardized procedure for transferring the monetary amount for a purchase. Payment methods are characterized by the legal and technical structures used, and by the organization or group carrying out the transaction.<br/><br/>
 
+/**
+ * A payment method is a standardized procedure for transferring the monetary amount for a purchase. Payment methods are characterized by the legal and technical structures used, and by the organization or group carrying out the transaction.<br/><br/>.
 Commonly used values:<br/><br/>
 
 <ul>
@@ -22,12 +22,8 @@ Commonly used values:<br/><br/>
 <li>http://purl.org/goodrelations/v1#PaySwarm</li>
 </ul>
 
-* @see http://schema.org/PaymentMethod
-* @package Sohophp\SchemaOrg\Thing\Intangible\Enumeration
-*/
+ * @see http://schema.org/PaymentMethod
+ */
 class PaymentMethod extends Enumeration
 {
-
-     
 }
-

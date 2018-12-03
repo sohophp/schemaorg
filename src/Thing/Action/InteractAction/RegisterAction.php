@@ -1,13 +1,13 @@
 <?php
 
-declare (strict_types=1);
+declare(strict_types=1);
 
 namespace Sohophp\SchemaOrg\Thing\Action\InteractAction;
 
 use Sohophp\SchemaOrg\Thing\Action\InteractAction;
-/**
-* The act of registering to be a user of a service, product or web page.<br/><br/>
 
+/**
+ * The act of registering to be a user of a service, product or web page.<br/><br/>.
 Related actions:<br/><br/>
 
 <ul>
@@ -16,12 +16,8 @@ Related actions:<br/><br/>
 <li><a class="localLink" href="http://schema.org/SubscribeAction">SubscribeAction</a>: Unlike SubscribeAction, RegisterAction doesn't imply that the agent is expecting updates from the object.</li>
 </ul>
 
-* @see http://schema.org/RegisterAction
-* @package Sohophp\SchemaOrg\Thing\Action\InteractAction
-*/
+ * @see http://schema.org/RegisterAction
+ */
 class RegisterAction extends InteractAction
 {
-
-     
 }
-

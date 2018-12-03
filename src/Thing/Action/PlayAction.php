@@ -1,13 +1,13 @@
 <?php
 
-declare (strict_types=1);
+declare(strict_types=1);
 
 namespace Sohophp\SchemaOrg\Thing\Action;
 
 use Sohophp\SchemaOrg\Thing\Action;
-/**
-* The act of playing/exercising/training/performing for enjoyment, leisure, recreation, Competition or exercise.<br/><br/>
 
+/**
+ * The act of playing/exercising/training/performing for enjoyment, leisure, recreation, Competition or exercise.<br/><br/>.
 Related actions:<br/><br/>
 
 <ul>
@@ -15,12 +15,8 @@ Related actions:<br/><br/>
 <li><a class="localLink" href="http://schema.org/WatchAction">WatchAction</a>: Unlike WatchAction (which is under ConsumeAction), PlayAction refers to showing/displaying for an audience or at an event, rather than consuming visual content.</li>
 </ul>
 
-* @see http://schema.org/PlayAction
-* @package Sohophp\SchemaOrg\Thing\Action
-*/
+ * @see http://schema.org/PlayAction
+ */
 class PlayAction extends Action
 {
-
-     
 }
-

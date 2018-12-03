@@ -1,18 +1,16 @@
 <?php
 
-declare (strict_types=1);
+declare(strict_types=1);
 
 namespace Sohophp\SchemaOrg\Thing\Action;
 
 use Sohophp\SchemaOrg\Thing\Action;
+
 /**
-* The act of accomplishing something via previous efforts. It is an instantaneous action rather than an ongoing process.
-* @see http://schema.org/AchieveAction
-* @package Sohophp\SchemaOrg\Thing\Action
-*/
+ * The act of accomplishing something via previous efforts. It is an instantaneous action rather than an ongoing process.
+ *
+ * @see http://schema.org/AchieveAction
+ */
 class AchieveAction extends Action
 {
-
-     
 }
-

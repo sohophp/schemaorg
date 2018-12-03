@@ -1,13 +1,13 @@
 <?php
 
-declare (strict_types=1);
+declare(strict_types=1);
 
 namespace Sohophp\SchemaOrg\Thing\Intangible\Enumeration\DeliveryMethod;
 
 use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\DeliveryMethod;
-/**
-* A private parcel service as the delivery mode available for a certain offer.<br/><br/>
 
+/**
+ * A private parcel service as the delivery mode available for a certain offer.<br/><br/>.
 Commonly used values:<br/><br/>
 
 <ul>
@@ -16,12 +16,8 @@ Commonly used values:<br/><br/>
 <li>http://purl.org/goodrelations/v1#UPS</li>
 </ul>
 
-* @see http://schema.org/ParcelService
-* @package Sohophp\SchemaOrg\Thing\Intangible\Enumeration\DeliveryMethod
-*/
+ * @see http://schema.org/ParcelService
+ */
 class ParcelService extends DeliveryMethod
 {
-
-     
 }
-

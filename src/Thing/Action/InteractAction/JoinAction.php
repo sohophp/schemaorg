@@ -1,13 +1,13 @@
 <?php
 
-declare (strict_types=1);
+declare(strict_types=1);
 
 namespace Sohophp\SchemaOrg\Thing\Action\InteractAction;
 
 use Sohophp\SchemaOrg\Thing\Action\InteractAction;
-/**
-* An agent joins an event/group with participants/friends at a location.<br/><br/>
 
+/**
+ * An agent joins an event/group with participants/friends at a location.<br/><br/>.
 Related actions:<br/><br/>
 
 <ul>
@@ -16,12 +16,8 @@ Related actions:<br/><br/>
 <li><a class="localLink" href="http://schema.org/FollowAction">FollowAction</a>: Unlike FollowAction, JoinAction does not imply that you'll be polling for updates.</li>
 </ul>
 
-* @see http://schema.org/JoinAction
-* @package Sohophp\SchemaOrg\Thing\Action\InteractAction
-*/
+ * @see http://schema.org/JoinAction
+ */
 class JoinAction extends InteractAction
 {
-
-     
 }
-
