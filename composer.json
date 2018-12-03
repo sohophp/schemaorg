@@ -3,6 +3,7 @@
   "description": "schema.org php library",
   "type": "library",
   "license": "MIT",
+  "keywords": ["schema.org", "structural data"],
   "authors": [
     {
       "name": "sohophp",
