@@ -32,6 +32,7 @@
       "Sohophp\\SchemaOrg\\Examples\\": "examples\\"
     }
   },
+  "bin": ["bin/schema"],
   "minimum-stability": "dev",
   "repositories": {
     "packagist": {
