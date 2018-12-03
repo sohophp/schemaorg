@@ -9,8 +9,9 @@
       "email": "sohophp@gmail.com"
     }
   ],
+  "homepage": "https://sohophp.com/post/read/7",
   "require": {
-    "php": "^7.2",
+    "php": ">=7.2.0",
     "ext-curl": "*",
     "ext-json": "*"
   },
