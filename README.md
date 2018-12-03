@@ -8,8 +8,11 @@ schema.org PHP library
 
 强类型检查
 
-IDE中类与方法可自动完成.
+自定命名空间
 
+PHP CS Fixer 代码格式化符合PSR标准
+
+IDE中类与方法可自动完成.
 
 ##安装方法:
 
@@ -20,6 +23,8 @@ composer require sohophp/schema-org
 Git:
 
 git clone https://github.com/sohophp/schemaorg.git
+
+
 
 ##使用方法:
 
