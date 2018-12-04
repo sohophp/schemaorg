@@ -1,0 +1,15 @@
+<?php
+namespace {{ namespace }};
+
+class Entities
+{
+  {% for entity in entities %}
+
+  public static function {{ entity.name }}()
+  {
+     return new {{ entity.className }}();
+  }
+
+  {% endfor %}
+}
+

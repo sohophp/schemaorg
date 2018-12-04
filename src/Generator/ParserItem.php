@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace Sohophp\SchemaOrg\Generator;
 
-
-use phpDocumentor\Reflection\Types\Self_;
-
+/**
+ * Class ParserItem
+ * @package Sohophp\SchemaOrg\Generator
+ */
 class ParserItem
 {
     /**

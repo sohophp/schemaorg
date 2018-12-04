@@ -37,13 +37,14 @@ class TypesGenerator
     {
 
         $classFiles = [];
+        $entitiesMap = [];
         /**
          * @var ParserItem $graph
          */
         foreach ($this->parser->getClasses() as $i => $graph) {
 
             if ($this->configure->get('consoleMessage')) {
-                echo ($i+1) . "\n";
+                echo ($i + 1) . "\n";
                 echo $graph->getId() . "\n";
             }
 
@@ -117,8 +118,20 @@ class TypesGenerator
             }
 
             $classFiles[] = $filename;
+            $entitiesMap[] = [
+                'name' => $graph->getName(),
+                'className' =>  $graph->getFullClassName()
+            ];
         }
 
+        $entitiesMapFile = $this->configure->getBaseDir() . DIRECTORY_SEPARATOR . 'Entities.php';
+
+        file_put_contents($entitiesMapFile,
+            $this->twig->render('entities.php.twig',
+                ['entities' => $entitiesMap, 'namespace' => $this->fullNamespace('')]
+            ));
+
+        $classFiles[] = $entitiesMapFile;
         if ($this->configure->getFixCs()) {
             $this->fixCs($classFiles);
         }

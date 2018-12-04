@@ -12,8 +12,8 @@ class GeneratorCommendTest extends TestCase
     public function testGenerate()
     {
 
-        $baseDir = realpath(__DIR__ . '/../') . DIRECTORY_SEPARATOR . 'Enum';
-        $Configure = new Configure(['baseDir' => $baseDir,'fixCs'=>true]);
+        $baseDir = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'Entity';
+        $Configure = new Configure(['baseDir' => $baseDir,'fixCs'=>true,'namespace'=>'Sohophp\\SchemaOrg\\Tests\\Entity']);
         $Parser = new Parser();
         $Parser->parse($Configure);
         $loader = new \Twig_Loader_Filesystem(realpath(__DIR__ . '/../../templates/'));
@@ -26,6 +26,6 @@ class GeneratorCommendTest extends TestCase
         }
         $TypesGenerator = new TypesGenerator($Configure, $Parser, $twig);
         $classFiles = $TypesGenerator->generate();
-        $this->assertCount(598, $classFiles);
+        $this->assertCount(598+1, $classFiles);
     }
 }
