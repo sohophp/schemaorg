@@ -25,29 +25,37 @@ class TypesGenerator
      */
     private $twig;
 
+    /**
+     * TypesGenerator constructor.
+     * @param Configure $configure
+     * @param Parser $parser
+     * @param \Twig_Environment $twig
+     */
     public function __construct(Configure $configure, Parser $parser, \Twig_Environment $twig)
     {
         $this->configure = $configure;
         $this->parser = $parser;
         $this->twig = $twig;
-
     }
 
+    /**
+     * @return array|bool
+     * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Runtime
+     * @throws \Twig_Error_Syntax
+     */
     public function generate()
     {
-
         $classFiles = [];
         $entitiesMap = [];
         /**
          * @var ParserItem $graph
          */
         foreach ($this->parser->getClasses() as $i => $graph) {
-
             if ($this->configure->get('consoleMessage')) {
                 echo ($i + 1) . "\n";
                 echo $graph->getId() . "\n";
             }
-
             $class = [];
             $class['name'] = $graph->getName();
             $class['annotations'] = [];
@@ -75,7 +83,6 @@ class TypesGenerator
                  * @var ParserItem $item
                  */
                 foreach ($property->getPropertyRange() as $item) {
-
                     if ($item->isClass() && !$item->isDataType()) {
                         if ($item->getId() != $graph->getId()) {
                             $uses[] = $this->fullNamespace($item->getFullClassName());
@@ -87,7 +94,6 @@ class TypesGenerator
                 }
                 $range = array_filter($range);//rangeString可能有null
                 $range = array_values($range);
-
                 $class['properties'][] = [
                     'name' => $property->getName(),
                     'annotations' => [$property->getComment()],
@@ -95,47 +101,37 @@ class TypesGenerator
                     'range_default' => count($range) == 1 ? '?' . $range[0] : null
                 ];
             }
-
             $class['uses'] = array_unique($uses);
-
             $dir = $this->itemToDir($graph);
             $filename = $dir . DIRECTORY_SEPARATOR . $graph->getName() . '.php';
-
             if ($this->configure->get('consoleMessage')) {
                 echo $filename . "\n";
             }
-
             if (!is_dir($dir)) {
                 if (!mkdir($dir, 0777, true)) {
                     throw new \Exception('Failed to create folders ' . $dir);
                     return false;
                 }
             }
-
             if (!file_put_contents($filename, $this->twig->render('class.php.twig', ['class' => $class]))) {
                 throw new \Exception('Can not create file ' . $dir . DIRECTORY_SEPARATOR . $graph->getName() . '.php');
                 return false;
             }
-
             $classFiles[] = $filename;
             $entitiesMap[] = [
                 'name' => $graph->getName(),
-                'className' =>  $graph->getFullClassName()
+                'className' => $graph->getFullClassName()
             ];
         }
-
         $entitiesMapFile = $this->configure->getBaseDir() . DIRECTORY_SEPARATOR . 'Entities.php';
-
         file_put_contents($entitiesMapFile,
             $this->twig->render('entities.php.twig',
                 ['entities' => $entitiesMap, 'namespace' => $this->fullNamespace('')]
             ));
-
         $classFiles[] = $entitiesMapFile;
         if ($this->configure->getFixCs()) {
             $this->fixCs($classFiles);
         }
-
         return $classFiles;
     }
 

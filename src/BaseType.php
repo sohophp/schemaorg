@@ -16,7 +16,7 @@ class BaseType implements \ArrayAccess, \JsonSerializable
 
     public function offsetGet($offset)
     {
-        return $this->properties[$offset];// ?? null;
+        return $this->properties[$offset];
     }
 
     public function offsetExists($offset)
@@ -40,20 +40,26 @@ class BaseType implements \ArrayAccess, \JsonSerializable
         return $this;
     }
 
-    public function toArray()
+    public function toArray($context = true)
     {
+
         $vars = $this->properties;
         $type = $this->getType();
         if ($type !== false) {
             $vars = array_merge(['@type' => $type], $vars);
         }
+        if ($context) {
+            $vars = array_merge(['@context' => $this->getContext()], $vars);
+        }
+
         return $this->filterArray($vars);
+
     }
 
     public function filterArray($vars)
     {
         if ($vars instanceof BaseType) {
-            return $vars->toArray();
+            return $vars->toArray(false);
         } elseif ($vars instanceof DataType) {
             return $vars->getValue();
         } elseif (is_array($vars)) {
@@ -86,8 +92,14 @@ class BaseType implements \ArrayAccess, \JsonSerializable
 
     public function toJson($options = JSON_UNESCAPED_UNICODE)
     {
-        return json_encode(array_merge(['@context' => $this->getContext()], $this->toArray()), $options);
+        return json_encode($this->toArray(), $options);
     }
+
+    /**
+     *
+     * @param int $options
+     * @return string
+     */
 
     public function toScript(int $options = JSON_UNESCAPED_UNICODE)
     {

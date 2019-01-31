@@ -50,6 +50,7 @@ class ArrayCollection implements \ArrayAccess, \JsonSerializable,\Countable
     {
         return $this->data;
     }
+
     public function count()
     {
         return count($this->data);

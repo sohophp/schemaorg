@@ -21,4 +21,5 @@ class WebPageTest extends TestCase
 */
         $this->assertCount(3, $params);
     }
+
 }

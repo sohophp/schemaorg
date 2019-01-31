@@ -36,11 +36,5 @@
     }
   },
   "bin": ["bin/schema"],
-  "minimum-stability": "dev",
-  "repositories": {
-    "packagist": {
-      "type": "composer",
-      "url": "https://packagist.phpcomposer.com"
-    }
-  }
+  "minimum-stability": "dev"
 }
