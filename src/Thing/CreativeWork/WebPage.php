@@ -63,11 +63,11 @@ class WebPage extends CreativeWork
     /**
      * Date on which the content on this web page was last reviewed for accuracy and/or completeness.
      *
-     * @param \DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */
-    public function lastReviewed(?\DateTimeInterface $value): self
+    public function lastReviewed($value): self
     {
         $this->setProperty('lastReviewed', $value);
 

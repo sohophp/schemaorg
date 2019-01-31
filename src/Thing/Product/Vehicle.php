@@ -105,11 +105,11 @@ Typical unit code(s): KMT for kilometers, SMI for statute miles
     /**
      * The release date of a vehicle model (often used to differentiate versions of the same make and model).
      *
-     * @param \DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */
-    public function vehicleModelDate(?\DateTimeInterface $value): self
+    public function vehicleModelDate($value): self
     {
         $this->setProperty('vehicleModelDate', $value);
 
@@ -313,11 +313,11 @@ Note: You can use <a class="localLink" href="http://schema.org/minValue">minValu
     /**
      * The date of the first registration of the vehicle with the respective public authorities.
      *
-     * @param \DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */
-    public function dateVehicleFirstRegistered(?\DateTimeInterface $value): self
+    public function dateVehicleFirstRegistered($value): self
     {
         $this->setProperty('dateVehicleFirstRegistered', $value);
 

@@ -76,11 +76,11 @@ class Flight extends Trip
     /**
      * The time when a passenger can check into the flight online.
      *
-     * @param \DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */
-    public function webCheckinTime(?\DateTimeInterface $value): self
+    public function webCheckinTime($value): self
     {
         $this->setProperty('webCheckinTime', $value);
 

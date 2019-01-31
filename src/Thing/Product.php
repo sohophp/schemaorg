@@ -101,11 +101,11 @@ class Product extends Thing
     /**
      * The release date of a product or product model. This can be used to distinguish the exact variant of a product.
      *
-     * @param \DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */
-    public function releaseDate(?\DateTimeInterface $value): self
+    public function releaseDate($value): self
     {
         $this->setProperty('releaseDate', $value);
 

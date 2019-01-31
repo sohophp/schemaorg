@@ -76,11 +76,11 @@ class Reservation extends Intangible
     /**
      * The date and time the reservation was modified.
      *
-     * @param \DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */
-    public function modifiedTime(?\DateTimeInterface $value): self
+    public function modifiedTime($value): self
     {
         $this->setProperty('modifiedTime', $value);
 
@@ -90,11 +90,11 @@ class Reservation extends Intangible
     /**
      * The date and time the reservation was booked.
      *
-     * @param \DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */
-    public function bookingTime(?\DateTimeInterface $value): self
+    public function bookingTime($value): self
     {
         $this->setProperty('bookingTime', $value);
 

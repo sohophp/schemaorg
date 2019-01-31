@@ -50,11 +50,11 @@ class Person extends Thing
     /**
      * Date of death.
      *
-     * @param \DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */
-    public function deathDate(?\DateTimeInterface $value): self
+    public function deathDate($value): self
     {
         $this->setProperty('deathDate', $value);
 
@@ -176,11 +176,11 @@ class Person extends Thing
     /**
      * Date of birth.
      *
-     * @param \DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */
-    public function birthDate(?\DateTimeInterface $value): self
+    public function birthDate($value): self
     {
         $this->setProperty('birthDate', $value);
 

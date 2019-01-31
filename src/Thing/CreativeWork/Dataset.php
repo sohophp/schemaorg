@@ -32,11 +32,11 @@ class Dataset extends CreativeWork
     /**
      * The range of temporal applicability of a dataset, e.g. for a 2011 census dataset, the year 2011 (in ISO 8601 time interval format).
      *
-     * @param \DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */
-    public function datasetTimeInterval(?\DateTimeInterface $value): self
+    public function datasetTimeInterval($value): self
     {
         $this->setProperty('datasetTimeInterval', $value);
 
@@ -60,11 +60,11 @@ class Dataset extends CreativeWork
     /**
      * The range of temporal applicability of a dataset, e.g. for a 2011 census dataset, the year 2011 (in ISO 8601 time interval format).
      *
-     * @param \DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */
-    public function temporal(?\DateTimeInterface $value): self
+    public function temporal($value): self
     {
         $this->setProperty('temporal', $value);
 

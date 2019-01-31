@@ -16,11 +16,11 @@ class LiveBlogPosting extends BlogPosting
     /**
      * The time when the live blog will begin covering the Event. Note that coverage may begin before the Event's start time. The LiveBlogPosting may also be created before coverage begins.
      *
-     * @param \DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */
-    public function coverageStartTime(?\DateTimeInterface $value): self
+    public function coverageStartTime($value): self
     {
         $this->setProperty('coverageStartTime', $value);
 
@@ -30,11 +30,11 @@ class LiveBlogPosting extends BlogPosting
     /**
      * The time when the live blog will stop covering the Event. Note that coverage may continue after the Event concludes.
      *
-     * @param \DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */
-    public function coverageEndTime(?\DateTimeInterface $value): self
+    public function coverageEndTime($value): self
     {
         $this->setProperty('coverageEndTime', $value);
 

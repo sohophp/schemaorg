@@ -16,11 +16,11 @@ class DataFeedItem extends Intangible
     /**
      * The datetime the item was removed from the DataFeed.
      *
-     * @param \DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */
-    public function dateDeleted(?\DateTimeInterface $value): self
+    public function dateDeleted($value): self
     {
         $this->setProperty('dateDeleted', $value);
 

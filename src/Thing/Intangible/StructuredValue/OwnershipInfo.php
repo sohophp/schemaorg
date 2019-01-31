@@ -18,11 +18,11 @@ class OwnershipInfo extends StructuredValue
     /**
      * The date and time of obtaining the product.
      *
-     * @param \DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */
-    public function ownedFrom(?\DateTimeInterface $value): self
+    public function ownedFrom($value): self
     {
         $this->setProperty('ownedFrom', $value);
 
@@ -46,11 +46,11 @@ class OwnershipInfo extends StructuredValue
     /**
      * The date and time of giving up ownership on the product.
      *
-     * @param \DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */
-    public function ownedThrough(?\DateTimeInterface $value): self
+    public function ownedThrough($value): self
     {
         $this->setProperty('ownedThrough', $value);
 

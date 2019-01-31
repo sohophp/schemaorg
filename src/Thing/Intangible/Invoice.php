@@ -34,11 +34,11 @@ class Invoice extends Intangible
     /**
      * The date the invoice is scheduled to be paid.
      *
-     * @param \DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */
-    public function scheduledPaymentDate(?\DateTimeInterface $value): self
+    public function scheduledPaymentDate($value): self
     {
         $this->setProperty('scheduledPaymentDate', $value);
 

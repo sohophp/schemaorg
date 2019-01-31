@@ -20,11 +20,11 @@ class Order extends Intangible
     /**
      * Date order was placed.
      *
-     * @param \DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */
-    public function orderDate(?\DateTimeInterface $value): self
+    public function orderDate($value): self
     {
         $this->setProperty('orderDate', $value);
 

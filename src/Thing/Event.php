@@ -59,11 +59,11 @@ class Event extends Thing
     /**
      * The time admission will commence.
      *
-     * @param \DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */
-    public function doorTime(?\DateTimeInterface $value): self
+    public function doorTime($value): self
     {
         $this->setProperty('doorTime', $value);
 
@@ -185,11 +185,11 @@ class Event extends Thing
     /**
      * Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.
      *
-     * @param \DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */
-    public function previousStartDate(?\DateTimeInterface $value): self
+    public function previousStartDate($value): self
     {
         $this->setProperty('previousStartDate', $value);
 

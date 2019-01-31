@@ -20,11 +20,11 @@ class Message extends CreativeWork
     /**
      * The date/time at which the message has been read by the recipient if a single recipient exists.
      *
-     * @param \DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */
-    public function dateRead(?\DateTimeInterface $value): self
+    public function dateRead($value): self
     {
         $this->setProperty('dateRead', $value);
 
@@ -48,11 +48,11 @@ class Message extends CreativeWork
     /**
      * The date/time at which the message was sent.
      *
-     * @param \DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */
-    public function dateSent(?\DateTimeInterface $value): self
+    public function dateSent($value): self
     {
         $this->setProperty('dateSent', $value);
 
@@ -90,11 +90,11 @@ class Message extends CreativeWork
     /**
      * The date/time the message was received if a single recipient exists.
      *
-     * @param \DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */
-    public function dateReceived(?\DateTimeInterface $value): self
+    public function dateReceived($value): self
     {
         $this->setProperty('dateReceived', $value);
 

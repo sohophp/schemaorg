@@ -19,11 +19,11 @@ class OpeningHoursSpecification extends StructuredValue
     /**
      * The opening hour of the place or service on the given day(s) of the week.
      *
-     * @param \DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */
-    public function opens(?\DateTimeInterface $value): self
+    public function opens($value): self
     {
         $this->setProperty('opens', $value);
 
@@ -33,11 +33,11 @@ class OpeningHoursSpecification extends StructuredValue
     /**
      * The closing hour of the place or service on the given day(s) of the week.
      *
-     * @param \DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */
-    public function closes(?\DateTimeInterface $value): self
+    public function closes($value): self
     {
         $this->setProperty('closes', $value);
 

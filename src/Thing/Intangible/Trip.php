@@ -16,11 +16,11 @@ class Trip extends Intangible
     /**
      * The expected arrival time.
      *
-     * @param \DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */
-    public function arrivalTime(?\DateTimeInterface $value): self
+    public function arrivalTime($value): self
     {
         $this->setProperty('arrivalTime', $value);
 
@@ -30,11 +30,11 @@ class Trip extends Intangible
     /**
      * The expected departure time.
      *
-     * @param \DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */
-    public function departureTime(?\DateTimeInterface $value): self
+    public function departureTime($value): self
     {
         $this->setProperty('departureTime', $value);
 

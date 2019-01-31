@@ -58,11 +58,11 @@ class Ticket extends Intangible
     /**
      * The date the ticket was issued.
      *
-     * @param \DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */
-    public function dateIssued(?\DateTimeInterface $value): self
+    public function dateIssued($value): self
     {
         $this->setProperty('dateIssued', $value);
 

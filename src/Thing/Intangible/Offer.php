@@ -18,11 +18,11 @@ class Offer extends Intangible
     /**
      * The date after which the price is no longer available.
      *
-     * @param \DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */
-    public function priceValidUntil(?\DateTimeInterface $value): self
+    public function priceValidUntil($value): self
     {
         $this->setProperty('priceValidUntil', $value);
 

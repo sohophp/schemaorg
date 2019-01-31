@@ -31,11 +31,11 @@ class RentalCarReservation extends Reservation
     /**
      * When a rental car can be dropped off.
      *
-     * @param \DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */
-    public function dropoffTime(?\DateTimeInterface $value): self
+    public function dropoffTime($value): self
     {
         $this->setProperty('dropoffTime', $value);
 

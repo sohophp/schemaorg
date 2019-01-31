@@ -45,7 +45,7 @@ class UserComments extends UserInteraction
     /**
      * The time at which the UserComment was made.
      *
-     * @param \DateTimeInterface|\DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */

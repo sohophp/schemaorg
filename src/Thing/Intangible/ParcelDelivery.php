@@ -117,11 +117,11 @@ class ParcelDelivery extends Intangible
     /**
      * The earliest date the package may arrive.
      *
-     * @param \DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */
-    public function expectedArrivalFrom(?\DateTimeInterface $value): self
+    public function expectedArrivalFrom($value): self
     {
         $this->setProperty('expectedArrivalFrom', $value);
 
@@ -131,11 +131,11 @@ class ParcelDelivery extends Intangible
     /**
      * The latest date the package may arrive.
      *
-     * @param \DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */
-    public function expectedArrivalUntil(?\DateTimeInterface $value): self
+    public function expectedArrivalUntil($value): self
     {
         $this->setProperty('expectedArrivalUntil', $value);
 

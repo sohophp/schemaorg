@@ -18,11 +18,11 @@ class MediaObject extends CreativeWork
     /**
      * Date when this media object was uploaded to this site.
      *
-     * @param \DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */
-    public function uploadDate(?\DateTimeInterface $value): self
+    public function uploadDate($value): self
     {
         $this->setProperty('uploadDate', $value);
 

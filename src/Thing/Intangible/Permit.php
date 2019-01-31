@@ -32,11 +32,11 @@ class Permit extends Intangible
     /**
      * The date when the item is no longer valid.
      *
-     * @param \DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */
-    public function validUntil(?\DateTimeInterface $value): self
+    public function validUntil($value): self
     {
         $this->setProperty('validUntil', $value);
 

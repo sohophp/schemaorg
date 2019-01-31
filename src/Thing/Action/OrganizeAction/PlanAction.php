@@ -16,11 +16,11 @@ class PlanAction extends OrganizeAction
     /**
      * The time the object is scheduled to.
      *
-     * @param \DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */
-    public function scheduledTime(?\DateTimeInterface $value): self
+    public function scheduledTime($value): self
     {
         $this->setProperty('scheduledTime', $value);
 

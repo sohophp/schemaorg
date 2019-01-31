@@ -159,7 +159,7 @@ class TypesGenerator
             case 'Date':
             case 'DateTime':
             case 'Time':
-                return '\\' . \DateTimeInterface::class;
+                //return '\\' . \DateTimeInterface::class;
             case 'DataType':
             case 'Number':
                 return null;

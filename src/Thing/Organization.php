@@ -58,11 +58,11 @@ class Organization extends Thing
     /**
      * The date that this organization was dissolved.
      *
-     * @param \DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */
-    public function dissolutionDate(?\DateTimeInterface $value): self
+    public function dissolutionDate($value): self
     {
         $this->setProperty('dissolutionDate', $value);
 
@@ -128,11 +128,11 @@ class Organization extends Thing
     /**
      * The date that this organization was founded.
      *
-     * @param \DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */
-    public function foundingDate(?\DateTimeInterface $value): self
+    public function foundingDate($value): self
     {
         $this->setProperty('foundingDate', $value);
 

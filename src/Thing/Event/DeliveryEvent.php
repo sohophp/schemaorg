@@ -16,11 +16,11 @@ class DeliveryEvent extends Event
     /**
      * After this date, the item will no longer be available for pickup.
      *
-     * @param \DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */
-    public function availableThrough(?\DateTimeInterface $value): self
+    public function availableThrough($value): self
     {
         $this->setProperty('availableThrough', $value);
 
@@ -30,11 +30,11 @@ class DeliveryEvent extends Event
     /**
      * When the item is available for pickup from the store, locker, etc.
      *
-     * @param \DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */
-    public function availableFrom(?\DateTimeInterface $value): self
+    public function availableFrom($value): self
     {
         $this->setProperty('availableFrom', $value);
 

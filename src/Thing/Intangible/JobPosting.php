@@ -102,11 +102,11 @@ class JobPosting extends Intangible
     /**
      * Publication date for the job posting.
      *
-     * @param \DateTimeInterface $value
+     * @param  $value
      *
      * @return $this
      */
-    public function datePosted(?\DateTimeInterface $value): self
+    public function datePosted($value): self
     {
         $this->setProperty('datePosted', $value);
 
