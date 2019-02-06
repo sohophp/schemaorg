@@ -11,7 +11,7 @@ namespace Sohophp\SchemaOrg\Generator;
 class ParserItem
 {
     /**
-     * @var array
+     * @var \stdClass
      */
     private $item;
     /**
@@ -19,22 +19,30 @@ class ParserItem
      */
     private $parser;
 
-    public function __construct(array $item, Parser $parser)
+    public function __construct($item, Parser $parser)
     {
         $this->item = $item;
         $this->parser = $parser;
     }
 
-    public function getItem(): array
+    public function __get($key)
+    {
+        return $this->getProperty($key);
+    }
+
+    public function getProperty($key)
+    {
+        return $this->item->{$key} ?? null;
+    }
+
+    public function getItem()
     {
         return $this->item;
     }
 
     public function getTypes(): array
     {
-
-        $types = $this->item['@type'] ?? [];
-
+        $types = $this->getProperty('@type');
         if (!is_array($types)) {
             return [$types];
         } else {
@@ -55,7 +63,7 @@ class ParserItem
 
     public function getId(): ?string
     {
-        return $this->item['@id'];
+        return $this->getProperty('@id');
     }
 
     public function isClass(): bool
@@ -79,23 +87,22 @@ class ParserItem
 
     public function getComment(): ?string
     {
-        return $this->item['rdfs:comment'] ?? null;
+        return $this->getProperty('rdfs:comment');
     }
 
     public function getLabel(): ?string
     {
-        return $this->item['rdfs:label'] ?? null;
+        return $this->getProperty('rdfs:label');
     }
-
 
     public function getRangeIncludes(): array
     {
-        return $this->item['http://schema.org/rangeIncludes'] ?? [];
+        return $this->itemIds($this->getProperty('http://schema.org/rangeIncludes'));
     }
 
     public function getDomainIncludes(): array
     {
-        return $this->item['http://schema.org/domainIncludes'] ?? [];
+        return $this->itemIds($this->getProperty('http://schema.org/domainIncludes'));
     }
 
     public function getName()
@@ -136,7 +143,6 @@ class ParserItem
     public function getItemById(string $id): ?ParserItem
     {
         $graphs = $this->parser->getGraphs();
-
         return $graphs[$id] ?? null;
     }
 
@@ -152,24 +158,35 @@ class ParserItem
         return count($parents) ? $parents[0] : null;
     }
 
-    public function parents(array $item): ?array
+    public function parents($item): ?array
     {
-        $parents = $item['rdfs:subClassOf'] ?? null;
-        if (!is_array($parents)) {
-            $classes = [$this->getItemById((string)$parents)];
-        } elseif (isset($parents['@id'])) {
-            $classes = [$this->getItemById((string)$parents['@id'])];
-        } else {
-            $classes = [];
-            foreach ($parents as $parent) {
-                if (is_array($parent) && isset($parent['@id'])) {
-                    $classes[] = $this->getItemById($parent['@id']);
-                } else {
-                    $classes[] = $this->getItemById((string)$parent);
+        $parents = $item->{'rdfs:subClassOf'} ?? null;
+        return $this->items($parents);
+    }
+
+    public function items($parents)
+    {
+
+        $ids = $this->itemIds($parents);
+        return array_map([$this, 'getItemById'], $ids);
+
+    }
+
+    public function itemIds($search)
+    {
+        if (is_array($search)) {
+            $ids = [];
+            foreach ($search as $arr) {
+                foreach ($this->itemIds($arr) as $id) {
+                    $ids[] = $id;
                 }
             }
+            return array_filter($ids);
+        } elseif (is_object($search)) {
+            return array_filter([$search->{'@id'} ?? null]);
+        } else {
+            return array_filter([$search]);
         }
-        return array_filter($classes);
     }
 
     public function getParents()
@@ -177,7 +194,7 @@ class ParserItem
         return $this->deepParent($this->item);
     }
 
-    public function deepParent(array $item, $parents = [])
+    public function deepParent($item, $parents = [])
     {
         $parent = $this->parent($item);
         if (is_null($parent)) {
@@ -227,23 +244,12 @@ class ParserItem
     public function getPropertyRange()
     {
         $includes = $this->getRangeIncludes();
-        $range = [];
-        if (isset($includes['@id'])) {
-            $item = $this->getItemById($includes['@id']);
-            if (!is_null($item)) {
-                $range[] = $item;
-
-            }
-        } else {
-            foreach ($includes as $include) {
-                $item = $this->getItemById($include['@id']);
-                if (!is_null($item)) {
-                    $range[] = $item;
-                }
-            }
-        }
-        return $range;
+        return array_map([$this, 'getItemById'], $includes);
     }
 
+    public function __debugInfo()
+    {
+        return ['item' => $this->item];
+    }
 
 }

@@ -3,7 +3,6 @@ declare (strict_types=1);
 
 namespace Sohophp\SchemaOrg\Generator;
 
-
 class Configure
 {
 
@@ -18,7 +17,7 @@ class Configure
             'schemaJsonldFilePath' => realpath(__DIR__ . '/../../data/schema.jsonld'),
             'consoleMessage' => true,
             'namespace' => $this->getNamespace(),
-            'fixCs'=>true
+            'fixCs' => true
         ];
         $this->cfg = array_merge($defs, $cfg);
     }
@@ -69,7 +68,9 @@ class Configure
     {
         return $this->cfg['baseDir'];
     }
-    public function getFixCs(){
+
+    public function getFixCs()
+    {
         return $this->get('fixCs');
     }
 

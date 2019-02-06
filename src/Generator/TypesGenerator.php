@@ -30,12 +30,14 @@ class TypesGenerator
      * @param Configure $configure
      * @param Parser $parser
      * @param \Twig_Environment $twig
+     * @param Logger $Logger
      */
-    public function __construct(Configure $configure, Parser $parser, \Twig_Environment $twig)
+    public function __construct(Configure $configure, Parser $parser, \Twig_Environment $twig,Logger $Logger)
     {
         $this->configure = $configure;
         $this->parser = $parser;
         $this->twig = $twig;
+        $this->Logger = $Logger;
     }
 
     /**
@@ -53,8 +55,8 @@ class TypesGenerator
          */
         foreach ($this->parser->getClasses() as $i => $graph) {
             if ($this->configure->get('consoleMessage')) {
-                echo ($i + 1) . "\n";
-                echo $graph->getId() . "\n";
+                echo($i + 1), "\n";
+                echo $graph->getId(), "\n";
             }
             $class = [];
             $class['name'] = $graph->getName();
@@ -124,10 +126,16 @@ class TypesGenerator
             ];
         }
         $entitiesMapFile = $this->configure->getBaseDir() . DIRECTORY_SEPARATOR . 'Entities.php';
-        file_put_contents($entitiesMapFile,
-            $this->twig->render('entities.php.twig',
-                ['entities' => $entitiesMap, 'namespace' => $this->fullNamespace('')]
-            ));
+        file_put_contents(
+            $entitiesMapFile,
+            $this->twig->render(
+                'entities.php.twig',
+                [
+                    'entities' => $entitiesMap,
+                    'namespace' => $this->fullNamespace('')
+                ]
+            )
+        );
         $classFiles[] = $entitiesMapFile;
         if ($this->configure->getFixCs()) {
             $this->fixCs($classFiles);
@@ -184,7 +192,7 @@ class TypesGenerator
         $fixers = (new FixerFactory())
             ->registerBuiltInFixers()
             ->useRuleSet(new RuleSet([
-                '@Symfony' => true,
+                //'@Symfony' => true,
                 'array_syntax' => ['syntax' => 'short'],
                 'phpdoc_order' => true,
                 'declare_strict_types' => true,

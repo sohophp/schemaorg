@@ -2,6 +2,8 @@
 
 namespace Sohophp\SchemaOrg\Tests\Commend;
 
+use Doctrine\Inflector\Inflector;
+use Sohophp\SchemaOrg\Generator\Logger;
 use Sohophp\SchemaOrg\Tests\TestCase;
 use Sohophp\SchemaOrg\Generator\Configure;
 use Sohophp\SchemaOrg\Generator\Parser;
@@ -13,19 +15,29 @@ class GeneratorCommendTest extends TestCase
     {
 
         $baseDir = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'Entity';
-        $Configure = new Configure(['baseDir' => $baseDir,'fixCs'=>true,'namespace'=>'Sohophp\\SchemaOrg\\Tests\\Entity']);
+        $Configure = new Configure([
+            'baseDir' => $baseDir,
+            'fixCs' => true,
+            'namespace' => 'Sohophp\\SchemaOrg\\Tests\\Entity'
+        ]);
         $Parser = new Parser();
         $Parser->parse($Configure);
         $loader = new \Twig_Loader_Filesystem(realpath(__DIR__ . '/../../templates/'));
         $twig = new \Twig_Environment($loader, ['autoescape' => false, 'debug' => $Configure->getTiwgDebug()]);
-        $twig->addFilter(new \Twig_SimpleFilter('ucfirst'), 'ucfirst');
+        $twig->addFilter(new \Twig_SimpleFilter('ucfirst', 'ucfirst'));
         $twig->addFilter(new \Twig_SimpleFilter('pluralize', [Inflector::class, 'pluralize']));
-        $twig->addFilter(new \Twig_SimpleFilter('singularize'), [Inflector::class, 'singularize']);
+        $twig->addFilter(new \Twig_SimpleFilter('singularize', [Inflector::class, 'singularize']));
         if ($Configure->getTiwgDebug()) {
             $twig->addExtension(new \Twig_Extension_Debug());
         }
-        $TypesGenerator = new TypesGenerator($Configure, $Parser, $twig);
-        $classFiles = $TypesGenerator->generate();
-        $this->assertCount(598+1, $classFiles);
+        $Logger = new Logger('generator');
+        $Logger->info('test');
+        $TypesGenerator = new TypesGenerator($Configure, $Parser, $twig, $Logger);
+        try {
+            $classFiles = $TypesGenerator->generate();
+        } catch (\Exception $exception) {
+            $Logger->warning($exception->getMessage());
+        }
+        $this->assertCount(598 + 1, $classFiles);
     }
 }

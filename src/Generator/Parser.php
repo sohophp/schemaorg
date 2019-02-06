@@ -2,8 +2,6 @@
 
 namespace Sohophp\SchemaOrg\Generator;
 
-use Sohophp\SchemaOrg\Generator\Configure;
-
 class Parser
 {
     /**
@@ -26,26 +24,38 @@ class Parser
     private $dataTypes = [];
     private $relateds = [];
 
+    /**
+     * @param Configure $configure
+     */
     public function parse(Configure $configure)
     {
         $this->configure = $configure;
         $this->parseJsonld($this->configure->getSchemaJsonldFilePath());
     }
 
-    public function parseJsonld(?string $filePath)
+    /**
+     * @param string|null $filePath
+     * @return bool
+     */
+    public function parseJsonld(?string $filePath): bool
     {
         $this->filePath = realpath($filePath);
         if (!file_exists($this->filePath) || !is_readable($this->filePath)) {
-            throw new \Exception('The jsonld file is not exists!');
+            $Logger = new Logger("parser");
+            $Logger->warning('The jsonld file is not exists!');
             return false;
         }
+
         $content = file_get_contents($this->filePath);
-        $this->data = json_decode($content, true)['@graph'];
+        $this->data = json_decode($content, false);//['@graph'];
+
         $this->graphs = [];
-        foreach ($this->data as $array) {
+
+        foreach ($this->data->{'@graph'} as $array) {
             $item = new ParserItem($array, $this);
             $this->graphs[$item->getId()] = $item;
         }
+
         /**
          * @var ParserItem $item
          */
@@ -60,30 +70,53 @@ class Parser
                 $this->relateds[] = $item;
             }
         }
-
-        //var_dump(count($this->dataTypes),count($this->properties),count($this->classes),count($this->relateds));
-        //exit;
-
+        return true;
     }
 
+    /**
+     * @return array
+     */
     public function getGraphs(): array
     {
         return $this->graphs;
     }
 
+    /**
+     * @return array
+     */
     public function getDataTypes(): array
     {
         return $this->dataTypes;
     }
 
+    /**
+     * @return array
+     */
     public function getProperties(): array
     {
         return $this->properties;
     }
 
+    /**
+     * @return array
+     */
     public function getClasses(): array
     {
         return $this->classes;
+    }
+
+    /**
+     * @return array
+     */
+    public function getRelateds(): array
+    {
+        return $this->relateds;
+    }
+
+    public function getItemById(string $id): ?ParserItem
+    {
+        $graphs = $this->getGraphs();
+        return $graphs[$id] ?? null;
     }
 
 }
