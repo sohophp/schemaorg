@@ -18,8 +18,10 @@ class GeneratorCommendTest extends TestCase
         $Configure = new Configure([
             'baseDir' => $baseDir,
             'fixCs' => true,
-            'namespace' => 'Sohophp\\SchemaOrg\\Tests\\Entity'
+            'namespace' => 'Sohophp\\SchemaOrg\\Tests\\Entity',
+            'fullpath'=>false
         ]);
+
         $Parser = new Parser();
         $Parser->parse($Configure);
         $loader = new \Twig_Loader_Filesystem(realpath(__DIR__ . '/../../templates/'));
@@ -36,7 +38,7 @@ class GeneratorCommendTest extends TestCase
         try {
             $classFiles = $TypesGenerator->generate();
         } catch (\Exception $exception) {
-            $Logger->warning($exception->getMessage());
+            $Logger->warning($exception->getMessage(), $exception->getTrace());
         }
         $this->assertCount(598 + 1, $classFiles);
     }

@@ -9,7 +9,8 @@ use Sohophp\SchemaOrg\Thing\CreativeWork\WebPage\ContactPage;
 
 class SchemaCollectionTest extends TestCase
 {
-    public function testSchemaCollection(){
+    public function testSchemaCollection()
+    {
         $Jsonld = new SchemaCollection();
         $AboutPage = new AboutPage();
         $AboutPage->name("About Us")->text("test content");
@@ -17,6 +18,6 @@ class SchemaCollectionTest extends TestCase
         $ContactPage = new ContactPage();
         $ContactPage->name("Contact Us")->description("test description");
         $Jsonld->add($ContactPage);
-
+        $this->assertCount(2, $Jsonld);
     }
 }

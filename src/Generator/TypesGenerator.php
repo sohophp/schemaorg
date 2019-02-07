@@ -32,7 +32,7 @@ class TypesGenerator
      * @param \Twig_Environment $twig
      * @param Logger $Logger
      */
-    public function __construct(Configure $configure, Parser $parser, \Twig_Environment $twig,Logger $Logger)
+    public function __construct(Configure $configure, Parser $parser, \Twig_Environment $twig, Logger $Logger)
     {
         $this->configure = $configure;
         $this->parser = $parser;
@@ -67,10 +67,14 @@ class TypesGenerator
             $uses = [];
             $parent = $graph->getParent();
             if ($parent) {
-                $uses[] = $this->fullNamespace($parent->getFullClassName());
+                if ($this->configure->getFullPath()) {
+                    $uses[] = $this->fullNamespace($parent->getFullClassName());
+                }
                 $class['parent'] = $parent->getName();
             } else {
-                $uses[] = $this->fullNamespace($this->configure->getClassBase());
+                if ($this->configure->getFullPath()) {
+                    $uses[] = $this->fullNamespace($this->configure->getClassBase());
+                }
                 $class['parent'] = $this->configure->getClassBase();
             }
 
@@ -87,7 +91,9 @@ class TypesGenerator
                 foreach ($property->getPropertyRange() as $item) {
                     if ($item->isClass() && !$item->isDataType()) {
                         if ($item->getId() != $graph->getId()) {
-                            $uses[] = $this->fullNamespace($item->getFullClassName());
+                            if ($this->configure->getFullPath()) {
+                                $uses[] = $this->fullNamespace($item->getFullClassName());
+                            }
                         }
                         $range[] = $item->getName();
                     } else {
@@ -125,7 +131,9 @@ class TypesGenerator
                 'className' => $graph->getFullClassName()
             ];
         }
+
         $entitiesMapFile = $this->configure->getBaseDir() . DIRECTORY_SEPARATOR . 'Entities.php';
+
         file_put_contents(
             $entitiesMapFile,
             $this->twig->render(
@@ -145,7 +153,13 @@ class TypesGenerator
 
     public function itemToDir(ParserItem $item): string
     {
-        return $this->configure->getBaseDir() . DIRECTORY_SEPARATOR . implode(DIRECTORY_SEPARATOR, $item->getPath());
+        if ($this->configure->getFullPath()) {
+            return $this->configure->getBaseDir()
+                . DIRECTORY_SEPARATOR
+                . implode(DIRECTORY_SEPARATOR, $item->getPath());
+        } else {
+            return $this->configure->getBaseDir();
+        }
     }
 
     /**
@@ -176,7 +190,9 @@ class TypesGenerator
 
     public function fullNamespace($namespace): string
     {
-        return trim($this->configure->getNamespace() . '\\' . trim($namespace, '\\'), '\\');
+        return $this->configure->getFullPath()
+            ? trim($this->configure->getNamespace() . '\\' . trim($namespace, '\\'), '\\')
+            : $this->configure->getNamespace();
     }
 
 

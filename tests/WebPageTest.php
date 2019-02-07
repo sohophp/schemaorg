@@ -12,13 +12,13 @@ class WebPageTest extends TestCase
         $WebPage = new WebPage();
         $WebPage->name('one test')->text('one content');
         $params = $WebPage->toArray();
-/*
- * array(3) {
-   ["@type"]=> string(7) "WebPage"
-   ["name"]=>string(8) "one test"
-   ["text"]=>string(11) "one content"
-  }
-*/
+        /*
+        array(3) {
+           ["@type"]=> string(7) "WebPage"
+           ["name"]=>string(8) "one test"
+           ["text"]=>string(11) "one content"
+          }
+        */
         $this->assertCount(3, $params);
     }
 

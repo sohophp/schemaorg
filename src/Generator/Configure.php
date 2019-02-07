@@ -17,7 +17,9 @@ class Configure
             'schemaJsonldFilePath' => realpath(__DIR__ . '/../../data/schema.jsonld'),
             'consoleMessage' => true,
             'namespace' => $this->getNamespace(),
-            'fixCs' => true
+            'fixCs' => true,
+            //是否使用完整目录关系和命名空间
+            'fullpath' => true
         ];
         $this->cfg = array_merge($defs, $cfg);
     }
@@ -72,6 +74,11 @@ class Configure
     public function getFixCs()
     {
         return $this->get('fixCs');
+    }
+
+    public function getFullPath()
+    {
+        return $this->get('fullpath');
     }
 
 }
