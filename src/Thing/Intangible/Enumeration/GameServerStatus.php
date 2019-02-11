@@ -1,10 +1,8 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Intangible\Enumeration;
 
 use Sohophp\SchemaOrg\Thing\Intangible\Enumeration;
+
 /**
 * Status of a game server.
 * @see http://schema.org/GameServerStatus
@@ -13,6 +11,6 @@ use Sohophp\SchemaOrg\Thing\Intangible\Enumeration;
 class GameServerStatus extends Enumeration
 {
 
-     
+
 }
 

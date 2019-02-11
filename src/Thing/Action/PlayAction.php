@@ -1,12 +1,10 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Action;
 
 use Sohophp\SchemaOrg\Thing\Action;
 use Sohophp\SchemaOrg\Thing\Intangible\Audience;
 use Sohophp\SchemaOrg\Thing\Event;
+
 /**
 * The act of playing/exercising/training/performing for enjoyment, leisure, recreation, Competition or exercise.<br/><br/>
 
@@ -23,32 +21,28 @@ Related actions:<br/><br/>
 class PlayAction extends Action
 {
 
-     
-     /**
-     * An intended audience, i.e. a group for whom something was created.
-     * @param Audience $value
-     * @return $this
-     */
-
-     public function audience(?Audience $value):self
-     {
-        $this->setProperty("audience",$value);
+    /**
+    * An intended audience, i.e. a group for whom something was created.
+    * @param Audience $value
+    * @return $this
+    */
+    public function audience(?Audience $value)
+    {
+        $this->setProperty('audience', $value);
         return $this;
-     }
+    }
 
-     
-     /**
-     * Upcoming or past event associated with this place, organization, or action.
-     * @param Event $value
-     * @return $this
-     */
-
-     public function event(?Event $value):self
-     {
-        $this->setProperty("event",$value);
+    /**
+    * Upcoming or past event associated with this place, organization, or action.
+    * @param Event $value
+    * @return $this
+    */
+    public function event(?Event $value)
+    {
+        $this->setProperty('event', $value);
         return $this;
-     }
+    }
 
-     
+
 }
 

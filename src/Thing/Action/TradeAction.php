@@ -1,11 +1,9 @@
 <?php
-
-declare (strict_types=1);
-
 namespace Sohophp\SchemaOrg\Thing\Action;
 
 use Sohophp\SchemaOrg\Thing\Action;
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\PriceSpecification;
+
 /**
 * The act of participating in an exchange of goods and services for monetary compensation. An agent trades an object, product or service with a participant in exchange for a one time or periodic payment.
 * @see http://schema.org/TradeAction
@@ -14,22 +12,19 @@ use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\PriceSpecification;
 class TradeAction extends Action
 {
 
-     
-     /**
-     * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
-     * @param PriceSpecification $value
-     * @return $this
-     */
-
-     public function priceSpecification(?PriceSpecification $value):self
-     {
-        $this->setProperty("priceSpecification",$value);
+    /**
+    * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
+    * @param PriceSpecification $value
+    * @return $this
+    */
+    public function priceSpecification(?PriceSpecification $value)
+    {
+        $this->setProperty('priceSpecification', $value);
         return $this;
-     }
+    }
 
-     
-     /**
-     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>
+    /**
+    * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>
 
 Usage guidelines:<br/><br/>
 
@@ -40,16 +35,15 @@ Usage guidelines:<br/><br/>
 <li>Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.</li>
 </ul>
 
-     * @param string $value
-     * @return $this
-     */
-
-     public function price(?string $value):self
-     {
-        $this->setProperty("price",$value);
+    * @param string $value
+    * @return $this
+    */
+    public function price(? $value)
+    {
+        $this->setProperty('price', $value);
         return $this;
-     }
+    }
 
-     
+
 }
 

@@ -1,11 +1,9 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
 
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
 use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\DayOfWeek;
+
 /**
 * A structured value providing information about the opening hours of a place or a certain service inside a place.<br/><br/>
 
@@ -18,71 +16,61 @@ If the value for the <a class="localLink" href="http://schema.org/closes">closes
 class OpeningHoursSpecification extends StructuredValue
 {
 
-     
-     /**
-     * The date when the item becomes valid.
-     * @param  $value
-     * @return $this
-     */
-
-     public function validFrom( $value):self
-     {
-        $this->setProperty("validFrom",$value);
+    /**
+    * The date when the item becomes valid.
+    * @param  $value
+    * @return $this
+    */
+    public function validFrom($value)
+    {
+        $this->setProperty('validFrom', $value);
         return $this;
-     }
+    }
 
-     
-     /**
-     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
-     * @param  $value
-     * @return $this
-     */
-
-     public function validThrough( $value):self
-     {
-        $this->setProperty("validThrough",$value);
+    /**
+    * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+    * @param  $value
+    * @return $this
+    */
+    public function validThrough($value)
+    {
+        $this->setProperty('validThrough', $value);
         return $this;
-     }
+    }
 
-     
-     /**
-     * The opening hour of the place or service on the given day(s) of the week.
-     * @param  $value
-     * @return $this
-     */
-
-     public function opens( $value):self
-     {
-        $this->setProperty("opens",$value);
+    /**
+    * The opening hour of the place or service on the given day(s) of the week.
+    * @param  $value
+    * @return $this
+    */
+    public function opens($value)
+    {
+        $this->setProperty('opens', $value);
         return $this;
-     }
+    }
 
-     
-     /**
-     * The closing hour of the place or service on the given day(s) of the week.
-     * @param  $value
-     * @return $this
-     */
-
-     public function closes( $value):self
-     {
-        $this->setProperty("closes",$value);
+    /**
+    * The closing hour of the place or service on the given day(s) of the week.
+    * @param  $value
+    * @return $this
+    */
+    public function closes($value)
+    {
+        $this->setProperty('closes', $value);
         return $this;
-     }
+    }
 
-     
-     /**
-     * The day of the week for which these opening hours are valid.
-     * @param DayOfWeek $value
-     * @return $this
-     */
-
-     public function dayOfWeek(?DayOfWeek $value):self
-     {
-        $this->setProperty("dayOfWeek",$value);
+    /**
+    * The day of the week for which these opening hours are valid.
+    * @param DayOfWeek $value
+    * @return $this
+    */
+    public function dayOfWeek(?DayOfWeek $value)
+    {
+        $this->setProperty('dayOfWeek', $value);
         return $this;
-     }
+    }
 
-     
+
 }
 

@@ -1,10 +1,8 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Action\OrganizeAction\PlanAction;
 
 use Sohophp\SchemaOrg\Thing\Action\OrganizeAction\PlanAction;
+
 /**
 * The act of asserting that a future event/action is no longer going to happen.<br/><br/>
 
@@ -20,6 +18,6 @@ Related actions:<br/><br/>
 class CancelAction extends PlanAction
 {
 
-     
+
 }
 

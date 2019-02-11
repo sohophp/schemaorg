@@ -1,10 +1,8 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Intangible\Series;
 
 use Sohophp\SchemaOrg\Thing\Intangible\Series;
+
 /**
 * A CreativeWorkSeries in schema.org is a group of related items, typically but not necessarily of the same kind. CreativeWorkSeries are usually organized into some order, often chronological. Unlike <a class="localLink" href="http://schema.org/ItemList">ItemList</a> which is a general purpose data structure for lists of things, the emphasis with CreativeWorkSeries is on published materials (written e.g. books and periodicals, or media such as tv, radio and games).<br/><br/>
 
@@ -17,45 +15,39 @@ It is common for properties applicable to an item from the series to be usefully
 class CreativeWorkSeries extends Series
 {
 
-     
-     /**
-     * The end date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).
-     * @param  $value
-     * @return $this
-     */
-
-     public function endDate( $value):self
-     {
-        $this->setProperty("endDate",$value);
+    /**
+    * The end date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).
+    * @param  $value
+    * @return $this
+    */
+    public function endDate($value)
+    {
+        $this->setProperty('endDate', $value);
         return $this;
-     }
+    }
 
-     
-     /**
-     * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
-     * @param string $value
-     * @return $this
-     */
-
-     public function issn(?string $value):self
-     {
-        $this->setProperty("issn",$value);
+    /**
+    * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
+    * @param string $value
+    * @return $this
+    */
+    public function issn(?string $value)
+    {
+        $this->setProperty('issn', $value);
         return $this;
-     }
+    }
 
-     
-     /**
-     * The start date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).
-     * @param  $value
-     * @return $this
-     */
-
-     public function startDate( $value):self
-     {
-        $this->setProperty("startDate",$value);
+    /**
+    * The start date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).
+    * @param  $value
+    * @return $this
+    */
+    public function startDate($value)
+    {
+        $this->setProperty('startDate', $value);
         return $this;
-     }
+    }
 
-     
+
 }
 

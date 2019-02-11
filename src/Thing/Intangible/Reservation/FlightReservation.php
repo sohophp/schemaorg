@@ -1,11 +1,9 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Intangible\Reservation;
 
 use Sohophp\SchemaOrg\Thing\Intangible\Reservation;
 use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\QualitativeValue;
+
 /**
 * A reservation for air travel.<br/><br/>
 
@@ -16,58 +14,50 @@ Note: This type is for information about actual reservations, e.g. in confirmati
 class FlightReservation extends Reservation
 {
 
-     
-     /**
-     * The airline-specific indicator of boarding order / preference.
-     * @param string $value
-     * @return $this
-     */
-
-     public function boardingGroup(?string $value):self
-     {
-        $this->setProperty("boardingGroup",$value);
+    /**
+    * The airline-specific indicator of boarding order / preference.
+    * @param string $value
+    * @return $this
+    */
+    public function boardingGroup(?string $value)
+    {
+        $this->setProperty('boardingGroup', $value);
         return $this;
-     }
+    }
 
-     
-     /**
-     * The passenger's sequence number as assigned by the airline.
-     * @param string $value
-     * @return $this
-     */
-
-     public function passengerSequenceNumber(?string $value):self
-     {
-        $this->setProperty("passengerSequenceNumber",$value);
+    /**
+    * The passenger's sequence number as assigned by the airline.
+    * @param string $value
+    * @return $this
+    */
+    public function passengerSequenceNumber(?string $value)
+    {
+        $this->setProperty('passengerSequenceNumber', $value);
         return $this;
-     }
+    }
 
-     
-     /**
-     * The type of security screening the passenger is subject to.
-     * @param string $value
-     * @return $this
-     */
-
-     public function securityScreening(?string $value):self
-     {
-        $this->setProperty("securityScreening",$value);
+    /**
+    * The type of security screening the passenger is subject to.
+    * @param string $value
+    * @return $this
+    */
+    public function securityScreening(?string $value)
+    {
+        $this->setProperty('securityScreening', $value);
         return $this;
-     }
+    }
 
-     
-     /**
-     * The priority status assigned to a passenger for security or boarding (e.g. FastTrack or Priority).
-     * @param string|QualitativeValue $value
-     * @return $this
-     */
-
-     public function passengerPriorityStatus( $value):self
-     {
-        $this->setProperty("passengerPriorityStatus",$value);
+    /**
+    * The priority status assigned to a passenger for security or boarding (e.g. FastTrack or Priority).
+    * @param string|QualitativeValue $value
+    * @return $this
+    */
+    public function passengerPriorityStatus($value)
+    {
+        $this->setProperty('passengerPriorityStatus', $value);
         return $this;
-     }
+    }
 
-     
+
 }
 

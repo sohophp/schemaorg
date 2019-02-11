@@ -1,11 +1,9 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Intangible\Reservation;
 
 use Sohophp\SchemaOrg\Thing\Intangible\Reservation;
 use Sohophp\SchemaOrg\Thing\Place;
+
 /**
 * A reservation for a rental car.<br/><br/>
 
@@ -16,58 +14,50 @@ Note: This type is for information about actual reservations, e.g. in confirmati
 class RentalCarReservation extends Reservation
 {
 
-     
-     /**
-     * When a taxi will pickup a passenger or a rental car can be picked up.
-     * @param  $value
-     * @return $this
-     */
-
-     public function pickupTime( $value):self
-     {
-        $this->setProperty("pickupTime",$value);
+    /**
+    * When a taxi will pickup a passenger or a rental car can be picked up.
+    * @param  $value
+    * @return $this
+    */
+    public function pickupTime($value)
+    {
+        $this->setProperty('pickupTime', $value);
         return $this;
-     }
+    }
 
-     
-     /**
-     * Where a rental car can be dropped off.
-     * @param Place $value
-     * @return $this
-     */
-
-     public function dropoffLocation(?Place $value):self
-     {
-        $this->setProperty("dropoffLocation",$value);
+    /**
+    * Where a rental car can be dropped off.
+    * @param Place $value
+    * @return $this
+    */
+    public function dropoffLocation(?Place $value)
+    {
+        $this->setProperty('dropoffLocation', $value);
         return $this;
-     }
+    }
 
-     
-     /**
-     * When a rental car can be dropped off.
-     * @param  $value
-     * @return $this
-     */
-
-     public function dropoffTime( $value):self
-     {
-        $this->setProperty("dropoffTime",$value);
+    /**
+    * When a rental car can be dropped off.
+    * @param  $value
+    * @return $this
+    */
+    public function dropoffTime($value)
+    {
+        $this->setProperty('dropoffTime', $value);
         return $this;
-     }
+    }
 
-     
-     /**
-     * Where a taxi will pick up a passenger or a rental car can be picked up.
-     * @param Place $value
-     * @return $this
-     */
-
-     public function pickupLocation(?Place $value):self
-     {
-        $this->setProperty("pickupLocation",$value);
+    /**
+    * Where a taxi will pick up a passenger or a rental car can be picked up.
+    * @param Place $value
+    * @return $this
+    */
+    public function pickupLocation(?Place $value)
+    {
+        $this->setProperty('pickupLocation', $value);
         return $this;
-     }
+    }
 
-     
+
 }
 

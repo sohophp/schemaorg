@@ -1,10 +1,8 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Intangible\Reservation;
 
 use Sohophp\SchemaOrg\Thing\Intangible\Reservation;
+
 /**
 * A reservation for an event like a concert, sporting event, or lecture.<br/><br/>
 
@@ -15,6 +13,6 @@ Note: This type is for information about actual reservations, e.g. in confirmati
 class EventReservation extends Reservation
 {
 
-     
+
 }
 

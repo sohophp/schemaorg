@@ -1,10 +1,8 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Action\TransferAction;
 
 use Sohophp\SchemaOrg\Thing\Action\TransferAction;
+
 /**
 * The act of gaining ownership of an object from an origin. Reciprocal of GiveAction.<br/><br/>
 
@@ -21,6 +19,6 @@ Related actions:<br/><br/>
 class TakeAction extends TransferAction
 {
 
-     
+
 }
 

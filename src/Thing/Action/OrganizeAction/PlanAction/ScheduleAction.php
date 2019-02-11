@@ -1,10 +1,8 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Action\OrganizeAction\PlanAction;
 
 use Sohophp\SchemaOrg\Thing\Action\OrganizeAction\PlanAction;
+
 /**
 * Scheduling future actions, events, or tasks.<br/><br/>
 
@@ -20,6 +18,6 @@ Related actions:<br/><br/>
 class ScheduleAction extends PlanAction
 {
 
-     
+
 }
 

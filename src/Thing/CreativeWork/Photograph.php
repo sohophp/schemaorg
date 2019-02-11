@@ -1,10 +1,8 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\CreativeWork;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork;
+
 /**
 * A photograph.
 * @see http://schema.org/Photograph
@@ -13,6 +11,6 @@ use Sohophp\SchemaOrg\Thing\CreativeWork;
 class Photograph extends CreativeWork
 {
 
-     
+
 }
 

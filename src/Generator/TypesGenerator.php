@@ -100,13 +100,14 @@ class TypesGenerator
                         $range[] = $this->rangeString($item);
                     }
                 }
-                $range = array_filter($range);//rangeString可能有null
-                $range = array_values($range);
+
+                    //rangeString可能有null
+                $range = array_filter(array_map('trim', $range));
                 $class['properties'][] = [
                     'name' => $property->getName(),
                     'annotations' => [$property->getComment()],
                     'range' => implode('|', $range),
-                    'range_default' => count($range) == 1 ? '?' . $range[0] : null
+                    'range_default' => count($range) === 1 ? '?' . $range[0] : null
                 ];
             }
             $class['uses'] = array_unique($uses);

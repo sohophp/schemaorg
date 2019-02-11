@@ -1,11 +1,9 @@
 <?php
-
-declare (strict_types=1);
-
 namespace Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
 
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\QuantitativeValue;
+
 /**
 * A structured value representing a price or price range. Typically, only the subclasses of this type are used for markup. It is recommended to use <a class="localLink" href="http://schema.org/MonetaryAmount">MonetaryAmount</a> to describe independent amounts of money such as a salary, credit card limits, etc.
 * @see http://schema.org/PriceSpecification
@@ -14,102 +12,87 @@ use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\QuantitativeValue;
 class PriceSpecification extends StructuredValue
 {
 
-     
-     /**
-     * The lowest price if the price is a range.
-     * @param  $value
-     * @return $this
-     */
-
-     public function minPrice( $value):self
-     {
-        $this->setProperty("minPrice",$value);
+    /**
+    * The lowest price if the price is a range.
+    * @param  $value
+    * @return $this
+    */
+    public function minPrice($value)
+    {
+        $this->setProperty('minPrice', $value);
         return $this;
-     }
+    }
 
-     
-     /**
-     * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
-     * @param PriceSpecification $value
-     * @return $this
-     */
-
-     public function eligibleTransactionVolume(?PriceSpecification $value):self
-     {
-        $this->setProperty("eligibleTransactionVolume",$value);
+    /**
+    * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
+    * @param PriceSpecification $value
+    * @return $this
+    */
+    public function eligibleTransactionVolume(?PriceSpecification $value)
+    {
+        $this->setProperty('eligibleTransactionVolume', $value);
         return $this;
-     }
+    }
 
-     
-     /**
-     * The highest price if the price is a range.
-     * @param  $value
-     * @return $this
-     */
-
-     public function maxPrice( $value):self
-     {
-        $this->setProperty("maxPrice",$value);
+    /**
+    * The highest price if the price is a range.
+    * @param  $value
+    * @return $this
+    */
+    public function maxPrice($value)
+    {
+        $this->setProperty('maxPrice', $value);
         return $this;
-     }
+    }
 
-     
-     /**
-     * The currency of the price, or a price component when attached to <a class="localLink" href="http://schema.org/PriceSpecification">PriceSpecification</a> and its subtypes.<br/><br/>
+    /**
+    * The currency of the price, or a price component when attached to <a class="localLink" href="http://schema.org/PriceSpecification">PriceSpecification</a> and its subtypes.<br/><br/>
 
 Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 currency format</a> e.g. "USD"; <a href="https://en.wikipedia.org/wiki/List_of_cryptocurrencies">Ticker symbol</a> for cryptocurrencies e.g. "BTC"; well known names for <a href="https://en.wikipedia.org/wiki/Local_exchange_trading_system">Local Exchange Tradings Systems</a> (LETS) and other currency types e.g. "Ithaca HOUR".
-     * @param string $value
-     * @return $this
-     */
-
-     public function priceCurrency(?string $value):self
-     {
-        $this->setProperty("priceCurrency",$value);
+    * @param string $value
+    * @return $this
+    */
+    public function priceCurrency(?string $value)
+    {
+        $this->setProperty('priceCurrency', $value);
         return $this;
-     }
+    }
 
-     
-     /**
-     * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
-     * @param QuantitativeValue $value
-     * @return $this
-     */
-
-     public function eligibleQuantity(?QuantitativeValue $value):self
-     {
-        $this->setProperty("eligibleQuantity",$value);
+    /**
+    * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
+    * @param QuantitativeValue $value
+    * @return $this
+    */
+    public function eligibleQuantity(?QuantitativeValue $value)
+    {
+        $this->setProperty('eligibleQuantity', $value);
         return $this;
-     }
+    }
 
-     
-     /**
-     * The date when the item becomes valid.
-     * @param  $value
-     * @return $this
-     */
-
-     public function validFrom( $value):self
-     {
-        $this->setProperty("validFrom",$value);
+    /**
+    * The date when the item becomes valid.
+    * @param  $value
+    * @return $this
+    */
+    public function validFrom($value)
+    {
+        $this->setProperty('validFrom', $value);
         return $this;
-     }
+    }
 
-     
-     /**
-     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
-     * @param  $value
-     * @return $this
-     */
-
-     public function validThrough( $value):self
-     {
-        $this->setProperty("validThrough",$value);
+    /**
+    * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+    * @param  $value
+    * @return $this
+    */
+    public function validThrough($value)
+    {
+        $this->setProperty('validThrough', $value);
         return $this;
-     }
+    }
 
-     
-     /**
-     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>
+    /**
+    * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>
 
 Usage guidelines:<br/><br/>
 
@@ -120,29 +103,26 @@ Usage guidelines:<br/><br/>
 <li>Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.</li>
 </ul>
 
-     * @param string $value
-     * @return $this
-     */
-
-     public function price(?string $value):self
-     {
-        $this->setProperty("price",$value);
+    * @param string $value
+    * @return $this
+    */
+    public function price(? $value)
+    {
+        $this->setProperty('price', $value);
         return $this;
-     }
+    }
 
-     
-     /**
-     * Specifies whether the applicable value-added tax (VAT) is included in the price specification or not.
-     * @param bool $value
-     * @return $this
-     */
-
-     public function valueAddedTaxIncluded(?bool $value):self
-     {
-        $this->setProperty("valueAddedTaxIncluded",$value);
+    /**
+    * Specifies whether the applicable value-added tax (VAT) is included in the price specification or not.
+    * @param bool $value
+    * @return $this
+    */
+    public function valueAddedTaxIncluded(?bool $value)
+    {
+        $this->setProperty('valueAddedTaxIncluded', $value);
         return $this;
-     }
+    }
 
-     
+
 }
 

@@ -1,10 +1,8 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Action\ConsumeAction;
 
 use Sohophp\SchemaOrg\Thing\Action\ConsumeAction;
+
 /**
 * The act of consuming audio content.
 * @see http://schema.org/ListenAction
@@ -13,6 +11,6 @@ use Sohophp\SchemaOrg\Thing\Action\ConsumeAction;
 class ListenAction extends ConsumeAction
 {
 
-     
+
 }
 

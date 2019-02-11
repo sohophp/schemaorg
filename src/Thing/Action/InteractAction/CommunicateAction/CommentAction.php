@@ -1,11 +1,9 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Action\InteractAction\CommunicateAction;
 
 use Sohophp\SchemaOrg\Thing\Action\InteractAction\CommunicateAction;
 use Sohophp\SchemaOrg\Thing\CreativeWork\Comment;
+
 /**
 * The act of generating a comment about a subject.
 * @see http://schema.org/CommentAction
@@ -14,19 +12,17 @@ use Sohophp\SchemaOrg\Thing\CreativeWork\Comment;
 class CommentAction extends CommunicateAction
 {
 
-     
-     /**
-     * A sub property of result. The Comment created or sent as a result of this action.
-     * @param Comment $value
-     * @return $this
-     */
-
-     public function resultComment(?Comment $value):self
-     {
-        $this->setProperty("resultComment",$value);
+    /**
+    * A sub property of result. The Comment created or sent as a result of this action.
+    * @param Comment $value
+    * @return $this
+    */
+    public function resultComment(?Comment $value)
+    {
+        $this->setProperty('resultComment', $value);
         return $this;
-     }
+    }
 
-     
+
 }
 

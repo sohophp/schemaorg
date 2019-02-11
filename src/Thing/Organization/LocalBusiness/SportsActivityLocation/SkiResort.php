@@ -1,10 +1,8 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Organization\LocalBusiness\SportsActivityLocation;
 
 use Sohophp\SchemaOrg\Thing\Organization\LocalBusiness\SportsActivityLocation;
+
 /**
 * A ski resort.
 * @see http://schema.org/SkiResort
@@ -13,6 +11,6 @@ use Sohophp\SchemaOrg\Thing\Organization\LocalBusiness\SportsActivityLocation;
 class SkiResort extends SportsActivityLocation
 {
 
-     
+
 }
 

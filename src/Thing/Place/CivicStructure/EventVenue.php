@@ -1,10 +1,8 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Place\CivicStructure;
 
 use Sohophp\SchemaOrg\Thing\Place\CivicStructure;
+
 /**
 * An event venue.
 * @see http://schema.org/EventVenue
@@ -13,6 +11,6 @@ use Sohophp\SchemaOrg\Thing\Place\CivicStructure;
 class EventVenue extends CivicStructure
 {
 
-     
+
 }
 

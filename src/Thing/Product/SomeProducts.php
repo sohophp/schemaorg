@@ -1,11 +1,9 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Product;
 
 use Sohophp\SchemaOrg\Thing\Product;
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\QuantitativeValue;
+
 /**
 * A placeholder for multiple similar products of the same kind.
 * @see http://schema.org/SomeProducts
@@ -14,19 +12,17 @@ use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\QuantitativeValue;
 class SomeProducts extends Product
 {
 
-     
-     /**
-     * The current approximate inventory level for the item or items.
-     * @param QuantitativeValue $value
-     * @return $this
-     */
-
-     public function inventoryLevel(?QuantitativeValue $value):self
-     {
-        $this->setProperty("inventoryLevel",$value);
+    /**
+    * The current approximate inventory level for the item or items.
+    * @param QuantitativeValue $value
+    * @return $this
+    */
+    public function inventoryLevel(?QuantitativeValue $value)
+    {
+        $this->setProperty('inventoryLevel', $value);
         return $this;
-     }
+    }
 
-     
+
 }
 

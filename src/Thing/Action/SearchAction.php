@@ -1,10 +1,8 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Action;
 
 use Sohophp\SchemaOrg\Thing\Action;
+
 /**
 * The act of searching for an object.<br/><br/>
 
@@ -20,19 +18,17 @@ Related actions:<br/><br/>
 class SearchAction extends Action
 {
 
-     
-     /**
-     * A sub property of instrument. The query used on this action.
-     * @param string $value
-     * @return $this
-     */
-
-     public function query(?string $value):self
-     {
-        $this->setProperty("query",$value);
+    /**
+    * A sub property of instrument. The query used on this action.
+    * @param string $value
+    * @return $this
+    */
+    public function query(?string $value)
+    {
+        $this->setProperty('query', $value);
         return $this;
-     }
+    }
 
-     
+
 }
 

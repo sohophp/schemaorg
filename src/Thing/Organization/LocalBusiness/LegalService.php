@@ -1,10 +1,8 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Organization\LocalBusiness;
 
 use Sohophp\SchemaOrg\Thing\Organization\LocalBusiness;
+
 /**
 * A LegalService is a business that provides legally-oriented services, advice and representation, e.g. law firms.<br/><br/>
 
@@ -15,6 +13,6 @@ As a <a class="localLink" href="http://schema.org/LocalBusiness">LocalBusiness</
 class LegalService extends LocalBusiness
 {
 
-     
+
 }
 

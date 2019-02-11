@@ -1,10 +1,8 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Organization\LocalBusiness;
 
 use Sohophp\SchemaOrg\Thing\Organization\LocalBusiness;
+
 /**
 * Original definition: "provider of professional services."<br/><br/>
 
@@ -17,6 +15,6 @@ The general <a class="localLink" href="http://schema.org/ProfessionalService">Pr
 class ProfessionalService extends LocalBusiness
 {
 
-     
+
 }
 

@@ -1,10 +1,8 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Action\InteractAction\CommunicateAction\InformAction;
 
 use Sohophp\SchemaOrg\Thing\Action\InteractAction\CommunicateAction\InformAction;
+
 /**
 * The act of notifying someone that a future event/action is going to happen as expected.<br/><br/>
 
@@ -20,6 +18,6 @@ Related actions:<br/><br/>
 class ConfirmAction extends InformAction
 {
 
-     
+
 }
 

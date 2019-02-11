@@ -1,10 +1,8 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Organization\LocalBusiness\FinancialService;
 
 use Sohophp\SchemaOrg\Thing\Organization\LocalBusiness\FinancialService;
+
 /**
 * Accountancy business.<br/><br/>
 
@@ -15,6 +13,6 @@ As a <a class="localLink" href="http://schema.org/LocalBusiness">LocalBusiness</
 class AccountingService extends FinancialService
 {
 
-     
+
 }
 

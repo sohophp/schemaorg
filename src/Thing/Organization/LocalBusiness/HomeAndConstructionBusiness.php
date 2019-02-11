@@ -1,10 +1,8 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Organization\LocalBusiness;
 
 use Sohophp\SchemaOrg\Thing\Organization\LocalBusiness;
+
 /**
 * A construction business.<br/><br/>
 
@@ -17,6 +15,6 @@ As a <a class="localLink" href="http://schema.org/LocalBusiness">LocalBusiness</
 class HomeAndConstructionBusiness extends LocalBusiness
 {
 
-     
+
 }
 

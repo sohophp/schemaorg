@@ -1,10 +1,8 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\CreativeWork\DigitalDocument;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork\DigitalDocument;
+
 /**
 * A spreadsheet file.
 * @see http://schema.org/SpreadsheetDigitalDocument
@@ -13,6 +11,6 @@ use Sohophp\SchemaOrg\Thing\CreativeWork\DigitalDocument;
 class SpreadsheetDigitalDocument extends DigitalDocument
 {
 
-     
+
 }
 

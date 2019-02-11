@@ -1,11 +1,9 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Intangible\Service\FinancialProduct;
 
 use Sohophp\SchemaOrg\Thing\Intangible\Service\FinancialProduct;
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\MonetaryAmount;
+
 /**
 * A type of financial product that typically requires the client to transfer funds to a financial service in return for potential beneficial financial return.
 * @see http://schema.org/InvestmentOrDeposit
@@ -14,19 +12,17 @@ use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\MonetaryAmount;
 class InvestmentOrDeposit extends FinancialProduct
 {
 
-     
-     /**
-     * The amount of money.
-     * @param MonetaryAmount $value
-     * @return $this
-     */
-
-     public function amount(?MonetaryAmount $value):self
-     {
-        $this->setProperty("amount",$value);
+    /**
+    * The amount of money.
+    * @param MonetaryAmount $value
+    * @return $this
+    */
+    public function amount(?MonetaryAmount $value)
+    {
+        $this->setProperty('amount', $value);
         return $this;
-     }
+    }
 
-     
+
 }
 

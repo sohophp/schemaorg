@@ -1,11 +1,9 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Organization;
 
 use Sohophp\SchemaOrg\Thing\Organization;
 use Sohophp\SchemaOrg\Thing\Person;
+
 /**
 * An educational organization.
 * @see http://schema.org/EducationalOrganization
@@ -14,19 +12,17 @@ use Sohophp\SchemaOrg\Thing\Person;
 class EducationalOrganization extends Organization
 {
 
-     
-     /**
-     * Alumni of an organization.
-     * @param Person $value
-     * @return $this
-     */
-
-     public function alumni(?Person $value):self
-     {
-        $this->setProperty("alumni",$value);
+    /**
+    * Alumni of an organization.
+    * @param Person $value
+    * @return $this
+    */
+    public function alumni(?Person $value)
+    {
+        $this->setProperty('alumni', $value);
         return $this;
-     }
+    }
 
-     
+
 }
 

@@ -1,10 +1,8 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Action\OrganizeAction;
 
 use Sohophp\SchemaOrg\Thing\Action\OrganizeAction;
+
 /**
 * The act of registering to an organization/service without the guarantee to receive it.<br/><br/>
 
@@ -20,6 +18,6 @@ Related actions:<br/><br/>
 class ApplyAction extends OrganizeAction
 {
 
-     
+
 }
 

@@ -1,11 +1,9 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Action\InteractAction;
 
 use Sohophp\SchemaOrg\Thing\Action\InteractAction;
 use Sohophp\SchemaOrg\Thing\Event;
+
 /**
 * An agent joins an event/group with participants/friends at a location.<br/><br/>
 
@@ -23,19 +21,17 @@ Related actions:<br/><br/>
 class JoinAction extends InteractAction
 {
 
-     
-     /**
-     * Upcoming or past event associated with this place, organization, or action.
-     * @param Event $value
-     * @return $this
-     */
-
-     public function event(?Event $value):self
-     {
-        $this->setProperty("event",$value);
+    /**
+    * Upcoming or past event associated with this place, organization, or action.
+    * @param Event $value
+    * @return $this
+    */
+    public function event(?Event $value)
+    {
+        $this->setProperty('event', $value);
         return $this;
-     }
+    }
 
-     
+
 }
 

@@ -1,10 +1,8 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Intangible\ListItem\HowToItem;
 
 use Sohophp\SchemaOrg\Thing\Intangible\ListItem\HowToItem;
+
 /**
 * A tool used (but not consumed) when performing instructions for how to achieve a result.
 * @see http://schema.org/HowToTool
@@ -13,6 +11,6 @@ use Sohophp\SchemaOrg\Thing\Intangible\ListItem\HowToItem;
 class HowToTool extends HowToItem
 {
 
-     
+
 }
 

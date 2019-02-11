@@ -1,10 +1,8 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Place;
 
 use Sohophp\SchemaOrg\Thing\Place;
+
 /**
 * A public structure, such as a town hall or concert hall.
 * @see http://schema.org/CivicStructure
@@ -13,9 +11,8 @@ use Sohophp\SchemaOrg\Thing\Place;
 class CivicStructure extends Place
 {
 
-     
-     /**
-     * The general opening hours for a business. Opening hours can be specified as a weekly time range, starting with days, then times per day. Multiple days can be listed with commas ',' separating each day. Day or time ranges are specified using a hyphen '-'.<br/><br/>
+    /**
+    * The general opening hours for a business. Opening hours can be specified as a weekly time range, starting with days, then times per day. Multiple days can be listed with commas ',' separating each day. Day or time ranges are specified using a hyphen '-'.<br/><br/>
 
 <ul>
 <li>Days are specified using the following two-letter combinations: <code>Mo</code>, <code>Tu</code>, <code>We</code>, <code>Th</code>, <code>Fr</code>, <code>Sa</code>, <code>Su</code>.</li>
@@ -24,16 +21,15 @@ class CivicStructure extends Place
 <li>If a business is open 7 days a week, then it can be specified as <code>&lt;time itemprop=&quot;openingHours&quot; datetime=&quot;Mo-Su&quot;&gt;Monday through Sunday, all day&lt;/time&gt;</code>.</li>
 </ul>
 
-     * @param string $value
-     * @return $this
-     */
-
-     public function openingHours(?string $value):self
-     {
-        $this->setProperty("openingHours",$value);
+    * @param string $value
+    * @return $this
+    */
+    public function openingHours(?string $value)
+    {
+        $this->setProperty('openingHours', $value);
         return $this;
-     }
+    }
 
-     
+
 }
 

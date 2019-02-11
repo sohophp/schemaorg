@@ -1,10 +1,8 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Intangible\Enumeration;
 
 use Sohophp\SchemaOrg\Thing\Intangible\Enumeration;
+
 /**
 * Format of this release (the type of recording media used, ie. compact disc, digital media, LP, etc.).
 * @see http://schema.org/MusicReleaseFormatType
@@ -13,6 +11,6 @@ use Sohophp\SchemaOrg\Thing\Intangible\Enumeration;
 class MusicReleaseFormatType extends Enumeration
 {
 
-     
+
 }
 

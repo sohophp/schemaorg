@@ -1,10 +1,8 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\CreativeWork;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork;
+
 /**
 * A piece of sculpture.
 * @see http://schema.org/Sculpture
@@ -13,6 +11,6 @@ use Sohophp\SchemaOrg\Thing\CreativeWork;
 class Sculpture extends CreativeWork
 {
 
-     
+
 }
 

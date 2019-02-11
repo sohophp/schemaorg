@@ -1,10 +1,8 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Action\InteractAction;
 
 use Sohophp\SchemaOrg\Thing\Action\InteractAction;
+
 /**
 * The act of registering to be a user of a service, product or web page.<br/><br/>
 
@@ -22,6 +20,6 @@ Related actions:<br/><br/>
 class RegisterAction extends InteractAction
 {
 
-     
+
 }
 

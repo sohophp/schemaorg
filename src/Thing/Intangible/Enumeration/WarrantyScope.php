@@ -1,10 +1,8 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Intangible\Enumeration;
 
 use Sohophp\SchemaOrg\Thing\Intangible\Enumeration;
+
 /**
 * A range of of services that will be provided to a customer free of charge in case of a defect or malfunction of a product.<br/><br/>
 
@@ -22,6 +20,6 @@ Commonly used values:<br/><br/>
 class WarrantyScope extends Enumeration
 {
 
-     
+
 }
 

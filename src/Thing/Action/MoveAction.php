@@ -1,11 +1,9 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Action;
 
 use Sohophp\SchemaOrg\Thing\Action;
 use Sohophp\SchemaOrg\Thing\Place;
+
 /**
 * The act of an agent relocating to a place.<br/><br/>
 
@@ -21,32 +19,28 @@ Related actions:<br/><br/>
 class MoveAction extends Action
 {
 
-     
-     /**
-     * A sub property of location. The final location of the object or the agent after the action.
-     * @param Place $value
-     * @return $this
-     */
-
-     public function toLocation(?Place $value):self
-     {
-        $this->setProperty("toLocation",$value);
+    /**
+    * A sub property of location. The final location of the object or the agent after the action.
+    * @param Place $value
+    * @return $this
+    */
+    public function toLocation(?Place $value)
+    {
+        $this->setProperty('toLocation', $value);
         return $this;
-     }
+    }
 
-     
-     /**
-     * A sub property of location. The original location of the object or the agent before the action.
-     * @param Place $value
-     * @return $this
-     */
-
-     public function fromLocation(?Place $value):self
-     {
-        $this->setProperty("fromLocation",$value);
+    /**
+    * A sub property of location. The original location of the object or the agent before the action.
+    * @param Place $value
+    * @return $this
+    */
+    public function fromLocation(?Place $value)
+    {
+        $this->setProperty('fromLocation', $value);
         return $this;
-     }
+    }
 
-     
+
 }
 

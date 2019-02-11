@@ -1,10 +1,8 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Place\CivicStructure\PlaceOfWorship;
 
 use Sohophp\SchemaOrg\Thing\Place\CivicStructure\PlaceOfWorship;
+
 /**
 * A mosque.
 * @see http://schema.org/Mosque
@@ -13,6 +11,6 @@ use Sohophp\SchemaOrg\Thing\Place\CivicStructure\PlaceOfWorship;
 class Mosque extends PlaceOfWorship
 {
 
-     
+
 }
 

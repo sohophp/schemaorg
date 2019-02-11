@@ -1,10 +1,8 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Intangible\Enumeration;
 
 use Sohophp\SchemaOrg\Thing\Intangible\Enumeration;
+
 /**
 * The publication format of the book.
 * @see http://schema.org/BookFormatType
@@ -13,6 +11,6 @@ use Sohophp\SchemaOrg\Thing\Intangible\Enumeration;
 class BookFormatType extends Enumeration
 {
 
-     
+
 }
 

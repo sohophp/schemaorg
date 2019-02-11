@@ -1,10 +1,8 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Event;
 
 use Sohophp\SchemaOrg\Thing\Event;
+
 /**
 * Event type: Education event.
 * @see http://schema.org/EducationEvent
@@ -13,6 +11,6 @@ use Sohophp\SchemaOrg\Thing\Event;
 class EducationEvent extends Event
 {
 
-     
+
 }
 

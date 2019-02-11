@@ -1,10 +1,8 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Intangible\ItemList;
 
 use Sohophp\SchemaOrg\Thing\Intangible\ItemList;
+
 /**
 * A BreadcrumbList is an ItemList consisting of a chain of linked Web pages, typically described using at least their URL and their name, and typically ending with the current page.<br/><br/>
 
@@ -15,6 +13,6 @@ The <a class="localLink" href="http://schema.org/position">position</a> property
 class BreadcrumbList extends ItemList
 {
 
-     
+
 }
 

@@ -1,10 +1,8 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Action\InteractAction;
 
 use Sohophp\SchemaOrg\Thing\Action\InteractAction;
+
 /**
 * The act of forming a personal connection with someone/something (object) unidirectionally/asymmetrically to get updates pushed to.<br/><br/>
 
@@ -22,6 +20,6 @@ Related actions:<br/><br/>
 class SubscribeAction extends InteractAction
 {
 
-     
+
 }
 

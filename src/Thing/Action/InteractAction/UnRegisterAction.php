@@ -1,10 +1,8 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Action\InteractAction;
 
 use Sohophp\SchemaOrg\Thing\Action\InteractAction;
+
 /**
 * The act of un-registering from a service.<br/><br/>
 
@@ -21,6 +19,6 @@ Related actions:<br/><br/>
 class UnRegisterAction extends InteractAction
 {
 
-     
+
 }
 

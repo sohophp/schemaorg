@@ -1,10 +1,8 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Intangible\Enumeration\DeliveryMethod;
 
 use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\DeliveryMethod;
+
 /**
 * A private parcel service as the delivery mode available for a certain offer.<br/><br/>
 
@@ -22,6 +20,6 @@ Commonly used values:<br/><br/>
 class ParcelService extends DeliveryMethod
 {
 
-     
+
 }
 

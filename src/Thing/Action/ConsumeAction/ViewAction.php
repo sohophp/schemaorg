@@ -1,10 +1,8 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Action\ConsumeAction;
 
 use Sohophp\SchemaOrg\Thing\Action\ConsumeAction;
+
 /**
 * The act of consuming static visual content.
 * @see http://schema.org/ViewAction
@@ -13,6 +11,6 @@ use Sohophp\SchemaOrg\Thing\Action\ConsumeAction;
 class ViewAction extends ConsumeAction
 {
 
-     
+
 }
 

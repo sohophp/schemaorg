@@ -1,10 +1,8 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Action;
 
 use Sohophp\SchemaOrg\Thing\Action;
+
 /**
 * The act of finding an object.<br/><br/>
 
@@ -20,6 +18,6 @@ Related actions:<br/><br/>
 class FindAction extends Action
 {
 
-     
+
 }
 

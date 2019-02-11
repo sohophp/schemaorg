@@ -1,10 +1,8 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Intangible\Enumeration;
 
 use Sohophp\SchemaOrg\Thing\Intangible\Enumeration;
+
 /**
 * The day of the week, e.g. used to specify to which day the opening hours of an OpeningHoursSpecification refer.<br/><br/>
 
@@ -15,6 +13,6 @@ Originally, URLs from <a href="http://purl.org/goodrelations/v1">GoodRelations</
 class DayOfWeek extends Enumeration
 {
 
-     
+
 }
 

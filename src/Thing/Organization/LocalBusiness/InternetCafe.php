@@ -1,10 +1,8 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Organization\LocalBusiness;
 
 use Sohophp\SchemaOrg\Thing\Organization\LocalBusiness;
+
 /**
 * An internet cafe.
 * @see http://schema.org/InternetCafe
@@ -13,6 +11,6 @@ use Sohophp\SchemaOrg\Thing\Organization\LocalBusiness;
 class InternetCafe extends LocalBusiness
 {
 
-     
+
 }
 

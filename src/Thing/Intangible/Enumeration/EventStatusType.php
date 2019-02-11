@@ -1,10 +1,8 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Intangible\Enumeration;
 
 use Sohophp\SchemaOrg\Thing\Intangible\Enumeration;
+
 /**
 * EventStatusType is an enumeration type whose instances represent several states that an Event may be in.
 * @see http://schema.org/EventStatusType
@@ -13,6 +11,6 @@ use Sohophp\SchemaOrg\Thing\Intangible\Enumeration;
 class EventStatusType extends Enumeration
 {
 
-     
+
 }
 

@@ -1,10 +1,8 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Place\Accommodation;
 
 use Sohophp\SchemaOrg\Thing\Place\Accommodation;
+
 /**
 * A room is a distinguishable space within a structure, usually separated from other spaces by interior walls. (Source: Wikipedia, the free encyclopedia, see <a href="http://en.wikipedia.org/wiki/Room">http://en.wikipedia.org/wiki/Room</a>).
 <br /><br />
@@ -15,6 +13,6 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
 class Room extends Accommodation
 {
 
-     
+
 }
 

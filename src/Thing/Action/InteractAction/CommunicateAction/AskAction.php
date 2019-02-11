@@ -1,11 +1,9 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Action\InteractAction\CommunicateAction;
 
 use Sohophp\SchemaOrg\Thing\Action\InteractAction\CommunicateAction;
 use Sohophp\SchemaOrg\Thing\CreativeWork\Question;
+
 /**
 * The act of posing a question / favor to someone.<br/><br/>
 
@@ -21,19 +19,17 @@ Related actions:<br/><br/>
 class AskAction extends CommunicateAction
 {
 
-     
-     /**
-     * A sub property of object. A question.
-     * @param Question $value
-     * @return $this
-     */
-
-     public function question(?Question $value):self
-     {
-        $this->setProperty("question",$value);
+    /**
+    * A sub property of object. A question.
+    * @param Question $value
+    * @return $this
+    */
+    public function question(?Question $value)
+    {
+        $this->setProperty('question', $value);
         return $this;
-     }
+    }
 
-     
+
 }
 

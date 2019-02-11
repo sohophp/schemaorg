@@ -1,10 +1,8 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Action\InteractAction;
 
 use Sohophp\SchemaOrg\Thing\Action\InteractAction;
+
 /**
 * The act of forming a personal connection with someone (object) mutually/bidirectionally/symmetrically.<br/><br/>
 
@@ -20,6 +18,6 @@ Related actions:<br/><br/>
 class BefriendAction extends InteractAction
 {
 
-     
+
 }
 

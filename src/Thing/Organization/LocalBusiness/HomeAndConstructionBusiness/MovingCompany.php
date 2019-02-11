@@ -1,10 +1,8 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Organization\LocalBusiness\HomeAndConstructionBusiness;
 
 use Sohophp\SchemaOrg\Thing\Organization\LocalBusiness\HomeAndConstructionBusiness;
+
 /**
 * A moving company.
 * @see http://schema.org/MovingCompany
@@ -13,6 +11,6 @@ use Sohophp\SchemaOrg\Thing\Organization\LocalBusiness\HomeAndConstructionBusine
 class MovingCompany extends HomeAndConstructionBusiness
 {
 
-     
+
 }
 

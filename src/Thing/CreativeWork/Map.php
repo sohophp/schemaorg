@@ -1,11 +1,9 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\CreativeWork;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork;
 use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MapCategoryType;
+
 /**
 * A map.
 * @see http://schema.org/Map
@@ -14,19 +12,17 @@ use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MapCategoryType;
 class Map extends CreativeWork
 {
 
-     
-     /**
-     * Indicates the kind of Map, from the MapCategoryType Enumeration.
-     * @param MapCategoryType $value
-     * @return $this
-     */
-
-     public function mapType(?MapCategoryType $value):self
-     {
-        $this->setProperty("mapType",$value);
+    /**
+    * Indicates the kind of Map, from the MapCategoryType Enumeration.
+    * @param MapCategoryType $value
+    * @return $this
+    */
+    public function mapType(?MapCategoryType $value)
+    {
+        $this->setProperty('mapType', $value);
         return $this;
-     }
+    }
 
-     
+
 }
 

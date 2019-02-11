@@ -1,10 +1,8 @@
-<?php
-
-declare (strict_types=1);
-
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\CreativeWork\Article;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork\Article;
+
 /**
 * A scholarly article.
 * @see http://schema.org/ScholarlyArticle
@@ -13,6 +11,6 @@ use Sohophp\SchemaOrg\Thing\CreativeWork\Article;
 class ScholarlyArticle extends Article
 {
 
-     
+
 }
 
