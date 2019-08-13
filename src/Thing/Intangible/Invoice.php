@@ -5,6 +5,7 @@ use Sohophp\SchemaOrg\Thing\Intangible;
 use Sohophp\SchemaOrg\Thing\Organization;
 use Sohophp\SchemaOrg\Thing\Person;
 use Sohophp\SchemaOrg\Thing\Intangible\Quantity\Duration;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\PhysicalActivityCategory;
 use Sohophp\SchemaOrg\Thing;
 use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\PaymentStatusType;
 use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\PaymentMethod;
@@ -65,6 +66,17 @@ class Invoice extends Intangible
     }
 
     /**
+    * The identifier for the account the payment will be applied to.
+    * @param string $value
+    * @return $this
+    */
+    public function accountId(?string $value)
+    {
+        $this->setProperty('accountId', $value);
+        return $this;
+    }
+
+    /**
     * The date the invoice is scheduled to be paid.
     * @param  $value
     * @return $this
@@ -77,7 +89,7 @@ class Invoice extends Intangible
 
     /**
     * Party placing the order or paying the invoice.
-    * @param Person|Organization $value
+    * @param Organization|Person $value
     * @return $this
     */
     public function customer($value)
@@ -88,7 +100,7 @@ class Invoice extends Intangible
 
     /**
     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-    * @param string|Thing $value
+    * @param string|PhysicalActivityCategory|Thing $value
     * @return $this
     */
     public function category($value)
@@ -99,7 +111,7 @@ class Invoice extends Intangible
 
     /**
     * The status of payment; whether the invoice has been paid or not.
-    * @param PaymentStatusType|string $value
+    * @param string|PaymentStatusType $value
     * @return $this
     */
     public function paymentStatus($value)
@@ -110,7 +122,7 @@ class Invoice extends Intangible
 
     /**
     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
-    * @param Organization|Person $value
+    * @param Person|Organization $value
     * @return $this
     */
     public function broker($value)
@@ -164,17 +176,6 @@ class Invoice extends Intangible
     }
 
     /**
-    * The identifier for the account the payment will be applied to.
-    * @param string $value
-    * @return $this
-    */
-    public function accountId(?string $value)
-    {
-        $this->setProperty('accountId', $value);
-        return $this;
-    }
-
-    /**
     * The Order(s) related to this Invoice. One or more Orders may be combined into a single Invoice.
     * @param Order $value
     * @return $this
@@ -198,4 +199,7 @@ class Invoice extends Intangible
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Invoice','Thing\\Invoice');
 

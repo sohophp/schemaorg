@@ -14,3 +14,6 @@ class AutoRepair extends AutomotiveBusiness
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\AutomotiveBusiness\\AutoRepair','Thing\\AutoRepair');
+

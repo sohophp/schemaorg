@@ -25,3 +25,6 @@ class ReservationPackage extends Reservation
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Reservation\\ReservationPackage','Thing\\ReservationPackage');
+

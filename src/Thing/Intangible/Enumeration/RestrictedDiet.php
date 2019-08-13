@@ -14,3 +14,6 @@ class RestrictedDiet extends Enumeration
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\RestrictedDiet','Thing\\RestrictedDiet');
+

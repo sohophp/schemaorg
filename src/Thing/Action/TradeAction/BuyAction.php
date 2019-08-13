@@ -2,8 +2,8 @@
 namespace Sohophp\SchemaOrg\Thing\Action\TradeAction;
 
 use Sohophp\SchemaOrg\Thing\Action\TradeAction;
-use Sohophp\SchemaOrg\Thing\Person;
 use Sohophp\SchemaOrg\Thing\Organization;
+use Sohophp\SchemaOrg\Thing\Person;
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\WarrantyPromise;
 
 /**
@@ -16,7 +16,7 @@ class BuyAction extends TradeAction
 
     /**
     * 'vendor' is an earlier term for 'seller'.
-    * @param Person|Organization $value
+    * @param Organization|Person $value
     * @return $this
     */
     public function vendor($value)
@@ -27,7 +27,7 @@ class BuyAction extends TradeAction
 
     /**
     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-    * @param Organization|Person $value
+    * @param Person|Organization $value
     * @return $this
     */
     public function seller($value)
@@ -49,4 +49,7 @@ class BuyAction extends TradeAction
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\TradeAction\\BuyAction','Thing\\BuyAction');
 

@@ -23,3 +23,6 @@ class CheckOutAction extends CommunicateAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\InteractAction\\CommunicateAction\\CheckOutAction','Thing\\CheckOutAction');
+

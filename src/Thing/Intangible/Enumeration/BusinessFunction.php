@@ -28,3 +28,6 @@ class BusinessFunction extends Enumeration
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\BusinessFunction','Thing\\BusinessFunction');
+

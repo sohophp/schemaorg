@@ -5,6 +5,7 @@ use Sohophp\SchemaOrg\Thing\CreativeWork;
 use Sohophp\SchemaOrg\Thing\CreativeWork\MusicComposition;
 use Sohophp\SchemaOrg\Thing\CreativeWork\MusicPlaylist\MusicAlbum;
 use Sohophp\SchemaOrg\Thing\CreativeWork\MusicPlaylist;
+use Sohophp\SchemaOrg\Thing\Person;
 use Sohophp\SchemaOrg\Thing\Organization\PerformingGroup\MusicGroup;
 use Sohophp\SchemaOrg\Thing\Intangible\Quantity\Duration;
 
@@ -62,10 +63,10 @@ class MusicRecording extends CreativeWork
 
     /**
     * The artist that performed this album or recording.
-    * @param MusicGroup $value
+    * @param Person|MusicGroup $value
     * @return $this
     */
-    public function byArtist(?MusicGroup $value)
+    public function byArtist($value)
     {
         $this->setProperty('byArtist', $value);
         return $this;
@@ -84,4 +85,7 @@ class MusicRecording extends CreativeWork
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\MusicRecording','Thing\\MusicRecording');
 

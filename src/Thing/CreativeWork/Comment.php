@@ -48,3 +48,6 @@ class Comment extends CreativeWork
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Comment','Thing\\Comment');
+

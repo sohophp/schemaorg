@@ -26,3 +26,6 @@ class SocialMediaPosting extends Article
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Article\\SocialMediaPosting','Thing\\SocialMediaPosting');
+

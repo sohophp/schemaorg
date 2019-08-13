@@ -14,17 +14,6 @@ class BusTrip extends Trip
 {
 
     /**
-    * The name of the bus (e.g. Bolt Express).
-    * @param string $value
-    * @return $this
-    */
-    public function busName(?string $value)
-    {
-        $this->setProperty('busName', $value);
-        return $this;
-    }
-
-    /**
     * The stop or station from which the bus departs.
     * @param BusStation|BusStop $value
     * @return $this
@@ -37,7 +26,7 @@ class BusTrip extends Trip
 
     /**
     * The stop or station from which the bus arrives.
-    * @param BusStation|BusStop $value
+    * @param BusStop|BusStation $value
     * @return $this
     */
     public function arrivalBusStop($value)
@@ -57,6 +46,20 @@ class BusTrip extends Trip
         return $this;
     }
 
+    /**
+    * The name of the bus (e.g. Bolt Express).
+    * @param string $value
+    * @return $this
+    */
+    public function busName(?string $value)
+    {
+        $this->setProperty('busName', $value);
+        return $this;
+    }
+
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Trip\\BusTrip','Thing\\BusTrip');
 

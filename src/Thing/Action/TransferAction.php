@@ -37,3 +37,6 @@ class TransferAction extends Action
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\TransferAction','Thing\\TransferAction');
+

@@ -14,3 +14,6 @@ class Florist extends Store
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\Store\\Florist','Thing\\Florist');
+

@@ -3,7 +3,7 @@ namespace Sohophp\SchemaOrg\Thing\CreativeWork;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork;
 use Sohophp\SchemaOrg\Thing\Person;
-use Sohophp\SchemaOrg\Thing\Intangible\Series\CreativeWorkSeries;
+use Sohophp\SchemaOrg\Thing\CreativeWork\CreativeWorkSeries;
 use Sohophp\SchemaOrg\Thing\CreativeWork\Episode;
 use Sohophp\SchemaOrg\Thing\CreativeWork\CreativeWorkSeason;
 use Sohophp\SchemaOrg\Thing\Organization\PerformingGroup\MusicGroup;
@@ -83,6 +83,17 @@ class Clip extends CreativeWork
     }
 
     /**
+    * The end time of the clip expressed as the number of seconds from the beginning of the work.
+    * @param  $value
+    * @return $this
+    */
+    public function endOffset($value)
+    {
+        $this->setProperty('endOffset', $value);
+        return $this;
+    }
+
+    /**
     * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
     * @param Person $value
     * @return $this
@@ -105,8 +116,19 @@ class Clip extends CreativeWork
     }
 
     /**
+    * The start time of the clip expressed as the number of seconds from the beginning of the work.
+    * @param  $value
+    * @return $this
+    */
+    public function startOffset($value)
+    {
+        $this->setProperty('startOffset', $value);
+        return $this;
+    }
+
+    /**
     * Position of the clip within an ordered group of clips.
-    * @param int|string $value
+    * @param string|int $value
     * @return $this
     */
     public function clipNumber($value)
@@ -117,4 +139,7 @@ class Clip extends CreativeWork
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Clip','Thing\\Clip');
 

@@ -14,3 +14,6 @@ class EntertainmentBusiness extends LocalBusiness
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\EntertainmentBusiness','Thing\\EntertainmentBusiness');
+

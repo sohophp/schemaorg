@@ -14,3 +14,6 @@ class MusicEvent extends Event
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Event\\MusicEvent','Thing\\MusicEvent');
+

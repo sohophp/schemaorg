@@ -14,3 +14,6 @@ class WearAction extends UseAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\ConsumeAction\\UseAction\\WearAction','Thing\\WearAction');
+

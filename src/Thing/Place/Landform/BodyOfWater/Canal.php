@@ -14,3 +14,6 @@ class Canal extends BodyOfWater
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\Landform\\BodyOfWater\\Canal','Thing\\Canal');
+

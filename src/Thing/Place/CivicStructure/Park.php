@@ -14,3 +14,6 @@ class Park extends CivicStructure
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\CivicStructure\\Park','Thing\\Park');
+

@@ -26,3 +26,6 @@ class InformAction extends CommunicateAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\InteractAction\\CommunicateAction\\InformAction','Thing\\InformAction');
+

@@ -14,3 +14,6 @@ class MusicStore extends Store
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\Store\\MusicStore','Thing\\MusicStore');
+

@@ -38,3 +38,6 @@ class WarrantyPromise extends StructuredValue
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue\\WarrantyPromise','Thing\\WarrantyPromise');
+

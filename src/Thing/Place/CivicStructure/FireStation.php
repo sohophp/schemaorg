@@ -14,3 +14,6 @@ class FireStation extends CivicStructure
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\CivicStructure\\FireStation','Thing\\FireStation');
+

@@ -14,3 +14,6 @@ class Hospital extends EmergencyService
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\EmergencyService\\Hospital','Thing\\Hospital');
+

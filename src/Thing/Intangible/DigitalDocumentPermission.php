@@ -3,8 +3,8 @@ namespace Sohophp\SchemaOrg\Thing\Intangible;
 
 use Sohophp\SchemaOrg\Thing\Intangible;
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\ContactPoint;
-use Sohophp\SchemaOrg\Thing\Intangible\Audience;
 use Sohophp\SchemaOrg\Thing\Person;
+use Sohophp\SchemaOrg\Thing\Intangible\Audience;
 use Sohophp\SchemaOrg\Thing\Organization;
 use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\DigitalDocumentPermissionType;
 
@@ -18,7 +18,7 @@ class DigitalDocumentPermission extends Intangible
 
     /**
     * The person, organization, contact point, or audience that has been granted this permission.
-    * @param ContactPoint|Audience|Person|Organization $value
+    * @param ContactPoint|Person|Audience|Organization $value
     * @return $this
     */
     public function grantee($value)
@@ -40,4 +40,7 @@ class DigitalDocumentPermission extends Intangible
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\DigitalDocumentPermission','Thing\\DigitalDocumentPermission');
 

@@ -68,6 +68,20 @@ class Book extends CreativeWork
         return $this;
     }
 
+    /**
+    * Indicates whether the book is an abridged edition.
+    * @param bool $value
+    * @return $this
+    */
+    public function abridged(?bool $value)
+    {
+        $this->setProperty('abridged', $value);
+        return $this;
+    }
+
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Book','Thing\\Book');
 

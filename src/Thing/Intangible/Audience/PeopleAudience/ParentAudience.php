@@ -36,3 +36,6 @@ class ParentAudience extends PeopleAudience
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Audience\\PeopleAudience\\ParentAudience','Thing\\ParentAudience');
+

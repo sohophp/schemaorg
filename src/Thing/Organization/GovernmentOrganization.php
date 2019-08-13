@@ -14,3 +14,6 @@ class GovernmentOrganization extends Organization
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\GovernmentOrganization','Thing\\GovernmentOrganization');
+

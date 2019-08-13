@@ -23,6 +23,19 @@ class LocalBusiness extends Organization
     }
 
     /**
+    * The currency accepted.<br/><br/>
+
+Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 currency format</a> e.g. "USD"; <a href="https://en.wikipedia.org/wiki/List_of_cryptocurrencies">Ticker symbol</a> for cryptocurrencies e.g. "BTC"; well known names for <a href="https://en.wikipedia.org/wiki/Local_exchange_trading_system">Local Exchange Tradings Systems</a> (LETS) and other currency types e.g. "Ithaca HOUR".
+    * @param string $value
+    * @return $this
+    */
+    public function currenciesAccepted(?string $value)
+    {
+        $this->setProperty('currenciesAccepted', $value);
+        return $this;
+    }
+
+    /**
     * The larger organization that this local business is a branch of, if any. Not to be confused with (anatomical)<a class="localLink" href="http://schema.org/branch">branch</a>.
     * @param Organization $value
     * @return $this
@@ -63,19 +76,9 @@ class LocalBusiness extends Organization
         return $this;
     }
 
-    /**
-    * The currency accepted.<br/><br/>
-
-Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 currency format</a> e.g. "USD"; <a href="https://en.wikipedia.org/wiki/List_of_cryptocurrencies">Ticker symbol</a> for cryptocurrencies e.g. "BTC"; well known names for <a href="https://en.wikipedia.org/wiki/Local_exchange_trading_system">Local Exchange Tradings Systems</a> (LETS) and other currency types e.g. "Ithaca HOUR".
-    * @param string $value
-    * @return $this
-    */
-    public function currenciesAccepted(?string $value)
-    {
-        $this->setProperty('currenciesAccepted', $value);
-        return $this;
-    }
-
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness','Thing\\LocalBusiness');
 

@@ -14,3 +14,6 @@ class TattooParlor extends HealthAndBeautyBusiness
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\HealthAndBeautyBusiness\\TattooParlor','Thing\\TattooParlor');
+

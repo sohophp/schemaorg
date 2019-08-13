@@ -16,3 +16,6 @@ class Hotel extends LodgingBusiness
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\LodgingBusiness\\Hotel','Thing\\Hotel');
+

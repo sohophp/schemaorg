@@ -16,3 +16,6 @@ class EventReservation extends Reservation
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Reservation\\EventReservation','Thing\\EventReservation');
+

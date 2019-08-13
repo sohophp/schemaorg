@@ -38,3 +38,6 @@ class Menu extends CreativeWork
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Menu','Thing\\Menu');
+

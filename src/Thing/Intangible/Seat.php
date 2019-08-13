@@ -13,17 +13,6 @@ class Seat extends Intangible
 {
 
     /**
-    * The row location of the reserved seat (e.g., B).
-    * @param string $value
-    * @return $this
-    */
-    public function seatRow(?string $value)
-    {
-        $this->setProperty('seatRow', $value);
-        return $this;
-    }
-
-    /**
     * The type/class of the seat.
     * @param QualitativeValue|string $value
     * @return $this
@@ -46,6 +35,17 @@ class Seat extends Intangible
     }
 
     /**
+    * The row location of the reserved seat (e.g., B).
+    * @param string $value
+    * @return $this
+    */
+    public function seatRow(?string $value)
+    {
+        $this->setProperty('seatRow', $value);
+        return $this;
+    }
+
+    /**
     * The location of the reserved seat (e.g., 27).
     * @param string $value
     * @return $this
@@ -58,4 +58,7 @@ class Seat extends Intangible
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Seat','Thing\\Seat');
 

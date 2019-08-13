@@ -14,3 +14,6 @@ class Answer extends Comment
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Comment\\Answer','Thing\\Answer');
+

@@ -14,3 +14,6 @@ class CheckoutPage extends WebPage
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\WebPage\\CheckoutPage','Thing\\CheckoutPage');
+

@@ -25,3 +25,6 @@ class WebSite extends CreativeWork
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\WebSite','Thing\\WebSite');
+

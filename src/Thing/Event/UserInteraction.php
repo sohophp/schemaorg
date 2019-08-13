@@ -14,3 +14,6 @@ class UserInteraction extends Event
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Event\\UserInteraction','Thing\\UserInteraction');
+

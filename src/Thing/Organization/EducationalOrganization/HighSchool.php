@@ -14,3 +14,6 @@ class HighSchool extends EducationalOrganization
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\EducationalOrganization\\HighSchool','Thing\\HighSchool');
+

@@ -14,3 +14,6 @@ class IceCreamShop extends FoodEstablishment
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\FoodEstablishment\\IceCreamShop','Thing\\IceCreamShop');
+

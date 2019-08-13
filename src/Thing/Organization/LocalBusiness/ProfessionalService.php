@@ -18,3 +18,6 @@ class ProfessionalService extends LocalBusiness
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\ProfessionalService','Thing\\ProfessionalService');
+

@@ -14,28 +14,6 @@ class SoftwareApplication extends CreativeWork
 {
 
     /**
-    * If the file can be downloaded, URL to download the binary.
-    * @param string $value
-    * @return $this
-    */
-    public function downloadUrl(?string $value)
-    {
-        $this->setProperty('downloadUrl', $value);
-        return $this;
-    }
-
-    /**
-    * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).
-    * @param string|string $value
-    * @return $this
-    */
-    public function softwareRequirements($value)
-    {
-        $this->setProperty('softwareRequirements', $value);
-        return $this;
-    }
-
-    /**
     * Permission(s) required to run the app (for example, a mobile app may require full internet access or may run only on wifi).
     * @param string $value
     * @return $this
@@ -69,13 +47,13 @@ class SoftwareApplication extends CreativeWork
     }
 
     /**
-    * Features or modules provided by this application (and possibly required by other applications).
-    * @param string|string $value
+    * If the file can be downloaded, URL to download the binary.
+    * @param string $value
     * @return $this
     */
-    public function featureList($value)
+    public function downloadUrl(?string $value)
     {
-        $this->setProperty('featureList', $value);
+        $this->setProperty('downloadUrl', $value);
         return $this;
     }
 
@@ -87,6 +65,17 @@ class SoftwareApplication extends CreativeWork
     public function applicationSubCategory($value)
     {
         $this->setProperty('applicationSubCategory', $value);
+        return $this;
+    }
+
+    /**
+    * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).
+    * @param string|string $value
+    * @return $this
+    */
+    public function requirements($value)
+    {
+        $this->setProperty('requirements', $value);
         return $this;
     }
 
@@ -120,6 +109,17 @@ class SoftwareApplication extends CreativeWork
     public function softwareVersion(?string $value)
     {
         $this->setProperty('softwareVersion', $value);
+        return $this;
+    }
+
+    /**
+    * Features or modules provided by this application (and possibly required by other applications).
+    * @param string|string $value
+    * @return $this
+    */
+    public function featureList($value)
+    {
+        $this->setProperty('featureList', $value);
         return $this;
     }
 
@@ -158,7 +158,7 @@ class SoftwareApplication extends CreativeWork
 
     /**
     * A link to a screenshot image of the app.
-    * @param string|ImageObject $value
+    * @param ImageObject|string $value
     * @return $this
     */
     public function screenshot($value)
@@ -227,9 +227,9 @@ class SoftwareApplication extends CreativeWork
     * @param string|string $value
     * @return $this
     */
-    public function requirements($value)
+    public function softwareRequirements($value)
     {
-        $this->setProperty('requirements', $value);
+        $this->setProperty('softwareRequirements', $value);
         return $this;
     }
 
@@ -279,4 +279,7 @@ class SoftwareApplication extends CreativeWork
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\SoftwareApplication','Thing\\SoftwareApplication');
 

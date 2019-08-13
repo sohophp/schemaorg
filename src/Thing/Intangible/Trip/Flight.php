@@ -30,6 +30,28 @@ class Flight extends Trip
     }
 
     /**
+    * The airport where the flight originates.
+    * @param Airport $value
+    * @return $this
+    */
+    public function departureAirport(?Airport $value)
+    {
+        $this->setProperty('departureAirport', $value);
+        return $this;
+    }
+
+    /**
+    * The time when a passenger can check into the flight online.
+    * @param  $value
+    * @return $this
+    */
+    public function webCheckinTime($value)
+    {
+        $this->setProperty('webCheckinTime', $value);
+        return $this;
+    }
+
+    /**
     * Identifier of the flight's arrival gate.
     * @param string $value
     * @return $this
@@ -86,23 +108,12 @@ class Flight extends Trip
 
     /**
     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-    * @param Organization|Person $value
+    * @param Person|Organization $value
     * @return $this
     */
     public function seller($value)
     {
         $this->setProperty('seller', $value);
-        return $this;
-    }
-
-    /**
-    * The time when a passenger can check into the flight online.
-    * @param  $value
-    * @return $this
-    */
-    public function webCheckinTime($value)
-    {
-        $this->setProperty('webCheckinTime', $value);
         return $this;
     }
 
@@ -172,17 +183,9 @@ class Flight extends Trip
         return $this;
     }
 
-    /**
-    * The airport where the flight originates.
-    * @param Airport $value
-    * @return $this
-    */
-    public function departureAirport(?Airport $value)
-    {
-        $this->setProperty('departureAirport', $value);
-        return $this;
-    }
-
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Trip\\Flight','Thing\\Flight');
 

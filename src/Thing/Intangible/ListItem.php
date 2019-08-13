@@ -59,3 +59,6 @@ class ListItem extends Intangible
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\ListItem','Thing\\ListItem');
+

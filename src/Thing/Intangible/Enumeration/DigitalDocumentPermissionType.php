@@ -14,3 +14,6 @@ class DigitalDocumentPermissionType extends Enumeration
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\DigitalDocumentPermissionType','Thing\\DigitalDocumentPermissionType');
+

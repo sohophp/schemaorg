@@ -14,3 +14,6 @@ class TravelAgency extends LocalBusiness
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\TravelAgency','Thing\\TravelAgency');
+

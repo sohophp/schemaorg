@@ -33,3 +33,6 @@ class LendAction extends TransferAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\TransferAction\\LendAction','Thing\\LendAction');
+

@@ -14,3 +14,6 @@ class Store extends LocalBusiness
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\Store','Thing\\Store');
+

@@ -29,3 +29,6 @@ class TipAction extends TradeAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\TradeAction\\TipAction','Thing\\TipAction');
+

@@ -14,3 +14,6 @@ class ExhibitionEvent extends Event
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Event\\ExhibitionEvent','Thing\\ExhibitionEvent');
+

@@ -61,7 +61,7 @@ class HowToDirection extends CreativeWork
 
     /**
     * A sub-property of instrument. A supply consumed when performing instructions or a direction.
-    * @param string|HowToSupply $value
+    * @param HowToSupply|string $value
     * @return $this
     */
     public function supply($value)
@@ -94,7 +94,7 @@ class HowToDirection extends CreativeWork
 
     /**
     * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
-    * @param HowToTool|string $value
+    * @param string|HowToTool $value
     * @return $this
     */
     public function tool($value)
@@ -105,4 +105,7 @@ class HowToDirection extends CreativeWork
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\HowToDirection','Thing\\HowToDirection');
 

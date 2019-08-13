@@ -37,3 +37,6 @@ class MenuSection extends CreativeWork
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\MenuSection','Thing\\MenuSection');
+

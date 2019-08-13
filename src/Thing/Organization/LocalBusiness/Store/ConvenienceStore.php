@@ -14,3 +14,6 @@ class ConvenienceStore extends Store
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\Store\\ConvenienceStore','Thing\\ConvenienceStore');
+

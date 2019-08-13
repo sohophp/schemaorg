@@ -14,3 +14,6 @@ class BookFormatType extends Enumeration
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\BookFormatType','Thing\\BookFormatType');
+

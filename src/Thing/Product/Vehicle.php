@@ -4,6 +4,7 @@ namespace Sohophp\SchemaOrg\Thing\Product;
 use Sohophp\SchemaOrg\Thing\Product;
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\QuantitativeValue;
 use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\QualitativeValue\SteeringPositionValue;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\QualitativeValue\CarUsageType;
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\EngineSpecification;
 use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\QualitativeValue;
 use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\QualitativeValue\DriveWheelConfigurationValue;
@@ -15,17 +16,6 @@ use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\QualitativeValue\DriveWheelCo
 */
 class Vehicle extends Product
 {
-
-    /**
-    * Indicates whether the vehicle has been used for special purposes, like commercial rental, driving school, or as a taxi. The legislation in many countries requires this information to be revealed when offering a car for sale.
-    * @param string $value
-    * @return $this
-    */
-    public function vehicleSpecialUsage(?string $value)
-    {
-        $this->setProperty('vehicleSpecialUsage', $value);
-        return $this;
-    }
 
     /**
     * The date of production of the item, e.g. vehicle.
@@ -45,7 +35,7 @@ Typical unit code(s): C62
     * @param QuantitativeValue $value
     * @return $this
     */
-    public function numberOfForwardGears(? $value)
+    public function numberOfForwardGears(?QuantitativeValue $value)
     {
         $this->setProperty('numberOfForwardGears', $value);
         return $this;
@@ -87,6 +77,30 @@ Typical unit code(s): KMT for kilometers, SMI for statute miles
     }
 
     /**
+    * Indicates whether the vehicle has been used for special purposes, like commercial rental, driving school, or as a taxi. The legislation in many countries requires this information to be revealed when offering a car for sale.
+    * @param CarUsageType|string $value
+    * @return $this
+    */
+    public function vehicleSpecialUsage($value)
+    {
+        $this->setProperty('vehicleSpecialUsage', $value);
+        return $this;
+    }
+
+    /**
+    * The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>
+
+Typical unit code(s): C62 for persons.
+    * @param QuantitativeValue $value
+    * @return $this
+    */
+    public function vehicleSeatingCapacity(?QuantitativeValue $value)
+    {
+        $this->setProperty('vehicleSeatingCapacity', $value);
+        return $this;
+    }
+
+    /**
     * Information about the engine or engines of the vehicle.
     * @param EngineSpecification $value
     * @return $this
@@ -98,13 +112,20 @@ Typical unit code(s): KMT for kilometers, SMI for statute miles
     }
 
     /**
-    * The release date of a vehicle model (often used to differentiate versions of the same make and model).
-    * @param  $value
+    * The time needed to accelerate the vehicle from a given start velocity to a given target velocity.<br/><br/>
+
+Typical unit code(s): SEC for seconds<br/><br/>
+
+<ul>
+<li>Note: There are unfortunately no standard unit codes for seconds/0..100 km/h or seconds/0..60 mph. Simply use "SEC" for seconds and indicate the velocities in the <a class="localLink" href="http://schema.org/name">name</a> of the <a class="localLink" href="http://schema.org/QuantitativeValue">QuantitativeValue</a>, or use <a class="localLink" href="http://schema.org/valueReference">valueReference</a> with a <a class="localLink" href="http://schema.org/QuantitativeValue">QuantitativeValue</a> of 0..60 mph or 0..100 km/h to specify the reference speeds.</li>
+</ul>
+
+    * @param QuantitativeValue $value
     * @return $this
     */
-    public function vehicleModelDate($value)
+    public function accelerationTime(?QuantitativeValue $value)
     {
-        $this->setProperty('vehicleModelDate', $value);
+        $this->setProperty('accelerationTime', $value);
         return $this;
     }
 
@@ -133,8 +154,29 @@ Typical unit code(s): C62
     }
 
     /**
+    * The permitted weight of passengers and cargo, EXCLUDING the weight of the empty vehicle.<br/><br/>
+
+Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>
+
+<ul>
+<li>Note 1: Many databases specify the permitted TOTAL weight instead, which is the sum of <a class="localLink" href="http://schema.org/weight">weight</a> and <a class="localLink" href="http://schema.org/payload">payload</a></li>
+<li>Note 2: You can indicate additional information in the <a class="localLink" href="http://schema.org/name">name</a> of the <a class="localLink" href="http://schema.org/QuantitativeValue">QuantitativeValue</a> node.</li>
+<li>Note 3: You may also link to a <a class="localLink" href="http://schema.org/QualitativeValue">QualitativeValue</a> node that provides additional information using <a class="localLink" href="http://schema.org/valueReference">valueReference</a>.</li>
+<li>Note 4: Note that you can use <a class="localLink" href="http://schema.org/minValue">minValue</a> and <a class="localLink" href="http://schema.org/maxValue">maxValue</a> to indicate ranges.</li>
+</ul>
+
+    * @param QuantitativeValue $value
+    * @return $this
+    */
+    public function payload(?QuantitativeValue $value)
+    {
+        $this->setProperty('payload', $value);
+        return $this;
+    }
+
+    /**
     * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
-    * @param string|QualitativeValue|string $value
+    * @param string|string|QualitativeValue $value
     * @return $this
     */
     public function fuelType($value)
@@ -173,6 +215,64 @@ Typical unit code(s): C62
     }
 
     /**
+    * The permitted vertical load (TWR) of a trailer attached to the vehicle. Also referred to as Tongue Load Rating (TLR) or Vertical Load Rating (VLR)<br/><br/>
+
+Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>
+
+<ul>
+<li>Note 1: You can indicate additional information in the <a class="localLink" href="http://schema.org/name">name</a> of the <a class="localLink" href="http://schema.org/QuantitativeValue">QuantitativeValue</a> node.</li>
+<li>Note 2: You may also link to a <a class="localLink" href="http://schema.org/QualitativeValue">QualitativeValue</a> node that provides additional information using <a class="localLink" href="http://schema.org/valueReference">valueReference</a>.</li>
+<li>Note 3: Note that you can use <a class="localLink" href="http://schema.org/minValue">minValue</a> and <a class="localLink" href="http://schema.org/maxValue">maxValue</a> to indicate ranges.</li>
+</ul>
+
+    * @param QuantitativeValue $value
+    * @return $this
+    */
+    public function tongueWeight(?QuantitativeValue $value)
+    {
+        $this->setProperty('tongueWeight', $value);
+        return $this;
+    }
+
+    /**
+    * The release date of a vehicle model (often used to differentiate versions of the same make and model).
+    * @param  $value
+    * @return $this
+    */
+    public function modelDate($value)
+    {
+        $this->setProperty('modelDate', $value);
+        return $this;
+    }
+
+    /**
+    * The release date of a vehicle model (often used to differentiate versions of the same make and model).
+    * @param  $value
+    * @return $this
+    */
+    public function vehicleModelDate($value)
+    {
+        $this->setProperty('vehicleModelDate', $value);
+        return $this;
+    }
+
+    /**
+    * The permitted weight of a trailer attached to the vehicle.<br/><br/>
+
+Typical unit code(s): KGM for kilogram, LBR for pound
+* Note 1: You can indicate additional information in the <a class="localLink" href="http://schema.org/name">name</a> of the <a class="localLink" href="http://schema.org/QuantitativeValue">QuantitativeValue</a> node.
+* Note 2: You may also link to a <a class="localLink" href="http://schema.org/QualitativeValue">QualitativeValue</a> node that provides additional information using <a class="localLink" href="http://schema.org/valueReference">valueReference</a>.
+* Note 3: Note that you can use <a class="localLink" href="http://schema.org/minValue">minValue</a> and <a class="localLink" href="http://schema.org/maxValue">maxValue</a> to indicate ranges.
+    * @param QuantitativeValue $value
+    * @return $this
+    */
+    public function trailerWeight(?QuantitativeValue $value)
+    {
+        $this->setProperty('trailerWeight', $value);
+        return $this;
+    }
+
+    /**
     * The number of owners of the vehicle, including the current one.<br/><br/>
 
 Typical unit code(s): C62
@@ -186,20 +286,26 @@ Typical unit code(s): C62
     }
 
     /**
-    * The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).<br/><br/>
+    * The distance between the centers of the front and rear wheels.<br/><br/>
 
-<ul>
-<li>Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use <a class="localLink" href="http://schema.org/unitText">unitText</a> to indicate the unit of measurement, e.g. mpg or km/L.</li>
-<li>Note 2: There are two ways of indicating the fuel consumption, <a class="localLink" href="http://schema.org/fuelConsumption">fuelConsumption</a> (e.g. 8 liters per 100 km) and <a class="localLink" href="http://schema.org/fuelEfficiency">fuelEfficiency</a> (e.g. 30 miles per gallon). They are reciprocal.</li>
-<li>Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use <a class="localLink" href="http://schema.org/valueReference">valueReference</a> to link the value for the fuel economy to another value.</li>
-</ul>
-
+Typical unit code(s): CMT for centimeters, MTR for meters, INH for inches, FOT for foot/feet
     * @param QuantitativeValue $value
     * @return $this
     */
-    public function fuelEfficiency(?QuantitativeValue $value)
+    public function wheelbase(?QuantitativeValue $value)
     {
-        $this->setProperty('fuelEfficiency', $value);
+        $this->setProperty('wheelbase', $value);
+        return $this;
+    }
+
+    /**
+    * Indicates that the vehicle meets the respective emission standard.
+    * @param string|QualitativeValue|string $value
+    * @return $this
+    */
+    public function meetsEmissionStandard($value)
+    {
+        $this->setProperty('meetsEmissionStandard', $value);
         return $this;
     }
 
@@ -250,15 +356,33 @@ Typical unit code(s): C62
     }
 
     /**
-    * The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>
+    * The permitted total weight of the loaded vehicle, including passengers and cargo and the weight of the empty vehicle.<br/><br/>
 
-Typical unit code(s): C62 for persons.
+Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>
+
+<ul>
+<li>Note 1: You can indicate additional information in the <a class="localLink" href="http://schema.org/name">name</a> of the <a class="localLink" href="http://schema.org/QuantitativeValue">QuantitativeValue</a> node.</li>
+<li>Note 2: You may also link to a <a class="localLink" href="http://schema.org/QualitativeValue">QualitativeValue</a> node that provides additional information using <a class="localLink" href="http://schema.org/valueReference">valueReference</a>.</li>
+<li>Note 3: Note that you can use <a class="localLink" href="http://schema.org/minValue">minValue</a> and <a class="localLink" href="http://schema.org/maxValue">maxValue</a> to indicate ranges.</li>
+</ul>
+
     * @param QuantitativeValue $value
     * @return $this
     */
-    public function vehicleSeatingCapacity(?QuantitativeValue $value)
+    public function weightTotal(?QuantitativeValue $value)
     {
-        $this->setProperty('vehicleSeatingCapacity', $value);
+        $this->setProperty('weightTotal', $value);
+        return $this;
+    }
+
+    /**
+    * The CO2 emissions in g/km. When used in combination with a QuantitativeValue, put "g/km" into the unitText property of that value, since there is no UN/CEFACT Common Code for "g/km".
+    * @param  $value
+    * @return $this
+    */
+    public function emissionsCO2($value)
+    {
+        $this->setProperty('emissionsCO2', $value);
         return $this;
     }
 
@@ -278,8 +402,43 @@ Note: You can use <a class="localLink" href="http://schema.org/minValue">minValu
     }
 
     /**
+    * The capacity of the fuel tank or in the case of electric cars, the battery. If there are multiple components for storage, this should indicate the total of all storage of the same type.<br/><br/>
+
+Typical unit code(s): LTR for liters, GLL of US gallons, GLI for UK / imperial gallons, AMH for ampere-hours (for electrical vehicles).
+    * @param QuantitativeValue $value
+    * @return $this
+    */
+    public function fuelCapacity(?QuantitativeValue $value)
+    {
+        $this->setProperty('fuelCapacity', $value);
+        return $this;
+    }
+
+    /**
+    * Indicates the design and body style of the vehicle (e.g. station wagon, hatchback, etc.).
+    * @param string|string|QualitativeValue $value
+    * @return $this
+    */
+    public function bodyType($value)
+    {
+        $this->setProperty('bodyType', $value);
+        return $this;
+    }
+
+    /**
+    * This is a StupidProperty! - for testing only
+    * @param QuantitativeValue $value
+    * @return $this
+    */
+    public function stupidProperty(?QuantitativeValue $value)
+    {
+        $this->setProperty('stupidProperty', $value);
+        return $this;
+    }
+
+    /**
     * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
-    * @param string|QualitativeValue|string $value
+    * @param QualitativeValue|string|string $value
     * @return $this
     */
     public function vehicleTransmission($value)
@@ -311,6 +470,40 @@ Note: You can use <a class="localLink" href="http://schema.org/minValue">minValu
     }
 
     /**
+    * The speed range of the vehicle. If the vehicle is powered by an engine, the upper limit of the speed range (indicated by <a class="localLink" href="http://schema.org/maxValue">maxValue</a> should be the maximum speed achievable under regular conditions.<br/><br/>
+
+Typical unit code(s): KMH for km/h, HM for mile per hour (0.447 04 m/s), KNT for knot<br/><br/>
+
+*Note 1: Use <a class="localLink" href="http://schema.org/minValue">minValue</a> and <a class="localLink" href="http://schema.org/maxValue">maxValue</a> to indicate the range. Typically, the minimal value is zero.
+* Note 2: There are many different ways of measuring the speed range. You can link to information about how the given value has been determined using the <a class="localLink" href="http://schema.org/valueReference">valueReference</a> property.
+    * @param QuantitativeValue $value
+    * @return $this
+    */
+    public function speed(?QuantitativeValue $value)
+    {
+        $this->setProperty('speed', $value);
+        return $this;
+    }
+
+    /**
+    * The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).<br/><br/>
+
+<ul>
+<li>Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use <a class="localLink" href="http://schema.org/unitText">unitText</a> to indicate the unit of measurement, e.g. mpg or km/L.</li>
+<li>Note 2: There are two ways of indicating the fuel consumption, <a class="localLink" href="http://schema.org/fuelConsumption">fuelConsumption</a> (e.g. 8 liters per 100 km) and <a class="localLink" href="http://schema.org/fuelEfficiency">fuelEfficiency</a> (e.g. 30 miles per gallon). They are reciprocal.</li>
+<li>Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use <a class="localLink" href="http://schema.org/valueReference">valueReference</a> to link the value for the fuel economy to another value.</li>
+</ul>
+
+    * @param QuantitativeValue $value
+    * @return $this
+    */
+    public function fuelEfficiency(?QuantitativeValue $value)
+    {
+        $this->setProperty('fuelEfficiency', $value);
+        return $this;
+    }
+
+    /**
     * The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.
     * @param DriveWheelConfigurationValue|string $value
     * @return $this
@@ -321,6 +514,22 @@ Note: You can use <a class="localLink" href="http://schema.org/minValue">minValu
         return $this;
     }
 
+    /**
+    * The number of persons that can be seated (e.g. in a vehicle), both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>
+
+Typical unit code(s): C62 for persons
+    * @param QuantitativeValue $value
+    * @return $this
+    */
+    public function seatingCapacity(?QuantitativeValue $value)
+    {
+        $this->setProperty('seatingCapacity', $value);
+        return $this;
+    }
+
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Product\\Vehicle','Thing\\Vehicle');
 

@@ -48,3 +48,6 @@ class AggregateRating extends Rating
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Rating\\AggregateRating','Thing\\AggregateRating');
+

@@ -14,3 +14,6 @@ class ImageGallery extends CollectionPage
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\WebPage\\CollectionPage\\ImageGallery','Thing\\ImageGallery');
+

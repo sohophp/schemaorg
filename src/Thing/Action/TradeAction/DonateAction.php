@@ -29,3 +29,6 @@ class DonateAction extends TradeAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\TradeAction\\DonateAction','Thing\\DonateAction');
+

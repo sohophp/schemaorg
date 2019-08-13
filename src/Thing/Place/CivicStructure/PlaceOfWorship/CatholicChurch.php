@@ -14,3 +14,6 @@ class CatholicChurch extends PlaceOfWorship
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\CivicStructure\\PlaceOfWorship\\CatholicChurch','Thing\\CatholicChurch');
+

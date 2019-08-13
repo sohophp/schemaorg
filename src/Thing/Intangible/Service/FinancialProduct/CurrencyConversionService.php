@@ -14,3 +14,6 @@ class CurrencyConversionService extends FinancialProduct
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Service\\FinancialProduct\\CurrencyConversionService','Thing\\CurrencyConversionService');
+

@@ -14,3 +14,6 @@ class MusicAlbumProductionType extends Enumeration
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\MusicAlbumProductionType','Thing\\MusicAlbumProductionType');
+

@@ -14,3 +14,6 @@ class EventStatusType extends Enumeration
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\EventStatusType','Thing\\EventStatusType');
+

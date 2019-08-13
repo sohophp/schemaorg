@@ -2,8 +2,8 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
 
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
-use Sohophp\SchemaOrg\Thing\Intangible\Service;
 use Sohophp\SchemaOrg\Thing\Product;
+use Sohophp\SchemaOrg\Thing\Intangible\Service;
 use Sohophp\SchemaOrg\Thing\Organization;
 use Sohophp\SchemaOrg\Thing\Person;
 
@@ -17,7 +17,7 @@ class OwnershipInfo extends StructuredValue
 
     /**
     * The product that this structured value is referring to.
-    * @param Service|Product $value
+    * @param Product|Service $value
     * @return $this
     */
     public function typeOfGood($value)
@@ -27,13 +27,13 @@ class OwnershipInfo extends StructuredValue
     }
 
     /**
-    * The date and time of obtaining the product.
+    * The date and time of giving up ownership on the product.
     * @param  $value
     * @return $this
     */
-    public function ownedFrom($value)
+    public function ownedThrough($value)
     {
-        $this->setProperty('ownedFrom', $value);
+        $this->setProperty('ownedThrough', $value);
         return $this;
     }
 
@@ -49,16 +49,19 @@ class OwnershipInfo extends StructuredValue
     }
 
     /**
-    * The date and time of giving up ownership on the product.
+    * The date and time of obtaining the product.
     * @param  $value
     * @return $this
     */
-    public function ownedThrough($value)
+    public function ownedFrom($value)
     {
-        $this->setProperty('ownedThrough', $value);
+        $this->setProperty('ownedFrom', $value);
         return $this;
     }
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue\\OwnershipInfo','Thing\\OwnershipInfo');
 

@@ -3,8 +3,9 @@ namespace Sohophp\SchemaOrg\Thing\Intangible;
 
 use Sohophp\SchemaOrg\Thing\Intangible;
 use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\OrderStatus;
-use Sohophp\SchemaOrg\Thing\Product;
 use Sohophp\SchemaOrg\Thing\Intangible\ParcelDelivery;
+use Sohophp\SchemaOrg\Thing\Intangible\Service;
+use Sohophp\SchemaOrg\Thing\Product;
 
 /**
 * An order item is a line of an order. It includes the quantity and shipping details of a bought offer.
@@ -37,17 +38,6 @@ class OrderItem extends Intangible
     }
 
     /**
-    * The item ordered.
-    * @param OrderItem|Product $value
-    * @return $this
-    */
-    public function orderedItem($value)
-    {
-        $this->setProperty('orderedItem', $value);
-        return $this;
-    }
-
-    /**
     * The delivery of the parcel related to this order or order item.
     * @param ParcelDelivery $value
     * @return $this
@@ -55,6 +45,17 @@ class OrderItem extends Intangible
     public function orderDelivery(?ParcelDelivery $value)
     {
         $this->setProperty('orderDelivery', $value);
+        return $this;
+    }
+
+    /**
+    * The item ordered.
+    * @param Service|OrderItem|Product $value
+    * @return $this
+    */
+    public function orderedItem($value)
+    {
+        $this->setProperty('orderedItem', $value);
         return $this;
     }
 
@@ -71,4 +72,7 @@ class OrderItem extends Intangible
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\OrderItem','Thing\\OrderItem');
 

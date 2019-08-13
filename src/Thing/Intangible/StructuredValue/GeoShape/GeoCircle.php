@@ -17,7 +17,7 @@ class GeoCircle extends GeoShape
 
     /**
     * Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
-    * @param Distance|string $value
+    * @param string|Distance $value
     * @return $this
     */
     public function geoRadius($value)
@@ -39,4 +39,7 @@ class GeoCircle extends GeoShape
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue\\GeoShape\\GeoCircle','Thing\\GeoCircle');
 

@@ -14,3 +14,6 @@ class InstallAction extends ConsumeAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\ConsumeAction\\InstallAction','Thing\\InstallAction');
+

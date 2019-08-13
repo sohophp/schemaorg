@@ -25,3 +25,6 @@ class WebApplication extends SoftwareApplication
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\SoftwareApplication\\WebApplication','Thing\\WebApplication');
+

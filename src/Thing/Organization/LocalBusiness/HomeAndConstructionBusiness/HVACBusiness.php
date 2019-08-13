@@ -14,3 +14,6 @@ class HVACBusiness extends HomeAndConstructionBusiness
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\HomeAndConstructionBusiness\\HVACBusiness','Thing\\HVACBusiness');
+

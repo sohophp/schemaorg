@@ -15,23 +15,12 @@ class GeoShape extends StructuredValue
 
     /**
     * Physical address of the item.
-    * @param PostalAddress|string $value
+    * @param string|PostalAddress $value
     * @return $this
     */
     public function address($value)
     {
         $this->setProperty('address', $value);
-        return $this;
-    }
-
-    /**
-    * A line is a point-to-point path consisting of two or more points. A line is expressed as a series of two or more point objects separated by space.
-    * @param string $value
-    * @return $this
-    */
-    public function line(?string $value)
-    {
-        $this->setProperty('line', $value);
         return $this;
     }
 
@@ -80,7 +69,7 @@ class GeoShape extends StructuredValue
     }
 
     /**
-    * The elevation of a location (<a href="https://en.wikipedia.org/wiki/World_Geodetic_System">WGS 84</a>).
+    * The elevation of a location (<a href="https://en.wikipedia.org/wiki/World_Geodetic_System">WGS 84</a>). Values may be of the form 'NUMBER UNIT<em>OF</em>MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
     * @param string $value
     * @return $this
     */
@@ -101,6 +90,20 @@ class GeoShape extends StructuredValue
         return $this;
     }
 
+    /**
+    * A line is a point-to-point path consisting of two or more points. A line is expressed as a series of two or more point objects separated by space.
+    * @param string $value
+    * @return $this
+    */
+    public function line(?string $value)
+    {
+        $this->setProperty('line', $value);
+        return $this;
+    }
+
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue\\GeoShape','Thing\\GeoShape');
 

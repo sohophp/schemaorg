@@ -2,8 +2,8 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
 
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
-use Sohophp\SchemaOrg\Thing\CreativeWork\WebSite;
 use Sohophp\SchemaOrg\Thing\CreativeWork\SoftwareApplication;
+use Sohophp\SchemaOrg\Thing\CreativeWork\WebSite;
 use Sohophp\SchemaOrg\Thing\Action;
 
 /**
@@ -16,7 +16,7 @@ class InteractionCounter extends StructuredValue
 
     /**
     * The WebSite or SoftwareApplication where the interactions took place.
-    * @param WebSite|SoftwareApplication $value
+    * @param SoftwareApplication|WebSite $value
     * @return $this
     */
     public function interactionService($value)
@@ -49,4 +49,7 @@ class InteractionCounter extends StructuredValue
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue\\InteractionCounter','Thing\\InteractionCounter');
 

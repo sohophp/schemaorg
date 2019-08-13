@@ -14,3 +14,6 @@ class LiteraryEvent extends Event
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Event\\LiteraryEvent','Thing\\LiteraryEvent');
+

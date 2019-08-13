@@ -14,3 +14,6 @@ class Language extends Intangible
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Language','Thing\\Language');
+

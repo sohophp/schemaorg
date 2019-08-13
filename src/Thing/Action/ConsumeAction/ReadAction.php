@@ -14,3 +14,6 @@ class ReadAction extends ConsumeAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\ConsumeAction\\ReadAction','Thing\\ReadAction');
+

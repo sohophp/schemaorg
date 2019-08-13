@@ -14,3 +14,6 @@ class Landform extends Place
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\Landform','Thing\\Landform');
+

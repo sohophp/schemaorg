@@ -174,3 +174,6 @@ class RadioSeries extends CreativeWorkSeries
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Series\\CreativeWorkSeries\\RadioSeries','Thing\\RadioSeries');
+

@@ -14,3 +14,6 @@ class CollectionPage extends WebPage
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\WebPage\\CollectionPage','Thing\\CollectionPage');
+

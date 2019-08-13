@@ -14,3 +14,6 @@ class TouristInformationCenter extends LocalBusiness
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\TouristInformationCenter','Thing\\TouristInformationCenter');
+

@@ -14,3 +14,6 @@ class Code extends CreativeWork
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Code','Thing\\Code');
+

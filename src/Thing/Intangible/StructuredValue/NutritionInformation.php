@@ -148,3 +148,6 @@ class NutritionInformation extends StructuredValue
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue\\NutritionInformation','Thing\\NutritionInformation');
+

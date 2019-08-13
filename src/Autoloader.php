@@ -6,7 +6,6 @@ namespace Sohophp\SchemaOrg;
  * Class Autoloader
  * @package Sohophp\SchemaOrg
  */
-
 class Autoloader
 {
     public static function register()
@@ -19,12 +18,12 @@ class Autoloader
 
     public static function load($className)
     {
-        $className = ltrim($className,'\\');
+        $className = ltrim($className, '\\');
         if (class_exists($className, false) || strpos($className, 'Sohophp\\SchemaOrg\\') !== 0) {
             return false;
         }
 
-        $file = __DIR__ .DIRECTORY_SEPARATOR .
+        $file = __DIR__ . DIRECTORY_SEPARATOR .
             str_replace(['Sohophp\\SchemaOrg\\', '\\'], ['', '/'], $className) .
             '.php';
         if (file_exists($file) && is_readable($file)) {

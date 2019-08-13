@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php
 namespace Sohophp\SchemaOrg\Thing\Intangible\Service\FinancialProduct;
 
 use Sohophp\SchemaOrg\Thing\Intangible\Service\FinancialProduct;
@@ -17,7 +17,7 @@ class InvestmentOrDeposit extends FinancialProduct
     * @param MonetaryAmount $value
     * @return $this
     */
-    public function amount(?MonetaryAmount $value)
+    public function amount(? $value)
     {
         $this->setProperty('amount', $value);
         return $this;
@@ -25,4 +25,7 @@ class InvestmentOrDeposit extends FinancialProduct
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Service\\FinancialProduct\\InvestmentOrDeposit','Thing\\InvestmentOrDeposit');
 

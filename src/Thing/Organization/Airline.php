@@ -37,3 +37,6 @@ class Airline extends Organization
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\Airline','Thing\\Airline');
+

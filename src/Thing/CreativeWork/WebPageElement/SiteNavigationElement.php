@@ -14,3 +14,6 @@ class SiteNavigationElement extends WebPageElement
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\WebPageElement\\SiteNavigationElement','Thing\\SiteNavigationElement');
+

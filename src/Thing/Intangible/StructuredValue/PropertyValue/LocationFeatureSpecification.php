@@ -48,3 +48,6 @@ class LocationFeatureSpecification extends PropertyValue
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue\\PropertyValue\\LocationFeatureSpecification','Thing\\LocationFeatureSpecification');
+

@@ -44,3 +44,6 @@ class MoveAction extends Action
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\MoveAction','Thing\\MoveAction');
+

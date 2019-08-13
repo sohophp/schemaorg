@@ -47,3 +47,6 @@ class ProductModel extends Product
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Product\\ProductModel','Thing\\ProductModel');
+

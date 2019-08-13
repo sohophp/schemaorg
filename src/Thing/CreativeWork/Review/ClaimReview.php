@@ -25,3 +25,6 @@ class ClaimReview extends Review
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Review\\ClaimReview','Thing\\ClaimReview');
+

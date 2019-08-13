@@ -38,3 +38,6 @@ class TVSeason extends CreativeWork
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\TVSeason','Thing\\TVSeason');
+

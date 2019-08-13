@@ -72,3 +72,6 @@ class UserComments extends UserInteraction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Event\\UserInteraction\\UserComments','Thing\\UserComments');
+

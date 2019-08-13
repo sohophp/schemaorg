@@ -42,7 +42,7 @@ class Movie extends CreativeWork
 
     /**
     * Languages in which subtitles/captions are available, in <a href="http://tools.ietf.org/html/bcp47">IETF BCP 47 standard format</a>.
-    * @param string|Language $value
+    * @param Language|string $value
     * @return $this
     */
     public function subtitleLanguage($value)
@@ -130,4 +130,7 @@ class Movie extends CreativeWork
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Movie','Thing\\Movie');
 

@@ -1,28 +1,29 @@
-<?php
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Intangible;
 
 use Sohophp\SchemaOrg\Thing\Intangible;
 use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\DeliveryMethod;
-use Sohophp\SchemaOrg\Thing\Place\AdministrativeArea;
 use Sohophp\SchemaOrg\Thing\Place;
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\GeoShape;
 use Sohophp\SchemaOrg\Thing\CreativeWork\Review;
-use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\ItemAvailability;
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\PriceSpecification;
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\QuantitativeValue;
 use Sohophp\SchemaOrg\Thing\Intangible\Rating\AggregateRating;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\PhysicalActivityCategory;
 use Sohophp\SchemaOrg\Thing;
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\WarrantyPromise;
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\TypeAndQuantityNode;
-use Sohophp\SchemaOrg\Thing\Organization;
 use Sohophp\SchemaOrg\Thing\Person;
-use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\BusinessFunction;
+use Sohophp\SchemaOrg\Thing\Organization;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\ItemAvailability;
 use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\BusinessEntityType;
 use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\OfferItemCondition;
-use Sohophp\SchemaOrg\Thing\Intangible\Service;
 use Sohophp\SchemaOrg\Thing\Product;
-use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\PaymentMethod;
+use Sohophp\SchemaOrg\Thing\Intangible\Service;
 use Sohophp\SchemaOrg\Thing\Intangible\Service\FinancialProduct\LoanOrCredit;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\PaymentMethod;
+use Sohophp\SchemaOrg\Thing\Place\AdministrativeArea;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\BusinessFunction;
 
 /**
 * An offer to transfer some rights to an item or to provide a service — for example, an offer to sell tickets to an event, to rent the DVD of a movie, to stream a TV show over the internet, to repair a motorcycle, or to loan a book.<br/><br/>
@@ -64,17 +65,6 @@ class Offer extends Intangible
     public function availableDeliveryMethod(?DeliveryMethod $value)
     {
         $this->setProperty('availableDeliveryMethod', $value);
-        return $this;
-    }
-
-    /**
-    * The geographic area where a service or offered item is provided.
-    * @param AdministrativeArea|string|Place|GeoShape $value
-    * @return $this
-    */
-    public function areaServed($value)
-    {
-        $this->setProperty('areaServed', $value);
         return $this;
     }
 
@@ -132,17 +122,6 @@ See also <a class="localLink" href="http://schema.org/eligibleRegion">eligibleRe
     public function reviews(?Review $value)
     {
         $this->setProperty('reviews', $value);
-        return $this;
-    }
-
-    /**
-    * The availability of this item&#x2014;for example In stock, Out of stock, Pre-order, etc.
-    * @param ItemAvailability $value
-    * @return $this
-    */
-    public function availability(?ItemAvailability $value)
-    {
-        $this->setProperty('availability', $value);
         return $this;
     }
 
@@ -216,7 +195,7 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
 
     /**
     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-    * @param string|Thing $value
+    * @param string|PhysicalActivityCategory|Thing $value
     * @return $this
     */
     public function category($value)
@@ -328,7 +307,7 @@ Usage guidelines:<br/><br/>
     * @param string $value
     * @return $this
     */
-    public function price(? $value)
+    public function price(?string $value)
     {
         $this->setProperty('price', $value);
         return $this;
@@ -369,7 +348,7 @@ Usage guidelines:<br/><br/>
 
     /**
     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-    * @param Organization|Person $value
+    * @param Person|Organization $value
     * @return $this
     */
     public function seller($value)
@@ -386,6 +365,17 @@ Usage guidelines:<br/><br/>
     public function deliveryLeadTime(?QuantitativeValue $value)
     {
         $this->setProperty('deliveryLeadTime', $value);
+        return $this;
+    }
+
+    /**
+    * A Global Trade Item Number (<a href="https://www.gs1.org/standards/id-keys/gtin">GTIN</a>). GTINs identify trade items, including products and services, using numeric identification codes. The <a class="localLink" href="http://schema.org/gtin">gtin</a> property generalizes the earlier <a class="localLink" href="http://schema.org/gtin8">gtin8</a>, <a class="localLink" href="http://schema.org/gtin12">gtin12</a>, <a class="localLink" href="http://schema.org/gtin13">gtin13</a>, and <a class="localLink" href="http://schema.org/gtin14">gtin14</a> properties. The GS1 <a href="https://www.gs1.org/standards/Digital-Link/">digital link specifications</a> express GTINs as URLs. A correct <a class="localLink" href="http://schema.org/gtin">gtin</a> value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a <a href="https://www.gs1.org/services/check-digit-calculator">valid GS1 check digit</a> and meet the other rules for valid GTINs. See also <a href="http://www.gs1.org/barcodes/technical/idkeys/gtin">GS1's GTIN Summary</a> and <a href="https://en.wikipedia.org/wiki/Global_Trade_Item_Number">Wikipedia</a> for more details. Left-padding of the gtin values is not required or encouraged.
+    * @param string $value
+    * @return $this
+    */
+    public function gtin(?string $value)
+    {
+        $this->setProperty('gtin', $value);
         return $this;
     }
 
@@ -412,13 +402,13 @@ Usage guidelines:<br/><br/>
     }
 
     /**
-    * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
-    * @param BusinessFunction $value
+    * The availability of this item&#x2014;for example In stock, Out of stock, Pre-order, etc.
+    * @param ItemAvailability $value
     * @return $this
     */
-    public function businessFunction(?BusinessFunction $value)
+    public function availability(?ItemAvailability $value)
     {
-        $this->setProperty('businessFunction', $value);
+        $this->setProperty('availability', $value);
         return $this;
     }
 
@@ -446,7 +436,7 @@ Usage guidelines:<br/><br/>
 
     /**
     * The item being offered.
-    * @param Service|Product $value
+    * @param Product|Service $value
     * @return $this
     */
     public function itemOffered($value)
@@ -457,7 +447,7 @@ Usage guidelines:<br/><br/>
 
     /**
     * A pointer to the organization or person making the offer.
-    * @param Organization|Person $value
+    * @param Person|Organization $value
     * @return $this
     */
     public function offeredBy($value)
@@ -479,7 +469,7 @@ Usage guidelines:<br/><br/>
 
     /**
     * The payment method(s) accepted by seller for this offer.
-    * @param PaymentMethod|LoanOrCredit $value
+    * @param LoanOrCredit|PaymentMethod $value
     * @return $this
     */
     public function acceptedPaymentMethod($value)
@@ -489,10 +479,32 @@ Usage guidelines:<br/><br/>
     }
 
     /**
+    * The geographic area where a service or offered item is provided.
+    * @param string|GeoShape|Place|AdministrativeArea $value
+    * @return $this
+    */
+    public function areaServed($value)
+    {
+        $this->setProperty('areaServed', $value);
+        return $this;
+    }
+
+    /**
+    * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
+    * @param BusinessFunction $value
+    * @return $this
+    */
+    public function businessFunction(?BusinessFunction $value)
+    {
+        $this->setProperty('businessFunction', $value);
+        return $this;
+    }
+
+    /**
     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>
 
 See also <a class="localLink" href="http://schema.org/ineligibleRegion">ineligibleRegion</a>.
-    * @param string|Place|GeoShape $value
+    * @param Place|string|GeoShape $value
     * @return $this
     */
     public function eligibleRegion($value)
@@ -503,4 +515,7 @@ See also <a class="localLink" href="http://schema.org/ineligibleRegion">ineligib
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Offer','Thing\\Offer');
 

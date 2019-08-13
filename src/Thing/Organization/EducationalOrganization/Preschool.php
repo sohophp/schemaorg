@@ -14,3 +14,6 @@ class Preschool extends EducationalOrganization
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\EducationalOrganization\\Preschool','Thing\\Preschool');
+

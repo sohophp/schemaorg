@@ -34,3 +34,6 @@ class LeaveAction extends InteractAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\InteractAction\\LeaveAction','Thing\\LeaveAction');
+

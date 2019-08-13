@@ -35,3 +35,6 @@ class JoinAction extends InteractAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\InteractAction\\JoinAction','Thing\\JoinAction');
+

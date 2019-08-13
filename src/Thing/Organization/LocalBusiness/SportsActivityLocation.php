@@ -14,3 +14,6 @@ class SportsActivityLocation extends LocalBusiness
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\SportsActivityLocation','Thing\\SportsActivityLocation');
+

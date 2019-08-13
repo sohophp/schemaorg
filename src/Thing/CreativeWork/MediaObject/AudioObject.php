@@ -22,6 +22,20 @@ class AudioObject extends MediaObject
         return $this;
     }
 
+    /**
+    * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the <a class="localLink" href="http://schema.org/encodingFormat">encodingFormat</a>.
+    * @param string|MediaObject $value
+    * @return $this
+    */
+    public function caption($value)
+    {
+        $this->setProperty('caption', $value);
+        return $this;
+    }
+
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\MediaObject\\AudioObject','Thing\\AudioObject');
 

@@ -2,7 +2,7 @@
 namespace Sohophp\SchemaOrg\Thing\CreativeWork\Clip;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork\Clip;
-use Sohophp\SchemaOrg\Thing\CreativeWork\TVSeries;
+use Sohophp\SchemaOrg\Thing\CreativeWork\CreativeWorkSeries\TVSeries;
 
 /**
 * A short TV program or a segment/part of a TV program.
@@ -25,4 +25,7 @@ class TVClip extends Clip
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Clip\\TVClip','Thing\\TVClip');
 

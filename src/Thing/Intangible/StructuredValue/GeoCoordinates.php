@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php
 namespace Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
 
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
@@ -14,22 +14,11 @@ class GeoCoordinates extends StructuredValue
 {
 
     /**
-    * Physical address of the item.
-    * @param PostalAddress|string $value
-    * @return $this
-    */
-    public function address($value)
-    {
-        $this->setProperty('address', $value);
-        return $this;
-    }
-
-    /**
     * The latitude of a location. For example <code>37.42242</code> (<a href="https://en.wikipedia.org/wiki/World_Geodetic_System">WGS 84</a>).
     * @param string $value
     * @return $this
     */
-    public function latitude(?string $value)
+    public function latitude(? $value)
     {
         $this->setProperty('latitude', $value);
         return $this;
@@ -43,6 +32,17 @@ class GeoCoordinates extends StructuredValue
     public function longitude(?string $value)
     {
         $this->setProperty('longitude', $value);
+        return $this;
+    }
+
+    /**
+    * Physical address of the item.
+    * @param string|PostalAddress $value
+    * @return $this
+    */
+    public function address($value)
+    {
+        $this->setProperty('address', $value);
         return $this;
     }
 
@@ -69,7 +69,7 @@ class GeoCoordinates extends StructuredValue
     }
 
     /**
-    * The elevation of a location (<a href="https://en.wikipedia.org/wiki/World_Geodetic_System">WGS 84</a>).
+    * The elevation of a location (<a href="https://en.wikipedia.org/wiki/World_Geodetic_System">WGS 84</a>). Values may be of the form 'NUMBER UNIT<em>OF</em>MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
     * @param string $value
     * @return $this
     */
@@ -81,4 +81,7 @@ class GeoCoordinates extends StructuredValue
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue\\GeoCoordinates','Thing\\GeoCoordinates');
 

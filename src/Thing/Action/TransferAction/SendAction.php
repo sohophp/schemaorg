@@ -47,3 +47,6 @@ class SendAction extends TransferAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\TransferAction\\SendAction','Thing\\SendAction');
+

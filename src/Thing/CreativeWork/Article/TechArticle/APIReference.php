@@ -12,28 +12,6 @@ class APIReference extends TechArticle
 {
 
     /**
-    * Library file name e.g., mscorlib.dll, system.web.dll.
-    * @param string $value
-    * @return $this
-    */
-    public function executableLibraryName(?string $value)
-    {
-        $this->setProperty('executableLibraryName', $value);
-        return $this;
-    }
-
-    /**
-    * Associated product/technology version. e.g., .NET Framework 4.5.
-    * @param string $value
-    * @return $this
-    */
-    public function assemblyVersion(?string $value)
-    {
-        $this->setProperty('assemblyVersion', $value);
-        return $this;
-    }
-
-    /**
     * Indicates whether API is managed or unmanaged.
     * @param string $value
     * @return $this
@@ -49,9 +27,31 @@ class APIReference extends TechArticle
     * @param string $value
     * @return $this
     */
+    public function executableLibraryName(?string $value)
+    {
+        $this->setProperty('executableLibraryName', $value);
+        return $this;
+    }
+
+    /**
+    * Library file name e.g., mscorlib.dll, system.web.dll.
+    * @param string $value
+    * @return $this
+    */
     public function assembly(?string $value)
     {
         $this->setProperty('assembly', $value);
+        return $this;
+    }
+
+    /**
+    * Associated product/technology version. e.g., .NET Framework 4.5.
+    * @param string $value
+    * @return $this
+    */
+    public function assemblyVersion(?string $value)
+    {
+        $this->setProperty('assemblyVersion', $value);
         return $this;
     }
 
@@ -68,4 +68,7 @@ class APIReference extends TechArticle
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Article\\TechArticle\\APIReference','Thing\\APIReference');
 

@@ -14,3 +14,6 @@ class Pond extends BodyOfWater
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\Landform\\BodyOfWater\\Pond','Thing\\Pond');
+

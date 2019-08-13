@@ -2,8 +2,8 @@
 namespace Sohophp\SchemaOrg\Thing\CreativeWork;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork;
-use Sohophp\SchemaOrg\Thing\Intangible\ItemList;
 use Sohophp\SchemaOrg\Thing\CreativeWork\Comment\Answer;
+use Sohophp\SchemaOrg\Thing\Intangible\ItemList;
 
 /**
 * A specific question - e.g. from a user seeking answers online, or collected in a Frequently Asked Questions (FAQ) document.
@@ -36,6 +36,17 @@ class Question extends CreativeWork
     }
 
     /**
+    * An answer (possibly one of several, possibly incorrect) to a Question, e.g. on a Question/Answer site.
+    * @param Answer|ItemList $value
+    * @return $this
+    */
+    public function suggestedAnswer($value)
+    {
+        $this->setProperty('suggestedAnswer', $value);
+        return $this;
+    }
+
+    /**
     * The answer(s) that has been accepted as best, typically on a Question/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and/or the view of the Question author.
     * @param ItemList|Answer $value
     * @return $this
@@ -43,17 +54,6 @@ class Question extends CreativeWork
     public function acceptedAnswer($value)
     {
         $this->setProperty('acceptedAnswer', $value);
-        return $this;
-    }
-
-    /**
-    * An answer (possibly one of several, possibly incorrect) to a Question, e.g. on a Question/Answer site.
-    * @param ItemList|Answer $value
-    * @return $this
-    */
-    public function suggestedAnswer($value)
-    {
-        $this->setProperty('suggestedAnswer', $value);
         return $this;
     }
 
@@ -70,4 +70,7 @@ class Question extends CreativeWork
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Question','Thing\\Question');
 

@@ -14,3 +14,6 @@ class Playground extends CivicStructure
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\CivicStructure\\Playground','Thing\\Playground');
+

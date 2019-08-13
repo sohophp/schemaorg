@@ -48,3 +48,6 @@ class Blog extends CreativeWork
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Blog','Thing\\Blog');
+

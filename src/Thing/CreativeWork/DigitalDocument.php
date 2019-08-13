@@ -26,3 +26,6 @@ class DigitalDocument extends CreativeWork
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\DigitalDocument','Thing\\DigitalDocument');
+

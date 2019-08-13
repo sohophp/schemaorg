@@ -52,7 +52,7 @@ class Recipe extends HowTo
 
     /**
     * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
-    * @param ItemList|CreativeWork|string $value
+    * @param ItemList|string|CreativeWork $value
     * @return $this
     */
     public function recipeInstructions($value)
@@ -129,4 +129,7 @@ class Recipe extends HowTo
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\HowTo\\Recipe','Thing\\Recipe');
 

@@ -36,3 +36,6 @@ class Airport extends CivicStructure
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\CivicStructure\\Airport','Thing\\Airport');
+

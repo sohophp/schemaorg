@@ -14,3 +14,6 @@ class TireShop extends Store
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\Store\\TireShop','Thing\\TireShop');
+

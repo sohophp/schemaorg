@@ -26,3 +26,6 @@ class CompoundPriceSpecification extends PriceSpecification
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue\\PriceSpecification\\CompoundPriceSpecification','Thing\\CompoundPriceSpecification');
+

@@ -29,3 +29,6 @@ class AuthorizeAction extends AllocateAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\OrganizeAction\\AllocateAction\\AuthorizeAction','Thing\\AuthorizeAction');
+

@@ -2,8 +2,8 @@
 namespace Sohophp\SchemaOrg\Thing\CreativeWork\Dataset;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork\Dataset;
-use Sohophp\SchemaOrg\Thing\Intangible\DataFeedItem;
 use Sohophp\SchemaOrg\Thing;
+use Sohophp\SchemaOrg\Thing\Intangible\DataFeedItem;
 
 /**
 * A single feed providing structured information about one or more entities or topics.
@@ -15,7 +15,7 @@ class DataFeed extends Dataset
 
     /**
     * An item within in a data feed. Data feeds may have many elements.
-    * @param string|DataFeedItem|Thing $value
+    * @param string|Thing|DataFeedItem $value
     * @return $this
     */
     public function dataFeedElement($value)
@@ -26,4 +26,7 @@ class DataFeed extends Dataset
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Dataset\\DataFeed','Thing\\DataFeed');
 

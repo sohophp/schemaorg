@@ -38,3 +38,6 @@ class FollowAction extends InteractAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\InteractAction\\FollowAction','Thing\\FollowAction');
+

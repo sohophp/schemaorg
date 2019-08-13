@@ -14,3 +14,6 @@ class UserLikes extends UserInteraction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Event\\UserInteraction\\UserLikes','Thing\\UserLikes');
+

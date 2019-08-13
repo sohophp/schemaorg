@@ -34,7 +34,15 @@ class AggregateOffer extends Offer
     }
 
     /**
-    * The lowest price of all offers available.
+    * The lowest price of all offers available.<br/><br/>
+
+Usage guidelines:<br/><br/>
+
+<ul>
+<li>Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.</li>
+<li>Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.</li>
+</ul>
+
     * @param string $value
     * @return $this
     */
@@ -45,7 +53,15 @@ class AggregateOffer extends Offer
     }
 
     /**
-    * The highest price of all offers available.
+    * The highest price of all offers available.<br/><br/>
+
+Usage guidelines:<br/><br/>
+
+<ul>
+<li>Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.</li>
+<li>Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.</li>
+</ul>
+
     * @param string $value
     * @return $this
     */
@@ -57,4 +73,7 @@ class AggregateOffer extends Offer
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Offer\\AggregateOffer','Thing\\AggregateOffer');
 

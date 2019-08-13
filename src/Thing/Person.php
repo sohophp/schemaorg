@@ -4,24 +4,28 @@ namespace Sohophp\SchemaOrg\Thing;
 use Sohophp\SchemaOrg\Thing;
 use Sohophp\SchemaOrg\Thing\Intangible\ProgramMembership;
 use Sohophp\SchemaOrg\Thing\Organization;
-use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\ContactPoint\PostalAddress;
 use Sohophp\SchemaOrg\Thing\Intangible\Quantity\Distance;
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\QuantitativeValue;
-use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\ContactPoint;
 use Sohophp\SchemaOrg\Thing\Place;
-use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\MonetaryAmount;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\ContactPoint;
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\PriceSpecification;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\MonetaryAmount;
+use Sohophp\SchemaOrg\Thing\Intangible\Occupation;
+use Sohophp\SchemaOrg\Thing\Intangible\DefinedTerm;
 use Sohophp\SchemaOrg\Thing\Intangible\ItemList\OfferCatalog;
 use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\GenderType;
 use Sohophp\SchemaOrg\Thing\Organization\EducationalOrganization;
 use Sohophp\SchemaOrg\Thing\Intangible\Offer;
 use Sohophp\SchemaOrg\Thing\Intangible\Demand;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\ContactPoint\PostalAddress;
 use Sohophp\SchemaOrg\Thing\Event;
 use Sohophp\SchemaOrg\Thing\Product;
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\OwnershipInfo;
 use Sohophp\SchemaOrg\Thing\CreativeWork;
 use Sohophp\SchemaOrg\Thing\Intangible\Brand;
 use Sohophp\SchemaOrg\Thing\Place\AdministrativeArea\Country;
+use Sohophp\SchemaOrg\Thing\CreativeWork\EducationalOccupationalCredential;
+use Sohophp\SchemaOrg\Thing\Intangible\Language;
 
 /**
 * A person (alive, dead, undead, or fictional).
@@ -39,17 +43,6 @@ class Person extends Thing
     public function memberOf($value)
     {
         $this->setProperty('memberOf', $value);
-        return $this;
-    }
-
-    /**
-    * Physical address of the item.
-    * @param PostalAddress|string $value
-    * @return $this
-    */
-    public function address($value)
-    {
-        $this->setProperty('address', $value);
         return $this;
     }
 
@@ -87,17 +80,6 @@ class Person extends Thing
     }
 
     /**
-    * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
-    * @param Person|Organization $value
-    * @return $this
-    */
-    public function sponsor($value)
-    {
-        $this->setProperty('sponsor', $value);
-        return $this;
-    }
-
-    /**
     * Date of death.
     * @param  $value
     * @return $this
@@ -105,6 +87,17 @@ class Person extends Thing
     public function deathDate($value)
     {
         $this->setProperty('deathDate', $value);
+        return $this;
+    }
+
+    /**
+    * Of a <a class="localLink" href="http://schema.org/Person">Person</a>, and less typically of an <a class="localLink" href="http://schema.org/Organization">Organization</a>, to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or <a class="localLink" href="http://schema.org/JobPosting">JobPosting</a> descriptions.
+    * @param Thing|string|string $value
+    * @return $this
+    */
+    public function knowsAbout($value)
+    {
+        $this->setProperty('knowsAbout', $value);
         return $this;
     }
 
@@ -121,7 +114,7 @@ class Person extends Thing
 
     /**
     * A contact location for a person's place of work.
-    * @param ContactPoint|Place $value
+    * @param Place|ContactPoint $value
     * @return $this
     */
     public function workLocation($value)
@@ -132,7 +125,7 @@ class Person extends Thing
 
     /**
     * The total financial value of the person as calculated by subtracting assets from liabilities.
-    * @param MonetaryAmount|PriceSpecification $value
+    * @param PriceSpecification|MonetaryAmount $value
     * @return $this
     */
     public function netWorth($value)
@@ -142,22 +135,33 @@ class Person extends Thing
     }
 
     /**
-    * The fax number.
-    * @param string $value
+    * A child of the person.
+    * @param Person $value
     * @return $this
     */
-    public function faxNumber(?string $value)
+    public function children(?Person $value)
     {
-        $this->setProperty('faxNumber', $value);
+        $this->setProperty('children', $value);
+        return $this;
+    }
+
+    /**
+    * The Person's occupation. For past professions, use Role for expressing dates.
+    * @param Occupation $value
+    * @return $this
+    */
+    public function hasOccupation(?Occupation $value)
+    {
+        $this->setProperty('hasOccupation', $value);
         return $this;
     }
 
     /**
     * The job title of the person (for example, Financial Manager).
-    * @param string $value
+    * @param string|DefinedTerm $value
     * @return $this
     */
-    public function jobTitle(?string $value)
+    public function jobTitle($value)
     {
         $this->setProperty('jobTitle', $value);
         return $this;
@@ -209,7 +213,7 @@ class Person extends Thing
 
     /**
     * Gender of the person. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender.
-    * @param GenderType|string $value
+    * @param string|GenderType $value
     * @return $this
     */
     public function gender($value)
@@ -231,7 +235,7 @@ class Person extends Thing
 
     /**
     * A contact location for a person's residence.
-    * @param Place|ContactPoint $value
+    * @param ContactPoint|Place $value
     * @return $this
     */
     public function homeLocation($value)
@@ -296,6 +300,17 @@ class Person extends Thing
     }
 
     /**
+    * Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the name property.
+    * @param string $value
+    * @return $this
+    */
+    public function givenName(?string $value)
+    {
+        $this->setProperty('givenName', $value);
+        return $this;
+    }
+
+    /**
     * A contact point for a person or organization.
     * @param ContactPoint $value
     * @return $this
@@ -303,17 +318,6 @@ class Person extends Thing
     public function contactPoints(?ContactPoint $value)
     {
         $this->setProperty('contactPoints', $value);
-        return $this;
-    }
-
-    /**
-    * Awards won by or for this item.
-    * @param string $value
-    * @return $this
-    */
-    public function awards(?string $value)
-    {
-        $this->setProperty('awards', $value);
         return $this;
     }
 
@@ -347,6 +351,17 @@ class Person extends Thing
     public function sibling(?Person $value)
     {
         $this->setProperty('sibling', $value);
+        return $this;
+    }
+
+    /**
+    * Physical address of the item.
+    * @param string|PostalAddress $value
+    * @return $this
+    */
+    public function address($value)
+    {
+        $this->setProperty('address', $value);
         return $this;
     }
 
@@ -450,13 +465,13 @@ class Person extends Thing
     }
 
     /**
-    * A child of the person.
-    * @param Person $value
+    * Awards won by or for this item.
+    * @param string $value
     * @return $this
     */
-    public function children(?Person $value)
+    public function awards(?string $value)
     {
-        $this->setProperty('children', $value);
+        $this->setProperty('awards', $value);
         return $this;
     }
 
@@ -468,17 +483,6 @@ class Person extends Thing
     public function parents(?Person $value)
     {
         $this->setProperty('parents', $value);
-        return $this;
-    }
-
-    /**
-    * Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the name property.
-    * @param string $value
-    * @return $this
-    */
-    public function givenName(?string $value)
-    {
-        $this->setProperty('givenName', $value);
         return $this;
     }
 
@@ -541,12 +545,23 @@ class Person extends Thing
     * The publishingPrinciples property indicates (typically via <a class="localLink" href="http://schema.org/URL">URL</a>) a document describing the editorial principles of an <a class="localLink" href="http://schema.org/Organization">Organization</a> (or individual e.g. a <a class="localLink" href="http://schema.org/Person">Person</a> writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a <a class="localLink" href="http://schema.org/CreativeWork">CreativeWork</a> (e.g. <a class="localLink" href="http://schema.org/NewsArticle">NewsArticle</a>) the principles are those of the party primarily responsible for the creation of the <a class="localLink" href="http://schema.org/CreativeWork">CreativeWork</a>.<br/><br/>
 
 While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a <a class="localLink" href="http://schema.org/funder">funder</a>) can be expressed using schema.org terminology.
-    * @param string|CreativeWork $value
+    * @param CreativeWork|string $value
     * @return $this
     */
     public function publishingPrinciples($value)
     {
         $this->setProperty('publishingPrinciples', $value);
+        return $this;
+    }
+
+    /**
+    * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+    * @param Person|Organization $value
+    * @return $this
+    */
+    public function sponsor($value)
+    {
+        $this->setProperty('sponsor', $value);
         return $this;
     }
 
@@ -606,6 +621,39 @@ While such policies are most typically expressed in natural language, sometimes 
     }
 
     /**
+    * A credential awarded to the Person or Organization.
+    * @param EducationalOccupationalCredential $value
+    * @return $this
+    */
+    public function hasCredential(?EducationalOccupationalCredential $value)
+    {
+        $this->setProperty('hasCredential', $value);
+        return $this;
+    }
+
+    /**
+    * Of a <a class="localLink" href="http://schema.org/Person">Person</a>, and less typically of an <a class="localLink" href="http://schema.org/Organization">Organization</a>, to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the <a href="http://tools.ietf.org/html/bcp47">IETF BCP 47 standard</a>.
+    * @param string|Language $value
+    * @return $this
+    */
+    public function knowsLanguage($value)
+    {
+        $this->setProperty('knowsLanguage', $value);
+        return $this;
+    }
+
+    /**
+    * The fax number.
+    * @param string $value
+    * @return $this
+    */
+    public function faxNumber(?string $value)
+    {
+        $this->setProperty('faxNumber', $value);
+        return $this;
+    }
+
+    /**
     * The most generic familial relation.
     * @param Person $value
     * @return $this
@@ -651,4 +699,7 @@ While such policies are most typically expressed in natural language, sometimes 
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Person','Thing\\Person');
 

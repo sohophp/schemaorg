@@ -14,3 +14,6 @@ class BowlingAlley extends SportsActivityLocation
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\SportsActivityLocation\\BowlingAlley','Thing\\BowlingAlley');
+

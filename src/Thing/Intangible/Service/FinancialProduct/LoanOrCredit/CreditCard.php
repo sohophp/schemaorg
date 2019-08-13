@@ -2,6 +2,7 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible\Service\FinancialProduct\LoanOrCredit;
 
 use Sohophp\SchemaOrg\Thing\Intangible\Service\FinancialProduct\LoanOrCredit;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\MonetaryAmount;
 
 /**
 * A card payment method of a particular brand or name.  Used to mark up a particular payment method and/or the financial product/service that supplies the card account.<br/><br/>
@@ -23,6 +24,20 @@ Commonly used values:<br/><br/>
 class CreditCard extends LoanOrCredit
 {
 
+    /**
+    * The minimum payment is the lowest amount of money that one is required to pay on a credit card statement each month.
+    * @param MonetaryAmount $value
+    * @return $this
+    */
+    public function monthlyMinimumRepaymentAmount(?MonetaryAmount $value)
+    {
+        $this->setProperty('monthlyMinimumRepaymentAmount', $value);
+        return $this;
+    }
+
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Service\\FinancialProduct\\LoanOrCredit\\CreditCard','Thing\\CreditCard');
 

@@ -14,3 +14,6 @@ class Mass extends Quantity
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Quantity\\Mass','Thing\\Mass');
+

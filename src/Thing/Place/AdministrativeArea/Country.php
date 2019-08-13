@@ -14,3 +14,6 @@ class Country extends AdministrativeArea
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\AdministrativeArea\\Country','Thing\\Country');
+

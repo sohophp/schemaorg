@@ -14,3 +14,6 @@ class ComputerLanguage extends Intangible
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\ComputerLanguage','Thing\\ComputerLanguage');
+

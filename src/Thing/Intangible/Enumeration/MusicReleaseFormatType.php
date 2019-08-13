@@ -14,3 +14,6 @@ class MusicReleaseFormatType extends Enumeration
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\MusicReleaseFormatType','Thing\\MusicReleaseFormatType');
+

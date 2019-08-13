@@ -14,3 +14,6 @@ class AutomatedTeller extends FinancialService
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\FinancialService\\AutomatedTeller','Thing\\AutomatedTeller');
+

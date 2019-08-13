@@ -23,3 +23,6 @@ class SubscribeAction extends InteractAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\InteractAction\\SubscribeAction','Thing\\SubscribeAction');
+

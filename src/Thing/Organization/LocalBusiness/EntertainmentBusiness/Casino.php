@@ -14,3 +14,6 @@ class Casino extends EntertainmentBusiness
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\EntertainmentBusiness\\Casino','Thing\\Casino');
+

@@ -4,6 +4,7 @@ namespace Sohophp\SchemaOrg\Thing\CreativeWork;
 use Sohophp\SchemaOrg\Thing\CreativeWork;
 use Sohophp\SchemaOrg\Thing\Intangible\Quantity\Distance;
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\QuantitativeValue;
+use Sohophp\SchemaOrg\Thing\Intangible\MediaSubscription;
 use Sohophp\SchemaOrg\Thing\Place;
 use Sohophp\SchemaOrg\Thing\CreativeWork\Article\NewsArticle;
 use Sohophp\SchemaOrg\Thing\Organization;
@@ -16,6 +17,19 @@ use Sohophp\SchemaOrg\Thing\Intangible\Quantity\Duration;
 */
 class MediaObject extends CreativeWork
 {
+
+    /**
+    * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from <em>January</em> to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>
+
+Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+    * @param  $value
+    * @return $this
+    */
+    public function startTime($value)
+    {
+        $this->setProperty('startTime', $value);
+        return $this;
+    }
 
     /**
     * Date when this media object was uploaded to this site.
@@ -63,10 +77,10 @@ class MediaObject extends CreativeWork
 
     /**
     * Indicates if use of the media require a subscription  (either paid or free). Allowed values are <code>true</code> or <code>false</code> (note that an earlier version had 'yes', 'no').
-    * @param bool $value
+    * @param MediaSubscription|bool $value
     * @return $this
     */
-    public function requiresSubscription(?bool $value)
+    public function requiresSubscription($value)
     {
         $this->setProperty('requiresSubscription', $value);
         return $this;
@@ -107,7 +121,7 @@ class MediaObject extends CreativeWork
 
     /**
     * The width of the item.
-    * @param Distance|QuantitativeValue $value
+    * @param QuantitativeValue|Distance $value
     * @return $this
     */
     public function width($value)
@@ -124,6 +138,19 @@ class MediaObject extends CreativeWork
     public function contentUrl(?string $value)
     {
         $this->setProperty('contentUrl', $value);
+        return $this;
+    }
+
+    /**
+    * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to <em>December</em>. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>
+
+Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+    * @param  $value
+    * @return $this
+    */
+    public function endTime($value)
+    {
+        $this->setProperty('endTime', $value);
         return $this;
     }
 
@@ -188,4 +215,7 @@ Unregistered or niche encoding and file formats can be indicated instead via the
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\MediaObject','Thing\\MediaObject');
 

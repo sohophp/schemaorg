@@ -14,3 +14,6 @@ class UserTweets extends UserInteraction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Event\\UserInteraction\\UserTweets','Thing\\UserTweets');
+

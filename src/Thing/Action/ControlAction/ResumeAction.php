@@ -14,3 +14,6 @@ class ResumeAction extends ControlAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\ControlAction\\ResumeAction','Thing\\ResumeAction');
+

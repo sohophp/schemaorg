@@ -16,3 +16,6 @@ class Attorney extends LegalService
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\LegalService\\Attorney','Thing\\Attorney');
+

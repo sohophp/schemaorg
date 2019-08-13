@@ -7,12 +7,14 @@ use Sohophp\SchemaOrg\Thing\Intangible\Audience;
 use Sohophp\SchemaOrg\Thing\Intangible\Quantity\Distance;
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\QuantitativeValue;
 use Sohophp\SchemaOrg\Thing\CreativeWork\Review;
+use Sohophp\SchemaOrg\Thing\Product\ProductModel;
 use Sohophp\SchemaOrg\Thing\Intangible\Rating\AggregateRating;
+use Sohophp\SchemaOrg\Thing\Intangible\ProductReturnPolicy;
 use Sohophp\SchemaOrg\Thing\Intangible\Offer;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\PhysicalActivityCategory;
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\PropertyValue;
 use Sohophp\SchemaOrg\Thing\CreativeWork\MediaObject\ImageObject;
 use Sohophp\SchemaOrg\Thing\Intangible\Service;
-use Sohophp\SchemaOrg\Thing\Product\ProductModel;
 use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\OfferItemCondition;
 use Sohophp\SchemaOrg\Thing\Intangible\Brand;
 
@@ -23,6 +25,17 @@ use Sohophp\SchemaOrg\Thing\Intangible\Brand;
 */
 class Product extends Thing
 {
+
+    /**
+    * Indicates the <a href="https://en.wikipedia.org/wiki/NATO_Stock_Number">NATO stock number</a> (nsn) of a <a class="localLink" href="http://schema.org/Product">Product</a>.
+    * @param string $value
+    * @return $this
+    */
+    public function nsn(?string $value)
+    {
+        $this->setProperty('nsn', $value);
+        return $this;
+    }
 
     /**
     * The manufacturer of the product.
@@ -113,6 +126,17 @@ class Product extends Thing
     }
 
     /**
+    * The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.
+    * @param string|ProductModel $value
+    * @return $this
+    */
+    public function model($value)
+    {
+        $this->setProperty('model', $value);
+        return $this;
+    }
+
+    /**
     * The overall rating, based on a collection of reviews or ratings, of the item.
     * @param AggregateRating $value
     * @return $this
@@ -131,6 +155,17 @@ class Product extends Thing
     public function isConsumableFor(?Product $value)
     {
         $this->setProperty('isConsumableFor', $value);
+        return $this;
+    }
+
+    /**
+    * Indicates a ProductReturnPolicy that may be applicable.
+    * @param ProductReturnPolicy $value
+    * @return $this
+    */
+    public function hasProductReturnPolicy(?ProductReturnPolicy $value)
+    {
+        $this->setProperty('hasProductReturnPolicy', $value);
         return $this;
     }
 
@@ -158,7 +193,7 @@ class Product extends Thing
 
     /**
     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-    * @param string|Thing $value
+    * @param string|PhysicalActivityCategory|Thing $value
     * @return $this
     */
     public function category($value)
@@ -169,23 +204,12 @@ class Product extends Thing
 
     /**
     * The width of the item.
-    * @param Distance|QuantitativeValue $value
+    * @param QuantitativeValue|Distance $value
     * @return $this
     */
     public function width($value)
     {
         $this->setProperty('width', $value);
-        return $this;
-    }
-
-    /**
-    * Awards won by or for this item.
-    * @param string $value
-    * @return $this
-    */
-    public function awards(?string $value)
-    {
-        $this->setProperty('awards', $value);
         return $this;
     }
 
@@ -203,6 +227,17 @@ Note: Publishers should be aware that applications designed to use specific sche
     }
 
     /**
+    * A material that something is made from, e.g. leather, wool, cotton, paper.
+    * @param string|string|Product $value
+    * @return $this
+    */
+    public function material($value)
+    {
+        $this->setProperty('material', $value);
+        return $this;
+    }
+
+    /**
     * A pointer to another product (or multiple products) for which this product is an accessory or spare part.
     * @param Product $value
     * @return $this
@@ -215,7 +250,7 @@ Note: Publishers should be aware that applications designed to use specific sche
 
     /**
     * An associated logo.
-    * @param string|ImageObject $value
+    * @param ImageObject|string $value
     * @return $this
     */
     public function logo($value)
@@ -258,17 +293,6 @@ Note: Publishers should be aware that applications designed to use specific sche
     }
 
     /**
-    * A material that something is made from, e.g. leather, wool, cotton, paper.
-    * @param Product|string|string $value
-    * @return $this
-    */
-    public function material($value)
-    {
-        $this->setProperty('material', $value);
-        return $this;
-    }
-
-    /**
     * The weight of the product or person.
     * @param QuantitativeValue $value
     * @return $this
@@ -291,13 +315,24 @@ Note: Publishers should be aware that applications designed to use specific sche
     }
 
     /**
-    * The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.
-    * @param string|ProductModel $value
+    * Awards won by or for this item.
+    * @param string $value
     * @return $this
     */
-    public function model($value)
+    public function awards(?string $value)
     {
-        $this->setProperty('model', $value);
+        $this->setProperty('awards', $value);
+        return $this;
+    }
+
+    /**
+    * A Global Trade Item Number (<a href="https://www.gs1.org/standards/id-keys/gtin">GTIN</a>). GTINs identify trade items, including products and services, using numeric identification codes. The <a class="localLink" href="http://schema.org/gtin">gtin</a> property generalizes the earlier <a class="localLink" href="http://schema.org/gtin8">gtin8</a>, <a class="localLink" href="http://schema.org/gtin12">gtin12</a>, <a class="localLink" href="http://schema.org/gtin13">gtin13</a>, and <a class="localLink" href="http://schema.org/gtin14">gtin14</a> properties. The GS1 <a href="https://www.gs1.org/standards/Digital-Link/">digital link specifications</a> express GTINs as URLs. A correct <a class="localLink" href="http://schema.org/gtin">gtin</a> value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a <a href="https://www.gs1.org/services/check-digit-calculator">valid GS1 check digit</a> and meet the other rules for valid GTINs. See also <a href="http://www.gs1.org/barcodes/technical/idkeys/gtin">GS1's GTIN Summary</a> and <a href="https://en.wikipedia.org/wiki/Global_Trade_Item_Number">Wikipedia</a> for more details. Left-padding of the gtin values is not required or encouraged.
+    * @param string $value
+    * @return $this
+    */
+    public function gtin(?string $value)
+    {
+        $this->setProperty('gtin', $value);
         return $this;
     }
 
@@ -347,7 +382,7 @@ Note: Publishers should be aware that applications designed to use specific sche
 
     /**
     * The depth of the item.
-    * @param QuantitativeValue|Distance $value
+    * @param Distance|QuantitativeValue $value
     * @return $this
     */
     public function depth($value)
@@ -379,6 +414,17 @@ Note: Publishers should be aware that applications designed to use specific sche
     }
 
     /**
+    * A slogan or motto associated with the item.
+    * @param string $value
+    * @return $this
+    */
+    public function slogan(?string $value)
+    {
+        $this->setProperty('slogan', $value);
+        return $this;
+    }
+
+    /**
     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
     * @param Organization|Brand $value
     * @return $this
@@ -402,4 +448,7 @@ Note: Publishers should be aware that applications designed to use specific sche
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Product','Thing\\Product');
 

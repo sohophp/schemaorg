@@ -69,3 +69,6 @@ class AlignmentObject extends Intangible
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\AlignmentObject','Thing\\AlignmentObject');
+

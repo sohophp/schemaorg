@@ -14,3 +14,6 @@ class TextDigitalDocument extends DigitalDocument
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\DigitalDocument\\TextDigitalDocument','Thing\\TextDigitalDocument');
+

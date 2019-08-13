@@ -14,3 +14,6 @@ class ArriveAction extends MoveAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\MoveAction\\ArriveAction','Thing\\ArriveAction');
+

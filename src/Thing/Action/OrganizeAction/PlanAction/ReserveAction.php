@@ -21,3 +21,6 @@ class ReserveAction extends PlanAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\OrganizeAction\\PlanAction\\ReserveAction','Thing\\ReserveAction');
+

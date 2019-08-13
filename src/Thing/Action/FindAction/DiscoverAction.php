@@ -14,3 +14,6 @@ class DiscoverAction extends FindAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\FindAction\\DiscoverAction','Thing\\DiscoverAction');
+

@@ -14,3 +14,6 @@ class ComedyClub extends EntertainmentBusiness
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\EntertainmentBusiness\\ComedyClub','Thing\\ComedyClub');
+

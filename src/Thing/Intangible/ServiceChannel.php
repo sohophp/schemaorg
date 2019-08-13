@@ -52,7 +52,7 @@ class ServiceChannel extends Intangible
 
     /**
     * A language someone may use with or at the item, service or place. Please use one of the language codes from the <a href="http://tools.ietf.org/html/bcp47">IETF BCP 47 standard</a>. See also <a class="localLink" href="http://schema.org/inLanguage">inLanguage</a>
-    * @param Language|string $value
+    * @param string|Language $value
     * @return $this
     */
     public function availableLanguage($value)
@@ -107,4 +107,7 @@ class ServiceChannel extends Intangible
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\ServiceChannel','Thing\\ServiceChannel');
 

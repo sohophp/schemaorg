@@ -14,3 +14,6 @@ class OfficeEquipmentStore extends Store
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\Store\\OfficeEquipmentStore','Thing\\OfficeEquipmentStore');
+

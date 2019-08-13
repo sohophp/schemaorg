@@ -49,3 +49,6 @@ class GameServer extends Intangible
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\GameServer','Thing\\GameServer');
+

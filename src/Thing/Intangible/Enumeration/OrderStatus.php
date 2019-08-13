@@ -14,3 +14,6 @@ class OrderStatus extends Enumeration
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\OrderStatus','Thing\\OrderStatus');
+

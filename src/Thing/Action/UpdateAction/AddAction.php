@@ -14,3 +14,6 @@ class AddAction extends UpdateAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\UpdateAction\\AddAction','Thing\\AddAction');
+

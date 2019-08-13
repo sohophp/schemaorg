@@ -28,3 +28,6 @@ class DeliveryMethod extends Enumeration
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\DeliveryMethod','Thing\\DeliveryMethod');
+

@@ -25,3 +25,6 @@ class PerformanceRole extends Role
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Role\\PerformanceRole','Thing\\PerformanceRole');
+

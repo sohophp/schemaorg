@@ -14,3 +14,6 @@ class Taxi extends Service
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Service\\Taxi','Thing\\Taxi');
+

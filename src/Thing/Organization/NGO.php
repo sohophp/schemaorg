@@ -14,3 +14,6 @@ class NGO extends Organization
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\NGO','Thing\\NGO');
+

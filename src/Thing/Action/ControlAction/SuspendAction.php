@@ -14,3 +14,6 @@ class SuspendAction extends ControlAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\ControlAction\\SuspendAction','Thing\\SuspendAction');
+

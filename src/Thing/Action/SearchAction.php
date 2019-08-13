@@ -32,3 +32,6 @@ class SearchAction extends Action
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\SearchAction','Thing\\SearchAction');
+

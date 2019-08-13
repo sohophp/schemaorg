@@ -75,3 +75,6 @@ Dateline summaries are oriented more towards human readers than towards automate
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Article\\NewsArticle','Thing\\NewsArticle');
+

@@ -16,6 +16,17 @@ class LodgingReservation extends Reservation
 {
 
     /**
+    * A full description of the lodging unit.
+    * @param string $value
+    * @return $this
+    */
+    public function lodgingUnitDescription(?string $value)
+    {
+        $this->setProperty('lodgingUnitDescription', $value);
+        return $this;
+    }
+
+    /**
     * The earliest someone may check into a lodging establishment.
     * @param  $value
     * @return $this
@@ -28,23 +39,12 @@ class LodgingReservation extends Reservation
 
     /**
     * The number of children staying in the unit.
-    * @param int|QuantitativeValue $value
+    * @param QuantitativeValue|int $value
     * @return $this
     */
     public function numChildren($value)
     {
         $this->setProperty('numChildren', $value);
-        return $this;
-    }
-
-    /**
-    * A full description of the lodging unit.
-    * @param string $value
-    * @return $this
-    */
-    public function lodgingUnitDescription(?string $value)
-    {
-        $this->setProperty('lodgingUnitDescription', $value);
         return $this;
     }
 
@@ -72,7 +72,7 @@ class LodgingReservation extends Reservation
 
     /**
     * The number of adults staying in the unit.
-    * @param int|QuantitativeValue $value
+    * @param QuantitativeValue|int $value
     * @return $this
     */
     public function numAdults($value)
@@ -83,4 +83,7 @@ class LodgingReservation extends Reservation
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Reservation\\LodgingReservation','Thing\\LodgingReservation');
 

@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php
 namespace Sohophp\SchemaOrg\Thing\Organization\LocalBusiness;
 
 use Sohophp\SchemaOrg\Thing\Organization\LocalBusiness;
@@ -6,6 +6,7 @@ use Sohophp\SchemaOrg\Thing\Intangible\Audience;
 use Sohophp\SchemaOrg\Thing\Intangible\Language;
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\PropertyValue\LocationFeatureSpecification;
 use Sohophp\SchemaOrg\Thing\Intangible\Rating;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\QuantitativeValue;
 
 /**
 * A lodging business, such as a motel, hotel, or inn.
@@ -50,7 +51,7 @@ class LodgingBusiness extends LocalBusiness
 
     /**
     * A language someone may use with or at the item, service or place. Please use one of the language codes from the <a href="http://tools.ietf.org/html/bcp47">IETF BCP 47 standard</a>. See also <a class="localLink" href="http://schema.org/inLanguage">inLanguage</a>
-    * @param Language|string $value
+    * @param string|Language $value
     * @return $this
     */
     public function availableLanguage($value)
@@ -92,6 +93,21 @@ class LodgingBusiness extends LocalBusiness
         return $this;
     }
 
+    /**
+    * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
+    * @param QuantitativeValue $value
+    * @return $this
+    */
+    public function numberOfRooms(? $value)
+    {
+        $this->setProperty('numberOfRooms', $value);
+        return $this;
+    }
+
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\LodgingBusiness','Thing\\LodgingBusiness');
 

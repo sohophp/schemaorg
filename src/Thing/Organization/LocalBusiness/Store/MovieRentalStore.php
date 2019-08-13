@@ -14,3 +14,6 @@ class MovieRentalStore extends Store
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\Store\\MovieRentalStore','Thing\\MovieRentalStore');
+

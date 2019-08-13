@@ -268,3 +268,6 @@ class VideoGameSeries extends CreativeWorkSeries
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Series\\CreativeWorkSeries\\VideoGameSeries','Thing\\VideoGameSeries');
+

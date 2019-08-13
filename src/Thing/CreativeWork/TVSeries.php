@@ -186,3 +186,6 @@ class TVSeries extends CreativeWork
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\TVSeries','Thing\\TVSeries');
+

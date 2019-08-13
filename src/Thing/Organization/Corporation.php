@@ -25,3 +25,6 @@ class Corporation extends Organization
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\Corporation','Thing\\Corporation');
+

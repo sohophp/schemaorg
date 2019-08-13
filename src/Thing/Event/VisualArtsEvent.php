@@ -14,3 +14,6 @@ class VisualArtsEvent extends Event
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Event\\VisualArtsEvent','Thing\\VisualArtsEvent');
+

@@ -14,3 +14,6 @@ class AutoPartsStore extends AutomotiveBusiness
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\AutomotiveBusiness\\AutoPartsStore','Thing\\AutoPartsStore');
+

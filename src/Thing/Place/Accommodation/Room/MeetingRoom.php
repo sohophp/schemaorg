@@ -16,3 +16,6 @@ class MeetingRoom extends Room
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\Accommodation\\Room\\MeetingRoom','Thing\\MeetingRoom');
+

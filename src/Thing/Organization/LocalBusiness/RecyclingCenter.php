@@ -14,3 +14,6 @@ class RecyclingCenter extends LocalBusiness
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\RecyclingCenter','Thing\\RecyclingCenter');
+

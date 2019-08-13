@@ -14,3 +14,6 @@ class HairSalon extends HealthAndBeautyBusiness
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\HealthAndBeautyBusiness\\HairSalon','Thing\\HairSalon');
+

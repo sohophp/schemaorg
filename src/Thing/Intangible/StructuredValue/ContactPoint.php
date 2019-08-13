@@ -2,9 +2,9 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
 
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
+use Sohophp\SchemaOrg\Thing\Place;
 use Sohophp\SchemaOrg\Thing\Place\AdministrativeArea;
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\GeoShape;
-use Sohophp\SchemaOrg\Thing\Place;
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\OpeningHoursSpecification;
 use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\ContactPointOption;
 use Sohophp\SchemaOrg\Thing\Intangible\Language;
@@ -20,34 +20,12 @@ class ContactPoint extends StructuredValue
 
     /**
     * The geographic area where the service is provided.
-    * @param AdministrativeArea|GeoShape|Place $value
+    * @param Place|AdministrativeArea|GeoShape $value
     * @return $this
     */
     public function serviceArea($value)
     {
         $this->setProperty('serviceArea', $value);
-        return $this;
-    }
-
-    /**
-    * The geographic area where a service or offered item is provided.
-    * @param AdministrativeArea|string|Place|GeoShape $value
-    * @return $this
-    */
-    public function areaServed($value)
-    {
-        $this->setProperty('areaServed', $value);
-        return $this;
-    }
-
-    /**
-    * The fax number.
-    * @param string $value
-    * @return $this
-    */
-    public function faxNumber(?string $value)
-    {
-        $this->setProperty('faxNumber', $value);
         return $this;
     }
 
@@ -75,7 +53,7 @@ class ContactPoint extends StructuredValue
 
     /**
     * A language someone may use with or at the item, service or place. Please use one of the language codes from the <a href="http://tools.ietf.org/html/bcp47">IETF BCP 47 standard</a>. See also <a class="localLink" href="http://schema.org/inLanguage">inLanguage</a>
-    * @param Language|string $value
+    * @param string|Language $value
     * @return $this
     */
     public function availableLanguage($value)
@@ -119,7 +97,7 @@ class ContactPoint extends StructuredValue
 
     /**
     * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
-    * @param Product|string $value
+    * @param string|Product $value
     * @return $this
     */
     public function productSupported($value)
@@ -128,6 +106,31 @@ class ContactPoint extends StructuredValue
         return $this;
     }
 
+    /**
+    * The fax number.
+    * @param string $value
+    * @return $this
+    */
+    public function faxNumber(?string $value)
+    {
+        $this->setProperty('faxNumber', $value);
+        return $this;
+    }
+
+    /**
+    * The geographic area where a service or offered item is provided.
+    * @param string|GeoShape|Place|AdministrativeArea $value
+    * @return $this
+    */
+    public function areaServed($value)
+    {
+        $this->setProperty('areaServed', $value);
+        return $this;
+    }
+
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue\\ContactPoint','Thing\\ContactPoint');
 

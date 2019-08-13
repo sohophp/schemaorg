@@ -14,12 +14,23 @@ class PropertyValueSpecification extends Intangible
 
     /**
     * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
-    * @param string|Thing $value
+    * @param Thing|string $value
     * @return $this
     */
     public function defaultValue($value)
     {
         $this->setProperty('defaultValue', $value);
+        return $this;
+    }
+
+    /**
+    * The lower value of some characteristic or property.
+    * @param  $value
+    * @return $this
+    */
+    public function minValue($value)
+    {
+        $this->setProperty('minValue', $value);
         return $this;
     }
 
@@ -46,6 +57,17 @@ class PropertyValueSpecification extends Intangible
     }
 
     /**
+    * Specifies the minimum allowed range for number of characters in a literal value.
+    * @param  $value
+    * @return $this
+    */
+    public function valueMinLength($value)
+    {
+        $this->setProperty('valueMinLength', $value);
+        return $this;
+    }
+
+    /**
     * Specifies the allowed range for number of characters in a literal value.
     * @param  $value
     * @return $this
@@ -64,17 +86,6 @@ class PropertyValueSpecification extends Intangible
     public function readonlyValue(?bool $value)
     {
         $this->setProperty('readonlyValue', $value);
-        return $this;
-    }
-
-    /**
-    * Specifies the minimum allowed range for number of characters in a literal value.
-    * @param  $value
-    * @return $this
-    */
-    public function valueMinLength($value)
-    {
-        $this->setProperty('valueMinLength', $value);
         return $this;
     }
 
@@ -112,17 +123,6 @@ class PropertyValueSpecification extends Intangible
     }
 
     /**
-    * The lower value of some characteristic or property.
-    * @param  $value
-    * @return $this
-    */
-    public function minValue($value)
-    {
-        $this->setProperty('minValue', $value);
-        return $this;
-    }
-
-    /**
     * Whether the property must be filled in to complete the action.  Default is false.
     * @param bool $value
     * @return $this
@@ -135,4 +135,7 @@ class PropertyValueSpecification extends Intangible
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\PropertyValueSpecification','Thing\\PropertyValueSpecification');
 

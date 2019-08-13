@@ -14,3 +14,6 @@ class School extends EducationalOrganization
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\EducationalOrganization\\School','Thing\\School');
+

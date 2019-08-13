@@ -14,3 +14,6 @@ class TelevisionChannel extends BroadcastChannel
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\BroadcastChannel\\TelevisionChannel','Thing\\TelevisionChannel');
+

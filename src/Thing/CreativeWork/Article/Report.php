@@ -25,3 +25,6 @@ class Report extends Article
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Article\\Report','Thing\\Report');
+

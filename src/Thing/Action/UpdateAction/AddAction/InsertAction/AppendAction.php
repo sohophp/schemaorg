@@ -14,3 +14,6 @@ class AppendAction extends InsertAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\UpdateAction\\AddAction\\InsertAction\\AppendAction','Thing\\AppendAction');
+

@@ -26,3 +26,6 @@ class GovernmentService extends Service
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Service\\GovernmentService','Thing\\GovernmentService');
+

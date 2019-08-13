@@ -14,3 +14,6 @@ class BookmarkAction extends OrganizeAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\OrganizeAction\\BookmarkAction','Thing\\BookmarkAction');
+

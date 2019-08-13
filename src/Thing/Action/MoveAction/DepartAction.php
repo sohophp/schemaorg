@@ -14,3 +14,6 @@ class DepartAction extends MoveAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\MoveAction\\DepartAction','Thing\\DepartAction');
+

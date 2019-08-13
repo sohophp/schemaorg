@@ -20,7 +20,7 @@ class VideoGame extends Game
 
     /**
     * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
-    * @param string|Thing|string $value
+    * @param Thing|string|string $value
     * @return $this
     */
     public function gamePlatform($value)
@@ -141,4 +141,7 @@ class VideoGame extends Game
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Game\\VideoGame','Thing\\VideoGame');
 

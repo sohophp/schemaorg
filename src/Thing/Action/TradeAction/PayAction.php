@@ -6,6 +6,8 @@ use Sohophp\SchemaOrg\Thing\Person;
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\ContactPoint;
 use Sohophp\SchemaOrg\Thing\Organization;
 use Sohophp\SchemaOrg\Thing\Intangible\Audience;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MedicalEnumeration\MedicalDevicePurpose;
+use Sohophp\SchemaOrg\Thing;
 
 /**
 * An agent pays a price to a participant.
@@ -26,6 +28,20 @@ class PayAction extends TradeAction
         return $this;
     }
 
+    /**
+    * A goal towards an action is taken. Can be concrete or abstract.
+    * @param MedicalDevicePurpose|Thing $value
+    * @return $this
+    */
+    public function purpose($value)
+    {
+        $this->setProperty('purpose', $value);
+        return $this;
+    }
+
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\TradeAction\\PayAction','Thing\\PayAction');
 

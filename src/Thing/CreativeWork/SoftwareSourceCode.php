@@ -93,3 +93,6 @@ class SoftwareSourceCode extends CreativeWork
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\SoftwareSourceCode','Thing\\SoftwareSourceCode');
+

@@ -14,3 +14,6 @@ class Library extends LocalBusiness
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\Library','Thing\\Library');
+

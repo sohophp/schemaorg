@@ -34,3 +34,6 @@ class TrackAction extends FindAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\FindAction\\TrackAction','Thing\\TrackAction');
+

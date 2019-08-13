@@ -14,3 +14,6 @@ class DepositAccount extends InvestmentOrDeposit
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Service\\FinancialProduct\\InvestmentOrDeposit\\DepositAccount','Thing\\DepositAccount');
+

@@ -14,3 +14,6 @@ class ItemPage extends WebPage
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\WebPage\\ItemPage','Thing\\ItemPage');
+

@@ -25,3 +25,6 @@ class PlanAction extends OrganizeAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\OrganizeAction\\PlanAction','Thing\\PlanAction');
+

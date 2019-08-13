@@ -14,3 +14,6 @@ class MovieClip extends Clip
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Clip\\MovieClip','Thing\\MovieClip');
+

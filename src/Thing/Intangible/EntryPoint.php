@@ -92,3 +92,6 @@ class EntryPoint extends Intangible
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\EntryPoint','Thing\\EntryPoint');
+

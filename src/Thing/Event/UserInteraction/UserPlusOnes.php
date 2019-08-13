@@ -14,3 +14,6 @@ class UserPlusOnes extends UserInteraction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Event\\UserInteraction\\UserPlusOnes','Thing\\UserPlusOnes');
+

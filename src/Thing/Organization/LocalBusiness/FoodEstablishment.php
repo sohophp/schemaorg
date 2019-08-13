@@ -26,7 +26,7 @@ class FoodEstablishment extends LocalBusiness
 
     /**
     * Either the actual menu as a structured representation, as text, or a URL of the menu.
-    * @param string|string|Menu $value
+    * @param string|Menu|string $value
     * @return $this
     */
     public function hasMenu($value)
@@ -37,7 +37,7 @@ class FoodEstablishment extends LocalBusiness
 
     /**
     * Either the actual menu as a structured representation, as text, or a URL of the menu.
-    * @param string|string|Menu $value
+    * @param string|Menu|string $value
     * @return $this
     */
     public function menu($value)
@@ -59,7 +59,7 @@ class FoodEstablishment extends LocalBusiness
 
     /**
     * Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, an URL at which reservations can be made or (for backwards compatibility) the strings <code>Yes</code> or <code>No</code>.
-    * @param string|bool|string $value
+    * @param bool|string|string $value
     * @return $this
     */
     public function acceptsReservations($value)
@@ -70,4 +70,7 @@ class FoodEstablishment extends LocalBusiness
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\FoodEstablishment','Thing\\FoodEstablishment');
 

@@ -14,3 +14,6 @@ class GovernmentOffice extends LocalBusiness
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\GovernmentOffice','Thing\\GovernmentOffice');
+

@@ -2,10 +2,10 @@
 namespace Sohophp\SchemaOrg\Thing\Action\CreateAction;
 
 use Sohophp\SchemaOrg\Thing\Action\CreateAction;
+use Sohophp\SchemaOrg\Thing\Organization\LocalBusiness\FoodEstablishment;
+use Sohophp\SchemaOrg\Thing\Place;
 use Sohophp\SchemaOrg\Thing\CreativeWork\HowTo\Recipe;
 use Sohophp\SchemaOrg\Thing\Event\FoodEvent;
-use Sohophp\SchemaOrg\Thing\Place;
-use Sohophp\SchemaOrg\Thing\Organization\LocalBusiness\FoodEstablishment;
 
 /**
 * The act of producing/preparing food.
@@ -14,6 +14,17 @@ use Sohophp\SchemaOrg\Thing\Organization\LocalBusiness\FoodEstablishment;
 */
 class CookAction extends CreateAction
 {
+
+    /**
+    * A sub property of location. The specific food establishment where the action occurred.
+    * @param FoodEstablishment|Place $value
+    * @return $this
+    */
+    public function foodEstablishment($value)
+    {
+        $this->setProperty('foodEstablishment', $value);
+        return $this;
+    }
 
     /**
     * A sub property of instrument. The recipe/instructions used to perform the action.
@@ -37,17 +48,9 @@ class CookAction extends CreateAction
         return $this;
     }
 
-    /**
-    * A sub property of location. The specific food establishment where the action occurred.
-    * @param Place|FoodEstablishment $value
-    * @return $this
-    */
-    public function foodEstablishment($value)
-    {
-        $this->setProperty('foodEstablishment', $value);
-        return $this;
-    }
-
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\CreateAction\\CookAction','Thing\\CookAction');
 

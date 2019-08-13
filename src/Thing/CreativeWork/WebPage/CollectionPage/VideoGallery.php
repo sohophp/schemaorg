@@ -14,3 +14,6 @@ class VideoGallery extends CollectionPage
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\WebPage\\CollectionPage\\VideoGallery','Thing\\VideoGallery');
+

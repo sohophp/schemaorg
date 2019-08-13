@@ -2,6 +2,7 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible\Audience;
 
 use Sohophp\SchemaOrg\Thing\Intangible\Audience;
+use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalCondition;
 
 /**
 * A set of characteristics belonging to people, e.g. who compose an item's target audience.
@@ -30,6 +31,17 @@ class PeopleAudience extends Audience
     public function requiredMinAge(?int $value)
     {
         $this->setProperty('requiredMinAge', $value);
+        return $this;
+    }
+
+    /**
+    * Specifying the health condition(s) of a patient, medical study, or other target audience.
+    * @param MedicalCondition $value
+    * @return $this
+    */
+    public function healthCondition(?MedicalCondition $value)
+    {
+        $this->setProperty('healthCondition', $value);
         return $this;
     }
 
@@ -79,4 +91,7 @@ class PeopleAudience extends Audience
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Audience\\PeopleAudience','Thing\\PeopleAudience');
 

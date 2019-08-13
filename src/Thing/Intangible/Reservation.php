@@ -2,10 +2,10 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible;
 
 use Sohophp\SchemaOrg\Thing\Intangible;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\ReservationStatusType;
 use Sohophp\SchemaOrg\Thing\Organization;
 use Sohophp\SchemaOrg\Thing\Person;
 use Sohophp\SchemaOrg\Thing\Intangible\ProgramMembership;
-use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\ReservationStatusType;
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\PriceSpecification;
 use Sohophp\SchemaOrg\Thing;
 use Sohophp\SchemaOrg\Thing\Intangible\Ticket;
@@ -19,6 +19,17 @@ Note: This type is for information about actual reservations, e.g. in confirmati
 */
 class Reservation extends Intangible
 {
+
+    /**
+    * The current status of the reservation.
+    * @param ReservationStatusType $value
+    * @return $this
+    */
+    public function reservationStatus(?ReservationStatusType $value)
+    {
+        $this->setProperty('reservationStatus', $value);
+        return $this;
+    }
 
     /**
     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
@@ -43,19 +54,8 @@ class Reservation extends Intangible
     }
 
     /**
-    * The current status of the reservation.
-    * @param ReservationStatusType $value
-    * @return $this
-    */
-    public function reservationStatus(?ReservationStatusType $value)
-    {
-        $this->setProperty('reservationStatus', $value);
-        return $this;
-    }
-
-    /**
     * The person or organization the reservation or ticket is for.
-    * @param Person|Organization $value
+    * @param Organization|Person $value
     * @return $this
     */
     public function underName($value)
@@ -66,7 +66,7 @@ class Reservation extends Intangible
 
     /**
     * 'bookingAgent' is an out-dated term indicating a 'broker' that serves as a booking agent.
-    * @param Person|Organization $value
+    * @param Organization|Person $value
     * @return $this
     */
     public function bookingAgent($value)
@@ -76,7 +76,15 @@ class Reservation extends Intangible
     }
 
     /**
-    * The total price for the reservation or ticket, including applicable taxes, shipping, etc.
+    * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>
+
+Usage guidelines:<br/><br/>
+
+<ul>
+<li>Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.</li>
+<li>Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.</li>
+</ul>
+
     * @param PriceSpecification|string $value
     * @return $this
     */
@@ -112,7 +120,7 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
 
     /**
     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
-    * @param Organization|Person $value
+    * @param Person|Organization $value
     * @return $this
     */
     public function broker($value)
@@ -167,4 +175,7 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Reservation','Thing\\Reservation');
 

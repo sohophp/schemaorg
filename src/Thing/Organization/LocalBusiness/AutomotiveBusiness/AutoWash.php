@@ -14,3 +14,6 @@ class AutoWash extends AutomotiveBusiness
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\AutomotiveBusiness\\AutoWash','Thing\\AutoWash');
+

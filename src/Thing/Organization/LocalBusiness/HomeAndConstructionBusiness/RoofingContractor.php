@@ -14,3 +14,6 @@ class RoofingContractor extends HomeAndConstructionBusiness
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\HomeAndConstructionBusiness\\RoofingContractor','Thing\\RoofingContractor');
+

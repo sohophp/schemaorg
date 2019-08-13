@@ -14,3 +14,6 @@ class RealEstateAgent extends LocalBusiness
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\RealEstateAgent','Thing\\RealEstateAgent');
+

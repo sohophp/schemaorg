@@ -47,3 +47,6 @@ class LiveBlogPosting extends BlogPosting
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Article\\SocialMediaPosting\\BlogPosting\\LiveBlogPosting','Thing\\LiveBlogPosting');
+

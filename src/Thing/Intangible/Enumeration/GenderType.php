@@ -14,3 +14,6 @@ class GenderType extends Enumeration
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\GenderType','Thing\\GenderType');
+

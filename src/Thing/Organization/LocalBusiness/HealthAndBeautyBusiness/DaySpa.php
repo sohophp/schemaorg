@@ -14,3 +14,6 @@ class DaySpa extends HealthAndBeautyBusiness
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\HealthAndBeautyBusiness\\DaySpa','Thing\\DaySpa');
+

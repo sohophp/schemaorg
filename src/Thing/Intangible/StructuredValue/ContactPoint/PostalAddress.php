@@ -46,7 +46,7 @@ class PostalAddress extends ContactPoint
     }
 
     /**
-    * The region. For example, CA.
+    * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level <a href="https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country">Administrative division</a>
     * @param string $value
     * @return $this
     */
@@ -68,7 +68,7 @@ class PostalAddress extends ContactPoint
     }
 
     /**
-    * The locality. For example, Mountain View.
+    * The locality in which the street address is, and which is in the region. For example, Mountain View.
     * @param string $value
     * @return $this
     */
@@ -80,4 +80,7 @@ class PostalAddress extends ContactPoint
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue\\ContactPoint\\PostalAddress','Thing\\PostalAddress');
 

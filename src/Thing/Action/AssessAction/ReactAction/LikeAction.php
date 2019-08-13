@@ -14,3 +14,6 @@ class LikeAction extends ReactAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\AssessAction\\ReactAction\\LikeAction','Thing\\LikeAction');
+

@@ -2,7 +2,7 @@
 namespace Sohophp\SchemaOrg\Thing\CreativeWork\Episode;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork\Episode;
-use Sohophp\SchemaOrg\Thing\CreativeWork\TVSeries;
+use Sohophp\SchemaOrg\Thing\CreativeWork\CreativeWorkSeries\TVSeries;
 use Sohophp\SchemaOrg\Thing\Intangible\Language;
 use Sohophp\SchemaOrg\Thing\Place\AdministrativeArea\Country;
 
@@ -27,7 +27,7 @@ class TVEpisode extends Episode
 
     /**
     * Languages in which subtitles/captions are available, in <a href="http://tools.ietf.org/html/bcp47">IETF BCP 47 standard format</a>.
-    * @param string|Language $value
+    * @param Language|string $value
     * @return $this
     */
     public function subtitleLanguage($value)
@@ -49,4 +49,7 @@ class TVEpisode extends Episode
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Episode\\TVEpisode','Thing\\TVEpisode');
 

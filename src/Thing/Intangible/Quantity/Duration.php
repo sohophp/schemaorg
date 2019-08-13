@@ -14,3 +14,6 @@ class Duration extends Quantity
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Quantity\\Duration','Thing\\Duration');
+

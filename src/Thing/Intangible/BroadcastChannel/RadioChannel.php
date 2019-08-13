@@ -14,3 +14,6 @@ class RadioChannel extends BroadcastChannel
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\BroadcastChannel\\RadioChannel','Thing\\RadioChannel');
+

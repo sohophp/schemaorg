@@ -14,3 +14,6 @@ class PoliceStation extends EmergencyService
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\EmergencyService\\PoliceStation','Thing\\PoliceStation');
+

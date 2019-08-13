@@ -26,7 +26,7 @@ class ScreeningEvent extends Event
 
     /**
     * Languages in which subtitles/captions are available, in <a href="http://tools.ietf.org/html/bcp47">IETF BCP 47 standard format</a>.
-    * @param string|Language $value
+    * @param Language|string $value
     * @return $this
     */
     public function subtitleLanguage($value)
@@ -48,4 +48,7 @@ class ScreeningEvent extends Event
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Event\\ScreeningEvent','Thing\\ScreeningEvent');
 

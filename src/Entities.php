@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php
 namespace Sohophp\SchemaOrg;
 
 class Entities
@@ -10,9 +10,15 @@ class Entities
   }
 
   
-  public static function UserLikes()
+  public static function UserReview()
   {
-     return new Thing\Event\UserInteraction\UserLikes();
+     return new Thing\CreativeWork\Review\UserReview();
+  }
+
+  
+  public static function ReturnFeesEnumeration()
+  {
+     return new Thing\Intangible\Enumeration\ReturnFeesEnumeration();
   }
 
   
@@ -28,12 +34,6 @@ class Entities
   }
 
   
-  public static function Volcano()
-  {
-     return new Thing\Place\Landform\Volcano();
-  }
-
-  
   public static function SportsTeam()
   {
      return new Thing\Organization\SportsOrganization\SportsTeam();
@@ -46,6 +46,12 @@ class Entities
   }
 
   
+  public static function ExchangeRateSpecification()
+  {
+     return new Thing\Intangible\StructuredValue\ExchangeRateSpecification();
+  }
+
+  
   public static function Demand()
   {
      return new Thing\Intangible\Demand();
@@ -55,6 +61,12 @@ class Entities
   public static function AboutPage()
   {
      return new Thing\CreativeWork\WebPage\AboutPage();
+  }
+
+  
+  public static function Atlas()
+  {
+     return new Thing\CreativeWork\Atlas();
   }
 
   
@@ -76,15 +88,33 @@ class Entities
   }
 
   
-  public static function SeaBodyOfWater()
+  public static function StadiumOrArena()
   {
-     return new Thing\Place\Landform\BodyOfWater\SeaBodyOfWater();
+     return new Thing\Place\CivicStructure\StadiumOrArena();
+  }
+
+  
+  public static function ConvenienceStore()
+  {
+     return new Thing\Organization\LocalBusiness\Store\ConvenienceStore();
+  }
+
+  
+  public static function Trip()
+  {
+     return new Thing\Intangible\Trip();
   }
 
   
   public static function Dataset()
   {
      return new Thing\CreativeWork\Dataset();
+  }
+
+  
+  public static function MapCategoryType()
+  {
+     return new Thing\Intangible\Enumeration\MapCategoryType();
   }
 
   
@@ -106,9 +136,45 @@ class Entities
   }
 
   
+  public static function BookmarkAction()
+  {
+     return new Thing\Action\OrganizeAction\BookmarkAction();
+  }
+
+  
   public static function TaxiReservation()
   {
      return new Thing\Intangible\Reservation\TaxiReservation();
+  }
+
+  
+  public static function BackgroundNewsArticle()
+  {
+     return new Thing\CreativeWork\Article\NewsArticle\BackgroundNewsArticle();
+  }
+
+  
+  public static function Artery()
+  {
+     return new Thing\MedicalEntity\AnatomicalStructure\Vessel\Artery();
+  }
+
+  
+  public static function Game()
+  {
+     return new Thing\CreativeWork\Game();
+  }
+
+  
+  public static function Volcano()
+  {
+     return new Thing\Place\Landform\Volcano();
+  }
+
+  
+  public static function MedicalProcedureType()
+  {
+     return new Thing\Intangible\Enumeration\MedicalEnumeration\MedicalProcedureType();
   }
 
   
@@ -118,9 +184,21 @@ class Entities
   }
 
   
+  public static function Ligament()
+  {
+     return new Thing\MedicalEntity\AnatomicalStructure\Ligament();
+  }
+
+  
+  public static function Permit()
+  {
+     return new Thing\Intangible\Permit();
+  }
+
+  
   public static function AutoPartsStore()
   {
-     return new Thing\Organization\LocalBusiness\AutomotiveBusiness\AutoPartsStore();
+     return new Thing\Organization\LocalBusiness\Store\AutoPartsStore();
   }
 
   
@@ -214,9 +292,27 @@ class Entities
   }
 
   
+  public static function Muscle()
+  {
+     return new Thing\MedicalEntity\AnatomicalStructure\Muscle();
+  }
+
+  
+  public static function MedicalWebPage()
+  {
+     return new Thing\CreativeWork\WebPage\MedicalWebPage();
+  }
+
+  
   public static function HowTo()
   {
      return new Thing\CreativeWork\HowTo();
+  }
+
+  
+  public static function DanceEvent()
+  {
+     return new Thing\Event\DanceEvent();
   }
 
   
@@ -226,9 +322,21 @@ class Entities
   }
 
   
+  public static function DigitalDocument()
+  {
+     return new Thing\CreativeWork\DigitalDocument();
+  }
+
+  
   public static function HealthClub()
   {
      return new Thing\Organization\LocalBusiness\SportsActivityLocation\HealthClub();
+  }
+
+  
+  public static function MedicineSystem()
+  {
+     return new Thing\Intangible\Enumeration\MedicalEnumeration\MedicineSystem();
   }
 
   
@@ -262,9 +370,15 @@ class Entities
   }
 
   
-  public static function Bakery()
+  public static function Thesis()
   {
-     return new Thing\Organization\LocalBusiness\FoodEstablishment\Bakery();
+     return new Thing\CreativeWork\Thesis();
+  }
+
+  
+  public static function WorkersUnion()
+  {
+     return new Thing\Organization\WorkersUnion();
   }
 
   
@@ -316,9 +430,21 @@ class Entities
   }
 
   
+  public static function MedicalDevicePurpose()
+  {
+     return new Thing\Intangible\Enumeration\MedicalEnumeration\MedicalDevicePurpose();
+  }
+
+  
   public static function NutritionInformation()
   {
      return new Thing\Intangible\StructuredValue\NutritionInformation();
+  }
+
+  
+  public static function Manuscript()
+  {
+     return new Thing\CreativeWork\Manuscript();
   }
 
   
@@ -328,9 +454,21 @@ class Entities
   }
 
   
+  public static function MedicalImagingTechnique()
+  {
+     return new Thing\Intangible\Enumeration\MedicalEnumeration\MedicalImagingTechnique();
+  }
+
+  
   public static function Organization()
   {
      return new Thing\Organization();
+  }
+
+  
+  public static function MedicalProcedure()
+  {
+     return new Thing\MedicalEntity\MedicalProcedure();
   }
 
   
@@ -352,9 +490,15 @@ class Entities
   }
 
   
-  public static function VisualArtwork()
+  public static function Project()
   {
-     return new Thing\CreativeWork\VisualArtwork();
+     return new Thing\Organization\Project();
+  }
+
+  
+  public static function DiagnosticLab()
+  {
+     return new Thing\Organization\MedicalOrganization\DiagnosticLab();
   }
 
   
@@ -382,9 +526,9 @@ class Entities
   }
 
   
-  public static function RegisterAction()
+  public static function ShareAction()
   {
-     return new Thing\Action\InteractAction\RegisterAction();
+     return new Thing\Action\InteractAction\CommunicateAction\ShareAction();
   }
 
   
@@ -394,9 +538,15 @@ class Entities
   }
 
   
-  public static function Trip()
+  public static function WinAction()
   {
-     return new Thing\Intangible\Trip();
+     return new Thing\Action\AchieveAction\WinAction();
+  }
+
+  
+  public static function MedicalCondition()
+  {
+     return new Thing\MedicalEntity\MedicalCondition();
   }
 
   
@@ -406,9 +556,9 @@ class Entities
   }
 
   
-  public static function WatchAction()
+  public static function Quotation()
   {
-     return new Thing\Action\ConsumeAction\WatchAction();
+     return new Thing\CreativeWork\Quotation();
   }
 
   
@@ -448,15 +598,39 @@ class Entities
   }
 
   
+  public static function ImagingTest()
+  {
+     return new Thing\MedicalEntity\MedicalTest\ImagingTest();
+  }
+
+  
+  public static function MedicalGuidelineContraindication()
+  {
+     return new Thing\MedicalEntity\MedicalGuideline\MedicalGuidelineContraindication();
+  }
+
+  
+  public static function Report()
+  {
+     return new Thing\CreativeWork\Article\Report();
+  }
+
+  
+  public static function InvestmentFund()
+  {
+     return new Thing\Intangible\Service\FinancialProduct\InvestmentOrDeposit\InvestmentFund();
+  }
+
+  
   public static function GenderType()
   {
      return new Thing\Intangible\Enumeration\GenderType();
   }
 
   
-  public static function Reservoir()
+  public static function InstallAction()
   {
-     return new Thing\Place\Landform\BodyOfWater\Reservoir();
+     return new Thing\Action\ConsumeAction\InstallAction();
   }
 
   
@@ -469,6 +643,24 @@ class Entities
   public static function GiveAction()
   {
      return new Thing\Action\TransferAction\GiveAction();
+  }
+
+  
+  public static function CompleteDataFeed()
+  {
+     return new Thing\CreativeWork\Dataset\DataFeed\CompleteDataFeed();
+  }
+
+  
+  public static function InfectiousDisease()
+  {
+     return new Thing\MedicalEntity\MedicalCondition\InfectiousDisease();
+  }
+
+  
+  public static function BuyAction()
+  {
+     return new Thing\Action\TradeAction\BuyAction();
   }
 
   
@@ -490,15 +682,21 @@ class Entities
   }
 
   
+  public static function VeterinaryCare()
+  {
+     return new Thing\Organization\MedicalOrganization\VeterinaryCare();
+  }
+
+  
   public static function LandmarksOrHistoricalBuildings()
   {
      return new Thing\Place\LandmarksOrHistoricalBuildings();
   }
 
   
-  public static function Barcode()
+  public static function WorkBasedProgram()
   {
-     return new Thing\CreativeWork\MediaObject\ImageObject\Barcode();
+     return new Thing\Intangible\EducationalOccupationalProgram\WorkBasedProgram();
   }
 
   
@@ -508,15 +706,27 @@ class Entities
   }
 
   
-  public static function Museum()
+  public static function Review()
   {
-     return new Thing\Place\CivicStructure\Museum();
+     return new Thing\CreativeWork\Review();
   }
 
   
   public static function HowToSupply()
   {
      return new Thing\Intangible\ListItem\HowToItem\HowToSupply();
+  }
+
+  
+  public static function AnatomicalSystem()
+  {
+     return new Thing\MedicalEntity\AnatomicalSystem();
+  }
+
+  
+  public static function MedicalContraindication()
+  {
+     return new Thing\MedicalEntity\MedicalContraindication();
   }
 
   
@@ -550,6 +760,18 @@ class Entities
   }
 
   
+  public static function InfectiousAgentClass()
+  {
+     return new Thing\Intangible\Enumeration\MedicalEnumeration\InfectiousAgentClass();
+  }
+
+  
+  public static function Poster()
+  {
+     return new Thing\CreativeWork\Poster();
+  }
+
+  
   public static function ImageObject()
   {
      return new Thing\CreativeWork\MediaObject\ImageObject();
@@ -568,9 +790,9 @@ class Entities
   }
 
   
-  public static function TrackAction()
+  public static function ApprovedIndication()
   {
-     return new Thing\Action\FindAction\TrackAction();
+     return new Thing\MedicalEntity\MedicalIndication\ApprovedIndication();
   }
 
   
@@ -598,27 +820,27 @@ class Entities
   }
 
   
+  public static function EducationalOccupationalProgram()
+  {
+     return new Thing\Intangible\EducationalOccupationalProgram();
+  }
+
+  
   public static function DanceGroup()
   {
      return new Thing\Organization\PerformingGroup\DanceGroup();
   }
 
   
-  public static function Game()
+  public static function Claim()
   {
-     return new Thing\CreativeWork\Game();
+     return new Thing\CreativeWork\Claim();
   }
 
   
   public static function DiscussionForumPosting()
   {
      return new Thing\CreativeWork\Article\SocialMediaPosting\DiscussionForumPosting();
-  }
-
-  
-  public static function IceCreamShop()
-  {
-     return new Thing\Organization\LocalBusiness\FoodEstablishment\IceCreamShop();
   }
 
   
@@ -637,6 +859,12 @@ class Entities
   public static function PriceSpecification()
   {
      return new Thing\Intangible\StructuredValue\PriceSpecification();
+  }
+
+  
+  public static function Joint()
+  {
+     return new Thing\MedicalEntity\AnatomicalStructure\Joint();
   }
 
   
@@ -670,9 +898,27 @@ class Entities
   }
 
   
+  public static function MedicalIndication()
+  {
+     return new Thing\MedicalEntity\MedicalIndication();
+  }
+
+  
+  public static function DeliveryMethod()
+  {
+     return new Thing\Intangible\Enumeration\DeliveryMethod();
+  }
+
+  
   public static function CancelAction()
   {
      return new Thing\Action\OrganizeAction\PlanAction\CancelAction();
+  }
+
+  
+  public static function CreditCard()
+  {
+     return new Thing\Intangible\Service\FinancialProduct\LoanOrCredit\CreditCard();
   }
 
   
@@ -694,9 +940,27 @@ class Entities
   }
 
   
+  public static function Optician()
+  {
+     return new Thing\Organization\LocalBusiness\MedicalBusiness\Optician();
+  }
+
+  
   public static function CheckOutAction()
   {
      return new Thing\Action\InteractAction\CommunicateAction\CheckOutAction();
+  }
+
+  
+  public static function MedicalGuidelineRecommendation()
+  {
+     return new Thing\MedicalEntity\MedicalGuideline\MedicalGuidelineRecommendation();
+  }
+
+  
+  public static function TouristDestination()
+  {
+     return new Thing\Place\TouristDestination();
   }
 
   
@@ -715,18 +979,6 @@ class Entities
   public static function RealEstateAgent()
   {
      return new Thing\Organization\LocalBusiness\RealEstateAgent();
-  }
-
-  
-  public static function ApplyAction()
-  {
-     return new Thing\Action\OrganizeAction\ApplyAction();
-  }
-
-  
-  public static function MapCategoryType()
-  {
-     return new Thing\Intangible\Enumeration\MapCategoryType();
   }
 
   
@@ -762,7 +1014,7 @@ class Entities
   
   public static function TVSeason()
   {
-     return new Thing\CreativeWork\TVSeason();
+     return new Thing\CreativeWork\CreativeWorkSeason\TVSeason();
   }
 
   
@@ -778,9 +1030,9 @@ class Entities
   }
 
   
-  public static function DanceEvent()
+  public static function MedicalSymptom()
   {
-     return new Thing\Event\DanceEvent();
+     return new Thing\MedicalEntity\MedicalCondition\MedicalSignOrSymptom\MedicalSymptom();
   }
 
   
@@ -793,12 +1045,6 @@ class Entities
   public static function EntryPoint()
   {
      return new Thing\Intangible\EntryPoint();
-  }
-
-  
-  public static function SaleEvent()
-  {
-     return new Thing\Event\SaleEvent();
   }
 
   
@@ -820,9 +1066,33 @@ class Entities
   }
 
   
+  public static function Substance()
+  {
+     return new Thing\MedicalEntity\Substance();
+  }
+
+  
+  public static function MedicalObservationalStudy()
+  {
+     return new Thing\MedicalEntity\MedicalStudy\MedicalObservationalStudy();
+  }
+
+  
+  public static function MonetaryAmountDistribution()
+  {
+     return new Thing\Intangible\StructuredValue\QuantitativeValueDistribution\MonetaryAmountDistribution();
+  }
+
+  
   public static function InviteAction()
   {
      return new Thing\Action\InteractAction\CommunicateAction\InviteAction();
+  }
+
+  
+  public static function NewsMediaOrganization()
+  {
+     return new Thing\Organization\NewsMediaOrganization();
   }
 
   
@@ -874,6 +1144,12 @@ class Entities
   }
 
   
+  public static function AgreeAction()
+  {
+     return new Thing\Action\AssessAction\ReactAction\AgreeAction();
+  }
+
+  
   public static function RiverBodyOfWater()
   {
      return new Thing\Place\Landform\BodyOfWater\RiverBodyOfWater();
@@ -888,7 +1164,7 @@ class Entities
   
   public static function DepositAccount()
   {
-     return new Thing\Intangible\Service\FinancialProduct\InvestmentOrDeposit\DepositAccount();
+     return new Thing\Intangible\Service\FinancialProduct\BankAccount\DepositAccount();
   }
 
   
@@ -907,6 +1183,12 @@ class Entities
   public static function WPAdBlock()
   {
      return new Thing\CreativeWork\WebPageElement\WPAdBlock();
+  }
+
+  
+  public static function MedicalCode()
+  {
+     return new Thing\Intangible\DefinedTerm\CategoryCode\MedicalCode();
   }
 
   
@@ -931,6 +1213,12 @@ class Entities
   public static function MusicAlbumReleaseType()
   {
      return new Thing\Intangible\Enumeration\MusicAlbumReleaseType();
+  }
+
+  
+  public static function DefinedTermSet()
+  {
+     return new Thing\CreativeWork\DefinedTermSet();
   }
 
   
@@ -976,12 +1264,6 @@ class Entities
   }
 
   
-  public static function Continent()
-  {
-     return new Thing\Place\Landform\Continent();
-  }
-
-  
   public static function Article()
   {
      return new Thing\CreativeWork\Article();
@@ -991,6 +1273,12 @@ class Entities
   public static function UserTweets()
   {
      return new Thing\Event\UserInteraction\UserTweets();
+  }
+
+  
+  public static function Enumeration()
+  {
+     return new Thing\Intangible\Enumeration();
   }
 
   
@@ -1012,6 +1300,18 @@ class Entities
   }
 
   
+  public static function Property()
+  {
+     return new Thing\Intangible\Property();
+  }
+
+  
+  public static function MedicalTrialDesign()
+  {
+     return new Thing\Intangible\Enumeration\MedicalEnumeration\MedicalTrialDesign();
+  }
+
+  
   public static function Airline()
   {
      return new Thing\Organization\Airline();
@@ -1021,6 +1321,18 @@ class Entities
   public static function LiveBlogPosting()
   {
      return new Thing\CreativeWork\Article\SocialMediaPosting\BlogPosting\LiveBlogPosting();
+  }
+
+  
+  public static function MedicalStudy()
+  {
+     return new Thing\MedicalEntity\MedicalStudy();
+  }
+
+  
+  public static function PublicToilet()
+  {
+     return new Thing\Place\CivicStructure\PublicToilet();
   }
 
   
@@ -1036,9 +1348,9 @@ class Entities
   }
 
   
-  public static function MenuSection()
+  public static function GardenStore()
   {
-     return new Thing\CreativeWork\MenuSection();
+     return new Thing\Organization\LocalBusiness\Store\GardenStore();
   }
 
   
@@ -1051,12 +1363,6 @@ class Entities
   public static function AchieveAction()
   {
      return new Thing\Action\AchieveAction();
-  }
-
-  
-  public static function HotelRoom()
-  {
-     return new Thing\Place\Accommodation\Room\HotelRoom();
   }
 
   
@@ -1078,15 +1384,21 @@ class Entities
   }
 
   
-  public static function EventReservation()
-  {
-     return new Thing\Intangible\Reservation\EventReservation();
-  }
-
-  
   public static function OrganizeAction()
   {
      return new Thing\Action\OrganizeAction();
+  }
+
+  
+  public static function MedicalObservationalStudyDesign()
+  {
+     return new Thing\Intangible\Enumeration\MedicalEnumeration\MedicalObservationalStudyDesign();
+  }
+
+  
+  public static function TreatmentIndication()
+  {
+     return new Thing\MedicalEntity\MedicalIndication\TreatmentIndication();
   }
 
   
@@ -1096,15 +1408,15 @@ class Entities
   }
 
   
-  public static function Restaurant()
+  public static function LymphaticVessel()
   {
-     return new Thing\Organization\LocalBusiness\FoodEstablishment\Restaurant();
+     return new Thing\MedicalEntity\AnatomicalStructure\Vessel\LymphaticVessel();
   }
 
   
-  public static function AgreeAction()
+  public static function Restaurant()
   {
-     return new Thing\Action\AssessAction\ReactAction\AgreeAction();
+     return new Thing\Organization\LocalBusiness\FoodEstablishment\Restaurant();
   }
 
   
@@ -1144,9 +1456,21 @@ class Entities
   }
 
   
+  public static function PhysicalExam()
+  {
+     return new Thing\MedicalEntity\MedicalProcedure\PhysicalExam();
+  }
+
+  
   public static function Code()
   {
      return new Thing\CreativeWork\Code();
+  }
+
+  
+  public static function TouristTrip()
+  {
+     return new Thing\Intangible\Trip\TouristTrip();
   }
 
   
@@ -1156,9 +1480,27 @@ class Entities
   }
 
   
-  public static function TextDigitalDocument()
+  public static function MedicalAudience()
   {
-     return new Thing\CreativeWork\DigitalDocument\TextDigitalDocument();
+     return new Thing\Intangible\Audience\PeopleAudience\MedicalAudience();
+  }
+
+  
+  public static function MedicalTestPanel()
+  {
+     return new Thing\MedicalEntity\MedicalTest\MedicalTestPanel();
+  }
+
+  
+  public static function MedicalClinic()
+  {
+     return new Thing\Organization\MedicalOrganization\MedicalClinic();
+  }
+
+  
+  public static function QuantitativeValueDistribution()
+  {
+     return new Thing\Intangible\StructuredValue\QuantitativeValueDistribution();
   }
 
   
@@ -1174,15 +1516,39 @@ class Entities
   }
 
   
+  public static function LinkRole()
+  {
+     return new Thing\Intangible\Role\LinkRole();
+  }
+
+  
   public static function PlanAction()
   {
      return new Thing\Action\OrganizeAction\PlanAction();
   }
 
   
+  public static function CategoryCodeSet()
+  {
+     return new Thing\CreativeWork\DefinedTermSet\CategoryCodeSet();
+  }
+
+  
+  public static function Vessel()
+  {
+     return new Thing\MedicalEntity\AnatomicalStructure\Vessel();
+  }
+
+  
   public static function MovieTheater()
   {
-     return new Thing\Organization\LocalBusiness\EntertainmentBusiness\MovieTheater();
+     return new Thing\Place\CivicStructure\MovieTheater();
+  }
+
+  
+  public static function Bakery()
+  {
+     return new Thing\Organization\LocalBusiness\FoodEstablishment\Bakery();
   }
 
   
@@ -1206,7 +1572,7 @@ class Entities
   
   public static function HowToTip()
   {
-     return new Thing\Intangible\ListItem\HowToTip();
+     return new Thing\CreativeWork\HowToTip();
   }
 
   
@@ -1228,9 +1594,15 @@ class Entities
   }
 
   
-  public static function PerformAction()
+  public static function BedType()
   {
-     return new Thing\Action\PlayAction\PerformAction();
+     return new Thing\Intangible\Enumeration\QualitativeValue\BedType();
+  }
+
+  
+  public static function ClothingStore()
+  {
+     return new Thing\Organization\LocalBusiness\Store\ClothingStore();
   }
 
   
@@ -1240,15 +1612,21 @@ class Entities
   }
 
   
-  public static function CivicStructure()
+  public static function PhysicalTherapy()
   {
-     return new Thing\Place\CivicStructure();
+     return new Thing\MedicalEntity\MedicalProcedure\TherapeuticProcedure\MedicalTherapy\PhysicalTherapy();
   }
 
   
   public static function ReceiveAction()
   {
      return new Thing\Action\TransferAction\ReceiveAction();
+  }
+
+  
+  public static function MedicalRiskScore()
+  {
+     return new Thing\MedicalEntity\MedicalRiskEstimator\MedicalRiskScore();
   }
 
   
@@ -1270,6 +1648,18 @@ class Entities
   }
 
   
+  public static function ScholarlyArticle()
+  {
+     return new Thing\CreativeWork\Article\ScholarlyArticle();
+  }
+
+  
+  public static function MedicalEnumeration()
+  {
+     return new Thing\Intangible\Enumeration\MedicalEnumeration();
+  }
+
+  
   public static function QuoteAction()
   {
      return new Thing\Action\TradeAction\QuoteAction();
@@ -1279,6 +1669,12 @@ class Entities
   public static function PropertyValue()
   {
      return new Thing\Intangible\StructuredValue\PropertyValue();
+  }
+
+  
+  public static function DefinedTerm()
+  {
+     return new Thing\Intangible\DefinedTerm();
   }
 
   
@@ -1300,9 +1696,27 @@ class Entities
   }
 
   
+  public static function BroadcastFrequencySpecification()
+  {
+     return new Thing\Intangible\BroadcastFrequencySpecification();
+  }
+
+  
   public static function BlogPosting()
   {
      return new Thing\CreativeWork\Article\SocialMediaPosting\BlogPosting();
+  }
+
+  
+  public static function ExercisePlan()
+  {
+     return new Thing\MedicalEntity\LifestyleModification\PhysicalActivity\ExercisePlan();
+  }
+
+  
+  public static function PalliativeProcedure()
+  {
+     return new Thing\MedicalEntity\MedicalProcedure\TherapeuticProcedure\MedicalTherapy\PalliativeProcedure();
   }
 
   
@@ -1312,21 +1726,45 @@ class Entities
   }
 
   
+  public static function CarUsageType()
+  {
+     return new Thing\Intangible\Enumeration\QualitativeValue\CarUsageType();
+  }
+
+  
+  public static function PreOrderAction()
+  {
+     return new Thing\Action\TradeAction\PreOrderAction();
+  }
+
+  
+  public static function MediaSubscription()
+  {
+     return new Thing\Intangible\MediaSubscription();
+  }
+
+  
   public static function PresentationDigitalDocument()
   {
      return new Thing\CreativeWork\DigitalDocument\PresentationDigitalDocument();
   }
 
   
-  public static function Report()
+  public static function EventSeries()
   {
-     return new Thing\CreativeWork\Article\Report();
+     return new Thing\Intangible\Series\EventSeries();
   }
 
   
-  public static function StructuredValue()
+  public static function Book()
   {
-     return new Thing\Intangible\StructuredValue();
+     return new Thing\CreativeWork\Book();
+  }
+
+  
+  public static function OpinionNewsArticle()
+  {
+     return new Thing\CreativeWork\Article\NewsArticle\OpinionNewsArticle();
   }
 
   
@@ -1348,6 +1786,12 @@ class Entities
   }
 
   
+  public static function BarOrPub()
+  {
+     return new Thing\Organization\LocalBusiness\FoodEstablishment\BarOrPub();
+  }
+
+  
   public static function TechArticle()
   {
      return new Thing\CreativeWork\Article\TechArticle();
@@ -1357,6 +1801,12 @@ class Entities
   public static function Sculpture()
   {
      return new Thing\CreativeWork\Sculpture();
+  }
+
+  
+  public static function SaleEvent()
+  {
+     return new Thing\Event\SaleEvent();
   }
 
   
@@ -1384,9 +1834,21 @@ class Entities
   }
 
   
+  public static function DrugPrescriptionStatus()
+  {
+     return new Thing\Intangible\Enumeration\MedicalEnumeration\DrugPrescriptionStatus();
+  }
+
+  
   public static function DepartAction()
   {
      return new Thing\Action\MoveAction\DepartAction();
+  }
+
+  
+  public static function ActionAccessSpecification()
+  {
+     return new Thing\Intangible\ActionAccessSpecification();
   }
 
   
@@ -1399,6 +1861,12 @@ class Entities
   public static function ShoeStore()
   {
      return new Thing\Organization\LocalBusiness\Store\ShoeStore();
+  }
+
+  
+  public static function SuspendAction()
+  {
+     return new Thing\Action\ControlAction\SuspendAction();
   }
 
   
@@ -1450,12 +1918,6 @@ class Entities
   }
 
   
-  public static function RestrictedDiet()
-  {
-     return new Thing\Intangible\Enumeration\RestrictedDiet();
-  }
-
-  
   public static function GovernmentOffice()
   {
      return new Thing\Organization\LocalBusiness\GovernmentOffice();
@@ -1471,6 +1933,12 @@ class Entities
   public static function QualitativeValue()
   {
      return new Thing\Intangible\Enumeration\QualitativeValue();
+  }
+
+  
+  public static function ComicCoverArt()
+  {
+     return new Thing\CreativeWork\VisualArtwork\CoverArt\ComicCoverArt();
   }
 
   
@@ -1492,9 +1960,9 @@ class Entities
   }
 
   
-  public static function Mosque()
+  public static function SeaBodyOfWater()
   {
-     return new Thing\Place\CivicStructure\PlaceOfWorship\Mosque();
+     return new Thing\Place\Landform\BodyOfWater\SeaBodyOfWater();
   }
 
   
@@ -1507,6 +1975,12 @@ class Entities
   public static function CommentAction()
   {
      return new Thing\Action\InteractAction\CommunicateAction\CommentAction();
+  }
+
+  
+  public static function Order()
+  {
+     return new Thing\Intangible\Order();
   }
 
   
@@ -1528,9 +2002,15 @@ class Entities
   }
 
   
-  public static function ProfessionalService()
+  public static function Drug()
   {
-     return new Thing\Organization\LocalBusiness\ProfessionalService();
+     return new Thing\MedicalEntity\Substance\Drug();
+  }
+
+  
+  public static function Aquarium()
+  {
+     return new Thing\Place\CivicStructure\Aquarium();
   }
 
   
@@ -1543,6 +2023,12 @@ class Entities
   public static function GeoShape()
   {
      return new Thing\Intangible\StructuredValue\GeoShape();
+  }
+
+  
+  public static function MonetaryGrant()
+  {
+     return new Thing\Intangible\Grant\MonetaryGrant();
   }
 
   
@@ -1564,21 +2050,9 @@ class Entities
   }
 
   
-  public static function Mass()
-  {
-     return new Thing\Intangible\Quantity\Mass();
-  }
-
-  
   public static function HowToTool()
   {
      return new Thing\Intangible\ListItem\HowToItem\HowToTool();
-  }
-
-  
-  public static function PaymentMethod()
-  {
-     return new Thing\Intangible\Enumeration\PaymentMethod();
   }
 
   
@@ -1606,21 +2080,63 @@ class Entities
   }
 
   
+  public static function Mosque()
+  {
+     return new Thing\Place\CivicStructure\PlaceOfWorship\Mosque();
+  }
+
+  
+  public static function ProductReturnPolicy()
+  {
+     return new Thing\Intangible\ProductReturnPolicy();
+  }
+
+  
   public static function Room()
   {
      return new Thing\Place\Accommodation\Room();
   }
 
   
-  public static function ReplyAction()
+  public static function PreventionIndication()
   {
-     return new Thing\Action\InteractAction\CommunicateAction\ReplyAction();
+     return new Thing\MedicalEntity\MedicalIndication\PreventionIndication();
+  }
+
+  
+  public static function HealthInsurancePlan()
+  {
+     return new Thing\Intangible\HealthInsurancePlan();
+  }
+
+  
+  public static function Continent()
+  {
+     return new Thing\Place\Landform\Continent();
+  }
+
+  
+  public static function Collection()
+  {
+     return new Thing\CreativeWork\Collection();
   }
 
   
   public static function BusTrip()
   {
      return new Thing\Intangible\Trip\BusTrip();
+  }
+
+  
+  public static function Newspaper()
+  {
+     return new Thing\CreativeWork\CreativeWorkSeries\Periodical\Newspaper();
+  }
+
+  
+  public static function MedicalStudyStatus()
+  {
+     return new Thing\Intangible\Enumeration\MedicalEnumeration\MedicalStudyStatus();
   }
 
   
@@ -1650,7 +2166,7 @@ class Entities
   
   public static function HowToStep()
   {
-     return new Thing\Intangible\ListItem\HowToStep();
+     return new Thing\CreativeWork\HowToStep();
   }
 
   
@@ -1666,21 +2182,27 @@ class Entities
   }
 
   
+  public static function EducationalOccupationalCredential()
+  {
+     return new Thing\CreativeWork\EducationalOccupationalCredential();
+  }
+
+  
+  public static function AnatomicalStructure()
+  {
+     return new Thing\MedicalEntity\AnatomicalStructure();
+  }
+
+  
   public static function CreativeWorkSeries()
   {
-     return new Thing\Intangible\Series\CreativeWorkSeries();
+     return new Thing\CreativeWork\CreativeWorkSeries();
   }
 
   
   public static function NightClub()
   {
      return new Thing\Organization\LocalBusiness\EntertainmentBusiness\NightClub();
-  }
-
-  
-  public static function ConfirmAction()
-  {
-     return new Thing\Action\InteractAction\CommunicateAction\InformAction\ConfirmAction();
   }
 
   
@@ -1708,12 +2230,6 @@ class Entities
   }
 
   
-  public static function InteractionCounter()
-  {
-     return new Thing\Intangible\StructuredValue\InteractionCounter();
-  }
-
-  
   public static function ParkingFacility()
   {
      return new Thing\Place\CivicStructure\ParkingFacility();
@@ -1734,7 +2250,13 @@ class Entities
   
   public static function BookSeries()
   {
-     return new Thing\Intangible\Series\CreativeWorkSeries\BookSeries();
+     return new Thing\CreativeWork\CreativeWorkSeries\BookSeries();
+  }
+
+  
+  public static function MedicalSign()
+  {
+     return new Thing\MedicalEntity\MedicalCondition\MedicalSignOrSymptom\MedicalSign();
   }
 
   
@@ -1768,6 +2290,12 @@ class Entities
   }
 
   
+  public static function OccupationalTherapy()
+  {
+     return new Thing\MedicalEntity\MedicalProcedure\TherapeuticProcedure\MedicalTherapy\OccupationalTherapy();
+  }
+
+  
   public static function TypeAndQuantityNode()
   {
      return new Thing\Intangible\StructuredValue\TypeAndQuantityNode();
@@ -1786,15 +2314,9 @@ class Entities
   }
 
   
-  public static function Aquarium()
+  public static function NewsArticle()
   {
-     return new Thing\Place\CivicStructure\Aquarium();
-  }
-
-  
-  public static function TrainTrip()
-  {
-     return new Thing\Intangible\Trip\TrainTrip();
+     return new Thing\CreativeWork\Article\NewsArticle();
   }
 
   
@@ -1810,21 +2332,27 @@ class Entities
   }
 
   
-  public static function Conversation()
-  {
-     return new Thing\CreativeWork\Conversation();
-  }
-
-  
   public static function DatedMoneySpecification()
   {
      return new Thing\Intangible\StructuredValue\DatedMoneySpecification();
   }
 
   
-  public static function ReserveAction()
+  public static function ParcelDelivery()
   {
-     return new Thing\Action\OrganizeAction\PlanAction\ReserveAction();
+     return new Thing\Intangible\ParcelDelivery();
+  }
+
+  
+  public static function MedicalTrial()
+  {
+     return new Thing\MedicalEntity\MedicalStudy\MedicalTrial();
+  }
+
+  
+  public static function SoftwareSourceCode()
+  {
+     return new Thing\CreativeWork\SoftwareSourceCode();
   }
 
   
@@ -1834,27 +2362,45 @@ class Entities
   }
 
   
+  public static function SpeakableSpecification()
+  {
+     return new Thing\Intangible\SpeakableSpecification();
+  }
+
+  
+  public static function RefundTypeEnumeration()
+  {
+     return new Thing\Intangible\Enumeration\RefundTypeEnumeration();
+  }
+
+  
+  public static function ProfessionalService()
+  {
+     return new Thing\Organization\LocalBusiness\ProfessionalService();
+  }
+
+  
+  public static function RadiationTherapy()
+  {
+     return new Thing\MedicalEntity\MedicalProcedure\TherapeuticProcedure\MedicalTherapy\RadiationTherapy();
+  }
+
+  
   public static function InteractAction()
   {
      return new Thing\Action\InteractAction();
   }
 
   
+  public static function AMRadioChannel()
+  {
+     return new Thing\Intangible\BroadcastChannel\RadioChannel\AMRadioChannel();
+  }
+
+  
   public static function AutoBodyShop()
   {
      return new Thing\Organization\LocalBusiness\AutomotiveBusiness\AutoBodyShop();
-  }
-
-  
-  public static function Permit()
-  {
-     return new Thing\Intangible\Permit();
-  }
-
-  
-  public static function ConvenienceStore()
-  {
-     return new Thing\Organization\LocalBusiness\Store\ConvenienceStore();
   }
 
   
@@ -1882,9 +2428,21 @@ class Entities
   }
 
   
+  public static function Answer()
+  {
+     return new Thing\CreativeWork\Comment\Answer();
+  }
+
+  
+  public static function PathologyTest()
+  {
+     return new Thing\MedicalEntity\MedicalTest\PathologyTest();
+  }
+
+  
   public static function RadioSeries()
   {
-     return new Thing\Intangible\Series\CreativeWorkSeries\RadioSeries();
+     return new Thing\CreativeWork\CreativeWorkSeries\RadioSeries();
   }
 
   
@@ -1900,21 +2458,21 @@ class Entities
   }
 
   
-  public static function SpreadsheetDigitalDocument()
-  {
-     return new Thing\CreativeWork\DigitalDocument\SpreadsheetDigitalDocument();
-  }
-
-  
   public static function HowToItem()
   {
      return new Thing\Intangible\ListItem\HowToItem();
   }
 
   
-  public static function ShareAction()
+  public static function MaximumDoseSchedule()
   {
-     return new Thing\Action\InteractAction\CommunicateAction\ShareAction();
+     return new Thing\MedicalEntity\MedicalIntangible\DoseSchedule\MaximumDoseSchedule();
+  }
+
+  
+  public static function AdvertiserContentArticle()
+  {
+     return new Thing\CreativeWork\Article\AdvertiserContentArticle();
   }
 
   
@@ -1930,9 +2488,27 @@ class Entities
   }
 
   
+  public static function AnalysisNewsArticle()
+  {
+     return new Thing\CreativeWork\Article\NewsArticle\AnalysisNewsArticle();
+  }
+
+  
+  public static function MedicalBusiness()
+  {
+     return new Thing\Organization\LocalBusiness\MedicalBusiness();
+  }
+
+  
   public static function Notary()
   {
      return new Thing\Organization\LocalBusiness\LegalService\Notary();
+  }
+
+  
+  public static function IceCreamShop()
+  {
+     return new Thing\Organization\LocalBusiness\FoodEstablishment\IceCreamShop();
   }
 
   
@@ -2014,9 +2590,33 @@ class Entities
   }
 
   
+  public static function CatholicChurch()
+  {
+     return new Thing\Place\CivicStructure\PlaceOfWorship\Church\CatholicChurch();
+  }
+
+  
+  public static function Consortium()
+  {
+     return new Thing\Organization\Consortium();
+  }
+
+  
+  public static function CategoryCode()
+  {
+     return new Thing\Intangible\DefinedTerm\CategoryCode();
+  }
+
+  
   public static function ItemListOrderType()
   {
      return new Thing\Intangible\Enumeration\ItemListOrderType();
+  }
+
+  
+  public static function SurgicalProcedure()
+  {
+     return new Thing\MedicalEntity\MedicalProcedure\SurgicalProcedure();
   }
 
   
@@ -2032,6 +2632,12 @@ class Entities
   }
 
   
+  public static function SuperficialAnatomy()
+  {
+     return new Thing\MedicalEntity\SuperficialAnatomy();
+  }
+
+  
   public static function ExhibitionEvent()
   {
      return new Thing\Event\ExhibitionEvent();
@@ -2041,6 +2647,12 @@ class Entities
   public static function RentAction()
   {
      return new Thing\Action\TradeAction\RentAction();
+  }
+
+  
+  public static function DrugStrength()
+  {
+     return new Thing\MedicalEntity\MedicalIntangible\DrugStrength();
   }
 
   
@@ -2074,6 +2686,12 @@ class Entities
   }
 
   
+  public static function Play()
+  {
+     return new Thing\CreativeWork\Play();
+  }
+
+  
   public static function Hotel()
   {
      return new Thing\Organization\LocalBusiness\LodgingBusiness\Hotel();
@@ -2086,15 +2704,33 @@ class Entities
   }
 
   
-  public static function Book()
+  public static function MedicalEvidenceLevel()
   {
-     return new Thing\CreativeWork\Book();
+     return new Thing\Intangible\Enumeration\MedicalEnumeration\MedicalEvidenceLevel();
+  }
+
+  
+  public static function StructuredValue()
+  {
+     return new Thing\Intangible\StructuredValue();
   }
 
   
   public static function RadioClip()
   {
      return new Thing\CreativeWork\Clip\RadioClip();
+  }
+
+  
+  public static function VisualArtwork()
+  {
+     return new Thing\CreativeWork\VisualArtwork();
+  }
+
+  
+  public static function PaymentMethod()
+  {
+     return new Thing\Intangible\Enumeration\PaymentMethod();
   }
 
   
@@ -2110,9 +2746,21 @@ class Entities
   }
 
   
-  public static function Order()
+  public static function AskPublicNewsArticle()
   {
-     return new Thing\Intangible\Order();
+     return new Thing\CreativeWork\Article\NewsArticle\AskPublicNewsArticle();
+  }
+
+  
+  public static function ReviewNewsArticle()
+  {
+     return new Thing\CreativeWork\Review\CriticReview\ReviewNewsArticle();
+  }
+
+  
+  public static function BloodTest()
+  {
+     return new Thing\MedicalEntity\MedicalTest\BloodTest();
   }
 
   
@@ -2143,6 +2791,12 @@ class Entities
   public static function TelevisionChannel()
   {
      return new Thing\Intangible\BroadcastChannel\TelevisionChannel();
+  }
+
+  
+  public static function SpreadsheetDigitalDocument()
+  {
+     return new Thing\CreativeWork\DigitalDocument\SpreadsheetDigitalDocument();
   }
 
   
@@ -2178,13 +2832,13 @@ class Entities
   
   public static function Periodical()
   {
-     return new Thing\Intangible\Series\CreativeWorkSeries\Periodical();
+     return new Thing\CreativeWork\CreativeWorkSeries\Periodical();
   }
 
   
   public static function MovieSeries()
   {
-     return new Thing\Intangible\Series\CreativeWorkSeries\MovieSeries();
+     return new Thing\CreativeWork\CreativeWorkSeries\MovieSeries();
   }
 
   
@@ -2224,6 +2878,12 @@ class Entities
   }
 
   
+  public static function CssSelectorType()
+  {
+     return new Text\CssSelectorType();
+  }
+
+  
   public static function LegislativeBuilding()
   {
      return new Thing\Place\CivicStructure\GovernmentBuilding\LegislativeBuilding();
@@ -2236,21 +2896,21 @@ class Entities
   }
 
   
-  public static function PerformingArtsTheater()
+  public static function Patient()
   {
-     return new Thing\Place\CivicStructure\PerformingArtsTheater();
+     return new Thing\Person\Patient();
   }
 
   
   public static function VideoGameSeries()
   {
-     return new Thing\Intangible\Series\CreativeWorkSeries\VideoGameSeries();
+     return new Thing\CreativeWork\CreativeWorkSeries\VideoGameSeries();
   }
 
   
-  public static function BroadcastService()
+  public static function RegisterAction()
   {
-     return new Thing\Intangible\Service\BroadcastService();
+     return new Thing\Action\InteractAction\RegisterAction();
   }
 
   
@@ -2260,9 +2920,21 @@ class Entities
   }
 
   
+  public static function MedicalConditionStage()
+  {
+     return new Thing\MedicalEntity\MedicalIntangible\MedicalConditionStage();
+  }
+
+  
   public static function TravelAgency()
   {
      return new Thing\Organization\LocalBusiness\TravelAgency();
+  }
+
+  
+  public static function CoverArt()
+  {
+     return new Thing\CreativeWork\VisualArtwork\CoverArt();
   }
 
   
@@ -2278,9 +2950,9 @@ class Entities
   }
 
   
-  public static function WinAction()
+  public static function Bone()
   {
-     return new Thing\Action\AchieveAction\WinAction();
+     return new Thing\MedicalEntity\AnatomicalStructure\Bone();
   }
 
   
@@ -2299,6 +2971,18 @@ class Entities
   public static function EducationalAudience()
   {
      return new Thing\Intangible\Audience\EducationalAudience();
+  }
+
+  
+  public static function WatchAction()
+  {
+     return new Thing\Action\ConsumeAction\WatchAction();
+  }
+
+  
+  public static function RadioBroadcastService()
+  {
+     return new Thing\Intangible\Service\BroadcastService\RadioBroadcastService();
   }
 
   
@@ -2326,6 +3010,12 @@ class Entities
   }
 
   
+  public static function FundingScheme()
+  {
+     return new Thing\Organization\FundingScheme();
+  }
+
+  
   public static function MovingCompany()
   {
      return new Thing\Organization\LocalBusiness\HomeAndConstructionBusiness\MovingCompany();
@@ -2338,21 +3028,33 @@ class Entities
   }
 
   
+  public static function AccountingService()
+  {
+     return new Thing\Organization\LocalBusiness\FinancialService\AccountingService();
+  }
+
+  
   public static function BorrowAction()
   {
      return new Thing\Action\TransferAction\BorrowAction();
   }
 
   
-  public static function GardenStore()
+  public static function MenuSection()
   {
-     return new Thing\Organization\LocalBusiness\Store\GardenStore();
+     return new Thing\CreativeWork\MenuSection();
   }
 
   
   public static function ReviewAction()
   {
      return new Thing\Action\AssessAction\ReviewAction();
+  }
+
+  
+  public static function Audiobook()
+  {
+     return new Thing\CreativeWork\Book\Audiobook();
   }
 
   
@@ -2368,9 +3070,9 @@ class Entities
   }
 
   
-  public static function Blog()
+  public static function BusinessAudience()
   {
-     return new Thing\CreativeWork\Blog();
+     return new Thing\Intangible\Audience\BusinessAudience();
   }
 
   
@@ -2386,15 +3088,27 @@ class Entities
   }
 
   
+  public static function EmployerAggregateRating()
+  {
+     return new Thing\Intangible\Rating\AggregateRating\EmployerAggregateRating();
+  }
+
+  
   public static function Event()
   {
      return new Thing\Event();
   }
 
   
-  public static function House()
+  public static function ReportedDoseSchedule()
   {
-     return new Thing\Place\Accommodation\House();
+     return new Thing\MedicalEntity\MedicalIntangible\DoseSchedule\ReportedDoseSchedule();
+  }
+
+  
+  public static function Dentist()
+  {
+     return new Thing\Organization\LocalBusiness\Dentist();
   }
 
   
@@ -2416,6 +3130,12 @@ class Entities
   }
 
   
+  public static function MedicalIntangible()
+  {
+     return new Thing\MedicalEntity\MedicalIntangible();
+  }
+
+  
   public static function City()
   {
      return new Thing\Place\AdministrativeArea\City();
@@ -2434,9 +3154,15 @@ class Entities
   }
 
   
-  public static function ArriveAction()
+  public static function DrugPregnancyCategory()
   {
-     return new Thing\Action\MoveAction\ArriveAction();
+     return new Thing\Intangible\Enumeration\MedicalEnumeration\DrugPregnancyCategory();
+  }
+
+  
+  public static function VitalSign()
+  {
+     return new Thing\MedicalEntity\MedicalCondition\MedicalSignOrSymptom\MedicalSign\VitalSign();
   }
 
   
@@ -2446,15 +3172,9 @@ class Entities
   }
 
   
-  public static function ScheduleAction()
+  public static function LegislationObject()
   {
-     return new Thing\Action\OrganizeAction\PlanAction\ScheduleAction();
-  }
-
-  
-  public static function Dentist()
-  {
-     return new Thing\Organization\MedicalOrganization\Dentist();
+     return new Thing\CreativeWork\Legislation\LegislationObject();
   }
 
   
@@ -2464,9 +3184,21 @@ class Entities
   }
 
   
-  public static function InstallAction()
+  public static function TattooParlor()
   {
-     return new Thing\Action\ConsumeAction\InstallAction();
+     return new Thing\Organization\LocalBusiness\HealthAndBeautyBusiness\TattooParlor();
+  }
+
+  
+  public static function EndorsementRating()
+  {
+     return new Thing\Intangible\Rating\EndorsementRating();
+  }
+
+  
+  public static function Reservoir()
+  {
+     return new Thing\Place\Landform\BodyOfWater\Reservoir();
   }
 
   
@@ -2488,9 +3220,21 @@ class Entities
   }
 
   
+  public static function UserLikes()
+  {
+     return new Thing\Event\UserInteraction\UserLikes();
+  }
+
+  
   public static function HairSalon()
   {
      return new Thing\Organization\LocalBusiness\HealthAndBeautyBusiness\HairSalon();
+  }
+
+  
+  public static function TherapeuticProcedure()
+  {
+     return new Thing\MedicalEntity\MedicalProcedure\TherapeuticProcedure();
   }
 
   
@@ -2530,9 +3274,9 @@ class Entities
   }
 
   
-  public static function CreditCard()
+  public static function MedicalTherapy()
   {
-     return new Thing\Intangible\Service\FinancialProduct\LoanOrCredit\CreditCard();
+     return new Thing\MedicalEntity\MedicalProcedure\TherapeuticProcedure\MedicalTherapy();
   }
 
   
@@ -2560,15 +3304,39 @@ class Entities
   }
 
   
+  public static function FAQPage()
+  {
+     return new Thing\CreativeWork\WebPage\FAQPage();
+  }
+
+  
+  public static function BusinessFunction()
+  {
+     return new Thing\Intangible\Enumeration\BusinessFunction();
+  }
+
+  
   public static function TieAction()
   {
      return new Thing\Action\AchieveAction\TieAction();
   }
 
   
-  public static function Corporation()
+  public static function StatisticalPopulation()
   {
-     return new Thing\Organization\Corporation();
+     return new Thing\Intangible\StatisticalPopulation();
+  }
+
+  
+  public static function DiagnosticProcedure()
+  {
+     return new Thing\MedicalEntity\MedicalProcedure\DiagnosticProcedure();
+  }
+
+  
+  public static function Blog()
+  {
+     return new Thing\CreativeWork\Blog();
   }
 
   
@@ -2578,9 +3346,9 @@ class Entities
   }
 
   
-  public static function DeliveryMethod()
+  public static function MedicalScholarlyArticle()
   {
-     return new Thing\Intangible\Enumeration\DeliveryMethod();
+     return new Thing\CreativeWork\Article\ScholarlyArticle\MedicalScholarlyArticle();
   }
 
   
@@ -2596,6 +3364,12 @@ class Entities
   }
 
   
+  public static function Chapter()
+  {
+     return new Thing\CreativeWork\Chapter();
+  }
+
+  
   public static function ReturnAction()
   {
      return new Thing\Action\TransferAction\ReturnAction();
@@ -2608,15 +3382,15 @@ class Entities
   }
 
   
-  public static function OrderAction()
+  public static function EventReservation()
   {
-     return new Thing\Action\TradeAction\OrderAction();
+     return new Thing\Intangible\Reservation\EventReservation();
   }
 
   
-  public static function StadiumOrArena()
+  public static function OrderAction()
   {
-     return new Thing\Place\CivicStructure\StadiumOrArena();
+     return new Thing\Action\TradeAction\OrderAction();
   }
 
   
@@ -2626,9 +3400,9 @@ class Entities
   }
 
   
-  public static function BuyAction()
+  public static function Mass()
   {
-     return new Thing\Action\TradeAction\BuyAction();
+     return new Thing\Intangible\Quantity\Mass();
   }
 
   
@@ -2656,9 +3430,9 @@ class Entities
   }
 
   
-  public static function CatholicChurch()
+  public static function Drawing()
   {
-     return new Thing\Place\CivicStructure\PlaceOfWorship\CatholicChurch();
+     return new Thing\CreativeWork\Drawing();
   }
 
   
@@ -2680,9 +3454,33 @@ class Entities
   }
 
   
+  public static function ApplyAction()
+  {
+     return new Thing\Action\OrganizeAction\ApplyAction();
+  }
+
+  
+  public static function MedicalRiskCalculator()
+  {
+     return new Thing\MedicalEntity\MedicalRiskEstimator\MedicalRiskCalculator();
+  }
+
+  
+  public static function BrokerageAccount()
+  {
+     return new Thing\Intangible\Service\FinancialProduct\InvestmentOrDeposit\BrokerageAccount();
+  }
+
+  
   public static function Locksmith()
   {
      return new Thing\Organization\LocalBusiness\HomeAndConstructionBusiness\Locksmith();
+  }
+
+  
+  public static function Corporation()
+  {
+     return new Thing\Organization\Corporation();
   }
 
   
@@ -2710,6 +3508,12 @@ class Entities
   }
 
   
+  public static function MedicalTest()
+  {
+     return new Thing\MedicalEntity\MedicalTest();
+  }
+
+  
   public static function TrainReservation()
   {
      return new Thing\Intangible\Reservation\TrainReservation();
@@ -2722,9 +3526,27 @@ class Entities
   }
 
   
-  public static function Review()
+  public static function Motorcycle()
   {
-     return new Thing\CreativeWork\Review();
+     return new Thing\Product\Vehicle\Motorcycle();
+  }
+
+  
+  public static function HealthPlanCostSharingSpecification()
+  {
+     return new Thing\Intangible\HealthPlanCostSharingSpecification();
+  }
+
+  
+  public static function DrugCost()
+  {
+     return new Thing\Intangible\Enumeration\MedicalEnumeration\DrugCost();
+  }
+
+  
+  public static function Museum()
+  {
+     return new Thing\Place\CivicStructure\Museum();
   }
 
   
@@ -2740,27 +3562,21 @@ class Entities
   }
 
   
+  public static function ConfirmAction()
+  {
+     return new Thing\Action\InteractAction\CommunicateAction\InformAction\ConfirmAction();
+  }
+
+  
   public static function CollegeOrUniversity()
   {
      return new Thing\Organization\EducationalOrganization\CollegeOrUniversity();
   }
 
   
-  public static function SoftwareSourceCode()
-  {
-     return new Thing\CreativeWork\SoftwareSourceCode();
-  }
-
-  
   public static function Clip()
   {
      return new Thing\CreativeWork\Clip();
-  }
-
-  
-  public static function Seat()
-  {
-     return new Thing\Intangible\Seat();
   }
 
   
@@ -2800,15 +3616,39 @@ class Entities
   }
 
   
+  public static function LifestyleModification()
+  {
+     return new Thing\MedicalEntity\LifestyleModification();
+  }
+
+  
+  public static function Occupation()
+  {
+     return new Thing\Intangible\Occupation();
+  }
+
+  
   public static function ArtGallery()
   {
      return new Thing\Organization\LocalBusiness\EntertainmentBusiness\ArtGallery();
   }
 
   
+  public static function ComicStory()
+  {
+     return new Thing\CreativeWork\ComicStory();
+  }
+
+  
   public static function Plumber()
   {
      return new Thing\Organization\LocalBusiness\HomeAndConstructionBusiness\Plumber();
+  }
+
+  
+  public static function ProductReturnEnumeration()
+  {
+     return new Thing\Intangible\Enumeration\ProductReturnEnumeration();
   }
 
   
@@ -2824,9 +3664,9 @@ class Entities
   }
 
   
-  public static function TattooParlor()
+  public static function Diet()
   {
-     return new Thing\Organization\LocalBusiness\HealthAndBeautyBusiness\TattooParlor();
+     return new Thing\MedicalEntity\LifestyleModification\Diet();
   }
 
   
@@ -2836,9 +3676,9 @@ class Entities
   }
 
   
-  public static function BusinessFunction()
+  public static function SheetMusic()
   {
-     return new Thing\Intangible\Enumeration\BusinessFunction();
+     return new Thing\CreativeWork\SheetMusic();
   }
 
   
@@ -2860,9 +3700,27 @@ class Entities
   }
 
   
+  public static function ReportageNewsArticle()
+  {
+     return new Thing\CreativeWork\Article\NewsArticle\ReportageNewsArticle();
+  }
+
+  
+  public static function CriticReview()
+  {
+     return new Thing\CreativeWork\Review\CriticReview();
+  }
+
+  
   public static function MotorcycleRepair()
   {
      return new Thing\Organization\LocalBusiness\AutomotiveBusiness\MotorcycleRepair();
+  }
+
+  
+  public static function ArchiveOrganization()
+  {
+     return new Thing\Organization\LocalBusiness\ArchiveOrganization();
   }
 
   
@@ -2896,6 +3754,18 @@ class Entities
   }
 
   
+  public static function MedicalRiskFactor()
+  {
+     return new Thing\MedicalEntity\MedicalRiskFactor();
+  }
+
+  
+  public static function Distillery()
+  {
+     return new Thing\Organization\LocalBusiness\FoodEstablishment\Distillery();
+  }
+
+  
   public static function CompoundPriceSpecification()
   {
      return new Thing\Intangible\StructuredValue\PriceSpecification\CompoundPriceSpecification();
@@ -2914,15 +3784,21 @@ class Entities
   }
 
   
-  public static function FoodEstablishmentReservation()
+  public static function MoneyTransfer()
   {
-     return new Thing\Intangible\Reservation\FoodEstablishmentReservation();
+     return new Thing\Action\TransferAction\MoneyTransfer();
   }
 
   
   public static function PaymentChargeSpecification()
   {
      return new Thing\Intangible\StructuredValue\PriceSpecification\PaymentChargeSpecification();
+  }
+
+  
+  public static function MedicalSpecialty()
+  {
+     return new Thing\Intangible\Enumeration\Specialty\MedicalSpecialty();
   }
 
   
@@ -2938,9 +3814,9 @@ class Entities
   }
 
   
-  public static function Physician()
+  public static function ItemPage()
   {
-     return new Thing\Organization\MedicalOrganization\Physician();
+     return new Thing\CreativeWork\WebPage\ItemPage();
   }
 
   
@@ -2950,15 +3826,15 @@ class Entities
   }
 
   
-  public static function OrderItem()
+  public static function DietarySupplement()
   {
-     return new Thing\Intangible\OrderItem();
+     return new Thing\MedicalEntity\Substance\DietarySupplement();
   }
 
   
-  public static function DayOfWeek()
+  public static function OrderItem()
   {
-     return new Thing\Intangible\Enumeration\DayOfWeek();
+     return new Thing\Intangible\OrderItem();
   }
 
   
@@ -3004,6 +3880,18 @@ class Entities
   }
 
   
+  public static function HealthPlanFormulary()
+  {
+     return new Thing\Intangible\HealthPlanFormulary();
+  }
+
+  
+  public static function BusOrCoach()
+  {
+     return new Thing\Product\Vehicle\BusOrCoach();
+  }
+
+  
   public static function TennisComplex()
   {
      return new Thing\Organization\LocalBusiness\SportsActivityLocation\TennisComplex();
@@ -3016,15 +3904,45 @@ class Entities
   }
 
   
+  public static function WebAPI()
+  {
+     return new Thing\Intangible\Service\WebAPI();
+  }
+
+  
   public static function SubwayStation()
   {
      return new Thing\Place\CivicStructure\SubwayStation();
   }
 
   
+  public static function Vein()
+  {
+     return new Thing\MedicalEntity\AnatomicalStructure\Vessel\Vein();
+  }
+
+  
+  public static function StupidType()
+  {
+     return new Thing\StupidType();
+  }
+
+  
+  public static function Grant()
+  {
+     return new Thing\Intangible\Grant();
+  }
+
+  
   public static function Courthouse()
   {
      return new Thing\Place\CivicStructure\GovernmentBuilding\Courthouse();
+  }
+
+  
+  public static function BroadcastService()
+  {
+     return new Thing\Intangible\Service\BroadcastService();
   }
 
   
@@ -3046,9 +3964,33 @@ class Entities
   }
 
   
+  public static function EmployerReview()
+  {
+     return new Thing\CreativeWork\Review\EmployerReview();
+  }
+
+  
   public static function AskAction()
   {
      return new Thing\Action\InteractAction\CommunicateAction\AskAction();
+  }
+
+  
+  public static function ComicSeries()
+  {
+     return new Thing\CreativeWork\CreativeWorkSeries\Periodical\ComicSeries();
+  }
+
+  
+  public static function Barcode()
+  {
+     return new Thing\CreativeWork\MediaObject\ImageObject\Barcode();
+  }
+
+  
+  public static function RecommendedDoseSchedule()
+  {
+     return new Thing\MedicalEntity\MedicalIntangible\DoseSchedule\RecommendedDoseSchedule();
   }
 
   
@@ -3058,9 +4000,15 @@ class Entities
   }
 
   
-  public static function DigitalDocument()
+  public static function TrackAction()
   {
-     return new Thing\CreativeWork\DigitalDocument();
+     return new Thing\Action\FindAction\TrackAction();
+  }
+
+  
+  public static function MedicalRiskEstimator()
+  {
+     return new Thing\MedicalEntity\MedicalRiskEstimator();
   }
 
   
@@ -3070,15 +4018,33 @@ class Entities
   }
 
   
+  public static function LegalForceStatus()
+  {
+     return new Thing\Intangible\Enumeration\LegalForceStatus();
+  }
+
+  
   public static function CommunicateAction()
   {
      return new Thing\Action\InteractAction\CommunicateAction();
   }
 
   
+  public static function MedicalGuideline()
+  {
+     return new Thing\MedicalEntity\MedicalGuideline();
+  }
+
+  
   public static function Duration()
   {
      return new Thing\Intangible\Quantity\Duration();
+  }
+
+  
+  public static function DDxElement()
+  {
+     return new Thing\MedicalEntity\MedicalIntangible\DDxElement();
   }
 
   
@@ -3112,9 +4078,21 @@ class Entities
   }
 
   
+  public static function TextDigitalDocument()
+  {
+     return new Thing\CreativeWork\DigitalDocument\TextDigitalDocument();
+  }
+
+  
   public static function FollowAction()
   {
      return new Thing\Action\InteractAction\FollowAction();
+  }
+
+  
+  public static function ArchiveComponent()
+  {
+     return new Thing\CreativeWork\ArchiveComponent();
   }
 
   
@@ -3130,15 +4108,27 @@ class Entities
   }
 
   
-  public static function Enumeration()
+  public static function InteractionCounter()
   {
-     return new Thing\Intangible\Enumeration();
+     return new Thing\Intangible\StructuredValue\InteractionCounter();
+  }
+
+  
+  public static function FoodEstablishmentReservation()
+  {
+     return new Thing\Intangible\Reservation\FoodEstablishmentReservation();
   }
 
   
   public static function SingleFamilyResidence()
   {
      return new Thing\Place\Accommodation\House\SingleFamilyResidence();
+  }
+
+  
+  public static function GeospatialGeometry()
+  {
+     return new Thing\Intangible\GeospatialGeometry();
   }
 
   
@@ -3154,6 +4144,12 @@ class Entities
   }
 
   
+  public static function ComicIssue()
+  {
+     return new Thing\CreativeWork\PublicationIssue\ComicIssue();
+  }
+
+  
   public static function BroadcastEvent()
   {
      return new Thing\Event\PublicationEvent\BroadcastEvent();
@@ -3166,9 +4162,33 @@ class Entities
   }
 
   
+  public static function Observation()
+  {
+     return new Thing\Intangible\Observation();
+  }
+
+  
   public static function DepartmentStore()
   {
      return new Thing\Organization\LocalBusiness\Store\DepartmentStore();
+  }
+
+  
+  public static function CorrectionComment()
+  {
+     return new Thing\CreativeWork\Comment\CorrectionComment();
+  }
+
+  
+  public static function DrugClass()
+  {
+     return new Thing\Intangible\Enumeration\MedicalEnumeration\DrugClass();
+  }
+
+  
+  public static function Schedule()
+  {
+     return new Thing\Intangible\Schedule();
   }
 
   
@@ -3202,9 +4222,21 @@ class Entities
   }
 
   
+  public static function SatiricalArticle()
+  {
+     return new Thing\CreativeWork\Article\SatiricalArticle();
+  }
+
+  
+  public static function DoseSchedule()
+  {
+     return new Thing\MedicalEntity\MedicalIntangible\DoseSchedule();
+  }
+
+  
   public static function TVSeries()
   {
-     return new Thing\CreativeWork\TVSeries();
+     return new Thing\CreativeWork\CreativeWorkSeries\TVSeries();
   }
 
   
@@ -3214,15 +4246,15 @@ class Entities
   }
 
   
-  public static function BarOrPub()
+  public static function Nerve()
   {
-     return new Thing\Organization\LocalBusiness\FoodEstablishment\BarOrPub();
+     return new Thing\MedicalEntity\AnatomicalStructure\Nerve();
   }
 
   
-  public static function SuspendAction()
+  public static function FMRadioChannel()
   {
-     return new Thing\Action\ControlAction\SuspendAction();
+     return new Thing\Intangible\BroadcastChannel\RadioChannel\FMRadioChannel();
   }
 
   
@@ -3232,9 +4264,33 @@ class Entities
   }
 
   
+  public static function MotorizedBicycle()
+  {
+     return new Thing\Product\Vehicle\MotorizedBicycle();
+  }
+
+  
   public static function MusicPlaylist()
   {
      return new Thing\CreativeWork\MusicPlaylist();
+  }
+
+  
+  public static function XPathType()
+  {
+     return new Text\XPathType();
+  }
+
+  
+  public static function RestrictedDiet()
+  {
+     return new Thing\Intangible\Enumeration\RestrictedDiet();
+  }
+
+  
+  public static function PerformingArtsTheater()
+  {
+     return new Thing\Place\CivicStructure\PerformingArtsTheater();
   }
 
   
@@ -3244,9 +4300,9 @@ class Entities
   }
 
   
-  public static function ScholarlyArticle()
+  public static function MedicalCause()
   {
-     return new Thing\CreativeWork\Article\ScholarlyArticle();
+     return new Thing\MedicalEntity\MedicalCause();
   }
 
   
@@ -3274,21 +4330,27 @@ class Entities
   }
 
   
-  public static function ItemPage()
-  {
-     return new Thing\CreativeWork\WebPage\ItemPage();
-  }
-
-  
   public static function Language()
   {
      return new Thing\Intangible\Language();
   }
 
   
-  public static function NewsArticle()
+  public static function TrainTrip()
   {
-     return new Thing\CreativeWork\Article\NewsArticle();
+     return new Thing\Intangible\Trip\TrainTrip();
+  }
+
+  
+  public static function ShortStory()
+  {
+     return new Thing\CreativeWork\ShortStory();
+  }
+
+  
+  public static function DrugCostCategory()
+  {
+     return new Thing\Intangible\Enumeration\MedicalEnumeration\DrugCostCategory();
   }
 
   
@@ -3298,9 +4360,21 @@ class Entities
   }
 
   
-  public static function ParcelDelivery()
+  public static function Physician()
   {
-     return new Thing\Intangible\ParcelDelivery();
+     return new Thing\Organization\MedicalOrganization\Physician();
+  }
+
+  
+  public static function ResearchProject()
+  {
+     return new Thing\Organization\Project\ResearchProject();
+  }
+
+  
+  public static function MedicalSignOrSymptom()
+  {
+     return new Thing\MedicalEntity\MedicalCondition\MedicalSignOrSymptom();
   }
 
   
@@ -3310,9 +4384,9 @@ class Entities
   }
 
   
-  public static function Answer()
+  public static function PhysicalActivityCategory()
   {
-     return new Thing\CreativeWork\Comment\Answer();
+     return new Thing\Intangible\Enumeration\PhysicalActivityCategory();
   }
 
   
@@ -3334,9 +4408,21 @@ class Entities
   }
 
   
+  public static function 3DModel()
+  {
+     return new Thing\CreativeWork\3DModel();
+  }
+
+  
   public static function RadioChannel()
   {
      return new Thing\Intangible\BroadcastChannel\RadioChannel();
+  }
+
+  
+  public static function FundingAgency()
+  {
+     return new Thing\Organization\Project\FundingAgency();
   }
 
   
@@ -3358,6 +4444,12 @@ class Entities
   }
 
   
+  public static function Conversation()
+  {
+     return new Thing\CreativeWork\Conversation();
+  }
+
+  
   public static function MediaObject()
   {
      return new Thing\CreativeWork\MediaObject();
@@ -3370,27 +4462,33 @@ class Entities
   }
 
   
-  public static function AccountingService()
-  {
-     return new Thing\Organization\LocalBusiness\FinancialService\AccountingService();
-  }
-
-  
   public static function CheckInAction()
   {
      return new Thing\Action\InteractAction\CommunicateAction\CheckInAction();
   }
 
   
-  public static function BusinessAudience()
+  public static function DayOfWeek()
   {
-     return new Thing\Intangible\Audience\BusinessAudience();
+     return new Thing\Intangible\Enumeration\DayOfWeek();
+  }
+
+  
+  public static function HotelRoom()
+  {
+     return new Thing\Place\Accommodation\Room\HotelRoom();
   }
 
   
   public static function LodgingBusiness()
   {
      return new Thing\Organization\LocalBusiness\LodgingBusiness();
+  }
+
+  
+  public static function House()
+  {
+     return new Thing\Place\Accommodation\House();
   }
 
   
@@ -3406,9 +4504,27 @@ class Entities
   }
 
   
+  public static function BrainStructure()
+  {
+     return new Thing\MedicalEntity\AnatomicalStructure\BrainStructure();
+  }
+
+  
   public static function CreativeWorkSeason()
   {
      return new Thing\CreativeWork\CreativeWorkSeason();
+  }
+
+  
+  public static function PhysicalActivity()
+  {
+     return new Thing\MedicalEntity\LifestyleModification\PhysicalActivity();
+  }
+
+  
+  public static function HealthPlanNetwork()
+  {
+     return new Thing\Intangible\HealthPlanNetwork();
   }
 
   
@@ -3424,6 +4540,12 @@ class Entities
   }
 
   
+  public static function PerformAction()
+  {
+     return new Thing\Action\PlayAction\PerformAction();
+  }
+
+  
   public static function RecyclingCenter()
   {
      return new Thing\Organization\LocalBusiness\RecyclingCenter();
@@ -3432,7 +4554,7 @@ class Entities
   
   public static function Hospital()
   {
-     return new Thing\Organization\LocalBusiness\EmergencyService\Hospital();
+     return new Thing\Organization\MedicalOrganization\Hospital();
   }
 
   
@@ -3442,27 +4564,57 @@ class Entities
   }
 
   
+  public static function ArriveAction()
+  {
+     return new Thing\Action\MoveAction\ArriveAction();
+  }
+
+  
   public static function LockerDelivery()
   {
      return new Thing\Intangible\Enumeration\DeliveryMethod\LockerDelivery();
   }
 
   
-  public static function ClothingStore()
+  public static function LegalValueLevel()
   {
-     return new Thing\Organization\LocalBusiness\Store\ClothingStore();
+     return new Thing\Intangible\Enumeration\LegalValueLevel();
   }
 
   
-  public static function BookmarkAction()
+  public static function Seat()
   {
-     return new Thing\Action\OrganizeAction\BookmarkAction();
+     return new Thing\Intangible\Seat();
+  }
+
+  
+  public static function DrugLegalStatus()
+  {
+     return new Thing\MedicalEntity\MedicalIntangible\DrugLegalStatus();
+  }
+
+  
+  public static function MortgageLoan()
+  {
+     return new Thing\Intangible\Service\FinancialProduct\LoanOrCredit\MortgageLoan();
   }
 
   
   public static function RadioSeason()
   {
      return new Thing\CreativeWork\CreativeWorkSeason\RadioSeason();
+  }
+
+  
+  public static function MedicalDevice()
+  {
+     return new Thing\MedicalEntity\MedicalDevice();
+  }
+
+  
+  public static function PsychologicalTreatment()
+  {
+     return new Thing\MedicalEntity\MedicalProcedure\TherapeuticProcedure\PsychologicalTreatment();
   }
 
   
@@ -3478,15 +4630,39 @@ class Entities
   }
 
   
+  public static function Legislation()
+  {
+     return new Thing\CreativeWork\Legislation();
+  }
+
+  
+  public static function ReplyAction()
+  {
+     return new Thing\Action\InteractAction\CommunicateAction\ReplyAction();
+  }
+
+  
   public static function EmailMessage()
   {
      return new Thing\CreativeWork\Message\EmailMessage();
   }
 
   
+  public static function MedicalEntity()
+  {
+     return new Thing\MedicalEntity();
+  }
+
+  
   public static function BusStation()
   {
      return new Thing\Place\CivicStructure\BusStation();
+  }
+
+  
+  public static function ReserveAction()
+  {
+     return new Thing\Action\OrganizeAction\PlanAction\ReserveAction();
   }
 
   
@@ -3502,6 +4678,12 @@ class Entities
   }
 
   
+  public static function LibrarySystem()
+  {
+     return new Thing\Organization\LibrarySystem();
+  }
+
+  
   public static function Offer()
   {
      return new Thing\Intangible\Offer();
@@ -3514,6 +4696,12 @@ class Entities
   }
 
   
+  public static function ScheduleAction()
+  {
+     return new Thing\Action\OrganizeAction\PlanAction\ScheduleAction();
+  }
+
+  
   public static function Product()
   {
      return new Thing\Product();
@@ -3523,6 +4711,12 @@ class Entities
   public static function CampingPitch()
   {
      return new Thing\Place\Accommodation\CampingPitch();
+  }
+
+  
+  public static function CivicStructure()
+  {
+     return new Thing\Place\CivicStructure();
   }
 
   
@@ -3541,6 +4735,12 @@ class Entities
   public static function AutomotiveBusiness()
   {
      return new Thing\Organization\LocalBusiness\AutomotiveBusiness();
+  }
+
+  
+  public static function Class()
+  {
+     return new Thing\Intangible\Class();
   }
 
   
@@ -3577,6 +4777,12 @@ class Entities
   public static function TakeAction()
   {
      return new Thing\Action\TransferAction\TakeAction();
+  }
+
+  
+  public static function RepaymentSpecification()
+  {
+     return new Thing\Intangible\StructuredValue\RepaymentSpecification();
   }
 
   

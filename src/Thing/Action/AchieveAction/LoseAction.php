@@ -26,3 +26,6 @@ class LoseAction extends AchieveAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\AchieveAction\\LoseAction','Thing\\LoseAction');
+

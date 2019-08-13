@@ -14,3 +14,6 @@ class InteractAction extends Action
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\InteractAction','Thing\\InteractAction');
+

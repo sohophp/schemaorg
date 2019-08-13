@@ -16,3 +16,6 @@ class Periodical extends CreativeWorkSeries
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Series\\CreativeWorkSeries\\Periodical','Thing\\Periodical');
+

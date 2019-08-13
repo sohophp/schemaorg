@@ -26,3 +26,6 @@ class PerformAction extends PlayAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\PlayAction\\PerformAction','Thing\\PerformAction');
+

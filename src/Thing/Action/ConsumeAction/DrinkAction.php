@@ -14,3 +14,6 @@ class DrinkAction extends ConsumeAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\ConsumeAction\\DrinkAction','Thing\\DrinkAction');
+

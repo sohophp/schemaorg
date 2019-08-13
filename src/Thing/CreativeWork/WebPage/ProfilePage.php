@@ -14,3 +14,6 @@ class ProfilePage extends WebPage
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\WebPage\\ProfilePage','Thing\\ProfilePage');
+

@@ -14,3 +14,6 @@ class MusicVideoObject extends MediaObject
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\MediaObject\\MusicVideoObject','Thing\\MusicVideoObject');
+

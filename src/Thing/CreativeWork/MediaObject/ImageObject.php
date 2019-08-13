@@ -24,17 +24,6 @@ class ImageObject extends MediaObject
     }
 
     /**
-    * Indicates whether this image is representative of the content of the page.
-    * @param bool $value
-    * @return $this
-    */
-    public function representativeOfPage(?bool $value)
-    {
-        $this->setProperty('representativeOfPage', $value);
-        return $this;
-    }
-
-    /**
     * Thumbnail image for an image or video.
     * @param ImageObject $value
     * @return $this
@@ -46,11 +35,22 @@ class ImageObject extends MediaObject
     }
 
     /**
-    * The caption for this object.
-    * @param string $value
+    * Indicates whether this image is representative of the content of the page.
+    * @param bool $value
     * @return $this
     */
-    public function caption(?string $value)
+    public function representativeOfPage(?bool $value)
+    {
+        $this->setProperty('representativeOfPage', $value);
+        return $this;
+    }
+
+    /**
+    * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the <a class="localLink" href="http://schema.org/encodingFormat">encodingFormat</a>.
+    * @param string|MediaObject $value
+    * @return $this
+    */
+    public function caption($value)
     {
         $this->setProperty('caption', $value);
         return $this;
@@ -58,4 +58,7 @@ class ImageObject extends MediaObject
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\MediaObject\\ImageObject','Thing\\ImageObject');
 

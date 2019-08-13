@@ -51,3 +51,6 @@ class CreativeWorkSeries extends Series
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Series\\CreativeWorkSeries','Thing\\CreativeWorkSeries');
+

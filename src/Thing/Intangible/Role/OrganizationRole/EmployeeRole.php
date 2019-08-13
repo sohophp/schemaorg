@@ -38,3 +38,6 @@ class EmployeeRole extends OrganizationRole
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Role\\OrganizationRole\\EmployeeRole','Thing\\EmployeeRole');
+

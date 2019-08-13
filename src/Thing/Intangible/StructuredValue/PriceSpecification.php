@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
 
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
@@ -106,7 +106,7 @@ Usage guidelines:<br/><br/>
     * @param string $value
     * @return $this
     */
-    public function price(? $value)
+    public function price(?string $value)
     {
         $this->setProperty('price', $value);
         return $this;
@@ -125,4 +125,7 @@ Usage guidelines:<br/><br/>
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue\\PriceSpecification','Thing\\PriceSpecification');
 

@@ -14,3 +14,6 @@ class Embassy extends GovernmentBuilding
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\CivicStructure\\GovernmentBuilding\\Embassy','Thing\\Embassy');
+

@@ -33,3 +33,6 @@ class CivicStructure extends Place
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\CivicStructure','Thing\\CivicStructure');
+

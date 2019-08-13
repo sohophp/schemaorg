@@ -2,8 +2,8 @@
 namespace Sohophp\SchemaOrg\Thing\CreativeWork;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork;
-use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\ContactPoint;
 use Sohophp\SchemaOrg\Thing\Organization;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\ContactPoint;
 use Sohophp\SchemaOrg\Thing\Person;
 use Sohophp\SchemaOrg\Thing\Intangible\Audience;
 
@@ -28,7 +28,7 @@ class Message extends CreativeWork
 
     /**
     * A sub property of recipient. The recipient blind copied on a message.
-    * @param ContactPoint|Organization|Person $value
+    * @param Organization|ContactPoint|Person $value
     * @return $this
     */
     public function bccRecipient($value)
@@ -50,7 +50,7 @@ class Message extends CreativeWork
 
     /**
     * A sub property of recipient. The recipient copied on a message.
-    * @param Person|Organization|ContactPoint $value
+    * @param Person|ContactPoint|Organization $value
     * @return $this
     */
     public function ccRecipient($value)
@@ -67,6 +67,17 @@ class Message extends CreativeWork
     public function recipient($value)
     {
         $this->setProperty('recipient', $value);
+        return $this;
+    }
+
+    /**
+    * A sub property of participant. The participant who is at the sending end of the action.
+    * @param Audience|Person|Organization $value
+    * @return $this
+    */
+    public function sender($value)
+    {
+        $this->setProperty('sender', $value);
         return $this;
     }
 
@@ -94,7 +105,7 @@ class Message extends CreativeWork
 
     /**
     * A sub property of recipient. The recipient who was directly sent the message.
-    * @param Organization|Person|ContactPoint|Audience $value
+    * @param ContactPoint|Organization|Audience|Person $value
     * @return $this
     */
     public function toRecipient($value)
@@ -103,17 +114,9 @@ class Message extends CreativeWork
         return $this;
     }
 
-    /**
-    * A sub property of participant. The participant who is at the sending end of the action.
-    * @param Organization|Audience|Person $value
-    * @return $this
-    */
-    public function sender($value)
-    {
-        $this->setProperty('sender', $value);
-        return $this;
-    }
-
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Message','Thing\\Message');
 

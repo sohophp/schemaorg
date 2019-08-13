@@ -2,8 +2,8 @@
 namespace Sohophp\SchemaOrg\Thing\CreativeWork;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork;
-use Sohophp\SchemaOrg\Thing\CreativeWork\MusicRecording;
 use Sohophp\SchemaOrg\Thing\Intangible\ItemList;
+use Sohophp\SchemaOrg\Thing\CreativeWork\MusicRecording;
 
 /**
 * A collection of music tracks in playlist form.
@@ -15,7 +15,7 @@ class MusicPlaylist extends CreativeWork
 
     /**
     * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
-    * @param MusicRecording|ItemList $value
+    * @param ItemList|MusicRecording $value
     * @return $this
     */
     public function track($value)
@@ -48,4 +48,7 @@ class MusicPlaylist extends CreativeWork
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\MusicPlaylist','Thing\\MusicPlaylist');
 

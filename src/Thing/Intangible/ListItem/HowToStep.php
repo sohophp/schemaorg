@@ -14,3 +14,6 @@ class HowToStep extends ListItem
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\ListItem\\HowToStep','Thing\\HowToStep');
+

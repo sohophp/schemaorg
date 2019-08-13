@@ -35,17 +35,6 @@ class UnitPriceSpecification extends PriceSpecification
     }
 
     /**
-    * The reference quantity for which a certain price applies, e.g. 1 EUR per 4 kWh of electricity. This property is a replacement for unitOfMeasurement for the advanced cases where the price does not relate to a standard unit.
-    * @param QuantitativeValue $value
-    * @return $this
-    */
-    public function referenceQuantity(?QuantitativeValue $value)
-    {
-        $this->setProperty('referenceQuantity', $value);
-        return $this;
-    }
-
-    /**
     * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
 <a href='unitCode'>unitCode</a>.
     * @param string $value
@@ -54,6 +43,17 @@ class UnitPriceSpecification extends PriceSpecification
     public function unitText(?string $value)
     {
         $this->setProperty('unitText', $value);
+        return $this;
+    }
+
+    /**
+    * The reference quantity for which a certain price applies, e.g. 1 EUR per 4 kWh of electricity. This property is a replacement for unitOfMeasurement for the advanced cases where the price does not relate to a standard unit.
+    * @param QuantitativeValue $value
+    * @return $this
+    */
+    public function referenceQuantity(?QuantitativeValue $value)
+    {
+        $this->setProperty('referenceQuantity', $value);
         return $this;
     }
 
@@ -70,4 +70,7 @@ class UnitPriceSpecification extends PriceSpecification
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue\\PriceSpecification\\UnitPriceSpecification','Thing\\UnitPriceSpecification');
 

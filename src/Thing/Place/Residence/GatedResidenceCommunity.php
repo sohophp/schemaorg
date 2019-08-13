@@ -14,3 +14,6 @@ class GatedResidenceCommunity extends Residence
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\Residence\\GatedResidenceCommunity','Thing\\GatedResidenceCommunity');
+

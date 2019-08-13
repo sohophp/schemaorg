@@ -37,3 +37,6 @@ class ReplaceAction extends UpdateAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\UpdateAction\\ReplaceAction','Thing\\ReplaceAction');
+

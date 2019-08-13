@@ -14,3 +14,6 @@ class State extends AdministrativeArea
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\AdministrativeArea\\State','Thing\\State');
+

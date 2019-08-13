@@ -37,3 +37,6 @@ class ChooseAction extends AssessAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\AssessAction\\ChooseAction','Thing\\ChooseAction');
+

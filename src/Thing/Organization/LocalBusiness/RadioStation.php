@@ -14,3 +14,6 @@ class RadioStation extends LocalBusiness
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\RadioStation','Thing\\RadioStation');
+

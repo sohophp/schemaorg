@@ -16,3 +16,6 @@ class LegalService extends LocalBusiness
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\LegalService','Thing\\LegalService');
+

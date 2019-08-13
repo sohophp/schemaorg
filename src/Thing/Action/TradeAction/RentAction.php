@@ -39,3 +39,6 @@ class RentAction extends TradeAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\TradeAction\\RentAction','Thing\\RentAction');
+

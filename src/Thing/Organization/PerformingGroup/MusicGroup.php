@@ -2,10 +2,10 @@
 namespace Sohophp\SchemaOrg\Thing\Organization\PerformingGroup;
 
 use Sohophp\SchemaOrg\Thing\Organization\PerformingGroup;
-use Sohophp\SchemaOrg\Thing\CreativeWork\MusicPlaylist\MusicAlbum;
-use Sohophp\SchemaOrg\Thing\CreativeWork\MusicRecording;
 use Sohophp\SchemaOrg\Thing\Intangible\ItemList;
+use Sohophp\SchemaOrg\Thing\CreativeWork\MusicRecording;
 use Sohophp\SchemaOrg\Thing\Person;
+use Sohophp\SchemaOrg\Thing\CreativeWork\MusicPlaylist\MusicAlbum;
 
 /**
 * A musical group, such as a band, an orchestra, or a choir. Can also be a solo musician.
@@ -16,19 +16,8 @@ class MusicGroup extends PerformingGroup
 {
 
     /**
-    * A collection of music albums.
-    * @param MusicAlbum $value
-    * @return $this
-    */
-    public function albums(?MusicAlbum $value)
-    {
-        $this->setProperty('albums', $value);
-        return $this;
-    }
-
-    /**
     * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
-    * @param MusicRecording|ItemList $value
+    * @param ItemList|MusicRecording $value
     * @return $this
     */
     public function track($value)
@@ -71,6 +60,17 @@ class MusicGroup extends PerformingGroup
     }
 
     /**
+    * A collection of music albums.
+    * @param MusicAlbum $value
+    * @return $this
+    */
+    public function albums(?MusicAlbum $value)
+    {
+        $this->setProperty('albums', $value);
+        return $this;
+    }
+
+    /**
     * A music album.
     * @param MusicAlbum $value
     * @return $this
@@ -83,4 +83,7 @@ class MusicGroup extends PerformingGroup
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\PerformingGroup\\MusicGroup','Thing\\MusicGroup');
 

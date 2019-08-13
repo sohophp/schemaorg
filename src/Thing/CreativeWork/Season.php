@@ -14,3 +14,6 @@ class Season extends CreativeWork
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Season','Thing\\Season');
+

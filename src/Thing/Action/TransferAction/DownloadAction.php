@@ -14,3 +14,6 @@ class DownloadAction extends TransferAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\TransferAction\\DownloadAction','Thing\\DownloadAction');
+

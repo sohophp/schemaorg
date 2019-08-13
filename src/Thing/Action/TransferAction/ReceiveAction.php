@@ -3,9 +3,9 @@ namespace Sohophp\SchemaOrg\Thing\Action\TransferAction;
 
 use Sohophp\SchemaOrg\Thing\Action\TransferAction;
 use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\DeliveryMethod;
-use Sohophp\SchemaOrg\Thing\Organization;
 use Sohophp\SchemaOrg\Thing\Intangible\Audience;
 use Sohophp\SchemaOrg\Thing\Person;
+use Sohophp\SchemaOrg\Thing\Organization;
 
 /**
 * The act of physically/electronically taking delivery of an object thathas been transferred from an origin to a destination. Reciprocal of SendAction.<br/><br/>
@@ -36,7 +36,7 @@ class ReceiveAction extends TransferAction
 
     /**
     * A sub property of participant. The participant who is at the sending end of the action.
-    * @param Organization|Audience|Person $value
+    * @param Audience|Person|Organization $value
     * @return $this
     */
     public function sender($value)
@@ -47,4 +47,7 @@ class ReceiveAction extends TransferAction
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\TransferAction\\ReceiveAction','Thing\\ReceiveAction');
 

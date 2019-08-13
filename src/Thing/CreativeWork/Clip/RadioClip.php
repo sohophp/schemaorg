@@ -14,3 +14,6 @@ class RadioClip extends Clip
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Clip\\RadioClip','Thing\\RadioClip');
+

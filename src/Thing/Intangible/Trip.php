@@ -5,6 +5,8 @@ use Sohophp\SchemaOrg\Thing\Intangible;
 use Sohophp\SchemaOrg\Thing\Organization;
 use Sohophp\SchemaOrg\Thing\Person;
 use Sohophp\SchemaOrg\Thing\Intangible\Offer;
+use Sohophp\SchemaOrg\Thing\Place;
+use Sohophp\SchemaOrg\Thing\Intangible\ItemList;
 
 /**
 * A trip or journey. An itinerary of visits to one or more places.
@@ -22,6 +24,17 @@ class Trip extends Intangible
     public function provider($value)
     {
         $this->setProperty('provider', $value);
+        return $this;
+    }
+
+    /**
+    * Identifies a <a class="localLink" href="http://schema.org/Trip">Trip</a> that is a subTrip of this Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
+    * @param Trip $value
+    * @return $this
+    */
+    public function subTrip(?Trip $value)
+    {
+        $this->setProperty('subTrip', $value);
         return $this;
     }
 
@@ -48,6 +61,17 @@ class Trip extends Intangible
     }
 
     /**
+    * Identifies that this <a class="localLink" href="http://schema.org/Trip">Trip</a> is a subTrip of another Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
+    * @param Trip $value
+    * @return $this
+    */
+    public function partOfTrip(?Trip $value)
+    {
+        $this->setProperty('partOfTrip', $value);
+        return $this;
+    }
+
+    /**
     * The expected departure time.
     * @param  $value
     * @return $this
@@ -58,6 +82,20 @@ class Trip extends Intangible
         return $this;
     }
 
+    /**
+    * Destination(s) ( <a class="localLink" href="http://schema.org/Place">Place</a> ) that make up a trip. For a trip where destination order is important use <a class="localLink" href="http://schema.org/ItemList">ItemList</a> to specify that order (see examples).
+    * @param Place|ItemList $value
+    * @return $this
+    */
+    public function itinerary($value)
+    {
+        $this->setProperty('itinerary', $value);
+        return $this;
+    }
+
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Trip','Thing\\Trip');
 

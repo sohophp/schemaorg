@@ -14,3 +14,6 @@ class FilmAction extends CreateAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\CreateAction\\FilmAction','Thing\\FilmAction');
+

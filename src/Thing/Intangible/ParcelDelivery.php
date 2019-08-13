@@ -4,11 +4,11 @@ namespace Sohophp\SchemaOrg\Thing\Intangible;
 use Sohophp\SchemaOrg\Thing\Intangible;
 use Sohophp\SchemaOrg\Thing\Organization;
 use Sohophp\SchemaOrg\Thing\Person;
-use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\ContactPoint\PostalAddress;
 use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\DeliveryMethod;
 use Sohophp\SchemaOrg\Thing\Event\DeliveryEvent;
 use Sohophp\SchemaOrg\Thing\Product;
 use Sohophp\SchemaOrg\Thing\Intangible\Order;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\ContactPoint\PostalAddress;
 
 /**
 * The delivery of a parcel either via the postal service or a commercial service.
@@ -37,17 +37,6 @@ class ParcelDelivery extends Intangible
     public function trackingUrl(?string $value)
     {
         $this->setProperty('trackingUrl', $value);
-        return $this;
-    }
-
-    /**
-    * Destination address.
-    * @param PostalAddress $value
-    * @return $this
-    */
-    public function deliveryAddress(?PostalAddress $value)
-    {
-        $this->setProperty('deliveryAddress', $value);
         return $this;
     }
 
@@ -96,17 +85,6 @@ class ParcelDelivery extends Intangible
     }
 
     /**
-    * Shipper's address.
-    * @param PostalAddress $value
-    * @return $this
-    */
-    public function originAddress(?PostalAddress $value)
-    {
-        $this->setProperty('originAddress', $value);
-        return $this;
-    }
-
-    /**
     * Item(s) being shipped.
     * @param Product $value
     * @return $this
@@ -140,6 +118,28 @@ class ParcelDelivery extends Intangible
     }
 
     /**
+    * Shipper's address.
+    * @param PostalAddress $value
+    * @return $this
+    */
+    public function originAddress(?PostalAddress $value)
+    {
+        $this->setProperty('originAddress', $value);
+        return $this;
+    }
+
+    /**
+    * Destination address.
+    * @param PostalAddress $value
+    * @return $this
+    */
+    public function deliveryAddress(?PostalAddress $value)
+    {
+        $this->setProperty('deliveryAddress', $value);
+        return $this;
+    }
+
+    /**
     * The latest date the package may arrive.
     * @param  $value
     * @return $this
@@ -152,4 +152,7 @@ class ParcelDelivery extends Intangible
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\ParcelDelivery','Thing\\ParcelDelivery');
 

@@ -27,7 +27,7 @@ class Brand extends Intangible
 
     /**
     * An associated logo.
-    * @param string|ImageObject $value
+    * @param ImageObject|string $value
     * @return $this
     */
     public function logo($value)
@@ -47,6 +47,20 @@ class Brand extends Intangible
         return $this;
     }
 
+    /**
+    * A slogan or motto associated with the item.
+    * @param string $value
+    * @return $this
+    */
+    public function slogan(?string $value)
+    {
+        $this->setProperty('slogan', $value);
+        return $this;
+    }
+
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Brand','Thing\\Brand');
 

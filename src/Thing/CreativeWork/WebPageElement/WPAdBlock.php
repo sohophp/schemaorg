@@ -14,3 +14,6 @@ class WPAdBlock extends WebPageElement
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\WebPageElement\\WPAdBlock','Thing\\WPAdBlock');
+

@@ -34,3 +34,6 @@ class BorrowAction extends TransferAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\TransferAction\\BorrowAction','Thing\\BorrowAction');
+

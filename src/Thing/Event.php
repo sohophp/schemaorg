@@ -4,13 +4,13 @@ namespace Sohophp\SchemaOrg\Thing;
 use Sohophp\SchemaOrg\Thing;
 use Sohophp\SchemaOrg\Thing\Organization;
 use Sohophp\SchemaOrg\Thing\Person;
-use Sohophp\SchemaOrg\Thing\CreativeWork;
 use Sohophp\SchemaOrg\Thing\Intangible\Audience;
 use Sohophp\SchemaOrg\Thing\Intangible\Rating\AggregateRating;
 use Sohophp\SchemaOrg\Thing\Intangible\Offer;
+use Sohophp\SchemaOrg\Thing\Intangible\Language;
+use Sohophp\SchemaOrg\Thing\CreativeWork;
 use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\EventStatusType;
 use Sohophp\SchemaOrg\Thing\Intangible\Quantity\Duration;
-use Sohophp\SchemaOrg\Thing\Intangible\Language;
 use Sohophp\SchemaOrg\Thing\CreativeWork\Review;
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\ContactPoint\PostalAddress;
 use Sohophp\SchemaOrg\Thing\Place;
@@ -42,29 +42,6 @@ class Event extends Thing
     public function funder($value)
     {
         $this->setProperty('funder', $value);
-        return $this;
-    }
-
-    /**
-    * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
-    * @param Person|Organization $value
-    * @return $this
-    */
-    public function sponsor($value)
-    {
-        $this->setProperty('sponsor', $value);
-        return $this;
-    }
-
-    /**
-    * A work featured in some event, e.g. exhibited in an ExhibitionEvent.
-       Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).
-    * @param CreativeWork $value
-    * @return $this
-    */
-    public function workFeatured(?CreativeWork $value)
-    {
-        $this->setProperty('workFeatured', $value);
         return $this;
     }
 
@@ -103,7 +80,7 @@ class Event extends Thing
 
     /**
     * The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.
-    * @param Person|Organization $value
+    * @param Organization|Person $value
     * @return $this
     */
     public function performers($value)
@@ -136,23 +113,12 @@ class Event extends Thing
 
     /**
     * A secondary contributor to the CreativeWork or Event.
-    * @param Organization|Person $value
+    * @param Person|Organization $value
     * @return $this
     */
     public function contributor($value)
     {
         $this->setProperty('contributor', $value);
-        return $this;
-    }
-
-    /**
-    * The total number of individuals that may attend an event or venue.
-    * @param int $value
-    * @return $this
-    */
-    public function maximumAttendeeCapacity(?int $value)
-    {
-        $this->setProperty('maximumAttendeeCapacity', $value);
         return $this;
     }
 
@@ -169,7 +135,7 @@ class Event extends Thing
 
     /**
     * An organizer of an Event.
-    * @param Person|Organization $value
+    * @param Organization|Person $value
     * @return $this
     */
     public function organizer($value)
@@ -180,7 +146,7 @@ class Event extends Thing
 
     /**
     * A person attending the event.
-    * @param Person|Organization $value
+    * @param Organization|Person $value
     * @return $this
     */
     public function attendees($value)
@@ -234,8 +200,19 @@ class Event extends Thing
     }
 
     /**
+    * The language of the content or performance or used in an action. Please use one of the language codes from the <a href="http://tools.ietf.org/html/bcp47">IETF BCP 47 standard</a>. See also <a class="localLink" href="http://schema.org/availableLanguage">availableLanguage</a>.
+    * @param Language|string $value
+    * @return $this
+    */
+    public function inLanguage($value)
+    {
+        $this->setProperty('inLanguage', $value);
+        return $this;
+    }
+
+    /**
     * A person or organization attending the event.
-    * @param Person|Organization $value
+    * @param Organization|Person $value
     * @return $this
     */
     public function attendee($value)
@@ -300,6 +277,18 @@ class Event extends Thing
     }
 
     /**
+    * A work featured in some event, e.g. exhibited in an ExhibitionEvent.
+       Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).
+    * @param CreativeWork $value
+    * @return $this
+    */
+    public function workFeatured(?CreativeWork $value)
+    {
+        $this->setProperty('workFeatured', $value);
+        return $this;
+    }
+
+    /**
     * The duration of the item (movie, audio recording, event, etc.) in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>.
     * @param Duration $value
     * @return $this
@@ -312,23 +301,12 @@ class Event extends Thing
 
     /**
     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
-    * @param Organization|Person $value
+    * @param Person|Organization $value
     * @return $this
     */
     public function translator($value)
     {
         $this->setProperty('translator', $value);
-        return $this;
-    }
-
-    /**
-    * The language of the content or performance or used in an action. Please use one of the language codes from the <a href="http://tools.ietf.org/html/bcp47">IETF BCP 47 standard</a>. See also <a class="localLink" href="http://schema.org/availableLanguage">availableLanguage</a>.
-    * @param string|Language $value
-    * @return $this
-    */
-    public function inLanguage($value)
-    {
-        $this->setProperty('inLanguage', $value);
         return $this;
     }
 
@@ -355,8 +333,19 @@ class Event extends Thing
     }
 
     /**
+    * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+    * @param Person|Organization $value
+    * @return $this
+    */
+    public function sponsor($value)
+    {
+        $this->setProperty('sponsor', $value);
+        return $this;
+    }
+
+    /**
     * The location of for example where the event is happening, an organization is located, or where an action takes place.
-    * @param PostalAddress|Place|string $value
+    * @param PostalAddress|string|Place $value
     * @return $this
     */
     public function location($value)
@@ -378,7 +367,7 @@ class Event extends Thing
 
     /**
     * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
-    * @param Organization|Person $value
+    * @param Person|Organization $value
     * @return $this
     */
     public function composer($value)
@@ -399,8 +388,19 @@ class Event extends Thing
     }
 
     /**
+    * The total number of individuals that may attend an event or venue.
+    * @param int $value
+    * @return $this
+    */
+    public function maximumAttendeeCapacity(?int $value)
+    {
+        $this->setProperty('maximumAttendeeCapacity', $value);
+        return $this;
+    }
+
+    /**
     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
-    * @param Person|Organization $value
+    * @param Organization|Person $value
     * @return $this
     */
     public function performer($value)
@@ -411,4 +411,7 @@ class Event extends Thing
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Event','Thing\\Event');
 

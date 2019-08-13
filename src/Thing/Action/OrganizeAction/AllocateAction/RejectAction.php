@@ -21,3 +21,6 @@ class RejectAction extends AllocateAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\OrganizeAction\\AllocateAction\\RejectAction','Thing\\RejectAction');
+

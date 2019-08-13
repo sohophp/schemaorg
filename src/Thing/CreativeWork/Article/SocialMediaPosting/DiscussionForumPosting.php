@@ -14,3 +14,6 @@ class DiscussionForumPosting extends SocialMediaPosting
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Article\\SocialMediaPosting\\DiscussionForumPosting','Thing\\DiscussionForumPosting');
+

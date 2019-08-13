@@ -14,3 +14,6 @@ class EventVenue extends CivicStructure
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\CivicStructure\\EventVenue','Thing\\EventVenue');
+

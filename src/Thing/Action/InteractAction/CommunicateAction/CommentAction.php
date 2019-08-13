@@ -26,3 +26,6 @@ class CommentAction extends CommunicateAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\InteractAction\\CommunicateAction\\CommentAction','Thing\\CommentAction');
+

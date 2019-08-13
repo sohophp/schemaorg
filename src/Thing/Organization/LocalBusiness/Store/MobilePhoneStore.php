@@ -14,3 +14,6 @@ class MobilePhoneStore extends Store
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\Store\\MobilePhoneStore','Thing\\MobilePhoneStore');
+

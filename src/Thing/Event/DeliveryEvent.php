@@ -59,3 +59,6 @@ class DeliveryEvent extends Event
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Event\\DeliveryEvent','Thing\\DeliveryEvent');
+

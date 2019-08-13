@@ -29,3 +29,6 @@ class ReturnAction extends TransferAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\TransferAction\\ReturnAction','Thing\\ReturnAction');
+

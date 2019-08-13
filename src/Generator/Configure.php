@@ -14,14 +14,16 @@ class Configure
             'classBase' => 'BaseType',
             'baseDir' => dirname(__DIR__),
             'tiwgDebug' => true,
-            'schemaJsonldFilePath' => realpath(__DIR__ . '/../../data/schema.jsonld'),
+            'schemaJsonldFilePath' => realpath(__DIR__ . '/../../data/all-layers.jsonld'),
             'consoleMessage' => true,
             'namespace' => $this->getNamespace(),
             'fixCs' => true,
             //是否使用完整目录关系和命名空间
             'fullpath' => true
         ];
+
         $this->cfg = array_merge($defs, $cfg);
+
     }
 
     public function get(?string $key)

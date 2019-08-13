@@ -3,6 +3,8 @@ namespace Sohophp\SchemaOrg\Thing\Event;
 
 use Sohophp\SchemaOrg\Thing\Event;
 use Sohophp\SchemaOrg\Thing\Intangible\Service\BroadcastService;
+use Sohophp\SchemaOrg\Thing\Person;
+use Sohophp\SchemaOrg\Thing\Organization;
 
 /**
 * A PublicationEvent corresponds indifferently to the event of publication for a CreativeWork of any type e.g. a broadcast event, an on-demand event, a book/journal publication via a variety of delivery media.
@@ -35,6 +37,17 @@ class PublicationEvent extends Event
     }
 
     /**
+    * An agent associated with the publication event.
+    * @param Person|Organization $value
+    * @return $this
+    */
+    public function publishedBy($value)
+    {
+        $this->setProperty('publishedBy', $value);
+        return $this;
+    }
+
+    /**
     * A flag to signal that the item, event, or place is accessible for free.
     * @param bool $value
     * @return $this
@@ -47,4 +60,7 @@ class PublicationEvent extends Event
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Event\\PublicationEvent','Thing\\PublicationEvent');
 

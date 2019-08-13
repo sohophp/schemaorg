@@ -14,3 +14,6 @@ class Winery extends FoodEstablishment
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\FoodEstablishment\\Winery','Thing\\Winery');
+

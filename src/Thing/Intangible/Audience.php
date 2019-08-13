@@ -37,3 +37,6 @@ class Audience extends Intangible
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Audience','Thing\\Audience');
+

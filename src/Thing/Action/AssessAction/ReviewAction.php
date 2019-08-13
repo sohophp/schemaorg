@@ -26,3 +26,6 @@ class ReviewAction extends AssessAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\AssessAction\\ReviewAction','Thing\\ReviewAction');
+

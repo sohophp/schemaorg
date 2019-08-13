@@ -15,6 +15,17 @@ class QualitativeValue extends Enumeration
 {
 
     /**
+    * This ordering relation for qualitative values indicates that the subject is lesser than the object.
+    * @param QualitativeValue $value
+    * @return $this
+    */
+    public function lesser(?QualitativeValue $value)
+    {
+        $this->setProperty('lesser', $value);
+        return $this;
+    }
+
+    /**
     * This ordering relation for qualitative values indicates that the subject is greater than the object.
     * @param QualitativeValue $value
     * @return $this
@@ -37,17 +48,6 @@ class QualitativeValue extends Enumeration
     }
 
     /**
-    * This ordering relation for qualitative values indicates that the subject is not equal to the object.
-    * @param QualitativeValue $value
-    * @return $this
-    */
-    public function nonEqual(?QualitativeValue $value)
-    {
-        $this->setProperty('nonEqual', $value);
-        return $this;
-    }
-
-    /**
     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>
 
 Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
@@ -61,24 +61,24 @@ Note: Publishers should be aware that applications designed to use specific sche
     }
 
     /**
-    * This ordering relation for qualitative values indicates that the subject is lesser than the object.
-    * @param QualitativeValue $value
-    * @return $this
-    */
-    public function lesser(?QualitativeValue $value)
-    {
-        $this->setProperty('lesser', $value);
-        return $this;
-    }
-
-    /**
     * A pointer to a secondary value that provides additional information on the original value, e.g. a reference temperature.
-    * @param Enumeration|QuantitativeValue|PropertyValue|StructuredValue|QualitativeValue $value
+    * @param QuantitativeValue|QualitativeValue|StructuredValue|Enumeration|PropertyValue $value
     * @return $this
     */
     public function valueReference($value)
     {
         $this->setProperty('valueReference', $value);
+        return $this;
+    }
+
+    /**
+    * This ordering relation for qualitative values indicates that the subject is not equal to the object.
+    * @param QualitativeValue $value
+    * @return $this
+    */
+    public function nonEqual(?QualitativeValue $value)
+    {
+        $this->setProperty('nonEqual', $value);
         return $this;
     }
 
@@ -106,4 +106,7 @@ Note: Publishers should be aware that applications designed to use specific sche
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\QualitativeValue','Thing\\QualitativeValue');
 

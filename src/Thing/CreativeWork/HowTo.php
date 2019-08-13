@@ -2,10 +2,10 @@
 namespace Sohophp\SchemaOrg\Thing\CreativeWork;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork;
-use Sohophp\SchemaOrg\Thing\Intangible\ItemList;
 use Sohophp\SchemaOrg\Thing\Intangible\Quantity\Duration;
-use Sohophp\SchemaOrg\Thing\Intangible\ListItem\HowToStep;
+use Sohophp\SchemaOrg\Thing\Intangible\ItemList;
 use Sohophp\SchemaOrg\Thing\CreativeWork\HowToSection;
+use Sohophp\SchemaOrg\Thing\CreativeWork\HowToStep;
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\MonetaryAmount;
 use Sohophp\SchemaOrg\Thing\Intangible\ListItem\HowToItem\HowToSupply;
 use Sohophp\SchemaOrg\Thing\Intangible\ListItem\HowToItem\HowToTool;
@@ -20,17 +20,6 @@ class HowTo extends CreativeWork
 {
 
     /**
-    * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).
-    * @param string|ItemList|CreativeWork $value
-    * @return $this
-    */
-    public function steps($value)
-    {
-        $this->setProperty('steps', $value);
-        return $this;
-    }
-
-    /**
     * The length of time it takes to prepare the items to be used in instructions or a direction, in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 duration format</a>.
     * @param Duration $value
     * @return $this
@@ -42,8 +31,19 @@ class HowTo extends CreativeWork
     }
 
     /**
+    * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).
+    * @param string|CreativeWork|ItemList $value
+    * @return $this
+    */
+    public function steps($value)
+    {
+        $this->setProperty('steps', $value);
+        return $this;
+    }
+
+    /**
     * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.
-    * @param CreativeWork|string|HowToStep|HowToSection $value
+    * @param string|HowToSection|HowToStep|CreativeWork $value
     * @return $this
     */
     public function step($value)
@@ -65,7 +65,7 @@ class HowTo extends CreativeWork
 
     /**
     * The estimated cost of the supply or supplies consumed when performing instructions.
-    * @param MonetaryAmount|string $value
+    * @param string|MonetaryAmount $value
     * @return $this
     */
     public function estimatedCost($value)
@@ -87,7 +87,7 @@ class HowTo extends CreativeWork
 
     /**
     * A sub-property of instrument. A supply consumed when performing instructions or a direction.
-    * @param string|HowToSupply $value
+    * @param HowToSupply|string $value
     * @return $this
     */
     public function supply($value)
@@ -98,7 +98,7 @@ class HowTo extends CreativeWork
 
     /**
     * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
-    * @param HowToTool|string $value
+    * @param string|HowToTool $value
     * @return $this
     */
     public function tool($value)
@@ -120,4 +120,7 @@ class HowTo extends CreativeWork
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\HowTo','Thing\\HowTo');
 

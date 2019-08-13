@@ -27,3 +27,6 @@ class EndorseAction extends ReactAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\AssessAction\\ReactAction\\EndorseAction','Thing\\EndorseAction');
+

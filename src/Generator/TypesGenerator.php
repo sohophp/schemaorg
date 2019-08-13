@@ -41,10 +41,11 @@ class TypesGenerator
     }
 
     /**
-     * @return array|bool
+     * @return array
      * @throws \Twig_Error_Loader
      * @throws \Twig_Error_Runtime
      * @throws \Twig_Error_Syntax
+     * @throws \Exception
      */
     public function generate()
     {
@@ -101,13 +102,13 @@ class TypesGenerator
                     }
                 }
 
-                    //rangeString可能有null
+                //rangeString可能有null
                 $range = array_filter(array_map('trim', $range));
                 $class['properties'][] = [
                     'name' => $property->getName(),
                     'annotations' => [$property->getComment()],
                     'range' => implode('|', $range),
-                    'range_default' => count($range) === 1 ? '?' . $range[0] : null
+                    'range_default' => count($range) === 1 ? '?' . array_values($range)[0] : null
                 ];
             }
             $class['uses'] = array_unique($uses);
@@ -119,12 +120,12 @@ class TypesGenerator
             if (!is_dir($dir)) {
                 if (!mkdir($dir, 0777, true)) {
                     throw new \Exception('Failed to create folders ' . $dir);
-                    return false;
                 }
             }
+
             if (!file_put_contents($filename, $this->twig->render('class.php.twig', ['class' => $class]))) {
                 throw new \Exception('Can not create file ' . $dir . DIRECTORY_SEPARATOR . $graph->getName() . '.php');
-                return false;
+
             }
             $classFiles[] = $filename;
             $entitiesMap[] = [
@@ -185,6 +186,8 @@ class TypesGenerator
                 //return '\\' . \DateTimeInterface::class;
             case 'DataType':
             case 'Number':
+                return null;
+            default:
                 return null;
         }
     }

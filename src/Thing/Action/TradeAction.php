@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Action;
 
 use Sohophp\SchemaOrg\Thing\Action;
@@ -24,6 +24,19 @@ class TradeAction extends Action
     }
 
     /**
+    * The currency of the price, or a price component when attached to <a class="localLink" href="http://schema.org/PriceSpecification">PriceSpecification</a> and its subtypes.<br/><br/>
+
+Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 currency format</a> e.g. "USD"; <a href="https://en.wikipedia.org/wiki/List_of_cryptocurrencies">Ticker symbol</a> for cryptocurrencies e.g. "BTC"; well known names for <a href="https://en.wikipedia.org/wiki/Local_exchange_trading_system">Local Exchange Tradings Systems</a> (LETS) and other currency types e.g. "Ithaca HOUR".
+    * @param string $value
+    * @return $this
+    */
+    public function priceCurrency(?string $value)
+    {
+        $this->setProperty('priceCurrency', $value);
+        return $this;
+    }
+
+    /**
     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>
 
 Usage guidelines:<br/><br/>
@@ -38,7 +51,7 @@ Usage guidelines:<br/><br/>
     * @param string $value
     * @return $this
     */
-    public function price(? $value)
+    public function price(?string $value)
     {
         $this->setProperty('price', $value);
         return $this;
@@ -46,4 +59,7 @@ Usage guidelines:<br/><br/>
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\TradeAction','Thing\\TradeAction');
 

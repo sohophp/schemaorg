@@ -27,6 +27,17 @@ class MusicComposition extends CreativeWork
     }
 
     /**
+    * The words in the song.
+    * @param CreativeWork $value
+    * @return $this
+    */
+    public function lyrics(?CreativeWork $value)
+    {
+        $this->setProperty('lyrics', $value);
+        return $this;
+    }
+
+    /**
     * Smaller compositions included in this work (e.g. a movement in a symphony).
     * @param MusicComposition $value
     * @return $this
@@ -60,17 +71,6 @@ class MusicComposition extends CreativeWork
     }
 
     /**
-    * The date and place the work was first performed.
-    * @param Event $value
-    * @return $this
-    */
-    public function firstPerformance(?Event $value)
-    {
-        $this->setProperty('firstPerformance', $value);
-        return $this;
-    }
-
-    /**
     * An arrangement derived from the composition.
     * @param MusicComposition $value
     * @return $this
@@ -82,13 +82,13 @@ class MusicComposition extends CreativeWork
     }
 
     /**
-    * The words in the song.
-    * @param CreativeWork $value
+    * The date and place the work was first performed.
+    * @param Event $value
     * @return $this
     */
-    public function lyrics(?CreativeWork $value)
+    public function firstPerformance(?Event $value)
     {
-        $this->setProperty('lyrics', $value);
+        $this->setProperty('firstPerformance', $value);
         return $this;
     }
 
@@ -105,7 +105,7 @@ class MusicComposition extends CreativeWork
 
     /**
     * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
-    * @param Organization|Person $value
+    * @param Person|Organization $value
     * @return $this
     */
     public function composer($value)
@@ -127,4 +127,7 @@ class MusicComposition extends CreativeWork
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\MusicComposition','Thing\\MusicComposition');
 

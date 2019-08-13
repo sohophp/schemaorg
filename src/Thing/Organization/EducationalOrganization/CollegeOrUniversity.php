@@ -14,3 +14,6 @@ class CollegeOrUniversity extends EducationalOrganization
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\EducationalOrganization\\CollegeOrUniversity','Thing\\CollegeOrUniversity');
+

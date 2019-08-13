@@ -14,3 +14,6 @@ class OutletStore extends Store
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\Store\\OutletStore','Thing\\OutletStore');
+

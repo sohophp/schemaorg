@@ -33,3 +33,6 @@ class ReplyAction extends CommunicateAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\InteractAction\\CommunicateAction\\ReplyAction','Thing\\ReplyAction');
+

@@ -26,3 +26,6 @@ class WinAction extends AchieveAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\AchieveAction\\WinAction','Thing\\WinAction');
+

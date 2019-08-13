@@ -14,3 +14,6 @@ class FoodEvent extends Event
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Event\\FoodEvent','Thing\\FoodEvent');
+

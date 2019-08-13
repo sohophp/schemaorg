@@ -14,3 +14,6 @@ class Continent extends Landform
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\Landform\\Continent','Thing\\Continent');
+

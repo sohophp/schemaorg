@@ -14,3 +14,6 @@ class TelevisionStation extends LocalBusiness
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\TelevisionStation','Thing\\TelevisionStation');
+

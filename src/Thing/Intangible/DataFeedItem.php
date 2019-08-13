@@ -59,3 +59,6 @@ class DataFeedItem extends Intangible
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\DataFeedItem','Thing\\DataFeedItem');
+

@@ -2,6 +2,7 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible;
 
 use Sohophp\SchemaOrg\Thing\Intangible;
+use Sohophp\SchemaOrg\Thing\CreativeWork\MenuSection;
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\NutritionInformation;
 use Sohophp\SchemaOrg\Thing\Intangible\Offer;
 use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\RestrictedDiet;
@@ -13,6 +14,17 @@ use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\RestrictedDiet;
 */
 class MenuItem extends Intangible
 {
+
+    /**
+    * Additional menu item(s) such as a side dish of salad or side order of fries that can be added to this menu item. Additionally it can be a menu section containing allowed add-on menu items for this menu item.
+    * @param MenuItem|MenuSection $value
+    * @return $this
+    */
+    public function menuAddOn($value)
+    {
+        $this->setProperty('menuAddOn', $value);
+        return $this;
+    }
 
     /**
     * Nutrition information about the recipe or menu item.
@@ -49,4 +61,7 @@ class MenuItem extends Intangible
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\MenuItem','Thing\\MenuItem');
 

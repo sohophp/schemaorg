@@ -14,3 +14,6 @@ class ReservationStatusType extends Enumeration
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\ReservationStatusType','Thing\\ReservationStatusType');
+

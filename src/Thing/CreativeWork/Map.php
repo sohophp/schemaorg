@@ -26,3 +26,6 @@ class Map extends CreativeWork
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Map','Thing\\Map');
+

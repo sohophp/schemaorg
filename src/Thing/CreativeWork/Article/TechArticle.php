@@ -12,17 +12,6 @@ class TechArticle extends Article
 {
 
     /**
-    * Proficiency needed for this content; expected values: 'Beginner', 'Expert'.
-    * @param string $value
-    * @return $this
-    */
-    public function proficiencyLevel(?string $value)
-    {
-        $this->setProperty('proficiencyLevel', $value);
-        return $this;
-    }
-
-    /**
     * Prerequisites needed to fulfill steps in article.
     * @param string $value
     * @return $this
@@ -33,6 +22,20 @@ class TechArticle extends Article
         return $this;
     }
 
+    /**
+    * Proficiency needed for this content; expected values: 'Beginner', 'Expert'.
+    * @param string $value
+    * @return $this
+    */
+    public function proficiencyLevel(?string $value)
+    {
+        $this->setProperty('proficiencyLevel', $value);
+        return $this;
+    }
+
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Article\\TechArticle','Thing\\TechArticle');
 

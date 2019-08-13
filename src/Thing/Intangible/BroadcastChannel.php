@@ -2,6 +2,7 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible;
 
 use Sohophp\SchemaOrg\Thing\Intangible;
+use Sohophp\SchemaOrg\Thing\Intangible\BroadcastFrequencySpecification;
 use Sohophp\SchemaOrg\Thing\Intangible\Service\CableOrSatelliteService;
 use Sohophp\SchemaOrg\Thing\Intangible\Service\BroadcastService;
 
@@ -12,6 +13,17 @@ use Sohophp\SchemaOrg\Thing\Intangible\Service\BroadcastService;
 */
 class BroadcastChannel extends Intangible
 {
+
+    /**
+    * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+    * @param string|BroadcastFrequencySpecification $value
+    * @return $this
+    */
+    public function broadcastFrequency($value)
+    {
+        $this->setProperty('broadcastFrequency', $value);
+        return $this;
+    }
 
     /**
     * The unique address by which the BroadcastService can be identified in a provider lineup. In US, this is typically a number.
@@ -70,4 +82,7 @@ class BroadcastChannel extends Intangible
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\BroadcastChannel','Thing\\BroadcastChannel');
 

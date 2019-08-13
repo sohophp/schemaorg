@@ -48,3 +48,6 @@ class BusinessAudience extends Audience
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Audience\\BusinessAudience','Thing\\BusinessAudience');
+

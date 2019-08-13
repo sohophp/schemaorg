@@ -1,16 +1,17 @@
-<?php declare(strict_types=1);
+<?php
 namespace Sohophp\SchemaOrg\Thing\Intangible;
 
 use Sohophp\SchemaOrg\Thing\Intangible;
 use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\OrderStatus;
-use Sohophp\SchemaOrg\Thing\Intangible\Invoice;
-use Sohophp\SchemaOrg\Thing\Person;
-use Sohophp\SchemaOrg\Thing\Organization;
-use Sohophp\SchemaOrg\Thing\Intangible\OrderItem;
-use Sohophp\SchemaOrg\Thing\Product;
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\ContactPoint\PostalAddress;
+use Sohophp\SchemaOrg\Thing\Intangible\Invoice;
+use Sohophp\SchemaOrg\Thing\Organization;
+use Sohophp\SchemaOrg\Thing\Person;
 use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\PaymentMethod;
 use Sohophp\SchemaOrg\Thing\Intangible\ParcelDelivery;
+use Sohophp\SchemaOrg\Thing\Intangible\Service;
+use Sohophp\SchemaOrg\Thing\Intangible\OrderItem;
+use Sohophp\SchemaOrg\Thing\Product;
 use Sohophp\SchemaOrg\Thing\Intangible\Offer;
 
 /**
@@ -20,17 +21,6 @@ use Sohophp\SchemaOrg\Thing\Intangible\Offer;
 */
 class Order extends Intangible
 {
-
-    /**
-    * Date order was placed.
-    * @param  $value
-    * @return $this
-    */
-    public function orderDate($value)
-    {
-        $this->setProperty('orderDate', $value);
-        return $this;
-    }
 
     /**
     * The date that payment is due.
@@ -77,6 +67,17 @@ class Order extends Intangible
     }
 
     /**
+    * The billing address for the order.
+    * @param PostalAddress $value
+    * @return $this
+    */
+    public function billingAddress(?PostalAddress $value)
+    {
+        $this->setProperty('billingAddress', $value);
+        return $this;
+    }
+
+    /**
     * The order is being paid as part of the referenced Invoice.
     * @param Invoice $value
     * @return $this
@@ -99,8 +100,19 @@ class Order extends Intangible
     }
 
     /**
+    * Date order was placed.
+    * @param  $value
+    * @return $this
+    */
+    public function orderDate($value)
+    {
+        $this->setProperty('orderDate', $value);
+        return $this;
+    }
+
+    /**
     * Party placing the order or paying the invoice.
-    * @param Person|Organization $value
+    * @param Organization|Person $value
     * @return $this
     */
     public function customer($value)
@@ -110,35 +122,13 @@ class Order extends Intangible
     }
 
     /**
-    * 'merchant' is an out-dated term for 'seller'.
-    * @param Organization|Person $value
-    * @return $this
-    */
-    public function merchant($value)
-    {
-        $this->setProperty('merchant', $value);
-        return $this;
-    }
-
-    /**
     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
-    * @param Organization|Person $value
+    * @param Person|Organization $value
     * @return $this
     */
     public function broker($value)
     {
         $this->setProperty('broker', $value);
-        return $this;
-    }
-
-    /**
-    * The item ordered.
-    * @param OrderItem|Product $value
-    * @return $this
-    */
-    public function orderedItem($value)
-    {
-        $this->setProperty('orderedItem', $value);
         return $this;
     }
 
@@ -154,13 +144,13 @@ class Order extends Intangible
     }
 
     /**
-    * The billing address for the order.
-    * @param PostalAddress $value
+    * 'merchant' is an out-dated term for 'seller'.
+    * @param Organization|Person $value
     * @return $this
     */
-    public function billingAddress(?PostalAddress $value)
+    public function merchant($value)
     {
-        $this->setProperty('billingAddress', $value);
+        $this->setProperty('merchant', $value);
         return $this;
     }
 
@@ -177,7 +167,7 @@ class Order extends Intangible
 
     /**
     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-    * @param Organization|Person $value
+    * @param Person|Organization $value
     * @return $this
     */
     public function seller($value)
@@ -202,7 +192,7 @@ class Order extends Intangible
     * @param string $value
     * @return $this
     */
-    public function discount(?string $value)
+    public function discount(? $value)
     {
         $this->setProperty('discount', $value);
         return $this;
@@ -216,6 +206,17 @@ class Order extends Intangible
     public function orderDelivery(?ParcelDelivery $value)
     {
         $this->setProperty('orderDelivery', $value);
+        return $this;
+    }
+
+    /**
+    * The item ordered.
+    * @param Service|OrderItem|Product $value
+    * @return $this
+    */
+    public function orderedItem($value)
+    {
+        $this->setProperty('orderedItem', $value);
         return $this;
     }
 
@@ -267,4 +268,7 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Order','Thing\\Order');
 

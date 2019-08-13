@@ -14,3 +14,6 @@ class BoardingPolicyType extends Enumeration
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\BoardingPolicyType','Thing\\BoardingPolicyType');
+

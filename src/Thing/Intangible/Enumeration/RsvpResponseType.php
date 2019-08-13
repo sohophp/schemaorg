@@ -14,3 +14,6 @@ class RsvpResponseType extends Enumeration
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\RsvpResponseType','Thing\\RsvpResponseType');
+

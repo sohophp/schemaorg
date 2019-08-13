@@ -12,32 +12,32 @@ class MonetaryAmount extends StructuredValue
 {
 
     /**
+    * The lower value of some characteristic or property.
+    * @param  $value
+    * @return $this
+    */
+    public function minValue($value)
+    {
+        $this->setProperty('minValue', $value);
+        return $this;
+    }
+
+    /**
     * The value of the quantitative value or property value node.<br/><br/>
 
 <ul>
 <li>For <a class="localLink" href="http://schema.org/QuantitativeValue">QuantitativeValue</a> and <a class="localLink" href="http://schema.org/MonetaryAmount">MonetaryAmount</a>, the recommended type for values is 'Number'.</li>
 <li>For <a class="localLink" href="http://schema.org/PropertyValue">PropertyValue</a>, it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.</li>
+<li>Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.</li>
+<li>Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.</li>
 </ul>
 
-    * @param bool|string|StructuredValue $value
+    * @param StructuredValue|string|bool $value
     * @return $this
     */
     public function value($value)
     {
         $this->setProperty('value', $value);
-        return $this;
-    }
-
-    /**
-    * The currency in which the monetary amount is expressed.<br/><br/>
-
-Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 currency format</a> e.g. "USD"; <a href="https://en.wikipedia.org/wiki/List_of_cryptocurrencies">Ticker symbol</a> for cryptocurrencies e.g. "BTC"; well known names for <a href="https://en.wikipedia.org/wiki/Local_exchange_trading_system">Local Exchange Tradings Systems</a> (LETS) and other currency types e.g. "Ithaca HOUR".
-    * @param string $value
-    * @return $this
-    */
-    public function currency(?string $value)
-    {
-        $this->setProperty('currency', $value);
         return $this;
     }
 
@@ -75,16 +75,21 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
     }
 
     /**
-    * The lower value of some characteristic or property.
-    * @param  $value
+    * The currency in which the monetary amount is expressed.<br/><br/>
+
+Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 currency format</a> e.g. "USD"; <a href="https://en.wikipedia.org/wiki/List_of_cryptocurrencies">Ticker symbol</a> for cryptocurrencies e.g. "BTC"; well known names for <a href="https://en.wikipedia.org/wiki/Local_exchange_trading_system">Local Exchange Tradings Systems</a> (LETS) and other currency types e.g. "Ithaca HOUR".
+    * @param string $value
     * @return $this
     */
-    public function minValue($value)
+    public function currency(?string $value)
     {
-        $this->setProperty('minValue', $value);
+        $this->setProperty('currency', $value);
         return $this;
     }
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue\\MonetaryAmount','Thing\\MonetaryAmount');
 

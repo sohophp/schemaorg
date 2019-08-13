@@ -59,6 +59,17 @@ class VideoObject extends MediaObject
     }
 
     /**
+    * Thumbnail image for an image or video.
+    * @param ImageObject $value
+    * @return $this
+    */
+    public function thumbnail(?ImageObject $value)
+    {
+        $this->setProperty('thumbnail', $value);
+        return $this;
+    }
+
+    /**
     * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
     * @param Person $value
     * @return $this
@@ -92,22 +103,11 @@ class VideoObject extends MediaObject
     }
 
     /**
-    * Thumbnail image for an image or video.
-    * @param ImageObject $value
+    * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the <a class="localLink" href="http://schema.org/encodingFormat">encodingFormat</a>.
+    * @param string|MediaObject $value
     * @return $this
     */
-    public function thumbnail(?ImageObject $value)
-    {
-        $this->setProperty('thumbnail', $value);
-        return $this;
-    }
-
-    /**
-    * The caption for this object.
-    * @param string $value
-    * @return $this
-    */
-    public function caption(?string $value)
+    public function caption($value)
     {
         $this->setProperty('caption', $value);
         return $this;
@@ -126,4 +126,7 @@ class VideoObject extends MediaObject
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\MediaObject\\VideoObject','Thing\\VideoObject');
 

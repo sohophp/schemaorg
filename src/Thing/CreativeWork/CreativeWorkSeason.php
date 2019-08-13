@@ -3,7 +3,7 @@ namespace Sohophp\SchemaOrg\Thing\CreativeWork;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork;
 use Sohophp\SchemaOrg\Thing\Person;
-use Sohophp\SchemaOrg\Thing\Intangible\Series\CreativeWorkSeries;
+use Sohophp\SchemaOrg\Thing\CreativeWork\CreativeWorkSeries;
 use Sohophp\SchemaOrg\Thing\CreativeWork\MediaObject\VideoObject;
 use Sohophp\SchemaOrg\Thing\CreativeWork\Episode;
 use Sohophp\SchemaOrg\Thing\Organization;
@@ -128,7 +128,7 @@ class CreativeWorkSeason extends CreativeWork
 
     /**
     * Position of the season within an ordered group of seasons.
-    * @param string|int $value
+    * @param int|string $value
     * @return $this
     */
     public function seasonNumber($value)
@@ -139,4 +139,7 @@ class CreativeWorkSeason extends CreativeWork
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\CreativeWorkSeason','Thing\\CreativeWorkSeason');
 

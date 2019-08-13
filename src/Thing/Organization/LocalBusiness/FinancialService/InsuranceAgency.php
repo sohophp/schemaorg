@@ -14,3 +14,6 @@ class InsuranceAgency extends FinancialService
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\FinancialService\\InsuranceAgency','Thing\\InsuranceAgency');
+

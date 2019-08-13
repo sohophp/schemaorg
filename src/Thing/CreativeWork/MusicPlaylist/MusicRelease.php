@@ -5,8 +5,8 @@ use Sohophp\SchemaOrg\Thing\CreativeWork\MusicPlaylist;
 use Sohophp\SchemaOrg\Thing\Organization;
 use Sohophp\SchemaOrg\Thing\Person;
 use Sohophp\SchemaOrg\Thing\CreativeWork\MusicPlaylist\MusicAlbum;
-use Sohophp\SchemaOrg\Thing\Intangible\Quantity\Duration;
 use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MusicReleaseFormatType;
+use Sohophp\SchemaOrg\Thing\Intangible\Quantity\Duration;
 
 /**
 * A MusicRelease is a specific release of a music album.
@@ -40,7 +40,7 @@ class MusicRelease extends MusicPlaylist
 
     /**
     * The group the release is credited to if different than the byArtist. For example, Red and Blue is credited to "Stefani Germanotta Band", but by Lady Gaga.
-    * @param Person|Organization $value
+    * @param Organization|Person $value
     * @return $this
     */
     public function creditedTo($value)
@@ -61,17 +61,6 @@ class MusicRelease extends MusicPlaylist
     }
 
     /**
-    * The duration of the item (movie, audio recording, event, etc.) in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>.
-    * @param Duration $value
-    * @return $this
-    */
-    public function duration(?Duration $value)
-    {
-        $this->setProperty('duration', $value);
-        return $this;
-    }
-
-    /**
     * Format of this release (the type of recording media used, ie. compact disc, digital media, LP, etc.).
     * @param MusicReleaseFormatType $value
     * @return $this
@@ -82,6 +71,20 @@ class MusicRelease extends MusicPlaylist
         return $this;
     }
 
+    /**
+    * The duration of the item (movie, audio recording, event, etc.) in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>.
+    * @param Duration $value
+    * @return $this
+    */
+    public function duration(?Duration $value)
+    {
+        $this->setProperty('duration', $value);
+        return $this;
+    }
+
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\MusicPlaylist\\MusicRelease','Thing\\MusicRelease');
 

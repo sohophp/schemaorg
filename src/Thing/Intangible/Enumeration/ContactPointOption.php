@@ -14,3 +14,6 @@ class ContactPointOption extends Enumeration
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\ContactPointOption','Thing\\ContactPointOption');
+

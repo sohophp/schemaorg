@@ -17,7 +17,7 @@ class Permit extends Intangible
 {
 
     /**
-    * The time validity of the permit.
+    * The duration of validity of a permit or similar thing.
     * @param Duration $value
     * @return $this
     */
@@ -83,7 +83,7 @@ class Permit extends Intangible
     }
 
     /**
-    * The geographic area where the permit is valid.
+    * The geographic area where a permit or similar thing is valid.
     * @param AdministrativeArea $value
     * @return $this
     */
@@ -95,4 +95,7 @@ class Permit extends Intangible
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Permit','Thing\\Permit');
 

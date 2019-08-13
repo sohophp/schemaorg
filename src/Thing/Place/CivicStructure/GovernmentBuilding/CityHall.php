@@ -14,3 +14,6 @@ class CityHall extends GovernmentBuilding
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\CivicStructure\\GovernmentBuilding\\CityHall','Thing\\CityHall');
+

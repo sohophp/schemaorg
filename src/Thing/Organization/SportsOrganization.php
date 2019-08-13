@@ -25,3 +25,6 @@ class SportsOrganization extends Organization
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\SportsOrganization','Thing\\SportsOrganization');
+

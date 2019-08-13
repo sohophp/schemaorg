@@ -14,3 +14,6 @@ class Sculpture extends CreativeWork
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Sculpture','Thing\\Sculpture');
+

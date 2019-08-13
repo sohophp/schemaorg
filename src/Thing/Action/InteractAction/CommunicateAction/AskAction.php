@@ -33,3 +33,6 @@ class AskAction extends CommunicateAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\InteractAction\\CommunicateAction\\AskAction','Thing\\AskAction');
+

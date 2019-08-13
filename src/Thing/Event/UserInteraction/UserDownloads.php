@@ -14,3 +14,6 @@ class UserDownloads extends UserInteraction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Event\\UserInteraction\\UserDownloads','Thing\\UserDownloads');
+

@@ -14,3 +14,6 @@ class VideoGameClip extends Clip
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Clip\\VideoGameClip','Thing\\VideoGameClip');
+

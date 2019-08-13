@@ -2,25 +2,30 @@
 namespace Sohophp\SchemaOrg\Thing;
 
 use Sohophp\SchemaOrg\Thing;
+use Sohophp\SchemaOrg\Thing\Place;
 use Sohophp\SchemaOrg\Thing\Place\AdministrativeArea;
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\GeoShape;
-use Sohophp\SchemaOrg\Thing\Place;
 use Sohophp\SchemaOrg\Thing\Intangible\ProgramMembership;
-use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\ContactPoint\PostalAddress;
 use Sohophp\SchemaOrg\Thing\Person;
+use Sohophp\SchemaOrg\Thing\CreativeWork;
+use Sohophp\SchemaOrg\Thing\Event;
 use Sohophp\SchemaOrg\Thing\Intangible\ItemList\OfferCatalog;
 use Sohophp\SchemaOrg\Thing\CreativeWork\Review;
 use Sohophp\SchemaOrg\Thing\Intangible\Rating\AggregateRating;
+use Sohophp\SchemaOrg\Thing\Intangible\ProductReturnPolicy;
 use Sohophp\SchemaOrg\Thing\Intangible\Offer;
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\ContactPoint;
+use Sohophp\SchemaOrg\Thing\CreativeWork\WebPage\AboutPage;
 use Sohophp\SchemaOrg\Thing\Intangible\Demand;
-use Sohophp\SchemaOrg\Thing\Event;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\ContactPoint\PostalAddress;
 use Sohophp\SchemaOrg\Thing\CreativeWork\MediaObject\ImageObject;
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\QuantitativeValue;
 use Sohophp\SchemaOrg\Thing\Product;
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\OwnershipInfo;
-use Sohophp\SchemaOrg\Thing\CreativeWork;
 use Sohophp\SchemaOrg\Thing\Intangible\Brand;
+use Sohophp\SchemaOrg\Thing\CreativeWork\EducationalOccupationalCredential;
+use Sohophp\SchemaOrg\Thing\Intangible\Language;
+use Sohophp\SchemaOrg\Thing\CreativeWork\Article;
 
 /**
 * An organization such as a school, NGO, corporation, club, etc.
@@ -32,7 +37,7 @@ class Organization extends Thing
 
     /**
     * The geographic area where the service is provided.
-    * @param AdministrativeArea|GeoShape|Place $value
+    * @param Place|AdministrativeArea|GeoShape $value
     * @return $this
     */
     public function serviceArea($value)
@@ -53,17 +58,6 @@ class Organization extends Thing
     }
 
     /**
-    * Physical address of the item.
-    * @param PostalAddress|string $value
-    * @return $this
-    */
-    public function address($value)
-    {
-        $this->setProperty('address', $value);
-        return $this;
-    }
-
-    /**
     * A person or organization that supports (sponsors) something through some kind of financial contribution.
     * @param Organization|Person $value
     * @return $this
@@ -75,35 +69,46 @@ class Organization extends Thing
     }
 
     /**
-    * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
-    * @param Person|Organization $value
+    * Of a <a class="localLink" href="http://schema.org/Person">Person</a>, and less typically of an <a class="localLink" href="http://schema.org/Organization">Organization</a>, to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or <a class="localLink" href="http://schema.org/JobPosting">JobPosting</a> descriptions.
+    * @param Thing|string|string $value
     * @return $this
     */
-    public function sponsor($value)
+    public function knowsAbout($value)
     {
-        $this->setProperty('sponsor', $value);
+        $this->setProperty('knowsAbout', $value);
         return $this;
     }
 
     /**
-    * The geographic area where a service or offered item is provided.
-    * @param AdministrativeArea|string|Place|GeoShape $value
+    * For a <a class="localLink" href="http://schema.org/NewsMediaOrganization">NewsMediaOrganization</a> or other news-related <a class="localLink" href="http://schema.org/Organization">Organization</a>, a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
+    * @param string|CreativeWork $value
     * @return $this
     */
-    public function areaServed($value)
+    public function actionableFeedbackPolicy($value)
     {
-        $this->setProperty('areaServed', $value);
+        $this->setProperty('actionableFeedbackPolicy', $value);
         return $this;
     }
 
     /**
-    * The fax number.
-    * @param string $value
+    * For an <a class="localLink" href="http://schema.org/Organization">Organization</a> (typically a <a class="localLink" href="http://schema.org/NewsMediaOrganization">NewsMediaOrganization</a>), a statement about policy on use of unnamed sources and the decision process required.
+    * @param CreativeWork|string $value
     * @return $this
     */
-    public function faxNumber(?string $value)
+    public function unnamedSourcesPolicy($value)
     {
-        $this->setProperty('faxNumber', $value);
+        $this->setProperty('unnamedSourcesPolicy', $value);
+        return $this;
+    }
+
+    /**
+    * Upcoming or past events associated with this place or organization.
+    * @param Event $value
+    * @return $this
+    */
+    public function events(?Event $value)
+    {
+        $this->setProperty('events', $value);
         return $this;
     }
 
@@ -174,6 +179,39 @@ class Organization extends Thing
     }
 
     /**
+    * For an <a class="localLink" href="http://schema.org/Organization">Organization</a> (e.g. <a class="localLink" href="http://schema.org/NewsMediaOrganization">NewsMediaOrganization</a>), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.
+    * @param string|CreativeWork $value
+    * @return $this
+    */
+    public function correctionsPolicy($value)
+    {
+        $this->setProperty('correctionsPolicy', $value);
+        return $this;
+    }
+
+    /**
+    * Indicates a ProductReturnPolicy that may be applicable.
+    * @param ProductReturnPolicy $value
+    * @return $this
+    */
+    public function hasProductReturnPolicy(?ProductReturnPolicy $value)
+    {
+        $this->setProperty('hasProductReturnPolicy', $value);
+        return $this;
+    }
+
+    /**
+    * Statement on diversity policy by an <a class="localLink" href="http://schema.org/Organization">Organization</a> e.g. a <a class="localLink" href="http://schema.org/NewsMediaOrganization">NewsMediaOrganization</a>. For a <a class="localLink" href="http://schema.org/NewsMediaOrganization">NewsMediaOrganization</a>, a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
+    * @param string|CreativeWork $value
+    * @return $this
+    */
+    public function diversityPolicy($value)
+    {
+        $this->setProperty('diversityPolicy', $value);
+        return $this;
+    }
+
+    /**
     * The Dun &amp; Bradstreet DUNS number for identifying an organization or business person.
     * @param string $value
     * @return $this
@@ -229,13 +267,13 @@ class Organization extends Thing
     }
 
     /**
-    * Awards won by or for this item.
-    * @param string $value
+    * For an <a class="localLink" href="http://schema.org/Organization">Organization</a> (often but not necessarily a <a class="localLink" href="http://schema.org/NewsMediaOrganization">NewsMediaOrganization</a>), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the <a class="localLink" href="http://schema.org/funder">funder</a> is also available and can be used to make basic funder information machine-readable.
+    * @param string|CreativeWork|AboutPage|string $value
     * @return $this
     */
-    public function awards(?string $value)
+    public function ownershipFundingInfo($value)
     {
-        $this->setProperty('awards', $value);
+        $this->setProperty('ownershipFundingInfo', $value);
         return $this;
     }
 
@@ -306,19 +344,19 @@ class Organization extends Thing
     }
 
     /**
-    * Upcoming or past events associated with this place or organization.
-    * @param Event $value
+    * Physical address of the item.
+    * @param string|PostalAddress $value
     * @return $this
     */
-    public function events(?Event $value)
+    public function address($value)
     {
-        $this->setProperty('events', $value);
+        $this->setProperty('address', $value);
         return $this;
     }
 
     /**
     * An associated logo.
-    * @param string|ImageObject $value
+    * @param ImageObject|string $value
     * @return $this
     */
     public function logo($value)
@@ -361,17 +399,6 @@ class Organization extends Thing
     }
 
     /**
-    * A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.
-    * @param Organization $value
-    * @return $this
-    */
-    public function department(?Organization $value)
-    {
-        $this->setProperty('department', $value);
-        return $this;
-    }
-
-    /**
     * A contact point for a person or organization.
     * @param ContactPoint $value
     * @return $this
@@ -405,13 +432,24 @@ class Organization extends Thing
     }
 
     /**
-    * The date that this organization was founded.
-    * @param  $value
+    * Awards won by or for this item.
+    * @param string $value
     * @return $this
     */
-    public function foundingDate($value)
+    public function awards(?string $value)
     {
-        $this->setProperty('foundingDate', $value);
+        $this->setProperty('awards', $value);
+        return $this;
+    }
+
+    /**
+    * Statement about ethics policy, e.g. of a <a class="localLink" href="http://schema.org/NewsMediaOrganization">NewsMediaOrganization</a> regarding journalistic and publishing practices, or of a <a class="localLink" href="http://schema.org/Restaurant">Restaurant</a>, a page describing food source policies. In the case of a <a class="localLink" href="http://schema.org/NewsMediaOrganization">NewsMediaOrganization</a>, an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
+    * @param CreativeWork|string $value
+    * @return $this
+    */
+    public function ethicsPolicy($value)
+    {
+        $this->setProperty('ethicsPolicy', $value);
         return $this;
     }
 
@@ -518,12 +556,23 @@ class Organization extends Thing
     * The publishingPrinciples property indicates (typically via <a class="localLink" href="http://schema.org/URL">URL</a>) a document describing the editorial principles of an <a class="localLink" href="http://schema.org/Organization">Organization</a> (or individual e.g. a <a class="localLink" href="http://schema.org/Person">Person</a> writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a <a class="localLink" href="http://schema.org/CreativeWork">CreativeWork</a> (e.g. <a class="localLink" href="http://schema.org/NewsArticle">NewsArticle</a>) the principles are those of the party primarily responsible for the creation of the <a class="localLink" href="http://schema.org/CreativeWork">CreativeWork</a>.<br/><br/>
 
 While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a <a class="localLink" href="http://schema.org/funder">funder</a>) can be expressed using schema.org terminology.
-    * @param string|CreativeWork $value
+    * @param CreativeWork|string $value
     * @return $this
     */
     public function publishingPrinciples($value)
     {
         $this->setProperty('publishingPrinciples', $value);
+        return $this;
+    }
+
+    /**
+    * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+    * @param Person|Organization $value
+    * @return $this
+    */
+    public function sponsor($value)
+    {
+        $this->setProperty('sponsor', $value);
         return $this;
     }
 
@@ -539,8 +588,19 @@ While such policies are most typically expressed in natural language, sometimes 
     }
 
     /**
+    * A slogan or motto associated with the item.
+    * @param string $value
+    * @return $this
+    */
+    public function slogan(?string $value)
+    {
+        $this->setProperty('slogan', $value);
+        return $this;
+    }
+
+    /**
     * The location of for example where the event is happening, an organization is located, or where an action takes place.
-    * @param PostalAddress|Place|string $value
+    * @param PostalAddress|string|Place $value
     * @return $this
     */
     public function location($value)
@@ -561,6 +621,17 @@ While such policies are most typically expressed in natural language, sometimes 
     }
 
     /**
+    * A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.
+    * @param Organization $value
+    * @return $this
+    */
+    public function department(?Organization $value)
+    {
+        $this->setProperty('department', $value);
+        return $this;
+    }
+
+    /**
     * The Value-added Tax ID of the organization or person.
     * @param string $value
     * @return $this
@@ -571,6 +642,75 @@ While such policies are most typically expressed in natural language, sometimes 
         return $this;
     }
 
+    /**
+    * A credential awarded to the Person or Organization.
+    * @param EducationalOccupationalCredential $value
+    * @return $this
+    */
+    public function hasCredential(?EducationalOccupationalCredential $value)
+    {
+        $this->setProperty('hasCredential', $value);
+        return $this;
+    }
+
+    /**
+    * Of a <a class="localLink" href="http://schema.org/Person">Person</a>, and less typically of an <a class="localLink" href="http://schema.org/Organization">Organization</a>, to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the <a href="http://tools.ietf.org/html/bcp47">IETF BCP 47 standard</a>.
+    * @param string|Language $value
+    * @return $this
+    */
+    public function knowsLanguage($value)
+    {
+        $this->setProperty('knowsLanguage', $value);
+        return $this;
+    }
+
+    /**
+    * The fax number.
+    * @param string $value
+    * @return $this
+    */
+    public function faxNumber(?string $value)
+    {
+        $this->setProperty('faxNumber', $value);
+        return $this;
+    }
+
+    /**
+    * The geographic area where a service or offered item is provided.
+    * @param string|GeoShape|Place|AdministrativeArea $value
+    * @return $this
+    */
+    public function areaServed($value)
+    {
+        $this->setProperty('areaServed', $value);
+        return $this;
+    }
+
+    /**
+    * For an <a class="localLink" href="http://schema.org/Organization">Organization</a> (often but not necessarily a <a class="localLink" href="http://schema.org/NewsMediaOrganization">NewsMediaOrganization</a>), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
+    * @param string|Article $value
+    * @return $this
+    */
+    public function diversityStaffingReport($value)
+    {
+        $this->setProperty('diversityStaffingReport', $value);
+        return $this;
+    }
+
+    /**
+    * The date that this organization was founded.
+    * @param  $value
+    * @return $this
+    */
+    public function foundingDate($value)
+    {
+        $this->setProperty('foundingDate', $value);
+        return $this;
+    }
+
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization','Thing\\Organization');
 

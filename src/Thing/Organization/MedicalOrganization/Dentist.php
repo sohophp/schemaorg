@@ -14,3 +14,6 @@ class Dentist extends MedicalOrganization
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\MedicalOrganization\\Dentist','Thing\\Dentist');
+

@@ -25,3 +25,6 @@ class MobileApplication extends SoftwareApplication
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\SoftwareApplication\\MobileApplication','Thing\\MobileApplication');
+

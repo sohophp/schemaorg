@@ -3,9 +3,10 @@ namespace Sohophp\SchemaOrg\Thing\CreativeWork\MusicPlaylist;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork\MusicPlaylist;
 use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MusicAlbumProductionType;
-use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MusicAlbumReleaseType;
+use Sohophp\SchemaOrg\Thing\Person;
 use Sohophp\SchemaOrg\Thing\Organization\PerformingGroup\MusicGroup;
 use Sohophp\SchemaOrg\Thing\CreativeWork\MusicPlaylist\MusicRelease;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MusicAlbumReleaseType;
 
 /**
 * A collection of music tracks.
@@ -27,22 +28,11 @@ class MusicAlbum extends MusicPlaylist
     }
 
     /**
-    * The kind of release which this album is: single, EP or album.
-    * @param MusicAlbumReleaseType $value
-    * @return $this
-    */
-    public function albumReleaseType(?MusicAlbumReleaseType $value)
-    {
-        $this->setProperty('albumReleaseType', $value);
-        return $this;
-    }
-
-    /**
     * The artist that performed this album or recording.
-    * @param MusicGroup $value
+    * @param Person|MusicGroup $value
     * @return $this
     */
-    public function byArtist(?MusicGroup $value)
+    public function byArtist($value)
     {
         $this->setProperty('byArtist', $value);
         return $this;
@@ -59,6 +49,20 @@ class MusicAlbum extends MusicPlaylist
         return $this;
     }
 
+    /**
+    * The kind of release which this album is: single, EP or album.
+    * @param MusicAlbumReleaseType $value
+    * @return $this
+    */
+    public function albumReleaseType(?MusicAlbumReleaseType $value)
+    {
+        $this->setProperty('albumReleaseType', $value);
+        return $this;
+    }
+
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\MusicPlaylist\\MusicAlbum','Thing\\MusicAlbum');
 

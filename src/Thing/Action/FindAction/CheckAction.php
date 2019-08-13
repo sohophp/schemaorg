@@ -14,3 +14,6 @@ class CheckAction extends FindAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\FindAction\\CheckAction','Thing\\CheckAction');
+

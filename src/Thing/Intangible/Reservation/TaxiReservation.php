@@ -28,7 +28,7 @@ class TaxiReservation extends Reservation
 
     /**
     * Number of people the reservation should accommodate.
-    * @param int|QuantitativeValue $value
+    * @param QuantitativeValue|int $value
     * @return $this
     */
     public function partySize($value)
@@ -50,4 +50,7 @@ class TaxiReservation extends Reservation
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Reservation\\TaxiReservation','Thing\\TaxiReservation');
 

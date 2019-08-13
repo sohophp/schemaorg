@@ -38,3 +38,6 @@ class SellAction extends TradeAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\TradeAction\\SellAction','Thing\\SellAction');
+

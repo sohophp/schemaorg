@@ -3,8 +3,8 @@ namespace Sohophp\SchemaOrg\Thing\CreativeWork;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork;
 use Sohophp\SchemaOrg\Thing;
-use Sohophp\SchemaOrg\Thing\Place;
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\ContactPoint\PostalAddress;
+use Sohophp\SchemaOrg\Thing\Place;
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\QuantitativeValue;
 
 /**
@@ -27,19 +27,8 @@ class Game extends CreativeWork
     }
 
     /**
-    * A piece of data that represents a particular aspect of a fictional character (skill, power, character points, advantage, disadvantage).
-    * @param Thing $value
-    * @return $this
-    */
-    public function characterAttribute(?Thing $value)
-    {
-        $this->setProperty('characterAttribute', $value);
-        return $this;
-    }
-
-    /**
     * Real or fictional location of the game (or part of game).
-    * @param Place|string|PostalAddress $value
+    * @param PostalAddress|string|Place $value
     * @return $this
     */
     public function gameLocation($value)
@@ -60,6 +49,17 @@ class Game extends CreativeWork
     }
 
     /**
+    * A piece of data that represents a particular aspect of a fictional character (skill, power, character points, advantage, disadvantage).
+    * @param Thing $value
+    * @return $this
+    */
+    public function characterAttribute(?Thing $value)
+    {
+        $this->setProperty('characterAttribute', $value);
+        return $this;
+    }
+
+    /**
     * Indicate how many people can play this game (minimum, maximum, or range).
     * @param QuantitativeValue $value
     * @return $this
@@ -72,4 +72,7 @@ class Game extends CreativeWork
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Game','Thing\\Game');
 

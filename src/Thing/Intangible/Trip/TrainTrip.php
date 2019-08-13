@@ -81,3 +81,6 @@ class TrainTrip extends Trip
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Trip\\TrainTrip','Thing\\TrainTrip');
+

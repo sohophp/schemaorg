@@ -4,8 +4,8 @@ namespace Sohophp\SchemaOrg\Thing;
 use Sohophp\SchemaOrg\Thing;
 use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\ActionStatusType;
 use Sohophp\SchemaOrg\Thing\Intangible\EntryPoint;
-use Sohophp\SchemaOrg\Thing\Organization;
 use Sohophp\SchemaOrg\Thing\Person;
+use Sohophp\SchemaOrg\Thing\Organization;
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\ContactPoint\PostalAddress;
 use Sohophp\SchemaOrg\Thing\Place;
 
@@ -31,7 +31,7 @@ class Action extends Thing
     }
 
     /**
-    * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from <em>January</em> to December.<br/><br/>
+    * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from <em>January</em> to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>
 
 Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
     * @param  $value
@@ -67,7 +67,7 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
 
     /**
     * The direct performer or driver of the action (animate or inanimate). e.g. <em>John</em> wrote a book.
-    * @param Organization|Person $value
+    * @param Person|Organization $value
     * @return $this
     */
     public function agent($value)
@@ -77,15 +77,13 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
     }
 
     /**
-    * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to <em>December</em>.<br/><br/>
-
-Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-    * @param  $value
+    * Other co-agents that participated in the action indirectly. e.g. John wrote a book with <em>Steve</em>.
+    * @param Organization|Person $value
     * @return $this
     */
-    public function endTime($value)
+    public function participant($value)
     {
-        $this->setProperty('endTime', $value);
+        $this->setProperty('participant', $value);
         return $this;
     }
 
@@ -101,13 +99,15 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
     }
 
     /**
-    * Other co-agents that participated in the action indirectly. e.g. John wrote a book with <em>Steve</em>.
-    * @param Organization|Person $value
+    * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to <em>December</em>. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>
+
+Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+    * @param  $value
     * @return $this
     */
-    public function participant($value)
+    public function endTime($value)
     {
-        $this->setProperty('participant', $value);
+        $this->setProperty('endTime', $value);
         return $this;
     }
 
@@ -135,7 +135,7 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
 
     /**
     * The location of for example where the event is happening, an organization is located, or where an action takes place.
-    * @param PostalAddress|Place|string $value
+    * @param PostalAddress|string|Place $value
     * @return $this
     */
     public function location($value)
@@ -146,4 +146,7 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action','Thing\\Action');
 

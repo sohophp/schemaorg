@@ -2,10 +2,10 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\PriceSpecification;
 
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\PriceSpecification;
-use Sohophp\SchemaOrg\Thing\Place\AdministrativeArea;
 use Sohophp\SchemaOrg\Thing\Place;
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\GeoShape;
 use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\DeliveryMethod;
+use Sohophp\SchemaOrg\Thing\Place\AdministrativeArea;
 
 /**
 * The price for the delivery of an offer using a particular delivery method.
@@ -14,17 +14,6 @@ use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\DeliveryMethod;
 */
 class DeliveryChargeSpecification extends PriceSpecification
 {
-
-    /**
-    * The geographic area where a service or offered item is provided.
-    * @param AdministrativeArea|string|Place|GeoShape $value
-    * @return $this
-    */
-    public function areaServed($value)
-    {
-        $this->setProperty('areaServed', $value);
-        return $this;
-    }
 
     /**
     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>
@@ -51,10 +40,21 @@ See also <a class="localLink" href="http://schema.org/eligibleRegion">eligibleRe
     }
 
     /**
+    * The geographic area where a service or offered item is provided.
+    * @param string|GeoShape|Place|AdministrativeArea $value
+    * @return $this
+    */
+    public function areaServed($value)
+    {
+        $this->setProperty('areaServed', $value);
+        return $this;
+    }
+
+    /**
     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>
 
 See also <a class="localLink" href="http://schema.org/ineligibleRegion">ineligibleRegion</a>.
-    * @param string|Place|GeoShape $value
+    * @param Place|string|GeoShape $value
     * @return $this
     */
     public function eligibleRegion($value)
@@ -65,4 +65,7 @@ See also <a class="localLink" href="http://schema.org/ineligibleRegion">ineligib
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue\\PriceSpecification\\DeliveryChargeSpecification','Thing\\DeliveryChargeSpecification');
 

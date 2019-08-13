@@ -16,3 +16,6 @@ class BedAndBreakfast extends LodgingBusiness
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\LodgingBusiness\\BedAndBreakfast','Thing\\BedAndBreakfast');
+

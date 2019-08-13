@@ -25,3 +25,6 @@ class IndividualProduct extends Product
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Product\\IndividualProduct','Thing\\IndividualProduct');
+

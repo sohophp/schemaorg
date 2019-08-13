@@ -14,3 +14,6 @@ class HealthClub extends SportsActivityLocation
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\SportsActivityLocation\\HealthClub','Thing\\HealthClub');
+

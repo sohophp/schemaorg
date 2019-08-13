@@ -26,3 +26,6 @@ class InviteAction extends CommunicateAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\InteractAction\\CommunicateAction\\InviteAction','Thing\\InviteAction');
+

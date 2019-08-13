@@ -1,11 +1,16 @@
-<?php declare(strict_types=1);
+<?php
 namespace Sohophp\SchemaOrg\Thing\Intangible;
 
 use Sohophp\SchemaOrg\Thing\Intangible;
+use Sohophp\SchemaOrg\Thing\Place\AdministrativeArea;
 use Sohophp\SchemaOrg\Thing\Place;
+use Sohophp\SchemaOrg\Thing\CreativeWork\EducationalOccupationalCredential;
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\MonetaryAmount;
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\PriceSpecification;
 use Sohophp\SchemaOrg\Thing\Organization;
+use Sohophp\SchemaOrg\Thing\Intangible\Occupation;
+use Sohophp\SchemaOrg\Thing\Intangible\DefinedTerm\CategoryCode;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\QuantitativeValueDistribution\MonetaryAmountDistribution;
 
 /**
 * A listing that describes a job opening in a certain organization.
@@ -14,6 +19,28 @@ use Sohophp\SchemaOrg\Thing\Organization;
 */
 class JobPosting extends Intangible
 {
+
+    /**
+    * The location(s) applicants can apply from. This is usually used for telecommuting jobs where the applicant does not need to be in a physical office. Note: This should not be used for citizenship or work visa requirements.
+    * @param AdministrativeArea $value
+    * @return $this
+    */
+    public function applicantLocationRequirements(?AdministrativeArea $value)
+    {
+        $this->setProperty('applicantLocationRequirements', $value);
+        return $this;
+    }
+
+    /**
+    * An indicator as to whether a position is available for an immediate start.
+    * @param bool $value
+    * @return $this
+    */
+    public function jobImmediateStart(?bool $value)
+    {
+        $this->setProperty('jobImmediateStart', $value);
+        return $this;
+    }
 
     /**
     * A (typically single) geographic location associated with the job position.
@@ -38,11 +65,11 @@ class JobPosting extends Intangible
     }
 
     /**
-    * Specific qualifications required for this role.
-    * @param string $value
+    * Specific qualifications required for this role or Occupation.
+    * @param string|EducationalOccupationalCredential $value
     * @return $this
     */
-    public function qualifications(?string $value)
+    public function qualifications($value)
     {
         $this->setProperty('qualifications', $value);
         return $this;
@@ -56,6 +83,17 @@ class JobPosting extends Intangible
     public function incentiveCompensation(?string $value)
     {
         $this->setProperty('incentiveCompensation', $value);
+        return $this;
+    }
+
+    /**
+    * A description of the job location (e.g TELECOMMUTE for telecommute jobs).
+    * @param string $value
+    * @return $this
+    */
+    public function jobLocationType(?string $value)
+    {
+        $this->setProperty('jobLocationType', $value);
         return $this;
     }
 
@@ -104,7 +142,7 @@ class JobPosting extends Intangible
     }
 
     /**
-    * Skills required to fulfill this role.
+    * Skills required to fulfill this role or in this Occupation.
     * @param string $value
     * @return $this
     */
@@ -126,18 +164,18 @@ class JobPosting extends Intangible
     }
 
     /**
-    * Educational background needed for the position.
-    * @param string $value
+    * Educational background needed for the position or Occupation.
+    * @param EducationalOccupationalCredential|string $value
     * @return $this
     */
-    public function educationRequirements(?string $value)
+    public function educationRequirements($value)
     {
         $this->setProperty('educationRequirements', $value);
         return $this;
     }
 
     /**
-    * Responsibilities associated with this role.
+    * Responsibilities associated with this role or Occupation.
     * @param string $value
     * @return $this
     */
@@ -181,6 +219,17 @@ class JobPosting extends Intangible
     }
 
     /**
+    * The Occupation for the JobPosting.
+    * @param Occupation $value
+    * @return $this
+    */
+    public function relevantOccupation(?Occupation $value)
+    {
+        $this->setProperty('relevantOccupation', $value);
+        return $this;
+    }
+
+    /**
     * Any special commitments associated with this job posting. Valid entries include VeteranCommit, MilitarySpouseCommit, etc.
     * @param string $value
     * @return $this
@@ -192,18 +241,20 @@ class JobPosting extends Intangible
     }
 
     /**
-    * Category or categories describing the job. Use BLS O*NET-SOC taxonomy: http://www.onetcenter.org/taxonomy.html. Ideally includes textual label and formal code, with the property repeated for each applicable value.
-    * @param string $value
+    * A category describing the job, preferably using a term from a taxonomy such as <a href="http://www.onetcenter.org/taxonomy.html">BLS O*NET-SOC</a>, <a href="https://www.ilo.org/public/english/bureau/stat/isco/isco08/">ISCO-08</a> or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/><br/>
+
+Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+    * @param string|CategoryCode $value
     * @return $this
     */
-    public function occupationalCategory(?string $value)
+    public function occupationalCategory($value)
     {
         $this->setProperty('occupationalCategory', $value);
         return $this;
     }
 
     /**
-    * Description of skills and experience needed for the position.
+    * Description of skills and experience needed for the position or Occupation.
     * @param string $value
     * @return $this
     */
@@ -221,6 +272,28 @@ class JobPosting extends Intangible
     public function employmentType(?string $value)
     {
         $this->setProperty('employmentType', $value);
+        return $this;
+    }
+
+    /**
+    * The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
+    * @param string $value
+    * @return $this
+    */
+    public function jobStartDate(? $value)
+    {
+        $this->setProperty('jobStartDate', $value);
+        return $this;
+    }
+
+    /**
+    * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+    * @param MonetaryAmountDistribution|MonetaryAmount $value
+    * @return $this
+    */
+    public function estimatedSalary($value)
+    {
+        $this->setProperty('estimatedSalary', $value);
         return $this;
     }
 
@@ -248,4 +321,7 @@ class JobPosting extends Intangible
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\JobPosting','Thing\\JobPosting');
 

@@ -14,3 +14,6 @@ class ViewAction extends ConsumeAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\ConsumeAction\\ViewAction','Thing\\ViewAction');
+

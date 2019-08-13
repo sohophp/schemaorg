@@ -26,3 +26,6 @@ class TravelAction extends MoveAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\MoveAction\\TravelAction','Thing\\TravelAction');
+

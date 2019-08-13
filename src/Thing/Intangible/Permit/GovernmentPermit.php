@@ -14,3 +14,6 @@ class GovernmentPermit extends Permit
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Permit\\GovernmentPermit','Thing\\GovernmentPermit');
+

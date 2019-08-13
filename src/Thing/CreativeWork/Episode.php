@@ -3,7 +3,7 @@ namespace Sohophp\SchemaOrg\Thing\CreativeWork;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork;
 use Sohophp\SchemaOrg\Thing\Person;
-use Sohophp\SchemaOrg\Thing\Intangible\Series\CreativeWorkSeries;
+use Sohophp\SchemaOrg\Thing\CreativeWork\CreativeWorkSeries;
 use Sohophp\SchemaOrg\Thing\CreativeWork\MediaObject\VideoObject;
 use Sohophp\SchemaOrg\Thing\CreativeWork\CreativeWorkSeason;
 use Sohophp\SchemaOrg\Thing\Organization\PerformingGroup\MusicGroup;
@@ -129,4 +129,7 @@ class Episode extends CreativeWork
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Episode','Thing\\Episode');
 

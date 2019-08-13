@@ -32,3 +32,6 @@ class {{ class.name }} extends {{ class.parent }}
 
 }
 
+
+class_alias('{{ class.namespace|replace({'\\':'\\\\'}) }}\\{{ class.name }}','Thing\\{{ class.name }}');
+

@@ -48,3 +48,6 @@ class BroadcastEvent extends PublicationEvent
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Event\\PublicationEvent\\BroadcastEvent','Thing\\BroadcastEvent');
+

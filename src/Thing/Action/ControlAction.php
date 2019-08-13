@@ -14,3 +14,6 @@ class ControlAction extends Action
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\ControlAction','Thing\\ControlAction');
+

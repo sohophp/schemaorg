@@ -14,3 +14,6 @@ class HowToTip extends ListItem
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\ListItem\\HowToTip','Thing\\HowToTip');
+

@@ -49,3 +49,6 @@ class RsvpAction extends InformAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\InteractAction\\CommunicateAction\\InformAction\\RsvpAction','Thing\\RsvpAction');
+

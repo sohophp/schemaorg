@@ -6,7 +6,7 @@ use Sohophp\SchemaOrg\Thing\CreativeWork;
 /**
 * A part of a successively published publication such as a periodical or publication volume, often numbered, usually containing a grouping of works such as articles.<br/><br/>
 
-<a href="http://blog.schema.org/2014/09/schemaorg-support-for-bibliographic_2.html">blog post</a>.
+See also <a href="http://blog.schema.org/2014/09/schemaorg-support-for-bibliographic_2.html">blog post</a>.
 * @see http://schema.org/PublicationIssue
 * @package Sohophp\SchemaOrg\Thing\CreativeWork
 */
@@ -37,7 +37,7 @@ class PublicationIssue extends CreativeWork
 
     /**
     * The page on which the work ends; for example "138" or "xvi".
-    * @param int|string $value
+    * @param string|int $value
     * @return $this
     */
     public function pageEnd($value)
@@ -59,4 +59,7 @@ class PublicationIssue extends CreativeWork
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\PublicationIssue','Thing\\PublicationIssue');
 

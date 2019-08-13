@@ -15,17 +15,6 @@ class FlightReservation extends Reservation
 {
 
     /**
-    * The airline-specific indicator of boarding order / preference.
-    * @param string $value
-    * @return $this
-    */
-    public function boardingGroup(?string $value)
-    {
-        $this->setProperty('boardingGroup', $value);
-        return $this;
-    }
-
-    /**
     * The passenger's sequence number as assigned by the airline.
     * @param string $value
     * @return $this
@@ -58,6 +47,20 @@ class FlightReservation extends Reservation
         return $this;
     }
 
+    /**
+    * The airline-specific indicator of boarding order / preference.
+    * @param string $value
+    * @return $this
+    */
+    public function boardingGroup(?string $value)
+    {
+        $this->setProperty('boardingGroup', $value);
+        return $this;
+    }
+
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Reservation\\FlightReservation','Thing\\FlightReservation');
 

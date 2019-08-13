@@ -22,3 +22,6 @@ class UnRegisterAction extends InteractAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\InteractAction\\UnRegisterAction','Thing\\UnRegisterAction');
+

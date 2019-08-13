@@ -14,3 +14,6 @@ class MotorcycleDealer extends AutomotiveBusiness
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\AutomotiveBusiness\\MotorcycleDealer','Thing\\MotorcycleDealer');
+

@@ -14,3 +14,6 @@ class SteeringPositionValue extends QualitativeValue
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\QualitativeValue\\SteeringPositionValue','Thing\\SteeringPositionValue');
+

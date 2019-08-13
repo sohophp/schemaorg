@@ -38,3 +38,6 @@ class PaymentChargeSpecification extends PriceSpecification
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue\\PriceSpecification\\PaymentChargeSpecification','Thing\\PaymentChargeSpecification');
+

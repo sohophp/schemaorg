@@ -14,3 +14,6 @@ class WPFooter extends WebPageElement
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\WebPageElement\\WPFooter','Thing\\WPFooter');
+

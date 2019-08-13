@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Intangible\Service;
 
 use Sohophp\SchemaOrg\Thing\Intangible\Service;
@@ -28,7 +28,7 @@ class FinancialProduct extends Service
     * @param QuantitativeValue $value
     * @return $this
     */
-    public function interestRate(? $value)
+    public function interestRate(?QuantitativeValue $value)
     {
         $this->setProperty('interestRate', $value);
         return $this;
@@ -47,4 +47,7 @@ class FinancialProduct extends Service
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Service\\FinancialProduct','Thing\\FinancialProduct');
 

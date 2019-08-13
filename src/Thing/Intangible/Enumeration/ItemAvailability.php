@@ -14,3 +14,6 @@ class ItemAvailability extends Enumeration
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\ItemAvailability','Thing\\ItemAvailability');
+

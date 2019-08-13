@@ -25,3 +25,6 @@ class EducationalAudience extends Audience
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Audience\\EducationalAudience','Thing\\EducationalAudience');
+

@@ -61,3 +61,6 @@ class RentalCarReservation extends Reservation
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Reservation\\RentalCarReservation','Thing\\RentalCarReservation');
+

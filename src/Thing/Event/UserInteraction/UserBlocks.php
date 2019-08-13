@@ -14,3 +14,6 @@ class UserBlocks extends UserInteraction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Event\\UserInteraction\\UserBlocks','Thing\\UserBlocks');
+

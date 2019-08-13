@@ -1,9 +1,10 @@
-<?php declare(strict_types=1);
+<?php
 namespace Sohophp\SchemaOrg\Thing\Intangible;
 
 use Sohophp\SchemaOrg\Thing\Intangible;
 use Sohophp\SchemaOrg\Thing\Organization;
 use Sohophp\SchemaOrg\Thing\Person;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\QuantitativeValue;
 
 /**
 * Used to describe membership in a loyalty programs (e.g. "StarAliance"), traveler clubs (e.g. "AAA"), purchase clubs ("Safeway Club"), etc.
@@ -32,6 +33,17 @@ class ProgramMembership extends Intangible
     public function members($value)
     {
         $this->setProperty('members', $value);
+        return $this;
+    }
+
+    /**
+    * The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (e.g. stars, miles, etc.)
+    * @param QuantitativeValue $value
+    * @return $this
+    */
+    public function membershipPointsEarned(? $value)
+    {
+        $this->setProperty('membershipPointsEarned', $value);
         return $this;
     }
 
@@ -70,4 +82,7 @@ class ProgramMembership extends Intangible
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\ProgramMembership','Thing\\ProgramMembership');
 

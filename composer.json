@@ -32,7 +32,8 @@
   "autoload-dev": {
     "psr-4": {
       "Sohophp\\SchemaOrg\\Tests\\": "tests\\",
-      "Sohophp\\SchemaOrg\\Examples\\": "examples\\"
+      "Sohophp\\SchemaOrg\\Examples\\": "examples\\",
+      "Thing\\":"src\\Thing\\"
     }
   },
   "bin": ["bin/schema"],

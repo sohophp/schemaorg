@@ -14,3 +14,6 @@ class GamePlayMode extends Enumeration
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\GamePlayMode','Thing\\GamePlayMode');
+

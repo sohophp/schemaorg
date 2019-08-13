@@ -22,3 +22,6 @@ class TakeAction extends TransferAction
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\TransferAction\\TakeAction','Thing\\TakeAction');
+

@@ -74,3 +74,6 @@ class OpeningHoursSpecification extends StructuredValue
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue\\OpeningHoursSpecification','Thing\\OpeningHoursSpecification');
+

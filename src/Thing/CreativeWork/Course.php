@@ -3,6 +3,7 @@ namespace Sohophp\SchemaOrg\Thing\CreativeWork;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork;
 use Sohophp\SchemaOrg\Thing\Intangible\AlignmentObject;
+use Sohophp\SchemaOrg\Thing\CreativeWork\EducationalOccupationalCredential;
 use Sohophp\SchemaOrg\Thing\Event\CourseInstance;
 
 /**
@@ -25,6 +26,17 @@ class Course extends CreativeWork
     }
 
     /**
+    * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
+    * @param EducationalOccupationalCredential|string|string $value
+    * @return $this
+    */
+    public function educationalCredentialAwarded($value)
+    {
+        $this->setProperty('educationalCredentialAwarded', $value);
+        return $this;
+    }
+
+    /**
     * An offering of the course at a specific time and place or through specific media or mode of study or to a specific section of students.
     * @param CourseInstance $value
     * @return $this
@@ -32,6 +44,17 @@ class Course extends CreativeWork
     public function hasCourseInstance(?CourseInstance $value)
     {
         $this->setProperty('hasCourseInstance', $value);
+        return $this;
+    }
+
+    /**
+    * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
+    * @param string|EducationalOccupationalCredential|string $value
+    * @return $this
+    */
+    public function occupationalCredentialAwarded($value)
+    {
+        $this->setProperty('occupationalCredentialAwarded', $value);
         return $this;
     }
 
@@ -48,4 +71,7 @@ class Course extends CreativeWork
 
 
 }
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Course','Thing\\Course');
 

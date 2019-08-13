@@ -14,3 +14,6 @@ class PresentationDigitalDocument extends DigitalDocument
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\DigitalDocument\\PresentationDigitalDocument','Thing\\PresentationDigitalDocument');
+

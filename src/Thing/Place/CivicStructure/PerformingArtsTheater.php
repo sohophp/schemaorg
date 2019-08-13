@@ -14,3 +14,6 @@ class PerformingArtsTheater extends CivicStructure
 
 }
 
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\CivicStructure\\PerformingArtsTheater','Thing\\PerformingArtsTheater');
+
