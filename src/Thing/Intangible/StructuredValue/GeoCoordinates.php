@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
 
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
@@ -18,7 +18,7 @@ class GeoCoordinates extends StructuredValue
     * @param string $value
     * @return $this
     */
-    public function latitude(? $value)
+    public function latitude(?string $value)
     {
         $this->setProperty('latitude', $value);
         return $this;

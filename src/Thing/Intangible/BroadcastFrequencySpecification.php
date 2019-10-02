@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Intangible;
 
 use Sohophp\SchemaOrg\Thing\Intangible;
@@ -18,7 +18,7 @@ class BroadcastFrequencySpecification extends Intangible
     * @param QuantitativeValue $value
     * @return $this
     */
-    public function broadcastFrequencyValue(? $value)
+    public function broadcastFrequencyValue(?QuantitativeValue $value)
     {
         $this->setProperty('broadcastFrequencyValue', $value);
         return $this;

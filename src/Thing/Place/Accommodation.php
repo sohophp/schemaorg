@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Place;
 
 use Sohophp\SchemaOrg\Thing\Place;
@@ -56,7 +56,7 @@ Typical unit code(s): ROM for room or C62 for no unit. The type of room can be p
     * @param QuantitativeValue $value
     * @return $this
     */
-    public function numberOfRooms(? $value)
+    public function numberOfRooms(?QuantitativeValue $value)
     {
         $this->setProperty('numberOfRooms', $value);
         return $this;

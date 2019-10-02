@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Intangible;
 
 use Sohophp\SchemaOrg\Thing\Intangible;
@@ -280,7 +280,7 @@ Note: for historical reasons, any textual label and formal code provided as a li
     * @param string $value
     * @return $this
     */
-    public function jobStartDate(? $value)
+    public function jobStartDate(?string $value)
     {
         $this->setProperty('jobStartDate', $value);
         return $this;

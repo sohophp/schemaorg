@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Product;
 
 use Sohophp\SchemaOrg\Thing\Product;
@@ -316,7 +316,7 @@ Typical unit code(s): C62
     * @param QuantitativeValue $value
     * @return $this
     */
-    public function numberOfAxles(? $value)
+    public function numberOfAxles(?QuantitativeValue $value)
     {
         $this->setProperty('numberOfAxles', $value);
         return $this;
@@ -349,7 +349,7 @@ Typical unit code(s): C62
     * @param string $value
     * @return $this
     */
-    public function numberOfAirbags(? $value)
+    public function numberOfAirbags(?string $value)
     {
         $this->setProperty('numberOfAirbags', $value);
         return $this;

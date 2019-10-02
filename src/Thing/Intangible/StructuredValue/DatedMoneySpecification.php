@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
 
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
@@ -28,7 +28,7 @@ class DatedMoneySpecification extends StructuredValue
     * @param MonetaryAmount $value
     * @return $this
     */
-    public function amount(? $value)
+    public function amount(?MonetaryAmount $value)
     {
         $this->setProperty('amount', $value);
         return $this;

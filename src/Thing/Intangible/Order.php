@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Intangible;
 
 use Sohophp\SchemaOrg\Thing\Intangible;
@@ -192,7 +192,7 @@ class Order extends Intangible
     * @param string $value
     * @return $this
     */
-    public function discount(? $value)
+    public function discount(?string $value)
     {
         $this->setProperty('discount', $value);
         return $this;

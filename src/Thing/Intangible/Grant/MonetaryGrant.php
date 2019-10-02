@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Intangible\Grant;
 
 use Sohophp\SchemaOrg\Thing\Intangible\Grant;
@@ -30,7 +30,7 @@ class MonetaryGrant extends Grant
     * @param MonetaryAmount $value
     * @return $this
     */
-    public function amount(? $value)
+    public function amount(?MonetaryAmount $value)
     {
         $this->setProperty('amount', $value);
         return $this;

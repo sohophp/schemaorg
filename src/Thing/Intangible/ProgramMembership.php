@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Intangible;
 
 use Sohophp\SchemaOrg\Thing\Intangible;
@@ -41,7 +41,7 @@ class ProgramMembership extends Intangible
     * @param QuantitativeValue $value
     * @return $this
     */
-    public function membershipPointsEarned(? $value)
+    public function membershipPointsEarned(?QuantitativeValue $value)
     {
         $this->setProperty('membershipPointsEarned', $value);
         return $this;

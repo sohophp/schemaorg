@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Intangible\Service\FinancialProduct;
 
 use Sohophp\SchemaOrg\Thing\Intangible\Service\FinancialProduct;
@@ -65,7 +65,7 @@ class LoanOrCredit extends FinancialProduct
     * @param MonetaryAmount $value
     * @return $this
     */
-    public function amount(? $value)
+    public function amount(?MonetaryAmount $value)
     {
         $this->setProperty('amount', $value);
         return $this;

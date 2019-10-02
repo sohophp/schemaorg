@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\MedicalEntity\LifestyleModification\PhysicalActivity;
 
 use Sohophp\SchemaOrg\Thing\MedicalEntity\LifestyleModification\PhysicalActivity;
@@ -19,7 +19,7 @@ class ExercisePlan extends PhysicalActivity
     * @param QualitativeValue $value
     * @return $this
     */
-    public function repetitions(? $value)
+    public function repetitions(?QualitativeValue $value)
     {
         $this->setProperty('repetitions', $value);
         return $this;

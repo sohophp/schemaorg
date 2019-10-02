@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing;
 
 use Sohophp\SchemaOrg\Thing;
@@ -610,7 +610,7 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
     * @param string $value
     * @return $this
     */
-    public function temporal(? $value)
+    public function temporal(?string $value)
     {
         $this->setProperty('temporal', $value);
         return $this;

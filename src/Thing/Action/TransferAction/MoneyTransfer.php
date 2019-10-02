@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg\Thing\Action\TransferAction;
 
 use Sohophp\SchemaOrg\Thing\Action\TransferAction;
@@ -18,7 +18,7 @@ class MoneyTransfer extends TransferAction
     * @param MonetaryAmount $value
     * @return $this
     */
-    public function amount(? $value)
+    public function amount(?MonetaryAmount $value)
     {
         $this->setProperty('amount', $value);
         return $this;
