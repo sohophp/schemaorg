@@ -87,7 +87,12 @@ class BaseType implements \ArrayAccess, \JsonSerializable
 
     public function getType()
     {
-        return $this->type ?? (new \ReflectionClass($this))->getShortName();
+        try {
+            return $this->type ?? (new \ReflectionClass($this))->getShortName();
+        } catch (\ReflectionException $e) {
+            $arr = preg_split('#\#', static::class);
+            return $arr[count($arr) - 1];
+        }
     }
 
     public function toJson($options = JSON_UNESCAPED_UNICODE)

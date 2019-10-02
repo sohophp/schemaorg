@@ -108,9 +108,10 @@ class TypesGenerator
                     'name' => $property->getName(),
                     'annotations' => [$property->getComment()],
                     'range' => implode('|', $range),
-                    'range_default' => count($range) === 1 ? '?' . array_values($range)[0] : null
+                    'range_default' => count($range) === 1 && array_values($range)[0] ? '?' . array_values($range)[0] : null
                 ];
             }
+
             $class['uses'] = array_unique($uses);
             $dir = $this->itemToDir($graph);
             $filename = $dir . DIRECTORY_SEPARATOR . $graph->getName() . '.php';
