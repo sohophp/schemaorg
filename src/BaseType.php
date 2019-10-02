@@ -97,7 +97,7 @@ class BaseType implements \ArrayAccess, \JsonSerializable
 
     public function toJson($options = JSON_UNESCAPED_UNICODE)
     {
-        return json_encode($this->toArray(), $options);
+        return json_encode($this->toArray(), $options|JSON_UNESCAPED_SLASHES);
     }
 
     /**
