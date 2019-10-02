@@ -1,0 +1,230 @@
+<?php declare(strict_types=1);
+namespace Sohophp\SchemaOrg\Thing\MedicalEntity;
+
+use Sohophp\SchemaOrg\Thing\MedicalEntity;
+use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalCause;
+use Sohophp\SchemaOrg\Thing\MedicalEntity\Substance\Drug;
+use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalCondition\MedicalSignOrSymptom;
+use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalProcedure\TherapeuticProcedure\MedicalTherapy;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\EventStatusType;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MedicalEnumeration\MedicalStudyStatus;
+use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalRiskFactor;
+use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalIntangible\DDxElement;
+use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalTest;
+use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalIntangible\MedicalConditionStage;
+use Sohophp\SchemaOrg\Thing\MedicalEntity\SuperficialAnatomy;
+use Sohophp\SchemaOrg\Thing\MedicalEntity\AnatomicalStructure;
+use Sohophp\SchemaOrg\Thing\MedicalEntity\AnatomicalSystem;
+
+/**
+* Any condition of the human body that affects the normal functioning of a person, whether physically or mentally. Includes diseases, injuries, disabilities, disorders, syndromes, etc.
+* @see http://schema.org/MedicalCondition
+* @package Sohophp\SchemaOrg\Thing\MedicalEntity
+*/
+class MedicalCondition extends MedicalEntity
+{
+
+    /**
+    * Specifying a cause of something in general. e.g in medicine , one of the causative agent(s) that are most directly responsible for the pathophysiologic process that eventually results in the occurrence.
+    * @param MedicalCause $value
+    * @return $this
+    */
+    public function cause(?MedicalCause $value)
+    {
+        $this->setProperty('cause', $value);
+        return $this;
+    }
+
+    /**
+    * Specifying a drug or medicine used in a medication procedure
+    * @param Drug $value
+    * @return $this
+    */
+    public function drug(?Drug $value)
+    {
+        $this->setProperty('drug', $value);
+        return $this;
+    }
+
+    /**
+    * A sign or symptom of this condition. Signs are objective or physically observable manifestations of the medical condition while symptoms are the subjective experience of the medical condition.
+    * @param MedicalSignOrSymptom $value
+    * @return $this
+    */
+    public function signOrSymptom(?MedicalSignOrSymptom $value)
+    {
+        $this->setProperty('signOrSymptom', $value);
+        return $this;
+    }
+
+    /**
+    * The expected progression of the condition if it is not treated and allowed to progress naturally.
+    * @param string $value
+    * @return $this
+    */
+    public function naturalProgression(?string $value)
+    {
+        $this->setProperty('naturalProgression', $value);
+        return $this;
+    }
+
+    /**
+    * A preventative therapy used to prevent an initial occurrence of the medical condition, such as vaccination.
+    * @param MedicalTherapy $value
+    * @return $this
+    */
+    public function primaryPrevention(?MedicalTherapy $value)
+    {
+        $this->setProperty('primaryPrevention', $value);
+        return $this;
+    }
+
+    /**
+    * The status of the study (enumerated).
+    * @param EventStatusType|string|MedicalStudyStatus $value
+    * @return $this
+    */
+    public function status($value)
+    {
+        $this->setProperty('status', $value);
+        return $this;
+    }
+
+    /**
+    * A modifiable or non-modifiable factor that increases the risk of a patient contracting this condition, e.g. age,  coexisting condition.
+    * @param MedicalRiskFactor $value
+    * @return $this
+    */
+    public function riskFactor(?MedicalRiskFactor $value)
+    {
+        $this->setProperty('riskFactor', $value);
+        return $this;
+    }
+
+    /**
+    * A more specific type of the condition, where applicable, for example 'Type 1 Diabetes', 'Type 2 Diabetes', or 'Gestational Diabetes' for Diabetes.
+    * @param string $value
+    * @return $this
+    */
+    public function subtype(?string $value)
+    {
+        $this->setProperty('subtype', $value);
+        return $this;
+    }
+
+    /**
+    * The likely outcome in either the short term or long term of the medical condition.
+    * @param string $value
+    * @return $this
+    */
+    public function expectedPrognosis(?string $value)
+    {
+        $this->setProperty('expectedPrognosis', $value);
+        return $this;
+    }
+
+    /**
+    * A preventative therapy used to prevent reoccurrence of the medical condition after an initial episode of the condition.
+    * @param MedicalTherapy $value
+    * @return $this
+    */
+    public function secondaryPrevention(?MedicalTherapy $value)
+    {
+        $this->setProperty('secondaryPrevention', $value);
+        return $this;
+    }
+
+    /**
+    * One of a set of differential diagnoses for the condition. Specifically, a closely-related or competing diagnosis typically considered later in the cognitive process whereby this medical condition is distinguished from others most likely responsible for a similar collection of signs and symptoms to reach the most parsimonious diagnosis or diagnoses in a patient.
+    * @param DDxElement $value
+    * @return $this
+    */
+    public function differentialDiagnosis(?DDxElement $value)
+    {
+        $this->setProperty('differentialDiagnosis', $value);
+        return $this;
+    }
+
+    /**
+    * A medical test typically performed given this condition.
+    * @param MedicalTest $value
+    * @return $this
+    */
+    public function typicalTest(?MedicalTest $value)
+    {
+        $this->setProperty('typicalTest', $value);
+        return $this;
+    }
+
+    /**
+    * The stage of the condition, if applicable.
+    * @param MedicalConditionStage $value
+    * @return $this
+    */
+    public function stage(?MedicalConditionStage $value)
+    {
+        $this->setProperty('stage', $value);
+        return $this;
+    }
+
+    /**
+    * A possible unexpected and unfavorable evolution of a medical condition. Complications may include worsening of the signs or symptoms of the disease, extension of the condition to other organ systems, etc.
+    * @param string $value
+    * @return $this
+    */
+    public function possibleComplication(?string $value)
+    {
+        $this->setProperty('possibleComplication', $value);
+        return $this;
+    }
+
+    /**
+    * The anatomy of the underlying organ system or structures associated with this entity.
+    * @param SuperficialAnatomy|AnatomicalStructure|AnatomicalSystem $value
+    * @return $this
+    */
+    public function associatedAnatomy($value)
+    {
+        $this->setProperty('associatedAnatomy', $value);
+        return $this;
+    }
+
+    /**
+    * The characteristics of associated patients, such as age, gender, race etc.
+    * @param string $value
+    * @return $this
+    */
+    public function epidemiology(?string $value)
+    {
+        $this->setProperty('epidemiology', $value);
+        return $this;
+    }
+
+    /**
+    * Changes in the normal mechanical, physical, and biochemical functions that are associated with this activity or condition.
+    * @param string $value
+    * @return $this
+    */
+    public function pathophysiology(?string $value)
+    {
+        $this->setProperty('pathophysiology', $value);
+        return $this;
+    }
+
+    /**
+    * A possible treatment to address this condition, sign or symptom.
+    * @param MedicalTherapy $value
+    * @return $this
+    */
+    public function possibleTreatment(?MedicalTherapy $value)
+    {
+        $this->setProperty('possibleTreatment', $value);
+        return $this;
+    }
+
+
+}
+
+
+class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalCondition','Thing\\MedicalCondition');
+
