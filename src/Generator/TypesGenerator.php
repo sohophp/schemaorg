@@ -59,6 +59,14 @@ class TypesGenerator
                 echo($i + 1), "\n";
                 echo $graph->getId(), "\n";
             }
+             
+            /**
+             * 有个3dmodel是数字开头 
+             * 2019-10-07 
+             */
+            if(!preg_match('#/^[a-zA-Z]#',$graph->getName())){
+                continue ;
+            };
             $class = [];
             $class['name'] = $graph->getName();
             $class['annotations'] = [];
