@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 namespace Sohophp\SchemaOrg;
 
 class Entities
@@ -4729,12 +4729,6 @@ class Entities
   public static function AutomotiveBusiness()
   {
      return new Thing\Organization\LocalBusiness\AutomotiveBusiness();
-  }
-
-  
-  public static function Class()
-  {
-     return new Thing\Intangible\Class();
   }
 
   

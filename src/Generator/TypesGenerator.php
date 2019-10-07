@@ -65,7 +65,7 @@ class TypesGenerator
              * 有个3dmodel是数字开头 和class
              * 2019-10-07 
              */
-            if(!preg_match('#^[a-zA-Z].*?#',$graph->getName()) || in_array($graph->getName(),['class','function'])){ 
+            if(!preg_match('#^[a-zA-Z].*?#',$graph->getName()) || in_array($graph->getName(),['Class','Function'])){ 
                 continue ;
             };
             
