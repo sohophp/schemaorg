@@ -55,6 +55,7 @@ class TypesGenerator
          * @var ParserItem $graph
          */
         foreach ($this->parser->getClasses() as $i => $graph) {
+            
             if ($this->configure->get('consoleMessage')) {
                 echo($i + 1), "\n";
                 echo $graph->getId(), "\n";
@@ -64,9 +65,10 @@ class TypesGenerator
              * 有个3dmodel是数字开头 
              * 2019-10-07 
              */
-            if(!preg_match('#/^[a-zA-Z_].*?#',$graph->getName())){
+            if(!preg_match('#^[a-zA-Z_]+.*?#',$graph->getName())){ 
                 continue ;
             };
+
             $class = [];
             $class['name'] = $graph->getName();
             $class['annotations'] = [];
