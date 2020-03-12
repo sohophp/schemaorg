@@ -7,6 +7,8 @@ use Sohophp\SchemaOrg\Thing\Organization\LocalBusiness;
 * An internet cafe.
 * @see http://schema.org/InternetCafe
 * @package Sohophp\SchemaOrg\Thing\Organization\LocalBusiness
+
+*
 */
 class InternetCafe extends LocalBusiness
 {

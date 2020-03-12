@@ -19,6 +19,8 @@ may seem more Event-like when the period of time is compact and when aspects suc
 it may also sometimes prove useful to describe a longer-term series as an Event.
 * @see http://schema.org/EventSeries
 * @package Sohophp\SchemaOrg\Thing\Intangible\Series
+
+*
 */
 class EventSeries extends Series
 {

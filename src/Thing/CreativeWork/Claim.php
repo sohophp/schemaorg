@@ -11,13 +11,15 @@ Beyond <a class="localLink" href="http://schema.org/ClaimReview">ClaimReview</a>
 At this time, Schema.org does not define any types of relationship between claims. This is a natural area for future exploration.
 * @see http://schema.org/Claim
 * @package Sohophp\SchemaOrg\Thing\CreativeWork
+
+*
 */
 class Claim extends CreativeWork
 {
 
     /**
     * Indicates the first known occurence of a <a class="localLink" href="http://schema.org/Claim">Claim</a> in some <a class="localLink" href="http://schema.org/CreativeWork">CreativeWork</a>.
-    * @param CreativeWork $value
+    * @param CreativeWork|array $value
     * @return $this
     */
     public function firstAppearance(?CreativeWork $value)
@@ -25,16 +27,48 @@ class Claim extends CreativeWork
         $this->setProperty('firstAppearance', $value);
         return $this;
     }
+   /**
+    * @param CreativeWork|array $value
+    * @return $this
+    */
+    public function setFirstAppearance(?CreativeWork $value)
+    {
+        $this->setProperty('firstAppearance', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getFirstAppearance()
+    {
+       return $this->getProperty('firstAppearance');
+    }
 
     /**
     * Indicates an occurence of a <a class="localLink" href="http://schema.org/Claim">Claim</a> in some <a class="localLink" href="http://schema.org/CreativeWork">CreativeWork</a>.
-    * @param CreativeWork $value
+    * @param CreativeWork|array $value
     * @return $this
     */
     public function appearance(?CreativeWork $value)
     {
         $this->setProperty('appearance', $value);
         return $this;
+    }
+   /**
+    * @param CreativeWork|array $value
+    * @return $this
+    */
+    public function setAppearance(?CreativeWork $value)
+    {
+        $this->setProperty('appearance', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getAppearance()
+    {
+       return $this->getProperty('appearance');
     }
 
 

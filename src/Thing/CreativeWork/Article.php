@@ -10,13 +10,15 @@ use Sohophp\SchemaOrg\Thing\Intangible\SpeakableSpecification;
 See also <a href="http://blog.schema.org/2014/09/schemaorg-support-for-bibliographic_2.html">blog post</a>.
 * @see http://schema.org/Article
 * @package Sohophp\SchemaOrg\Thing\CreativeWork
+
+*
 */
 class Article extends CreativeWork
 {
 
     /**
     * Any description of pages that is not separated into pageStart and pageEnd; for example, "1-6, 9, 55" or "10-12, 46-49".
-    * @param string $value
+    * @param string|array $value
     * @return $this
     */
     public function pagination(?string $value)
@@ -24,16 +26,48 @@ class Article extends CreativeWork
         $this->setProperty('pagination', $value);
         return $this;
     }
+   /**
+    * @param string|array $value
+    * @return $this
+    */
+    public function setPagination(?string $value)
+    {
+        $this->setProperty('pagination', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getPagination()
+    {
+       return $this->getProperty('pagination');
+    }
 
     /**
     * The number of words in the text of the Article.
-    * @param int $value
+    * @param int|array $value
     * @return $this
     */
     public function wordCount(?int $value)
     {
         $this->setProperty('wordCount', $value);
         return $this;
+    }
+   /**
+    * @param int|array $value
+    * @return $this
+    */
+    public function setWordCount(?int $value)
+    {
+        $this->setProperty('wordCount', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getWordCount()
+    {
+       return $this->getProperty('wordCount');
     }
 
     /**
@@ -49,7 +83,7 @@ The <em>speakable</em> property can be repeated an arbitrary number of times, wi
 
 For more sophisticated markup of speakable sections beyond simple ID references, either CSS selectors or XPath expressions to pick out document section(s) as speakable. For this
 we define a supporting type, <a class="localLink" href="http://schema.org/SpeakableSpecification">SpeakableSpecification</a>  which is defined to be a possible value of the <em>speakable</em> property.
-    * @param SpeakableSpecification|string $value
+    * @param SpeakableSpecification|string|array $value
     * @return $this
     */
     public function speakable($value)
@@ -57,10 +91,26 @@ we define a supporting type, <a class="localLink" href="http://schema.org/Speaka
         $this->setProperty('speakable', $value);
         return $this;
     }
+   /**
+    * @param SpeakableSpecification|string|array $value
+    * @return $this
+    */
+    public function setSpeakable($value)
+    {
+        $this->setProperty('speakable', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getSpeakable()
+    {
+       return $this->getProperty('speakable');
+    }
 
     /**
     * The page on which the work ends; for example "138" or "xvi".
-    * @param string|int $value
+    * @param string|int|array $value
     * @return $this
     */
     public function pageEnd($value)
@@ -68,10 +118,26 @@ we define a supporting type, <a class="localLink" href="http://schema.org/Speaka
         $this->setProperty('pageEnd', $value);
         return $this;
     }
+   /**
+    * @param string|int|array $value
+    * @return $this
+    */
+    public function setPageEnd($value)
+    {
+        $this->setProperty('pageEnd', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getPageEnd()
+    {
+       return $this->getProperty('pageEnd');
+    }
 
     /**
     * Articles may belong to one or more 'sections' in a magazine or newspaper, such as Sports, Lifestyle, etc.
-    * @param string $value
+    * @param string|array $value
     * @return $this
     */
     public function articleSection(?string $value)
@@ -79,10 +145,26 @@ we define a supporting type, <a class="localLink" href="http://schema.org/Speaka
         $this->setProperty('articleSection', $value);
         return $this;
     }
+   /**
+    * @param string|array $value
+    * @return $this
+    */
+    public function setArticleSection(?string $value)
+    {
+        $this->setProperty('articleSection', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getArticleSection()
+    {
+       return $this->getProperty('articleSection');
+    }
 
     /**
     * For an <a class="localLink" href="http://schema.org/Article">Article</a>, typically a <a class="localLink" href="http://schema.org/NewsArticle">NewsArticle</a>, the backstory property provides a textual summary giving a brief explanation of why and how an article was created. In a journalistic setting this could include information about reporting process, methods, interviews, data sources, etc.
-    * @param CreativeWork|string $value
+    * @param CreativeWork|string|array $value
     * @return $this
     */
     public function backstory($value)
@@ -90,10 +172,26 @@ we define a supporting type, <a class="localLink" href="http://schema.org/Speaka
         $this->setProperty('backstory', $value);
         return $this;
     }
+   /**
+    * @param CreativeWork|string|array $value
+    * @return $this
+    */
+    public function setBackstory($value)
+    {
+        $this->setProperty('backstory', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getBackstory()
+    {
+       return $this->getProperty('backstory');
+    }
 
     /**
     * The page on which the work starts; for example "135" or "xiii".
-    * @param string|int $value
+    * @param string|int|array $value
     * @return $this
     */
     public function pageStart($value)
@@ -101,16 +199,48 @@ we define a supporting type, <a class="localLink" href="http://schema.org/Speaka
         $this->setProperty('pageStart', $value);
         return $this;
     }
+   /**
+    * @param string|int|array $value
+    * @return $this
+    */
+    public function setPageStart($value)
+    {
+        $this->setProperty('pageStart', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getPageStart()
+    {
+       return $this->getProperty('pageStart');
+    }
 
     /**
     * The actual body of the article.
-    * @param string $value
+    * @param string|array $value
     * @return $this
     */
     public function articleBody(?string $value)
     {
         $this->setProperty('articleBody', $value);
         return $this;
+    }
+   /**
+    * @param string|array $value
+    * @return $this
+    */
+    public function setArticleBody(?string $value)
+    {
+        $this->setProperty('articleBody', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getArticleBody()
+    {
+       return $this->getProperty('articleBody');
     }
 
 

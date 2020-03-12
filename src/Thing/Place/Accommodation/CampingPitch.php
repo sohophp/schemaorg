@@ -12,6 +12,8 @@ In British English a campsite, or campground, is an area, usually divided into a
 See also the dedicated <a href="/docs/hotels.html">document on the use of schema.org for marking up hotels and other forms of accommodations</a>.
 * @see http://schema.org/CampingPitch
 * @package Sohophp\SchemaOrg\Thing\Place\Accommodation
+
+*
 */
 class CampingPitch extends Accommodation
 {

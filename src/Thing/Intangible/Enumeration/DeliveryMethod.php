@@ -21,6 +21,8 @@ Commonly used values:<br/><br/>
 
 * @see http://schema.org/DeliveryMethod
 * @package Sohophp\SchemaOrg\Thing\Intangible\Enumeration
+
+*
 */
 class DeliveryMethod extends Enumeration
 {

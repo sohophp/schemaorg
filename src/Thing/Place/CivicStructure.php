@@ -7,6 +7,8 @@ use Sohophp\SchemaOrg\Thing\Place;
 * A public structure, such as a town hall or concert hall.
 * @see http://schema.org/CivicStructure
 * @package Sohophp\SchemaOrg\Thing\Place
+
+*
 */
 class CivicStructure extends Place
 {
@@ -21,13 +23,29 @@ class CivicStructure extends Place
 <li>If a business is open 7 days a week, then it can be specified as <code>&lt;time itemprop=&quot;openingHours&quot; datetime=&quot;Mo-Su&quot;&gt;Monday through Sunday, all day&lt;/time&gt;</code>.</li>
 </ul>
 
-    * @param string $value
+    * @param string|array $value
     * @return $this
     */
     public function openingHours(?string $value)
     {
         $this->setProperty('openingHours', $value);
         return $this;
+    }
+   /**
+    * @param string|array $value
+    * @return $this
+    */
+    public function setOpeningHours(?string $value)
+    {
+        $this->setProperty('openingHours', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getOpeningHours()
+    {
+       return $this->getProperty('openingHours');
     }
 
 

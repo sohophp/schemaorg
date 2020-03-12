@@ -17,19 +17,37 @@ Related actions:<br/><br/>
 
 * @see http://schema.org/JoinAction
 * @package Sohophp\SchemaOrg\Thing\Action\InteractAction
+
+*
 */
 class JoinAction extends InteractAction
 {
 
     /**
     * Upcoming or past event associated with this place, organization, or action.
-    * @param Event $value
+    * @param Event|array $value
     * @return $this
     */
     public function event(?Event $value)
     {
         $this->setProperty('event', $value);
         return $this;
+    }
+   /**
+    * @param Event|array $value
+    * @return $this
+    */
+    public function setEvent(?Event $value)
+    {
+        $this->setProperty('event', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getEvent()
+    {
+       return $this->getProperty('event');
     }
 
 

@@ -13,13 +13,15 @@ use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\QualitativeValue\DriveWheelCo
 * A vehicle is a device that is designed or used to transport people or cargo over land, water, air, or through space.
 * @see http://schema.org/Vehicle
 * @package Sohophp\SchemaOrg\Thing\Product
+
+*
 */
 class Vehicle extends Product
 {
 
     /**
     * The date of production of the item, e.g. vehicle.
-    * @param  $value
+    * @param |array $value
     * @return $this
     */
     public function productionDate($value)
@@ -27,12 +29,28 @@ class Vehicle extends Product
         $this->setProperty('productionDate', $value);
         return $this;
     }
+   /**
+    * @param |array $value
+    * @return $this
+    */
+    public function setProductionDate($value)
+    {
+        $this->setProperty('productionDate', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getProductionDate()
+    {
+       return $this->getProperty('productionDate');
+    }
 
     /**
     * The total number of forward gears available for the transmission system of the vehicle.<br/><br/>
 
 Typical unit code(s): C62
-    * @param QuantitativeValue $value
+    * @param QuantitativeValue|array $value
     * @return $this
     */
     public function numberOfForwardGears(?QuantitativeValue $value)
@@ -40,12 +58,28 @@ Typical unit code(s): C62
         $this->setProperty('numberOfForwardGears', $value);
         return $this;
     }
+   /**
+    * @param QuantitativeValue|array $value
+    * @return $this
+    */
+    public function setNumberOfForwardGears(?QuantitativeValue $value)
+    {
+        $this->setProperty('numberOfForwardGears', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getNumberOfForwardGears()
+    {
+       return $this->getProperty('numberOfForwardGears');
+    }
 
     /**
     * The total distance travelled by the particular vehicle since its initial production, as read from its odometer.<br/><br/>
 
 Typical unit code(s): KMT for kilometers, SMI for statute miles
-    * @param QuantitativeValue $value
+    * @param QuantitativeValue|array $value
     * @return $this
     */
     public function mileageFromOdometer(?QuantitativeValue $value)
@@ -53,10 +87,26 @@ Typical unit code(s): KMT for kilometers, SMI for statute miles
         $this->setProperty('mileageFromOdometer', $value);
         return $this;
     }
+   /**
+    * @param QuantitativeValue|array $value
+    * @return $this
+    */
+    public function setMileageFromOdometer(?QuantitativeValue $value)
+    {
+        $this->setProperty('mileageFromOdometer', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getMileageFromOdometer()
+    {
+       return $this->getProperty('mileageFromOdometer');
+    }
 
     /**
     * The color or color combination of the interior of the vehicle.
-    * @param string $value
+    * @param string|array $value
     * @return $this
     */
     public function vehicleInteriorColor(?string $value)
@@ -64,10 +114,26 @@ Typical unit code(s): KMT for kilometers, SMI for statute miles
         $this->setProperty('vehicleInteriorColor', $value);
         return $this;
     }
+   /**
+    * @param string|array $value
+    * @return $this
+    */
+    public function setVehicleInteriorColor(?string $value)
+    {
+        $this->setProperty('vehicleInteriorColor', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getVehicleInteriorColor()
+    {
+       return $this->getProperty('vehicleInteriorColor');
+    }
 
     /**
     * The position of the steering wheel or similar device (mostly for cars).
-    * @param SteeringPositionValue $value
+    * @param SteeringPositionValue|array $value
     * @return $this
     */
     public function steeringPosition(?SteeringPositionValue $value)
@@ -75,10 +141,26 @@ Typical unit code(s): KMT for kilometers, SMI for statute miles
         $this->setProperty('steeringPosition', $value);
         return $this;
     }
+   /**
+    * @param SteeringPositionValue|array $value
+    * @return $this
+    */
+    public function setSteeringPosition(?SteeringPositionValue $value)
+    {
+        $this->setProperty('steeringPosition', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getSteeringPosition()
+    {
+       return $this->getProperty('steeringPosition');
+    }
 
     /**
     * Indicates whether the vehicle has been used for special purposes, like commercial rental, driving school, or as a taxi. The legislation in many countries requires this information to be revealed when offering a car for sale.
-    * @param CarUsageType|string $value
+    * @param CarUsageType|string|array $value
     * @return $this
     */
     public function vehicleSpecialUsage($value)
@@ -86,12 +168,28 @@ Typical unit code(s): KMT for kilometers, SMI for statute miles
         $this->setProperty('vehicleSpecialUsage', $value);
         return $this;
     }
+   /**
+    * @param CarUsageType|string|array $value
+    * @return $this
+    */
+    public function setVehicleSpecialUsage($value)
+    {
+        $this->setProperty('vehicleSpecialUsage', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getVehicleSpecialUsage()
+    {
+       return $this->getProperty('vehicleSpecialUsage');
+    }
 
     /**
     * The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>
 
 Typical unit code(s): C62 for persons.
-    * @param QuantitativeValue $value
+    * @param QuantitativeValue|array $value
     * @return $this
     */
     public function vehicleSeatingCapacity(?QuantitativeValue $value)
@@ -99,16 +197,48 @@ Typical unit code(s): C62 for persons.
         $this->setProperty('vehicleSeatingCapacity', $value);
         return $this;
     }
+   /**
+    * @param QuantitativeValue|array $value
+    * @return $this
+    */
+    public function setVehicleSeatingCapacity(?QuantitativeValue $value)
+    {
+        $this->setProperty('vehicleSeatingCapacity', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getVehicleSeatingCapacity()
+    {
+       return $this->getProperty('vehicleSeatingCapacity');
+    }
 
     /**
     * Information about the engine or engines of the vehicle.
-    * @param EngineSpecification $value
+    * @param EngineSpecification|array $value
     * @return $this
     */
     public function vehicleEngine(?EngineSpecification $value)
     {
         $this->setProperty('vehicleEngine', $value);
         return $this;
+    }
+   /**
+    * @param EngineSpecification|array $value
+    * @return $this
+    */
+    public function setVehicleEngine(?EngineSpecification $value)
+    {
+        $this->setProperty('vehicleEngine', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getVehicleEngine()
+    {
+       return $this->getProperty('vehicleEngine');
     }
 
     /**
@@ -120,7 +250,7 @@ Typical unit code(s): SEC for seconds<br/><br/>
 <li>Note: There are unfortunately no standard unit codes for seconds/0..100 km/h or seconds/0..60 mph. Simply use "SEC" for seconds and indicate the velocities in the <a class="localLink" href="http://schema.org/name">name</a> of the <a class="localLink" href="http://schema.org/QuantitativeValue">QuantitativeValue</a>, or use <a class="localLink" href="http://schema.org/valueReference">valueReference</a> with a <a class="localLink" href="http://schema.org/QuantitativeValue">QuantitativeValue</a> of 0..60 mph or 0..100 km/h to specify the reference speeds.</li>
 </ul>
 
-    * @param QuantitativeValue $value
+    * @param QuantitativeValue|array $value
     * @return $this
     */
     public function accelerationTime(?QuantitativeValue $value)
@@ -128,12 +258,28 @@ Typical unit code(s): SEC for seconds<br/><br/>
         $this->setProperty('accelerationTime', $value);
         return $this;
     }
+   /**
+    * @param QuantitativeValue|array $value
+    * @return $this
+    */
+    public function setAccelerationTime(?QuantitativeValue $value)
+    {
+        $this->setProperty('accelerationTime', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getAccelerationTime()
+    {
+       return $this->getProperty('accelerationTime');
+    }
 
     /**
     * The number of doors.<br/><br/>
 
 Typical unit code(s): C62
-    * @param QuantitativeValue $value
+    * @param QuantitativeValue|array $value
     * @return $this
     */
     public function numberOfDoors(?QuantitativeValue $value)
@@ -141,16 +287,48 @@ Typical unit code(s): C62
         $this->setProperty('numberOfDoors', $value);
         return $this;
     }
+   /**
+    * @param QuantitativeValue|array $value
+    * @return $this
+    */
+    public function setNumberOfDoors(?QuantitativeValue $value)
+    {
+        $this->setProperty('numberOfDoors', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getNumberOfDoors()
+    {
+       return $this->getProperty('numberOfDoors');
+    }
 
     /**
     * A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.
-    * @param string $value
+    * @param string|array $value
     * @return $this
     */
     public function vehicleConfiguration(?string $value)
     {
         $this->setProperty('vehicleConfiguration', $value);
         return $this;
+    }
+   /**
+    * @param string|array $value
+    * @return $this
+    */
+    public function setVehicleConfiguration(?string $value)
+    {
+        $this->setProperty('vehicleConfiguration', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getVehicleConfiguration()
+    {
+       return $this->getProperty('vehicleConfiguration');
     }
 
     /**
@@ -165,7 +343,7 @@ Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>
 <li>Note 4: Note that you can use <a class="localLink" href="http://schema.org/minValue">minValue</a> and <a class="localLink" href="http://schema.org/maxValue">maxValue</a> to indicate ranges.</li>
 </ul>
 
-    * @param QuantitativeValue $value
+    * @param QuantitativeValue|array $value
     * @return $this
     */
     public function payload(?QuantitativeValue $value)
@@ -173,10 +351,26 @@ Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>
         $this->setProperty('payload', $value);
         return $this;
     }
+   /**
+    * @param QuantitativeValue|array $value
+    * @return $this
+    */
+    public function setPayload(?QuantitativeValue $value)
+    {
+        $this->setProperty('payload', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getPayload()
+    {
+       return $this->getProperty('payload');
+    }
 
     /**
     * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
-    * @param string|string|QualitativeValue $value
+    * @param string|string|QualitativeValue|array $value
     * @return $this
     */
     public function fuelType($value)
@@ -184,16 +378,48 @@ Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>
         $this->setProperty('fuelType', $value);
         return $this;
     }
+   /**
+    * @param string|string|QualitativeValue|array $value
+    * @return $this
+    */
+    public function setFuelType($value)
+    {
+        $this->setProperty('fuelType', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getFuelType()
+    {
+       return $this->getProperty('fuelType');
+    }
 
     /**
     * The Vehicle Identification Number (VIN) is a unique serial number used by the automotive industry to identify individual motor vehicles.
-    * @param string $value
+    * @param string|array $value
     * @return $this
     */
     public function vehicleIdentificationNumber(?string $value)
     {
         $this->setProperty('vehicleIdentificationNumber', $value);
         return $this;
+    }
+   /**
+    * @param string|array $value
+    * @return $this
+    */
+    public function setVehicleIdentificationNumber(?string $value)
+    {
+        $this->setProperty('vehicleIdentificationNumber', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getVehicleIdentificationNumber()
+    {
+       return $this->getProperty('vehicleIdentificationNumber');
     }
 
     /**
@@ -205,13 +431,29 @@ Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>
 <li>Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use <a class="localLink" href="http://schema.org/valueReference">valueReference</a> to link the value for the fuel consumption to another value.</li>
 </ul>
 
-    * @param QuantitativeValue $value
+    * @param QuantitativeValue|array $value
     * @return $this
     */
     public function fuelConsumption(?QuantitativeValue $value)
     {
         $this->setProperty('fuelConsumption', $value);
         return $this;
+    }
+   /**
+    * @param QuantitativeValue|array $value
+    * @return $this
+    */
+    public function setFuelConsumption(?QuantitativeValue $value)
+    {
+        $this->setProperty('fuelConsumption', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getFuelConsumption()
+    {
+       return $this->getProperty('fuelConsumption');
     }
 
     /**
@@ -225,7 +467,7 @@ Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>
 <li>Note 3: Note that you can use <a class="localLink" href="http://schema.org/minValue">minValue</a> and <a class="localLink" href="http://schema.org/maxValue">maxValue</a> to indicate ranges.</li>
 </ul>
 
-    * @param QuantitativeValue $value
+    * @param QuantitativeValue|array $value
     * @return $this
     */
     public function tongueWeight(?QuantitativeValue $value)
@@ -233,10 +475,26 @@ Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>
         $this->setProperty('tongueWeight', $value);
         return $this;
     }
+   /**
+    * @param QuantitativeValue|array $value
+    * @return $this
+    */
+    public function setTongueWeight(?QuantitativeValue $value)
+    {
+        $this->setProperty('tongueWeight', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getTongueWeight()
+    {
+       return $this->getProperty('tongueWeight');
+    }
 
     /**
     * The release date of a vehicle model (often used to differentiate versions of the same make and model).
-    * @param  $value
+    * @param |array $value
     * @return $this
     */
     public function modelDate($value)
@@ -244,16 +502,48 @@ Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>
         $this->setProperty('modelDate', $value);
         return $this;
     }
+   /**
+    * @param |array $value
+    * @return $this
+    */
+    public function setModelDate($value)
+    {
+        $this->setProperty('modelDate', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getModelDate()
+    {
+       return $this->getProperty('modelDate');
+    }
 
     /**
     * The release date of a vehicle model (often used to differentiate versions of the same make and model).
-    * @param  $value
+    * @param |array $value
     * @return $this
     */
     public function vehicleModelDate($value)
     {
         $this->setProperty('vehicleModelDate', $value);
         return $this;
+    }
+   /**
+    * @param |array $value
+    * @return $this
+    */
+    public function setVehicleModelDate($value)
+    {
+        $this->setProperty('vehicleModelDate', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getVehicleModelDate()
+    {
+       return $this->getProperty('vehicleModelDate');
     }
 
     /**
@@ -263,7 +553,7 @@ Typical unit code(s): KGM for kilogram, LBR for pound
 * Note 1: You can indicate additional information in the <a class="localLink" href="http://schema.org/name">name</a> of the <a class="localLink" href="http://schema.org/QuantitativeValue">QuantitativeValue</a> node.
 * Note 2: You may also link to a <a class="localLink" href="http://schema.org/QualitativeValue">QualitativeValue</a> node that provides additional information using <a class="localLink" href="http://schema.org/valueReference">valueReference</a>.
 * Note 3: Note that you can use <a class="localLink" href="http://schema.org/minValue">minValue</a> and <a class="localLink" href="http://schema.org/maxValue">maxValue</a> to indicate ranges.
-    * @param QuantitativeValue $value
+    * @param QuantitativeValue|array $value
     * @return $this
     */
     public function trailerWeight(?QuantitativeValue $value)
@@ -271,12 +561,28 @@ Typical unit code(s): KGM for kilogram, LBR for pound
         $this->setProperty('trailerWeight', $value);
         return $this;
     }
+   /**
+    * @param QuantitativeValue|array $value
+    * @return $this
+    */
+    public function setTrailerWeight(?QuantitativeValue $value)
+    {
+        $this->setProperty('trailerWeight', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getTrailerWeight()
+    {
+       return $this->getProperty('trailerWeight');
+    }
 
     /**
     * The number of owners of the vehicle, including the current one.<br/><br/>
 
 Typical unit code(s): C62
-    * @param QuantitativeValue $value
+    * @param QuantitativeValue|array $value
     * @return $this
     */
     public function numberOfPreviousOwners(?QuantitativeValue $value)
@@ -284,12 +590,28 @@ Typical unit code(s): C62
         $this->setProperty('numberOfPreviousOwners', $value);
         return $this;
     }
+   /**
+    * @param QuantitativeValue|array $value
+    * @return $this
+    */
+    public function setNumberOfPreviousOwners(?QuantitativeValue $value)
+    {
+        $this->setProperty('numberOfPreviousOwners', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getNumberOfPreviousOwners()
+    {
+       return $this->getProperty('numberOfPreviousOwners');
+    }
 
     /**
     * The distance between the centers of the front and rear wheels.<br/><br/>
 
 Typical unit code(s): CMT for centimeters, MTR for meters, INH for inches, FOT for foot/feet
-    * @param QuantitativeValue $value
+    * @param QuantitativeValue|array $value
     * @return $this
     */
     public function wheelbase(?QuantitativeValue $value)
@@ -297,10 +619,26 @@ Typical unit code(s): CMT for centimeters, MTR for meters, INH for inches, FOT f
         $this->setProperty('wheelbase', $value);
         return $this;
     }
+   /**
+    * @param QuantitativeValue|array $value
+    * @return $this
+    */
+    public function setWheelbase(?QuantitativeValue $value)
+    {
+        $this->setProperty('wheelbase', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getWheelbase()
+    {
+       return $this->getProperty('wheelbase');
+    }
 
     /**
     * Indicates that the vehicle meets the respective emission standard.
-    * @param string|QualitativeValue|string $value
+    * @param string|QualitativeValue|string|array $value
     * @return $this
     */
     public function meetsEmissionStandard($value)
@@ -308,12 +646,28 @@ Typical unit code(s): CMT for centimeters, MTR for meters, INH for inches, FOT f
         $this->setProperty('meetsEmissionStandard', $value);
         return $this;
     }
+   /**
+    * @param string|QualitativeValue|string|array $value
+    * @return $this
+    */
+    public function setMeetsEmissionStandard($value)
+    {
+        $this->setProperty('meetsEmissionStandard', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getMeetsEmissionStandard()
+    {
+       return $this->getProperty('meetsEmissionStandard');
+    }
 
     /**
     * The number of axles.<br/><br/>
 
 Typical unit code(s): C62
-    * @param QuantitativeValue $value
+    * @param QuantitativeValue|array $value
     * @return $this
     */
     public function numberOfAxles(?QuantitativeValue $value)
@@ -321,10 +675,26 @@ Typical unit code(s): C62
         $this->setProperty('numberOfAxles', $value);
         return $this;
     }
+   /**
+    * @param QuantitativeValue|array $value
+    * @return $this
+    */
+    public function setNumberOfAxles(?QuantitativeValue $value)
+    {
+        $this->setProperty('numberOfAxles', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getNumberOfAxles()
+    {
+       return $this->getProperty('numberOfAxles');
+    }
 
     /**
     * The type or material of the interior of the vehicle (e.g. synthetic fabric, leather, wood, etc.). While most interior types are characterized by the material used, an interior type can also be based on vehicle usage or target audience.
-    * @param string $value
+    * @param string|array $value
     * @return $this
     */
     public function vehicleInteriorType(?string $value)
@@ -332,10 +702,26 @@ Typical unit code(s): C62
         $this->setProperty('vehicleInteriorType', $value);
         return $this;
     }
+   /**
+    * @param string|array $value
+    * @return $this
+    */
+    public function setVehicleInteriorType(?string $value)
+    {
+        $this->setProperty('vehicleInteriorType', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getVehicleInteriorType()
+    {
+       return $this->getProperty('vehicleInteriorType');
+    }
 
     /**
     * A textual description of known damages, both repaired and unrepaired.
-    * @param string $value
+    * @param string|array $value
     * @return $this
     */
     public function knownVehicleDamages(?string $value)
@@ -343,16 +729,48 @@ Typical unit code(s): C62
         $this->setProperty('knownVehicleDamages', $value);
         return $this;
     }
+   /**
+    * @param string|array $value
+    * @return $this
+    */
+    public function setKnownVehicleDamages(?string $value)
+    {
+        $this->setProperty('knownVehicleDamages', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getKnownVehicleDamages()
+    {
+       return $this->getProperty('knownVehicleDamages');
+    }
 
     /**
     * The number or type of airbags in the vehicle.
-    * @param string $value
+    * @param string|array $value
     * @return $this
     */
     public function numberOfAirbags(?string $value)
     {
         $this->setProperty('numberOfAirbags', $value);
         return $this;
+    }
+   /**
+    * @param string|array $value
+    * @return $this
+    */
+    public function setNumberOfAirbags(?string $value)
+    {
+        $this->setProperty('numberOfAirbags', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getNumberOfAirbags()
+    {
+       return $this->getProperty('numberOfAirbags');
     }
 
     /**
@@ -366,7 +784,7 @@ Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>
 <li>Note 3: Note that you can use <a class="localLink" href="http://schema.org/minValue">minValue</a> and <a class="localLink" href="http://schema.org/maxValue">maxValue</a> to indicate ranges.</li>
 </ul>
 
-    * @param QuantitativeValue $value
+    * @param QuantitativeValue|array $value
     * @return $this
     */
     public function weightTotal(?QuantitativeValue $value)
@@ -374,16 +792,48 @@ Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>
         $this->setProperty('weightTotal', $value);
         return $this;
     }
+   /**
+    * @param QuantitativeValue|array $value
+    * @return $this
+    */
+    public function setWeightTotal(?QuantitativeValue $value)
+    {
+        $this->setProperty('weightTotal', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getWeightTotal()
+    {
+       return $this->getProperty('weightTotal');
+    }
 
     /**
     * The CO2 emissions in g/km. When used in combination with a QuantitativeValue, put "g/km" into the unitText property of that value, since there is no UN/CEFACT Common Code for "g/km".
-    * @param  $value
+    * @param |array $value
     * @return $this
     */
     public function emissionsCO2($value)
     {
         $this->setProperty('emissionsCO2', $value);
         return $this;
+    }
+   /**
+    * @param |array $value
+    * @return $this
+    */
+    public function setEmissionsCO2($value)
+    {
+        $this->setProperty('emissionsCO2', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getEmissionsCO2()
+    {
+       return $this->getProperty('emissionsCO2');
     }
 
     /**
@@ -392,7 +842,7 @@ Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>
 Typical unit code(s): LTR for liters, FTQ for cubic foot/feet<br/><br/>
 
 Note: You can use <a class="localLink" href="http://schema.org/minValue">minValue</a> and <a class="localLink" href="http://schema.org/maxValue">maxValue</a> to indicate ranges.
-    * @param QuantitativeValue $value
+    * @param QuantitativeValue|array $value
     * @return $this
     */
     public function cargoVolume(?QuantitativeValue $value)
@@ -400,12 +850,28 @@ Note: You can use <a class="localLink" href="http://schema.org/minValue">minValu
         $this->setProperty('cargoVolume', $value);
         return $this;
     }
+   /**
+    * @param QuantitativeValue|array $value
+    * @return $this
+    */
+    public function setCargoVolume(?QuantitativeValue $value)
+    {
+        $this->setProperty('cargoVolume', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getCargoVolume()
+    {
+       return $this->getProperty('cargoVolume');
+    }
 
     /**
     * The capacity of the fuel tank or in the case of electric cars, the battery. If there are multiple components for storage, this should indicate the total of all storage of the same type.<br/><br/>
 
 Typical unit code(s): LTR for liters, GLL of US gallons, GLI for UK / imperial gallons, AMH for ampere-hours (for electrical vehicles).
-    * @param QuantitativeValue $value
+    * @param QuantitativeValue|array $value
     * @return $this
     */
     public function fuelCapacity(?QuantitativeValue $value)
@@ -413,10 +879,26 @@ Typical unit code(s): LTR for liters, GLL of US gallons, GLI for UK / imperial g
         $this->setProperty('fuelCapacity', $value);
         return $this;
     }
+   /**
+    * @param QuantitativeValue|array $value
+    * @return $this
+    */
+    public function setFuelCapacity(?QuantitativeValue $value)
+    {
+        $this->setProperty('fuelCapacity', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getFuelCapacity()
+    {
+       return $this->getProperty('fuelCapacity');
+    }
 
     /**
     * Indicates the design and body style of the vehicle (e.g. station wagon, hatchback, etc.).
-    * @param string|string|QualitativeValue $value
+    * @param string|string|QualitativeValue|array $value
     * @return $this
     */
     public function bodyType($value)
@@ -424,10 +906,26 @@ Typical unit code(s): LTR for liters, GLL of US gallons, GLI for UK / imperial g
         $this->setProperty('bodyType', $value);
         return $this;
     }
+   /**
+    * @param string|string|QualitativeValue|array $value
+    * @return $this
+    */
+    public function setBodyType($value)
+    {
+        $this->setProperty('bodyType', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getBodyType()
+    {
+       return $this->getProperty('bodyType');
+    }
 
     /**
     * This is a StupidProperty! - for testing only
-    * @param QuantitativeValue $value
+    * @param QuantitativeValue|array $value
     * @return $this
     */
     public function stupidProperty(?QuantitativeValue $value)
@@ -435,10 +933,26 @@ Typical unit code(s): LTR for liters, GLL of US gallons, GLI for UK / imperial g
         $this->setProperty('stupidProperty', $value);
         return $this;
     }
+   /**
+    * @param QuantitativeValue|array $value
+    * @return $this
+    */
+    public function setStupidProperty(?QuantitativeValue $value)
+    {
+        $this->setProperty('stupidProperty', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getStupidProperty()
+    {
+       return $this->getProperty('stupidProperty');
+    }
 
     /**
     * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
-    * @param QualitativeValue|string|string $value
+    * @param QualitativeValue|string|string|array $value
     * @return $this
     */
     public function vehicleTransmission($value)
@@ -446,10 +960,26 @@ Typical unit code(s): LTR for liters, GLL of US gallons, GLI for UK / imperial g
         $this->setProperty('vehicleTransmission', $value);
         return $this;
     }
+   /**
+    * @param QualitativeValue|string|string|array $value
+    * @return $this
+    */
+    public function setVehicleTransmission($value)
+    {
+        $this->setProperty('vehicleTransmission', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getVehicleTransmission()
+    {
+       return $this->getProperty('vehicleTransmission');
+    }
 
     /**
     * The date of the first registration of the vehicle with the respective public authorities.
-    * @param  $value
+    * @param |array $value
     * @return $this
     */
     public function dateVehicleFirstRegistered($value)
@@ -457,16 +987,48 @@ Typical unit code(s): LTR for liters, GLL of US gallons, GLI for UK / imperial g
         $this->setProperty('dateVehicleFirstRegistered', $value);
         return $this;
     }
+   /**
+    * @param |array $value
+    * @return $this
+    */
+    public function setDateVehicleFirstRegistered($value)
+    {
+        $this->setProperty('dateVehicleFirstRegistered', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getDateVehicleFirstRegistered()
+    {
+       return $this->getProperty('dateVehicleFirstRegistered');
+    }
 
     /**
     * The date the item e.g. vehicle was purchased by the current owner.
-    * @param  $value
+    * @param |array $value
     * @return $this
     */
     public function purchaseDate($value)
     {
         $this->setProperty('purchaseDate', $value);
         return $this;
+    }
+   /**
+    * @param |array $value
+    * @return $this
+    */
+    public function setPurchaseDate($value)
+    {
+        $this->setProperty('purchaseDate', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getPurchaseDate()
+    {
+       return $this->getProperty('purchaseDate');
     }
 
     /**
@@ -476,13 +1038,29 @@ Typical unit code(s): KMH for km/h, HM for mile per hour (0.447 04 m/s), KNT for
 
 *Note 1: Use <a class="localLink" href="http://schema.org/minValue">minValue</a> and <a class="localLink" href="http://schema.org/maxValue">maxValue</a> to indicate the range. Typically, the minimal value is zero.
 * Note 2: There are many different ways of measuring the speed range. You can link to information about how the given value has been determined using the <a class="localLink" href="http://schema.org/valueReference">valueReference</a> property.
-    * @param QuantitativeValue $value
+    * @param QuantitativeValue|array $value
     * @return $this
     */
     public function speed(?QuantitativeValue $value)
     {
         $this->setProperty('speed', $value);
         return $this;
+    }
+   /**
+    * @param QuantitativeValue|array $value
+    * @return $this
+    */
+    public function setSpeed(?QuantitativeValue $value)
+    {
+        $this->setProperty('speed', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getSpeed()
+    {
+       return $this->getProperty('speed');
     }
 
     /**
@@ -494,7 +1072,7 @@ Typical unit code(s): KMH for km/h, HM for mile per hour (0.447 04 m/s), KNT for
 <li>Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use <a class="localLink" href="http://schema.org/valueReference">valueReference</a> to link the value for the fuel economy to another value.</li>
 </ul>
 
-    * @param QuantitativeValue $value
+    * @param QuantitativeValue|array $value
     * @return $this
     */
     public function fuelEfficiency(?QuantitativeValue $value)
@@ -502,10 +1080,26 @@ Typical unit code(s): KMH for km/h, HM for mile per hour (0.447 04 m/s), KNT for
         $this->setProperty('fuelEfficiency', $value);
         return $this;
     }
+   /**
+    * @param QuantitativeValue|array $value
+    * @return $this
+    */
+    public function setFuelEfficiency(?QuantitativeValue $value)
+    {
+        $this->setProperty('fuelEfficiency', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getFuelEfficiency()
+    {
+       return $this->getProperty('fuelEfficiency');
+    }
 
     /**
     * The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.
-    * @param DriveWheelConfigurationValue|string $value
+    * @param DriveWheelConfigurationValue|string|array $value
     * @return $this
     */
     public function driveWheelConfiguration($value)
@@ -513,18 +1107,50 @@ Typical unit code(s): KMH for km/h, HM for mile per hour (0.447 04 m/s), KNT for
         $this->setProperty('driveWheelConfiguration', $value);
         return $this;
     }
+   /**
+    * @param DriveWheelConfigurationValue|string|array $value
+    * @return $this
+    */
+    public function setDriveWheelConfiguration($value)
+    {
+        $this->setProperty('driveWheelConfiguration', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getDriveWheelConfiguration()
+    {
+       return $this->getProperty('driveWheelConfiguration');
+    }
 
     /**
     * The number of persons that can be seated (e.g. in a vehicle), both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>
 
 Typical unit code(s): C62 for persons
-    * @param QuantitativeValue $value
+    * @param QuantitativeValue|array $value
     * @return $this
     */
     public function seatingCapacity(?QuantitativeValue $value)
     {
         $this->setProperty('seatingCapacity', $value);
         return $this;
+    }
+   /**
+    * @param QuantitativeValue|array $value
+    * @return $this
+    */
+    public function setSeatingCapacity(?QuantitativeValue $value)
+    {
+        $this->setProperty('seatingCapacity', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getSeatingCapacity()
+    {
+       return $this->getProperty('seatingCapacity');
     }
 
 

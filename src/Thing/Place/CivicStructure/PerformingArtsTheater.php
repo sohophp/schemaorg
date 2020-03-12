@@ -7,6 +7,8 @@ use Sohophp\SchemaOrg\Thing\Place\CivicStructure;
 * A theater or other performing art center.
 * @see http://schema.org/PerformingArtsTheater
 * @package Sohophp\SchemaOrg\Thing\Place\CivicStructure
+
+*
 */
 class PerformingArtsTheater extends CivicStructure
 {

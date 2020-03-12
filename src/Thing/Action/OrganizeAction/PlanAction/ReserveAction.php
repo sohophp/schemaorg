@@ -14,6 +14,8 @@ Related actions:<br/><br/>
 
 * @see http://schema.org/ReserveAction
 * @package Sohophp\SchemaOrg\Thing\Action\OrganizeAction\PlanAction
+
+*
 */
 class ReserveAction extends PlanAction
 {

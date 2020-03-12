@@ -15,13 +15,15 @@ Related actions:<br/><br/>
 
 * @see http://schema.org/MoveAction
 * @package Sohophp\SchemaOrg\Thing\Action
+
+*
 */
 class MoveAction extends Action
 {
 
     /**
     * A sub property of location. The final location of the object or the agent after the action.
-    * @param Place $value
+    * @param Place|array $value
     * @return $this
     */
     public function toLocation(?Place $value)
@@ -29,16 +31,48 @@ class MoveAction extends Action
         $this->setProperty('toLocation', $value);
         return $this;
     }
+   /**
+    * @param Place|array $value
+    * @return $this
+    */
+    public function setToLocation(?Place $value)
+    {
+        $this->setProperty('toLocation', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getToLocation()
+    {
+       return $this->getProperty('toLocation');
+    }
 
     /**
     * A sub property of location. The original location of the object or the agent before the action.
-    * @param Place $value
+    * @param Place|array $value
     * @return $this
     */
     public function fromLocation(?Place $value)
     {
         $this->setProperty('fromLocation', $value);
         return $this;
+    }
+   /**
+    * @param Place|array $value
+    * @return $this
+    */
+    public function setFromLocation(?Place $value)
+    {
+        $this->setProperty('fromLocation', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getFromLocation()
+    {
+       return $this->getProperty('fromLocation');
     }
 
 

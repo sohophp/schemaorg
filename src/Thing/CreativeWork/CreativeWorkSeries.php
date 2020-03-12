@@ -11,13 +11,15 @@ Specific subtypes are available for describing <a class="localLink" href="http:/
 It is common for properties applicable to an item from the series to be usefully applied to the containing group. Schema.org attempts to anticipate some of these cases, but publishers should be free to apply properties of the series parts to the series as a whole wherever they seem appropriate.
 * @see http://schema.org/CreativeWorkSeries
 * @package Sohophp\SchemaOrg\Thing\CreativeWork
+
+*
 */
 class CreativeWorkSeries extends CreativeWork
 {
 
     /**
     * The end date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).
-    * @param  $value
+    * @param |array $value
     * @return $this
     */
     public function endDate($value)
@@ -25,10 +27,26 @@ class CreativeWorkSeries extends CreativeWork
         $this->setProperty('endDate', $value);
         return $this;
     }
+   /**
+    * @param |array $value
+    * @return $this
+    */
+    public function setEndDate($value)
+    {
+        $this->setProperty('endDate', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getEndDate()
+    {
+       return $this->getProperty('endDate');
+    }
 
     /**
     * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
-    * @param string $value
+    * @param string|array $value
     * @return $this
     */
     public function issn(?string $value)
@@ -36,16 +54,48 @@ class CreativeWorkSeries extends CreativeWork
         $this->setProperty('issn', $value);
         return $this;
     }
+   /**
+    * @param string|array $value
+    * @return $this
+    */
+    public function setIssn(?string $value)
+    {
+        $this->setProperty('issn', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getIssn()
+    {
+       return $this->getProperty('issn');
+    }
 
     /**
     * The start date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).
-    * @param  $value
+    * @param |array $value
     * @return $this
     */
     public function startDate($value)
     {
         $this->setProperty('startDate', $value);
         return $this;
+    }
+   /**
+    * @param |array $value
+    * @return $this
+    */
+    public function setStartDate($value)
+    {
+        $this->setProperty('startDate', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getStartDate()
+    {
+       return $this->getProperty('startDate');
     }
 
 

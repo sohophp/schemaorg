@@ -11,13 +11,15 @@ use Sohophp\SchemaOrg\Thing\Intangible\Audience;
 * A single message from a sender to one or more organizations or people.
 * @see http://schema.org/Message
 * @package Sohophp\SchemaOrg\Thing\CreativeWork
+
+*
 */
 class Message extends CreativeWork
 {
 
     /**
     * The date/time at which the message has been read by the recipient if a single recipient exists.
-    * @param  $value
+    * @param |array $value
     * @return $this
     */
     public function dateRead($value)
@@ -25,10 +27,26 @@ class Message extends CreativeWork
         $this->setProperty('dateRead', $value);
         return $this;
     }
+   /**
+    * @param |array $value
+    * @return $this
+    */
+    public function setDateRead($value)
+    {
+        $this->setProperty('dateRead', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getDateRead()
+    {
+       return $this->getProperty('dateRead');
+    }
 
     /**
     * A sub property of recipient. The recipient blind copied on a message.
-    * @param Organization|ContactPoint|Person $value
+    * @param Organization|ContactPoint|Person|array $value
     * @return $this
     */
     public function bccRecipient($value)
@@ -36,10 +54,26 @@ class Message extends CreativeWork
         $this->setProperty('bccRecipient', $value);
         return $this;
     }
+   /**
+    * @param Organization|ContactPoint|Person|array $value
+    * @return $this
+    */
+    public function setBccRecipient($value)
+    {
+        $this->setProperty('bccRecipient', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getBccRecipient()
+    {
+       return $this->getProperty('bccRecipient');
+    }
 
     /**
     * The date/time at which the message was sent.
-    * @param  $value
+    * @param |array $value
     * @return $this
     */
     public function dateSent($value)
@@ -47,10 +81,26 @@ class Message extends CreativeWork
         $this->setProperty('dateSent', $value);
         return $this;
     }
+   /**
+    * @param |array $value
+    * @return $this
+    */
+    public function setDateSent($value)
+    {
+        $this->setProperty('dateSent', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getDateSent()
+    {
+       return $this->getProperty('dateSent');
+    }
 
     /**
     * A sub property of recipient. The recipient copied on a message.
-    * @param Person|ContactPoint|Organization $value
+    * @param Person|ContactPoint|Organization|array $value
     * @return $this
     */
     public function ccRecipient($value)
@@ -58,10 +108,26 @@ class Message extends CreativeWork
         $this->setProperty('ccRecipient', $value);
         return $this;
     }
+   /**
+    * @param Person|ContactPoint|Organization|array $value
+    * @return $this
+    */
+    public function setCcRecipient($value)
+    {
+        $this->setProperty('ccRecipient', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getCcRecipient()
+    {
+       return $this->getProperty('ccRecipient');
+    }
 
     /**
     * A sub property of participant. The participant who is at the receiving end of the action.
-    * @param Person|ContactPoint|Organization|Audience $value
+    * @param Person|ContactPoint|Organization|Audience|array $value
     * @return $this
     */
     public function recipient($value)
@@ -69,10 +135,26 @@ class Message extends CreativeWork
         $this->setProperty('recipient', $value);
         return $this;
     }
+   /**
+    * @param Person|ContactPoint|Organization|Audience|array $value
+    * @return $this
+    */
+    public function setRecipient($value)
+    {
+        $this->setProperty('recipient', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getRecipient()
+    {
+       return $this->getProperty('recipient');
+    }
 
     /**
     * A sub property of participant. The participant who is at the sending end of the action.
-    * @param Audience|Person|Organization $value
+    * @param Audience|Person|Organization|array $value
     * @return $this
     */
     public function sender($value)
@@ -80,10 +162,26 @@ class Message extends CreativeWork
         $this->setProperty('sender', $value);
         return $this;
     }
+   /**
+    * @param Audience|Person|Organization|array $value
+    * @return $this
+    */
+    public function setSender($value)
+    {
+        $this->setProperty('sender', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getSender()
+    {
+       return $this->getProperty('sender');
+    }
 
     /**
     * A CreativeWork attached to the message.
-    * @param CreativeWork $value
+    * @param CreativeWork|array $value
     * @return $this
     */
     public function messageAttachment(?CreativeWork $value)
@@ -91,10 +189,26 @@ class Message extends CreativeWork
         $this->setProperty('messageAttachment', $value);
         return $this;
     }
+   /**
+    * @param CreativeWork|array $value
+    * @return $this
+    */
+    public function setMessageAttachment(?CreativeWork $value)
+    {
+        $this->setProperty('messageAttachment', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getMessageAttachment()
+    {
+       return $this->getProperty('messageAttachment');
+    }
 
     /**
     * The date/time the message was received if a single recipient exists.
-    * @param  $value
+    * @param |array $value
     * @return $this
     */
     public function dateReceived($value)
@@ -102,16 +216,48 @@ class Message extends CreativeWork
         $this->setProperty('dateReceived', $value);
         return $this;
     }
+   /**
+    * @param |array $value
+    * @return $this
+    */
+    public function setDateReceived($value)
+    {
+        $this->setProperty('dateReceived', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getDateReceived()
+    {
+       return $this->getProperty('dateReceived');
+    }
 
     /**
     * A sub property of recipient. The recipient who was directly sent the message.
-    * @param ContactPoint|Organization|Audience|Person $value
+    * @param ContactPoint|Organization|Audience|Person|array $value
     * @return $this
     */
     public function toRecipient($value)
     {
         $this->setProperty('toRecipient', $value);
         return $this;
+    }
+   /**
+    * @param ContactPoint|Organization|Audience|Person|array $value
+    * @return $this
+    */
+    public function setToRecipient($value)
+    {
+        $this->setProperty('toRecipient', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getToRecipient()
+    {
+       return $this->getProperty('toRecipient');
     }
 
 

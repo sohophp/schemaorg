@@ -7,6 +7,8 @@ use Sohophp\SchemaOrg\Thing\Action\InteractAction;
 * The act of marrying a person.
 * @see http://schema.org/MarryAction
 * @package Sohophp\SchemaOrg\Thing\Action\InteractAction
+
+*
 */
 class MarryAction extends InteractAction
 {

@@ -8,6 +8,8 @@ use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\QuantitativeValue;
 * A car is a wheeled, self-powered motor vehicle used for transportation.
 * @see http://schema.org/Car
 * @package Sohophp\SchemaOrg\Thing\Product\Vehicle
+
+*
 */
 class Car extends Vehicle
 {
@@ -23,7 +25,7 @@ Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>
 <li>Note 3: Note that you can use <a class="localLink" href="http://schema.org/minValue">minValue</a> and <a class="localLink" href="http://schema.org/maxValue">maxValue</a> to indicate ranges.</li>
 </ul>
 
-    * @param QuantitativeValue $value
+    * @param QuantitativeValue|array $value
     * @return $this
     */
     public function roofLoad(?QuantitativeValue $value)
@@ -31,16 +33,48 @@ Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>
         $this->setProperty('roofLoad', $value);
         return $this;
     }
+   /**
+    * @param QuantitativeValue|array $value
+    * @return $this
+    */
+    public function setRoofLoad(?QuantitativeValue $value)
+    {
+        $this->setProperty('roofLoad', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getRoofLoad()
+    {
+       return $this->getProperty('roofLoad');
+    }
 
     /**
     * The ACRISS Car Classification Code is a code used by many car rental companies, for classifying vehicles. ACRISS stands for Association of Car Rental Industry Systems and Standards.
-    * @param string $value
+    * @param string|array $value
     * @return $this
     */
     public function acrissCode(?string $value)
     {
         $this->setProperty('acrissCode', $value);
         return $this;
+    }
+   /**
+    * @param string|array $value
+    * @return $this
+    */
+    public function setAcrissCode(?string $value)
+    {
+        $this->setProperty('acrissCode', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getAcrissCode()
+    {
+       return $this->getProperty('acrissCode');
     }
 
 

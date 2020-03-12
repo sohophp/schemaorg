@@ -7,6 +7,8 @@ use Sohophp\SchemaOrg\Thing\Intangible\Enumeration;
 * The publication format of the book.
 * @see http://schema.org/BookFormatType
 * @package Sohophp\SchemaOrg\Thing\Intangible\Enumeration
+
+*
 */
 class BookFormatType extends Enumeration
 {

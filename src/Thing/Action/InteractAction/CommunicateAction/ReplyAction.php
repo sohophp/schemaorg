@@ -15,19 +15,37 @@ Related actions:<br/><br/>
 
 * @see http://schema.org/ReplyAction
 * @package Sohophp\SchemaOrg\Thing\Action\InteractAction\CommunicateAction
+
+*
 */
 class ReplyAction extends CommunicateAction
 {
 
     /**
     * A sub property of result. The Comment created or sent as a result of this action.
-    * @param Comment $value
+    * @param Comment|array $value
     * @return $this
     */
     public function resultComment(?Comment $value)
     {
         $this->setProperty('resultComment', $value);
         return $this;
+    }
+   /**
+    * @param Comment|array $value
+    * @return $this
+    */
+    public function setResultComment(?Comment $value)
+    {
+        $this->setProperty('resultComment', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getResultComment()
+    {
+       return $this->getProperty('resultComment');
     }
 
 

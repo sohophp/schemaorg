@@ -10,13 +10,15 @@ use Sohophp\SchemaOrg\Thing\Intangible\Property;
 See also <a class="localLink" href="http://schema.org/StatisticalPopulation">StatisticalPopulation</a>, and the <a href="/docs/data-and-datasets.html">data and datasets</a> overview for more details.
 * @see http://schema.org/Observation
 * @package Sohophp\SchemaOrg\Thing\Intangible
+
+*
 */
 class Observation extends Intangible
 {
 
     /**
     * The observedNode of an <a class="localLink" href="http://schema.org/Observation">Observation</a>, often a <a class="localLink" href="http://schema.org/StatisticalPopulation">StatisticalPopulation</a>.
-    * @param StatisticalPopulation $value
+    * @param StatisticalPopulation|array $value
     * @return $this
     */
     public function observedNode(?StatisticalPopulation $value)
@@ -24,10 +26,26 @@ class Observation extends Intangible
         $this->setProperty('observedNode', $value);
         return $this;
     }
+   /**
+    * @param StatisticalPopulation|array $value
+    * @return $this
+    */
+    public function setObservedNode(?StatisticalPopulation $value)
+    {
+        $this->setProperty('observedNode', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getObservedNode()
+    {
+       return $this->getProperty('observedNode');
+    }
 
     /**
     * The measuredValue of an <a class="localLink" href="http://schema.org/Observation">Observation</a>.
-    * @param  $value
+    * @param |array $value
     * @return $this
     */
     public function measuredValue($value)
@@ -35,10 +53,26 @@ class Observation extends Intangible
         $this->setProperty('measuredValue', $value);
         return $this;
     }
+   /**
+    * @param |array $value
+    * @return $this
+    */
+    public function setMeasuredValue($value)
+    {
+        $this->setProperty('measuredValue', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getMeasuredValue()
+    {
+       return $this->getProperty('measuredValue');
+    }
 
     /**
     * The observationDate of an <a class="localLink" href="http://schema.org/Observation">Observation</a>.
-    * @param  $value
+    * @param |array $value
     * @return $this
     */
     public function observationDate($value)
@@ -46,10 +80,26 @@ class Observation extends Intangible
         $this->setProperty('observationDate', $value);
         return $this;
     }
+   /**
+    * @param |array $value
+    * @return $this
+    */
+    public function setObservationDate($value)
+    {
+        $this->setProperty('observationDate', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getObservationDate()
+    {
+       return $this->getProperty('observationDate');
+    }
 
     /**
     * A marginOfError for an <a class="localLink" href="http://schema.org/Observation">Observation</a>.
-    * @param  $value
+    * @param |array $value
     * @return $this
     */
     public function marginOfError($value)
@@ -57,16 +107,48 @@ class Observation extends Intangible
         $this->setProperty('marginOfError', $value);
         return $this;
     }
+   /**
+    * @param |array $value
+    * @return $this
+    */
+    public function setMarginOfError($value)
+    {
+        $this->setProperty('marginOfError', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getMarginOfError()
+    {
+       return $this->getProperty('marginOfError');
+    }
 
     /**
     * The measuredProperty of an <a class="localLink" href="http://schema.org/Observation">Observation</a>, either a schema.org property, a property from other RDF-compatible systems e.g. W3C RDF Data Cube, or schema.org extensions such as <a href="https://www.gs1.org/voc/?show=properties">GS1's</a>.
-    * @param Property $value
+    * @param Property|array $value
     * @return $this
     */
     public function measuredProperty(?Property $value)
     {
         $this->setProperty('measuredProperty', $value);
         return $this;
+    }
+   /**
+    * @param Property|array $value
+    * @return $this
+    */
+    public function setMeasuredProperty(?Property $value)
+    {
+        $this->setProperty('measuredProperty', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getMeasuredProperty()
+    {
+       return $this->getProperty('measuredProperty');
     }
 
 

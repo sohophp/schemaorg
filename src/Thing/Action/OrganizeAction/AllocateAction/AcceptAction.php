@@ -14,6 +14,8 @@ Related actions:<br/><br/>
 
 * @see http://schema.org/AcceptAction
 * @package Sohophp\SchemaOrg\Thing\Action\OrganizeAction\AllocateAction
+
+*
 */
 class AcceptAction extends AllocateAction
 {

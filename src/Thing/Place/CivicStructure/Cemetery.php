@@ -7,6 +7,8 @@ use Sohophp\SchemaOrg\Thing\Place\CivicStructure;
 * A graveyard.
 * @see http://schema.org/Cemetery
 * @package Sohophp\SchemaOrg\Thing\Place\CivicStructure
+
+*
 */
 class Cemetery extends CivicStructure
 {

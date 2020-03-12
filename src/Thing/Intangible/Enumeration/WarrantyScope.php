@@ -16,6 +16,8 @@ Commonly used values:<br/><br/>
 
 * @see http://schema.org/WarrantyScope
 * @package Sohophp\SchemaOrg\Thing\Intangible\Enumeration
+
+*
 */
 class WarrantyScope extends Enumeration
 {

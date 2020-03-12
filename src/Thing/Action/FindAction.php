@@ -14,6 +14,8 @@ Related actions:<br/><br/>
 
 * @see http://schema.org/FindAction
 * @package Sohophp\SchemaOrg\Thing\Action
+
+*
 */
 class FindAction extends Action
 {

@@ -16,6 +16,8 @@ Commonly used values:<br/><br/>
 
 * @see http://schema.org/ParcelService
 * @package Sohophp\SchemaOrg\Thing\Intangible\Enumeration\DeliveryMethod
+
+*
 */
 class ParcelService extends DeliveryMethod
 {

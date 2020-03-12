@@ -9,13 +9,15 @@ use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\DeliveryMethod;
 * The costs of settling the payment using a particular payment method.
 * @see http://schema.org/PaymentChargeSpecification
 * @package Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\PriceSpecification
+
+*
 */
 class PaymentChargeSpecification extends PriceSpecification
 {
 
     /**
     * The payment method(s) to which the payment charge specification applies.
-    * @param PaymentMethod $value
+    * @param PaymentMethod|array $value
     * @return $this
     */
     public function appliesToPaymentMethod(?PaymentMethod $value)
@@ -23,16 +25,48 @@ class PaymentChargeSpecification extends PriceSpecification
         $this->setProperty('appliesToPaymentMethod', $value);
         return $this;
     }
+   /**
+    * @param PaymentMethod|array $value
+    * @return $this
+    */
+    public function setAppliesToPaymentMethod(?PaymentMethod $value)
+    {
+        $this->setProperty('appliesToPaymentMethod', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getAppliesToPaymentMethod()
+    {
+       return $this->getProperty('appliesToPaymentMethod');
+    }
 
     /**
     * The delivery method(s) to which the delivery charge or payment charge specification applies.
-    * @param DeliveryMethod $value
+    * @param DeliveryMethod|array $value
     * @return $this
     */
     public function appliesToDeliveryMethod(?DeliveryMethod $value)
     {
         $this->setProperty('appliesToDeliveryMethod', $value);
         return $this;
+    }
+   /**
+    * @param DeliveryMethod|array $value
+    * @return $this
+    */
+    public function setAppliesToDeliveryMethod(?DeliveryMethod $value)
+    {
+        $this->setProperty('appliesToDeliveryMethod', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getAppliesToDeliveryMethod()
+    {
+       return $this->getProperty('appliesToDeliveryMethod');
     }
 
 

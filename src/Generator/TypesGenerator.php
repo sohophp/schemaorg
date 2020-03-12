@@ -55,20 +55,19 @@ class TypesGenerator
          * @var ParserItem $graph
          */
         foreach ($this->parser->getClasses() as $i => $graph) {
-            
             if ($this->configure->get('consoleMessage')) {
                 echo($i + 1), "\n";
                 echo $graph->getId(), "\n";
             }
-             
+
             /**
              * 有个3dmodel是数字开头 和class
-             * 2019-10-07 
+             * 2019-10-07
              */
-            if(!preg_match('#^[a-zA-Z].*?#',$graph->getName()) || in_array($graph->getName(),['Class','Function'])){ 
-                continue ;
+            if (!preg_match('#^[a-zA-Z].*?#', $graph->getName()) || in_array($graph->getName(), ['Class', 'Function'])) {
+                continue;
             };
-            
+
             $class = [];
             $class['name'] = $graph->getName();
             $class['annotations'] = [];
@@ -136,7 +135,6 @@ class TypesGenerator
 
             if (!file_put_contents($filename, $this->twig->render('class.php.twig', ['class' => $class]))) {
                 throw new \Exception('Can not create file ' . $dir . DIRECTORY_SEPARATOR . $graph->getName() . '.php');
-
             }
             $classFiles[] = $filename;
             $entitiesMap[] = [
@@ -230,16 +228,7 @@ class TypesGenerator
             ]))
             ->getFixers();
 
-        $runner = new Runner(
-            new \ArrayIterator($fileInfos),
-            $fixers,
-            new NullDiffer(),
-            null,
-            new ErrorsManager(),
-            new Linter(),
-            false,
-            new NullCacheManager()
-        );
+        $runner = new Runner(new \ArrayIterator($fileInfos), $fixers, new NullDiffer(), null, new ErrorsManager(), new Linter(), false, new NullCacheManager());
         $runner->fix();
     }
 }

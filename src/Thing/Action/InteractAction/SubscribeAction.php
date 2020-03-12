@@ -16,6 +16,8 @@ Related actions:<br/><br/>
 
 * @see http://schema.org/SubscribeAction
 * @package Sohophp\SchemaOrg\Thing\Action\InteractAction
+
+*
 */
 class SubscribeAction extends InteractAction
 {

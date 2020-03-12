@@ -14,6 +14,8 @@ Related actions:<br/><br/>
 
 * @see http://schema.org/ConfirmAction
 * @package Sohophp\SchemaOrg\Thing\Action\InteractAction\CommunicateAction\InformAction
+
+*
 */
 class ConfirmAction extends InformAction
 {

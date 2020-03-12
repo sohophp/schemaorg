@@ -15,6 +15,8 @@ Related actions:<br/><br/>
 
 * @see http://schema.org/UnRegisterAction
 * @package Sohophp\SchemaOrg\Thing\Action\InteractAction
+
+*
 */
 class UnRegisterAction extends InteractAction
 {

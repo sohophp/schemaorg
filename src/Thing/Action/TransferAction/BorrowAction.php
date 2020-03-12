@@ -16,19 +16,37 @@ Related actions:<br/><br/>
 
 * @see http://schema.org/BorrowAction
 * @package Sohophp\SchemaOrg\Thing\Action\TransferAction
+
+*
 */
 class BorrowAction extends TransferAction
 {
 
     /**
     * A sub property of participant. The person that lends the object being borrowed.
-    * @param Person|Organization $value
+    * @param Person|Organization|array $value
     * @return $this
     */
     public function lender($value)
     {
         $this->setProperty('lender', $value);
         return $this;
+    }
+   /**
+    * @param Person|Organization|array $value
+    * @return $this
+    */
+    public function setLender($value)
+    {
+        $this->setProperty('lender', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getLender()
+    {
+       return $this->getProperty('lender');
     }
 
 

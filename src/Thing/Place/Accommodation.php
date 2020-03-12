@@ -12,13 +12,15 @@ For more specific types of accommodations not defined in schema.org, one can use
 See also the <a href="/docs/hotels.html">dedicated document on the use of schema.org for marking up hotels and other forms of accommodations</a>.
 * @see http://schema.org/Accommodation
 * @package Sohophp\SchemaOrg\Thing\Place
+
+*
 */
 class Accommodation extends Place
 {
 
     /**
     * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
-    * @param string|bool $value
+    * @param string|bool|array $value
     * @return $this
     */
     public function petsAllowed($value)
@@ -26,10 +28,26 @@ class Accommodation extends Place
         $this->setProperty('petsAllowed', $value);
         return $this;
     }
+   /**
+    * @param string|bool|array $value
+    * @return $this
+    */
+    public function setPetsAllowed($value)
+    {
+        $this->setProperty('petsAllowed', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getPetsAllowed()
+    {
+       return $this->getProperty('petsAllowed');
+    }
 
     /**
     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
-    * @param LocationFeatureSpecification $value
+    * @param LocationFeatureSpecification|array $value
     * @return $this
     */
     public function amenityFeature(?LocationFeatureSpecification $value)
@@ -37,11 +55,27 @@ class Accommodation extends Place
         $this->setProperty('amenityFeature', $value);
         return $this;
     }
+   /**
+    * @param LocationFeatureSpecification|array $value
+    * @return $this
+    */
+    public function setAmenityFeature(?LocationFeatureSpecification $value)
+    {
+        $this->setProperty('amenityFeature', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getAmenityFeature()
+    {
+       return $this->getProperty('amenityFeature');
+    }
 
     /**
     * The size of the accommodation, e.g. in square meter or squarefoot.
 Typical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard
-    * @param QuantitativeValue $value
+    * @param QuantitativeValue|array $value
     * @return $this
     */
     public function floorSize(?QuantitativeValue $value)
@@ -49,11 +83,27 @@ Typical unit code(s): MTK for square meter, FTK for square foot, or YDK for squa
         $this->setProperty('floorSize', $value);
         return $this;
     }
+   /**
+    * @param QuantitativeValue|array $value
+    * @return $this
+    */
+    public function setFloorSize(?QuantitativeValue $value)
+    {
+        $this->setProperty('floorSize', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getFloorSize()
+    {
+       return $this->getProperty('floorSize');
+    }
 
     /**
     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
 Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
-    * @param QuantitativeValue $value
+    * @param QuantitativeValue|array $value
     * @return $this
     */
     public function numberOfRooms(?QuantitativeValue $value)
@@ -61,16 +111,48 @@ Typical unit code(s): ROM for room or C62 for no unit. The type of room can be p
         $this->setProperty('numberOfRooms', $value);
         return $this;
     }
+   /**
+    * @param QuantitativeValue|array $value
+    * @return $this
+    */
+    public function setNumberOfRooms(?QuantitativeValue $value)
+    {
+        $this->setProperty('numberOfRooms', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getNumberOfRooms()
+    {
+       return $this->getProperty('numberOfRooms');
+    }
 
     /**
     * Indications regarding the permitted usage of the accommodation.
-    * @param string $value
+    * @param string|array $value
     * @return $this
     */
     public function permittedUsage(?string $value)
     {
         $this->setProperty('permittedUsage', $value);
         return $this;
+    }
+   /**
+    * @param string|array $value
+    * @return $this
+    */
+    public function setPermittedUsage(?string $value)
+    {
+        $this->setProperty('permittedUsage', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getPermittedUsage()
+    {
+       return $this->getProperty('permittedUsage');
     }
 
 

@@ -8,19 +8,37 @@ use Sohophp\SchemaOrg\Thing\CreativeWork\Dataset;
 * A collection of datasets.
 * @see http://schema.org/DataCatalog
 * @package Sohophp\SchemaOrg\Thing\CreativeWork
+
+*
 */
 class DataCatalog extends CreativeWork
 {
 
     /**
     * A dataset contained in this catalog.
-    * @param Dataset $value
+    * @param Dataset|array $value
     * @return $this
     */
     public function dataset(?Dataset $value)
     {
         $this->setProperty('dataset', $value);
         return $this;
+    }
+   /**
+    * @param Dataset|array $value
+    * @return $this
+    */
+    public function setDataset(?Dataset $value)
+    {
+        $this->setProperty('dataset', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getDataset()
+    {
+       return $this->getProperty('dataset');
     }
 
     /**
@@ -32,13 +50,29 @@ For example, if <a class="localLink" href="http://schema.org/variableMeasured">v
 If the <a class="localLink" href="http://schema.org/variableMeasured">variableMeasured</a> is "depression rating", the <a class="localLink" href="http://schema.org/measurementTechnique">measurementTechnique</a> could be "Zung Scale" or "HAM-D" or "Beck Depression Inventory".<br/><br/>
 
 If there are several <a class="localLink" href="http://schema.org/variableMeasured">variableMeasured</a> properties recorded for some given data object, use a <a class="localLink" href="http://schema.org/PropertyValue">PropertyValue</a> for each <a class="localLink" href="http://schema.org/variableMeasured">variableMeasured</a> and attach the corresponding <a class="localLink" href="http://schema.org/measurementTechnique">measurementTechnique</a>.
-    * @param string|string $value
+    * @param string|string|array $value
     * @return $this
     */
     public function measurementTechnique($value)
     {
         $this->setProperty('measurementTechnique', $value);
         return $this;
+    }
+   /**
+    * @param string|string|array $value
+    * @return $this
+    */
+    public function setMeasurementTechnique($value)
+    {
+        $this->setProperty('measurementTechnique', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getMeasurementTechnique()
+    {
+       return $this->getProperty('measurementTechnique');
     }
 
 

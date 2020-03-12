@@ -14,6 +14,8 @@ The <a class="localLink" href="http://schema.org/ReportageNewsArticle">Reportage
 A <a class="localLink" href="http://schema.org/ReportageNewsArticle">ReportageNewsArticle</a> which goes deeper into analysis can also be marked with an additional type of <a class="localLink" href="http://schema.org/AnalysisNewsArticle">AnalysisNewsArticle</a>.
 * @see http://schema.org/ReportageNewsArticle
 * @package Sohophp\SchemaOrg\Thing\CreativeWork\Article\NewsArticle
+
+*
 */
 class ReportageNewsArticle extends NewsArticle
 {

@@ -16,19 +16,37 @@ Related actions:<br/><br/>
 
 * @see http://schema.org/TrackAction
 * @package Sohophp\SchemaOrg\Thing\Action\FindAction
+
+*
 */
 class TrackAction extends FindAction
 {
 
     /**
     * A sub property of instrument. The method of delivery.
-    * @param DeliveryMethod $value
+    * @param DeliveryMethod|array $value
     * @return $this
     */
     public function deliveryMethod(?DeliveryMethod $value)
     {
         $this->setProperty('deliveryMethod', $value);
         return $this;
+    }
+   /**
+    * @param DeliveryMethod|array $value
+    * @return $this
+    */
+    public function setDeliveryMethod(?DeliveryMethod $value)
+    {
+        $this->setProperty('deliveryMethod', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getDeliveryMethod()
+    {
+       return $this->getProperty('deliveryMethod');
     }
 
 

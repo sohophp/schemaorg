@@ -14,6 +14,8 @@ Related actions:<br/><br/>
 
 * @see http://schema.org/RejectAction
 * @package Sohophp\SchemaOrg\Thing\Action\OrganizeAction\AllocateAction
+
+*
 */
 class RejectAction extends AllocateAction
 {

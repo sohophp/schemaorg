@@ -16,6 +16,8 @@ Related actions:<br/><br/>
 
 * @see http://schema.org/CheckOutAction
 * @package Sohophp\SchemaOrg\Thing\Action\InteractAction\CommunicateAction
+
+*
 */
 class CheckOutAction extends CommunicateAction
 {

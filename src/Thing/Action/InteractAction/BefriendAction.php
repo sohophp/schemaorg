@@ -14,6 +14,8 @@ Related actions:<br/><br/>
 
 * @see http://schema.org/BefriendAction
 * @package Sohophp\SchemaOrg\Thing\Action\InteractAction
+
+*
 */
 class BefriendAction extends InteractAction
 {

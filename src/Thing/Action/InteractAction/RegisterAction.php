@@ -16,6 +16,8 @@ Related actions:<br/><br/>
 
 * @see http://schema.org/RegisterAction
 * @package Sohophp\SchemaOrg\Thing\Action\InteractAction
+
+*
 */
 class RegisterAction extends InteractAction
 {

@@ -7,6 +7,8 @@ use Sohophp\SchemaOrg\Thing\Organization\LocalBusiness\HomeAndConstructionBusine
 * A moving company.
 * @see http://schema.org/MovingCompany
 * @package Sohophp\SchemaOrg\Thing\Organization\LocalBusiness\HomeAndConstructionBusiness
+
+*
 */
 class MovingCompany extends HomeAndConstructionBusiness
 {

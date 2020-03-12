@@ -21,6 +21,8 @@ Commonly used values:<br/><br/>
 
 * @see http://schema.org/BusinessFunction
 * @package Sohophp\SchemaOrg\Thing\Intangible\Enumeration
+
+*
 */
 class BusinessFunction extends Enumeration
 {

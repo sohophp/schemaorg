@@ -7,6 +7,8 @@ use Sohophp\SchemaOrg\Thing\Place\Residence;
 * Residence type: Apartment complex.
 * @see http://schema.org/ApartmentComplex
 * @package Sohophp\SchemaOrg\Thing\Place\Residence
+
+*
 */
 class ApartmentComplex extends Residence
 {

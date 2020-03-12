@@ -9,6 +9,8 @@ use Sohophp\SchemaOrg\Thing\CreativeWork\CreativeWorkSeries;
 See also <a href="http://blog.schema.org/2014/09/schemaorg-support-for-bibliographic_2.html">blog post</a>.
 * @see http://schema.org/Periodical
 * @package Sohophp\SchemaOrg\Thing\CreativeWork\CreativeWorkSeries
+
+*
 */
 class Periodical extends CreativeWorkSeries
 {

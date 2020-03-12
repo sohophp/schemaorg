@@ -9,6 +9,8 @@ use Sohophp\SchemaOrg\Thing\CreativeWork\CreativeWorkSeries\Periodical;
     Wanderer".
 * @see http://schema.org/ComicSeries
 * @package Sohophp\SchemaOrg\Thing\CreativeWork\CreativeWorkSeries\Periodical
+
+*
 */
 class ComicSeries extends Periodical
 {

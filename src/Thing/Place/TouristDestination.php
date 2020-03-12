@@ -10,13 +10,15 @@ use Sohophp\SchemaOrg\Thing\Place\TouristAttraction;
   (See examples below).
 * @see http://schema.org/TouristDestination
 * @package Sohophp\SchemaOrg\Thing\Place
+
+*
 */
 class TouristDestination extends Place
 {
 
     /**
     * Attraction suitable for type(s) of tourist. eg. Children, visitors from a particular country, etc.
-    * @param string|Audience $value
+    * @param string|Audience|array $value
     * @return $this
     */
     public function touristType($value)
@@ -24,16 +26,48 @@ class TouristDestination extends Place
         $this->setProperty('touristType', $value);
         return $this;
     }
+   /**
+    * @param string|Audience|array $value
+    * @return $this
+    */
+    public function setTouristType($value)
+    {
+        $this->setProperty('touristType', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getTouristType()
+    {
+       return $this->getProperty('touristType');
+    }
 
     /**
     * Attraction located at destination.
-    * @param TouristAttraction $value
+    * @param TouristAttraction|array $value
     * @return $this
     */
     public function includesAttraction(?TouristAttraction $value)
     {
         $this->setProperty('includesAttraction', $value);
         return $this;
+    }
+   /**
+    * @param TouristAttraction|array $value
+    * @return $this
+    */
+    public function setIncludesAttraction(?TouristAttraction $value)
+    {
+        $this->setProperty('includesAttraction', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getIncludesAttraction()
+    {
+       return $this->getProperty('includesAttraction');
     }
 
 

@@ -14,6 +14,8 @@ Related actions:<br/><br/>
 
 * @see http://schema.org/ScheduleAction
 * @package Sohophp\SchemaOrg\Thing\Action\OrganizeAction\PlanAction
+
+*
 */
 class ScheduleAction extends PlanAction
 {

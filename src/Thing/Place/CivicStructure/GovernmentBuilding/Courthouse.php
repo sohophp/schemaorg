@@ -7,6 +7,8 @@ use Sohophp\SchemaOrg\Thing\Place\CivicStructure\GovernmentBuilding;
 * A courthouse.
 * @see http://schema.org/Courthouse
 * @package Sohophp\SchemaOrg\Thing\Place\CivicStructure\GovernmentBuilding
+
+*
 */
 class Courthouse extends GovernmentBuilding
 {

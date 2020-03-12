@@ -9,19 +9,37 @@ use Sohophp\SchemaOrg\Thing\Intangible\Audience;
   (See examples below).
 * @see http://schema.org/TouristTrip
 * @package Sohophp\SchemaOrg\Thing\Intangible\Trip
+
+*
 */
 class TouristTrip extends Trip
 {
 
     /**
     * Attraction suitable for type(s) of tourist. eg. Children, visitors from a particular country, etc.
-    * @param string|Audience $value
+    * @param string|Audience|array $value
     * @return $this
     */
     public function touristType($value)
     {
         $this->setProperty('touristType', $value);
         return $this;
+    }
+   /**
+    * @param string|Audience|array $value
+    * @return $this
+    */
+    public function setTouristType($value)
+    {
+        $this->setProperty('touristType', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getTouristType()
+    {
+       return $this->getProperty('touristType');
     }
 
 

@@ -7,6 +7,8 @@ use Sohophp\SchemaOrg\Thing\Organization\LocalBusiness\HomeAndConstructionBusine
 * A roofing contractor.
 * @see http://schema.org/RoofingContractor
 * @package Sohophp\SchemaOrg\Thing\Organization\LocalBusiness\HomeAndConstructionBusiness
+
+*
 */
 class RoofingContractor extends HomeAndConstructionBusiness
 {

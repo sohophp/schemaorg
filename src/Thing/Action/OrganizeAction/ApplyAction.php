@@ -14,6 +14,8 @@ Related actions:<br/><br/>
 
 * @see http://schema.org/ApplyAction
 * @package Sohophp\SchemaOrg\Thing\Action\OrganizeAction
+
+*
 */
 class ApplyAction extends OrganizeAction
 {

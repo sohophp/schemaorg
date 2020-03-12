@@ -3,4 +3,8 @@
 require(dirname(__DIR__) . DIRECTORY_SEPARATOR . 'bootstrap.php');
 $application = new \Symfony\Component\Console\Application();
 $application->add(new \Sohophp\SchemaOrg\Command\GeneratorCommand());
-$application->run();
+try {
+    $application->run();
+} catch (Exception $e) {
+    echo $e->getMessage();
+}

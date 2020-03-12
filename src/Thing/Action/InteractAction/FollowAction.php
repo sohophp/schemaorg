@@ -20,19 +20,37 @@ Related actions:<br/><br/>
 
 * @see http://schema.org/FollowAction
 * @package Sohophp\SchemaOrg\Thing\Action\InteractAction
+
+*
 */
 class FollowAction extends InteractAction
 {
 
     /**
     * A sub property of object. The person or organization being followed.
-    * @param Organization|Person $value
+    * @param Organization|Person|array $value
     * @return $this
     */
     public function followee($value)
     {
         $this->setProperty('followee', $value);
         return $this;
+    }
+   /**
+    * @param Organization|Person|array $value
+    * @return $this
+    */
+    public function setFollowee($value)
+    {
+        $this->setProperty('followee', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getFollowee()
+    {
+       return $this->getProperty('followee');
     }
 
 

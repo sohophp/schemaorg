@@ -7,6 +7,8 @@ use Sohophp\SchemaOrg\Thing\Organization\LocalBusiness\HomeAndConstructionBusine
 * A locksmith.
 * @see http://schema.org/Locksmith
 * @package Sohophp\SchemaOrg\Thing\Organization\LocalBusiness\HomeAndConstructionBusiness
+
+*
 */
 class Locksmith extends HomeAndConstructionBusiness
 {

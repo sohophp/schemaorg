@@ -22,6 +22,8 @@ Commonly used values:<br/><br/>
 
 * @see http://schema.org/PaymentMethod
 * @package Sohophp\SchemaOrg\Thing\Intangible\Enumeration
+
+*
 */
 class PaymentMethod extends Enumeration
 {

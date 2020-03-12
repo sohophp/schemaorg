@@ -9,13 +9,15 @@ use Sohophp\SchemaOrg\Text\XPathType;
 * A SpeakableSpecification indicates (typically via <a class="localLink" href="http://schema.org/xpath">xpath</a> or <a class="localLink" href="http://schema.org/cssSelector">cssSelector</a>) sections of a document that are highlighted as particularly <a class="localLink" href="http://schema.org/speakable">speakable</a>. Instances of this type are expected to be used primarily as values of the <a class="localLink" href="http://schema.org/speakable">speakable</a> property.
 * @see http://schema.org/SpeakableSpecification
 * @package Sohophp\SchemaOrg\Thing\Intangible
+
+*
 */
 class SpeakableSpecification extends Intangible
 {
 
     /**
     * A CSS selector, e.g. of a <a class="localLink" href="http://schema.org/SpeakableSpecification">SpeakableSpecification</a> or <a class="localLink" href="http://schema.org/WebPageElement">WebPageElement</a>. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
-    * @param CssSelectorType $value
+    * @param CssSelectorType|array $value
     * @return $this
     */
     public function cssSelector(?CssSelectorType $value)
@@ -23,16 +25,48 @@ class SpeakableSpecification extends Intangible
         $this->setProperty('cssSelector', $value);
         return $this;
     }
+   /**
+    * @param CssSelectorType|array $value
+    * @return $this
+    */
+    public function setCssSelector(?CssSelectorType $value)
+    {
+        $this->setProperty('cssSelector', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getCssSelector()
+    {
+       return $this->getProperty('cssSelector');
+    }
 
     /**
     * An XPath, e.g. of a <a class="localLink" href="http://schema.org/SpeakableSpecification">SpeakableSpecification</a> or <a class="localLink" href="http://schema.org/WebPageElement">WebPageElement</a>. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
-    * @param XPathType $value
+    * @param XPathType|array $value
     * @return $this
     */
     public function xpath(?XPathType $value)
     {
         $this->setProperty('xpath', $value);
         return $this;
+    }
+   /**
+    * @param XPathType|array $value
+    * @return $this
+    */
+    public function setXpath(?XPathType $value)
+    {
+        $this->setProperty('xpath', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getXpath()
+    {
+       return $this->getProperty('xpath');
     }
 
 

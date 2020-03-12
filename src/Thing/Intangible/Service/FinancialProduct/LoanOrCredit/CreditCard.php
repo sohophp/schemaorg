@@ -20,19 +20,37 @@ Commonly used values:<br/><br/>
 
 * @see http://schema.org/CreditCard
 * @package Sohophp\SchemaOrg\Thing\Intangible\Service\FinancialProduct\LoanOrCredit
+
+*
 */
 class CreditCard extends LoanOrCredit
 {
 
     /**
     * The minimum payment is the lowest amount of money that one is required to pay on a credit card statement each month.
-    * @param MonetaryAmount $value
+    * @param MonetaryAmount|array $value
     * @return $this
     */
     public function monthlyMinimumRepaymentAmount(?MonetaryAmount $value)
     {
         $this->setProperty('monthlyMinimumRepaymentAmount', $value);
         return $this;
+    }
+   /**
+    * @param MonetaryAmount|array $value
+    * @return $this
+    */
+    public function setMonthlyMinimumRepaymentAmount(?MonetaryAmount $value)
+    {
+        $this->setProperty('monthlyMinimumRepaymentAmount', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getMonthlyMinimumRepaymentAmount()
+    {
+       return $this->getProperty('monthlyMinimumRepaymentAmount');
     }
 
 

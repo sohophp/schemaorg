@@ -13,13 +13,15 @@ use Sohophp\SchemaOrg\Thing\Organization;
 * A media episode (e.g. TV, radio, video game) which can be part of a series or season.
 * @see http://schema.org/Episode
 * @package Sohophp\SchemaOrg\Thing\CreativeWork
+
+*
 */
 class Episode extends CreativeWork
 {
 
     /**
     * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
-    * @param Person $value
+    * @param Person|array $value
     * @return $this
     */
     public function actor(?Person $value)
@@ -27,10 +29,26 @@ class Episode extends CreativeWork
         $this->setProperty('actor', $value);
         return $this;
     }
+   /**
+    * @param Person|array $value
+    * @return $this
+    */
+    public function setActor(?Person $value)
+    {
+        $this->setProperty('actor', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getActor()
+    {
+       return $this->getProperty('actor');
+    }
 
     /**
     * The series to which this episode or season belongs.
-    * @param CreativeWorkSeries $value
+    * @param CreativeWorkSeries|array $value
     * @return $this
     */
     public function partOfSeries(?CreativeWorkSeries $value)
@@ -38,10 +56,26 @@ class Episode extends CreativeWork
         $this->setProperty('partOfSeries', $value);
         return $this;
     }
+   /**
+    * @param CreativeWorkSeries|array $value
+    * @return $this
+    */
+    public function setPartOfSeries(?CreativeWorkSeries $value)
+    {
+        $this->setProperty('partOfSeries', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getPartOfSeries()
+    {
+       return $this->getProperty('partOfSeries');
+    }
 
     /**
     * The trailer of a movie or tv/radio series, season, episode, etc.
-    * @param VideoObject $value
+    * @param VideoObject|array $value
     * @return $this
     */
     public function trailer(?VideoObject $value)
@@ -49,10 +83,26 @@ class Episode extends CreativeWork
         $this->setProperty('trailer', $value);
         return $this;
     }
+   /**
+    * @param VideoObject|array $value
+    * @return $this
+    */
+    public function setTrailer(?VideoObject $value)
+    {
+        $this->setProperty('trailer', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getTrailer()
+    {
+       return $this->getProperty('trailer');
+    }
 
     /**
     * The season to which this episode belongs.
-    * @param CreativeWorkSeason $value
+    * @param CreativeWorkSeason|array $value
     * @return $this
     */
     public function partOfSeason(?CreativeWorkSeason $value)
@@ -60,10 +110,26 @@ class Episode extends CreativeWork
         $this->setProperty('partOfSeason', $value);
         return $this;
     }
+   /**
+    * @param CreativeWorkSeason|array $value
+    * @return $this
+    */
+    public function setPartOfSeason(?CreativeWorkSeason $value)
+    {
+        $this->setProperty('partOfSeason', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getPartOfSeason()
+    {
+       return $this->getProperty('partOfSeason');
+    }
 
     /**
     * The composer of the soundtrack.
-    * @param Person|MusicGroup $value
+    * @param Person|MusicGroup|array $value
     * @return $this
     */
     public function musicBy($value)
@@ -71,10 +137,26 @@ class Episode extends CreativeWork
         $this->setProperty('musicBy', $value);
         return $this;
     }
+   /**
+    * @param Person|MusicGroup|array $value
+    * @return $this
+    */
+    public function setMusicBy($value)
+    {
+        $this->setProperty('musicBy', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getMusicBy()
+    {
+       return $this->getProperty('musicBy');
+    }
 
     /**
     * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
-    * @param Person $value
+    * @param Person|array $value
     * @return $this
     */
     public function directors(?Person $value)
@@ -82,10 +164,26 @@ class Episode extends CreativeWork
         $this->setProperty('directors', $value);
         return $this;
     }
+   /**
+    * @param Person|array $value
+    * @return $this
+    */
+    public function setDirectors(?Person $value)
+    {
+        $this->setProperty('directors', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getDirectors()
+    {
+       return $this->getProperty('directors');
+    }
 
     /**
     * Position of the episode within an ordered group of episodes.
-    * @param string|int $value
+    * @param string|int|array $value
     * @return $this
     */
     public function episodeNumber($value)
@@ -93,10 +191,26 @@ class Episode extends CreativeWork
         $this->setProperty('episodeNumber', $value);
         return $this;
     }
+   /**
+    * @param string|int|array $value
+    * @return $this
+    */
+    public function setEpisodeNumber($value)
+    {
+        $this->setProperty('episodeNumber', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getEpisodeNumber()
+    {
+       return $this->getProperty('episodeNumber');
+    }
 
     /**
     * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
-    * @param Person $value
+    * @param Person|array $value
     * @return $this
     */
     public function director(?Person $value)
@@ -104,10 +218,26 @@ class Episode extends CreativeWork
         $this->setProperty('director', $value);
         return $this;
     }
+   /**
+    * @param Person|array $value
+    * @return $this
+    */
+    public function setDirector(?Person $value)
+    {
+        $this->setProperty('director', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getDirector()
+    {
+       return $this->getProperty('director');
+    }
 
     /**
     * The production company or studio responsible for the item e.g. series, video game, episode etc.
-    * @param Organization $value
+    * @param Organization|array $value
     * @return $this
     */
     public function productionCompany(?Organization $value)
@@ -115,16 +245,48 @@ class Episode extends CreativeWork
         $this->setProperty('productionCompany', $value);
         return $this;
     }
+   /**
+    * @param Organization|array $value
+    * @return $this
+    */
+    public function setProductionCompany(?Organization $value)
+    {
+        $this->setProperty('productionCompany', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getProductionCompany()
+    {
+       return $this->getProperty('productionCompany');
+    }
 
     /**
     * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
-    * @param Person $value
+    * @param Person|array $value
     * @return $this
     */
     public function actors(?Person $value)
     {
         $this->setProperty('actors', $value);
         return $this;
+    }
+   /**
+    * @param Person|array $value
+    * @return $this
+    */
+    public function setActors(?Person $value)
+    {
+        $this->setProperty('actors', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getActors()
+    {
+       return $this->getProperty('actors');
     }
 
 

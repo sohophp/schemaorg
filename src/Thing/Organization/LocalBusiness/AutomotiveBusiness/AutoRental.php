@@ -7,6 +7,8 @@ use Sohophp\SchemaOrg\Thing\Organization\LocalBusiness\AutomotiveBusiness;
 * A car rental business.
 * @see http://schema.org/AutoRental
 * @package Sohophp\SchemaOrg\Thing\Organization\LocalBusiness\AutomotiveBusiness
+
+*
 */
 class AutoRental extends AutomotiveBusiness
 {

@@ -13,6 +13,8 @@ use Sohophp\SchemaOrg\Thing\Organization\Project;
 
 * @see http://schema.org/FundingAgency
 * @package Sohophp\SchemaOrg\Thing\Organization\Project
+
+*
 */
 class FundingAgency extends Project
 {

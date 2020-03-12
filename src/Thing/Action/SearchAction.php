@@ -14,19 +14,37 @@ Related actions:<br/><br/>
 
 * @see http://schema.org/SearchAction
 * @package Sohophp\SchemaOrg\Thing\Action
+
+*
 */
 class SearchAction extends Action
 {
 
     /**
     * A sub property of instrument. The query used on this action.
-    * @param string $value
+    * @param string|array $value
     * @return $this
     */
     public function query(?string $value)
     {
         $this->setProperty('query', $value);
         return $this;
+    }
+   /**
+    * @param string|array $value
+    * @return $this
+    */
+    public function setQuery(?string $value)
+    {
+        $this->setProperty('query', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getQuery()
+    {
+       return $this->getProperty('query');
     }
 
 

@@ -7,6 +7,8 @@ use Sohophp\SchemaOrg\Thing\Place\CivicStructure;
 * A bus stop.
 * @see http://schema.org/BusStop
 * @package Sohophp\SchemaOrg\Thing\Place\CivicStructure
+
+*
 */
 class BusStop extends CivicStructure
 {

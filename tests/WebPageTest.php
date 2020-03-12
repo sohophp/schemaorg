@@ -11,7 +11,7 @@ class WebPageTest extends TestCase
     {
         $WebPage = new WebPage();
 
-        $WebPage->name('one test')->text('one content');
+        $WebPage->setName('one test')->setText('one content');
         $params = $WebPage->toArray();
         /*
         array(3) {

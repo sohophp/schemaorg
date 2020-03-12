@@ -10,13 +10,15 @@ use Sohophp\SchemaOrg\Thing\Intangible\Enumeration;
 * A point value or interval for product characteristics and other purposes.
 * @see http://schema.org/QuantitativeValue
 * @package Sohophp\SchemaOrg\Thing\Intangible\StructuredValue
+
+*
 */
 class QuantitativeValue extends StructuredValue
 {
 
     /**
     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
-    * @param string|string $value
+    * @param string|string|array $value
     * @return $this
     */
     public function unitCode($value)
@@ -24,16 +26,48 @@ class QuantitativeValue extends StructuredValue
         $this->setProperty('unitCode', $value);
         return $this;
     }
+   /**
+    * @param string|string|array $value
+    * @return $this
+    */
+    public function setUnitCode($value)
+    {
+        $this->setProperty('unitCode', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getUnitCode()
+    {
+       return $this->getProperty('unitCode');
+    }
 
     /**
     * The lower value of some characteristic or property.
-    * @param  $value
+    * @param |array $value
     * @return $this
     */
     public function minValue($value)
     {
         $this->setProperty('minValue', $value);
         return $this;
+    }
+   /**
+    * @param |array $value
+    * @return $this
+    */
+    public function setMinValue($value)
+    {
+        $this->setProperty('minValue', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getMinValue()
+    {
+       return $this->getProperty('minValue');
     }
 
     /**
@@ -46,7 +80,7 @@ class QuantitativeValue extends StructuredValue
 <li>Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.</li>
 </ul>
 
-    * @param StructuredValue|string|bool $value
+    * @param StructuredValue|string|bool|array $value
     * @return $this
     */
     public function value($value)
@@ -54,12 +88,28 @@ class QuantitativeValue extends StructuredValue
         $this->setProperty('value', $value);
         return $this;
     }
+   /**
+    * @param StructuredValue|string|bool|array $value
+    * @return $this
+    */
+    public function setValue($value)
+    {
+        $this->setProperty('value', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getValue()
+    {
+       return $this->getProperty('value');
+    }
 
     /**
     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>
 
 Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
-    * @param PropertyValue $value
+    * @param PropertyValue|array $value
     * @return $this
     */
     public function additionalProperty(?PropertyValue $value)
@@ -67,10 +117,26 @@ Note: Publishers should be aware that applications designed to use specific sche
         $this->setProperty('additionalProperty', $value);
         return $this;
     }
+   /**
+    * @param PropertyValue|array $value
+    * @return $this
+    */
+    public function setAdditionalProperty(?PropertyValue $value)
+    {
+        $this->setProperty('additionalProperty', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getAdditionalProperty()
+    {
+       return $this->getProperty('additionalProperty');
+    }
 
     /**
     * A pointer to a secondary value that provides additional information on the original value, e.g. a reference temperature.
-    * @param QuantitativeValue|QualitativeValue|StructuredValue|Enumeration|PropertyValue $value
+    * @param QuantitativeValue|QualitativeValue|StructuredValue|Enumeration|PropertyValue|array $value
     * @return $this
     */
     public function valueReference($value)
@@ -78,10 +144,26 @@ Note: Publishers should be aware that applications designed to use specific sche
         $this->setProperty('valueReference', $value);
         return $this;
     }
+   /**
+    * @param QuantitativeValue|QualitativeValue|StructuredValue|Enumeration|PropertyValue|array $value
+    * @return $this
+    */
+    public function setValueReference($value)
+    {
+        $this->setProperty('valueReference', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getValueReference()
+    {
+       return $this->getProperty('valueReference');
+    }
 
     /**
     * The upper value of some characteristic or property.
-    * @param  $value
+    * @param |array $value
     * @return $this
     */
     public function maxValue($value)
@@ -89,17 +171,49 @@ Note: Publishers should be aware that applications designed to use specific sche
         $this->setProperty('maxValue', $value);
         return $this;
     }
+   /**
+    * @param |array $value
+    * @return $this
+    */
+    public function setMaxValue($value)
+    {
+        $this->setProperty('maxValue', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getMaxValue()
+    {
+       return $this->getProperty('maxValue');
+    }
 
     /**
     * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
 <a href='unitCode'>unitCode</a>.
-    * @param string $value
+    * @param string|array $value
     * @return $this
     */
     public function unitText(?string $value)
     {
         $this->setProperty('unitText', $value);
         return $this;
+    }
+   /**
+    * @param string|array $value
+    * @return $this
+    */
+    public function setUnitText(?string $value)
+    {
+        $this->setProperty('unitText', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getUnitText()
+    {
+       return $this->getProperty('unitText');
     }
 
 

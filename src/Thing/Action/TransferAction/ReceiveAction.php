@@ -19,13 +19,15 @@ Related actions:<br/><br/>
 
 * @see http://schema.org/ReceiveAction
 * @package Sohophp\SchemaOrg\Thing\Action\TransferAction
+
+*
 */
 class ReceiveAction extends TransferAction
 {
 
     /**
     * A sub property of instrument. The method of delivery.
-    * @param DeliveryMethod $value
+    * @param DeliveryMethod|array $value
     * @return $this
     */
     public function deliveryMethod(?DeliveryMethod $value)
@@ -33,16 +35,48 @@ class ReceiveAction extends TransferAction
         $this->setProperty('deliveryMethod', $value);
         return $this;
     }
+   /**
+    * @param DeliveryMethod|array $value
+    * @return $this
+    */
+    public function setDeliveryMethod(?DeliveryMethod $value)
+    {
+        $this->setProperty('deliveryMethod', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getDeliveryMethod()
+    {
+       return $this->getProperty('deliveryMethod');
+    }
 
     /**
     * A sub property of participant. The participant who is at the sending end of the action.
-    * @param Audience|Person|Organization $value
+    * @param Audience|Person|Organization|array $value
     * @return $this
     */
     public function sender($value)
     {
         $this->setProperty('sender', $value);
         return $this;
+    }
+   /**
+    * @param Audience|Person|Organization|array $value
+    * @return $this
+    */
+    public function setSender($value)
+    {
+        $this->setProperty('sender', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getSender()
+    {
+       return $this->getProperty('sender');
     }
 
 

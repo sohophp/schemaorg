@@ -2,13 +2,13 @@
 
 schema.org PHP library
 
-
+@since v1.5.0 2020/03/12  加入 set 和 get 方法
 
 ### 
 
-2019/08/13 updated 3.9  ,  800 classes
+@since 2019/08/13 updated 3.9  ,  800 classes
 
-##特点:
+## 特点:
 
 支持自动生成类目PHP类文件,现schema.org版本v3.4有598个类,877个属性,136个其它
 

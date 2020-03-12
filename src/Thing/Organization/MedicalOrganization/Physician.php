@@ -12,13 +12,15 @@ use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\Specialty\MedicalSpecialty;
 * A doctor's office.
 * @see http://schema.org/Physician
 * @package Sohophp\SchemaOrg\Thing\Organization\MedicalOrganization
+
+*
 */
 class Physician extends MedicalOrganization
 {
 
     /**
     * A medical service available from this provider.
-    * @param MedicalTest|MedicalProcedure|MedicalTherapy $value
+    * @param MedicalTest|MedicalProcedure|MedicalTherapy|array $value
     * @return $this
     */
     public function availableService($value)
@@ -26,10 +28,26 @@ class Physician extends MedicalOrganization
         $this->setProperty('availableService', $value);
         return $this;
     }
+   /**
+    * @param MedicalTest|MedicalProcedure|MedicalTherapy|array $value
+    * @return $this
+    */
+    public function setAvailableService($value)
+    {
+        $this->setProperty('availableService', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getAvailableService()
+    {
+       return $this->getProperty('availableService');
+    }
 
     /**
     * A hospital with which the physician or office is affiliated.
-    * @param Hospital $value
+    * @param Hospital|array $value
     * @return $this
     */
     public function hospitalAffiliation(?Hospital $value)
@@ -37,16 +55,48 @@ class Physician extends MedicalOrganization
         $this->setProperty('hospitalAffiliation', $value);
         return $this;
     }
+   /**
+    * @param Hospital|array $value
+    * @return $this
+    */
+    public function setHospitalAffiliation(?Hospital $value)
+    {
+        $this->setProperty('hospitalAffiliation', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getHospitalAffiliation()
+    {
+       return $this->getProperty('hospitalAffiliation');
+    }
 
     /**
     * A medical specialty of the provider.
-    * @param MedicalSpecialty $value
+    * @param MedicalSpecialty|array $value
     * @return $this
     */
     public function medicalSpecialty(?MedicalSpecialty $value)
     {
         $this->setProperty('medicalSpecialty', $value);
         return $this;
+    }
+   /**
+    * @param MedicalSpecialty|array $value
+    * @return $this
+    */
+    public function setMedicalSpecialty(?MedicalSpecialty $value)
+    {
+        $this->setProperty('medicalSpecialty', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getMedicalSpecialty()
+    {
+       return $this->getProperty('medicalSpecialty');
     }
 
 

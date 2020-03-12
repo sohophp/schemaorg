@@ -12,6 +12,8 @@ An <a class="localLink" href="http://schema.org/EndorsementRating">EndorsementRa
 endorsement rating is particularly useful in the absence of numeric scales as it helps consumers understand that the rating is broadly positive.
 * @see http://schema.org/EndorsementRating
 * @package Sohophp\SchemaOrg\Thing\Intangible\Rating
+
+*
 */
 class EndorsementRating extends Rating
 {

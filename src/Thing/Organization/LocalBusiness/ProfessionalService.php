@@ -11,6 +11,8 @@ The general <a class="localLink" href="http://schema.org/ProfessionalService">Pr
         <a class="localLink" href="http://schema.org/HousePainter">HousePainter</a>, <a class="localLink" href="http://schema.org/Locksmith">Locksmith</a>, <a class="localLink" href="http://schema.org/Plumber">Plumber</a>, <a class="localLink" href="http://schema.org/RoofingContractor">RoofingContractor</a>. <a class="localLink" href="http://schema.org/LegalService">LegalService</a> was introduced as a more inclusive supertype of <a class="localLink" href="http://schema.org/Attorney">Attorney</a>.
 * @see http://schema.org/ProfessionalService
 * @package Sohophp\SchemaOrg\Thing\Organization\LocalBusiness
+
+*
 */
 class ProfessionalService extends LocalBusiness
 {

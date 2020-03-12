@@ -15,19 +15,37 @@ Related actions:<br/><br/>
 
 * @see http://schema.org/AskAction
 * @package Sohophp\SchemaOrg\Thing\Action\InteractAction\CommunicateAction
+
+*
 */
 class AskAction extends CommunicateAction
 {
 
     /**
     * A sub property of object. A question.
-    * @param Question $value
+    * @param Question|array $value
     * @return $this
     */
     public function question(?Question $value)
     {
         $this->setProperty('question', $value);
         return $this;
+    }
+   /**
+    * @param Question|array $value
+    * @return $this
+    */
+    public function setQuestion(?Question $value)
+    {
+        $this->setProperty('question', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getQuestion()
+    {
+       return $this->getProperty('question');
     }
 
 

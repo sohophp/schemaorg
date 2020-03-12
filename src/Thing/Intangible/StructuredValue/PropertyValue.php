@@ -12,13 +12,15 @@ use Sohophp\SchemaOrg\Thing\Intangible\Enumeration;
 Always use specific schema.org properties when a) they exist and b) you can populate them. Using PropertyValue as a substitute will typically not trigger the same effect as using the original, specific property.
 * @see http://schema.org/PropertyValue
 * @package Sohophp\SchemaOrg\Thing\Intangible\StructuredValue
+
+*
 */
 class PropertyValue extends StructuredValue
 {
 
     /**
     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
-    * @param string|string $value
+    * @param string|string|array $value
     * @return $this
     */
     public function unitCode($value)
@@ -26,10 +28,26 @@ class PropertyValue extends StructuredValue
         $this->setProperty('unitCode', $value);
         return $this;
     }
+   /**
+    * @param string|string|array $value
+    * @return $this
+    */
+    public function setUnitCode($value)
+    {
+        $this->setProperty('unitCode', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getUnitCode()
+    {
+       return $this->getProperty('unitCode');
+    }
 
     /**
     * The lower value of some characteristic or property.
-    * @param  $value
+    * @param |array $value
     * @return $this
     */
     public function minValue($value)
@@ -37,19 +55,51 @@ class PropertyValue extends StructuredValue
         $this->setProperty('minValue', $value);
         return $this;
     }
+   /**
+    * @param |array $value
+    * @return $this
+    */
+    public function setMinValue($value)
+    {
+        $this->setProperty('minValue', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getMinValue()
+    {
+       return $this->getProperty('minValue');
+    }
 
     /**
     * A commonly used identifier for the characteristic represented by the property, e.g. a manufacturer or a standard code for a property. propertyID can be
 (1) a prefixed string, mainly meant to be used with standards for product properties; (2) a site-specific, non-prefixed string (e.g. the primary key of the property or the vendor-specific id of the property), or (3)
 a URL indicating the type of the property, either pointing to an external vocabulary, or a Web resource that describes the property (e.g. a glossary entry).
 Standards bodies should promote a standard prefix for the identifiers of properties from their standards.
-    * @param string|string $value
+    * @param string|string|array $value
     * @return $this
     */
     public function propertyID($value)
     {
         $this->setProperty('propertyID', $value);
         return $this;
+    }
+   /**
+    * @param string|string|array $value
+    * @return $this
+    */
+    public function setPropertyID($value)
+    {
+        $this->setProperty('propertyID', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getPropertyID()
+    {
+       return $this->getProperty('propertyID');
     }
 
     /**
@@ -62,7 +112,7 @@ Standards bodies should promote a standard prefix for the identifiers of propert
 <li>Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.</li>
 </ul>
 
-    * @param StructuredValue|string|bool $value
+    * @param StructuredValue|string|bool|array $value
     * @return $this
     */
     public function value($value)
@@ -70,10 +120,26 @@ Standards bodies should promote a standard prefix for the identifiers of propert
         $this->setProperty('value', $value);
         return $this;
     }
+   /**
+    * @param StructuredValue|string|bool|array $value
+    * @return $this
+    */
+    public function setValue($value)
+    {
+        $this->setProperty('value', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getValue()
+    {
+       return $this->getProperty('value');
+    }
 
     /**
     * A pointer to a secondary value that provides additional information on the original value, e.g. a reference temperature.
-    * @param QuantitativeValue|QualitativeValue|StructuredValue|Enumeration|PropertyValue $value
+    * @param QuantitativeValue|QualitativeValue|StructuredValue|Enumeration|PropertyValue|array $value
     * @return $this
     */
     public function valueReference($value)
@@ -81,10 +147,26 @@ Standards bodies should promote a standard prefix for the identifiers of propert
         $this->setProperty('valueReference', $value);
         return $this;
     }
+   /**
+    * @param QuantitativeValue|QualitativeValue|StructuredValue|Enumeration|PropertyValue|array $value
+    * @return $this
+    */
+    public function setValueReference($value)
+    {
+        $this->setProperty('valueReference', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getValueReference()
+    {
+       return $this->getProperty('valueReference');
+    }
 
     /**
     * The upper value of some characteristic or property.
-    * @param  $value
+    * @param |array $value
     * @return $this
     */
     public function maxValue($value)
@@ -92,17 +174,49 @@ Standards bodies should promote a standard prefix for the identifiers of propert
         $this->setProperty('maxValue', $value);
         return $this;
     }
+   /**
+    * @param |array $value
+    * @return $this
+    */
+    public function setMaxValue($value)
+    {
+        $this->setProperty('maxValue', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getMaxValue()
+    {
+       return $this->getProperty('maxValue');
+    }
 
     /**
     * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
 <a href='unitCode'>unitCode</a>.
-    * @param string $value
+    * @param string|array $value
     * @return $this
     */
     public function unitText(?string $value)
     {
         $this->setProperty('unitText', $value);
         return $this;
+    }
+   /**
+    * @param string|array $value
+    * @return $this
+    */
+    public function setUnitText(?string $value)
+    {
+        $this->setProperty('unitText', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getUnitText()
+    {
+       return $this->getProperty('unitText');
     }
 
     /**
@@ -114,13 +228,29 @@ For example, if <a class="localLink" href="http://schema.org/variableMeasured">v
 If the <a class="localLink" href="http://schema.org/variableMeasured">variableMeasured</a> is "depression rating", the <a class="localLink" href="http://schema.org/measurementTechnique">measurementTechnique</a> could be "Zung Scale" or "HAM-D" or "Beck Depression Inventory".<br/><br/>
 
 If there are several <a class="localLink" href="http://schema.org/variableMeasured">variableMeasured</a> properties recorded for some given data object, use a <a class="localLink" href="http://schema.org/PropertyValue">PropertyValue</a> for each <a class="localLink" href="http://schema.org/variableMeasured">variableMeasured</a> and attach the corresponding <a class="localLink" href="http://schema.org/measurementTechnique">measurementTechnique</a>.
-    * @param string|string $value
+    * @param string|string|array $value
     * @return $this
     */
     public function measurementTechnique($value)
     {
         $this->setProperty('measurementTechnique', $value);
         return $this;
+    }
+   /**
+    * @param string|string|array $value
+    * @return $this
+    */
+    public function setMeasurementTechnique($value)
+    {
+        $this->setProperty('measurementTechnique', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getMeasurementTechnique()
+    {
+       return $this->getProperty('measurementTechnique');
     }
 
 

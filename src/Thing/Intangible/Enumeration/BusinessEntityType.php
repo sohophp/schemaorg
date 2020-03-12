@@ -17,6 +17,8 @@ Commonly used values:<br/><br/>
 
 * @see http://schema.org/BusinessEntityType
 * @package Sohophp\SchemaOrg\Thing\Intangible\Enumeration
+
+*
 */
 class BusinessEntityType extends Enumeration
 {

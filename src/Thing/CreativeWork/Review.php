@@ -9,13 +9,15 @@ use Sohophp\SchemaOrg\Thing\Intangible\Rating;
 * A review of an item - for example, of a restaurant, movie, or store.
 * @see http://schema.org/Review
 * @package Sohophp\SchemaOrg\Thing\CreativeWork
+
+*
 */
 class Review extends CreativeWork
 {
 
     /**
     * The item that is being reviewed/rated.
-    * @param Thing $value
+    * @param Thing|array $value
     * @return $this
     */
     public function itemReviewed(?Thing $value)
@@ -23,10 +25,26 @@ class Review extends CreativeWork
         $this->setProperty('itemReviewed', $value);
         return $this;
     }
+   /**
+    * @param Thing|array $value
+    * @return $this
+    */
+    public function setItemReviewed(?Thing $value)
+    {
+        $this->setProperty('itemReviewed', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getItemReviewed()
+    {
+       return $this->getProperty('itemReviewed');
+    }
 
     /**
     * The rating given in this review. Note that reviews can themselves be rated. The <code>reviewRating</code> applies to rating given by the review. The <a class="localLink" href="http://schema.org/aggregateRating">aggregateRating</a> property applies to the review itself, as a creative work.
-    * @param Rating $value
+    * @param Rating|array $value
     * @return $this
     */
     public function reviewRating(?Rating $value)
@@ -34,10 +52,26 @@ class Review extends CreativeWork
         $this->setProperty('reviewRating', $value);
         return $this;
     }
+   /**
+    * @param Rating|array $value
+    * @return $this
+    */
+    public function setReviewRating(?Rating $value)
+    {
+        $this->setProperty('reviewRating', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getReviewRating()
+    {
+       return $this->getProperty('reviewRating');
+    }
 
     /**
     * The actual body of the review.
-    * @param string $value
+    * @param string|array $value
     * @return $this
     */
     public function reviewBody(?string $value)
@@ -45,16 +79,48 @@ class Review extends CreativeWork
         $this->setProperty('reviewBody', $value);
         return $this;
     }
+   /**
+    * @param string|array $value
+    * @return $this
+    */
+    public function setReviewBody(?string $value)
+    {
+        $this->setProperty('reviewBody', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getReviewBody()
+    {
+       return $this->getProperty('reviewBody');
+    }
 
     /**
     * This Review or Rating is relevant to this part or facet of the itemReviewed.
-    * @param string $value
+    * @param string|array $value
     * @return $this
     */
     public function reviewAspect(?string $value)
     {
         $this->setProperty('reviewAspect', $value);
         return $this;
+    }
+   /**
+    * @param string|array $value
+    * @return $this
+    */
+    public function setReviewAspect(?string $value)
+    {
+        $this->setProperty('reviewAspect', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getReviewAspect()
+    {
+       return $this->getProperty('reviewAspect');
     }
 
 

@@ -10,6 +10,8 @@ The properties <a class="localLink" href="http://schema.org/numConstraints">numC
 population, and does not imply that the population consists of people. For example, a <a class="localLink" href="http://schema.org/populationType">populationType</a> of <a class="localLink" href="http://schema.org/Event">Event</a> or <a class="localLink" href="http://schema.org/NewsArticle">NewsArticle</a> could be used. See also <a class="localLink" href="http://schema.org/Observation">Observation</a>, and the <a href="/docs/data-and-datasets.html">data and datasets</a> overview for more details.
 * @see http://schema.org/StatisticalPopulation
 * @package Sohophp\SchemaOrg\Thing\Intangible
+
+*
 */
 class StatisticalPopulation extends Intangible
 {
@@ -17,7 +19,7 @@ class StatisticalPopulation extends Intangible
     /**
     * Indicates a property used as a constraint to define a <a class="localLink" href="http://schema.org/StatisticalPopulation">StatisticalPopulation</a> with respect to the set of entities
   corresponding to an indicated type (via <a class="localLink" href="http://schema.org/populationType">populationType</a>).
-    * @param int $value
+    * @param int|array $value
     * @return $this
     */
     public function constrainingProperty(?int $value)
@@ -25,10 +27,26 @@ class StatisticalPopulation extends Intangible
         $this->setProperty('constrainingProperty', $value);
         return $this;
     }
+   /**
+    * @param int|array $value
+    * @return $this
+    */
+    public function setConstrainingProperty(?int $value)
+    {
+        $this->setProperty('constrainingProperty', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getConstrainingProperty()
+    {
+       return $this->getProperty('constrainingProperty');
+    }
 
     /**
     * Indicates the number of constraints (not counting <a class="localLink" href="http://schema.org/populationType">populationType</a>) defined for a particular <a class="localLink" href="http://schema.org/StatisticalPopulation">StatisticalPopulation</a>. This helps applications understand if they have access to a sufficiently complete description of a <a class="localLink" href="http://schema.org/StatisticalPopulation">StatisticalPopulation</a>.
-    * @param int $value
+    * @param int|array $value
     * @return $this
     */
     public function numConstraints(?int $value)
@@ -36,16 +54,48 @@ class StatisticalPopulation extends Intangible
         $this->setProperty('numConstraints', $value);
         return $this;
     }
+   /**
+    * @param int|array $value
+    * @return $this
+    */
+    public function setNumConstraints(?int $value)
+    {
+        $this->setProperty('numConstraints', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getNumConstraints()
+    {
+       return $this->getProperty('numConstraints');
+    }
 
     /**
     * Indicates the populationType common to all members of a <a class="localLink" href="http://schema.org/StatisticalPopulation">StatisticalPopulation</a>.
-    * @param Class $value
+    * @param Class|array $value
     * @return $this
     */
     public function populationType(?Class $value)
     {
         $this->setProperty('populationType', $value);
         return $this;
+    }
+   /**
+    * @param Class|array $value
+    * @return $this
+    */
+    public function setPopulationType(?Class $value)
+    {
+        $this->setProperty('populationType', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getPopulationType()
+    {
+       return $this->getProperty('populationType');
     }
 
 

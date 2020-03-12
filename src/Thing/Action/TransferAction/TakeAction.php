@@ -15,6 +15,8 @@ Related actions:<br/><br/>
 
 * @see http://schema.org/TakeAction
 * @package Sohophp\SchemaOrg\Thing\Action\TransferAction
+
+*
 */
 class TakeAction extends TransferAction
 {

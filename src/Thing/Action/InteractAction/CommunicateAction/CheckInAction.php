@@ -16,6 +16,8 @@ Related actions:<br/><br/>
 
 * @see http://schema.org/CheckInAction
 * @package Sohophp\SchemaOrg\Thing\Action\InteractAction\CommunicateAction
+
+*
 */
 class CheckInAction extends CommunicateAction
 {

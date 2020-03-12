@@ -15,13 +15,15 @@ Grants support  activities directed towards some agreed collective goals, often 
 The amount of a <a class="localLink" href="http://schema.org/Grant">Grant</a> is represented using <a class="localLink" href="http://schema.org/amount">amount</a> as a <a class="localLink" href="http://schema.org/MonetaryAmount">MonetaryAmount</a>.
 * @see http://schema.org/Grant
 * @package Sohophp\SchemaOrg\Thing\Intangible
+
+*
 */
 class Grant extends Intangible
 {
 
     /**
     * Indicates an item funded or sponsored through a <a class="localLink" href="http://schema.org/Grant">Grant</a>.
-    * @param Thing $value
+    * @param Thing|array $value
     * @return $this
     */
     public function fundedItem(?Thing $value)
@@ -29,16 +31,48 @@ class Grant extends Intangible
         $this->setProperty('fundedItem', $value);
         return $this;
     }
+   /**
+    * @param Thing|array $value
+    * @return $this
+    */
+    public function setFundedItem(?Thing $value)
+    {
+        $this->setProperty('fundedItem', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getFundedItem()
+    {
+       return $this->getProperty('fundedItem');
+    }
 
     /**
     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
-    * @param Person|Organization $value
+    * @param Person|Organization|array $value
     * @return $this
     */
     public function sponsor($value)
     {
         $this->setProperty('sponsor', $value);
         return $this;
+    }
+   /**
+    * @param Person|Organization|array $value
+    * @return $this
+    */
+    public function setSponsor($value)
+    {
+        $this->setProperty('sponsor', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getSponsor()
+    {
+       return $this->getProperty('sponsor');
     }
 
 

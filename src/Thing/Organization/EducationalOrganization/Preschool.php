@@ -7,6 +7,8 @@ use Sohophp\SchemaOrg\Thing\Organization\EducationalOrganization;
 * A preschool.
 * @see http://schema.org/Preschool
 * @package Sohophp\SchemaOrg\Thing\Organization\EducationalOrganization
+
+*
 */
 class Preschool extends EducationalOrganization
 {

@@ -7,6 +7,8 @@ use Sohophp\SchemaOrg\Thing\Intangible\BroadcastChannel\RadioChannel;
 * A radio channel that uses AM.
 * @see http://schema.org/AMRadioChannel
 * @package Sohophp\SchemaOrg\Thing\Intangible\BroadcastChannel\RadioChannel
+
+*
 */
 class AMRadioChannel extends RadioChannel
 {

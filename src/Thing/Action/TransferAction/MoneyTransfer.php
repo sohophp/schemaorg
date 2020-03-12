@@ -9,13 +9,15 @@ use Sohophp\SchemaOrg\Thing\Organization\LocalBusiness\FinancialService\BankOrCr
 * The act of transferring money from one place to another place. This may occur electronically or physically.
 * @see http://schema.org/MoneyTransfer
 * @package Sohophp\SchemaOrg\Thing\Action\TransferAction
+
+*
 */
 class MoneyTransfer extends TransferAction
 {
 
     /**
     * The amount of money.
-    * @param MonetaryAmount $value
+    * @param MonetaryAmount|array $value
     * @return $this
     */
     public function amount(?MonetaryAmount $value)
@@ -23,16 +25,48 @@ class MoneyTransfer extends TransferAction
         $this->setProperty('amount', $value);
         return $this;
     }
+   /**
+    * @param MonetaryAmount|array $value
+    * @return $this
+    */
+    public function setAmount(?MonetaryAmount $value)
+    {
+        $this->setProperty('amount', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getAmount()
+    {
+       return $this->getProperty('amount');
+    }
 
     /**
     * A bank or bank’s branch, financial institution or international financial institution operating the beneficiary’s bank account or releasing funds for the beneficiary
-    * @param BankOrCreditUnion|string $value
+    * @param BankOrCreditUnion|string|array $value
     * @return $this
     */
     public function beneficiaryBank($value)
     {
         $this->setProperty('beneficiaryBank', $value);
         return $this;
+    }
+   /**
+    * @param BankOrCreditUnion|string|array $value
+    * @return $this
+    */
+    public function setBeneficiaryBank($value)
+    {
+        $this->setProperty('beneficiaryBank', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getBeneficiaryBank()
+    {
+       return $this->getProperty('beneficiaryBank');
     }
 
 

@@ -8,13 +8,15 @@ use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\PriceSpecification;
 * The act of participating in an exchange of goods and services for monetary compensation. An agent trades an object, product or service with a participant in exchange for a one time or periodic payment.
 * @see http://schema.org/TradeAction
 * @package Sohophp\SchemaOrg\Thing\Action
+
+*
 */
 class TradeAction extends Action
 {
 
     /**
     * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
-    * @param PriceSpecification $value
+    * @param PriceSpecification|array $value
     * @return $this
     */
     public function priceSpecification(?PriceSpecification $value)
@@ -22,18 +24,50 @@ class TradeAction extends Action
         $this->setProperty('priceSpecification', $value);
         return $this;
     }
+   /**
+    * @param PriceSpecification|array $value
+    * @return $this
+    */
+    public function setPriceSpecification(?PriceSpecification $value)
+    {
+        $this->setProperty('priceSpecification', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getPriceSpecification()
+    {
+       return $this->getProperty('priceSpecification');
+    }
 
     /**
     * The currency of the price, or a price component when attached to <a class="localLink" href="http://schema.org/PriceSpecification">PriceSpecification</a> and its subtypes.<br/><br/>
 
 Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 currency format</a> e.g. "USD"; <a href="https://en.wikipedia.org/wiki/List_of_cryptocurrencies">Ticker symbol</a> for cryptocurrencies e.g. "BTC"; well known names for <a href="https://en.wikipedia.org/wiki/Local_exchange_trading_system">Local Exchange Tradings Systems</a> (LETS) and other currency types e.g. "Ithaca HOUR".
-    * @param string $value
+    * @param string|array $value
     * @return $this
     */
     public function priceCurrency(?string $value)
     {
         $this->setProperty('priceCurrency', $value);
         return $this;
+    }
+   /**
+    * @param string|array $value
+    * @return $this
+    */
+    public function setPriceCurrency(?string $value)
+    {
+        $this->setProperty('priceCurrency', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getPriceCurrency()
+    {
+       return $this->getProperty('priceCurrency');
     }
 
     /**
@@ -48,13 +82,29 @@ Usage guidelines:<br/><br/>
 <li>Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.</li>
 </ul>
 
-    * @param string $value
+    * @param string|array $value
     * @return $this
     */
     public function price(?string $value)
     {
         $this->setProperty('price', $value);
         return $this;
+    }
+   /**
+    * @param string|array $value
+    * @return $this
+    */
+    public function setPrice(?string $value)
+    {
+        $this->setProperty('price', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getPrice()
+    {
+       return $this->getProperty('price');
     }
 
 

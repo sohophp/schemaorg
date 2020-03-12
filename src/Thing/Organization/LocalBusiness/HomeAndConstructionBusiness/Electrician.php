@@ -7,6 +7,8 @@ use Sohophp\SchemaOrg\Thing\Organization\LocalBusiness\HomeAndConstructionBusine
 * An electrician.
 * @see http://schema.org/Electrician
 * @package Sohophp\SchemaOrg\Thing\Organization\LocalBusiness\HomeAndConstructionBusiness
+
+*
 */
 class Electrician extends HomeAndConstructionBusiness
 {

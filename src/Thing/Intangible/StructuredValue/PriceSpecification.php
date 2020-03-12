@@ -8,13 +8,15 @@ use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\QuantitativeValue;
 * A structured value representing a price or price range. Typically, only the subclasses of this type are used for markup. It is recommended to use <a class="localLink" href="http://schema.org/MonetaryAmount">MonetaryAmount</a> to describe independent amounts of money such as a salary, credit card limits, etc.
 * @see http://schema.org/PriceSpecification
 * @package Sohophp\SchemaOrg\Thing\Intangible\StructuredValue
+
+*
 */
 class PriceSpecification extends StructuredValue
 {
 
     /**
     * The lowest price if the price is a range.
-    * @param  $value
+    * @param |array $value
     * @return $this
     */
     public function minPrice($value)
@@ -22,10 +24,26 @@ class PriceSpecification extends StructuredValue
         $this->setProperty('minPrice', $value);
         return $this;
     }
+   /**
+    * @param |array $value
+    * @return $this
+    */
+    public function setMinPrice($value)
+    {
+        $this->setProperty('minPrice', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getMinPrice()
+    {
+       return $this->getProperty('minPrice');
+    }
 
     /**
     * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
-    * @param PriceSpecification $value
+    * @param PriceSpecification|array $value
     * @return $this
     */
     public function eligibleTransactionVolume(?PriceSpecification $value)
@@ -33,10 +51,26 @@ class PriceSpecification extends StructuredValue
         $this->setProperty('eligibleTransactionVolume', $value);
         return $this;
     }
+   /**
+    * @param PriceSpecification|array $value
+    * @return $this
+    */
+    public function setEligibleTransactionVolume(?PriceSpecification $value)
+    {
+        $this->setProperty('eligibleTransactionVolume', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getEligibleTransactionVolume()
+    {
+       return $this->getProperty('eligibleTransactionVolume');
+    }
 
     /**
     * The highest price if the price is a range.
-    * @param  $value
+    * @param |array $value
     * @return $this
     */
     public function maxPrice($value)
@@ -44,12 +78,28 @@ class PriceSpecification extends StructuredValue
         $this->setProperty('maxPrice', $value);
         return $this;
     }
+   /**
+    * @param |array $value
+    * @return $this
+    */
+    public function setMaxPrice($value)
+    {
+        $this->setProperty('maxPrice', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getMaxPrice()
+    {
+       return $this->getProperty('maxPrice');
+    }
 
     /**
     * The currency of the price, or a price component when attached to <a class="localLink" href="http://schema.org/PriceSpecification">PriceSpecification</a> and its subtypes.<br/><br/>
 
 Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 currency format</a> e.g. "USD"; <a href="https://en.wikipedia.org/wiki/List_of_cryptocurrencies">Ticker symbol</a> for cryptocurrencies e.g. "BTC"; well known names for <a href="https://en.wikipedia.org/wiki/Local_exchange_trading_system">Local Exchange Tradings Systems</a> (LETS) and other currency types e.g. "Ithaca HOUR".
-    * @param string $value
+    * @param string|array $value
     * @return $this
     */
     public function priceCurrency(?string $value)
@@ -57,10 +107,26 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
         $this->setProperty('priceCurrency', $value);
         return $this;
     }
+   /**
+    * @param string|array $value
+    * @return $this
+    */
+    public function setPriceCurrency(?string $value)
+    {
+        $this->setProperty('priceCurrency', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getPriceCurrency()
+    {
+       return $this->getProperty('priceCurrency');
+    }
 
     /**
     * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
-    * @param QuantitativeValue $value
+    * @param QuantitativeValue|array $value
     * @return $this
     */
     public function eligibleQuantity(?QuantitativeValue $value)
@@ -68,10 +134,26 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
         $this->setProperty('eligibleQuantity', $value);
         return $this;
     }
+   /**
+    * @param QuantitativeValue|array $value
+    * @return $this
+    */
+    public function setEligibleQuantity(?QuantitativeValue $value)
+    {
+        $this->setProperty('eligibleQuantity', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getEligibleQuantity()
+    {
+       return $this->getProperty('eligibleQuantity');
+    }
 
     /**
     * The date when the item becomes valid.
-    * @param  $value
+    * @param |array $value
     * @return $this
     */
     public function validFrom($value)
@@ -79,16 +161,48 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
         $this->setProperty('validFrom', $value);
         return $this;
     }
+   /**
+    * @param |array $value
+    * @return $this
+    */
+    public function setValidFrom($value)
+    {
+        $this->setProperty('validFrom', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getValidFrom()
+    {
+       return $this->getProperty('validFrom');
+    }
 
     /**
     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
-    * @param  $value
+    * @param |array $value
     * @return $this
     */
     public function validThrough($value)
     {
         $this->setProperty('validThrough', $value);
         return $this;
+    }
+   /**
+    * @param |array $value
+    * @return $this
+    */
+    public function setValidThrough($value)
+    {
+        $this->setProperty('validThrough', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getValidThrough()
+    {
+       return $this->getProperty('validThrough');
     }
 
     /**
@@ -103,7 +217,7 @@ Usage guidelines:<br/><br/>
 <li>Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.</li>
 </ul>
 
-    * @param string $value
+    * @param string|array $value
     * @return $this
     */
     public function price(?string $value)
@@ -111,16 +225,48 @@ Usage guidelines:<br/><br/>
         $this->setProperty('price', $value);
         return $this;
     }
+   /**
+    * @param string|array $value
+    * @return $this
+    */
+    public function setPrice(?string $value)
+    {
+        $this->setProperty('price', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getPrice()
+    {
+       return $this->getProperty('price');
+    }
 
     /**
     * Specifies whether the applicable value-added tax (VAT) is included in the price specification or not.
-    * @param bool $value
+    * @param bool|array $value
     * @return $this
     */
     public function valueAddedTaxIncluded(?bool $value)
     {
         $this->setProperty('valueAddedTaxIncluded', $value);
         return $this;
+    }
+   /**
+    * @param bool|array $value
+    * @return $this
+    */
+    public function setValueAddedTaxIncluded(?bool $value)
+    {
+        $this->setProperty('valueAddedTaxIncluded', $value);
+        return $this;
+    }
+    /**
+    * @return $this|string|array
+    */
+    public function getValueAddedTaxIncluded()
+    {
+       return $this->getProperty('valueAddedTaxIncluded');
     }
 
 
