@@ -54,15 +54,3 @@ echo $script;
 }
 &lt;/script&gt;
 </pre>
-
-##博客网址
-
-https://sohophp.com/post/read/7
-
-##官方网址:
-
-https://schema.org
-
-##中文网址:
-
-https://schema.org.cn
