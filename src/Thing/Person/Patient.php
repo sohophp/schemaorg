@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php
 namespace Sohophp\SchemaOrg\Thing\Person;
 
 use Sohophp\SchemaOrg\Thing\Person;

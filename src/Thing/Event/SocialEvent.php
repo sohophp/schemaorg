@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php
 namespace Sohophp\SchemaOrg\Thing\Event;
 
 use Sohophp\SchemaOrg\Thing\Event;

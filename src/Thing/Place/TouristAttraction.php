@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php
 namespace Sohophp\SchemaOrg\Thing\Place;
 
 use Sohophp\SchemaOrg\Thing\Place;

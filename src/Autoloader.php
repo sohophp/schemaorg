@@ -8,7 +8,7 @@ namespace Sohophp\SchemaOrg;
  */
 class Autoloader
 {
-    public static function register()
+    public static function register(): bool
     {
         if (function_exists('__autoload')) {
             spl_autoload_register('__autoload');

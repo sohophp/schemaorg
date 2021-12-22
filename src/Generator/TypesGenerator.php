@@ -7,8 +7,12 @@ use PhpCsFixer\Differ\NullDiffer;
 use PhpCsFixer\Error\ErrorsManager;
 use PhpCsFixer\FixerFactory;
 use PhpCsFixer\Linter\Linter;
-use PhpCsFixer\RuleSet;
+use PhpCsFixer\RuleSet\RuleSet;
 use PhpCsFixer\Runner\Runner;
+use Twig\Environment;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Error\SyntaxError;
 
 class TypesGenerator
 {
@@ -21,7 +25,7 @@ class TypesGenerator
      */
     private $parser;
     /**
-     * @var \Twig_Environment
+     * @var
      */
     private $twig;
 
@@ -29,10 +33,10 @@ class TypesGenerator
      * TypesGenerator constructor.
      * @param Configure $configure
      * @param Parser $parser
-     * @param \Twig_Environment $twig
+     * @param Environment $twig
      * @param Logger $Logger
      */
-    public function __construct(Configure $configure, Parser $parser, \Twig_Environment $twig, Logger $Logger)
+    public function __construct(Configure $configure, Parser $parser, Environment $twig, Logger $Logger)
     {
         $this->configure = $configure;
         $this->parser = $parser;
@@ -42,12 +46,12 @@ class TypesGenerator
 
     /**
      * @return array
-     * @throws \Twig_Error_Loader
-     * @throws \Twig_Error_Runtime
-     * @throws \Twig_Error_Syntax
+     * @throws LoaderError
+     * @throws RuntimeError
+     * @throws SyntaxError
      * @throws \Exception
      */
-    public function generate()
+    public function generate(): array
     {
         $classFiles = [];
         $entitiesMap = [];
@@ -112,7 +116,10 @@ class TypesGenerator
                 }
 
                 //rangeString可能有null
-                $range = array_filter(array_map('trim', $range));
+                $range = array_filter(array_map(function ($var) {
+                    return trim((string)$var);
+                }, $range));
+
                 $class['properties'][] = [
                     'name' => $property->getName(),
                     'annotations' => [$property->getComment()],
@@ -143,6 +150,17 @@ class TypesGenerator
             ];
         }
 
+        /**
+         * @since 2021/12/23  不使用别名快捷方式了
+         */
+
+        // $this->generateEntities($entitiesMap);
+
+        return $classFiles;
+    }
+
+    public function generateEntities(array $entitiesMap)
+    {
         $entitiesMapFile = $this->configure->getBaseDir() . DIRECTORY_SEPARATOR . 'Entities.php';
 
         file_put_contents(
@@ -159,7 +177,6 @@ class TypesGenerator
         if ($this->configure->getFixCs()) {
             $this->fixCs($classFiles);
         }
-        return $classFiles;
     }
 
     public function itemToDir(ParserItem $item): string
@@ -168,37 +185,24 @@ class TypesGenerator
             return $this->configure->getBaseDir()
                 . DIRECTORY_SEPARATOR
                 . implode(DIRECTORY_SEPARATOR, $item->getPath());
-        } else {
-            return $this->configure->getBaseDir();
         }
+        return $this->configure->getBaseDir();
     }
 
     /**
      * @param $item ParserItem
      * @return string|null
      */
-    public function rangeString($item): ?string
+    public function rangeString(ParserItem $item): ?string
     {
-        switch ($item->getName()) {
-            case 'Boolean':
-                return 'bool';
-            case 'Float':
-                return 'float';
-            case 'Integer':
-                return 'int';
-            case 'Text':
-            case 'URL':
-                return 'string';
-            case 'Date':
-            case 'DateTime':
-            case 'Time':
-                //return '\\' . \DateTimeInterface::class;
-            case 'DataType':
-            case 'Number':
-                return null;
-            default:
-                return null;
-        }
+        return match ($item->getName()) {
+            'Boolean' => 'bool',
+            'Float' => 'float',
+            'Integer' => 'int',
+            'Text', 'URL' => 'string',
+            'Date', 'DateTime', 'Time', 'DataType', 'Number' => null,
+            default => null,
+        };
     }
 
     public function fullNamespace($namespace): string
@@ -218,10 +222,10 @@ class TypesGenerator
         foreach ($files as $file) {
             $fileInfos[] = new \SplFileInfo($file);
         }
+        // //'@Symfony' => true,
         $fixers = (new FixerFactory())
             ->registerBuiltInFixers()
             ->useRuleSet(new RuleSet([
-                //'@Symfony' => true,
                 'array_syntax' => ['syntax' => 'short'],
                 'phpdoc_order' => true,
                 'declare_strict_types' => true,

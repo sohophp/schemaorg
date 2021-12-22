@@ -3,26 +3,32 @@
   "description": "schema.org php library",
   "type": "library",
   "license": "MIT",
-  "keywords": ["schema.org", "structural data"],
+  "keywords": [
+    "schema.org",
+    "structural data"
+  ],
   "authors": [
     {
       "name": "sohophp",
       "email": "sohophp@gmail.com"
     }
   ],
-  "homepage": "https://sohophp.com/post/read/7",
+  "homepage": "https://www.sohophp.app",
+  "scripts": {
+    "build": "./bin/schema generator"
+  },
   "require": {
-    "php": "^7.2.0",
+    "php": "^8.1.0",
     "ext-curl": "*",
     "ext-json": "*"
   },
   "require-dev": {
-    "symfony/console": "^4.1",
-    "phpunit/phpunit": "^7.0",
-    "twig/twig": "2.0",
-    "doctrine/inflector": "^2.0@dev",
-    "friendsofphp/php-cs-fixer": "^2.14@dev",
-    "monolog/monolog": "^2.0@dev"
+    "symfony/console": "^6.0",
+    "phpunit/phpunit": "10.0.x-dev",
+    "twig/twig": "^3.3",
+    "doctrine/inflector": "*",
+    "friendsofphp/php-cs-fixer": "*",
+    "monolog/monolog": "*"
   },
   "autoload": {
     "psr-4": {
@@ -33,9 +39,11 @@
     "psr-4": {
       "Sohophp\\SchemaOrg\\Tests\\": "tests\\",
       "Sohophp\\SchemaOrg\\Examples\\": "examples\\",
-      "Thing\\":"src\\Thing\\"
+      "Thing\\": "src\\Thing\\"
     }
   },
-  "bin": ["bin/schema"],
+  "bin": [
+    "bin/schema"
+  ],
   "minimum-stability": "dev"
 }

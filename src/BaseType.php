@@ -13,7 +13,7 @@ class BaseType implements \ArrayAccess, \JsonSerializable
     /**
      * @var array
      */
-    protected $properties = [];
+    protected array $properties = [];
     /**
      * @var
      */
@@ -23,7 +23,7 @@ class BaseType implements \ArrayAccess, \JsonSerializable
      * @param mixed $offset
      * @param mixed $value
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet(mixed $offset, mixed $value):void
     {
         $this->properties[$offset] = $value;
     }
@@ -32,7 +32,7 @@ class BaseType implements \ArrayAccess, \JsonSerializable
      * @param mixed $offset
      * @return mixed
      */
-    public function offsetGet($offset)
+    public function offsetGet(mixed $offset):mixed
     {
         return $this->properties[$offset];
     }
@@ -41,7 +41,7 @@ class BaseType implements \ArrayAccess, \JsonSerializable
      * @param mixed $offset
      * @return bool
      */
-    public function offsetExists($offset)
+    public function offsetExists(mixed $offset):bool
     {
         return array_key_exists($offset, $this->properties);
     }
@@ -49,15 +49,15 @@ class BaseType implements \ArrayAccess, \JsonSerializable
     /**
      * @param mixed $offset
      */
-    public function offsetUnset($offset)
+    public function offsetUnset(mixed $offset):void
     {
         unset($this->properties[$offset]);
     }
 
     /**
-     * @return array|mixed|null
+     * @return array
      */
-    public function jsonSerialize()
+    public function jsonSerialize():array
     {
         return $this->toArray();
     }
@@ -69,13 +69,13 @@ class BaseType implements \ArrayAccess, \JsonSerializable
      */
     public function __call($name, $arguments)
     {
-        if (substr($name, 0, 3) === 'get') {
+        if (str_starts_with($name, 'get')) {
             $name = substr($name, 4);
             $name[0] = strtolower($name[0]);
             return $this->getProperty($name);
         }
 
-        if (substr($name, 0, 3) === 'set') {
+        if (str_starts_with($name, 'set')) {
             $name = substr($name, 4);
             $name[0] = strtolower($name[0]);
         }
@@ -87,7 +87,7 @@ class BaseType implements \ArrayAccess, \JsonSerializable
      * @param bool $context
      * @return array|null
      */
-    public function toArray($context = true)
+    public function toArray(bool $context = true): ?array
     {
 
         $vars = $this->properties;
@@ -107,7 +107,7 @@ class BaseType implements \ArrayAccess, \JsonSerializable
      * @param $vars
      * @return array|null
      */
-    public function filterArray($vars)
+    public function filterArray($vars): ?array
     {
         if ($vars instanceof BaseType) {
             return $vars->toArray(false);
@@ -125,7 +125,7 @@ class BaseType implements \ArrayAccess, \JsonSerializable
      * @param $value
      * @return $this
      */
-    public function setProperty($property, $value)
+    public function setProperty($property, $value): static
     {
         $this->properties[$property] = $value;
         return $this;
@@ -135,7 +135,7 @@ class BaseType implements \ArrayAccess, \JsonSerializable
      * @param $property
      * @return $this|array|string
      */
-    public function getProperty($property)
+    public function getProperty($property): array|string|static
     {
         return $this->properties[$property];
     }
@@ -143,15 +143,15 @@ class BaseType implements \ArrayAccess, \JsonSerializable
     /**
      * @return string
      */
-    public function getContext()
+    public function getContext(): string
     {
         return 'https://schema.org';
     }
 
     /**
-     * @return mixed|string
+     * @return mixed
      */
-    public function getType()
+    public function getType(): mixed
     {
         try {
             return $this->type ?? (new \ReflectionClass($this))->getShortName();
@@ -165,7 +165,7 @@ class BaseType implements \ArrayAccess, \JsonSerializable
      * @param int $options
      * @return false|string
      */
-    public function toJson($options = JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES)
+    public function toJson(int $options = JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES): bool|string
     {
         return json_encode($this->toArray(), $options | JSON_UNESCAPED_SLASHES);
     }
@@ -176,7 +176,7 @@ class BaseType implements \ArrayAccess, \JsonSerializable
      * @return string
      */
 
-    public function toScript(int $options = JSON_UNESCAPED_UNICODE)
+    public function toScript(int $options = JSON_UNESCAPED_UNICODE): string
     {
         $script = [];
         $script[] = '<script type="application/ld+json">';

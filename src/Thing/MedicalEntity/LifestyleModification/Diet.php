@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php
 namespace Sohophp\SchemaOrg\Thing\MedicalEntity\LifestyleModification;
 
 use Sohophp\SchemaOrg\Thing\MedicalEntity\LifestyleModification;

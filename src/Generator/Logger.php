@@ -11,7 +11,7 @@ class Logger extends \Monolog\Logger
     {
         parent::__construct($name, $handlers, $processors, $timezone);
         try {
-            $streamHandler = new StreamHandler(dirname(dirname(__DIR__)) . '/logs/debug.log');
+            $streamHandler = new StreamHandler(dirname(__DIR__, 2) . '/logs/debug.log');
             $this->pushHandler($streamHandler);
         } catch (\Exception $exception) {
 

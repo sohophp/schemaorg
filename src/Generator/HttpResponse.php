@@ -27,7 +27,7 @@ class HttpResponse
         curl_setopt($this->ch, $name, $value);
     }
 
-    public function proxy($host, $port)
+    public function proxy($host, $port): static
     {
         $this->setOpt(CURLOPT_HTTPPROXYTUNNEL, true);
         $this->setOpt(CURLOPT_PROXYAUTH, CURLAUTH_BASIC);
@@ -49,7 +49,7 @@ class HttpResponse
         $ch = $this->ch;
 
         if ($this->method === 'POST') {
-            curl_setopt($this, CURLOPT_URL, $this->url);
+            curl_setopt($ch, CURLOPT_URL, $this->url);
             curl_setopt($ch, CURLOPT_POST, true);
             curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($this->params));
         } else {
@@ -87,7 +87,8 @@ class HttpResponse
         return $this;
     }
 
-    public function error(){
+    public function error(): bool
+    {
         return !!$this->error;
     }
 

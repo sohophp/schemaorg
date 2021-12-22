@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php
 namespace Sohophp\SchemaOrg\Thing\CreativeWork\Review;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork\Review;

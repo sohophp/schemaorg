@@ -6,7 +6,7 @@ namespace Sohophp\SchemaOrg\Generator;
 class Configure
 {
 
-    private $cfg = [];
+    private array $cfg = [];
 
     public function __construct(array $cfg = [])
     {

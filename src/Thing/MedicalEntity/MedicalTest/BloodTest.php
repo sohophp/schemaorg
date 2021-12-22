@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php
 namespace Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalTest;
 
 use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalTest;

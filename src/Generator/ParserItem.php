@@ -64,9 +64,8 @@ class ParserItem
         $types = $this->getProperty('@type');
         if (!is_array($types)) {
             return [$types];
-        } else {
-            return $types;
         }
+        return $types;
     }
 
     /**
@@ -110,7 +109,7 @@ class ParserItem
     /**
      * @return bool
      */
-    public function isProperty()
+    public function isProperty(): bool
     {
         $types = $this->getTypes();
         return in_array('rdf:Property', $types);
@@ -171,7 +170,7 @@ class ParserItem
     /**
      * @return array
      */
-    public function getProperties()
+    public function getProperties(): array
     {
         $id = $this->getId();
         $properties = [];
@@ -279,7 +278,7 @@ class ParserItem
     /**
      * @return array
      */
-    public function getParents()
+    public function getParents(): array
     {
         return $this->deepParent($this->item);
     }
@@ -289,21 +288,20 @@ class ParserItem
      * @param array $parents
      * @return array
      */
-    public function deepParent($item, $parents = [])
+    public function deepParent($item, array $parents = []): array
     {
         $parent = $this->parent($item);
         if (is_null($parent)) {
             return $parents;
-        } else {
-            $parents[] = $parent;
-            return $this->deepParent($parent->getItem(), $parents);
         }
+        $parents[] = $parent;
+        return $this->deepParent($parent->getItem(), $parents);
     }
 
     /**
      * @return array 所在路径
      */
-    public function getPath()
+    public function getPath(): array
     {
         $parents = $this->getParents();
 
@@ -336,7 +334,7 @@ class ParserItem
      * @return array 属性取值范围
      */
 
-    public function getPropertyRange()
+    public function getPropertyRange(): array
     {
         $includes = $this->getRangeIncludes();
         return array_map([$this, 'getItemById'], $includes);
@@ -345,7 +343,7 @@ class ParserItem
     /**
      * @return array
      */
-    public function __debugInfo()
+    public function __debugInfo():array
     {
         return ['item' => $this->item];
     }

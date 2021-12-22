@@ -5,3 +5,5 @@ composer.lock
 .php_cs.cache
 /tests/Entity
 /logs
+*.Identifier
+.history

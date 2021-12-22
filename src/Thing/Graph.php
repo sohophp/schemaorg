@@ -13,7 +13,7 @@ class Graph extends Thing
         $this->things[] = $thing;
     }
 
-    public function toArray($context = false)
+    public function toArray(bool $context = false)
     {
         $this->setProperty('@graph', $this->things);
         return parent::toArray($context);

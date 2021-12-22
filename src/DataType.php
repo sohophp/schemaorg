@@ -4,7 +4,7 @@ namespace Sohophp\SchemaOrg;
 
 class DataType
 {
-    protected $value;
+    protected mixed $value;
 
     public function __construct($value = null)
     {

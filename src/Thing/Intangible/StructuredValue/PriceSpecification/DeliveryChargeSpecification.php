@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php
 namespace Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\PriceSpecification;
 
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\PriceSpecification;
