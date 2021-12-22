@@ -1,27 +1,29 @@
 <?php
 
 namespace Sohophp\SchemaOrg;
-
+/**
+ *
+ */
 class SchemaCollection implements \JsonSerializable, \Countable
 {
     /**
      * @var array
      */
-    protected $items = [];
+    protected array $items = [];
 
-    public function __construct(?array $items = [])
+    public function __construct( array $items = [])
     {
         $this->items = $items;
     }
 
-    public function count()
+    public function count():int
     {
         return count($this->items);
     }
 
-    public function toArray()
+    public function toArray():array
     {
-        return $this->items;
+        return (array) $this->items;
     }
 
     /**
@@ -34,6 +36,9 @@ class SchemaCollection implements \JsonSerializable, \Countable
         return $this;
     }
 
+    /**
+     * @return array
+     */
     public function jsonSerialize(): array
     {
         return $this->toArray();
@@ -59,7 +64,7 @@ class SchemaCollection implements \JsonSerializable, \Countable
      * @param int $options
      * @return string
      */
-    public function arrayToScript(array $array, int $options = JSON_UNESCAPED_UNICODE)
+    public function arrayToScript(array $array, int $options = JSON_UNESCAPED_UNICODE): string
     {
         $script = [];
         $script[] = '<script type="application/ld+json">';
@@ -67,9 +72,8 @@ class SchemaCollection implements \JsonSerializable, \Countable
         $script[] = '</script>';
         if ($options & JSON_PRETTY_PRINT) {
             return implode(PHP_EOL, $script);
-        } else {
-            return implode('', $script);
         }
+        return implode('', $script);
     }
 
     public function __toString()
