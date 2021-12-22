@@ -15,9 +15,9 @@ class BaseType implements \ArrayAccess, \JsonSerializable
      */
     protected array $properties = [];
     /**
-     * @var
+     * @var mixed
      */
-    protected $type;
+    protected mixed $type;
 
     /**
      * @param mixed $offset
@@ -85,9 +85,9 @@ class BaseType implements \ArrayAccess, \JsonSerializable
 
     /**
      * @param bool $context
-     * @return array|null
+     * @return array
      */
-    public function toArray(bool $context = true): ?array
+    public function toArray(bool $context = true):  array
     {
 
         $vars = $this->properties;
@@ -104,10 +104,10 @@ class BaseType implements \ArrayAccess, \JsonSerializable
     }
 
     /**
-     * @param $vars
-     * @return array|null
+     * @param mixed $vars
+     * @return mixed
      */
-    public function filterArray($vars): ?array
+    public function filterArray(mixed $vars):mixed
     {
         if ($vars instanceof BaseType) {
             return $vars->toArray(false);
