@@ -133,11 +133,11 @@ class BaseType implements \ArrayAccess, \JsonSerializable
 
     /**
      * @param $property
-     * @return $this|array|string
+     * @return mixed
      */
-    public function getProperty($property): array|string|static
+    public function getProperty($property): mixed
     {
-        return $this->properties[$property];
+        return $this->properties[$property]??null;
     }
 
     /**
@@ -155,7 +155,7 @@ class BaseType implements \ArrayAccess, \JsonSerializable
     {
         try {
             return $this->type ?? (new \ReflectionClass($this))->getShortName();
-        } catch (\ReflectionException $e) {
+        } catch (\Throwable ) {
             $arr = preg_split('#\#', static::class);
             return $arr[count($arr) - 1];
         }

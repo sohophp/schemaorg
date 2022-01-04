@@ -19,7 +19,7 @@ class Autoloader
     public static function load($className)
     {
         $className = ltrim($className, '\\');
-        if (class_exists($className, false) || strpos($className, 'Sohophp\\SchemaOrg\\') !== 0) {
+        if (class_exists($className, false) || !str_starts_with($className, 'Sohophp\\SchemaOrg\\')) {
             return false;
         }
 
