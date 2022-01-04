@@ -17,19 +17,20 @@ class WarrantyPromise extends StructuredValue
 
     /**
     * The duration of the warranty promise. Common unitCode values are ANN for year, MON for months, or DAY for days.
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
+    * @deprecated use setDurationOfWarranty
     */
-    public function durationOfWarranty(?QuantitativeValue $value)
+    public function durationOfWarranty($value)
     {
         $this->setProperty('durationOfWarranty', $value);
         return $this;
     }
    /**
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
     */
-    public function setDurationOfWarranty(?QuantitativeValue $value)
+    public function setDurationOfWarranty($value)
     {
         $this->setProperty('durationOfWarranty', $value);
         return $this;
@@ -44,19 +45,20 @@ class WarrantyPromise extends StructuredValue
 
     /**
     * The scope of the warranty promise.
-    * @param WarrantyScope|array $value
+    * @param WarrantyScope|array|string $value
     * @return $this
+    * @deprecated use setWarrantyScope
     */
-    public function warrantyScope(?WarrantyScope $value)
+    public function warrantyScope($value)
     {
         $this->setProperty('warrantyScope', $value);
         return $this;
     }
    /**
-    * @param WarrantyScope|array $value
+    * @param WarrantyScope|array|string $value
     * @return $this
     */
-    public function setWarrantyScope(?WarrantyScope $value)
+    public function setWarrantyScope($value)
     {
         $this->setProperty('warrantyScope', $value);
         return $this;
@@ -71,7 +73,3 @@ class WarrantyPromise extends StructuredValue
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue\\WarrantyPromise','Thing\\WarrantyPromise');
-

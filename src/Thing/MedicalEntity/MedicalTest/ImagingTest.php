@@ -16,19 +16,20 @@ class ImagingTest extends MedicalTest
 
     /**
     * Imaging technique used.
-    * @param MedicalImagingTechnique|array $value
+    * @param MedicalImagingTechnique|array|string $value
     * @return $this
+    * @deprecated use setImagingTechnique
     */
-    public function imagingTechnique(?MedicalImagingTechnique $value)
+    public function imagingTechnique($value)
     {
         $this->setProperty('imagingTechnique', $value);
         return $this;
     }
    /**
-    * @param MedicalImagingTechnique|array $value
+    * @param MedicalImagingTechnique|array|string $value
     * @return $this
     */
-    public function setImagingTechnique(?MedicalImagingTechnique $value)
+    public function setImagingTechnique($value)
     {
         $this->setProperty('imagingTechnique', $value);
         return $this;
@@ -43,7 +44,3 @@ class ImagingTest extends MedicalTest
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalTest\\ImagingTest','Thing\\ImagingTest');
-

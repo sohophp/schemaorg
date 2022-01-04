@@ -20,8 +20,9 @@ class FlightReservation extends Reservation
     * The passenger's sequence number as assigned by the airline.
     * @param string|array $value
     * @return $this
+    * @deprecated use setPassengerSequenceNumber
     */
-    public function passengerSequenceNumber(?string $value)
+    public function passengerSequenceNumber($value)
     {
         $this->setProperty('passengerSequenceNumber', $value);
         return $this;
@@ -30,7 +31,7 @@ class FlightReservation extends Reservation
     * @param string|array $value
     * @return $this
     */
-    public function setPassengerSequenceNumber(?string $value)
+    public function setPassengerSequenceNumber($value)
     {
         $this->setProperty('passengerSequenceNumber', $value);
         return $this;
@@ -47,8 +48,9 @@ class FlightReservation extends Reservation
     * The type of security screening the passenger is subject to.
     * @param string|array $value
     * @return $this
+    * @deprecated use setSecurityScreening
     */
-    public function securityScreening(?string $value)
+    public function securityScreening($value)
     {
         $this->setProperty('securityScreening', $value);
         return $this;
@@ -57,7 +59,7 @@ class FlightReservation extends Reservation
     * @param string|array $value
     * @return $this
     */
-    public function setSecurityScreening(?string $value)
+    public function setSecurityScreening($value)
     {
         $this->setProperty('securityScreening', $value);
         return $this;
@@ -74,6 +76,7 @@ class FlightReservation extends Reservation
     * The priority status assigned to a passenger for security or boarding (e.g. FastTrack or Priority).
     * @param string|QualitativeValue|array $value
     * @return $this
+    * @deprecated use setPassengerPriorityStatus
     */
     public function passengerPriorityStatus($value)
     {
@@ -101,8 +104,9 @@ class FlightReservation extends Reservation
     * The airline-specific indicator of boarding order / preference.
     * @param string|array $value
     * @return $this
+    * @deprecated use setBoardingGroup
     */
-    public function boardingGroup(?string $value)
+    public function boardingGroup($value)
     {
         $this->setProperty('boardingGroup', $value);
         return $this;
@@ -111,7 +115,7 @@ class FlightReservation extends Reservation
     * @param string|array $value
     * @return $this
     */
-    public function setBoardingGroup(?string $value)
+    public function setBoardingGroup($value)
     {
         $this->setProperty('boardingGroup', $value);
         return $this;
@@ -126,7 +130,3 @@ class FlightReservation extends Reservation
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Reservation\\FlightReservation','Thing\\FlightReservation');
-

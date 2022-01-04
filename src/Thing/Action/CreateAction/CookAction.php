@@ -19,8 +19,9 @@ class CookAction extends CreateAction
 
     /**
     * A sub property of location. The specific food establishment where the action occurred.
-    * @param FoodEstablishment|Place|array $value
+    * @param FoodEstablishment|Place|array|string $value
     * @return $this
+    * @deprecated use setFoodEstablishment
     */
     public function foodEstablishment($value)
     {
@@ -28,7 +29,7 @@ class CookAction extends CreateAction
         return $this;
     }
    /**
-    * @param FoodEstablishment|Place|array $value
+    * @param FoodEstablishment|Place|array|string $value
     * @return $this
     */
     public function setFoodEstablishment($value)
@@ -46,19 +47,20 @@ class CookAction extends CreateAction
 
     /**
     * A sub property of instrument. The recipe/instructions used to perform the action.
-    * @param Recipe|array $value
+    * @param Recipe|array|string $value
     * @return $this
+    * @deprecated use setRecipe
     */
-    public function recipe(?Recipe $value)
+    public function recipe($value)
     {
         $this->setProperty('recipe', $value);
         return $this;
     }
    /**
-    * @param Recipe|array $value
+    * @param Recipe|array|string $value
     * @return $this
     */
-    public function setRecipe(?Recipe $value)
+    public function setRecipe($value)
     {
         $this->setProperty('recipe', $value);
         return $this;
@@ -73,19 +75,20 @@ class CookAction extends CreateAction
 
     /**
     * A sub property of location. The specific food event where the action occurred.
-    * @param FoodEvent|array $value
+    * @param FoodEvent|array|string $value
     * @return $this
+    * @deprecated use setFoodEvent
     */
-    public function foodEvent(?FoodEvent $value)
+    public function foodEvent($value)
     {
         $this->setProperty('foodEvent', $value);
         return $this;
     }
    /**
-    * @param FoodEvent|array $value
+    * @param FoodEvent|array|string $value
     * @return $this
     */
-    public function setFoodEvent(?FoodEvent $value)
+    public function setFoodEvent($value)
     {
         $this->setProperty('foodEvent', $value);
         return $this;
@@ -100,7 +103,3 @@ class CookAction extends CreateAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\CreateAction\\CookAction','Thing\\CookAction');
-

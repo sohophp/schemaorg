@@ -17,8 +17,9 @@ class MedicalWebPage extends WebPage
     * An aspect of medical practice that is considered on the page, such as 'diagnosis', 'treatment', 'causes', 'prognosis', 'etiology', 'epidemiology', etc.
     * @param string|array $value
     * @return $this
+    * @deprecated use setAspect
     */
-    public function aspect(?string $value)
+    public function aspect($value)
     {
         $this->setProperty('aspect', $value);
         return $this;
@@ -27,7 +28,7 @@ class MedicalWebPage extends WebPage
     * @param string|array $value
     * @return $this
     */
-    public function setAspect(?string $value)
+    public function setAspect($value)
     {
         $this->setProperty('aspect', $value);
         return $this;
@@ -42,7 +43,3 @@ class MedicalWebPage extends WebPage
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\WebPage\\MedicalWebPage','Thing\\MedicalWebPage');
-

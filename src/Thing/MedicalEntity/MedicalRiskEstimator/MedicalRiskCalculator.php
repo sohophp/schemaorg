@@ -15,7 +15,3 @@ class MedicalRiskCalculator extends MedicalRiskEstimator
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalRiskEstimator\\MedicalRiskCalculator','Thing\\MedicalRiskCalculator');
-

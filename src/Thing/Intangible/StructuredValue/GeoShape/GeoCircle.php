@@ -21,6 +21,7 @@ class GeoCircle extends GeoShape
     * Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
     * @param string|Distance|array $value
     * @return $this
+    * @deprecated use setGeoRadius
     */
     public function geoRadius($value)
     {
@@ -46,19 +47,20 @@ class GeoCircle extends GeoShape
 
     /**
     * Indicates the GeoCoordinates at the centre of a GeoShape e.g. GeoCircle.
-    * @param GeoCoordinates|array $value
+    * @param GeoCoordinates|array|string $value
     * @return $this
+    * @deprecated use setGeoMidpoint
     */
-    public function geoMidpoint(?GeoCoordinates $value)
+    public function geoMidpoint($value)
     {
         $this->setProperty('geoMidpoint', $value);
         return $this;
     }
    /**
-    * @param GeoCoordinates|array $value
+    * @param GeoCoordinates|array|string $value
     * @return $this
     */
-    public function setGeoMidpoint(?GeoCoordinates $value)
+    public function setGeoMidpoint($value)
     {
         $this->setProperty('geoMidpoint', $value);
         return $this;
@@ -73,7 +75,3 @@ class GeoCircle extends GeoShape
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue\\GeoShape\\GeoCircle','Thing\\GeoCircle');
-

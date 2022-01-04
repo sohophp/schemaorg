@@ -17,19 +17,20 @@ class MedicalTherapy extends TherapeuticProcedure
 
     /**
     * A therapy that duplicates or overlaps this one.
-    * @param MedicalTherapy|array $value
+    * @param MedicalTherapy|array|string $value
     * @return $this
+    * @deprecated use setDuplicateTherapy
     */
-    public function duplicateTherapy(?MedicalTherapy $value)
+    public function duplicateTherapy($value)
     {
         $this->setProperty('duplicateTherapy', $value);
         return $this;
     }
    /**
-    * @param MedicalTherapy|array $value
+    * @param MedicalTherapy|array|string $value
     * @return $this
     */
-    public function setDuplicateTherapy(?MedicalTherapy $value)
+    public function setDuplicateTherapy($value)
     {
         $this->setProperty('duplicateTherapy', $value);
         return $this;
@@ -44,19 +45,20 @@ class MedicalTherapy extends TherapeuticProcedure
 
     /**
     * A possible serious complication and/or serious side effect of this therapy. Serious adverse outcomes include those that are life-threatening; result in death, disability, or permanent damage; require hospitalization or prolong existing hospitalization; cause congenital anomalies or birth defects; or jeopardize the patient and may require medical or surgical intervention to prevent one of the outcomes in this definition.
-    * @param MedicalEntity|array $value
+    * @param MedicalEntity|array|string $value
     * @return $this
+    * @deprecated use setSeriousAdverseOutcome
     */
-    public function seriousAdverseOutcome(?MedicalEntity $value)
+    public function seriousAdverseOutcome($value)
     {
         $this->setProperty('seriousAdverseOutcome', $value);
         return $this;
     }
    /**
-    * @param MedicalEntity|array $value
+    * @param MedicalEntity|array|string $value
     * @return $this
     */
-    public function setSeriousAdverseOutcome(?MedicalEntity $value)
+    public function setSeriousAdverseOutcome($value)
     {
         $this->setProperty('seriousAdverseOutcome', $value);
         return $this;
@@ -73,6 +75,7 @@ class MedicalTherapy extends TherapeuticProcedure
     * A contraindication for this therapy.
     * @param MedicalContraindication|string|array $value
     * @return $this
+    * @deprecated use setContraindication
     */
     public function contraindication($value)
     {
@@ -98,7 +101,3 @@ class MedicalTherapy extends TherapeuticProcedure
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalProcedure\\TherapeuticProcedure\\MedicalTherapy','Thing\\MedicalTherapy');
-

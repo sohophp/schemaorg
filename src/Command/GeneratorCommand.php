@@ -36,6 +36,7 @@ class GeneratorCommand extends Command
         return 0;
     }
 
+
     private function generate()
     {
         $Configure = new Configure();
@@ -68,6 +69,7 @@ class GeneratorCommand extends Command
         $TypesGenerator = new TypesGenerator($Configure, $Parser, $twig, new Logger('generator'));
 
         try {
+            $TypesGenerator->clear();
             $TypesGenerator->generate();
         } catch (\Exception $exception) {
             $this->Output->writeln('<error>' . $exception->getMessage() . '</error>');

@@ -15,7 +15,3 @@ class MedicalImagingTechnique extends MedicalEnumeration
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\MedicalEnumeration\\MedicalImagingTechnique','Thing\\MedicalImagingTechnique');
-

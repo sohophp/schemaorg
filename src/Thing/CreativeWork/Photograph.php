@@ -15,7 +15,3 @@ class Photograph extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Photograph','Thing\\Photograph');
-

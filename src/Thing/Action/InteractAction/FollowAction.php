@@ -28,8 +28,9 @@ class FollowAction extends InteractAction
 
     /**
     * A sub property of object. The person or organization being followed.
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
+    * @deprecated use setFollowee
     */
     public function followee($value)
     {
@@ -37,7 +38,7 @@ class FollowAction extends InteractAction
         return $this;
     }
    /**
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
     */
     public function setFollowee($value)
@@ -55,7 +56,3 @@ class FollowAction extends InteractAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\InteractAction\\FollowAction','Thing\\FollowAction');
-

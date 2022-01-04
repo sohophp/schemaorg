@@ -15,8 +15,9 @@ class OrganizationRole extends Role
 
     /**
     * A number associated with a role in an organization, for example, the number on an athlete's jersey.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setNumberedPosition
     */
     public function numberedPosition($value)
     {
@@ -24,7 +25,7 @@ class OrganizationRole extends Role
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setNumberedPosition($value)
@@ -42,7 +43,3 @@ class OrganizationRole extends Role
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Role\\OrganizationRole','Thing\\OrganizationRole');
-

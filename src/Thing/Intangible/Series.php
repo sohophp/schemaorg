@@ -15,7 +15,3 @@ class Series extends Intangible
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Series','Thing\\Series');
-

@@ -15,7 +15,3 @@ class PostOffice extends GovernmentOffice
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\GovernmentOffice\\PostOffice','Thing\\PostOffice');
-

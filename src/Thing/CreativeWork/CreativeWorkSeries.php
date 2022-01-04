@@ -19,8 +19,9 @@ class CreativeWorkSeries extends CreativeWork
 
     /**
     * The end date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setEndDate
     */
     public function endDate($value)
     {
@@ -28,7 +29,7 @@ class CreativeWorkSeries extends CreativeWork
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setEndDate($value)
@@ -48,8 +49,9 @@ class CreativeWorkSeries extends CreativeWork
     * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
     * @param string|array $value
     * @return $this
+    * @deprecated use setIssn
     */
-    public function issn(?string $value)
+    public function issn($value)
     {
         $this->setProperty('issn', $value);
         return $this;
@@ -58,7 +60,7 @@ class CreativeWorkSeries extends CreativeWork
     * @param string|array $value
     * @return $this
     */
-    public function setIssn(?string $value)
+    public function setIssn($value)
     {
         $this->setProperty('issn', $value);
         return $this;
@@ -73,8 +75,9 @@ class CreativeWorkSeries extends CreativeWork
 
     /**
     * The start date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setStartDate
     */
     public function startDate($value)
     {
@@ -82,7 +85,7 @@ class CreativeWorkSeries extends CreativeWork
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setStartDate($value)
@@ -100,7 +103,3 @@ class CreativeWorkSeries extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\CreativeWorkSeries','Thing\\CreativeWorkSeries');
-

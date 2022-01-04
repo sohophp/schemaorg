@@ -15,7 +15,3 @@ class EmploymentAgency extends LocalBusiness
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\EmploymentAgency','Thing\\EmploymentAgency');
-

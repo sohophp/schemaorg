@@ -15,7 +15,3 @@ class ProductReturnEnumeration extends Enumeration
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\ProductReturnEnumeration','Thing\\ProductReturnEnumeration');
-

@@ -16,19 +16,20 @@ class RepaymentSpecification extends StructuredValue
 
     /**
     * The amount to be paid as a penalty in the event of early payment of the loan.
-    * @param MonetaryAmount|array $value
+    * @param MonetaryAmount|array|string $value
     * @return $this
+    * @deprecated use setEarlyPrepaymentPenalty
     */
-    public function earlyPrepaymentPenalty(?MonetaryAmount $value)
+    public function earlyPrepaymentPenalty($value)
     {
         $this->setProperty('earlyPrepaymentPenalty', $value);
         return $this;
     }
    /**
-    * @param MonetaryAmount|array $value
+    * @param MonetaryAmount|array|string $value
     * @return $this
     */
-    public function setEarlyPrepaymentPenalty(?MonetaryAmount $value)
+    public function setEarlyPrepaymentPenalty($value)
     {
         $this->setProperty('earlyPrepaymentPenalty', $value);
         return $this;
@@ -43,8 +44,9 @@ class RepaymentSpecification extends StructuredValue
 
     /**
     * Frequency of payments due, i.e. number of months between payments. This is defined as a frequency, i.e. the reciprocal of a period of time.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setLoanPaymentFrequency
     */
     public function loanPaymentFrequency($value)
     {
@@ -52,7 +54,7 @@ class RepaymentSpecification extends StructuredValue
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setLoanPaymentFrequency($value)
@@ -70,8 +72,9 @@ class RepaymentSpecification extends StructuredValue
 
     /**
     * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setNumberOfLoanPayments
     */
     public function numberOfLoanPayments($value)
     {
@@ -79,7 +82,7 @@ class RepaymentSpecification extends StructuredValue
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setNumberOfLoanPayments($value)
@@ -97,19 +100,20 @@ class RepaymentSpecification extends StructuredValue
 
     /**
     * The amount of money to pay in a single payment.
-    * @param MonetaryAmount|array $value
+    * @param MonetaryAmount|array|string $value
     * @return $this
+    * @deprecated use setLoanPaymentAmount
     */
-    public function loanPaymentAmount(?MonetaryAmount $value)
+    public function loanPaymentAmount($value)
     {
         $this->setProperty('loanPaymentAmount', $value);
         return $this;
     }
    /**
-    * @param MonetaryAmount|array $value
+    * @param MonetaryAmount|array|string $value
     * @return $this
     */
-    public function setLoanPaymentAmount(?MonetaryAmount $value)
+    public function setLoanPaymentAmount($value)
     {
         $this->setProperty('loanPaymentAmount', $value);
         return $this;
@@ -124,19 +128,20 @@ class RepaymentSpecification extends StructuredValue
 
     /**
     * a type of payment made in cash during the onset of the purchase of an expensive good/service. The payment typically represents only a percentage of the full purchase price.
-    * @param MonetaryAmount|array $value
+    * @param MonetaryAmount|array|string $value
     * @return $this
+    * @deprecated use setDownPayment
     */
-    public function downPayment(?MonetaryAmount $value)
+    public function downPayment($value)
     {
         $this->setProperty('downPayment', $value);
         return $this;
     }
    /**
-    * @param MonetaryAmount|array $value
+    * @param MonetaryAmount|array|string $value
     * @return $this
     */
-    public function setDownPayment(?MonetaryAmount $value)
+    public function setDownPayment($value)
     {
         $this->setProperty('downPayment', $value);
         return $this;
@@ -151,7 +156,3 @@ class RepaymentSpecification extends StructuredValue
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue\\RepaymentSpecification','Thing\\RepaymentSpecification');
-

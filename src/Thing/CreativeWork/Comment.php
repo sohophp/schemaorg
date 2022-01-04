@@ -16,19 +16,20 @@ class Comment extends CreativeWork
 
     /**
     * The number of upvotes this question, answer or comment has received from the community.
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
+    * @deprecated use setUpvoteCount
     */
-    public function upvoteCount(?int $value)
+    public function upvoteCount($value)
     {
         $this->setProperty('upvoteCount', $value);
         return $this;
     }
    /**
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
     */
-    public function setUpvoteCount(?int $value)
+    public function setUpvoteCount($value)
     {
         $this->setProperty('upvoteCount', $value);
         return $this;
@@ -43,19 +44,20 @@ class Comment extends CreativeWork
 
     /**
     * The parent of a question, answer or item in general.
-    * @param Question|array $value
+    * @param Question|array|string $value
     * @return $this
+    * @deprecated use setParentItem
     */
-    public function parentItem(?Question $value)
+    public function parentItem($value)
     {
         $this->setProperty('parentItem', $value);
         return $this;
     }
    /**
-    * @param Question|array $value
+    * @param Question|array|string $value
     * @return $this
     */
-    public function setParentItem(?Question $value)
+    public function setParentItem($value)
     {
         $this->setProperty('parentItem', $value);
         return $this;
@@ -70,19 +72,20 @@ class Comment extends CreativeWork
 
     /**
     * The number of downvotes this question, answer or comment has received from the community.
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
+    * @deprecated use setDownvoteCount
     */
-    public function downvoteCount(?int $value)
+    public function downvoteCount($value)
     {
         $this->setProperty('downvoteCount', $value);
         return $this;
     }
    /**
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
     */
-    public function setDownvoteCount(?int $value)
+    public function setDownvoteCount($value)
     {
         $this->setProperty('downvoteCount', $value);
         return $this;
@@ -97,7 +100,3 @@ class Comment extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Comment','Thing\\Comment');
-

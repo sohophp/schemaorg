@@ -16,19 +16,20 @@ class AggregateRating extends Rating
 
     /**
     * The item that is being reviewed/rated.
-    * @param Thing|array $value
+    * @param Thing|array|string $value
     * @return $this
+    * @deprecated use setItemReviewed
     */
-    public function itemReviewed(?Thing $value)
+    public function itemReviewed($value)
     {
         $this->setProperty('itemReviewed', $value);
         return $this;
     }
    /**
-    * @param Thing|array $value
+    * @param Thing|array|string $value
     * @return $this
     */
-    public function setItemReviewed(?Thing $value)
+    public function setItemReviewed($value)
     {
         $this->setProperty('itemReviewed', $value);
         return $this;
@@ -43,19 +44,20 @@ class AggregateRating extends Rating
 
     /**
     * The count of total number of reviews.
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
+    * @deprecated use setReviewCount
     */
-    public function reviewCount(?int $value)
+    public function reviewCount($value)
     {
         $this->setProperty('reviewCount', $value);
         return $this;
     }
    /**
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
     */
-    public function setReviewCount(?int $value)
+    public function setReviewCount($value)
     {
         $this->setProperty('reviewCount', $value);
         return $this;
@@ -70,19 +72,20 @@ class AggregateRating extends Rating
 
     /**
     * The count of total number of ratings.
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
+    * @deprecated use setRatingCount
     */
-    public function ratingCount(?int $value)
+    public function ratingCount($value)
     {
         $this->setProperty('ratingCount', $value);
         return $this;
     }
    /**
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
     */
-    public function setRatingCount(?int $value)
+    public function setRatingCount($value)
     {
         $this->setProperty('ratingCount', $value);
         return $this;
@@ -97,7 +100,3 @@ class AggregateRating extends Rating
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Rating\\AggregateRating','Thing\\AggregateRating');
-

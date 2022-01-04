@@ -17,8 +17,9 @@ class HealthPlanNetwork extends Intangible
     * The tier(s) for this network.
     * @param string|array $value
     * @return $this
+    * @deprecated use setHealthPlanNetworkTier
     */
-    public function healthPlanNetworkTier(?string $value)
+    public function healthPlanNetworkTier($value)
     {
         $this->setProperty('healthPlanNetworkTier', $value);
         return $this;
@@ -27,7 +28,7 @@ class HealthPlanNetwork extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setHealthPlanNetworkTier(?string $value)
+    public function setHealthPlanNetworkTier($value)
     {
         $this->setProperty('healthPlanNetworkTier', $value);
         return $this;
@@ -44,8 +45,9 @@ class HealthPlanNetwork extends Intangible
     * Name or unique ID of network. (Networks are often reused across different insurance plans).
     * @param string|array $value
     * @return $this
+    * @deprecated use setHealthPlanNetworkId
     */
-    public function healthPlanNetworkId(?string $value)
+    public function healthPlanNetworkId($value)
     {
         $this->setProperty('healthPlanNetworkId', $value);
         return $this;
@@ -54,7 +56,7 @@ class HealthPlanNetwork extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setHealthPlanNetworkId(?string $value)
+    public function setHealthPlanNetworkId($value)
     {
         $this->setProperty('healthPlanNetworkId', $value);
         return $this;
@@ -69,19 +71,20 @@ class HealthPlanNetwork extends Intangible
 
     /**
     * Whether The costs to the patient for services under this network or formulary.
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
+    * @deprecated use setHealthPlanCostSharing
     */
-    public function healthPlanCostSharing(?bool $value)
+    public function healthPlanCostSharing($value)
     {
         $this->setProperty('healthPlanCostSharing', $value);
         return $this;
     }
    /**
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
     */
-    public function setHealthPlanCostSharing(?bool $value)
+    public function setHealthPlanCostSharing($value)
     {
         $this->setProperty('healthPlanCostSharing', $value);
         return $this;
@@ -96,7 +99,3 @@ class HealthPlanNetwork extends Intangible
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\HealthPlanNetwork','Thing\\HealthPlanNetwork');
-

@@ -15,7 +15,3 @@ class RadioEpisode extends Episode
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Episode\\RadioEpisode','Thing\\RadioEpisode');
-

@@ -15,7 +15,3 @@ class FastFoodRestaurant extends FoodEstablishment
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\FoodEstablishment\\FastFoodRestaurant','Thing\\FastFoodRestaurant');
-

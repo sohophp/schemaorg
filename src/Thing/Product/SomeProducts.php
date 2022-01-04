@@ -16,19 +16,20 @@ class SomeProducts extends Product
 
     /**
     * The current approximate inventory level for the item or items.
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
+    * @deprecated use setInventoryLevel
     */
-    public function inventoryLevel(?QuantitativeValue $value)
+    public function inventoryLevel($value)
     {
         $this->setProperty('inventoryLevel', $value);
         return $this;
     }
    /**
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
     */
-    public function setInventoryLevel(?QuantitativeValue $value)
+    public function setInventoryLevel($value)
     {
         $this->setProperty('inventoryLevel', $value);
         return $this;
@@ -43,7 +44,3 @@ class SomeProducts extends Product
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Product\\SomeProducts','Thing\\SomeProducts');
-

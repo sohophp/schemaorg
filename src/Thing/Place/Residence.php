@@ -15,7 +15,3 @@ class Residence extends Place
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\Residence','Thing\\Residence');
-

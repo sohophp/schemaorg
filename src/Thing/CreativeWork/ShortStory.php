@@ -15,7 +15,3 @@ class ShortStory extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\ShortStory','Thing\\ShortStory');
-

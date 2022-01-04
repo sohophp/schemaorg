@@ -21,8 +21,9 @@ class {{ class.name }} extends {{ class.parent }}
 {% for annotation in property.annotations %}
     * {{ annotation }}
 {% endfor %}
-    * @param {{ property.range }}|array $value
+    * @param {{ property.range }} $value
     * @return $this
+    * @deprecated use set{{ property.name|ucfirst }}
     */
     public function {{ property.name }}({{ property.range_default?property.range_default~' $value':'$value' }})
     {
@@ -30,7 +31,7 @@ class {{ class.name }} extends {{ class.parent }}
         return $this;
     }
    /**
-    * @param {{ property.range }}|array $value
+    * @param {{ property.range }} $value
     * @return $this
     */
     public function set{{ property.name|ucfirst }}({{ property.range_default?property.range_default~' $value':'$value' }})
@@ -49,7 +50,3 @@ class {{ class.name }} extends {{ class.parent }}
 {% endfor %}
 
 }
-
-
-class_alias('{{ class.namespace|replace({'\\':'\\\\'}) }}\\{{ class.name }}','Thing\\{{ class.name }}');
-

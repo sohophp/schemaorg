@@ -19,8 +19,9 @@ class Book extends CreativeWork
     * The ISBN of the book.
     * @param string|array $value
     * @return $this
+    * @deprecated use setIsbn
     */
-    public function isbn(?string $value)
+    public function isbn($value)
     {
         $this->setProperty('isbn', $value);
         return $this;
@@ -29,7 +30,7 @@ class Book extends CreativeWork
     * @param string|array $value
     * @return $this
     */
-    public function setIsbn(?string $value)
+    public function setIsbn($value)
     {
         $this->setProperty('isbn', $value);
         return $this;
@@ -46,8 +47,9 @@ class Book extends CreativeWork
     * The edition of the book.
     * @param string|array $value
     * @return $this
+    * @deprecated use setBookEdition
     */
-    public function bookEdition(?string $value)
+    public function bookEdition($value)
     {
         $this->setProperty('bookEdition', $value);
         return $this;
@@ -56,7 +58,7 @@ class Book extends CreativeWork
     * @param string|array $value
     * @return $this
     */
-    public function setBookEdition(?string $value)
+    public function setBookEdition($value)
     {
         $this->setProperty('bookEdition', $value);
         return $this;
@@ -71,19 +73,20 @@ class Book extends CreativeWork
 
     /**
     * The format of the book.
-    * @param BookFormatType|array $value
+    * @param BookFormatType|array|string $value
     * @return $this
+    * @deprecated use setBookFormat
     */
-    public function bookFormat(?BookFormatType $value)
+    public function bookFormat($value)
     {
         $this->setProperty('bookFormat', $value);
         return $this;
     }
    /**
-    * @param BookFormatType|array $value
+    * @param BookFormatType|array|string $value
     * @return $this
     */
-    public function setBookFormat(?BookFormatType $value)
+    public function setBookFormat($value)
     {
         $this->setProperty('bookFormat', $value);
         return $this;
@@ -98,19 +101,20 @@ class Book extends CreativeWork
 
     /**
     * The number of pages in the book.
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
+    * @deprecated use setNumberOfPages
     */
-    public function numberOfPages(?int $value)
+    public function numberOfPages($value)
     {
         $this->setProperty('numberOfPages', $value);
         return $this;
     }
    /**
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
     */
-    public function setNumberOfPages(?int $value)
+    public function setNumberOfPages($value)
     {
         $this->setProperty('numberOfPages', $value);
         return $this;
@@ -125,19 +129,20 @@ class Book extends CreativeWork
 
     /**
     * The illustrator of the book.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setIllustrator
     */
-    public function illustrator(?Person $value)
+    public function illustrator($value)
     {
         $this->setProperty('illustrator', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setIllustrator(?Person $value)
+    public function setIllustrator($value)
     {
         $this->setProperty('illustrator', $value);
         return $this;
@@ -152,19 +157,20 @@ class Book extends CreativeWork
 
     /**
     * Indicates whether the book is an abridged edition.
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
+    * @deprecated use setAbridged
     */
-    public function abridged(?bool $value)
+    public function abridged($value)
     {
         $this->setProperty('abridged', $value);
         return $this;
     }
    /**
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
     */
-    public function setAbridged(?bool $value)
+    public function setAbridged($value)
     {
         $this->setProperty('abridged', $value);
         return $this;
@@ -179,7 +185,3 @@ class Book extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Book','Thing\\Book');
-

@@ -15,7 +15,3 @@ class ReactAction extends AssessAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\AssessAction\\ReactAction','Thing\\ReactAction');
-

@@ -17,8 +17,9 @@ class MedicalGuidelineRecommendation extends MedicalGuideline
     * Strength of the guideline's recommendation (e.g. 'class I').
     * @param string|array $value
     * @return $this
+    * @deprecated use setRecommendationStrength
     */
-    public function recommendationStrength(?string $value)
+    public function recommendationStrength($value)
     {
         $this->setProperty('recommendationStrength', $value);
         return $this;
@@ -27,7 +28,7 @@ class MedicalGuidelineRecommendation extends MedicalGuideline
     * @param string|array $value
     * @return $this
     */
-    public function setRecommendationStrength(?string $value)
+    public function setRecommendationStrength($value)
     {
         $this->setProperty('recommendationStrength', $value);
         return $this;
@@ -42,7 +43,3 @@ class MedicalGuidelineRecommendation extends MedicalGuideline
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalGuideline\\MedicalGuidelineRecommendation','Thing\\MedicalGuidelineRecommendation');
-

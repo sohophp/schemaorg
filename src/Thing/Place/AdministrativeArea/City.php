@@ -15,7 +15,3 @@ class City extends AdministrativeArea
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\AdministrativeArea\\City','Thing\\City');
-

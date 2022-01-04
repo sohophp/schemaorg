@@ -15,7 +15,3 @@ class Energy extends Quantity
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Quantity\\Energy','Thing\\Energy');
-

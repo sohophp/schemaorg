@@ -17,8 +17,9 @@ class Role extends Intangible
 
     /**
     * The end date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setEndDate
     */
     public function endDate($value)
     {
@@ -26,7 +27,7 @@ class Role extends Intangible
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setEndDate($value)
@@ -44,8 +45,9 @@ class Role extends Intangible
 
     /**
     * The start date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setStartDate
     */
     public function startDate($value)
     {
@@ -53,7 +55,7 @@ class Role extends Intangible
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setStartDate($value)
@@ -73,6 +75,7 @@ class Role extends Intangible
     * A position played, performed or filled by a person or organization, as part of an organization. For example, an athlete in a SportsTeam might play in the position named 'Quarterback'.
     * @param string|string|array $value
     * @return $this
+    * @deprecated use setNamedPosition
     */
     public function namedPosition($value)
     {
@@ -100,6 +103,7 @@ class Role extends Intangible
     * A role played, performed or filled by a person or organization. For example, the team of creators for a comic book might fill the roles named 'inker', 'penciller', and 'letterer'; or an athlete in a SportsTeam might play in the position named 'Quarterback'.
     * @param string|string|array $value
     * @return $this
+    * @deprecated use setRoleName
     */
     public function roleName($value)
     {
@@ -125,7 +129,3 @@ class Role extends Intangible
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Role','Thing\\Role');
-

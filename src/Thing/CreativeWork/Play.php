@@ -15,7 +15,3 @@ class Play extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Play','Thing\\Play');
-

@@ -15,7 +15,3 @@ class StructuredValue extends Intangible
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue','Thing\\StructuredValue');
-

@@ -15,7 +15,3 @@ class PsychologicalTreatment extends TherapeuticProcedure
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalProcedure\\TherapeuticProcedure\\PsychologicalTreatment','Thing\\PsychologicalTreatment');
-

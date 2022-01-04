@@ -19,8 +19,9 @@ class TaxiReservation extends Reservation
 
     /**
     * When a taxi will pickup a passenger or a rental car can be picked up.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setPickupTime
     */
     public function pickupTime($value)
     {
@@ -28,7 +29,7 @@ class TaxiReservation extends Reservation
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setPickupTime($value)
@@ -46,8 +47,9 @@ class TaxiReservation extends Reservation
 
     /**
     * Number of people the reservation should accommodate.
-    * @param QuantitativeValue|int|array $value
+    * @param QuantitativeValue|int|array|string $value
     * @return $this
+    * @deprecated use setPartySize
     */
     public function partySize($value)
     {
@@ -55,7 +57,7 @@ class TaxiReservation extends Reservation
         return $this;
     }
    /**
-    * @param QuantitativeValue|int|array $value
+    * @param QuantitativeValue|int|array|string $value
     * @return $this
     */
     public function setPartySize($value)
@@ -73,19 +75,20 @@ class TaxiReservation extends Reservation
 
     /**
     * Where a taxi will pick up a passenger or a rental car can be picked up.
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
+    * @deprecated use setPickupLocation
     */
-    public function pickupLocation(?Place $value)
+    public function pickupLocation($value)
     {
         $this->setProperty('pickupLocation', $value);
         return $this;
     }
    /**
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
     */
-    public function setPickupLocation(?Place $value)
+    public function setPickupLocation($value)
     {
         $this->setProperty('pickupLocation', $value);
         return $this;
@@ -100,7 +103,3 @@ class TaxiReservation extends Reservation
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Reservation\\TaxiReservation','Thing\\TaxiReservation');
-

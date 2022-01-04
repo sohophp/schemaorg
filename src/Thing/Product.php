@@ -32,8 +32,9 @@ class Product extends Thing
     * Indicates the <a href="https://en.wikipedia.org/wiki/NATO_Stock_Number">NATO stock number</a> (nsn) of a <a class="localLink" href="http://schema.org/Product">Product</a>.
     * @param string|array $value
     * @return $this
+    * @deprecated use setNsn
     */
-    public function nsn(?string $value)
+    public function nsn($value)
     {
         $this->setProperty('nsn', $value);
         return $this;
@@ -42,7 +43,7 @@ class Product extends Thing
     * @param string|array $value
     * @return $this
     */
-    public function setNsn(?string $value)
+    public function setNsn($value)
     {
         $this->setProperty('nsn', $value);
         return $this;
@@ -57,19 +58,20 @@ class Product extends Thing
 
     /**
     * The manufacturer of the product.
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
+    * @deprecated use setManufacturer
     */
-    public function manufacturer(?Organization $value)
+    public function manufacturer($value)
     {
         $this->setProperty('manufacturer', $value);
         return $this;
     }
    /**
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
     */
-    public function setManufacturer(?Organization $value)
+    public function setManufacturer($value)
     {
         $this->setProperty('manufacturer', $value);
         return $this;
@@ -86,8 +88,9 @@ class Product extends Thing
     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
     * @param string|array $value
     * @return $this
+    * @deprecated use setSku
     */
-    public function sku(?string $value)
+    public function sku($value)
     {
         $this->setProperty('sku', $value);
         return $this;
@@ -96,7 +99,7 @@ class Product extends Thing
     * @param string|array $value
     * @return $this
     */
-    public function setSku(?string $value)
+    public function setSku($value)
     {
         $this->setProperty('sku', $value);
         return $this;
@@ -111,8 +114,9 @@ class Product extends Thing
 
     /**
     * The date of production of the item, e.g. vehicle.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setProductionDate
     */
     public function productionDate($value)
     {
@@ -120,7 +124,7 @@ class Product extends Thing
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setProductionDate($value)
@@ -138,19 +142,20 @@ class Product extends Thing
 
     /**
     * An intended audience, i.e. a group for whom something was created.
-    * @param Audience|array $value
+    * @param Audience|array|string $value
     * @return $this
+    * @deprecated use setAudience
     */
-    public function audience(?Audience $value)
+    public function audience($value)
     {
         $this->setProperty('audience', $value);
         return $this;
     }
    /**
-    * @param Audience|array $value
+    * @param Audience|array|string $value
     * @return $this
     */
-    public function setAudience(?Audience $value)
+    public function setAudience($value)
     {
         $this->setProperty('audience', $value);
         return $this;
@@ -167,8 +172,9 @@ class Product extends Thing
     * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
     * @param string|array $value
     * @return $this
+    * @deprecated use setMpn
     */
-    public function mpn(?string $value)
+    public function mpn($value)
     {
         $this->setProperty('mpn', $value);
         return $this;
@@ -177,7 +183,7 @@ class Product extends Thing
     * @param string|array $value
     * @return $this
     */
-    public function setMpn(?string $value)
+    public function setMpn($value)
     {
         $this->setProperty('mpn', $value);
         return $this;
@@ -192,8 +198,9 @@ class Product extends Thing
 
     /**
     * The height of the item.
-    * @param Distance|QuantitativeValue|array $value
+    * @param Distance|QuantitativeValue|array|string $value
     * @return $this
+    * @deprecated use setHeight
     */
     public function height($value)
     {
@@ -201,7 +208,7 @@ class Product extends Thing
         return $this;
     }
    /**
-    * @param Distance|QuantitativeValue|array $value
+    * @param Distance|QuantitativeValue|array|string $value
     * @return $this
     */
     public function setHeight($value)
@@ -221,8 +228,9 @@ class Product extends Thing
     * The <a href="http://apps.gs1.org/GDD/glossary/Pages/GTIN-8.aspx">GTIN-8</a> code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See <a href="http://www.gs1.org/barcodes/technical/idkeys/gtin">GS1 GTIN Summary</a> for more details.
     * @param string|array $value
     * @return $this
+    * @deprecated use setGtin8
     */
-    public function gtin8(?string $value)
+    public function gtin8($value)
     {
         $this->setProperty('gtin8', $value);
         return $this;
@@ -231,7 +239,7 @@ class Product extends Thing
     * @param string|array $value
     * @return $this
     */
-    public function setGtin8(?string $value)
+    public function setGtin8($value)
     {
         $this->setProperty('gtin8', $value);
         return $this;
@@ -246,19 +254,20 @@ class Product extends Thing
 
     /**
     * Review of the item.
-    * @param Review|array $value
+    * @param Review|array|string $value
     * @return $this
+    * @deprecated use setReviews
     */
-    public function reviews(?Review $value)
+    public function reviews($value)
     {
         $this->setProperty('reviews', $value);
         return $this;
     }
    /**
-    * @param Review|array $value
+    * @param Review|array|string $value
     * @return $this
     */
-    public function setReviews(?Review $value)
+    public function setReviews($value)
     {
         $this->setProperty('reviews', $value);
         return $this;
@@ -275,6 +284,7 @@ class Product extends Thing
     * The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.
     * @param string|ProductModel|array $value
     * @return $this
+    * @deprecated use setModel
     */
     public function model($value)
     {
@@ -300,19 +310,20 @@ class Product extends Thing
 
     /**
     * The overall rating, based on a collection of reviews or ratings, of the item.
-    * @param AggregateRating|array $value
+    * @param AggregateRating|array|string $value
     * @return $this
+    * @deprecated use setAggregateRating
     */
-    public function aggregateRating(?AggregateRating $value)
+    public function aggregateRating($value)
     {
         $this->setProperty('aggregateRating', $value);
         return $this;
     }
    /**
-    * @param AggregateRating|array $value
+    * @param AggregateRating|array|string $value
     * @return $this
     */
-    public function setAggregateRating(?AggregateRating $value)
+    public function setAggregateRating($value)
     {
         $this->setProperty('aggregateRating', $value);
         return $this;
@@ -327,19 +338,20 @@ class Product extends Thing
 
     /**
     * A pointer to another product (or multiple products) for which this product is a consumable.
-    * @param Product|array $value
+    * @param Product|array|string $value
     * @return $this
+    * @deprecated use setIsConsumableFor
     */
-    public function isConsumableFor(?Product $value)
+    public function isConsumableFor($value)
     {
         $this->setProperty('isConsumableFor', $value);
         return $this;
     }
    /**
-    * @param Product|array $value
+    * @param Product|array|string $value
     * @return $this
     */
-    public function setIsConsumableFor(?Product $value)
+    public function setIsConsumableFor($value)
     {
         $this->setProperty('isConsumableFor', $value);
         return $this;
@@ -354,19 +366,20 @@ class Product extends Thing
 
     /**
     * Indicates a ProductReturnPolicy that may be applicable.
-    * @param ProductReturnPolicy|array $value
+    * @param ProductReturnPolicy|array|string $value
     * @return $this
+    * @deprecated use setHasProductReturnPolicy
     */
-    public function hasProductReturnPolicy(?ProductReturnPolicy $value)
+    public function hasProductReturnPolicy($value)
     {
         $this->setProperty('hasProductReturnPolicy', $value);
         return $this;
     }
    /**
-    * @param ProductReturnPolicy|array $value
+    * @param ProductReturnPolicy|array|string $value
     * @return $this
     */
-    public function setHasProductReturnPolicy(?ProductReturnPolicy $value)
+    public function setHasProductReturnPolicy($value)
     {
         $this->setProperty('hasProductReturnPolicy', $value);
         return $this;
@@ -381,19 +394,20 @@ class Product extends Thing
 
     /**
     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.
-    * @param Offer|array $value
+    * @param Offer|array|string $value
     * @return $this
+    * @deprecated use setOffers
     */
-    public function offers(?Offer $value)
+    public function offers($value)
     {
         $this->setProperty('offers', $value);
         return $this;
     }
    /**
-    * @param Offer|array $value
+    * @param Offer|array|string $value
     * @return $this
     */
-    public function setOffers(?Offer $value)
+    public function setOffers($value)
     {
         $this->setProperty('offers', $value);
         return $this;
@@ -410,8 +424,9 @@ class Product extends Thing
     * An award won by or for this item.
     * @param string|array $value
     * @return $this
+    * @deprecated use setAward
     */
-    public function award(?string $value)
+    public function award($value)
     {
         $this->setProperty('award', $value);
         return $this;
@@ -420,7 +435,7 @@ class Product extends Thing
     * @param string|array $value
     * @return $this
     */
-    public function setAward(?string $value)
+    public function setAward($value)
     {
         $this->setProperty('award', $value);
         return $this;
@@ -437,6 +452,7 @@ class Product extends Thing
     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
     * @param string|PhysicalActivityCategory|Thing|array $value
     * @return $this
+    * @deprecated use setCategory
     */
     public function category($value)
     {
@@ -462,8 +478,9 @@ class Product extends Thing
 
     /**
     * The width of the item.
-    * @param QuantitativeValue|Distance|array $value
+    * @param QuantitativeValue|Distance|array|string $value
     * @return $this
+    * @deprecated use setWidth
     */
     public function width($value)
     {
@@ -471,7 +488,7 @@ class Product extends Thing
         return $this;
     }
    /**
-    * @param QuantitativeValue|Distance|array $value
+    * @param QuantitativeValue|Distance|array|string $value
     * @return $this
     */
     public function setWidth($value)
@@ -491,19 +508,20 @@ class Product extends Thing
     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>
 
 Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
-    * @param PropertyValue|array $value
+    * @param PropertyValue|array|string $value
     * @return $this
+    * @deprecated use setAdditionalProperty
     */
-    public function additionalProperty(?PropertyValue $value)
+    public function additionalProperty($value)
     {
         $this->setProperty('additionalProperty', $value);
         return $this;
     }
    /**
-    * @param PropertyValue|array $value
+    * @param PropertyValue|array|string $value
     * @return $this
     */
-    public function setAdditionalProperty(?PropertyValue $value)
+    public function setAdditionalProperty($value)
     {
         $this->setProperty('additionalProperty', $value);
         return $this;
@@ -520,6 +538,7 @@ Note: Publishers should be aware that applications designed to use specific sche
     * A material that something is made from, e.g. leather, wool, cotton, paper.
     * @param string|string|Product|array $value
     * @return $this
+    * @deprecated use setMaterial
     */
     public function material($value)
     {
@@ -545,19 +564,20 @@ Note: Publishers should be aware that applications designed to use specific sche
 
     /**
     * A pointer to another product (or multiple products) for which this product is an accessory or spare part.
-    * @param Product|array $value
+    * @param Product|array|string $value
     * @return $this
+    * @deprecated use setIsAccessoryOrSparePartFor
     */
-    public function isAccessoryOrSparePartFor(?Product $value)
+    public function isAccessoryOrSparePartFor($value)
     {
         $this->setProperty('isAccessoryOrSparePartFor', $value);
         return $this;
     }
    /**
-    * @param Product|array $value
+    * @param Product|array|string $value
     * @return $this
     */
-    public function setIsAccessoryOrSparePartFor(?Product $value)
+    public function setIsAccessoryOrSparePartFor($value)
     {
         $this->setProperty('isAccessoryOrSparePartFor', $value);
         return $this;
@@ -574,6 +594,7 @@ Note: Publishers should be aware that applications designed to use specific sche
     * An associated logo.
     * @param ImageObject|string|array $value
     * @return $this
+    * @deprecated use setLogo
     */
     public function logo($value)
     {
@@ -601,8 +622,9 @@ Note: Publishers should be aware that applications designed to use specific sche
     * The GTIN-14 code of the product, or the product to which the offer refers. See <a href="http://www.gs1.org/barcodes/technical/idkeys/gtin">GS1 GTIN Summary</a> for more details.
     * @param string|array $value
     * @return $this
+    * @deprecated use setGtin14
     */
-    public function gtin14(?string $value)
+    public function gtin14($value)
     {
         $this->setProperty('gtin14', $value);
         return $this;
@@ -611,7 +633,7 @@ Note: Publishers should be aware that applications designed to use specific sche
     * @param string|array $value
     * @return $this
     */
-    public function setGtin14(?string $value)
+    public function setGtin14($value)
     {
         $this->setProperty('gtin14', $value);
         return $this;
@@ -628,8 +650,9 @@ Note: Publishers should be aware that applications designed to use specific sche
     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceeding zero. See <a href="http://www.gs1.org/barcodes/technical/idkeys/gtin">GS1 GTIN Summary</a> for more details.
     * @param string|array $value
     * @return $this
+    * @deprecated use setGtin13
     */
-    public function gtin13(?string $value)
+    public function gtin13($value)
     {
         $this->setProperty('gtin13', $value);
         return $this;
@@ -638,7 +661,7 @@ Note: Publishers should be aware that applications designed to use specific sche
     * @param string|array $value
     * @return $this
     */
-    public function setGtin13(?string $value)
+    public function setGtin13($value)
     {
         $this->setProperty('gtin13', $value);
         return $this;
@@ -655,8 +678,9 @@ Note: Publishers should be aware that applications designed to use specific sche
     * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See <a href="http://www.gs1.org/barcodes/technical/idkeys/gtin">GS1 GTIN Summary</a> for more details.
     * @param string|array $value
     * @return $this
+    * @deprecated use setGtin12
     */
-    public function gtin12(?string $value)
+    public function gtin12($value)
     {
         $this->setProperty('gtin12', $value);
         return $this;
@@ -665,7 +689,7 @@ Note: Publishers should be aware that applications designed to use specific sche
     * @param string|array $value
     * @return $this
     */
-    public function setGtin12(?string $value)
+    public function setGtin12($value)
     {
         $this->setProperty('gtin12', $value);
         return $this;
@@ -680,19 +704,20 @@ Note: Publishers should be aware that applications designed to use specific sche
 
     /**
     * The weight of the product or person.
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
+    * @deprecated use setWeight
     */
-    public function weight(?QuantitativeValue $value)
+    public function weight($value)
     {
         $this->setProperty('weight', $value);
         return $this;
     }
    /**
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
     */
-    public function setWeight(?QuantitativeValue $value)
+    public function setWeight($value)
     {
         $this->setProperty('weight', $value);
         return $this;
@@ -707,8 +732,9 @@ Note: Publishers should be aware that applications designed to use specific sche
 
     /**
     * A pointer to another, functionally similar product (or multiple products).
-    * @param Service|Product|array $value
+    * @param Service|Product|array|string $value
     * @return $this
+    * @deprecated use setIsSimilarTo
     */
     public function isSimilarTo($value)
     {
@@ -716,7 +742,7 @@ Note: Publishers should be aware that applications designed to use specific sche
         return $this;
     }
    /**
-    * @param Service|Product|array $value
+    * @param Service|Product|array|string $value
     * @return $this
     */
     public function setIsSimilarTo($value)
@@ -736,8 +762,9 @@ Note: Publishers should be aware that applications designed to use specific sche
     * Awards won by or for this item.
     * @param string|array $value
     * @return $this
+    * @deprecated use setAwards
     */
-    public function awards(?string $value)
+    public function awards($value)
     {
         $this->setProperty('awards', $value);
         return $this;
@@ -746,7 +773,7 @@ Note: Publishers should be aware that applications designed to use specific sche
     * @param string|array $value
     * @return $this
     */
-    public function setAwards(?string $value)
+    public function setAwards($value)
     {
         $this->setProperty('awards', $value);
         return $this;
@@ -763,8 +790,9 @@ Note: Publishers should be aware that applications designed to use specific sche
     * A Global Trade Item Number (<a href="https://www.gs1.org/standards/id-keys/gtin">GTIN</a>). GTINs identify trade items, including products and services, using numeric identification codes. The <a class="localLink" href="http://schema.org/gtin">gtin</a> property generalizes the earlier <a class="localLink" href="http://schema.org/gtin8">gtin8</a>, <a class="localLink" href="http://schema.org/gtin12">gtin12</a>, <a class="localLink" href="http://schema.org/gtin13">gtin13</a>, and <a class="localLink" href="http://schema.org/gtin14">gtin14</a> properties. The GS1 <a href="https://www.gs1.org/standards/Digital-Link/">digital link specifications</a> express GTINs as URLs. A correct <a class="localLink" href="http://schema.org/gtin">gtin</a> value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a <a href="https://www.gs1.org/services/check-digit-calculator">valid GS1 check digit</a> and meet the other rules for valid GTINs. See also <a href="http://www.gs1.org/barcodes/technical/idkeys/gtin">GS1's GTIN Summary</a> and <a href="https://en.wikipedia.org/wiki/Global_Trade_Item_Number">Wikipedia</a> for more details. Left-padding of the gtin values is not required or encouraged.
     * @param string|array $value
     * @return $this
+    * @deprecated use setGtin
     */
-    public function gtin(?string $value)
+    public function gtin($value)
     {
         $this->setProperty('gtin', $value);
         return $this;
@@ -773,7 +801,7 @@ Note: Publishers should be aware that applications designed to use specific sche
     * @param string|array $value
     * @return $this
     */
-    public function setGtin(?string $value)
+    public function setGtin($value)
     {
         $this->setProperty('gtin', $value);
         return $this;
@@ -790,8 +818,9 @@ Note: Publishers should be aware that applications designed to use specific sche
     * The color of the product.
     * @param string|array $value
     * @return $this
+    * @deprecated use setColor
     */
-    public function color(?string $value)
+    public function color($value)
     {
         $this->setProperty('color', $value);
         return $this;
@@ -800,7 +829,7 @@ Note: Publishers should be aware that applications designed to use specific sche
     * @param string|array $value
     * @return $this
     */
-    public function setColor(?string $value)
+    public function setColor($value)
     {
         $this->setProperty('color', $value);
         return $this;
@@ -815,8 +844,9 @@ Note: Publishers should be aware that applications designed to use specific sche
 
     /**
     * A pointer to another, somehow related product (or multiple products).
-    * @param Product|Service|array $value
+    * @param Product|Service|array|string $value
     * @return $this
+    * @deprecated use setIsRelatedTo
     */
     public function isRelatedTo($value)
     {
@@ -824,7 +854,7 @@ Note: Publishers should be aware that applications designed to use specific sche
         return $this;
     }
    /**
-    * @param Product|Service|array $value
+    * @param Product|Service|array|string $value
     * @return $this
     */
     public function setIsRelatedTo($value)
@@ -844,8 +874,9 @@ Note: Publishers should be aware that applications designed to use specific sche
     * The product identifier, such as ISBN. For example: <code>meta itemprop="productID" content="isbn:123-456-789"</code>.
     * @param string|array $value
     * @return $this
+    * @deprecated use setProductID
     */
-    public function productID(?string $value)
+    public function productID($value)
     {
         $this->setProperty('productID', $value);
         return $this;
@@ -854,7 +885,7 @@ Note: Publishers should be aware that applications designed to use specific sche
     * @param string|array $value
     * @return $this
     */
-    public function setProductID(?string $value)
+    public function setProductID($value)
     {
         $this->setProperty('productID', $value);
         return $this;
@@ -869,19 +900,20 @@ Note: Publishers should be aware that applications designed to use specific sche
 
     /**
     * A review of the item.
-    * @param Review|array $value
+    * @param Review|array|string $value
     * @return $this
+    * @deprecated use setReview
     */
-    public function review(?Review $value)
+    public function review($value)
     {
         $this->setProperty('review', $value);
         return $this;
     }
    /**
-    * @param Review|array $value
+    * @param Review|array|string $value
     * @return $this
     */
-    public function setReview(?Review $value)
+    public function setReview($value)
     {
         $this->setProperty('review', $value);
         return $this;
@@ -896,8 +928,9 @@ Note: Publishers should be aware that applications designed to use specific sche
 
     /**
     * The depth of the item.
-    * @param Distance|QuantitativeValue|array $value
+    * @param Distance|QuantitativeValue|array|string $value
     * @return $this
+    * @deprecated use setDepth
     */
     public function depth($value)
     {
@@ -905,7 +938,7 @@ Note: Publishers should be aware that applications designed to use specific sche
         return $this;
     }
    /**
-    * @param Distance|QuantitativeValue|array $value
+    * @param Distance|QuantitativeValue|array|string $value
     * @return $this
     */
     public function setDepth($value)
@@ -923,8 +956,9 @@ Note: Publishers should be aware that applications designed to use specific sche
 
     /**
     * The date the item e.g. vehicle was purchased by the current owner.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setPurchaseDate
     */
     public function purchaseDate($value)
     {
@@ -932,7 +966,7 @@ Note: Publishers should be aware that applications designed to use specific sche
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setPurchaseDate($value)
@@ -950,19 +984,20 @@ Note: Publishers should be aware that applications designed to use specific sche
 
     /**
     * A predefined value from OfferItemCondition or a textual description of the condition of the product or service, or the products or services included in the offer.
-    * @param OfferItemCondition|array $value
+    * @param OfferItemCondition|array|string $value
     * @return $this
+    * @deprecated use setItemCondition
     */
-    public function itemCondition(?OfferItemCondition $value)
+    public function itemCondition($value)
     {
         $this->setProperty('itemCondition', $value);
         return $this;
     }
    /**
-    * @param OfferItemCondition|array $value
+    * @param OfferItemCondition|array|string $value
     * @return $this
     */
-    public function setItemCondition(?OfferItemCondition $value)
+    public function setItemCondition($value)
     {
         $this->setProperty('itemCondition', $value);
         return $this;
@@ -979,8 +1014,9 @@ Note: Publishers should be aware that applications designed to use specific sche
     * A slogan or motto associated with the item.
     * @param string|array $value
     * @return $this
+    * @deprecated use setSlogan
     */
-    public function slogan(?string $value)
+    public function slogan($value)
     {
         $this->setProperty('slogan', $value);
         return $this;
@@ -989,7 +1025,7 @@ Note: Publishers should be aware that applications designed to use specific sche
     * @param string|array $value
     * @return $this
     */
-    public function setSlogan(?string $value)
+    public function setSlogan($value)
     {
         $this->setProperty('slogan', $value);
         return $this;
@@ -1004,8 +1040,9 @@ Note: Publishers should be aware that applications designed to use specific sche
 
     /**
     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-    * @param Organization|Brand|array $value
+    * @param Organization|Brand|array|string $value
     * @return $this
+    * @deprecated use setBrand
     */
     public function brand($value)
     {
@@ -1013,7 +1050,7 @@ Note: Publishers should be aware that applications designed to use specific sche
         return $this;
     }
    /**
-    * @param Organization|Brand|array $value
+    * @param Organization|Brand|array|string $value
     * @return $this
     */
     public function setBrand($value)
@@ -1031,8 +1068,9 @@ Note: Publishers should be aware that applications designed to use specific sche
 
     /**
     * The release date of a product or product model. This can be used to distinguish the exact variant of a product.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setReleaseDate
     */
     public function releaseDate($value)
     {
@@ -1040,7 +1078,7 @@ Note: Publishers should be aware that applications designed to use specific sche
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setReleaseDate($value)
@@ -1058,7 +1096,3 @@ Note: Publishers should be aware that applications designed to use specific sche
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Product','Thing\\Product');
-

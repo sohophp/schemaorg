@@ -15,7 +15,3 @@ class Atlas extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Atlas','Thing\\Atlas');
-

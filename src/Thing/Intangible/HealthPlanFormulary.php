@@ -15,19 +15,20 @@ class HealthPlanFormulary extends Intangible
 
     /**
     * Whether prescriptions can be delivered by mail.
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
+    * @deprecated use setOffersPrescriptionByMail
     */
-    public function offersPrescriptionByMail(?bool $value)
+    public function offersPrescriptionByMail($value)
     {
         $this->setProperty('offersPrescriptionByMail', $value);
         return $this;
     }
    /**
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
     */
-    public function setOffersPrescriptionByMail(?bool $value)
+    public function setOffersPrescriptionByMail($value)
     {
         $this->setProperty('offersPrescriptionByMail', $value);
         return $this;
@@ -42,19 +43,20 @@ class HealthPlanFormulary extends Intangible
 
     /**
     * Whether The costs to the patient for services under this network or formulary.
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
+    * @deprecated use setHealthPlanCostSharing
     */
-    public function healthPlanCostSharing(?bool $value)
+    public function healthPlanCostSharing($value)
     {
         $this->setProperty('healthPlanCostSharing', $value);
         return $this;
     }
    /**
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
     */
-    public function setHealthPlanCostSharing(?bool $value)
+    public function setHealthPlanCostSharing($value)
     {
         $this->setProperty('healthPlanCostSharing', $value);
         return $this;
@@ -71,8 +73,9 @@ class HealthPlanFormulary extends Intangible
     * The tier(s) of drugs offered by this formulary or insurance plan.
     * @param string|array $value
     * @return $this
+    * @deprecated use setHealthPlanDrugTier
     */
-    public function healthPlanDrugTier(?string $value)
+    public function healthPlanDrugTier($value)
     {
         $this->setProperty('healthPlanDrugTier', $value);
         return $this;
@@ -81,7 +84,7 @@ class HealthPlanFormulary extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setHealthPlanDrugTier(?string $value)
+    public function setHealthPlanDrugTier($value)
     {
         $this->setProperty('healthPlanDrugTier', $value);
         return $this;
@@ -96,7 +99,3 @@ class HealthPlanFormulary extends Intangible
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\HealthPlanFormulary','Thing\\HealthPlanFormulary');
-

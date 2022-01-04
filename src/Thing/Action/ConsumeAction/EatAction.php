@@ -15,7 +15,3 @@ class EatAction extends ConsumeAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\ConsumeAction\\EatAction','Thing\\EatAction');
-

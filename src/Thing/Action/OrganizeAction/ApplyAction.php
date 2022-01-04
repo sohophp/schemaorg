@@ -22,7 +22,3 @@ class ApplyAction extends OrganizeAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\OrganizeAction\\ApplyAction','Thing\\ApplyAction');
-

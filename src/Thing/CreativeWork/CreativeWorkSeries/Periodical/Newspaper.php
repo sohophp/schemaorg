@@ -15,7 +15,3 @@ class Newspaper extends Periodical
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\CreativeWorkSeries\\Periodical\\Newspaper','Thing\\Newspaper');
-

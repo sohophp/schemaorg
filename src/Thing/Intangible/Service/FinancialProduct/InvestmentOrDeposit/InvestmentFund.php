@@ -15,7 +15,3 @@ class InvestmentFund extends InvestmentOrDeposit
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Service\\FinancialProduct\\InvestmentOrDeposit\\InvestmentFund','Thing\\InvestmentFund');
-

@@ -20,8 +20,9 @@ class FoodEstablishmentReservation extends Reservation
     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from <em>January</em> to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>
 
 Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setStartTime
     */
     public function startTime($value)
     {
@@ -29,7 +30,7 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setStartTime($value)
@@ -47,8 +48,9 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
 
     /**
     * Number of people the reservation should accommodate.
-    * @param QuantitativeValue|int|array $value
+    * @param QuantitativeValue|int|array|string $value
     * @return $this
+    * @deprecated use setPartySize
     */
     public function partySize($value)
     {
@@ -56,7 +58,7 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
         return $this;
     }
    /**
-    * @param QuantitativeValue|int|array $value
+    * @param QuantitativeValue|int|array|string $value
     * @return $this
     */
     public function setPartySize($value)
@@ -76,8 +78,9 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to <em>December</em>. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>
 
 Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setEndTime
     */
     public function endTime($value)
     {
@@ -85,7 +88,7 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setEndTime($value)
@@ -103,7 +106,3 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Reservation\\FoodEstablishmentReservation','Thing\\FoodEstablishmentReservation');
-

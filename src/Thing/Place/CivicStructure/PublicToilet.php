@@ -15,7 +15,3 @@ class PublicToilet extends CivicStructure
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\CivicStructure\\PublicToilet','Thing\\PublicToilet');
-

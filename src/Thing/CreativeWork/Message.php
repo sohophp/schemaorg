@@ -19,8 +19,9 @@ class Message extends CreativeWork
 
     /**
     * The date/time at which the message has been read by the recipient if a single recipient exists.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setDateRead
     */
     public function dateRead($value)
     {
@@ -28,7 +29,7 @@ class Message extends CreativeWork
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setDateRead($value)
@@ -46,8 +47,9 @@ class Message extends CreativeWork
 
     /**
     * A sub property of recipient. The recipient blind copied on a message.
-    * @param Organization|ContactPoint|Person|array $value
+    * @param Organization|ContactPoint|Person|array|string $value
     * @return $this
+    * @deprecated use setBccRecipient
     */
     public function bccRecipient($value)
     {
@@ -55,7 +57,7 @@ class Message extends CreativeWork
         return $this;
     }
    /**
-    * @param Organization|ContactPoint|Person|array $value
+    * @param Organization|ContactPoint|Person|array|string $value
     * @return $this
     */
     public function setBccRecipient($value)
@@ -73,8 +75,9 @@ class Message extends CreativeWork
 
     /**
     * The date/time at which the message was sent.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setDateSent
     */
     public function dateSent($value)
     {
@@ -82,7 +85,7 @@ class Message extends CreativeWork
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setDateSent($value)
@@ -100,8 +103,9 @@ class Message extends CreativeWork
 
     /**
     * A sub property of recipient. The recipient copied on a message.
-    * @param Person|ContactPoint|Organization|array $value
+    * @param Person|ContactPoint|Organization|array|string $value
     * @return $this
+    * @deprecated use setCcRecipient
     */
     public function ccRecipient($value)
     {
@@ -109,7 +113,7 @@ class Message extends CreativeWork
         return $this;
     }
    /**
-    * @param Person|ContactPoint|Organization|array $value
+    * @param Person|ContactPoint|Organization|array|string $value
     * @return $this
     */
     public function setCcRecipient($value)
@@ -127,8 +131,9 @@ class Message extends CreativeWork
 
     /**
     * A sub property of participant. The participant who is at the receiving end of the action.
-    * @param Person|ContactPoint|Organization|Audience|array $value
+    * @param Person|ContactPoint|Organization|Audience|array|string $value
     * @return $this
+    * @deprecated use setRecipient
     */
     public function recipient($value)
     {
@@ -136,7 +141,7 @@ class Message extends CreativeWork
         return $this;
     }
    /**
-    * @param Person|ContactPoint|Organization|Audience|array $value
+    * @param Person|ContactPoint|Organization|Audience|array|string $value
     * @return $this
     */
     public function setRecipient($value)
@@ -154,8 +159,9 @@ class Message extends CreativeWork
 
     /**
     * A sub property of participant. The participant who is at the sending end of the action.
-    * @param Audience|Person|Organization|array $value
+    * @param Audience|Person|Organization|array|string $value
     * @return $this
+    * @deprecated use setSender
     */
     public function sender($value)
     {
@@ -163,7 +169,7 @@ class Message extends CreativeWork
         return $this;
     }
    /**
-    * @param Audience|Person|Organization|array $value
+    * @param Audience|Person|Organization|array|string $value
     * @return $this
     */
     public function setSender($value)
@@ -181,19 +187,20 @@ class Message extends CreativeWork
 
     /**
     * A CreativeWork attached to the message.
-    * @param CreativeWork|array $value
+    * @param CreativeWork|array|string $value
     * @return $this
+    * @deprecated use setMessageAttachment
     */
-    public function messageAttachment(?CreativeWork $value)
+    public function messageAttachment($value)
     {
         $this->setProperty('messageAttachment', $value);
         return $this;
     }
    /**
-    * @param CreativeWork|array $value
+    * @param CreativeWork|array|string $value
     * @return $this
     */
-    public function setMessageAttachment(?CreativeWork $value)
+    public function setMessageAttachment($value)
     {
         $this->setProperty('messageAttachment', $value);
         return $this;
@@ -208,8 +215,9 @@ class Message extends CreativeWork
 
     /**
     * The date/time the message was received if a single recipient exists.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setDateReceived
     */
     public function dateReceived($value)
     {
@@ -217,7 +225,7 @@ class Message extends CreativeWork
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setDateReceived($value)
@@ -235,8 +243,9 @@ class Message extends CreativeWork
 
     /**
     * A sub property of recipient. The recipient who was directly sent the message.
-    * @param ContactPoint|Organization|Audience|Person|array $value
+    * @param ContactPoint|Organization|Audience|Person|array|string $value
     * @return $this
+    * @deprecated use setToRecipient
     */
     public function toRecipient($value)
     {
@@ -244,7 +253,7 @@ class Message extends CreativeWork
         return $this;
     }
    /**
-    * @param ContactPoint|Organization|Audience|Person|array $value
+    * @param ContactPoint|Organization|Audience|Person|array|string $value
     * @return $this
     */
     public function setToRecipient($value)
@@ -262,7 +271,3 @@ class Message extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Message','Thing\\Message');
-

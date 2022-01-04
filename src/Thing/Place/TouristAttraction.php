@@ -19,6 +19,7 @@ class TouristAttraction extends Place
     * Attraction suitable for type(s) of tourist. eg. Children, visitors from a particular country, etc.
     * @param string|Audience|array $value
     * @return $this
+    * @deprecated use setTouristType
     */
     public function touristType($value)
     {
@@ -46,6 +47,7 @@ class TouristAttraction extends Place
     * A language someone may use with or at the item, service or place. Please use one of the language codes from the <a href="http://tools.ietf.org/html/bcp47">IETF BCP 47 standard</a>. See also <a class="localLink" href="http://schema.org/inLanguage">inLanguage</a>
     * @param string|Language|array $value
     * @return $this
+    * @deprecated use setAvailableLanguage
     */
     public function availableLanguage($value)
     {
@@ -71,7 +73,3 @@ class TouristAttraction extends Place
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\TouristAttraction','Thing\\TouristAttraction');
-

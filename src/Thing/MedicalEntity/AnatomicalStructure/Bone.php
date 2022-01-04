@@ -15,7 +15,3 @@ class Bone extends AnatomicalStructure
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\AnatomicalStructure\\Bone','Thing\\Bone');
-

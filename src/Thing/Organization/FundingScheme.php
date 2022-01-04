@@ -17,7 +17,3 @@ class FundingScheme extends Organization
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\FundingScheme','Thing\\FundingScheme');
-

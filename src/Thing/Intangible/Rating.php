@@ -27,8 +27,9 @@ Usage guidelines:<br/><br/>
 
     * @param string|array $value
     * @return $this
+    * @deprecated use setRatingValue
     */
-    public function ratingValue(?string $value)
+    public function ratingValue($value)
     {
         $this->setProperty('ratingValue', $value);
         return $this;
@@ -37,7 +38,7 @@ Usage guidelines:<br/><br/>
     * @param string|array $value
     * @return $this
     */
-    public function setRatingValue(?string $value)
+    public function setRatingValue($value)
     {
         $this->setProperty('ratingValue', $value);
         return $this;
@@ -54,8 +55,9 @@ Usage guidelines:<br/><br/>
     * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
     * @param string|array $value
     * @return $this
+    * @deprecated use setBestRating
     */
-    public function bestRating(?string $value)
+    public function bestRating($value)
     {
         $this->setProperty('bestRating', $value);
         return $this;
@@ -64,7 +66,7 @@ Usage guidelines:<br/><br/>
     * @param string|array $value
     * @return $this
     */
-    public function setBestRating(?string $value)
+    public function setBestRating($value)
     {
         $this->setProperty('bestRating', $value);
         return $this;
@@ -81,8 +83,9 @@ Usage guidelines:<br/><br/>
     * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
     * @param string|array $value
     * @return $this
+    * @deprecated use setWorstRating
     */
-    public function worstRating(?string $value)
+    public function worstRating($value)
     {
         $this->setProperty('worstRating', $value);
         return $this;
@@ -91,7 +94,7 @@ Usage guidelines:<br/><br/>
     * @param string|array $value
     * @return $this
     */
-    public function setWorstRating(?string $value)
+    public function setWorstRating($value)
     {
         $this->setProperty('worstRating', $value);
         return $this;
@@ -106,8 +109,9 @@ Usage guidelines:<br/><br/>
 
     /**
     * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
+    * @deprecated use setAuthor
     */
     public function author($value)
     {
@@ -115,7 +119,7 @@ Usage guidelines:<br/><br/>
         return $this;
     }
    /**
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
     */
     public function setAuthor($value)
@@ -135,8 +139,9 @@ Usage guidelines:<br/><br/>
     * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with "fact check" markup using <a class="localLink" href="http://schema.org/ClaimReview">ClaimReview</a>.
     * @param string|array $value
     * @return $this
+    * @deprecated use setRatingExplanation
     */
-    public function ratingExplanation(?string $value)
+    public function ratingExplanation($value)
     {
         $this->setProperty('ratingExplanation', $value);
         return $this;
@@ -145,7 +150,7 @@ Usage guidelines:<br/><br/>
     * @param string|array $value
     * @return $this
     */
-    public function setRatingExplanation(?string $value)
+    public function setRatingExplanation($value)
     {
         $this->setProperty('ratingExplanation', $value);
         return $this;
@@ -162,8 +167,9 @@ Usage guidelines:<br/><br/>
     * This Review or Rating is relevant to this part or facet of the itemReviewed.
     * @param string|array $value
     * @return $this
+    * @deprecated use setReviewAspect
     */
-    public function reviewAspect(?string $value)
+    public function reviewAspect($value)
     {
         $this->setProperty('reviewAspect', $value);
         return $this;
@@ -172,7 +178,7 @@ Usage guidelines:<br/><br/>
     * @param string|array $value
     * @return $this
     */
-    public function setReviewAspect(?string $value)
+    public function setReviewAspect($value)
     {
         $this->setProperty('reviewAspect', $value);
         return $this;
@@ -187,7 +193,3 @@ Usage guidelines:<br/><br/>
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Rating','Thing\\Rating');
-

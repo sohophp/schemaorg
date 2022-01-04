@@ -16,19 +16,20 @@ class ReviewAction extends AssessAction
 
     /**
     * A sub property of result. The review that resulted in the performing of the action.
-    * @param Review|array $value
+    * @param Review|array|string $value
     * @return $this
+    * @deprecated use setResultReview
     */
-    public function resultReview(?Review $value)
+    public function resultReview($value)
     {
         $this->setProperty('resultReview', $value);
         return $this;
     }
    /**
-    * @param Review|array $value
+    * @param Review|array|string $value
     * @return $this
     */
-    public function setResultReview(?Review $value)
+    public function setResultReview($value)
     {
         $this->setProperty('resultReview', $value);
         return $this;
@@ -43,7 +44,3 @@ class ReviewAction extends AssessAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\AssessAction\\ReviewAction','Thing\\ReviewAction');
-

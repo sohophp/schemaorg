@@ -21,19 +21,20 @@ class MusicRecording extends CreativeWork
 
     /**
     * The composition this track is a recording of.
-    * @param MusicComposition|array $value
+    * @param MusicComposition|array|string $value
     * @return $this
+    * @deprecated use setRecordingOf
     */
-    public function recordingOf(?MusicComposition $value)
+    public function recordingOf($value)
     {
         $this->setProperty('recordingOf', $value);
         return $this;
     }
    /**
-    * @param MusicComposition|array $value
+    * @param MusicComposition|array|string $value
     * @return $this
     */
-    public function setRecordingOf(?MusicComposition $value)
+    public function setRecordingOf($value)
     {
         $this->setProperty('recordingOf', $value);
         return $this;
@@ -50,8 +51,9 @@ class MusicRecording extends CreativeWork
     * The International Standard Recording Code for the recording.
     * @param string|array $value
     * @return $this
+    * @deprecated use setIsrcCode
     */
-    public function isrcCode(?string $value)
+    public function isrcCode($value)
     {
         $this->setProperty('isrcCode', $value);
         return $this;
@@ -60,7 +62,7 @@ class MusicRecording extends CreativeWork
     * @param string|array $value
     * @return $this
     */
-    public function setIsrcCode(?string $value)
+    public function setIsrcCode($value)
     {
         $this->setProperty('isrcCode', $value);
         return $this;
@@ -75,19 +77,20 @@ class MusicRecording extends CreativeWork
 
     /**
     * The album to which this recording belongs.
-    * @param MusicAlbum|array $value
+    * @param MusicAlbum|array|string $value
     * @return $this
+    * @deprecated use setInAlbum
     */
-    public function inAlbum(?MusicAlbum $value)
+    public function inAlbum($value)
     {
         $this->setProperty('inAlbum', $value);
         return $this;
     }
    /**
-    * @param MusicAlbum|array $value
+    * @param MusicAlbum|array|string $value
     * @return $this
     */
-    public function setInAlbum(?MusicAlbum $value)
+    public function setInAlbum($value)
     {
         $this->setProperty('inAlbum', $value);
         return $this;
@@ -102,19 +105,20 @@ class MusicRecording extends CreativeWork
 
     /**
     * The playlist to which this recording belongs.
-    * @param MusicPlaylist|array $value
+    * @param MusicPlaylist|array|string $value
     * @return $this
+    * @deprecated use setInPlaylist
     */
-    public function inPlaylist(?MusicPlaylist $value)
+    public function inPlaylist($value)
     {
         $this->setProperty('inPlaylist', $value);
         return $this;
     }
    /**
-    * @param MusicPlaylist|array $value
+    * @param MusicPlaylist|array|string $value
     * @return $this
     */
-    public function setInPlaylist(?MusicPlaylist $value)
+    public function setInPlaylist($value)
     {
         $this->setProperty('inPlaylist', $value);
         return $this;
@@ -129,8 +133,9 @@ class MusicRecording extends CreativeWork
 
     /**
     * The artist that performed this album or recording.
-    * @param Person|MusicGroup|array $value
+    * @param Person|MusicGroup|array|string $value
     * @return $this
+    * @deprecated use setByArtist
     */
     public function byArtist($value)
     {
@@ -138,7 +143,7 @@ class MusicRecording extends CreativeWork
         return $this;
     }
    /**
-    * @param Person|MusicGroup|array $value
+    * @param Person|MusicGroup|array|string $value
     * @return $this
     */
     public function setByArtist($value)
@@ -156,19 +161,20 @@ class MusicRecording extends CreativeWork
 
     /**
     * The duration of the item (movie, audio recording, event, etc.) in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>.
-    * @param Duration|array $value
+    * @param Duration|array|string $value
     * @return $this
+    * @deprecated use setDuration
     */
-    public function duration(?Duration $value)
+    public function duration($value)
     {
         $this->setProperty('duration', $value);
         return $this;
     }
    /**
-    * @param Duration|array $value
+    * @param Duration|array|string $value
     * @return $this
     */
-    public function setDuration(?Duration $value)
+    public function setDuration($value)
     {
         $this->setProperty('duration', $value);
         return $this;
@@ -183,7 +189,3 @@ class MusicRecording extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\MusicRecording','Thing\\MusicRecording');
-

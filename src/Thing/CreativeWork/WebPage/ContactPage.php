@@ -15,7 +15,3 @@ class ContactPage extends WebPage
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\WebPage\\ContactPage','Thing\\ContactPage');
-

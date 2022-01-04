@@ -17,8 +17,9 @@ class Quotation extends CreativeWork
 
     /**
     * The (e.g. fictional) character, Person or Organization to whom the quotation is attributed within the containing CreativeWork.
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
+    * @deprecated use setSpokenByCharacter
     */
     public function spokenByCharacter($value)
     {
@@ -26,7 +27,7 @@ class Quotation extends CreativeWork
         return $this;
     }
    /**
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
     */
     public function setSpokenByCharacter($value)
@@ -44,7 +45,3 @@ class Quotation extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Quotation','Thing\\Quotation');
-

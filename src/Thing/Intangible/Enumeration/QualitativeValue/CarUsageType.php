@@ -15,7 +15,3 @@ class CarUsageType extends QualitativeValue
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\QualitativeValue\\CarUsageType','Thing\\CarUsageType');
-

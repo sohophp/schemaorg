@@ -15,7 +15,3 @@ class Conversation extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Conversation','Thing\\Conversation');
-

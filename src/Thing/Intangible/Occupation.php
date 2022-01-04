@@ -20,19 +20,20 @@ class Occupation extends Intangible
 
     /**
     * The region/country for which this occupational description is appropriate. Note that educational requirements and qualifications can vary between jurisdictions.
-    * @param AdministrativeArea|array $value
+    * @param AdministrativeArea|array|string $value
     * @return $this
+    * @deprecated use setOccupationLocation
     */
-    public function occupationLocation(?AdministrativeArea $value)
+    public function occupationLocation($value)
     {
         $this->setProperty('occupationLocation', $value);
         return $this;
     }
    /**
-    * @param AdministrativeArea|array $value
+    * @param AdministrativeArea|array|string $value
     * @return $this
     */
-    public function setOccupationLocation(?AdministrativeArea $value)
+    public function setOccupationLocation($value)
     {
         $this->setProperty('occupationLocation', $value);
         return $this;
@@ -49,6 +50,7 @@ class Occupation extends Intangible
     * Specific qualifications required for this role or Occupation.
     * @param string|EducationalOccupationalCredential|array $value
     * @return $this
+    * @deprecated use setQualifications
     */
     public function qualifications($value)
     {
@@ -76,8 +78,9 @@ class Occupation extends Intangible
     * Skills required to fulfill this role or in this Occupation.
     * @param string|array $value
     * @return $this
+    * @deprecated use setSkills
     */
-    public function skills(?string $value)
+    public function skills($value)
     {
         $this->setProperty('skills', $value);
         return $this;
@@ -86,7 +89,7 @@ class Occupation extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setSkills(?string $value)
+    public function setSkills($value)
     {
         $this->setProperty('skills', $value);
         return $this;
@@ -103,6 +106,7 @@ class Occupation extends Intangible
     * Educational background needed for the position or Occupation.
     * @param EducationalOccupationalCredential|string|array $value
     * @return $this
+    * @deprecated use setEducationRequirements
     */
     public function educationRequirements($value)
     {
@@ -130,8 +134,9 @@ class Occupation extends Intangible
     * Responsibilities associated with this role or Occupation.
     * @param string|array $value
     * @return $this
+    * @deprecated use setResponsibilities
     */
-    public function responsibilities(?string $value)
+    public function responsibilities($value)
     {
         $this->setProperty('responsibilities', $value);
         return $this;
@@ -140,7 +145,7 @@ class Occupation extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setResponsibilities(?string $value)
+    public function setResponsibilities($value)
     {
         $this->setProperty('responsibilities', $value);
         return $this;
@@ -159,6 +164,7 @@ class Occupation extends Intangible
 Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
     * @param string|CategoryCode|array $value
     * @return $this
+    * @deprecated use setOccupationalCategory
     */
     public function occupationalCategory($value)
     {
@@ -186,8 +192,9 @@ Note: for historical reasons, any textual label and formal code provided as a li
     * Description of skills and experience needed for the position or Occupation.
     * @param string|array $value
     * @return $this
+    * @deprecated use setExperienceRequirements
     */
-    public function experienceRequirements(?string $value)
+    public function experienceRequirements($value)
     {
         $this->setProperty('experienceRequirements', $value);
         return $this;
@@ -196,7 +203,7 @@ Note: for historical reasons, any textual label and formal code provided as a li
     * @param string|array $value
     * @return $this
     */
-    public function setExperienceRequirements(?string $value)
+    public function setExperienceRequirements($value)
     {
         $this->setProperty('experienceRequirements', $value);
         return $this;
@@ -211,8 +218,9 @@ Note: for historical reasons, any textual label and formal code provided as a li
 
     /**
     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
-    * @param MonetaryAmountDistribution|MonetaryAmount|array $value
+    * @param MonetaryAmountDistribution|MonetaryAmount|array|string $value
     * @return $this
+    * @deprecated use setEstimatedSalary
     */
     public function estimatedSalary($value)
     {
@@ -220,7 +228,7 @@ Note: for historical reasons, any textual label and formal code provided as a li
         return $this;
     }
    /**
-    * @param MonetaryAmountDistribution|MonetaryAmount|array $value
+    * @param MonetaryAmountDistribution|MonetaryAmount|array|string $value
     * @return $this
     */
     public function setEstimatedSalary($value)
@@ -238,7 +246,3 @@ Note: for historical reasons, any textual label and formal code provided as a li
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Occupation','Thing\\Occupation');
-

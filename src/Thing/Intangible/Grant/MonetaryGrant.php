@@ -18,8 +18,9 @@ class MonetaryGrant extends Grant
 
     /**
     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
+    * @deprecated use setFunder
     */
     public function funder($value)
     {
@@ -27,7 +28,7 @@ class MonetaryGrant extends Grant
         return $this;
     }
    /**
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
     */
     public function setFunder($value)
@@ -45,19 +46,20 @@ class MonetaryGrant extends Grant
 
     /**
     * The amount of money.
-    * @param MonetaryAmount|array $value
+    * @param MonetaryAmount|array|string $value
     * @return $this
+    * @deprecated use setAmount
     */
-    public function amount(?MonetaryAmount $value)
+    public function amount($value)
     {
         $this->setProperty('amount', $value);
         return $this;
     }
    /**
-    * @param MonetaryAmount|array $value
+    * @param MonetaryAmount|array|string $value
     * @return $this
     */
-    public function setAmount(?MonetaryAmount $value)
+    public function setAmount($value)
     {
         $this->setProperty('amount', $value);
         return $this;
@@ -72,7 +74,3 @@ class MonetaryGrant extends Grant
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Grant\\MonetaryGrant','Thing\\MonetaryGrant');
-

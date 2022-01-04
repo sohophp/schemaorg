@@ -15,7 +15,3 @@ class MedicalSymptom extends MedicalSignOrSymptom
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalCondition\\MedicalSignOrSymptom\\MedicalSymptom','Thing\\MedicalSymptom');
-

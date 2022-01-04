@@ -15,7 +15,3 @@ class WPSideBar extends WebPageElement
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\WebPageElement\\WPSideBar','Thing\\WPSideBar');
-

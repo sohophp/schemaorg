@@ -15,7 +15,3 @@ class AutoDealer extends AutomotiveBusiness
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\AutomotiveBusiness\\AutoDealer','Thing\\AutoDealer');
-

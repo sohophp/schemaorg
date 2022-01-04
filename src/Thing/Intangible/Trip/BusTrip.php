@@ -17,8 +17,9 @@ class BusTrip extends Trip
 
     /**
     * The stop or station from which the bus departs.
-    * @param BusStation|BusStop|array $value
+    * @param BusStation|BusStop|array|string $value
     * @return $this
+    * @deprecated use setDepartureBusStop
     */
     public function departureBusStop($value)
     {
@@ -26,7 +27,7 @@ class BusTrip extends Trip
         return $this;
     }
    /**
-    * @param BusStation|BusStop|array $value
+    * @param BusStation|BusStop|array|string $value
     * @return $this
     */
     public function setDepartureBusStop($value)
@@ -44,8 +45,9 @@ class BusTrip extends Trip
 
     /**
     * The stop or station from which the bus arrives.
-    * @param BusStop|BusStation|array $value
+    * @param BusStop|BusStation|array|string $value
     * @return $this
+    * @deprecated use setArrivalBusStop
     */
     public function arrivalBusStop($value)
     {
@@ -53,7 +55,7 @@ class BusTrip extends Trip
         return $this;
     }
    /**
-    * @param BusStop|BusStation|array $value
+    * @param BusStop|BusStation|array|string $value
     * @return $this
     */
     public function setArrivalBusStop($value)
@@ -73,8 +75,9 @@ class BusTrip extends Trip
     * The unique identifier for the bus.
     * @param string|array $value
     * @return $this
+    * @deprecated use setBusNumber
     */
-    public function busNumber(?string $value)
+    public function busNumber($value)
     {
         $this->setProperty('busNumber', $value);
         return $this;
@@ -83,7 +86,7 @@ class BusTrip extends Trip
     * @param string|array $value
     * @return $this
     */
-    public function setBusNumber(?string $value)
+    public function setBusNumber($value)
     {
         $this->setProperty('busNumber', $value);
         return $this;
@@ -100,8 +103,9 @@ class BusTrip extends Trip
     * The name of the bus (e.g. Bolt Express).
     * @param string|array $value
     * @return $this
+    * @deprecated use setBusName
     */
-    public function busName(?string $value)
+    public function busName($value)
     {
         $this->setProperty('busName', $value);
         return $this;
@@ -110,7 +114,7 @@ class BusTrip extends Trip
     * @param string|array $value
     * @return $this
     */
-    public function setBusName(?string $value)
+    public function setBusName($value)
     {
         $this->setProperty('busName', $value);
         return $this;
@@ -125,7 +129,3 @@ class BusTrip extends Trip
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Trip\\BusTrip','Thing\\BusTrip');
-

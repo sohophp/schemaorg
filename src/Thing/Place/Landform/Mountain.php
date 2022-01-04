@@ -15,7 +15,3 @@ class Mountain extends Landform
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\Landform\\Mountain','Thing\\Mountain');
-

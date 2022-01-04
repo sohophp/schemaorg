@@ -15,7 +15,3 @@ class EmployerAggregateRating extends AggregateRating
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Rating\\AggregateRating\\EmployerAggregateRating','Thing\\EmployerAggregateRating');
-

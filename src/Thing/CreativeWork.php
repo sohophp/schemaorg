@@ -39,19 +39,20 @@ class CreativeWork extends Thing
 
     /**
     * The subject matter of the content.
-    * @param Thing|array $value
+    * @param Thing|array|string $value
     * @return $this
+    * @deprecated use setAbout
     */
-    public function about(?Thing $value)
+    public function about($value)
     {
         $this->setProperty('about', $value);
         return $this;
     }
    /**
-    * @param Thing|array $value
+    * @param Thing|array|string $value
     * @return $this
     */
-    public function setAbout(?Thing $value)
+    public function setAbout($value)
     {
         $this->setProperty('about', $value);
         return $this;
@@ -66,19 +67,20 @@ class CreativeWork extends Thing
 
     /**
     * A media object that encodes this CreativeWork. This property is a synonym for encoding.
-    * @param MediaObject|array $value
+    * @param MediaObject|array|string $value
     * @return $this
+    * @deprecated use setAssociatedMedia
     */
-    public function associatedMedia(?MediaObject $value)
+    public function associatedMedia($value)
     {
         $this->setProperty('associatedMedia', $value);
         return $this;
     }
    /**
-    * @param MediaObject|array $value
+    * @param MediaObject|array|string $value
     * @return $this
     */
-    public function setAssociatedMedia(?MediaObject $value)
+    public function setAssociatedMedia($value)
     {
         $this->setProperty('associatedMedia', $value);
         return $this;
@@ -93,8 +95,9 @@ class CreativeWork extends Thing
 
     /**
     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
+    * @deprecated use setFunder
     */
     public function funder($value)
     {
@@ -102,7 +105,7 @@ class CreativeWork extends Thing
         return $this;
     }
    /**
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
     */
     public function setFunder($value)
@@ -122,6 +125,7 @@ class CreativeWork extends Thing
     * The position of an item in a series or sequence of items.
     * @param string|int|array $value
     * @return $this
+    * @deprecated use setPosition
     */
     public function position($value)
     {
@@ -147,8 +151,9 @@ class CreativeWork extends Thing
 
     /**
     * An embedded audio object.
-    * @param Clip|AudioObject|array $value
+    * @param Clip|AudioObject|array|string $value
     * @return $this
+    * @deprecated use setAudio
     */
     public function audio($value)
     {
@@ -156,7 +161,7 @@ class CreativeWork extends Thing
         return $this;
     }
    /**
-    * @param Clip|AudioObject|array $value
+    * @param Clip|AudioObject|array|string $value
     * @return $this
     */
     public function setAudio($value)
@@ -174,8 +179,9 @@ class CreativeWork extends Thing
 
     /**
     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
+    * @deprecated use setProvider
     */
     public function provider($value)
     {
@@ -183,7 +189,7 @@ class CreativeWork extends Thing
         return $this;
     }
    /**
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
     */
     public function setProvider($value)
@@ -201,19 +207,20 @@ class CreativeWork extends Thing
 
     /**
     * A media object that encodes this CreativeWork. This property is a synonym for associatedMedia.
-    * @param MediaObject|array $value
+    * @param MediaObject|array|string $value
     * @return $this
+    * @deprecated use setEncoding
     */
-    public function encoding(?MediaObject $value)
+    public function encoding($value)
     {
         $this->setProperty('encoding', $value);
         return $this;
     }
    /**
-    * @param MediaObject|array $value
+    * @param MediaObject|array|string $value
     * @return $this
     */
-    public function setEncoding(?MediaObject $value)
+    public function setEncoding($value)
     {
         $this->setProperty('encoding', $value);
         return $this;
@@ -230,8 +237,9 @@ class CreativeWork extends Thing
     * The predominant mode of learning supported by the learning resource. Acceptable values are 'active', 'expositive', or 'mixed'.
     * @param string|array $value
     * @return $this
+    * @deprecated use setInteractivityType
     */
-    public function interactivityType(?string $value)
+    public function interactivityType($value)
     {
         $this->setProperty('interactivityType', $value);
         return $this;
@@ -240,7 +248,7 @@ class CreativeWork extends Thing
     * @param string|array $value
     * @return $this
     */
-    public function setInteractivityType(?string $value)
+    public function setInteractivityType($value)
     {
         $this->setProperty('interactivityType', $value);
         return $this;
@@ -255,19 +263,20 @@ class CreativeWork extends Thing
 
     /**
     * Fictional person connected with a creative work.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setCharacter
     */
-    public function character(?Person $value)
+    public function character($value)
     {
         $this->setProperty('character', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setCharacter(?Person $value)
+    public function setCharacter($value)
     {
         $this->setProperty('character', $value);
         return $this;
@@ -282,19 +291,20 @@ class CreativeWork extends Thing
 
     /**
     * An intended audience, i.e. a group for whom something was created.
-    * @param Audience|array $value
+    * @param Audience|array|string $value
     * @return $this
+    * @deprecated use setAudience
     */
-    public function audience(?Audience $value)
+    public function audience($value)
     {
         $this->setProperty('audience', $value);
         return $this;
     }
    /**
-    * @param Audience|array $value
+    * @param Audience|array|string $value
     * @return $this
     */
-    public function setAudience(?Audience $value)
+    public function setAudience($value)
     {
         $this->setProperty('audience', $value);
         return $this;
@@ -309,19 +319,20 @@ class CreativeWork extends Thing
 
     /**
     * The Organization on whose behalf the creator was working.
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
+    * @deprecated use setSourceOrganization
     */
-    public function sourceOrganization(?Organization $value)
+    public function sourceOrganization($value)
     {
         $this->setProperty('sourceOrganization', $value);
         return $this;
     }
    /**
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
     */
-    public function setSourceOrganization(?Organization $value)
+    public function setSourceOrganization($value)
     {
         $this->setProperty('sourceOrganization', $value);
         return $this;
@@ -338,6 +349,7 @@ class CreativeWork extends Thing
     * The quantity of the materials being described or an expression of the physical space they occupy.
     * @param QuantitativeValue|string|array $value
     * @return $this
+    * @deprecated use setMaterialExtent
     */
     public function materialExtent($value)
     {
@@ -363,8 +375,9 @@ class CreativeWork extends Thing
 
     /**
     * An embedded video object.
-    * @param VideoObject|Clip|array $value
+    * @param VideoObject|Clip|array|string $value
     * @return $this
+    * @deprecated use setVideo
     */
     public function video($value)
     {
@@ -372,7 +385,7 @@ class CreativeWork extends Thing
         return $this;
     }
    /**
-    * @param VideoObject|Clip|array $value
+    * @param VideoObject|Clip|array|string $value
     * @return $this
     */
     public function setVideo($value)
@@ -390,8 +403,9 @@ class CreativeWork extends Thing
 
     /**
     * The publisher of the creative work.
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
+    * @deprecated use setPublisher
     */
     public function publisher($value)
     {
@@ -399,7 +413,7 @@ class CreativeWork extends Thing
         return $this;
     }
    /**
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
     */
     public function setPublisher($value)
@@ -417,19 +431,20 @@ class CreativeWork extends Thing
 
     /**
     * An alignment to an established educational framework.
-    * @param AlignmentObject|array $value
+    * @param AlignmentObject|array|string $value
     * @return $this
+    * @deprecated use setEducationalAlignment
     */
-    public function educationalAlignment(?AlignmentObject $value)
+    public function educationalAlignment($value)
     {
         $this->setProperty('educationalAlignment', $value);
         return $this;
     }
    /**
-    * @param AlignmentObject|array $value
+    * @param AlignmentObject|array|string $value
     * @return $this
     */
-    public function setEducationalAlignment(?AlignmentObject $value)
+    public function setEducationalAlignment($value)
     {
         $this->setProperty('educationalAlignment', $value);
         return $this;
@@ -444,19 +459,20 @@ class CreativeWork extends Thing
 
     /**
     * A publication event associated with the item.
-    * @param PublicationEvent|array $value
+    * @param PublicationEvent|array|string $value
     * @return $this
+    * @deprecated use setPublication
     */
-    public function publication(?PublicationEvent $value)
+    public function publication($value)
     {
         $this->setProperty('publication', $value);
         return $this;
     }
    /**
-    * @param PublicationEvent|array $value
+    * @param PublicationEvent|array|string $value
     * @return $this
     */
-    public function setPublication(?PublicationEvent $value)
+    public function setPublication($value)
     {
         $this->setProperty('publication', $value);
         return $this;
@@ -473,8 +489,9 @@ class CreativeWork extends Thing
     * The textual content of this CreativeWork.
     * @param string|array $value
     * @return $this
+    * @deprecated use setText
     */
-    public function text(?string $value)
+    public function text($value)
     {
         $this->setProperty('text', $value);
         return $this;
@@ -483,7 +500,7 @@ class CreativeWork extends Thing
     * @param string|array $value
     * @return $this
     */
-    public function setText(?string $value)
+    public function setText($value)
     {
         $this->setProperty('text', $value);
         return $this;
@@ -498,8 +515,9 @@ class CreativeWork extends Thing
 
     /**
     * Date the content expires and is no longer useful or available. For example a <a class="localLink" href="http://schema.org/VideoObject">VideoObject</a> or <a class="localLink" href="http://schema.org/NewsArticle">NewsArticle</a> whose availability or relevance is time-limited, or a <a class="localLink" href="http://schema.org/ClaimReview">ClaimReview</a> fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setExpires
     */
     public function expires($value)
     {
@@ -507,7 +525,7 @@ class CreativeWork extends Thing
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setExpires($value)
@@ -525,8 +543,9 @@ class CreativeWork extends Thing
 
     /**
     * A secondary contributor to the CreativeWork or Event.
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
+    * @deprecated use setContributor
     */
     public function contributor($value)
     {
@@ -534,7 +553,7 @@ class CreativeWork extends Thing
         return $this;
     }
    /**
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
     */
     public function setContributor($value)
@@ -552,19 +571,20 @@ class CreativeWork extends Thing
 
     /**
     * Review of the item.
-    * @param Review|array $value
+    * @param Review|array|string $value
     * @return $this
+    * @deprecated use setReviews
     */
-    public function reviews(?Review $value)
+    public function reviews($value)
     {
         $this->setProperty('reviews', $value);
         return $this;
     }
    /**
-    * @param Review|array $value
+    * @param Review|array|string $value
     * @return $this
     */
-    public function setReviews(?Review $value)
+    public function setReviews($value)
     {
         $this->setProperty('reviews', $value);
         return $this;
@@ -581,8 +601,9 @@ class CreativeWork extends Thing
     * The typical expected age range, e.g. '7-9', '11-'.
     * @param string|array $value
     * @return $this
+    * @deprecated use setTypicalAgeRange
     */
-    public function typicalAgeRange(?string $value)
+    public function typicalAgeRange($value)
     {
         $this->setProperty('typicalAgeRange', $value);
         return $this;
@@ -591,7 +612,7 @@ class CreativeWork extends Thing
     * @param string|array $value
     * @return $this
     */
-    public function setTypicalAgeRange(?string $value)
+    public function setTypicalAgeRange($value)
     {
         $this->setProperty('typicalAgeRange', $value);
         return $this;
@@ -606,19 +627,20 @@ class CreativeWork extends Thing
 
     /**
     * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
-    * @param CreativeWork|array $value
+    * @param CreativeWork|array|string $value
     * @return $this
+    * @deprecated use setHasPart
     */
-    public function hasPart(?CreativeWork $value)
+    public function hasPart($value)
     {
         $this->setProperty('hasPart', $value);
         return $this;
     }
    /**
-    * @param CreativeWork|array $value
+    * @param CreativeWork|array|string $value
     * @return $this
     */
-    public function setHasPart(?CreativeWork $value)
+    public function setHasPart($value)
     {
         $this->setProperty('hasPart', $value);
         return $this;
@@ -633,8 +655,9 @@ class CreativeWork extends Thing
 
     /**
     * Indicates the date on which the current structured data was generated / published. Typically used alongside <a class="localLink" href="http://schema.org/sdPublisher">sdPublisher</a>
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setSdDatePublished
     */
     public function sdDatePublished($value)
     {
@@ -642,7 +665,7 @@ class CreativeWork extends Thing
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setSdDatePublished($value)
@@ -660,19 +683,20 @@ class CreativeWork extends Thing
 
     /**
     * The place and time the release was issued, expressed as a PublicationEvent.
-    * @param PublicationEvent|array $value
+    * @param PublicationEvent|array|string $value
     * @return $this
+    * @deprecated use setReleasedEvent
     */
-    public function releasedEvent(?PublicationEvent $value)
+    public function releasedEvent($value)
     {
         $this->setProperty('releasedEvent', $value);
         return $this;
     }
    /**
-    * @param PublicationEvent|array $value
+    * @param PublicationEvent|array|string $value
     * @return $this
     */
-    public function setReleasedEvent(?PublicationEvent $value)
+    public function setReleasedEvent($value)
     {
         $this->setProperty('releasedEvent', $value);
         return $this;
@@ -689,8 +713,9 @@ class CreativeWork extends Thing
     * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
     * @param string|array $value
     * @return $this
+    * @deprecated use setEducationalUse
     */
-    public function educationalUse(?string $value)
+    public function educationalUse($value)
     {
         $this->setProperty('educationalUse', $value);
         return $this;
@@ -699,7 +724,7 @@ class CreativeWork extends Thing
     * @param string|array $value
     * @return $this
     */
-    public function setEducationalUse(?string $value)
+    public function setEducationalUse($value)
     {
         $this->setProperty('educationalUse', $value);
         return $this;
@@ -714,19 +739,20 @@ class CreativeWork extends Thing
 
     /**
     * The location depicted or described in the content. For example, the location in a photograph or painting.
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
+    * @deprecated use setContentLocation
     */
-    public function contentLocation(?Place $value)
+    public function contentLocation($value)
     {
         $this->setProperty('contentLocation', $value);
         return $this;
     }
    /**
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
     */
-    public function setContentLocation(?Place $value)
+    public function setContentLocation($value)
     {
         $this->setProperty('contentLocation', $value);
         return $this;
@@ -743,6 +769,7 @@ class CreativeWork extends Thing
     * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. For example, a document could declare a schemaVersion using an URL such as http://schema.org/version/2.0/ if precise indication of schema version was required by some application.
     * @param string|string|array $value
     * @return $this
+    * @deprecated use setSchemaVersion
     */
     public function schemaVersion($value)
     {
@@ -770,8 +797,9 @@ class CreativeWork extends Thing
     * Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility (<a href="http://www.w3.org/wiki/WebSchemas/Accessibility">WebSchemas wiki lists possible values</a>).
     * @param string|array $value
     * @return $this
+    * @deprecated use setAccessibilityFeature
     */
-    public function accessibilityFeature(?string $value)
+    public function accessibilityFeature($value)
     {
         $this->setProperty('accessibilityFeature', $value);
         return $this;
@@ -780,7 +808,7 @@ class CreativeWork extends Thing
     * @param string|array $value
     * @return $this
     */
-    public function setAccessibilityFeature(?string $value)
+    public function setAccessibilityFeature($value)
     {
         $this->setProperty('accessibilityFeature', $value);
         return $this;
@@ -795,19 +823,20 @@ class CreativeWork extends Thing
 
     /**
     * The overall rating, based on a collection of reviews or ratings, of the item.
-    * @param AggregateRating|array $value
+    * @param AggregateRating|array|string $value
     * @return $this
+    * @deprecated use setAggregateRating
     */
-    public function aggregateRating(?AggregateRating $value)
+    public function aggregateRating($value)
     {
         $this->setProperty('aggregateRating', $value);
         return $this;
     }
    /**
-    * @param AggregateRating|array $value
+    * @param AggregateRating|array|string $value
     * @return $this
     */
-    public function setAggregateRating(?AggregateRating $value)
+    public function setAggregateRating($value)
     {
         $this->setProperty('aggregateRating', $value);
         return $this;
@@ -824,8 +853,9 @@ class CreativeWork extends Thing
     * A secondary title of the CreativeWork.
     * @param string|array $value
     * @return $this
+    * @deprecated use setAlternativeHeadline
     */
-    public function alternativeHeadline(?string $value)
+    public function alternativeHeadline($value)
     {
         $this->setProperty('alternativeHeadline', $value);
         return $this;
@@ -834,7 +864,7 @@ class CreativeWork extends Thing
     * @param string|array $value
     * @return $this
     */
-    public function setAlternativeHeadline(?string $value)
+    public function setAlternativeHeadline($value)
     {
         $this->setProperty('alternativeHeadline', $value);
         return $this;
@@ -849,19 +879,20 @@ class CreativeWork extends Thing
 
     /**
     * The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
+    * @deprecated use setLocationCreated
     */
-    public function locationCreated(?Place $value)
+    public function locationCreated($value)
     {
         $this->setProperty('locationCreated', $value);
         return $this;
     }
    /**
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
     */
-    public function setLocationCreated(?Place $value)
+    public function setLocationCreated($value)
     {
         $this->setProperty('locationCreated', $value);
         return $this;
@@ -876,19 +907,20 @@ class CreativeWork extends Thing
 
     /**
     * A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Expected values include:  auditory, tactile, textual, visual.
-    * @param ItemList|array $value
+    * @param ItemList|array|string $value
     * @return $this
+    * @deprecated use setAccessModeSufficient
     */
-    public function accessModeSufficient(?ItemList $value)
+    public function accessModeSufficient($value)
     {
         $this->setProperty('accessModeSufficient', $value);
         return $this;
     }
    /**
-    * @param ItemList|array $value
+    * @param ItemList|array|string $value
     * @return $this
     */
-    public function setAccessModeSufficient(?ItemList $value)
+    public function setAccessModeSufficient($value)
     {
         $this->setProperty('accessModeSufficient', $value);
         return $this;
@@ -909,6 +941,7 @@ class CreativeWork extends Thing
 Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
     * @param string|string|array $value
     * @return $this
+    * @deprecated use setTemporalCoverage
     */
     public function temporalCoverage($value)
     {
@@ -934,19 +967,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
 
     /**
     * Specifies the Person that is legally accountable for the CreativeWork.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setAccountablePerson
     */
-    public function accountablePerson(?Person $value)
+    public function accountablePerson($value)
     {
         $this->setProperty('accountablePerson', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setAccountablePerson(?Person $value)
+    public function setAccountablePerson($value)
     {
         $this->setProperty('accountablePerson', $value);
         return $this;
@@ -962,8 +996,9 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
     /**
     * Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The
 <a class="localLink" href="http://schema.org/sdPublisher">sdPublisher</a> property helps make such practices more explicit.
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
+    * @deprecated use setSdPublisher
     */
     public function sdPublisher($value)
     {
@@ -971,7 +1006,7 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
         return $this;
     }
    /**
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
     */
     public function setSdPublisher($value)
@@ -991,19 +1026,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
     * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
+    * @deprecated use setSpatialCoverage
     */
-    public function spatialCoverage(?Place $value)
+    public function spatialCoverage($value)
     {
         $this->setProperty('spatialCoverage', $value);
         return $this;
     }
    /**
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
     */
-    public function setSpatialCoverage(?Place $value)
+    public function setSpatialCoverage($value)
     {
         $this->setProperty('spatialCoverage', $value);
         return $this;
@@ -1018,19 +1054,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
 
     /**
     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.
-    * @param Offer|array $value
+    * @param Offer|array|string $value
     * @return $this
+    * @deprecated use setOffers
     */
-    public function offers(?Offer $value)
+    public function offers($value)
     {
         $this->setProperty('offers', $value);
         return $this;
     }
    /**
-    * @param Offer|array $value
+    * @param Offer|array|string $value
     * @return $this
     */
-    public function setOffers(?Offer $value)
+    public function setOffers($value)
     {
         $this->setProperty('offers', $value);
         return $this;
@@ -1045,19 +1082,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
 
     /**
     * Specifies the Person who edited the CreativeWork.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setEditor
     */
-    public function editor(?Person $value)
+    public function editor($value)
     {
         $this->setProperty('editor', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setEditor(?Person $value)
+    public function setEditor($value)
     {
         $this->setProperty('editor', $value);
         return $this;
@@ -1074,8 +1112,9 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
     * A link to the page containing the comments of the CreativeWork.
     * @param string|array $value
     * @return $this
+    * @deprecated use setDiscussionUrl
     */
-    public function discussionUrl(?string $value)
+    public function discussionUrl($value)
     {
         $this->setProperty('discussionUrl', $value);
         return $this;
@@ -1084,7 +1123,7 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
     * @param string|array $value
     * @return $this
     */
-    public function setDiscussionUrl(?string $value)
+    public function setDiscussionUrl($value)
     {
         $this->setProperty('discussionUrl', $value);
         return $this;
@@ -1099,19 +1138,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
 
     /**
     * Example/instance/realization/derivation of the concept of this creative work. eg. The paperback edition, first edition, or eBook.
-    * @param CreativeWork|array $value
+    * @param CreativeWork|array|string $value
     * @return $this
+    * @deprecated use setWorkExample
     */
-    public function workExample(?CreativeWork $value)
+    public function workExample($value)
     {
         $this->setProperty('workExample', $value);
         return $this;
     }
    /**
-    * @param CreativeWork|array $value
+    * @param CreativeWork|array|string $value
     * @return $this
     */
-    public function setWorkExample(?CreativeWork $value)
+    public function setWorkExample($value)
     {
         $this->setProperty('workExample', $value);
         return $this;
@@ -1128,8 +1168,9 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
     * An award won by or for this item.
     * @param string|array $value
     * @return $this
+    * @deprecated use setAward
     */
-    public function award(?string $value)
+    public function award($value)
     {
         $this->setProperty('award', $value);
         return $this;
@@ -1138,7 +1179,7 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
     * @param string|array $value
     * @return $this
     */
-    public function setAward(?string $value)
+    public function setAward($value)
     {
         $this->setProperty('award', $value);
         return $this;
@@ -1155,6 +1196,7 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
     * A license document that applies to this structured data, typically indicated by URL.
     * @param CreativeWork|string|array $value
     * @return $this
+    * @deprecated use setSdLicense
     */
     public function sdLicense($value)
     {
@@ -1180,8 +1222,9 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
 
     /**
     * The party holding the legal copyright to the CreativeWork.
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
+    * @deprecated use setCopyrightHolder
     */
     public function copyrightHolder($value)
     {
@@ -1189,7 +1232,7 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
         return $this;
     }
    /**
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
     */
     public function setCopyrightHolder($value)
@@ -1209,8 +1252,9 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
     * A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3 (<a href="http://www.w3.org/wiki/WebSchemas/Accessibility">WebSchemas wiki lists possible values</a>).
     * @param string|array $value
     * @return $this
+    * @deprecated use setAccessibilityHazard
     */
-    public function accessibilityHazard(?string $value)
+    public function accessibilityHazard($value)
     {
         $this->setProperty('accessibilityHazard', $value);
         return $this;
@@ -1219,7 +1263,7 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
     * @param string|array $value
     * @return $this
     */
-    public function setAccessibilityHazard(?string $value)
+    public function setAccessibilityHazard($value)
     {
         $this->setProperty('accessibilityHazard', $value);
         return $this;
@@ -1234,8 +1278,9 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
 
     /**
     * The year during which the claimed copyright for the CreativeWork was first asserted.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setCopyrightYear
     */
     public function copyrightYear($value)
     {
@@ -1243,7 +1288,7 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setCopyrightYear($value)
@@ -1261,19 +1306,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
 
     /**
     * The publishing division which published the comic.
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
+    * @deprecated use setPublisherImprint
     */
-    public function publisherImprint(?Organization $value)
+    public function publisherImprint($value)
     {
         $this->setProperty('publisherImprint', $value);
         return $this;
     }
    /**
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
     */
-    public function setPublisherImprint(?Organization $value)
+    public function setPublisherImprint($value)
     {
         $this->setProperty('publisherImprint', $value);
         return $this;
@@ -1288,19 +1334,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
 
     /**
     * The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.
-    * @param Event|array $value
+    * @param Event|array|string $value
     * @return $this
+    * @deprecated use setRecordedAt
     */
-    public function recordedAt(?Event $value)
+    public function recordedAt($value)
     {
         $this->setProperty('recordedAt', $value);
         return $this;
     }
    /**
-    * @param Event|array $value
+    * @param Event|array|string $value
     * @return $this
     */
-    public function setRecordedAt(?Event $value)
+    public function setRecordedAt($value)
     {
         $this->setProperty('recordedAt', $value);
         return $this;
@@ -1316,19 +1363,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
     /**
     * The "spatial" property can be used in cases when more specific properties
 (e.g. <a class="localLink" href="http://schema.org/locationCreated">locationCreated</a>, <a class="localLink" href="http://schema.org/spatialCoverage">spatialCoverage</a>, <a class="localLink" href="http://schema.org/contentLocation">contentLocation</a>) are not known to be appropriate.
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
+    * @deprecated use setSpatial
     */
-    public function spatial(?Place $value)
+    public function spatial($value)
     {
         $this->setProperty('spatial', $value);
         return $this;
     }
    /**
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
     */
-    public function setSpatial(?Place $value)
+    public function setSpatial($value)
     {
         $this->setProperty('spatial', $value);
         return $this;
@@ -1343,19 +1391,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
 
     /**
     * The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
+    * @deprecated use setCommentCount
     */
-    public function commentCount(?int $value)
+    public function commentCount($value)
     {
         $this->setProperty('commentCount', $value);
         return $this;
     }
    /**
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
     */
-    public function setCommentCount(?int $value)
+    public function setCommentCount($value)
     {
         $this->setProperty('commentCount', $value);
         return $this;
@@ -1372,6 +1421,7 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
     * Media type, typically MIME format (see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">IANA site</a>) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
     * @param string|string|array $value
     * @return $this
+    * @deprecated use setFileFormat
     */
     public function fileFormat($value)
     {
@@ -1399,6 +1449,7 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
     * The language of the content or performance or used in an action. Please use one of the language codes from the <a href="http://tools.ietf.org/html/bcp47">IETF BCP 47 standard</a>. See also <a class="localLink" href="http://schema.org/availableLanguage">availableLanguage</a>.
     * @param Language|string|array $value
     * @return $this
+    * @deprecated use setInLanguage
     */
     public function inLanguage($value)
     {
@@ -1427,8 +1478,9 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
 (e.g. <a class="localLink" href="http://schema.org/temporalCoverage">temporalCoverage</a>, <a class="localLink" href="http://schema.org/dateCreated">dateCreated</a>, <a class="localLink" href="http://schema.org/dateModified">dateModified</a>, <a class="localLink" href="http://schema.org/datePublished">datePublished</a>) are not known to be appropriate.
     * @param string|array $value
     * @return $this
+    * @deprecated use setTemporal
     */
-    public function temporal(?string $value)
+    public function temporal($value)
     {
         $this->setProperty('temporal', $value);
         return $this;
@@ -1437,7 +1489,7 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
     * @param string|array $value
     * @return $this
     */
-    public function setTemporal(?string $value)
+    public function setTemporal($value)
     {
         $this->setProperty('temporal', $value);
         return $this;
@@ -1454,6 +1506,7 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
     * A material that something is made from, e.g. leather, wool, cotton, paper.
     * @param string|string|Product|array $value
     * @return $this
+    * @deprecated use setMaterial
     */
     public function material($value)
     {
@@ -1481,8 +1534,9 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
     * Indicates that the resource is compatible with the referenced accessibility API (<a href="http://www.w3.org/wiki/WebSchemas/Accessibility">WebSchemas wiki lists possible values</a>).
     * @param string|array $value
     * @return $this
+    * @deprecated use setAccessibilityAPI
     */
-    public function accessibilityAPI(?string $value)
+    public function accessibilityAPI($value)
     {
         $this->setProperty('accessibilityAPI', $value);
         return $this;
@@ -1491,7 +1545,7 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
     * @param string|array $value
     * @return $this
     */
-    public function setAccessibilityAPI(?string $value)
+    public function setAccessibilityAPI($value)
     {
         $this->setProperty('accessibilityAPI', $value);
         return $this;
@@ -1506,19 +1560,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
 
     /**
     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
-    * @param InteractionCounter|array $value
+    * @param InteractionCounter|array|string $value
     * @return $this
+    * @deprecated use setInteractionStatistic
     */
-    public function interactionStatistic(?InteractionCounter $value)
+    public function interactionStatistic($value)
     {
         $this->setProperty('interactionStatistic', $value);
         return $this;
     }
    /**
-    * @param InteractionCounter|array $value
+    * @param InteractionCounter|array|string $value
     * @return $this
     */
-    public function setInteractionStatistic(?InteractionCounter $value)
+    public function setInteractionStatistic($value)
     {
         $this->setProperty('interactionStatistic', $value);
         return $this;
@@ -1535,6 +1590,7 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
     * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
     * @param Rating|string|array $value
     * @return $this
+    * @deprecated use setContentRating
     */
     public function contentRating($value)
     {
@@ -1562,8 +1618,9 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
     * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
     * @param string|array $value
     * @return $this
+    * @deprecated use setLearningResourceType
     */
-    public function learningResourceType(?string $value)
+    public function learningResourceType($value)
     {
         $this->setProperty('learningResourceType', $value);
         return $this;
@@ -1572,7 +1629,7 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
     * @param string|array $value
     * @return $this
     */
-    public function setLearningResourceType(?string $value)
+    public function setLearningResourceType($value)
     {
         $this->setProperty('learningResourceType', $value);
         return $this;
@@ -1589,8 +1646,9 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
     * The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Expected values include: auditory, tactile, textual, visual, colorDependent, chartOnVisual, chemOnVisual, diagramOnVisual, mathOnVisual, musicOnVisual, textOnVisual.
     * @param string|array $value
     * @return $this
+    * @deprecated use setAccessMode
     */
-    public function accessMode(?string $value)
+    public function accessMode($value)
     {
         $this->setProperty('accessMode', $value);
         return $this;
@@ -1599,7 +1657,7 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
     * @param string|array $value
     * @return $this
     */
-    public function setAccessMode(?string $value)
+    public function setAccessMode($value)
     {
         $this->setProperty('accessMode', $value);
         return $this;
@@ -1614,19 +1672,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
 
     /**
     * Indicates whether this content is family friendly.
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
+    * @deprecated use setIsFamilyFriendly
     */
-    public function isFamilyFriendly(?bool $value)
+    public function isFamilyFriendly($value)
     {
         $this->setProperty('isFamilyFriendly', $value);
         return $this;
     }
    /**
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
     */
-    public function setIsFamilyFriendly(?bool $value)
+    public function setIsFamilyFriendly($value)
     {
         $this->setProperty('isFamilyFriendly', $value);
         return $this;
@@ -1641,19 +1700,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
 
     /**
     * A creative work that this work is an example/instance/realization/derivation of.
-    * @param CreativeWork|array $value
+    * @param CreativeWork|array|string $value
     * @return $this
+    * @deprecated use setExampleOfWork
     */
-    public function exampleOfWork(?CreativeWork $value)
+    public function exampleOfWork($value)
     {
         $this->setProperty('exampleOfWork', $value);
         return $this;
     }
    /**
-    * @param CreativeWork|array $value
+    * @param CreativeWork|array|string $value
     * @return $this
     */
-    public function setExampleOfWork(?CreativeWork $value)
+    public function setExampleOfWork($value)
     {
         $this->setProperty('exampleOfWork', $value);
         return $this;
@@ -1670,8 +1730,9 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
     * The version of the CreativeWork embodied by a specified resource.
     * @param string|array $value
     * @return $this
+    * @deprecated use setVersion
     */
-    public function version(?string $value)
+    public function version($value)
     {
         $this->setProperty('version', $value);
         return $this;
@@ -1680,7 +1741,7 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
     * @param string|array $value
     * @return $this
     */
-    public function setVersion(?string $value)
+    public function setVersion($value)
     {
         $this->setProperty('version', $value);
         return $this;
@@ -1695,8 +1756,9 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
 
     /**
     * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setDateModified
     */
     public function dateModified($value)
     {
@@ -1704,7 +1766,7 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setDateModified($value)
@@ -1724,8 +1786,9 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
     * Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.
     * @param string|array $value
     * @return $this
+    * @deprecated use setKeywords
     */
-    public function keywords(?string $value)
+    public function keywords($value)
     {
         $this->setProperty('keywords', $value);
         return $this;
@@ -1734,7 +1797,7 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
     * @param string|array $value
     * @return $this
     */
-    public function setKeywords(?string $value)
+    public function setKeywords($value)
     {
         $this->setProperty('keywords', $value);
         return $this;
@@ -1751,6 +1814,7 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
     * Genre of the creative work, broadcast channel or group.
     * @param string|string|array $value
     * @return $this
+    * @deprecated use setGenre
     */
     public function genre($value)
     {
@@ -1776,19 +1840,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
 
     /**
     * Indicates the primary entity described in some page or other CreativeWork.
-    * @param Thing|array $value
+    * @param Thing|array|string $value
     * @return $this
+    * @deprecated use setMainEntity
     */
-    public function mainEntity(?Thing $value)
+    public function mainEntity($value)
     {
         $this->setProperty('mainEntity', $value);
         return $this;
     }
    /**
-    * @param Thing|array $value
+    * @param Thing|array|string $value
     * @return $this
     */
-    public function setMainEntity(?Thing $value)
+    public function setMainEntity($value)
     {
         $this->setProperty('mainEntity', $value);
         return $this;
@@ -1803,8 +1868,9 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
 
     /**
     * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
+    * @deprecated use setAuthor
     */
     public function author($value)
     {
@@ -1812,7 +1878,7 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
         return $this;
     }
    /**
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
     */
     public function setAuthor($value)
@@ -1832,8 +1898,9 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
     * Awards won by or for this item.
     * @param string|array $value
     * @return $this
+    * @deprecated use setAwards
     */
-    public function awards(?string $value)
+    public function awards($value)
     {
         $this->setProperty('awards', $value);
         return $this;
@@ -1842,7 +1909,7 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
     * @param string|array $value
     * @return $this
     */
-    public function setAwards(?string $value)
+    public function setAwards($value)
     {
         $this->setProperty('awards', $value);
         return $this;
@@ -1859,6 +1926,7 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
     * @param Product|CreativeWork|string|array $value
     * @return $this
+    * @deprecated use setIsBasedOnUrl
     */
     public function isBasedOnUrl($value)
     {
@@ -1884,19 +1952,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
 
     /**
     * Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'PT30M', 'PT1H25M'.
-    * @param Duration|array $value
+    * @param Duration|array|string $value
     * @return $this
+    * @deprecated use setTimeRequired
     */
-    public function timeRequired(?Duration $value)
+    public function timeRequired($value)
     {
         $this->setProperty('timeRequired', $value);
         return $this;
     }
    /**
-    * @param Duration|array $value
+    * @param Duration|array|string $value
     * @return $this
     */
-    public function setTimeRequired(?Duration $value)
+    public function setTimeRequired($value)
     {
         $this->setProperty('timeRequired', $value);
         return $this;
@@ -1911,8 +1980,9 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
 
     /**
     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
+    * @deprecated use setTranslator
     */
     public function translator($value)
     {
@@ -1920,7 +1990,7 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
         return $this;
     }
    /**
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
     */
     public function setTranslator($value)
@@ -1940,6 +2010,7 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
     * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
     * @param DefinedTerm|string|array $value
     * @return $this
+    * @deprecated use setCreativeWorkStatus
     */
     public function creativeWorkStatus($value)
     {
@@ -1965,19 +2036,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
 
     /**
     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
-    * @param CreativeWork|array $value
+    * @param CreativeWork|array|string $value
     * @return $this
+    * @deprecated use setIsPartOf
     */
-    public function isPartOf(?CreativeWork $value)
+    public function isPartOf($value)
     {
         $this->setProperty('isPartOf', $value);
         return $this;
     }
    /**
-    * @param CreativeWork|array $value
+    * @param CreativeWork|array|string $value
     * @return $this
     */
-    public function setIsPartOf(?CreativeWork $value)
+    public function setIsPartOf($value)
     {
         $this->setProperty('isPartOf', $value);
         return $this;
@@ -1994,8 +2066,9 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
     * A thumbnail image relevant to the Thing.
     * @param string|array $value
     * @return $this
+    * @deprecated use setThumbnailUrl
     */
-    public function thumbnailUrl(?string $value)
+    public function thumbnailUrl($value)
     {
         $this->setProperty('thumbnailUrl', $value);
         return $this;
@@ -2004,7 +2077,7 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
     * @param string|array $value
     * @return $this
     */
-    public function setThumbnailUrl(?string $value)
+    public function setThumbnailUrl($value)
     {
         $this->setProperty('thumbnailUrl', $value);
         return $this;
@@ -2019,19 +2092,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
 
     /**
     * Comments, typically from users.
-    * @param Comment|array $value
+    * @param Comment|array|string $value
     * @return $this
+    * @deprecated use setComment
     */
-    public function comment(?Comment $value)
+    public function comment($value)
     {
         $this->setProperty('comment', $value);
         return $this;
     }
    /**
-    * @param Comment|array $value
+    * @param Comment|array|string $value
     * @return $this
     */
-    public function setComment(?Comment $value)
+    public function setComment($value)
     {
         $this->setProperty('comment', $value);
         return $this;
@@ -2052,6 +2126,7 @@ In cases where a <a class="localLink" href="http://schema.org/CreativeWork">Crea
 Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
     * @param string|string|array $value
     * @return $this
+    * @deprecated use setEncodingFormat
     */
     public function encodingFormat($value)
     {
@@ -2077,19 +2152,20 @@ Unregistered or niche encoding and file formats can be indicated instead via the
 
     /**
     * A review of the item.
-    * @param Review|array $value
+    * @param Review|array|string $value
     * @return $this
+    * @deprecated use setReview
     */
-    public function review(?Review $value)
+    public function review($value)
     {
         $this->setProperty('review', $value);
         return $this;
     }
    /**
-    * @param Review|array $value
+    * @param Review|array|string $value
     * @return $this
     */
-    public function setReview(?Review $value)
+    public function setReview($value)
     {
         $this->setProperty('review', $value);
         return $this;
@@ -2106,6 +2182,7 @@ Unregistered or niche encoding and file formats can be indicated instead via the
     * A license document that applies to this content, typically indicated by URL.
     * @param CreativeWork|string|array $value
     * @return $this
+    * @deprecated use setLicense
     */
     public function license($value)
     {
@@ -2133,8 +2210,9 @@ Unregistered or niche encoding and file formats can be indicated instead via the
     * Identifies input methods that are sufficient to fully control the described resource (<a href="http://www.w3.org/wiki/WebSchemas/Accessibility">WebSchemas wiki lists possible values</a>).
     * @param string|array $value
     * @return $this
+    * @deprecated use setAccessibilityControl
     */
-    public function accessibilityControl(?string $value)
+    public function accessibilityControl($value)
     {
         $this->setProperty('accessibilityControl', $value);
         return $this;
@@ -2143,7 +2221,7 @@ Unregistered or niche encoding and file formats can be indicated instead via the
     * @param string|array $value
     * @return $this
     */
-    public function setAccessibilityControl(?string $value)
+    public function setAccessibilityControl($value)
     {
         $this->setProperty('accessibilityControl', $value);
         return $this;
@@ -2158,19 +2236,20 @@ Unregistered or niche encoding and file formats can be indicated instead via the
 
     /**
     * A media object that encodes this CreativeWork.
-    * @param MediaObject|array $value
+    * @param MediaObject|array|string $value
     * @return $this
+    * @deprecated use setEncodings
     */
-    public function encodings(?MediaObject $value)
+    public function encodings($value)
     {
         $this->setProperty('encodings', $value);
         return $this;
     }
    /**
-    * @param MediaObject|array $value
+    * @param MediaObject|array|string $value
     * @return $this
     */
-    public function setEncodings(?MediaObject $value)
+    public function setEncodings($value)
     {
         $this->setProperty('encodings', $value);
         return $this;
@@ -2185,8 +2264,9 @@ Unregistered or niche encoding and file formats can be indicated instead via the
 
     /**
     * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
+    * @deprecated use setCreator
     */
     public function creator($value)
     {
@@ -2194,7 +2274,7 @@ Unregistered or niche encoding and file formats can be indicated instead via the
         return $this;
     }
    /**
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
     */
     public function setCreator($value)
@@ -2214,6 +2294,7 @@ Unregistered or niche encoding and file formats can be indicated instead via the
     * A resource from which this work is derived or from which it is a modification or adaption.
     * @param Product|CreativeWork|string|array $value
     * @return $this
+    * @deprecated use setIsBasedOn
     */
     public function isBasedOn($value)
     {
@@ -2243,6 +2324,7 @@ Unregistered or niche encoding and file formats can be indicated instead via the
 While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a <a class="localLink" href="http://schema.org/funder">funder</a>) can be expressed using schema.org terminology.
     * @param CreativeWork|string|array $value
     * @return $this
+    * @deprecated use setPublishingPrinciples
     */
     public function publishingPrinciples($value)
     {
@@ -2268,8 +2350,9 @@ While such policies are most typically expressed in natural language, sometimes 
 
     /**
     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
+    * @deprecated use setSponsor
     */
     public function sponsor($value)
     {
@@ -2277,7 +2360,7 @@ While such policies are most typically expressed in natural language, sometimes 
         return $this;
     }
    /**
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
     */
     public function setSponsor($value)
@@ -2295,8 +2378,9 @@ While such policies are most typically expressed in natural language, sometimes 
 
     /**
     * The person or organization who produced the work (e.g. music album, movie, tv/radio series etc.).
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
+    * @deprecated use setProducer
     */
     public function producer($value)
     {
@@ -2304,7 +2388,7 @@ While such policies are most typically expressed in natural language, sometimes 
         return $this;
     }
    /**
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
     */
     public function setProducer($value)
@@ -2324,6 +2408,7 @@ While such policies are most typically expressed in natural language, sometimes 
     * Indicates a correction to a <a class="localLink" href="http://schema.org/CreativeWork">CreativeWork</a>, either via a <a class="localLink" href="http://schema.org/CorrectionComment">CorrectionComment</a>, textually or in another document.
     * @param string|string|CorrectionComment|array $value
     * @return $this
+    * @deprecated use setCorrection
     */
     public function correction($value)
     {
@@ -2349,19 +2434,20 @@ While such policies are most typically expressed in natural language, sometimes 
 
     /**
     * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
-    * @param Thing|array $value
+    * @param Thing|array|string $value
     * @return $this
+    * @deprecated use setMentions
     */
-    public function mentions(?Thing $value)
+    public function mentions($value)
     {
         $this->setProperty('mentions', $value);
         return $this;
     }
    /**
-    * @param Thing|array $value
+    * @param Thing|array|string $value
     * @return $this
     */
-    public function setMentions(?Thing $value)
+    public function setMentions($value)
     {
         $this->setProperty('mentions', $value);
         return $this;
@@ -2376,19 +2462,20 @@ While such policies are most typically expressed in natural language, sometimes 
 
     /**
     * A work that is a translation of the content of this work. e.g. 西遊記 has an English workTranslation “Journey to the West”,a German workTranslation “Monkeys Pilgerfahrt” and a Vietnamese  translation Tây du ký bình khảo.
-    * @param CreativeWork|array $value
+    * @param CreativeWork|array|string $value
     * @return $this
+    * @deprecated use setWorkTranslation
     */
-    public function workTranslation(?CreativeWork $value)
+    public function workTranslation($value)
     {
         $this->setProperty('workTranslation', $value);
         return $this;
     }
    /**
-    * @param CreativeWork|array $value
+    * @param CreativeWork|array|string $value
     * @return $this
     */
-    public function setWorkTranslation(?CreativeWork $value)
+    public function setWorkTranslation($value)
     {
         $this->setProperty('workTranslation', $value);
         return $this;
@@ -2403,8 +2490,9 @@ While such policies are most typically expressed in natural language, sometimes 
 
     /**
     * The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setContentReferenceTime
     */
     public function contentReferenceTime($value)
     {
@@ -2412,7 +2500,7 @@ While such policies are most typically expressed in natural language, sometimes 
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setContentReferenceTime($value)
@@ -2430,8 +2518,9 @@ While such policies are most typically expressed in natural language, sometimes 
 
     /**
     * The date on which the CreativeWork was created or the item was added to a DataFeed.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setDateCreated
     */
     public function dateCreated($value)
     {
@@ -2439,7 +2528,7 @@ While such policies are most typically expressed in natural language, sometimes 
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setDateCreated($value)
@@ -2459,8 +2548,9 @@ While such policies are most typically expressed in natural language, sometimes 
     * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed."
     * @param string|array $value
     * @return $this
+    * @deprecated use setAccessibilitySummary
     */
-    public function accessibilitySummary(?string $value)
+    public function accessibilitySummary($value)
     {
         $this->setProperty('accessibilitySummary', $value);
         return $this;
@@ -2469,7 +2559,7 @@ While such policies are most typically expressed in natural language, sometimes 
     * @param string|array $value
     * @return $this
     */
-    public function setAccessibilitySummary(?string $value)
+    public function setAccessibilitySummary($value)
     {
         $this->setProperty('accessibilitySummary', $value);
         return $this;
@@ -2484,8 +2574,9 @@ While such policies are most typically expressed in natural language, sometimes 
 
     /**
     * Date of first broadcast/publication.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setDatePublished
     */
     public function datePublished($value)
     {
@@ -2493,7 +2584,7 @@ While such policies are most typically expressed in natural language, sometimes 
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setDatePublished($value)
@@ -2511,19 +2602,20 @@ While such policies are most typically expressed in natural language, sometimes 
 
     /**
     * A flag to signal that the item, event, or place is accessible for free.
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
+    * @deprecated use setIsAccessibleForFree
     */
-    public function isAccessibleForFree(?bool $value)
+    public function isAccessibleForFree($value)
     {
         $this->setProperty('isAccessibleForFree', $value);
         return $this;
     }
    /**
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
     */
-    public function setIsAccessibleForFree(?bool $value)
+    public function setIsAccessibleForFree($value)
     {
         $this->setProperty('isAccessibleForFree', $value);
         return $this;
@@ -2540,8 +2632,9 @@ While such policies are most typically expressed in natural language, sometimes 
     * Headline of the article.
     * @param string|array $value
     * @return $this
+    * @deprecated use setHeadline
     */
-    public function headline(?string $value)
+    public function headline($value)
     {
         $this->setProperty('headline', $value);
         return $this;
@@ -2550,7 +2643,7 @@ While such policies are most typically expressed in natural language, sometimes 
     * @param string|array $value
     * @return $this
     */
-    public function setHeadline(?string $value)
+    public function setHeadline($value)
     {
         $this->setProperty('headline', $value);
         return $this;
@@ -2565,19 +2658,20 @@ While such policies are most typically expressed in natural language, sometimes 
 
     /**
     * The work that this work has been translated from. e.g. 物种起源 is a translationOf “On the Origin of Species”
-    * @param CreativeWork|array $value
+    * @param CreativeWork|array|string $value
     * @return $this
+    * @deprecated use setTranslationOfWork
     */
-    public function translationOfWork(?CreativeWork $value)
+    public function translationOfWork($value)
     {
         $this->setProperty('translationOfWork', $value);
         return $this;
     }
    /**
-    * @param CreativeWork|array $value
+    * @param CreativeWork|array|string $value
     * @return $this
     */
-    public function setTranslationOfWork(?CreativeWork $value)
+    public function setTranslationOfWork($value)
     {
         $this->setProperty('translationOfWork', $value);
         return $this;
@@ -2596,8 +2690,9 @@ While such policies are most typically expressed in natural language, sometimes 
 For example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ".
     * @param string|array $value
     * @return $this
+    * @deprecated use setConditionsOfAccess
     */
-    public function conditionsOfAccess(?string $value)
+    public function conditionsOfAccess($value)
     {
         $this->setProperty('conditionsOfAccess', $value);
         return $this;
@@ -2606,7 +2701,7 @@ For example "Available by appointment from the Reading Room" or "Accessible only
     * @param string|array $value
     * @return $this
     */
-    public function setConditionsOfAccess(?string $value)
+    public function setConditionsOfAccess($value)
     {
         $this->setProperty('conditionsOfAccess', $value);
         return $this;
@@ -2623,6 +2718,7 @@ For example "Available by appointment from the Reading Room" or "Accessible only
     * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
     * @param string|CreativeWork|array $value
     * @return $this
+    * @deprecated use setCitation
     */
     public function citation($value)
     {
@@ -2648,7 +2744,3 @@ For example "Available by appointment from the Reading Room" or "Accessible only
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork','Thing\\CreativeWork');
-

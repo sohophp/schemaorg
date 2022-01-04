@@ -15,7 +15,3 @@ class RefundTypeEnumeration extends Enumeration
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\RefundTypeEnumeration','Thing\\RefundTypeEnumeration');
-

@@ -15,7 +15,3 @@ class Pharmacy extends MedicalOrganization
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\MedicalOrganization\\Pharmacy','Thing\\Pharmacy');
-

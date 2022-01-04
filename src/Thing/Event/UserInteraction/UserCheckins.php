@@ -15,7 +15,3 @@ class UserCheckins extends UserInteraction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Event\\UserInteraction\\UserCheckins','Thing\\UserCheckins');
-

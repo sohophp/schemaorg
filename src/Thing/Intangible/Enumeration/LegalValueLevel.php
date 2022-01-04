@@ -15,7 +15,3 @@ class LegalValueLevel extends Enumeration
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\LegalValueLevel','Thing\\LegalValueLevel');
-

@@ -23,19 +23,20 @@ class LendAction extends TransferAction
 
     /**
     * A sub property of participant. The person that borrows the object being lent.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setBorrower
     */
-    public function borrower(?Person $value)
+    public function borrower($value)
     {
         $this->setProperty('borrower', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setBorrower(?Person $value)
+    public function setBorrower($value)
     {
         $this->setProperty('borrower', $value);
         return $this;
@@ -50,7 +51,3 @@ class LendAction extends TransferAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\TransferAction\\LendAction','Thing\\LendAction');
-

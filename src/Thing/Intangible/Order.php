@@ -26,8 +26,9 @@ class Order extends Intangible
 
     /**
     * The date that payment is due.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setPaymentDue
     */
     public function paymentDue($value)
     {
@@ -35,7 +36,7 @@ class Order extends Intangible
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setPaymentDue($value)
@@ -55,8 +56,9 @@ class Order extends Intangible
     * The identifier of the transaction.
     * @param string|array $value
     * @return $this
+    * @deprecated use setOrderNumber
     */
-    public function orderNumber(?string $value)
+    public function orderNumber($value)
     {
         $this->setProperty('orderNumber', $value);
         return $this;
@@ -65,7 +67,7 @@ class Order extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setOrderNumber(?string $value)
+    public function setOrderNumber($value)
     {
         $this->setProperty('orderNumber', $value);
         return $this;
@@ -82,8 +84,9 @@ class Order extends Intangible
     * The URL for sending a payment.
     * @param string|array $value
     * @return $this
+    * @deprecated use setPaymentUrl
     */
-    public function paymentUrl(?string $value)
+    public function paymentUrl($value)
     {
         $this->setProperty('paymentUrl', $value);
         return $this;
@@ -92,7 +95,7 @@ class Order extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setPaymentUrl(?string $value)
+    public function setPaymentUrl($value)
     {
         $this->setProperty('paymentUrl', $value);
         return $this;
@@ -107,19 +110,20 @@ class Order extends Intangible
 
     /**
     * The current status of the order.
-    * @param OrderStatus|array $value
+    * @param OrderStatus|array|string $value
     * @return $this
+    * @deprecated use setOrderStatus
     */
-    public function orderStatus(?OrderStatus $value)
+    public function orderStatus($value)
     {
         $this->setProperty('orderStatus', $value);
         return $this;
     }
    /**
-    * @param OrderStatus|array $value
+    * @param OrderStatus|array|string $value
     * @return $this
     */
-    public function setOrderStatus(?OrderStatus $value)
+    public function setOrderStatus($value)
     {
         $this->setProperty('orderStatus', $value);
         return $this;
@@ -134,19 +138,20 @@ class Order extends Intangible
 
     /**
     * The billing address for the order.
-    * @param PostalAddress|array $value
+    * @param PostalAddress|array|string $value
     * @return $this
+    * @deprecated use setBillingAddress
     */
-    public function billingAddress(?PostalAddress $value)
+    public function billingAddress($value)
     {
         $this->setProperty('billingAddress', $value);
         return $this;
     }
    /**
-    * @param PostalAddress|array $value
+    * @param PostalAddress|array|string $value
     * @return $this
     */
-    public function setBillingAddress(?PostalAddress $value)
+    public function setBillingAddress($value)
     {
         $this->setProperty('billingAddress', $value);
         return $this;
@@ -161,19 +166,20 @@ class Order extends Intangible
 
     /**
     * The order is being paid as part of the referenced Invoice.
-    * @param Invoice|array $value
+    * @param Invoice|array|string $value
     * @return $this
+    * @deprecated use setPartOfInvoice
     */
-    public function partOfInvoice(?Invoice $value)
+    public function partOfInvoice($value)
     {
         $this->setProperty('partOfInvoice', $value);
         return $this;
     }
    /**
-    * @param Invoice|array $value
+    * @param Invoice|array|string $value
     * @return $this
     */
-    public function setPartOfInvoice(?Invoice $value)
+    public function setPartOfInvoice($value)
     {
         $this->setProperty('partOfInvoice', $value);
         return $this;
@@ -190,8 +196,9 @@ class Order extends Intangible
     * A number that confirms the given order or payment has been received.
     * @param string|array $value
     * @return $this
+    * @deprecated use setConfirmationNumber
     */
-    public function confirmationNumber(?string $value)
+    public function confirmationNumber($value)
     {
         $this->setProperty('confirmationNumber', $value);
         return $this;
@@ -200,7 +207,7 @@ class Order extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setConfirmationNumber(?string $value)
+    public function setConfirmationNumber($value)
     {
         $this->setProperty('confirmationNumber', $value);
         return $this;
@@ -215,8 +222,9 @@ class Order extends Intangible
 
     /**
     * Date order was placed.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setOrderDate
     */
     public function orderDate($value)
     {
@@ -224,7 +232,7 @@ class Order extends Intangible
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setOrderDate($value)
@@ -242,8 +250,9 @@ class Order extends Intangible
 
     /**
     * Party placing the order or paying the invoice.
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
+    * @deprecated use setCustomer
     */
     public function customer($value)
     {
@@ -251,7 +260,7 @@ class Order extends Intangible
         return $this;
     }
    /**
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
     */
     public function setCustomer($value)
@@ -269,8 +278,9 @@ class Order extends Intangible
 
     /**
     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
+    * @deprecated use setBroker
     */
     public function broker($value)
     {
@@ -278,7 +288,7 @@ class Order extends Intangible
         return $this;
     }
    /**
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
     */
     public function setBroker($value)
@@ -296,19 +306,20 @@ class Order extends Intangible
 
     /**
     * Was the offer accepted as a gift for someone other than the buyer.
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
+    * @deprecated use setIsGift
     */
-    public function isGift(?bool $value)
+    public function isGift($value)
     {
         $this->setProperty('isGift', $value);
         return $this;
     }
    /**
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
     */
-    public function setIsGift(?bool $value)
+    public function setIsGift($value)
     {
         $this->setProperty('isGift', $value);
         return $this;
@@ -323,8 +334,9 @@ class Order extends Intangible
 
     /**
     * 'merchant' is an out-dated term for 'seller'.
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
+    * @deprecated use setMerchant
     */
     public function merchant($value)
     {
@@ -332,7 +344,7 @@ class Order extends Intangible
         return $this;
     }
    /**
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
     */
     public function setMerchant($value)
@@ -350,19 +362,20 @@ class Order extends Intangible
 
     /**
     * The name of the credit card or other method of payment for the order.
-    * @param PaymentMethod|array $value
+    * @param PaymentMethod|array|string $value
     * @return $this
+    * @deprecated use setPaymentMethod
     */
-    public function paymentMethod(?PaymentMethod $value)
+    public function paymentMethod($value)
     {
         $this->setProperty('paymentMethod', $value);
         return $this;
     }
    /**
-    * @param PaymentMethod|array $value
+    * @param PaymentMethod|array|string $value
     * @return $this
     */
-    public function setPaymentMethod(?PaymentMethod $value)
+    public function setPaymentMethod($value)
     {
         $this->setProperty('paymentMethod', $value);
         return $this;
@@ -377,8 +390,9 @@ class Order extends Intangible
 
     /**
     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
+    * @deprecated use setSeller
     */
     public function seller($value)
     {
@@ -386,7 +400,7 @@ class Order extends Intangible
         return $this;
     }
    /**
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
     */
     public function setSeller($value)
@@ -406,8 +420,9 @@ class Order extends Intangible
     * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
     * @param string|array $value
     * @return $this
+    * @deprecated use setPaymentMethodId
     */
-    public function paymentMethodId(?string $value)
+    public function paymentMethodId($value)
     {
         $this->setProperty('paymentMethodId', $value);
         return $this;
@@ -416,7 +431,7 @@ class Order extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setPaymentMethodId(?string $value)
+    public function setPaymentMethodId($value)
     {
         $this->setProperty('paymentMethodId', $value);
         return $this;
@@ -433,8 +448,9 @@ class Order extends Intangible
     * Any discount applied (to an Order).
     * @param string|array $value
     * @return $this
+    * @deprecated use setDiscount
     */
-    public function discount(?string $value)
+    public function discount($value)
     {
         $this->setProperty('discount', $value);
         return $this;
@@ -443,7 +459,7 @@ class Order extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setDiscount(?string $value)
+    public function setDiscount($value)
     {
         $this->setProperty('discount', $value);
         return $this;
@@ -458,19 +474,20 @@ class Order extends Intangible
 
     /**
     * The delivery of the parcel related to this order or order item.
-    * @param ParcelDelivery|array $value
+    * @param ParcelDelivery|array|string $value
     * @return $this
+    * @deprecated use setOrderDelivery
     */
-    public function orderDelivery(?ParcelDelivery $value)
+    public function orderDelivery($value)
     {
         $this->setProperty('orderDelivery', $value);
         return $this;
     }
    /**
-    * @param ParcelDelivery|array $value
+    * @param ParcelDelivery|array|string $value
     * @return $this
     */
-    public function setOrderDelivery(?ParcelDelivery $value)
+    public function setOrderDelivery($value)
     {
         $this->setProperty('orderDelivery', $value);
         return $this;
@@ -485,8 +502,9 @@ class Order extends Intangible
 
     /**
     * The item ordered.
-    * @param Service|OrderItem|Product|array $value
+    * @param Service|OrderItem|Product|array|string $value
     * @return $this
+    * @deprecated use setOrderedItem
     */
     public function orderedItem($value)
     {
@@ -494,7 +512,7 @@ class Order extends Intangible
         return $this;
     }
    /**
-    * @param Service|OrderItem|Product|array $value
+    * @param Service|OrderItem|Product|array|string $value
     * @return $this
     */
     public function setOrderedItem($value)
@@ -512,19 +530,20 @@ class Order extends Intangible
 
     /**
     * The offer(s) -- e.g., product, quantity and price combinations -- included in the order.
-    * @param Offer|array $value
+    * @param Offer|array|string $value
     * @return $this
+    * @deprecated use setAcceptedOffer
     */
-    public function acceptedOffer(?Offer $value)
+    public function acceptedOffer($value)
     {
         $this->setProperty('acceptedOffer', $value);
         return $this;
     }
    /**
-    * @param Offer|array $value
+    * @param Offer|array|string $value
     * @return $this
     */
-    public function setAcceptedOffer(?Offer $value)
+    public function setAcceptedOffer($value)
     {
         $this->setProperty('acceptedOffer', $value);
         return $this;
@@ -543,8 +562,9 @@ class Order extends Intangible
 Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 currency format</a> e.g. "USD"; <a href="https://en.wikipedia.org/wiki/List_of_cryptocurrencies">Ticker symbol</a> for cryptocurrencies e.g. "BTC"; well known names for <a href="https://en.wikipedia.org/wiki/Local_exchange_trading_system">Local Exchange Tradings Systems</a> (LETS) and other currency types e.g. "Ithaca HOUR".
     * @param string|array $value
     * @return $this
+    * @deprecated use setDiscountCurrency
     */
-    public function discountCurrency(?string $value)
+    public function discountCurrency($value)
     {
         $this->setProperty('discountCurrency', $value);
         return $this;
@@ -553,7 +573,7 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
     * @param string|array $value
     * @return $this
     */
-    public function setDiscountCurrency(?string $value)
+    public function setDiscountCurrency($value)
     {
         $this->setProperty('discountCurrency', $value);
         return $this;
@@ -568,8 +588,9 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
 
     /**
     * The date that payment is due.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setPaymentDueDate
     */
     public function paymentDueDate($value)
     {
@@ -577,7 +598,7 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setPaymentDueDate($value)
@@ -597,8 +618,9 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
     * Code used to redeem a discount.
     * @param string|array $value
     * @return $this
+    * @deprecated use setDiscountCode
     */
-    public function discountCode(?string $value)
+    public function discountCode($value)
     {
         $this->setProperty('discountCode', $value);
         return $this;
@@ -607,7 +629,7 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
     * @param string|array $value
     * @return $this
     */
-    public function setDiscountCode(?string $value)
+    public function setDiscountCode($value)
     {
         $this->setProperty('discountCode', $value);
         return $this;
@@ -622,7 +644,3 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Order','Thing\\Order');
-

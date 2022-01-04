@@ -15,7 +15,3 @@ class FAQPage extends WebPage
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\WebPage\\FAQPage','Thing\\FAQPage');
-

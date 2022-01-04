@@ -15,7 +15,3 @@ class BackgroundNewsArticle extends NewsArticle
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Article\\NewsArticle\\BackgroundNewsArticle','Thing\\BackgroundNewsArticle');
-

@@ -15,19 +15,20 @@ class ProductModel extends Product
 
     /**
     * A pointer from a previous, often discontinued variant of the product to its newer variant.
-    * @param ProductModel|array $value
+    * @param ProductModel|array|string $value
     * @return $this
+    * @deprecated use setPredecessorOf
     */
-    public function predecessorOf(?ProductModel $value)
+    public function predecessorOf($value)
     {
         $this->setProperty('predecessorOf', $value);
         return $this;
     }
    /**
-    * @param ProductModel|array $value
+    * @param ProductModel|array|string $value
     * @return $this
     */
-    public function setPredecessorOf(?ProductModel $value)
+    public function setPredecessorOf($value)
     {
         $this->setProperty('predecessorOf', $value);
         return $this;
@@ -42,19 +43,20 @@ class ProductModel extends Product
 
     /**
     * A pointer from a newer variant of a product  to its previous, often discontinued predecessor.
-    * @param ProductModel|array $value
+    * @param ProductModel|array|string $value
     * @return $this
+    * @deprecated use setSuccessorOf
     */
-    public function successorOf(?ProductModel $value)
+    public function successorOf($value)
     {
         $this->setProperty('successorOf', $value);
         return $this;
     }
    /**
-    * @param ProductModel|array $value
+    * @param ProductModel|array|string $value
     * @return $this
     */
-    public function setSuccessorOf(?ProductModel $value)
+    public function setSuccessorOf($value)
     {
         $this->setProperty('successorOf', $value);
         return $this;
@@ -69,19 +71,20 @@ class ProductModel extends Product
 
     /**
     * A pointer to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive.
-    * @param ProductModel|array $value
+    * @param ProductModel|array|string $value
     * @return $this
+    * @deprecated use setIsVariantOf
     */
-    public function isVariantOf(?ProductModel $value)
+    public function isVariantOf($value)
     {
         $this->setProperty('isVariantOf', $value);
         return $this;
     }
    /**
-    * @param ProductModel|array $value
+    * @param ProductModel|array|string $value
     * @return $this
     */
-    public function setIsVariantOf(?ProductModel $value)
+    public function setIsVariantOf($value)
     {
         $this->setProperty('isVariantOf', $value);
         return $this;
@@ -96,7 +99,3 @@ class ProductModel extends Product
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Product\\ProductModel','Thing\\ProductModel');
-

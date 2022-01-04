@@ -15,7 +15,3 @@ class PaymentStatusType extends Enumeration
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\PaymentStatusType','Thing\\PaymentStatusType');
-

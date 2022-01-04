@@ -23,19 +23,20 @@ class MoveAction extends Action
 
     /**
     * A sub property of location. The final location of the object or the agent after the action.
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
+    * @deprecated use setToLocation
     */
-    public function toLocation(?Place $value)
+    public function toLocation($value)
     {
         $this->setProperty('toLocation', $value);
         return $this;
     }
    /**
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
     */
-    public function setToLocation(?Place $value)
+    public function setToLocation($value)
     {
         $this->setProperty('toLocation', $value);
         return $this;
@@ -50,19 +51,20 @@ class MoveAction extends Action
 
     /**
     * A sub property of location. The original location of the object or the agent before the action.
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
+    * @deprecated use setFromLocation
     */
-    public function fromLocation(?Place $value)
+    public function fromLocation($value)
     {
         $this->setProperty('fromLocation', $value);
         return $this;
     }
    /**
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
     */
-    public function setFromLocation(?Place $value)
+    public function setFromLocation($value)
     {
         $this->setProperty('fromLocation', $value);
         return $this;
@@ -77,7 +79,3 @@ class MoveAction extends Action
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\MoveAction','Thing\\MoveAction');
-

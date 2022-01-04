@@ -15,7 +15,3 @@ class RadiationTherapy extends MedicalTherapy
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalProcedure\\TherapeuticProcedure\\MedicalTherapy\\RadiationTherapy','Thing\\RadiationTherapy');
-

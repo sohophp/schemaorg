@@ -15,7 +15,3 @@ class DisagreeAction extends ReactAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\AssessAction\\ReactAction\\DisagreeAction','Thing\\DisagreeAction');
-

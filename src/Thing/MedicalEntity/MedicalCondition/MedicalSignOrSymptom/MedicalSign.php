@@ -17,19 +17,20 @@ class MedicalSign extends MedicalSignOrSymptom
 
     /**
     * A physical examination that can identify this sign.
-    * @param PhysicalExam|array $value
+    * @param PhysicalExam|array|string $value
     * @return $this
+    * @deprecated use setIdentifyingExam
     */
-    public function identifyingExam(?PhysicalExam $value)
+    public function identifyingExam($value)
     {
         $this->setProperty('identifyingExam', $value);
         return $this;
     }
    /**
-    * @param PhysicalExam|array $value
+    * @param PhysicalExam|array|string $value
     * @return $this
     */
-    public function setIdentifyingExam(?PhysicalExam $value)
+    public function setIdentifyingExam($value)
     {
         $this->setProperty('identifyingExam', $value);
         return $this;
@@ -44,19 +45,20 @@ class MedicalSign extends MedicalSignOrSymptom
 
     /**
     * A diagnostic test that can identify this sign.
-    * @param MedicalTest|array $value
+    * @param MedicalTest|array|string $value
     * @return $this
+    * @deprecated use setIdentifyingTest
     */
-    public function identifyingTest(?MedicalTest $value)
+    public function identifyingTest($value)
     {
         $this->setProperty('identifyingTest', $value);
         return $this;
     }
    /**
-    * @param MedicalTest|array $value
+    * @param MedicalTest|array|string $value
     * @return $this
     */
-    public function setIdentifyingTest(?MedicalTest $value)
+    public function setIdentifyingTest($value)
     {
         $this->setProperty('identifyingTest', $value);
         return $this;
@@ -71,7 +73,3 @@ class MedicalSign extends MedicalSignOrSymptom
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalCondition\\MedicalSignOrSymptom\\MedicalSign','Thing\\MedicalSign');
-

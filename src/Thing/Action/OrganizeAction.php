@@ -15,7 +15,3 @@ class OrganizeAction extends Action
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\OrganizeAction','Thing\\OrganizeAction');
-

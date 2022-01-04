@@ -18,8 +18,9 @@ class DefinedTerm extends Intangible
     * A code that identifies this <a class="localLink" href="http://schema.org/DefinedTerm">DefinedTerm</a> within a <a class="localLink" href="http://schema.org/DefinedTermSet">DefinedTermSet</a>
     * @param string|array $value
     * @return $this
+    * @deprecated use setTermCode
     */
-    public function termCode(?string $value)
+    public function termCode($value)
     {
         $this->setProperty('termCode', $value);
         return $this;
@@ -28,7 +29,7 @@ class DefinedTerm extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setTermCode(?string $value)
+    public function setTermCode($value)
     {
         $this->setProperty('termCode', $value);
         return $this;
@@ -45,6 +46,7 @@ class DefinedTerm extends Intangible
     * A <a class="localLink" href="http://schema.org/DefinedTermSet">DefinedTermSet</a> that contains this term.
     * @param DefinedTermSet|string|array $value
     * @return $this
+    * @deprecated use setInDefinedTermSet
     */
     public function inDefinedTermSet($value)
     {
@@ -70,7 +72,3 @@ class DefinedTerm extends Intangible
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\DefinedTerm','Thing\\DefinedTerm');
-

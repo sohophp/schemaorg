@@ -15,7 +15,3 @@ class QuoteAction extends TradeAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\TradeAction\\QuoteAction','Thing\\QuoteAction');
-

@@ -16,19 +16,20 @@ class ReplaceAction extends UpdateAction
 
     /**
     * A sub property of object. The object that is being replaced.
-    * @param Thing|array $value
+    * @param Thing|array|string $value
     * @return $this
+    * @deprecated use setReplacee
     */
-    public function replacee(?Thing $value)
+    public function replacee($value)
     {
         $this->setProperty('replacee', $value);
         return $this;
     }
    /**
-    * @param Thing|array $value
+    * @param Thing|array|string $value
     * @return $this
     */
-    public function setReplacee(?Thing $value)
+    public function setReplacee($value)
     {
         $this->setProperty('replacee', $value);
         return $this;
@@ -43,19 +44,20 @@ class ReplaceAction extends UpdateAction
 
     /**
     * A sub property of object. The object that replaces.
-    * @param Thing|array $value
+    * @param Thing|array|string $value
     * @return $this
+    * @deprecated use setReplacer
     */
-    public function replacer(?Thing $value)
+    public function replacer($value)
     {
         $this->setProperty('replacer', $value);
         return $this;
     }
    /**
-    * @param Thing|array $value
+    * @param Thing|array|string $value
     * @return $this
     */
-    public function setReplacer(?Thing $value)
+    public function setReplacer($value)
     {
         $this->setProperty('replacer', $value);
         return $this;
@@ -70,7 +72,3 @@ class ReplaceAction extends UpdateAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\UpdateAction\\ReplaceAction','Thing\\ReplaceAction');
-

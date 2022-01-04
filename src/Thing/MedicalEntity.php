@@ -25,6 +25,7 @@ class MedicalEntity extends Thing
     * The drug or supplement's legal status, including any controlled substance schedules that apply.
     * @param DrugLegalStatus|string|MedicalEnumeration|array $value
     * @return $this
+    * @deprecated use setLegalStatus
     */
     public function legalStatus($value)
     {
@@ -50,19 +51,20 @@ class MedicalEntity extends Thing
 
     /**
     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-    * @param MedicineSystem|array $value
+    * @param MedicineSystem|array|string $value
     * @return $this
+    * @deprecated use setMedicineSystem
     */
-    public function medicineSystem(?MedicineSystem $value)
+    public function medicineSystem($value)
     {
         $this->setProperty('medicineSystem', $value);
         return $this;
     }
    /**
-    * @param MedicineSystem|array $value
+    * @param MedicineSystem|array|string $value
     * @return $this
     */
-    public function setMedicineSystem(?MedicineSystem $value)
+    public function setMedicineSystem($value)
     {
         $this->setProperty('medicineSystem', $value);
         return $this;
@@ -77,19 +79,20 @@ class MedicalEntity extends Thing
 
     /**
     * A medical guideline related to this entity.
-    * @param MedicalGuideline|array $value
+    * @param MedicalGuideline|array|string $value
     * @return $this
+    * @deprecated use setGuideline
     */
-    public function guideline(?MedicalGuideline $value)
+    public function guideline($value)
     {
         $this->setProperty('guideline', $value);
         return $this;
     }
    /**
-    * @param MedicalGuideline|array $value
+    * @param MedicalGuideline|array|string $value
     * @return $this
     */
-    public function setGuideline(?MedicalGuideline $value)
+    public function setGuideline($value)
     {
         $this->setProperty('guideline', $value);
         return $this;
@@ -104,19 +107,20 @@ class MedicalEntity extends Thing
 
     /**
     * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
-    * @param MedicalCode|array $value
+    * @param MedicalCode|array|string $value
     * @return $this
+    * @deprecated use setCode
     */
-    public function code(?MedicalCode $value)
+    public function code($value)
     {
         $this->setProperty('code', $value);
         return $this;
     }
    /**
-    * @param MedicalCode|array $value
+    * @param MedicalCode|array|string $value
     * @return $this
     */
-    public function setCode(?MedicalCode $value)
+    public function setCode($value)
     {
         $this->setProperty('code', $value);
         return $this;
@@ -131,19 +135,20 @@ class MedicalEntity extends Thing
 
     /**
     * If applicable, a medical specialty in which this entity is relevant.
-    * @param MedicalSpecialty|array $value
+    * @param MedicalSpecialty|array|string $value
     * @return $this
+    * @deprecated use setRelevantSpecialty
     */
-    public function relevantSpecialty(?MedicalSpecialty $value)
+    public function relevantSpecialty($value)
     {
         $this->setProperty('relevantSpecialty', $value);
         return $this;
     }
    /**
-    * @param MedicalSpecialty|array $value
+    * @param MedicalSpecialty|array|string $value
     * @return $this
     */
-    public function setRelevantSpecialty(?MedicalSpecialty $value)
+    public function setRelevantSpecialty($value)
     {
         $this->setProperty('relevantSpecialty', $value);
         return $this;
@@ -158,19 +163,20 @@ class MedicalEntity extends Thing
 
     /**
     * A medical study or trial related to this entity.
-    * @param MedicalStudy|array $value
+    * @param MedicalStudy|array|string $value
     * @return $this
+    * @deprecated use setStudy
     */
-    public function study(?MedicalStudy $value)
+    public function study($value)
     {
         $this->setProperty('study', $value);
         return $this;
     }
    /**
-    * @param MedicalStudy|array $value
+    * @param MedicalStudy|array|string $value
     * @return $this
     */
-    public function setStudy(?MedicalStudy $value)
+    public function setStudy($value)
     {
         $this->setProperty('study', $value);
         return $this;
@@ -185,19 +191,20 @@ class MedicalEntity extends Thing
 
     /**
     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
+    * @deprecated use setRecognizingAuthority
     */
-    public function recognizingAuthority(?Organization $value)
+    public function recognizingAuthority($value)
     {
         $this->setProperty('recognizingAuthority', $value);
         return $this;
     }
    /**
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
     */
-    public function setRecognizingAuthority(?Organization $value)
+    public function setRecognizingAuthority($value)
     {
         $this->setProperty('recognizingAuthority', $value);
         return $this;
@@ -212,7 +219,3 @@ class MedicalEntity extends Thing
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity','Thing\\MedicalEntity');
-

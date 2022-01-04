@@ -15,7 +15,3 @@ class Manuscript extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Manuscript','Thing\\Manuscript');
-

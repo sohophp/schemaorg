@@ -19,8 +19,9 @@ class GeoCoordinates extends StructuredValue
     * The latitude of a location. For example <code>37.42242</code> (<a href="https://en.wikipedia.org/wiki/World_Geodetic_System">WGS 84</a>).
     * @param string|array $value
     * @return $this
+    * @deprecated use setLatitude
     */
-    public function latitude(?string $value)
+    public function latitude($value)
     {
         $this->setProperty('latitude', $value);
         return $this;
@@ -29,7 +30,7 @@ class GeoCoordinates extends StructuredValue
     * @param string|array $value
     * @return $this
     */
-    public function setLatitude(?string $value)
+    public function setLatitude($value)
     {
         $this->setProperty('latitude', $value);
         return $this;
@@ -46,8 +47,9 @@ class GeoCoordinates extends StructuredValue
     * The longitude of a location. For example <code>-122.08585</code> (<a href="https://en.wikipedia.org/wiki/World_Geodetic_System">WGS 84</a>).
     * @param string|array $value
     * @return $this
+    * @deprecated use setLongitude
     */
-    public function longitude(?string $value)
+    public function longitude($value)
     {
         $this->setProperty('longitude', $value);
         return $this;
@@ -56,7 +58,7 @@ class GeoCoordinates extends StructuredValue
     * @param string|array $value
     * @return $this
     */
-    public function setLongitude(?string $value)
+    public function setLongitude($value)
     {
         $this->setProperty('longitude', $value);
         return $this;
@@ -73,6 +75,7 @@ class GeoCoordinates extends StructuredValue
     * Physical address of the item.
     * @param string|PostalAddress|array $value
     * @return $this
+    * @deprecated use setAddress
     */
     public function address($value)
     {
@@ -100,6 +103,7 @@ class GeoCoordinates extends StructuredValue
     * The country. For example, USA. You can also provide the two-letter <a href="http://en.wikipedia.org/wiki/ISO_3166-1">ISO 3166-1 alpha-2 country code</a>.
     * @param Country|string|array $value
     * @return $this
+    * @deprecated use setAddressCountry
     */
     public function addressCountry($value)
     {
@@ -127,8 +131,9 @@ class GeoCoordinates extends StructuredValue
     * The postal code. For example, 94043.
     * @param string|array $value
     * @return $this
+    * @deprecated use setPostalCode
     */
-    public function postalCode(?string $value)
+    public function postalCode($value)
     {
         $this->setProperty('postalCode', $value);
         return $this;
@@ -137,7 +142,7 @@ class GeoCoordinates extends StructuredValue
     * @param string|array $value
     * @return $this
     */
-    public function setPostalCode(?string $value)
+    public function setPostalCode($value)
     {
         $this->setProperty('postalCode', $value);
         return $this;
@@ -154,8 +159,9 @@ class GeoCoordinates extends StructuredValue
     * The elevation of a location (<a href="https://en.wikipedia.org/wiki/World_Geodetic_System">WGS 84</a>). Values may be of the form 'NUMBER UNIT<em>OF</em>MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
     * @param string|array $value
     * @return $this
+    * @deprecated use setElevation
     */
-    public function elevation(?string $value)
+    public function elevation($value)
     {
         $this->setProperty('elevation', $value);
         return $this;
@@ -164,7 +170,7 @@ class GeoCoordinates extends StructuredValue
     * @param string|array $value
     * @return $this
     */
-    public function setElevation(?string $value)
+    public function setElevation($value)
     {
         $this->setProperty('elevation', $value);
         return $this;
@@ -179,7 +185,3 @@ class GeoCoordinates extends StructuredValue
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue\\GeoCoordinates','Thing\\GeoCoordinates');
-

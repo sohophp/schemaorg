@@ -18,8 +18,9 @@ class Airline extends Organization
     * IATA identifier for an airline or airport.
     * @param string|array $value
     * @return $this
+    * @deprecated use setIataCode
     */
-    public function iataCode(?string $value)
+    public function iataCode($value)
     {
         $this->setProperty('iataCode', $value);
         return $this;
@@ -28,7 +29,7 @@ class Airline extends Organization
     * @param string|array $value
     * @return $this
     */
-    public function setIataCode(?string $value)
+    public function setIataCode($value)
     {
         $this->setProperty('iataCode', $value);
         return $this;
@@ -43,19 +44,20 @@ class Airline extends Organization
 
     /**
     * The type of boarding policy used by the airline (e.g. zone-based or group-based).
-    * @param BoardingPolicyType|array $value
+    * @param BoardingPolicyType|array|string $value
     * @return $this
+    * @deprecated use setBoardingPolicy
     */
-    public function boardingPolicy(?BoardingPolicyType $value)
+    public function boardingPolicy($value)
     {
         $this->setProperty('boardingPolicy', $value);
         return $this;
     }
    /**
-    * @param BoardingPolicyType|array $value
+    * @param BoardingPolicyType|array|string $value
     * @return $this
     */
-    public function setBoardingPolicy(?BoardingPolicyType $value)
+    public function setBoardingPolicy($value)
     {
         $this->setProperty('boardingPolicy', $value);
         return $this;
@@ -70,7 +72,3 @@ class Airline extends Organization
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\Airline','Thing\\Airline');
-

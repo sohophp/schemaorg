@@ -16,19 +16,20 @@ class LocationFeatureSpecification extends PropertyValue
 
     /**
     * The hours during which this service or contact is available.
-    * @param OpeningHoursSpecification|array $value
+    * @param OpeningHoursSpecification|array|string $value
     * @return $this
+    * @deprecated use setHoursAvailable
     */
-    public function hoursAvailable(?OpeningHoursSpecification $value)
+    public function hoursAvailable($value)
     {
         $this->setProperty('hoursAvailable', $value);
         return $this;
     }
    /**
-    * @param OpeningHoursSpecification|array $value
+    * @param OpeningHoursSpecification|array|string $value
     * @return $this
     */
-    public function setHoursAvailable(?OpeningHoursSpecification $value)
+    public function setHoursAvailable($value)
     {
         $this->setProperty('hoursAvailable', $value);
         return $this;
@@ -43,8 +44,9 @@ class LocationFeatureSpecification extends PropertyValue
 
     /**
     * The date when the item becomes valid.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setValidFrom
     */
     public function validFrom($value)
     {
@@ -52,7 +54,7 @@ class LocationFeatureSpecification extends PropertyValue
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setValidFrom($value)
@@ -70,8 +72,9 @@ class LocationFeatureSpecification extends PropertyValue
 
     /**
     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setValidThrough
     */
     public function validThrough($value)
     {
@@ -79,7 +82,7 @@ class LocationFeatureSpecification extends PropertyValue
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setValidThrough($value)
@@ -97,7 +100,3 @@ class LocationFeatureSpecification extends PropertyValue
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue\\PropertyValue\\LocationFeatureSpecification','Thing\\LocationFeatureSpecification');
-

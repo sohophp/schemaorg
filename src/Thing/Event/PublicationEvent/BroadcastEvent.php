@@ -18,8 +18,9 @@ class BroadcastEvent extends PublicationEvent
     * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
     * @param string|array $value
     * @return $this
+    * @deprecated use setVideoFormat
     */
-    public function videoFormat(?string $value)
+    public function videoFormat($value)
     {
         $this->setProperty('videoFormat', $value);
         return $this;
@@ -28,7 +29,7 @@ class BroadcastEvent extends PublicationEvent
     * @param string|array $value
     * @return $this
     */
-    public function setVideoFormat(?string $value)
+    public function setVideoFormat($value)
     {
         $this->setProperty('videoFormat', $value);
         return $this;
@@ -43,19 +44,20 @@ class BroadcastEvent extends PublicationEvent
 
     /**
     * True is the broadcast is of a live event.
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
+    * @deprecated use setIsLiveBroadcast
     */
-    public function isLiveBroadcast(?bool $value)
+    public function isLiveBroadcast($value)
     {
         $this->setProperty('isLiveBroadcast', $value);
         return $this;
     }
    /**
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
     */
-    public function setIsLiveBroadcast(?bool $value)
+    public function setIsLiveBroadcast($value)
     {
         $this->setProperty('isLiveBroadcast', $value);
         return $this;
@@ -70,19 +72,20 @@ class BroadcastEvent extends PublicationEvent
 
     /**
     * The event being broadcast such as a sporting event or awards ceremony.
-    * @param Event|array $value
+    * @param Event|array|string $value
     * @return $this
+    * @deprecated use setBroadcastOfEvent
     */
-    public function broadcastOfEvent(?Event $value)
+    public function broadcastOfEvent($value)
     {
         $this->setProperty('broadcastOfEvent', $value);
         return $this;
     }
    /**
-    * @param Event|array $value
+    * @param Event|array|string $value
     * @return $this
     */
-    public function setBroadcastOfEvent(?Event $value)
+    public function setBroadcastOfEvent($value)
     {
         $this->setProperty('broadcastOfEvent', $value);
         return $this;
@@ -97,7 +100,3 @@ class BroadcastEvent extends PublicationEvent
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Event\\PublicationEvent\\BroadcastEvent','Thing\\BroadcastEvent');
-

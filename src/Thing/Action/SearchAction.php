@@ -24,8 +24,9 @@ class SearchAction extends Action
     * A sub property of instrument. The query used on this action.
     * @param string|array $value
     * @return $this
+    * @deprecated use setQuery
     */
-    public function query(?string $value)
+    public function query($value)
     {
         $this->setProperty('query', $value);
         return $this;
@@ -34,7 +35,7 @@ class SearchAction extends Action
     * @param string|array $value
     * @return $this
     */
-    public function setQuery(?string $value)
+    public function setQuery($value)
     {
         $this->setProperty('query', $value);
         return $this;
@@ -49,7 +50,3 @@ class SearchAction extends Action
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\SearchAction','Thing\\SearchAction');
-

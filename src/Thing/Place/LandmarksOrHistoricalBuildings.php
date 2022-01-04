@@ -15,7 +15,3 @@ class LandmarksOrHistoricalBuildings extends Place
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\LandmarksOrHistoricalBuildings','Thing\\LandmarksOrHistoricalBuildings');
-

@@ -20,8 +20,9 @@ class Article extends CreativeWork
     * Any description of pages that is not separated into pageStart and pageEnd; for example, "1-6, 9, 55" or "10-12, 46-49".
     * @param string|array $value
     * @return $this
+    * @deprecated use setPagination
     */
-    public function pagination(?string $value)
+    public function pagination($value)
     {
         $this->setProperty('pagination', $value);
         return $this;
@@ -30,7 +31,7 @@ class Article extends CreativeWork
     * @param string|array $value
     * @return $this
     */
-    public function setPagination(?string $value)
+    public function setPagination($value)
     {
         $this->setProperty('pagination', $value);
         return $this;
@@ -45,19 +46,20 @@ class Article extends CreativeWork
 
     /**
     * The number of words in the text of the Article.
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
+    * @deprecated use setWordCount
     */
-    public function wordCount(?int $value)
+    public function wordCount($value)
     {
         $this->setProperty('wordCount', $value);
         return $this;
     }
    /**
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
     */
-    public function setWordCount(?int $value)
+    public function setWordCount($value)
     {
         $this->setProperty('wordCount', $value);
         return $this;
@@ -85,6 +87,7 @@ For more sophisticated markup of speakable sections beyond simple ID references,
 we define a supporting type, <a class="localLink" href="http://schema.org/SpeakableSpecification">SpeakableSpecification</a>  which is defined to be a possible value of the <em>speakable</em> property.
     * @param SpeakableSpecification|string|array $value
     * @return $this
+    * @deprecated use setSpeakable
     */
     public function speakable($value)
     {
@@ -112,6 +115,7 @@ we define a supporting type, <a class="localLink" href="http://schema.org/Speaka
     * The page on which the work ends; for example "138" or "xvi".
     * @param string|int|array $value
     * @return $this
+    * @deprecated use setPageEnd
     */
     public function pageEnd($value)
     {
@@ -139,8 +143,9 @@ we define a supporting type, <a class="localLink" href="http://schema.org/Speaka
     * Articles may belong to one or more 'sections' in a magazine or newspaper, such as Sports, Lifestyle, etc.
     * @param string|array $value
     * @return $this
+    * @deprecated use setArticleSection
     */
-    public function articleSection(?string $value)
+    public function articleSection($value)
     {
         $this->setProperty('articleSection', $value);
         return $this;
@@ -149,7 +154,7 @@ we define a supporting type, <a class="localLink" href="http://schema.org/Speaka
     * @param string|array $value
     * @return $this
     */
-    public function setArticleSection(?string $value)
+    public function setArticleSection($value)
     {
         $this->setProperty('articleSection', $value);
         return $this;
@@ -166,6 +171,7 @@ we define a supporting type, <a class="localLink" href="http://schema.org/Speaka
     * For an <a class="localLink" href="http://schema.org/Article">Article</a>, typically a <a class="localLink" href="http://schema.org/NewsArticle">NewsArticle</a>, the backstory property provides a textual summary giving a brief explanation of why and how an article was created. In a journalistic setting this could include information about reporting process, methods, interviews, data sources, etc.
     * @param CreativeWork|string|array $value
     * @return $this
+    * @deprecated use setBackstory
     */
     public function backstory($value)
     {
@@ -193,6 +199,7 @@ we define a supporting type, <a class="localLink" href="http://schema.org/Speaka
     * The page on which the work starts; for example "135" or "xiii".
     * @param string|int|array $value
     * @return $this
+    * @deprecated use setPageStart
     */
     public function pageStart($value)
     {
@@ -220,8 +227,9 @@ we define a supporting type, <a class="localLink" href="http://schema.org/Speaka
     * The actual body of the article.
     * @param string|array $value
     * @return $this
+    * @deprecated use setArticleBody
     */
-    public function articleBody(?string $value)
+    public function articleBody($value)
     {
         $this->setProperty('articleBody', $value);
         return $this;
@@ -230,7 +238,7 @@ we define a supporting type, <a class="localLink" href="http://schema.org/Speaka
     * @param string|array $value
     * @return $this
     */
-    public function setArticleBody(?string $value)
+    public function setArticleBody($value)
     {
         $this->setProperty('articleBody', $value);
         return $this;
@@ -245,7 +253,3 @@ we define a supporting type, <a class="localLink" href="http://schema.org/Speaka
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Article','Thing\\Article');
-

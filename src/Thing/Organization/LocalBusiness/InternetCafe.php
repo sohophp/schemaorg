@@ -15,7 +15,3 @@ class InternetCafe extends LocalBusiness
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\InternetCafe','Thing\\InternetCafe');
-

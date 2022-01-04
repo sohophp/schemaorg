@@ -17,6 +17,7 @@ class SportsOrganization extends Organization
     * A type of sport (e.g. Baseball).
     * @param string|string|array $value
     * @return $this
+    * @deprecated use setSport
     */
     public function sport($value)
     {
@@ -42,7 +43,3 @@ class SportsOrganization extends Organization
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\SportsOrganization','Thing\\SportsOrganization');
-

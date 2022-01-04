@@ -15,7 +15,3 @@ class Vessel extends AnatomicalStructure
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\AnatomicalStructure\\Vessel','Thing\\Vessel');
-

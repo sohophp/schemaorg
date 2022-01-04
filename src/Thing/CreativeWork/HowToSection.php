@@ -18,6 +18,7 @@ class HowToSection extends CreativeWork
     * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).
     * @param string|CreativeWork|ItemList|array $value
     * @return $this
+    * @deprecated use setSteps
     */
     public function steps($value)
     {
@@ -43,7 +44,3 @@ class HowToSection extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\HowToSection','Thing\\HowToSection');
-

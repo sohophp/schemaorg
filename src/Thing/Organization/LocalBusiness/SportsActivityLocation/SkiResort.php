@@ -15,7 +15,3 @@ class SkiResort extends SportsActivityLocation
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\SportsActivityLocation\\SkiResort','Thing\\SkiResort');
-

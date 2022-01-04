@@ -15,7 +15,3 @@ class Motorcycle extends Vehicle
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Product\\Vehicle\\Motorcycle','Thing\\Motorcycle');
-

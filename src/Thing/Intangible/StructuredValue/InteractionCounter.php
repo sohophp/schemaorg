@@ -18,8 +18,9 @@ class InteractionCounter extends StructuredValue
 
     /**
     * The WebSite or SoftwareApplication where the interactions took place.
-    * @param SoftwareApplication|WebSite|array $value
+    * @param SoftwareApplication|WebSite|array|string $value
     * @return $this
+    * @deprecated use setInteractionService
     */
     public function interactionService($value)
     {
@@ -27,7 +28,7 @@ class InteractionCounter extends StructuredValue
         return $this;
     }
    /**
-    * @param SoftwareApplication|WebSite|array $value
+    * @param SoftwareApplication|WebSite|array|string $value
     * @return $this
     */
     public function setInteractionService($value)
@@ -45,19 +46,20 @@ class InteractionCounter extends StructuredValue
 
     /**
     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication.
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
+    * @deprecated use setUserInteractionCount
     */
-    public function userInteractionCount(?int $value)
+    public function userInteractionCount($value)
     {
         $this->setProperty('userInteractionCount', $value);
         return $this;
     }
    /**
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
     */
-    public function setUserInteractionCount(?int $value)
+    public function setUserInteractionCount($value)
     {
         $this->setProperty('userInteractionCount', $value);
         return $this;
@@ -72,19 +74,20 @@ class InteractionCounter extends StructuredValue
 
     /**
     * The Action representing the type of interaction. For up votes, +1s, etc. use <a class="localLink" href="http://schema.org/LikeAction">LikeAction</a>. For down votes use <a class="localLink" href="http://schema.org/DislikeAction">DislikeAction</a>. Otherwise, use the most specific Action.
-    * @param Action|array $value
+    * @param Action|array|string $value
     * @return $this
+    * @deprecated use setInteractionType
     */
-    public function interactionType(?Action $value)
+    public function interactionType($value)
     {
         $this->setProperty('interactionType', $value);
         return $this;
     }
    /**
-    * @param Action|array $value
+    * @param Action|array|string $value
     * @return $this
     */
-    public function setInteractionType(?Action $value)
+    public function setInteractionType($value)
     {
         $this->setProperty('interactionType', $value);
         return $this;
@@ -99,7 +102,3 @@ class InteractionCounter extends StructuredValue
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue\\InteractionCounter','Thing\\InteractionCounter');
-

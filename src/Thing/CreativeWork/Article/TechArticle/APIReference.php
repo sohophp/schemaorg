@@ -17,8 +17,9 @@ class APIReference extends TechArticle
     * Indicates whether API is managed or unmanaged.
     * @param string|array $value
     * @return $this
+    * @deprecated use setProgrammingModel
     */
-    public function programmingModel(?string $value)
+    public function programmingModel($value)
     {
         $this->setProperty('programmingModel', $value);
         return $this;
@@ -27,7 +28,7 @@ class APIReference extends TechArticle
     * @param string|array $value
     * @return $this
     */
-    public function setProgrammingModel(?string $value)
+    public function setProgrammingModel($value)
     {
         $this->setProperty('programmingModel', $value);
         return $this;
@@ -44,8 +45,9 @@ class APIReference extends TechArticle
     * Library file name e.g., mscorlib.dll, system.web.dll.
     * @param string|array $value
     * @return $this
+    * @deprecated use setExecutableLibraryName
     */
-    public function executableLibraryName(?string $value)
+    public function executableLibraryName($value)
     {
         $this->setProperty('executableLibraryName', $value);
         return $this;
@@ -54,7 +56,7 @@ class APIReference extends TechArticle
     * @param string|array $value
     * @return $this
     */
-    public function setExecutableLibraryName(?string $value)
+    public function setExecutableLibraryName($value)
     {
         $this->setProperty('executableLibraryName', $value);
         return $this;
@@ -71,8 +73,9 @@ class APIReference extends TechArticle
     * Library file name e.g., mscorlib.dll, system.web.dll.
     * @param string|array $value
     * @return $this
+    * @deprecated use setAssembly
     */
-    public function assembly(?string $value)
+    public function assembly($value)
     {
         $this->setProperty('assembly', $value);
         return $this;
@@ -81,7 +84,7 @@ class APIReference extends TechArticle
     * @param string|array $value
     * @return $this
     */
-    public function setAssembly(?string $value)
+    public function setAssembly($value)
     {
         $this->setProperty('assembly', $value);
         return $this;
@@ -98,8 +101,9 @@ class APIReference extends TechArticle
     * Associated product/technology version. e.g., .NET Framework 4.5.
     * @param string|array $value
     * @return $this
+    * @deprecated use setAssemblyVersion
     */
-    public function assemblyVersion(?string $value)
+    public function assemblyVersion($value)
     {
         $this->setProperty('assemblyVersion', $value);
         return $this;
@@ -108,7 +112,7 @@ class APIReference extends TechArticle
     * @param string|array $value
     * @return $this
     */
-    public function setAssemblyVersion(?string $value)
+    public function setAssemblyVersion($value)
     {
         $this->setProperty('assemblyVersion', $value);
         return $this;
@@ -125,8 +129,9 @@ class APIReference extends TechArticle
     * Type of app development: phone, Metro style, desktop, XBox, etc.
     * @param string|array $value
     * @return $this
+    * @deprecated use setTargetPlatform
     */
-    public function targetPlatform(?string $value)
+    public function targetPlatform($value)
     {
         $this->setProperty('targetPlatform', $value);
         return $this;
@@ -135,7 +140,7 @@ class APIReference extends TechArticle
     * @param string|array $value
     * @return $this
     */
-    public function setTargetPlatform(?string $value)
+    public function setTargetPlatform($value)
     {
         $this->setProperty('targetPlatform', $value);
         return $this;
@@ -150,7 +155,3 @@ class APIReference extends TechArticle
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Article\\TechArticle\\APIReference','Thing\\APIReference');
-

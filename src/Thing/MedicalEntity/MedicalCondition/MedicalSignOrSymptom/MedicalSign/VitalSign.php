@@ -15,7 +15,3 @@ class VitalSign extends MedicalSign
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalCondition\\MedicalSignOrSymptom\\MedicalSign\\VitalSign','Thing\\VitalSign');
-

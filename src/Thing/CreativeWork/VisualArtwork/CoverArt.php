@@ -15,7 +15,3 @@ class CoverArt extends VisualArtwork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\VisualArtwork\\CoverArt','Thing\\CoverArt');
-

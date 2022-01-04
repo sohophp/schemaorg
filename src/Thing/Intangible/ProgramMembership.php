@@ -20,8 +20,9 @@ class ProgramMembership extends Intangible
     * A unique identifier for the membership.
     * @param string|array $value
     * @return $this
+    * @deprecated use setMembershipNumber
     */
-    public function membershipNumber(?string $value)
+    public function membershipNumber($value)
     {
         $this->setProperty('membershipNumber', $value);
         return $this;
@@ -30,7 +31,7 @@ class ProgramMembership extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setMembershipNumber(?string $value)
+    public function setMembershipNumber($value)
     {
         $this->setProperty('membershipNumber', $value);
         return $this;
@@ -45,8 +46,9 @@ class ProgramMembership extends Intangible
 
     /**
     * A member of this organization.
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
+    * @deprecated use setMembers
     */
     public function members($value)
     {
@@ -54,7 +56,7 @@ class ProgramMembership extends Intangible
         return $this;
     }
    /**
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
     */
     public function setMembers($value)
@@ -72,19 +74,20 @@ class ProgramMembership extends Intangible
 
     /**
     * The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (e.g. stars, miles, etc.)
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
+    * @deprecated use setMembershipPointsEarned
     */
-    public function membershipPointsEarned(?QuantitativeValue $value)
+    public function membershipPointsEarned($value)
     {
         $this->setProperty('membershipPointsEarned', $value);
         return $this;
     }
    /**
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
     */
-    public function setMembershipPointsEarned(?QuantitativeValue $value)
+    public function setMembershipPointsEarned($value)
     {
         $this->setProperty('membershipPointsEarned', $value);
         return $this;
@@ -99,8 +102,9 @@ class ProgramMembership extends Intangible
 
     /**
     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
+    * @deprecated use setMember
     */
     public function member($value)
     {
@@ -108,7 +112,7 @@ class ProgramMembership extends Intangible
         return $this;
     }
    /**
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
     */
     public function setMember($value)
@@ -128,8 +132,9 @@ class ProgramMembership extends Intangible
     * The program providing the membership.
     * @param string|array $value
     * @return $this
+    * @deprecated use setProgramName
     */
-    public function programName(?string $value)
+    public function programName($value)
     {
         $this->setProperty('programName', $value);
         return $this;
@@ -138,7 +143,7 @@ class ProgramMembership extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setProgramName(?string $value)
+    public function setProgramName($value)
     {
         $this->setProperty('programName', $value);
         return $this;
@@ -153,19 +158,20 @@ class ProgramMembership extends Intangible
 
     /**
     * The organization (airline, travelers' club, etc.) the membership is made with.
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
+    * @deprecated use setHostingOrganization
     */
-    public function hostingOrganization(?Organization $value)
+    public function hostingOrganization($value)
     {
         $this->setProperty('hostingOrganization', $value);
         return $this;
     }
    /**
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
     */
-    public function setHostingOrganization(?Organization $value)
+    public function setHostingOrganization($value)
     {
         $this->setProperty('hostingOrganization', $value);
         return $this;
@@ -180,7 +186,3 @@ class ProgramMembership extends Intangible
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\ProgramMembership','Thing\\ProgramMembership');
-

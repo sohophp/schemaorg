@@ -19,8 +19,9 @@ class SoftwareApplication extends CreativeWork
     * Permission(s) required to run the app (for example, a mobile app may require full internet access or may run only on wifi).
     * @param string|array $value
     * @return $this
+    * @deprecated use setPermissions
     */
-    public function permissions(?string $value)
+    public function permissions($value)
     {
         $this->setProperty('permissions', $value);
         return $this;
@@ -29,7 +30,7 @@ class SoftwareApplication extends CreativeWork
     * @param string|array $value
     * @return $this
     */
-    public function setPermissions(?string $value)
+    public function setPermissions($value)
     {
         $this->setProperty('permissions', $value);
         return $this;
@@ -46,8 +47,9 @@ class SoftwareApplication extends CreativeWork
     * Processor architecture required to run the application (e.g. IA64).
     * @param string|array $value
     * @return $this
+    * @deprecated use setProcessorRequirements
     */
-    public function processorRequirements(?string $value)
+    public function processorRequirements($value)
     {
         $this->setProperty('processorRequirements', $value);
         return $this;
@@ -56,7 +58,7 @@ class SoftwareApplication extends CreativeWork
     * @param string|array $value
     * @return $this
     */
-    public function setProcessorRequirements(?string $value)
+    public function setProcessorRequirements($value)
     {
         $this->setProperty('processorRequirements', $value);
         return $this;
@@ -73,8 +75,9 @@ class SoftwareApplication extends CreativeWork
     * Device required to run the application. Used in cases where a specific make/model is required to run the application.
     * @param string|array $value
     * @return $this
+    * @deprecated use setAvailableOnDevice
     */
-    public function availableOnDevice(?string $value)
+    public function availableOnDevice($value)
     {
         $this->setProperty('availableOnDevice', $value);
         return $this;
@@ -83,7 +86,7 @@ class SoftwareApplication extends CreativeWork
     * @param string|array $value
     * @return $this
     */
-    public function setAvailableOnDevice(?string $value)
+    public function setAvailableOnDevice($value)
     {
         $this->setProperty('availableOnDevice', $value);
         return $this;
@@ -100,8 +103,9 @@ class SoftwareApplication extends CreativeWork
     * If the file can be downloaded, URL to download the binary.
     * @param string|array $value
     * @return $this
+    * @deprecated use setDownloadUrl
     */
-    public function downloadUrl(?string $value)
+    public function downloadUrl($value)
     {
         $this->setProperty('downloadUrl', $value);
         return $this;
@@ -110,7 +114,7 @@ class SoftwareApplication extends CreativeWork
     * @param string|array $value
     * @return $this
     */
-    public function setDownloadUrl(?string $value)
+    public function setDownloadUrl($value)
     {
         $this->setProperty('downloadUrl', $value);
         return $this;
@@ -127,6 +131,7 @@ class SoftwareApplication extends CreativeWork
     * Subcategory of the application, e.g. 'Arcade Game'.
     * @param string|string|array $value
     * @return $this
+    * @deprecated use setApplicationSubCategory
     */
     public function applicationSubCategory($value)
     {
@@ -154,6 +159,7 @@ class SoftwareApplication extends CreativeWork
     * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).
     * @param string|string|array $value
     * @return $this
+    * @deprecated use setRequirements
     */
     public function requirements($value)
     {
@@ -181,8 +187,9 @@ class SoftwareApplication extends CreativeWork
     * Device required to run the application. Used in cases where a specific make/model is required to run the application.
     * @param string|array $value
     * @return $this
+    * @deprecated use setDevice
     */
-    public function device(?string $value)
+    public function device($value)
     {
         $this->setProperty('device', $value);
         return $this;
@@ -191,7 +198,7 @@ class SoftwareApplication extends CreativeWork
     * @param string|array $value
     * @return $this
     */
-    public function setDevice(?string $value)
+    public function setDevice($value)
     {
         $this->setProperty('device', $value);
         return $this;
@@ -208,6 +215,7 @@ class SoftwareApplication extends CreativeWork
     * Type of software application, e.g. 'Game, Multimedia'.
     * @param string|string|array $value
     * @return $this
+    * @deprecated use setApplicationCategory
     */
     public function applicationCategory($value)
     {
@@ -235,8 +243,9 @@ class SoftwareApplication extends CreativeWork
     * Version of the software instance.
     * @param string|array $value
     * @return $this
+    * @deprecated use setSoftwareVersion
     */
-    public function softwareVersion(?string $value)
+    public function softwareVersion($value)
     {
         $this->setProperty('softwareVersion', $value);
         return $this;
@@ -245,7 +254,7 @@ class SoftwareApplication extends CreativeWork
     * @param string|array $value
     * @return $this
     */
-    public function setSoftwareVersion(?string $value)
+    public function setSoftwareVersion($value)
     {
         $this->setProperty('softwareVersion', $value);
         return $this;
@@ -262,6 +271,7 @@ class SoftwareApplication extends CreativeWork
     * Features or modules provided by this application (and possibly required by other applications).
     * @param string|string|array $value
     * @return $this
+    * @deprecated use setFeatureList
     */
     public function featureList($value)
     {
@@ -289,6 +299,7 @@ class SoftwareApplication extends CreativeWork
     * Storage requirements (free space required).
     * @param string|string|array $value
     * @return $this
+    * @deprecated use setStorageRequirements
     */
     public function storageRequirements($value)
     {
@@ -316,8 +327,9 @@ class SoftwareApplication extends CreativeWork
     * The name of the application suite to which the application belongs (e.g. Excel belongs to Office).
     * @param string|array $value
     * @return $this
+    * @deprecated use setApplicationSuite
     */
-    public function applicationSuite(?string $value)
+    public function applicationSuite($value)
     {
         $this->setProperty('applicationSuite', $value);
         return $this;
@@ -326,7 +338,7 @@ class SoftwareApplication extends CreativeWork
     * @param string|array $value
     * @return $this
     */
-    public function setApplicationSuite(?string $value)
+    public function setApplicationSuite($value)
     {
         $this->setProperty('applicationSuite', $value);
         return $this;
@@ -343,6 +355,7 @@ class SoftwareApplication extends CreativeWork
     * Minimum memory requirements.
     * @param string|string|array $value
     * @return $this
+    * @deprecated use setMemoryRequirements
     */
     public function memoryRequirements($value)
     {
@@ -370,6 +383,7 @@ class SoftwareApplication extends CreativeWork
     * A link to a screenshot image of the app.
     * @param ImageObject|string|array $value
     * @return $this
+    * @deprecated use setScreenshot
     */
     public function screenshot($value)
     {
@@ -397,8 +411,9 @@ class SoftwareApplication extends CreativeWork
     * Countries for which the application is supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
     * @param string|array $value
     * @return $this
+    * @deprecated use setCountriesSupported
     */
-    public function countriesSupported(?string $value)
+    public function countriesSupported($value)
     {
         $this->setProperty('countriesSupported', $value);
         return $this;
@@ -407,7 +422,7 @@ class SoftwareApplication extends CreativeWork
     * @param string|array $value
     * @return $this
     */
-    public function setCountriesSupported(?string $value)
+    public function setCountriesSupported($value)
     {
         $this->setProperty('countriesSupported', $value);
         return $this;
@@ -422,19 +437,20 @@ class SoftwareApplication extends CreativeWork
 
     /**
     * Software application help.
-    * @param CreativeWork|array $value
+    * @param CreativeWork|array|string $value
     * @return $this
+    * @deprecated use setSoftwareHelp
     */
-    public function softwareHelp(?CreativeWork $value)
+    public function softwareHelp($value)
     {
         $this->setProperty('softwareHelp', $value);
         return $this;
     }
    /**
-    * @param CreativeWork|array $value
+    * @param CreativeWork|array|string $value
     * @return $this
     */
-    public function setSoftwareHelp(?CreativeWork $value)
+    public function setSoftwareHelp($value)
     {
         $this->setProperty('softwareHelp', $value);
         return $this;
@@ -449,19 +465,20 @@ class SoftwareApplication extends CreativeWork
 
     /**
     * Additional content for a software application.
-    * @param SoftwareApplication|array $value
+    * @param SoftwareApplication|array|string $value
     * @return $this
+    * @deprecated use setSoftwareAddOn
     */
-    public function softwareAddOn(?SoftwareApplication $value)
+    public function softwareAddOn($value)
     {
         $this->setProperty('softwareAddOn', $value);
         return $this;
     }
    /**
-    * @param SoftwareApplication|array $value
+    * @param SoftwareApplication|array|string $value
     * @return $this
     */
-    public function setSoftwareAddOn(?SoftwareApplication $value)
+    public function setSoftwareAddOn($value)
     {
         $this->setProperty('softwareAddOn', $value);
         return $this;
@@ -478,6 +495,7 @@ class SoftwareApplication extends CreativeWork
     * Description of what changed in this version.
     * @param string|string|array $value
     * @return $this
+    * @deprecated use setReleaseNotes
     */
     public function releaseNotes($value)
     {
@@ -503,19 +521,20 @@ class SoftwareApplication extends CreativeWork
 
     /**
     * Supporting data for a SoftwareApplication.
-    * @param DataFeed|array $value
+    * @param DataFeed|array|string $value
     * @return $this
+    * @deprecated use setSupportingData
     */
-    public function supportingData(?DataFeed $value)
+    public function supportingData($value)
     {
         $this->setProperty('supportingData', $value);
         return $this;
     }
    /**
-    * @param DataFeed|array $value
+    * @param DataFeed|array|string $value
     * @return $this
     */
-    public function setSupportingData(?DataFeed $value)
+    public function setSupportingData($value)
     {
         $this->setProperty('supportingData', $value);
         return $this;
@@ -532,6 +551,7 @@ class SoftwareApplication extends CreativeWork
     * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).
     * @param string|string|array $value
     * @return $this
+    * @deprecated use setSoftwareRequirements
     */
     public function softwareRequirements($value)
     {
@@ -559,8 +579,9 @@ class SoftwareApplication extends CreativeWork
     * Countries for which the application is not supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
     * @param string|array $value
     * @return $this
+    * @deprecated use setCountriesNotSupported
     */
-    public function countriesNotSupported(?string $value)
+    public function countriesNotSupported($value)
     {
         $this->setProperty('countriesNotSupported', $value);
         return $this;
@@ -569,7 +590,7 @@ class SoftwareApplication extends CreativeWork
     * @param string|array $value
     * @return $this
     */
-    public function setCountriesNotSupported(?string $value)
+    public function setCountriesNotSupported($value)
     {
         $this->setProperty('countriesNotSupported', $value);
         return $this;
@@ -586,8 +607,9 @@ class SoftwareApplication extends CreativeWork
     * Operating systems supported (Windows 7, OSX 10.6, Android 1.6).
     * @param string|array $value
     * @return $this
+    * @deprecated use setOperatingSystem
     */
-    public function operatingSystem(?string $value)
+    public function operatingSystem($value)
     {
         $this->setProperty('operatingSystem', $value);
         return $this;
@@ -596,7 +618,7 @@ class SoftwareApplication extends CreativeWork
     * @param string|array $value
     * @return $this
     */
-    public function setOperatingSystem(?string $value)
+    public function setOperatingSystem($value)
     {
         $this->setProperty('operatingSystem', $value);
         return $this;
@@ -613,8 +635,9 @@ class SoftwareApplication extends CreativeWork
     * Size of the application / package (e.g. 18MB). In the absence of a unit (MB, KB etc.), KB will be assumed.
     * @param string|array $value
     * @return $this
+    * @deprecated use setFileSize
     */
-    public function fileSize(?string $value)
+    public function fileSize($value)
     {
         $this->setProperty('fileSize', $value);
         return $this;
@@ -623,7 +646,7 @@ class SoftwareApplication extends CreativeWork
     * @param string|array $value
     * @return $this
     */
-    public function setFileSize(?string $value)
+    public function setFileSize($value)
     {
         $this->setProperty('fileSize', $value);
         return $this;
@@ -640,8 +663,9 @@ class SoftwareApplication extends CreativeWork
     * URL at which the app may be installed, if different from the URL of the item.
     * @param string|array $value
     * @return $this
+    * @deprecated use setInstallUrl
     */
-    public function installUrl(?string $value)
+    public function installUrl($value)
     {
         $this->setProperty('installUrl', $value);
         return $this;
@@ -650,7 +674,7 @@ class SoftwareApplication extends CreativeWork
     * @param string|array $value
     * @return $this
     */
-    public function setInstallUrl(?string $value)
+    public function setInstallUrl($value)
     {
         $this->setProperty('installUrl', $value);
         return $this;
@@ -665,7 +689,3 @@ class SoftwareApplication extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\SoftwareApplication','Thing\\SoftwareApplication');
-

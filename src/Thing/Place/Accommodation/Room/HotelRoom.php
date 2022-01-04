@@ -21,19 +21,20 @@ class HotelRoom extends Room
     /**
     * The allowed total occupancy for the accommodation in persons (including infants etc). For individual accommodations, this is not necessarily the legal maximum but defines the permitted usage as per the contractual agreement (e.g. a double room used by a single person).
 Typical unit code(s): C62 for person
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
+    * @deprecated use setOccupancy
     */
-    public function occupancy(?QuantitativeValue $value)
+    public function occupancy($value)
     {
         $this->setProperty('occupancy', $value);
         return $this;
     }
    /**
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
     */
-    public function setOccupancy(?QuantitativeValue $value)
+    public function setOccupancy($value)
     {
         $this->setProperty('occupancy', $value);
         return $this;
@@ -51,6 +52,7 @@ Typical unit code(s): C62 for person
       If you want to indicate the quantity of a certain kind of bed, use an instance of BedDetails. For more detailed information, use the amenityFeature property.
     * @param BedDetails|string|BedType|array $value
     * @return $this
+    * @deprecated use setBed
     */
     public function bed($value)
     {
@@ -76,7 +78,3 @@ Typical unit code(s): C62 for person
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\Accommodation\\Room\\HotelRoom','Thing\\HotelRoom');
-

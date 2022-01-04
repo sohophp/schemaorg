@@ -21,19 +21,20 @@ class ComicIssue extends PublicationIssue
 
     /**
     * The individual who traces over the pencil drawings in ink after pencils are complete.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setInker
     */
-    public function inker(?Person $value)
+    public function inker($value)
     {
         $this->setProperty('inker', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setInker(?Person $value)
+    public function setInker($value)
     {
         $this->setProperty('inker', $value);
         return $this;
@@ -50,19 +51,20 @@ class ComicIssue extends PublicationIssue
     * The primary artist for a work
     in a medium other than pencils or digital line art--for example, if the
     primary artwork is done in watercolors or digital paints.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setArtist
     */
-    public function artist(?Person $value)
+    public function artist($value)
     {
         $this->setProperty('artist', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setArtist(?Person $value)
+    public function setArtist($value)
     {
         $this->setProperty('artist', $value);
         return $this;
@@ -81,8 +83,9 @@ class ComicIssue extends PublicationIssue
     Variant Cover" or "2nd Printing Variant".
     * @param string|array $value
     * @return $this
+    * @deprecated use setVariantCover
     */
-    public function variantCover(?string $value)
+    public function variantCover($value)
     {
         $this->setProperty('variantCover', $value);
         return $this;
@@ -91,7 +94,7 @@ class ComicIssue extends PublicationIssue
     * @param string|array $value
     * @return $this
     */
-    public function setVariantCover(?string $value)
+    public function setVariantCover($value)
     {
         $this->setProperty('variantCover', $value);
         return $this;
@@ -106,19 +109,20 @@ class ComicIssue extends PublicationIssue
 
     /**
     * The individual who draws the primary narrative artwork.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setPenciler
     */
-    public function penciler(?Person $value)
+    public function penciler($value)
     {
         $this->setProperty('penciler', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setPenciler(?Person $value)
+    public function setPenciler($value)
     {
         $this->setProperty('penciler', $value);
         return $this;
@@ -133,19 +137,20 @@ class ComicIssue extends PublicationIssue
 
     /**
     * The individual who adds color to inked drawings.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setColorist
     */
-    public function colorist(?Person $value)
+    public function colorist($value)
     {
         $this->setProperty('colorist', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setColorist(?Person $value)
+    public function setColorist($value)
     {
         $this->setProperty('colorist', $value);
         return $this;
@@ -160,19 +165,20 @@ class ComicIssue extends PublicationIssue
 
     /**
     * The individual who adds lettering, including speech balloons and sound effects, to artwork.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setLetterer
     */
-    public function letterer(?Person $value)
+    public function letterer($value)
     {
         $this->setProperty('letterer', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setLetterer(?Person $value)
+    public function setLetterer($value)
     {
         $this->setProperty('letterer', $value);
         return $this;
@@ -187,7 +193,3 @@ class ComicIssue extends PublicationIssue
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\PublicationIssue\\ComicIssue','Thing\\ComicIssue');
-

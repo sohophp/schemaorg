@@ -15,7 +15,3 @@ class PublicSwimmingPool extends SportsActivityLocation
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\SportsActivityLocation\\PublicSwimmingPool','Thing\\PublicSwimmingPool');
-

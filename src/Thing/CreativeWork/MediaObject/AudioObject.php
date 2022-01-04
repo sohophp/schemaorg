@@ -17,8 +17,9 @@ class AudioObject extends MediaObject
     * If this MediaObject is an AudioObject or VideoObject, the transcript of that object.
     * @param string|array $value
     * @return $this
+    * @deprecated use setTranscript
     */
-    public function transcript(?string $value)
+    public function transcript($value)
     {
         $this->setProperty('transcript', $value);
         return $this;
@@ -27,7 +28,7 @@ class AudioObject extends MediaObject
     * @param string|array $value
     * @return $this
     */
-    public function setTranscript(?string $value)
+    public function setTranscript($value)
     {
         $this->setProperty('transcript', $value);
         return $this;
@@ -44,6 +45,7 @@ class AudioObject extends MediaObject
     * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the <a class="localLink" href="http://schema.org/encodingFormat">encodingFormat</a>.
     * @param string|MediaObject|array $value
     * @return $this
+    * @deprecated use setCaption
     */
     public function caption($value)
     {
@@ -69,7 +71,3 @@ class AudioObject extends MediaObject
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\MediaObject\\AudioObject','Thing\\AudioObject');
-

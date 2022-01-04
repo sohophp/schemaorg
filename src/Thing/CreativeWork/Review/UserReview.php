@@ -15,7 +15,3 @@ class UserReview extends Review
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Review\\UserReview','Thing\\UserReview');
-

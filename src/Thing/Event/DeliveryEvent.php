@@ -16,19 +16,20 @@ class DeliveryEvent extends Event
 
     /**
     * Method used for delivery or shipping.
-    * @param DeliveryMethod|array $value
+    * @param DeliveryMethod|array|string $value
     * @return $this
+    * @deprecated use setHasDeliveryMethod
     */
-    public function hasDeliveryMethod(?DeliveryMethod $value)
+    public function hasDeliveryMethod($value)
     {
         $this->setProperty('hasDeliveryMethod', $value);
         return $this;
     }
    /**
-    * @param DeliveryMethod|array $value
+    * @param DeliveryMethod|array|string $value
     * @return $this
     */
-    public function setHasDeliveryMethod(?DeliveryMethod $value)
+    public function setHasDeliveryMethod($value)
     {
         $this->setProperty('hasDeliveryMethod', $value);
         return $this;
@@ -43,8 +44,9 @@ class DeliveryEvent extends Event
 
     /**
     * After this date, the item will no longer be available for pickup.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setAvailableThrough
     */
     public function availableThrough($value)
     {
@@ -52,7 +54,7 @@ class DeliveryEvent extends Event
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setAvailableThrough($value)
@@ -70,8 +72,9 @@ class DeliveryEvent extends Event
 
     /**
     * When the item is available for pickup from the store, locker, etc.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setAvailableFrom
     */
     public function availableFrom($value)
     {
@@ -79,7 +82,7 @@ class DeliveryEvent extends Event
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setAvailableFrom($value)
@@ -99,8 +102,9 @@ class DeliveryEvent extends Event
     * Password, PIN, or access code needed for delivery (e.g. from a locker).
     * @param string|array $value
     * @return $this
+    * @deprecated use setAccessCode
     */
-    public function accessCode(?string $value)
+    public function accessCode($value)
     {
         $this->setProperty('accessCode', $value);
         return $this;
@@ -109,7 +113,7 @@ class DeliveryEvent extends Event
     * @param string|array $value
     * @return $this
     */
-    public function setAccessCode(?string $value)
+    public function setAccessCode($value)
     {
         $this->setProperty('accessCode', $value);
         return $this;
@@ -124,7 +128,3 @@ class DeliveryEvent extends Event
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Event\\DeliveryEvent','Thing\\DeliveryEvent');
-

@@ -20,19 +20,20 @@ class MusicRelease extends MusicPlaylist
 
     /**
     * The label that issued the release.
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
+    * @deprecated use setRecordLabel
     */
-    public function recordLabel(?Organization $value)
+    public function recordLabel($value)
     {
         $this->setProperty('recordLabel', $value);
         return $this;
     }
    /**
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
     */
-    public function setRecordLabel(?Organization $value)
+    public function setRecordLabel($value)
     {
         $this->setProperty('recordLabel', $value);
         return $this;
@@ -49,8 +50,9 @@ class MusicRelease extends MusicPlaylist
     * The catalog number for the release.
     * @param string|array $value
     * @return $this
+    * @deprecated use setCatalogNumber
     */
-    public function catalogNumber(?string $value)
+    public function catalogNumber($value)
     {
         $this->setProperty('catalogNumber', $value);
         return $this;
@@ -59,7 +61,7 @@ class MusicRelease extends MusicPlaylist
     * @param string|array $value
     * @return $this
     */
-    public function setCatalogNumber(?string $value)
+    public function setCatalogNumber($value)
     {
         $this->setProperty('catalogNumber', $value);
         return $this;
@@ -74,8 +76,9 @@ class MusicRelease extends MusicPlaylist
 
     /**
     * The group the release is credited to if different than the byArtist. For example, Red and Blue is credited to "Stefani Germanotta Band", but by Lady Gaga.
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
+    * @deprecated use setCreditedTo
     */
     public function creditedTo($value)
     {
@@ -83,7 +86,7 @@ class MusicRelease extends MusicPlaylist
         return $this;
     }
    /**
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
     */
     public function setCreditedTo($value)
@@ -101,19 +104,20 @@ class MusicRelease extends MusicPlaylist
 
     /**
     * The album this is a release of.
-    * @param MusicAlbum|array $value
+    * @param MusicAlbum|array|string $value
     * @return $this
+    * @deprecated use setReleaseOf
     */
-    public function releaseOf(?MusicAlbum $value)
+    public function releaseOf($value)
     {
         $this->setProperty('releaseOf', $value);
         return $this;
     }
    /**
-    * @param MusicAlbum|array $value
+    * @param MusicAlbum|array|string $value
     * @return $this
     */
-    public function setReleaseOf(?MusicAlbum $value)
+    public function setReleaseOf($value)
     {
         $this->setProperty('releaseOf', $value);
         return $this;
@@ -128,19 +132,20 @@ class MusicRelease extends MusicPlaylist
 
     /**
     * Format of this release (the type of recording media used, ie. compact disc, digital media, LP, etc.).
-    * @param MusicReleaseFormatType|array $value
+    * @param MusicReleaseFormatType|array|string $value
     * @return $this
+    * @deprecated use setMusicReleaseFormat
     */
-    public function musicReleaseFormat(?MusicReleaseFormatType $value)
+    public function musicReleaseFormat($value)
     {
         $this->setProperty('musicReleaseFormat', $value);
         return $this;
     }
    /**
-    * @param MusicReleaseFormatType|array $value
+    * @param MusicReleaseFormatType|array|string $value
     * @return $this
     */
-    public function setMusicReleaseFormat(?MusicReleaseFormatType $value)
+    public function setMusicReleaseFormat($value)
     {
         $this->setProperty('musicReleaseFormat', $value);
         return $this;
@@ -155,19 +160,20 @@ class MusicRelease extends MusicPlaylist
 
     /**
     * The duration of the item (movie, audio recording, event, etc.) in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>.
-    * @param Duration|array $value
+    * @param Duration|array|string $value
     * @return $this
+    * @deprecated use setDuration
     */
-    public function duration(?Duration $value)
+    public function duration($value)
     {
         $this->setProperty('duration', $value);
         return $this;
     }
    /**
-    * @param Duration|array $value
+    * @param Duration|array|string $value
     * @return $this
     */
-    public function setDuration(?Duration $value)
+    public function setDuration($value)
     {
         $this->setProperty('duration', $value);
         return $this;
@@ -182,7 +188,3 @@ class MusicRelease extends MusicPlaylist
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\MusicPlaylist\\MusicRelease','Thing\\MusicRelease');
-

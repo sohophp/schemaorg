@@ -39,8 +39,9 @@ class Person extends Thing
 
     /**
     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
-    * @param ProgramMembership|Organization|array $value
+    * @param ProgramMembership|Organization|array|string $value
     * @return $this
+    * @deprecated use setMemberOf
     */
     public function memberOf($value)
     {
@@ -48,7 +49,7 @@ class Person extends Thing
         return $this;
     }
    /**
-    * @param ProgramMembership|Organization|array $value
+    * @param ProgramMembership|Organization|array|string $value
     * @return $this
     */
     public function setMemberOf($value)
@@ -66,19 +67,20 @@ class Person extends Thing
 
     /**
     * The person's spouse.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setSpouse
     */
-    public function spouse(?Person $value)
+    public function spouse($value)
     {
         $this->setProperty('spouse', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setSpouse(?Person $value)
+    public function setSpouse($value)
     {
         $this->setProperty('spouse', $value);
         return $this;
@@ -93,8 +95,9 @@ class Person extends Thing
 
     /**
     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
+    * @deprecated use setFunder
     */
     public function funder($value)
     {
@@ -102,7 +105,7 @@ class Person extends Thing
         return $this;
     }
    /**
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
     */
     public function setFunder($value)
@@ -120,19 +123,20 @@ class Person extends Thing
 
     /**
     * A colleague of the person.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setColleagues
     */
-    public function colleagues(?Person $value)
+    public function colleagues($value)
     {
         $this->setProperty('colleagues', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setColleagues(?Person $value)
+    public function setColleagues($value)
     {
         $this->setProperty('colleagues', $value);
         return $this;
@@ -147,8 +151,9 @@ class Person extends Thing
 
     /**
     * Date of death.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setDeathDate
     */
     public function deathDate($value)
     {
@@ -156,7 +161,7 @@ class Person extends Thing
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setDeathDate($value)
@@ -176,6 +181,7 @@ class Person extends Thing
     * Of a <a class="localLink" href="http://schema.org/Person">Person</a>, and less typically of an <a class="localLink" href="http://schema.org/Organization">Organization</a>, to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or <a class="localLink" href="http://schema.org/JobPosting">JobPosting</a> descriptions.
     * @param Thing|string|string|array $value
     * @return $this
+    * @deprecated use setKnowsAbout
     */
     public function knowsAbout($value)
     {
@@ -201,8 +207,9 @@ class Person extends Thing
 
     /**
     * The height of the item.
-    * @param Distance|QuantitativeValue|array $value
+    * @param Distance|QuantitativeValue|array|string $value
     * @return $this
+    * @deprecated use setHeight
     */
     public function height($value)
     {
@@ -210,7 +217,7 @@ class Person extends Thing
         return $this;
     }
    /**
-    * @param Distance|QuantitativeValue|array $value
+    * @param Distance|QuantitativeValue|array|string $value
     * @return $this
     */
     public function setHeight($value)
@@ -228,8 +235,9 @@ class Person extends Thing
 
     /**
     * A contact location for a person's place of work.
-    * @param Place|ContactPoint|array $value
+    * @param Place|ContactPoint|array|string $value
     * @return $this
+    * @deprecated use setWorkLocation
     */
     public function workLocation($value)
     {
@@ -237,7 +245,7 @@ class Person extends Thing
         return $this;
     }
    /**
-    * @param Place|ContactPoint|array $value
+    * @param Place|ContactPoint|array|string $value
     * @return $this
     */
     public function setWorkLocation($value)
@@ -255,8 +263,9 @@ class Person extends Thing
 
     /**
     * The total financial value of the person as calculated by subtracting assets from liabilities.
-    * @param PriceSpecification|MonetaryAmount|array $value
+    * @param PriceSpecification|MonetaryAmount|array|string $value
     * @return $this
+    * @deprecated use setNetWorth
     */
     public function netWorth($value)
     {
@@ -264,7 +273,7 @@ class Person extends Thing
         return $this;
     }
    /**
-    * @param PriceSpecification|MonetaryAmount|array $value
+    * @param PriceSpecification|MonetaryAmount|array|string $value
     * @return $this
     */
     public function setNetWorth($value)
@@ -282,19 +291,20 @@ class Person extends Thing
 
     /**
     * A child of the person.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setChildren
     */
-    public function children(?Person $value)
+    public function children($value)
     {
         $this->setProperty('children', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setChildren(?Person $value)
+    public function setChildren($value)
     {
         $this->setProperty('children', $value);
         return $this;
@@ -309,19 +319,20 @@ class Person extends Thing
 
     /**
     * The Person's occupation. For past professions, use Role for expressing dates.
-    * @param Occupation|array $value
+    * @param Occupation|array|string $value
     * @return $this
+    * @deprecated use setHasOccupation
     */
-    public function hasOccupation(?Occupation $value)
+    public function hasOccupation($value)
     {
         $this->setProperty('hasOccupation', $value);
         return $this;
     }
    /**
-    * @param Occupation|array $value
+    * @param Occupation|array|string $value
     * @return $this
     */
-    public function setHasOccupation(?Occupation $value)
+    public function setHasOccupation($value)
     {
         $this->setProperty('hasOccupation', $value);
         return $this;
@@ -338,6 +349,7 @@ class Person extends Thing
     * The job title of the person (for example, Financial Manager).
     * @param string|DefinedTerm|array $value
     * @return $this
+    * @deprecated use setJobTitle
     */
     public function jobTitle($value)
     {
@@ -363,19 +375,20 @@ class Person extends Thing
 
     /**
     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
-    * @param OfferCatalog|array $value
+    * @param OfferCatalog|array|string $value
     * @return $this
+    * @deprecated use setHasOfferCatalog
     */
-    public function hasOfferCatalog(?OfferCatalog $value)
+    public function hasOfferCatalog($value)
     {
         $this->setProperty('hasOfferCatalog', $value);
         return $this;
     }
    /**
-    * @param OfferCatalog|array $value
+    * @param OfferCatalog|array|string $value
     * @return $this
     */
-    public function setHasOfferCatalog(?OfferCatalog $value)
+    public function setHasOfferCatalog($value)
     {
         $this->setProperty('hasOfferCatalog', $value);
         return $this;
@@ -390,19 +403,20 @@ class Person extends Thing
 
     /**
     * The place where the person died.
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
+    * @deprecated use setDeathPlace
     */
-    public function deathPlace(?Place $value)
+    public function deathPlace($value)
     {
         $this->setProperty('deathPlace', $value);
         return $this;
     }
    /**
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
     */
-    public function setDeathPlace(?Place $value)
+    public function setDeathPlace($value)
     {
         $this->setProperty('deathPlace', $value);
         return $this;
@@ -419,8 +433,9 @@ class Person extends Thing
     * The <a href="http://www.gs1.org/gln">Global Location Number</a> (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
     * @param string|array $value
     * @return $this
+    * @deprecated use setGlobalLocationNumber
     */
-    public function globalLocationNumber(?string $value)
+    public function globalLocationNumber($value)
     {
         $this->setProperty('globalLocationNumber', $value);
         return $this;
@@ -429,7 +444,7 @@ class Person extends Thing
     * @param string|array $value
     * @return $this
     */
-    public function setGlobalLocationNumber(?string $value)
+    public function setGlobalLocationNumber($value)
     {
         $this->setProperty('globalLocationNumber', $value);
         return $this;
@@ -444,19 +459,20 @@ class Person extends Thing
 
     /**
     * The place where the person was born.
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
+    * @deprecated use setBirthPlace
     */
-    public function birthPlace(?Place $value)
+    public function birthPlace($value)
     {
         $this->setProperty('birthPlace', $value);
         return $this;
     }
    /**
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
     */
-    public function setBirthPlace(?Place $value)
+    public function setBirthPlace($value)
     {
         $this->setProperty('birthPlace', $value);
         return $this;
@@ -473,6 +489,7 @@ class Person extends Thing
     * Gender of the person. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender.
     * @param string|GenderType|array $value
     * @return $this
+    * @deprecated use setGender
     */
     public function gender($value)
     {
@@ -498,8 +515,9 @@ class Person extends Thing
 
     /**
     * An organization that the person is an alumni of.
-    * @param Organization|EducationalOrganization|array $value
+    * @param Organization|EducationalOrganization|array|string $value
     * @return $this
+    * @deprecated use setAlumniOf
     */
     public function alumniOf($value)
     {
@@ -507,7 +525,7 @@ class Person extends Thing
         return $this;
     }
    /**
-    * @param Organization|EducationalOrganization|array $value
+    * @param Organization|EducationalOrganization|array|string $value
     * @return $this
     */
     public function setAlumniOf($value)
@@ -525,8 +543,9 @@ class Person extends Thing
 
     /**
     * A contact location for a person's residence.
-    * @param ContactPoint|Place|array $value
+    * @param ContactPoint|Place|array|string $value
     * @return $this
+    * @deprecated use setHomeLocation
     */
     public function homeLocation($value)
     {
@@ -534,7 +553,7 @@ class Person extends Thing
         return $this;
     }
    /**
-    * @param ContactPoint|Place|array $value
+    * @param ContactPoint|Place|array|string $value
     * @return $this
     */
     public function setHomeLocation($value)
@@ -554,8 +573,9 @@ class Person extends Thing
     * The Dun &amp; Bradstreet DUNS number for identifying an organization or business person.
     * @param string|array $value
     * @return $this
+    * @deprecated use setDuns
     */
-    public function duns(?string $value)
+    public function duns($value)
     {
         $this->setProperty('duns', $value);
         return $this;
@@ -564,7 +584,7 @@ class Person extends Thing
     * @param string|array $value
     * @return $this
     */
-    public function setDuns(?string $value)
+    public function setDuns($value)
     {
         $this->setProperty('duns', $value);
         return $this;
@@ -581,8 +601,9 @@ class Person extends Thing
     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
     * @param string|array $value
     * @return $this
+    * @deprecated use setTaxID
     */
-    public function taxID(?string $value)
+    public function taxID($value)
     {
         $this->setProperty('taxID', $value);
         return $this;
@@ -591,7 +612,7 @@ class Person extends Thing
     * @param string|array $value
     * @return $this
     */
-    public function setTaxID(?string $value)
+    public function setTaxID($value)
     {
         $this->setProperty('taxID', $value);
         return $this;
@@ -608,8 +629,9 @@ class Person extends Thing
     * An award won by or for this item.
     * @param string|array $value
     * @return $this
+    * @deprecated use setAward
     */
-    public function award(?string $value)
+    public function award($value)
     {
         $this->setProperty('award', $value);
         return $this;
@@ -618,7 +640,7 @@ class Person extends Thing
     * @param string|array $value
     * @return $this
     */
-    public function setAward(?string $value)
+    public function setAward($value)
     {
         $this->setProperty('award', $value);
         return $this;
@@ -633,8 +655,9 @@ class Person extends Thing
 
     /**
     * Date of birth.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setBirthDate
     */
     public function birthDate($value)
     {
@@ -642,7 +665,7 @@ class Person extends Thing
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setBirthDate($value)
@@ -660,19 +683,20 @@ class Person extends Thing
 
     /**
     * A pointer to products or services offered by the organization or person.
-    * @param Offer|array $value
+    * @param Offer|array|string $value
     * @return $this
+    * @deprecated use setMakesOffer
     */
-    public function makesOffer(?Offer $value)
+    public function makesOffer($value)
     {
         $this->setProperty('makesOffer', $value);
         return $this;
     }
    /**
-    * @param Offer|array $value
+    * @param Offer|array|string $value
     * @return $this
     */
-    public function setMakesOffer(?Offer $value)
+    public function setMakesOffer($value)
     {
         $this->setProperty('makesOffer', $value);
         return $this;
@@ -689,8 +713,9 @@ class Person extends Thing
     * Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the name property.
     * @param string|array $value
     * @return $this
+    * @deprecated use setGivenName
     */
-    public function givenName(?string $value)
+    public function givenName($value)
     {
         $this->setProperty('givenName', $value);
         return $this;
@@ -699,7 +724,7 @@ class Person extends Thing
     * @param string|array $value
     * @return $this
     */
-    public function setGivenName(?string $value)
+    public function setGivenName($value)
     {
         $this->setProperty('givenName', $value);
         return $this;
@@ -714,19 +739,20 @@ class Person extends Thing
 
     /**
     * A contact point for a person or organization.
-    * @param ContactPoint|array $value
+    * @param ContactPoint|array|string $value
     * @return $this
+    * @deprecated use setContactPoints
     */
-    public function contactPoints(?ContactPoint $value)
+    public function contactPoints($value)
     {
         $this->setProperty('contactPoints', $value);
         return $this;
     }
    /**
-    * @param ContactPoint|array $value
+    * @param ContactPoint|array|string $value
     * @return $this
     */
-    public function setContactPoints(?ContactPoint $value)
+    public function setContactPoints($value)
     {
         $this->setProperty('contactPoints', $value);
         return $this;
@@ -743,8 +769,9 @@ class Person extends Thing
     * Family name. In the U.S., the last name of an Person. This can be used along with givenName instead of the name property.
     * @param string|array $value
     * @return $this
+    * @deprecated use setFamilyName
     */
-    public function familyName(?string $value)
+    public function familyName($value)
     {
         $this->setProperty('familyName', $value);
         return $this;
@@ -753,7 +780,7 @@ class Person extends Thing
     * @param string|array $value
     * @return $this
     */
-    public function setFamilyName(?string $value)
+    public function setFamilyName($value)
     {
         $this->setProperty('familyName', $value);
         return $this;
@@ -768,19 +795,20 @@ class Person extends Thing
 
     /**
     * A pointer to products or services sought by the organization or person (demand).
-    * @param Demand|array $value
+    * @param Demand|array|string $value
     * @return $this
+    * @deprecated use setSeeks
     */
-    public function seeks(?Demand $value)
+    public function seeks($value)
     {
         $this->setProperty('seeks', $value);
         return $this;
     }
    /**
-    * @param Demand|array $value
+    * @param Demand|array|string $value
     * @return $this
     */
-    public function setSeeks(?Demand $value)
+    public function setSeeks($value)
     {
         $this->setProperty('seeks', $value);
         return $this;
@@ -795,19 +823,20 @@ class Person extends Thing
 
     /**
     * A sibling of the person.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setSibling
     */
-    public function sibling(?Person $value)
+    public function sibling($value)
     {
         $this->setProperty('sibling', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setSibling(?Person $value)
+    public function setSibling($value)
     {
         $this->setProperty('sibling', $value);
         return $this;
@@ -824,6 +853,7 @@ class Person extends Thing
     * Physical address of the item.
     * @param string|PostalAddress|array $value
     * @return $this
+    * @deprecated use setAddress
     */
     public function address($value)
     {
@@ -849,19 +879,20 @@ class Person extends Thing
 
     /**
     * Event that this person is a performer or participant in.
-    * @param Event|array $value
+    * @param Event|array|string $value
     * @return $this
+    * @deprecated use setPerformerIn
     */
-    public function performerIn(?Event $value)
+    public function performerIn($value)
     {
         $this->setProperty('performerIn', $value);
         return $this;
     }
    /**
-    * @param Event|array $value
+    * @param Event|array|string $value
     * @return $this
     */
-    public function setPerformerIn(?Event $value)
+    public function setPerformerIn($value)
     {
         $this->setProperty('performerIn', $value);
         return $this;
@@ -878,8 +909,9 @@ class Person extends Thing
     * An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.
     * @param string|array $value
     * @return $this
+    * @deprecated use setHonorificPrefix
     */
-    public function honorificPrefix(?string $value)
+    public function honorificPrefix($value)
     {
         $this->setProperty('honorificPrefix', $value);
         return $this;
@@ -888,7 +920,7 @@ class Person extends Thing
     * @param string|array $value
     * @return $this
     */
-    public function setHonorificPrefix(?string $value)
+    public function setHonorificPrefix($value)
     {
         $this->setProperty('honorificPrefix', $value);
         return $this;
@@ -905,8 +937,9 @@ class Person extends Thing
     * An additional name for a Person, can be used for a middle name.
     * @param string|array $value
     * @return $this
+    * @deprecated use setAdditionalName
     */
-    public function additionalName(?string $value)
+    public function additionalName($value)
     {
         $this->setProperty('additionalName', $value);
         return $this;
@@ -915,7 +948,7 @@ class Person extends Thing
     * @param string|array $value
     * @return $this
     */
-    public function setAdditionalName(?string $value)
+    public function setAdditionalName($value)
     {
         $this->setProperty('additionalName', $value);
         return $this;
@@ -930,19 +963,20 @@ class Person extends Thing
 
     /**
     * A sibling of the person.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setSiblings
     */
-    public function siblings(?Person $value)
+    public function siblings($value)
     {
         $this->setProperty('siblings', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setSiblings(?Person $value)
+    public function setSiblings($value)
     {
         $this->setProperty('siblings', $value);
         return $this;
@@ -959,8 +993,9 @@ class Person extends Thing
     * The telephone number.
     * @param string|array $value
     * @return $this
+    * @deprecated use setTelephone
     */
-    public function telephone(?string $value)
+    public function telephone($value)
     {
         $this->setProperty('telephone', $value);
         return $this;
@@ -969,7 +1004,7 @@ class Person extends Thing
     * @param string|array $value
     * @return $this
     */
-    public function setTelephone(?string $value)
+    public function setTelephone($value)
     {
         $this->setProperty('telephone', $value);
         return $this;
@@ -986,8 +1021,9 @@ class Person extends Thing
     * Email address.
     * @param string|array $value
     * @return $this
+    * @deprecated use setEmail
     */
-    public function email(?string $value)
+    public function email($value)
     {
         $this->setProperty('email', $value);
         return $this;
@@ -996,7 +1032,7 @@ class Person extends Thing
     * @param string|array $value
     * @return $this
     */
-    public function setEmail(?string $value)
+    public function setEmail($value)
     {
         $this->setProperty('email', $value);
         return $this;
@@ -1011,19 +1047,20 @@ class Person extends Thing
 
     /**
     * The weight of the product or person.
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
+    * @deprecated use setWeight
     */
-    public function weight(?QuantitativeValue $value)
+    public function weight($value)
     {
         $this->setProperty('weight', $value);
         return $this;
     }
    /**
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
     */
-    public function setWeight(?QuantitativeValue $value)
+    public function setWeight($value)
     {
         $this->setProperty('weight', $value);
         return $this;
@@ -1038,19 +1075,20 @@ class Person extends Thing
 
     /**
     * A contact point for a person or organization.
-    * @param ContactPoint|array $value
+    * @param ContactPoint|array|string $value
     * @return $this
+    * @deprecated use setContactPoint
     */
-    public function contactPoint(?ContactPoint $value)
+    public function contactPoint($value)
     {
         $this->setProperty('contactPoint', $value);
         return $this;
     }
    /**
-    * @param ContactPoint|array $value
+    * @param ContactPoint|array|string $value
     * @return $this
     */
-    public function setContactPoint(?ContactPoint $value)
+    public function setContactPoint($value)
     {
         $this->setProperty('contactPoint', $value);
         return $this;
@@ -1067,6 +1105,7 @@ class Person extends Thing
     * A colleague of the person.
     * @param Person|string|array $value
     * @return $this
+    * @deprecated use setColleague
     */
     public function colleague($value)
     {
@@ -1094,8 +1133,9 @@ class Person extends Thing
     * Awards won by or for this item.
     * @param string|array $value
     * @return $this
+    * @deprecated use setAwards
     */
-    public function awards(?string $value)
+    public function awards($value)
     {
         $this->setProperty('awards', $value);
         return $this;
@@ -1104,7 +1144,7 @@ class Person extends Thing
     * @param string|array $value
     * @return $this
     */
-    public function setAwards(?string $value)
+    public function setAwards($value)
     {
         $this->setProperty('awards', $value);
         return $this;
@@ -1119,19 +1159,20 @@ class Person extends Thing
 
     /**
     * A parents of the person.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setParents
     */
-    public function parents(?Person $value)
+    public function parents($value)
     {
         $this->setProperty('parents', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setParents(?Person $value)
+    public function setParents($value)
     {
         $this->setProperty('parents', $value);
         return $this;
@@ -1148,8 +1189,9 @@ class Person extends Thing
     * The North American Industry Classification System (NAICS) code for a particular organization or business person.
     * @param string|array $value
     * @return $this
+    * @deprecated use setNaics
     */
-    public function naics(?string $value)
+    public function naics($value)
     {
         $this->setProperty('naics', $value);
         return $this;
@@ -1158,7 +1200,7 @@ class Person extends Thing
     * @param string|array $value
     * @return $this
     */
-    public function setNaics(?string $value)
+    public function setNaics($value)
     {
         $this->setProperty('naics', $value);
         return $this;
@@ -1173,19 +1215,20 @@ class Person extends Thing
 
     /**
     * Points-of-Sales operated by the organization or person.
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
+    * @deprecated use setHasPOS
     */
-    public function hasPOS(?Place $value)
+    public function hasPOS($value)
     {
         $this->setProperty('hasPOS', $value);
         return $this;
     }
    /**
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
     */
-    public function setHasPOS(?Place $value)
+    public function setHasPOS($value)
     {
         $this->setProperty('hasPOS', $value);
         return $this;
@@ -1200,19 +1243,20 @@ class Person extends Thing
 
     /**
     * A parent of this person.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setParent
     */
-    public function parent(?Person $value)
+    public function parent($value)
     {
         $this->setProperty('parent', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setParent(?Person $value)
+    public function setParent($value)
     {
         $this->setProperty('parent', $value);
         return $this;
@@ -1227,8 +1271,9 @@ class Person extends Thing
 
     /**
     * Products owned by the organization or person.
-    * @param Product|OwnershipInfo|array $value
+    * @param Product|OwnershipInfo|array|string $value
     * @return $this
+    * @deprecated use setOwns
     */
     public function owns($value)
     {
@@ -1236,7 +1281,7 @@ class Person extends Thing
         return $this;
     }
    /**
-    * @param Product|OwnershipInfo|array $value
+    * @param Product|OwnershipInfo|array|string $value
     * @return $this
     */
     public function setOwns($value)
@@ -1254,19 +1299,20 @@ class Person extends Thing
 
     /**
     * An organization that this person is affiliated with. For example, a school/university, a club, or a team.
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
+    * @deprecated use setAffiliation
     */
-    public function affiliation(?Organization $value)
+    public function affiliation($value)
     {
         $this->setProperty('affiliation', $value);
         return $this;
     }
    /**
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
     */
-    public function setAffiliation(?Organization $value)
+    public function setAffiliation($value)
     {
         $this->setProperty('affiliation', $value);
         return $this;
@@ -1285,6 +1331,7 @@ class Person extends Thing
 While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a <a class="localLink" href="http://schema.org/funder">funder</a>) can be expressed using schema.org terminology.
     * @param CreativeWork|string|array $value
     * @return $this
+    * @deprecated use setPublishingPrinciples
     */
     public function publishingPrinciples($value)
     {
@@ -1310,8 +1357,9 @@ While such policies are most typically expressed in natural language, sometimes 
 
     /**
     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
+    * @deprecated use setSponsor
     */
     public function sponsor($value)
     {
@@ -1319,7 +1367,7 @@ While such policies are most typically expressed in natural language, sometimes 
         return $this;
     }
    /**
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
     */
     public function setSponsor($value)
@@ -1339,8 +1387,9 @@ While such policies are most typically expressed in natural language, sometimes 
     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
     * @param string|array $value
     * @return $this
+    * @deprecated use setIsicV4
     */
-    public function isicV4(?string $value)
+    public function isicV4($value)
     {
         $this->setProperty('isicV4', $value);
         return $this;
@@ -1349,7 +1398,7 @@ While such policies are most typically expressed in natural language, sometimes 
     * @param string|array $value
     * @return $this
     */
-    public function setIsicV4(?string $value)
+    public function setIsicV4($value)
     {
         $this->setProperty('isicV4', $value);
         return $this;
@@ -1364,8 +1413,9 @@ While such policies are most typically expressed in natural language, sometimes 
 
     /**
     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-    * @param Organization|Brand|array $value
+    * @param Organization|Brand|array|string $value
     * @return $this
+    * @deprecated use setBrand
     */
     public function brand($value)
     {
@@ -1373,7 +1423,7 @@ While such policies are most typically expressed in natural language, sometimes 
         return $this;
     }
    /**
-    * @param Organization|Brand|array $value
+    * @param Organization|Brand|array|string $value
     * @return $this
     */
     public function setBrand($value)
@@ -1393,8 +1443,9 @@ While such policies are most typically expressed in natural language, sometimes 
     * An honorific suffix preceding a Person's name such as M.D. /PhD/MSCSW.
     * @param string|array $value
     * @return $this
+    * @deprecated use setHonorificSuffix
     */
-    public function honorificSuffix(?string $value)
+    public function honorificSuffix($value)
     {
         $this->setProperty('honorificSuffix', $value);
         return $this;
@@ -1403,7 +1454,7 @@ While such policies are most typically expressed in natural language, sometimes 
     * @param string|array $value
     * @return $this
     */
-    public function setHonorificSuffix(?string $value)
+    public function setHonorificSuffix($value)
     {
         $this->setProperty('honorificSuffix', $value);
         return $this;
@@ -1420,8 +1471,9 @@ While such policies are most typically expressed in natural language, sometimes 
     * The Value-added Tax ID of the organization or person.
     * @param string|array $value
     * @return $this
+    * @deprecated use setVatID
     */
-    public function vatID(?string $value)
+    public function vatID($value)
     {
         $this->setProperty('vatID', $value);
         return $this;
@@ -1430,7 +1482,7 @@ While such policies are most typically expressed in natural language, sometimes 
     * @param string|array $value
     * @return $this
     */
-    public function setVatID(?string $value)
+    public function setVatID($value)
     {
         $this->setProperty('vatID', $value);
         return $this;
@@ -1445,19 +1497,20 @@ While such policies are most typically expressed in natural language, sometimes 
 
     /**
     * Nationality of the person.
-    * @param Country|array $value
+    * @param Country|array|string $value
     * @return $this
+    * @deprecated use setNationality
     */
-    public function nationality(?Country $value)
+    public function nationality($value)
     {
         $this->setProperty('nationality', $value);
         return $this;
     }
    /**
-    * @param Country|array $value
+    * @param Country|array|string $value
     * @return $this
     */
-    public function setNationality(?Country $value)
+    public function setNationality($value)
     {
         $this->setProperty('nationality', $value);
         return $this;
@@ -1472,19 +1525,20 @@ While such policies are most typically expressed in natural language, sometimes 
 
     /**
     * A credential awarded to the Person or Organization.
-    * @param EducationalOccupationalCredential|array $value
+    * @param EducationalOccupationalCredential|array|string $value
     * @return $this
+    * @deprecated use setHasCredential
     */
-    public function hasCredential(?EducationalOccupationalCredential $value)
+    public function hasCredential($value)
     {
         $this->setProperty('hasCredential', $value);
         return $this;
     }
    /**
-    * @param EducationalOccupationalCredential|array $value
+    * @param EducationalOccupationalCredential|array|string $value
     * @return $this
     */
-    public function setHasCredential(?EducationalOccupationalCredential $value)
+    public function setHasCredential($value)
     {
         $this->setProperty('hasCredential', $value);
         return $this;
@@ -1501,6 +1555,7 @@ While such policies are most typically expressed in natural language, sometimes 
     * Of a <a class="localLink" href="http://schema.org/Person">Person</a>, and less typically of an <a class="localLink" href="http://schema.org/Organization">Organization</a>, to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the <a href="http://tools.ietf.org/html/bcp47">IETF BCP 47 standard</a>.
     * @param string|Language|array $value
     * @return $this
+    * @deprecated use setKnowsLanguage
     */
     public function knowsLanguage($value)
     {
@@ -1528,8 +1583,9 @@ While such policies are most typically expressed in natural language, sometimes 
     * The fax number.
     * @param string|array $value
     * @return $this
+    * @deprecated use setFaxNumber
     */
-    public function faxNumber(?string $value)
+    public function faxNumber($value)
     {
         $this->setProperty('faxNumber', $value);
         return $this;
@@ -1538,7 +1594,7 @@ While such policies are most typically expressed in natural language, sometimes 
     * @param string|array $value
     * @return $this
     */
-    public function setFaxNumber(?string $value)
+    public function setFaxNumber($value)
     {
         $this->setProperty('faxNumber', $value);
         return $this;
@@ -1553,19 +1609,20 @@ While such policies are most typically expressed in natural language, sometimes 
 
     /**
     * The most generic familial relation.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setRelatedTo
     */
-    public function relatedTo(?Person $value)
+    public function relatedTo($value)
     {
         $this->setProperty('relatedTo', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setRelatedTo(?Person $value)
+    public function setRelatedTo($value)
     {
         $this->setProperty('relatedTo', $value);
         return $this;
@@ -1580,19 +1637,20 @@ While such policies are most typically expressed in natural language, sometimes 
 
     /**
     * The most generic uni-directional social relation.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setFollows
     */
-    public function follows(?Person $value)
+    public function follows($value)
     {
         $this->setProperty('follows', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setFollows(?Person $value)
+    public function setFollows($value)
     {
         $this->setProperty('follows', $value);
         return $this;
@@ -1607,19 +1665,20 @@ While such policies are most typically expressed in natural language, sometimes 
 
     /**
     * The most generic bi-directional social/work relation.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setKnows
     */
-    public function knows(?Person $value)
+    public function knows($value)
     {
         $this->setProperty('knows', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setKnows(?Person $value)
+    public function setKnows($value)
     {
         $this->setProperty('knows', $value);
         return $this;
@@ -1634,19 +1693,20 @@ While such policies are most typically expressed in natural language, sometimes 
 
     /**
     * Organizations that the person works for.
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
+    * @deprecated use setWorksFor
     */
-    public function worksFor(?Organization $value)
+    public function worksFor($value)
     {
         $this->setProperty('worksFor', $value);
         return $this;
     }
    /**
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
     */
-    public function setWorksFor(?Organization $value)
+    public function setWorksFor($value)
     {
         $this->setProperty('worksFor', $value);
         return $this;
@@ -1661,7 +1721,3 @@ While such policies are most typically expressed in natural language, sometimes 
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Person','Thing\\Person');
-

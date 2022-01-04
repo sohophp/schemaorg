@@ -15,7 +15,3 @@ class LibrarySystem extends Organization
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LibrarySystem','Thing\\LibrarySystem');
-

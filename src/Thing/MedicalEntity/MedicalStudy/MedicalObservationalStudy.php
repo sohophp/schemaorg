@@ -16,19 +16,20 @@ class MedicalObservationalStudy extends MedicalStudy
 
     /**
     * Specifics about the observational study design (enumerated).
-    * @param MedicalObservationalStudyDesign|array $value
+    * @param MedicalObservationalStudyDesign|array|string $value
     * @return $this
+    * @deprecated use setStudyDesign
     */
-    public function studyDesign(?MedicalObservationalStudyDesign $value)
+    public function studyDesign($value)
     {
         $this->setProperty('studyDesign', $value);
         return $this;
     }
    /**
-    * @param MedicalObservationalStudyDesign|array $value
+    * @param MedicalObservationalStudyDesign|array|string $value
     * @return $this
     */
-    public function setStudyDesign(?MedicalObservationalStudyDesign $value)
+    public function setStudyDesign($value)
     {
         $this->setProperty('studyDesign', $value);
         return $this;
@@ -43,7 +44,3 @@ class MedicalObservationalStudy extends MedicalStudy
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalStudy\\MedicalObservationalStudy','Thing\\MedicalObservationalStudy');
-

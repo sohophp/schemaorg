@@ -17,19 +17,20 @@ class SoftwareSourceCode extends CreativeWork
 
     /**
     * Target Operating System / Product to which the code applies.  If applies to several versions, just the product name can be used.
-    * @param SoftwareApplication|array $value
+    * @param SoftwareApplication|array|string $value
     * @return $this
+    * @deprecated use setTargetProduct
     */
-    public function targetProduct(?SoftwareApplication $value)
+    public function targetProduct($value)
     {
         $this->setProperty('targetProduct', $value);
         return $this;
     }
    /**
-    * @param SoftwareApplication|array $value
+    * @param SoftwareApplication|array|string $value
     * @return $this
     */
-    public function setTargetProduct(?SoftwareApplication $value)
+    public function setTargetProduct($value)
     {
         $this->setProperty('targetProduct', $value);
         return $this;
@@ -46,8 +47,9 @@ class SoftwareSourceCode extends CreativeWork
     * Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex).
     * @param string|array $value
     * @return $this
+    * @deprecated use setCodeRepository
     */
-    public function codeRepository(?string $value)
+    public function codeRepository($value)
     {
         $this->setProperty('codeRepository', $value);
         return $this;
@@ -56,7 +58,7 @@ class SoftwareSourceCode extends CreativeWork
     * @param string|array $value
     * @return $this
     */
-    public function setCodeRepository(?string $value)
+    public function setCodeRepository($value)
     {
         $this->setProperty('codeRepository', $value);
         return $this;
@@ -73,6 +75,7 @@ class SoftwareSourceCode extends CreativeWork
     * The computer programming language.
     * @param ComputerLanguage|string|array $value
     * @return $this
+    * @deprecated use setProgrammingLanguage
     */
     public function programmingLanguage($value)
     {
@@ -100,8 +103,9 @@ class SoftwareSourceCode extends CreativeWork
     * What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.
     * @param string|array $value
     * @return $this
+    * @deprecated use setCodeSampleType
     */
-    public function codeSampleType(?string $value)
+    public function codeSampleType($value)
     {
         $this->setProperty('codeSampleType', $value);
         return $this;
@@ -110,7 +114,7 @@ class SoftwareSourceCode extends CreativeWork
     * @param string|array $value
     * @return $this
     */
-    public function setCodeSampleType(?string $value)
+    public function setCodeSampleType($value)
     {
         $this->setProperty('codeSampleType', $value);
         return $this;
@@ -127,8 +131,9 @@ class SoftwareSourceCode extends CreativeWork
     * Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).
     * @param string|array $value
     * @return $this
+    * @deprecated use setRuntimePlatform
     */
-    public function runtimePlatform(?string $value)
+    public function runtimePlatform($value)
     {
         $this->setProperty('runtimePlatform', $value);
         return $this;
@@ -137,7 +142,7 @@ class SoftwareSourceCode extends CreativeWork
     * @param string|array $value
     * @return $this
     */
-    public function setRuntimePlatform(?string $value)
+    public function setRuntimePlatform($value)
     {
         $this->setProperty('runtimePlatform', $value);
         return $this;
@@ -154,8 +159,9 @@ class SoftwareSourceCode extends CreativeWork
     * What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.
     * @param string|array $value
     * @return $this
+    * @deprecated use setSampleType
     */
-    public function sampleType(?string $value)
+    public function sampleType($value)
     {
         $this->setProperty('sampleType', $value);
         return $this;
@@ -164,7 +170,7 @@ class SoftwareSourceCode extends CreativeWork
     * @param string|array $value
     * @return $this
     */
-    public function setSampleType(?string $value)
+    public function setSampleType($value)
     {
         $this->setProperty('sampleType', $value);
         return $this;
@@ -181,8 +187,9 @@ class SoftwareSourceCode extends CreativeWork
     * Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).
     * @param string|array $value
     * @return $this
+    * @deprecated use setRuntime
     */
-    public function runtime(?string $value)
+    public function runtime($value)
     {
         $this->setProperty('runtime', $value);
         return $this;
@@ -191,7 +198,7 @@ class SoftwareSourceCode extends CreativeWork
     * @param string|array $value
     * @return $this
     */
-    public function setRuntime(?string $value)
+    public function setRuntime($value)
     {
         $this->setProperty('runtime', $value);
         return $this;
@@ -206,7 +213,3 @@ class SoftwareSourceCode extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\SoftwareSourceCode','Thing\\SoftwareSourceCode');
-

@@ -15,7 +15,3 @@ class Museum extends CivicStructure
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\CivicStructure\\Museum','Thing\\Museum');
-

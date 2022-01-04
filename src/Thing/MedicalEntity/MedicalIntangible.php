@@ -15,7 +15,3 @@ class MedicalIntangible extends MedicalEntity
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalIntangible','Thing\\MedicalIntangible');
-

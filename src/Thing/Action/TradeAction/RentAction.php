@@ -18,8 +18,9 @@ class RentAction extends TradeAction
 
     /**
     * A sub property of participant. The owner of the real estate property.
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
+    * @deprecated use setLandlord
     */
     public function landlord($value)
     {
@@ -27,7 +28,7 @@ class RentAction extends TradeAction
         return $this;
     }
    /**
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
     */
     public function setLandlord($value)
@@ -45,19 +46,20 @@ class RentAction extends TradeAction
 
     /**
     * A sub property of participant. The real estate agent involved in the action.
-    * @param RealEstateAgent|array $value
+    * @param RealEstateAgent|array|string $value
     * @return $this
+    * @deprecated use setRealEstateAgent
     */
-    public function realEstateAgent(?RealEstateAgent $value)
+    public function realEstateAgent($value)
     {
         $this->setProperty('realEstateAgent', $value);
         return $this;
     }
    /**
-    * @param RealEstateAgent|array $value
+    * @param RealEstateAgent|array|string $value
     * @return $this
     */
-    public function setRealEstateAgent(?RealEstateAgent $value)
+    public function setRealEstateAgent($value)
     {
         $this->setProperty('realEstateAgent', $value);
         return $this;
@@ -72,7 +74,3 @@ class RentAction extends TradeAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\TradeAction\\RentAction','Thing\\RentAction');
-

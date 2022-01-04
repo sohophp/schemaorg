@@ -18,19 +18,20 @@ class Observation extends Intangible
 
     /**
     * The observedNode of an <a class="localLink" href="http://schema.org/Observation">Observation</a>, often a <a class="localLink" href="http://schema.org/StatisticalPopulation">StatisticalPopulation</a>.
-    * @param StatisticalPopulation|array $value
+    * @param StatisticalPopulation|array|string $value
     * @return $this
+    * @deprecated use setObservedNode
     */
-    public function observedNode(?StatisticalPopulation $value)
+    public function observedNode($value)
     {
         $this->setProperty('observedNode', $value);
         return $this;
     }
    /**
-    * @param StatisticalPopulation|array $value
+    * @param StatisticalPopulation|array|string $value
     * @return $this
     */
-    public function setObservedNode(?StatisticalPopulation $value)
+    public function setObservedNode($value)
     {
         $this->setProperty('observedNode', $value);
         return $this;
@@ -45,8 +46,9 @@ class Observation extends Intangible
 
     /**
     * The measuredValue of an <a class="localLink" href="http://schema.org/Observation">Observation</a>.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setMeasuredValue
     */
     public function measuredValue($value)
     {
@@ -54,7 +56,7 @@ class Observation extends Intangible
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setMeasuredValue($value)
@@ -72,8 +74,9 @@ class Observation extends Intangible
 
     /**
     * The observationDate of an <a class="localLink" href="http://schema.org/Observation">Observation</a>.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setObservationDate
     */
     public function observationDate($value)
     {
@@ -81,7 +84,7 @@ class Observation extends Intangible
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setObservationDate($value)
@@ -99,8 +102,9 @@ class Observation extends Intangible
 
     /**
     * A marginOfError for an <a class="localLink" href="http://schema.org/Observation">Observation</a>.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setMarginOfError
     */
     public function marginOfError($value)
     {
@@ -108,7 +112,7 @@ class Observation extends Intangible
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setMarginOfError($value)
@@ -126,19 +130,20 @@ class Observation extends Intangible
 
     /**
     * The measuredProperty of an <a class="localLink" href="http://schema.org/Observation">Observation</a>, either a schema.org property, a property from other RDF-compatible systems e.g. W3C RDF Data Cube, or schema.org extensions such as <a href="https://www.gs1.org/voc/?show=properties">GS1's</a>.
-    * @param Property|array $value
+    * @param Property|array|string $value
     * @return $this
+    * @deprecated use setMeasuredProperty
     */
-    public function measuredProperty(?Property $value)
+    public function measuredProperty($value)
     {
         $this->setProperty('measuredProperty', $value);
         return $this;
     }
    /**
-    * @param Property|array $value
+    * @param Property|array|string $value
     * @return $this
     */
-    public function setMeasuredProperty(?Property $value)
+    public function setMeasuredProperty($value)
     {
         $this->setProperty('measuredProperty', $value);
         return $this;
@@ -153,7 +158,3 @@ class Observation extends Intangible
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Observation','Thing\\Observation');
-

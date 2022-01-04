@@ -17,19 +17,20 @@ class Patient extends Person
 
     /**
     * Specifying a drug or medicine used in a medication procedure
-    * @param Drug|array $value
+    * @param Drug|array|string $value
     * @return $this
+    * @deprecated use setDrug
     */
-    public function drug(?Drug $value)
+    public function drug($value)
     {
         $this->setProperty('drug', $value);
         return $this;
     }
    /**
-    * @param Drug|array $value
+    * @param Drug|array|string $value
     * @return $this
     */
-    public function setDrug(?Drug $value)
+    public function setDrug($value)
     {
         $this->setProperty('drug', $value);
         return $this;
@@ -44,19 +45,20 @@ class Patient extends Person
 
     /**
     * Specifying the health condition(s) of a patient, medical study, or other target audience.
-    * @param MedicalCondition|array $value
+    * @param MedicalCondition|array|string $value
     * @return $this
+    * @deprecated use setHealthCondition
     */
-    public function healthCondition(?MedicalCondition $value)
+    public function healthCondition($value)
     {
         $this->setProperty('healthCondition', $value);
         return $this;
     }
    /**
-    * @param MedicalCondition|array $value
+    * @param MedicalCondition|array|string $value
     * @return $this
     */
-    public function setHealthCondition(?MedicalCondition $value)
+    public function setHealthCondition($value)
     {
         $this->setProperty('healthCondition', $value);
         return $this;
@@ -71,19 +73,20 @@ class Patient extends Person
 
     /**
     * One or more alternative conditions considered in the differential diagnosis process as output of a diagnosis process.
-    * @param MedicalCondition|array $value
+    * @param MedicalCondition|array|string $value
     * @return $this
+    * @deprecated use setDiagnosis
     */
-    public function diagnosis(?MedicalCondition $value)
+    public function diagnosis($value)
     {
         $this->setProperty('diagnosis', $value);
         return $this;
     }
    /**
-    * @param MedicalCondition|array $value
+    * @param MedicalCondition|array|string $value
     * @return $this
     */
-    public function setDiagnosis(?MedicalCondition $value)
+    public function setDiagnosis($value)
     {
         $this->setProperty('diagnosis', $value);
         return $this;
@@ -98,7 +101,3 @@ class Patient extends Person
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Person\\Patient','Thing\\Patient');
-

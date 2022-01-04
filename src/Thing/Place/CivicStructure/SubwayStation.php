@@ -15,7 +15,3 @@ class SubwayStation extends CivicStructure
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\CivicStructure\\SubwayStation','Thing\\SubwayStation');
-

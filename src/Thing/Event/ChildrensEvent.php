@@ -15,7 +15,3 @@ class ChildrensEvent extends Event
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Event\\ChildrensEvent','Thing\\ChildrensEvent');
-

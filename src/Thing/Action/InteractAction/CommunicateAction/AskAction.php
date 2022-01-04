@@ -23,19 +23,20 @@ class AskAction extends CommunicateAction
 
     /**
     * A sub property of object. A question.
-    * @param Question|array $value
+    * @param Question|array|string $value
     * @return $this
+    * @deprecated use setQuestion
     */
-    public function question(?Question $value)
+    public function question($value)
     {
         $this->setProperty('question', $value);
         return $this;
     }
    /**
-    * @param Question|array $value
+    * @param Question|array|string $value
     * @return $this
     */
-    public function setQuestion(?Question $value)
+    public function setQuestion($value)
     {
         $this->setProperty('question', $value);
         return $this;
@@ -50,7 +51,3 @@ class AskAction extends CommunicateAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\InteractAction\\CommunicateAction\\AskAction','Thing\\AskAction');
-

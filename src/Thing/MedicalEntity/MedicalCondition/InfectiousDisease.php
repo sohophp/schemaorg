@@ -18,8 +18,9 @@ class InfectiousDisease extends MedicalCondition
     * The actual infectious agent, such as a specific bacterium.
     * @param string|array $value
     * @return $this
+    * @deprecated use setInfectiousAgent
     */
-    public function infectiousAgent(?string $value)
+    public function infectiousAgent($value)
     {
         $this->setProperty('infectiousAgent', $value);
         return $this;
@@ -28,7 +29,7 @@ class InfectiousDisease extends MedicalCondition
     * @param string|array $value
     * @return $this
     */
-    public function setInfectiousAgent(?string $value)
+    public function setInfectiousAgent($value)
     {
         $this->setProperty('infectiousAgent', $value);
         return $this;
@@ -45,8 +46,9 @@ class InfectiousDisease extends MedicalCondition
     * How the disease spreads, either as a route or vector, for example 'direct contact', 'Aedes aegypti', etc.
     * @param string|array $value
     * @return $this
+    * @deprecated use setTransmissionMethod
     */
-    public function transmissionMethod(?string $value)
+    public function transmissionMethod($value)
     {
         $this->setProperty('transmissionMethod', $value);
         return $this;
@@ -55,7 +57,7 @@ class InfectiousDisease extends MedicalCondition
     * @param string|array $value
     * @return $this
     */
-    public function setTransmissionMethod(?string $value)
+    public function setTransmissionMethod($value)
     {
         $this->setProperty('transmissionMethod', $value);
         return $this;
@@ -70,19 +72,20 @@ class InfectiousDisease extends MedicalCondition
 
     /**
     * The class of infectious agent (bacteria, prion, etc.) that causes the disease.
-    * @param InfectiousAgentClass|array $value
+    * @param InfectiousAgentClass|array|string $value
     * @return $this
+    * @deprecated use setInfectiousAgentClass
     */
-    public function infectiousAgentClass(?InfectiousAgentClass $value)
+    public function infectiousAgentClass($value)
     {
         $this->setProperty('infectiousAgentClass', $value);
         return $this;
     }
    /**
-    * @param InfectiousAgentClass|array $value
+    * @param InfectiousAgentClass|array|string $value
     * @return $this
     */
-    public function setInfectiousAgentClass(?InfectiousAgentClass $value)
+    public function setInfectiousAgentClass($value)
     {
         $this->setProperty('infectiousAgentClass', $value);
         return $this;
@@ -97,7 +100,3 @@ class InfectiousDisease extends MedicalCondition
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalCondition\\InfectiousDisease','Thing\\InfectiousDisease');
-

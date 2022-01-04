@@ -17,8 +17,9 @@ class EndorseAction extends ReactAction
 
     /**
     * A sub property of participant. The person/organization being supported.
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
+    * @deprecated use setEndorsee
     */
     public function endorsee($value)
     {
@@ -26,7 +27,7 @@ class EndorseAction extends ReactAction
         return $this;
     }
    /**
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
     */
     public function setEndorsee($value)
@@ -44,7 +45,3 @@ class EndorseAction extends ReactAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\AssessAction\\ReactAction\\EndorseAction','Thing\\EndorseAction');
-

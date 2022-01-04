@@ -18,8 +18,9 @@ class HealthPlanCostSharingSpecification extends Intangible
     * The category or type of pharmacy associated with this cost sharing.
     * @param string|array $value
     * @return $this
+    * @deprecated use setHealthPlanPharmacyCategory
     */
-    public function healthPlanPharmacyCategory(?string $value)
+    public function healthPlanPharmacyCategory($value)
     {
         $this->setProperty('healthPlanPharmacyCategory', $value);
         return $this;
@@ -28,7 +29,7 @@ class HealthPlanCostSharingSpecification extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setHealthPlanPharmacyCategory(?string $value)
+    public function setHealthPlanPharmacyCategory($value)
     {
         $this->setProperty('healthPlanPharmacyCategory', $value);
         return $this;
@@ -45,8 +46,9 @@ class HealthPlanCostSharingSpecification extends Intangible
     * Whether the coinsurance applies before or after deductible, etc. TODO: Is this a closed set?
     * @param string|array $value
     * @return $this
+    * @deprecated use setHealthPlanCoinsuranceOption
     */
-    public function healthPlanCoinsuranceOption(?string $value)
+    public function healthPlanCoinsuranceOption($value)
     {
         $this->setProperty('healthPlanCoinsuranceOption', $value);
         return $this;
@@ -55,7 +57,7 @@ class HealthPlanCostSharingSpecification extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setHealthPlanCoinsuranceOption(?string $value)
+    public function setHealthPlanCoinsuranceOption($value)
     {
         $this->setProperty('healthPlanCoinsuranceOption', $value);
         return $this;
@@ -70,8 +72,9 @@ class HealthPlanCostSharingSpecification extends Intangible
 
     /**
     * Whether The rate of coinsurance expressed as a number between 0.0 and 1.0.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setHealthPlanCoinsuranceRate
     */
     public function healthPlanCoinsuranceRate($value)
     {
@@ -79,7 +82,7 @@ class HealthPlanCostSharingSpecification extends Intangible
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setHealthPlanCoinsuranceRate($value)
@@ -99,8 +102,9 @@ class HealthPlanCostSharingSpecification extends Intangible
     * Whether the copay is before or after deductible, etc. TODO: Is this a closed set?
     * @param string|array $value
     * @return $this
+    * @deprecated use setHealthPlanCopayOption
     */
-    public function healthPlanCopayOption(?string $value)
+    public function healthPlanCopayOption($value)
     {
         $this->setProperty('healthPlanCopayOption', $value);
         return $this;
@@ -109,7 +113,7 @@ class HealthPlanCostSharingSpecification extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setHealthPlanCopayOption(?string $value)
+    public function setHealthPlanCopayOption($value)
     {
         $this->setProperty('healthPlanCopayOption', $value);
         return $this;
@@ -124,19 +128,20 @@ class HealthPlanCostSharingSpecification extends Intangible
 
     /**
     * Whether The copay amount.
-    * @param PriceSpecification|array $value
+    * @param PriceSpecification|array|string $value
     * @return $this
+    * @deprecated use setHealthPlanCopay
     */
-    public function healthPlanCopay(?PriceSpecification $value)
+    public function healthPlanCopay($value)
     {
         $this->setProperty('healthPlanCopay', $value);
         return $this;
     }
    /**
-    * @param PriceSpecification|array $value
+    * @param PriceSpecification|array|string $value
     * @return $this
     */
-    public function setHealthPlanCopay(?PriceSpecification $value)
+    public function setHealthPlanCopay($value)
     {
         $this->setProperty('healthPlanCopay', $value);
         return $this;
@@ -151,7 +156,3 @@ class HealthPlanCostSharingSpecification extends Intangible
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\HealthPlanCostSharingSpecification','Thing\\HealthPlanCostSharingSpecification');
-

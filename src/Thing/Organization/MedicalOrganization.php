@@ -18,8 +18,9 @@ class MedicalOrganization extends Organization
     * Name or unique ID of network. (Networks are often reused across different insurance plans).
     * @param string|array $value
     * @return $this
+    * @deprecated use setHealthPlanNetworkId
     */
-    public function healthPlanNetworkId(?string $value)
+    public function healthPlanNetworkId($value)
     {
         $this->setProperty('healthPlanNetworkId', $value);
         return $this;
@@ -28,7 +29,7 @@ class MedicalOrganization extends Organization
     * @param string|array $value
     * @return $this
     */
-    public function setHealthPlanNetworkId(?string $value)
+    public function setHealthPlanNetworkId($value)
     {
         $this->setProperty('healthPlanNetworkId', $value);
         return $this;
@@ -43,19 +44,20 @@ class MedicalOrganization extends Organization
 
     /**
     * Whether the provider is accepting new patients.
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
+    * @deprecated use setIsAcceptingNewPatients
     */
-    public function isAcceptingNewPatients(?bool $value)
+    public function isAcceptingNewPatients($value)
     {
         $this->setProperty('isAcceptingNewPatients', $value);
         return $this;
     }
    /**
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
     */
-    public function setIsAcceptingNewPatients(?bool $value)
+    public function setIsAcceptingNewPatients($value)
     {
         $this->setProperty('isAcceptingNewPatients', $value);
         return $this;
@@ -70,19 +72,20 @@ class MedicalOrganization extends Organization
 
     /**
     * A medical specialty of the provider.
-    * @param MedicalSpecialty|array $value
+    * @param MedicalSpecialty|array|string $value
     * @return $this
+    * @deprecated use setMedicalSpecialty
     */
-    public function medicalSpecialty(?MedicalSpecialty $value)
+    public function medicalSpecialty($value)
     {
         $this->setProperty('medicalSpecialty', $value);
         return $this;
     }
    /**
-    * @param MedicalSpecialty|array $value
+    * @param MedicalSpecialty|array|string $value
     * @return $this
     */
-    public function setMedicalSpecialty(?MedicalSpecialty $value)
+    public function setMedicalSpecialty($value)
     {
         $this->setProperty('medicalSpecialty', $value);
         return $this;
@@ -97,7 +100,3 @@ class MedicalOrganization extends Organization
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\MedicalOrganization','Thing\\MedicalOrganization');
-

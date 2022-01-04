@@ -24,19 +24,20 @@ class Schedule extends Intangible
       is associated with a <a class="localLink" href="http://schema.org/Schedule">Schedule</a> using this property should not have <a class="localLink" href="http://schema.org/startDate">startDate</a> or <a class="localLink" href="http://schema.org/endDate">endDate</a> properties. These are instead defined within the associated
       <a class="localLink" href="http://schema.org/Schedule">Schedule</a>, this avoids any ambiguity for clients using the data. The propery might have repeated values to specify different schedules, e.g. for different months
       or seasons.
-    * @param Duration|array $value
+    * @param Duration|array|string $value
     * @return $this
+    * @deprecated use setEventSchedule
     */
-    public function eventSchedule(?Duration $value)
+    public function eventSchedule($value)
     {
         $this->setProperty('eventSchedule', $value);
         return $this;
     }
    /**
-    * @param Duration|array $value
+    * @param Duration|array|string $value
     * @return $this
     */
-    public function setEventSchedule(?Duration $value)
+    public function setEventSchedule($value)
     {
         $this->setProperty('eventSchedule', $value);
         return $this;
@@ -54,6 +55,7 @@ class Schedule extends Intangible
       events should be defined as a <a class="localLink" href="http://schema.org/Duration">Duration</a> of time.
     * @param string|Duration|array $value
     * @return $this
+    * @deprecated use setRepeatFrequency
     */
     public function repeatFrequency($value)
     {
@@ -82,8 +84,9 @@ class Schedule extends Intangible
       a <a class="localLink" href="http://schema.org/Schedule">Schedule</a> to be specified. If an exception is specified as a <a class="localLink" href="http://schema.org/DateTime">DateTime</a> then only the event that would have started at that specific date and time
       should be excluded from the schedule. If an exception is specified as a <a class="localLink" href="http://schema.org/Date">Date</a> then any event that is scheduled for that 24 hour period should be
       excluded from the schedule. This allows a whole day to be excluded from the schedule without having to itemise every scheduled event.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setExceptDate
     */
     public function exceptDate($value)
     {
@@ -91,7 +94,7 @@ class Schedule extends Intangible
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setExceptDate($value)
@@ -109,19 +112,20 @@ class Schedule extends Intangible
 
     /**
     * Defines the day(s) of the week on which a recurring <a class="localLink" href="http://schema.org/Event">Event</a> takes place
-    * @param DayOfWeek|array $value
+    * @param DayOfWeek|array|string $value
     * @return $this
+    * @deprecated use setByDay
     */
-    public function byDay(?DayOfWeek $value)
+    public function byDay($value)
     {
         $this->setProperty('byDay', $value);
         return $this;
     }
    /**
-    * @param DayOfWeek|array $value
+    * @param DayOfWeek|array|string $value
     * @return $this
     */
-    public function setByDay(?DayOfWeek $value)
+    public function setByDay($value)
     {
         $this->setProperty('byDay', $value);
         return $this;
@@ -136,19 +140,20 @@ class Schedule extends Intangible
 
     /**
     * Defines the number of times a recurring <a class="localLink" href="http://schema.org/Event">Event</a> will take place
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
+    * @deprecated use setRepeatCount
     */
-    public function repeatCount(?int $value)
+    public function repeatCount($value)
     {
         $this->setProperty('repeatCount', $value);
         return $this;
     }
    /**
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
     */
-    public function setRepeatCount(?int $value)
+    public function setRepeatCount($value)
     {
         $this->setProperty('repeatCount', $value);
         return $this;
@@ -163,19 +168,20 @@ class Schedule extends Intangible
 
     /**
     * Defines the day(s) of the month on which a recurring <a class="localLink" href="http://schema.org/Event">Event</a> takes place. Specified as an <a class="localLink" href="http://schema.org/Integer">Integer</a> between 1-31.
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
+    * @deprecated use setByMonthDay
     */
-    public function byMonthDay(?int $value)
+    public function byMonthDay($value)
     {
         $this->setProperty('byMonthDay', $value);
         return $this;
     }
    /**
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
     */
-    public function setByMonthDay(?int $value)
+    public function setByMonthDay($value)
     {
         $this->setProperty('byMonthDay', $value);
         return $this;
@@ -190,19 +196,20 @@ class Schedule extends Intangible
 
     /**
     * Defines the month(s) of the year on which a recurring <a class="localLink" href="http://schema.org/Event">Event</a> takes place. Specified as an <a class="localLink" href="http://schema.org/Integer">Integer</a> between 1-12. January is 1.
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
+    * @deprecated use setByMonth
     */
-    public function byMonth(?int $value)
+    public function byMonth($value)
     {
         $this->setProperty('byMonth', $value);
         return $this;
     }
    /**
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
     */
-    public function setByMonth(?int $value)
+    public function setByMonth($value)
     {
         $this->setProperty('byMonth', $value);
         return $this;
@@ -217,7 +224,3 @@ class Schedule extends Intangible
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Schedule','Thing\\Schedule');
-

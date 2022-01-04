@@ -17,6 +17,7 @@ class FinancialService extends LocalBusiness
     * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
     * @param string|string|array $value
     * @return $this
+    * @deprecated use setFeesAndCommissionsSpecification
     */
     public function feesAndCommissionsSpecification($value)
     {
@@ -42,7 +43,3 @@ class FinancialService extends LocalBusiness
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\FinancialService','Thing\\FinancialService');
-

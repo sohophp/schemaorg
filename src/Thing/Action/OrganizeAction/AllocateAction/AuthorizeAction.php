@@ -19,8 +19,9 @@ class AuthorizeAction extends AllocateAction
 
     /**
     * A sub property of participant. The participant who is at the receiving end of the action.
-    * @param Person|ContactPoint|Organization|Audience|array $value
+    * @param Person|ContactPoint|Organization|Audience|array|string $value
     * @return $this
+    * @deprecated use setRecipient
     */
     public function recipient($value)
     {
@@ -28,7 +29,7 @@ class AuthorizeAction extends AllocateAction
         return $this;
     }
    /**
-    * @param Person|ContactPoint|Organization|Audience|array $value
+    * @param Person|ContactPoint|Organization|Audience|array|string $value
     * @return $this
     */
     public function setRecipient($value)
@@ -46,7 +47,3 @@ class AuthorizeAction extends AllocateAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\OrganizeAction\\AllocateAction\\AuthorizeAction','Thing\\AuthorizeAction');
-

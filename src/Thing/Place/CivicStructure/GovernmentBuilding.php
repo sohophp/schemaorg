@@ -15,7 +15,3 @@ class GovernmentBuilding extends CivicStructure
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\CivicStructure\\GovernmentBuilding','Thing\\GovernmentBuilding');
-

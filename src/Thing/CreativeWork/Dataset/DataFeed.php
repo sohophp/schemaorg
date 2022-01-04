@@ -19,6 +19,7 @@ class DataFeed extends Dataset
     * An item within in a data feed. Data feeds may have many elements.
     * @param string|Thing|DataFeedItem|array $value
     * @return $this
+    * @deprecated use setDataFeedElement
     */
     public function dataFeedElement($value)
     {
@@ -44,7 +45,3 @@ class DataFeed extends Dataset
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Dataset\\DataFeed','Thing\\DataFeed');
-

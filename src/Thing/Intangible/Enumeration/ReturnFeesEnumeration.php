@@ -15,7 +15,3 @@ class ReturnFeesEnumeration extends Enumeration
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\ReturnFeesEnumeration','Thing\\ReturnFeesEnumeration');
-

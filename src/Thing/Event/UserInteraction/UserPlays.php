@@ -15,7 +15,3 @@ class UserPlays extends UserInteraction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Event\\UserInteraction\\UserPlays','Thing\\UserPlays');
-

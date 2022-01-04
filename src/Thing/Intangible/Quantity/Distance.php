@@ -15,7 +15,3 @@ class Distance extends Quantity
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Quantity\\Distance','Thing\\Distance');
-

@@ -15,7 +15,3 @@ class Locksmith extends HomeAndConstructionBusiness
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\HomeAndConstructionBusiness\\Locksmith','Thing\\Locksmith');
-

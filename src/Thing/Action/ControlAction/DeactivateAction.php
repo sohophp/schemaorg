@@ -15,7 +15,3 @@ class DeactivateAction extends ControlAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\ControlAction\\DeactivateAction','Thing\\DeactivateAction');
-

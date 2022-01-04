@@ -15,7 +15,3 @@ class Poster extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Poster','Thing\\Poster');
-

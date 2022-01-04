@@ -15,7 +15,3 @@ class BedType extends QualitativeValue
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\QualitativeValue\\BedType','Thing\\BedType');
-

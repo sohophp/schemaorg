@@ -17,8 +17,9 @@ class LocalBusiness extends Organization
     * The price range of the business, for example <code>$$$</code>.
     * @param string|array $value
     * @return $this
+    * @deprecated use setPriceRange
     */
-    public function priceRange(?string $value)
+    public function priceRange($value)
     {
         $this->setProperty('priceRange', $value);
         return $this;
@@ -27,7 +28,7 @@ class LocalBusiness extends Organization
     * @param string|array $value
     * @return $this
     */
-    public function setPriceRange(?string $value)
+    public function setPriceRange($value)
     {
         $this->setProperty('priceRange', $value);
         return $this;
@@ -46,8 +47,9 @@ class LocalBusiness extends Organization
 Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 currency format</a> e.g. "USD"; <a href="https://en.wikipedia.org/wiki/List_of_cryptocurrencies">Ticker symbol</a> for cryptocurrencies e.g. "BTC"; well known names for <a href="https://en.wikipedia.org/wiki/Local_exchange_trading_system">Local Exchange Tradings Systems</a> (LETS) and other currency types e.g. "Ithaca HOUR".
     * @param string|array $value
     * @return $this
+    * @deprecated use setCurrenciesAccepted
     */
-    public function currenciesAccepted(?string $value)
+    public function currenciesAccepted($value)
     {
         $this->setProperty('currenciesAccepted', $value);
         return $this;
@@ -56,7 +58,7 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
     * @param string|array $value
     * @return $this
     */
-    public function setCurrenciesAccepted(?string $value)
+    public function setCurrenciesAccepted($value)
     {
         $this->setProperty('currenciesAccepted', $value);
         return $this;
@@ -71,19 +73,20 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
 
     /**
     * The larger organization that this local business is a branch of, if any. Not to be confused with (anatomical)<a class="localLink" href="http://schema.org/branch">branch</a>.
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
+    * @deprecated use setBranchOf
     */
-    public function branchOf(?Organization $value)
+    public function branchOf($value)
     {
         $this->setProperty('branchOf', $value);
         return $this;
     }
    /**
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
     */
-    public function setBranchOf(?Organization $value)
+    public function setBranchOf($value)
     {
         $this->setProperty('branchOf', $value);
         return $this;
@@ -100,8 +103,9 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
     * Cash, Credit Card, Cryptocurrency, Local Exchange Tradings System, etc.
     * @param string|array $value
     * @return $this
+    * @deprecated use setPaymentAccepted
     */
-    public function paymentAccepted(?string $value)
+    public function paymentAccepted($value)
     {
         $this->setProperty('paymentAccepted', $value);
         return $this;
@@ -110,7 +114,7 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
     * @param string|array $value
     * @return $this
     */
-    public function setPaymentAccepted(?string $value)
+    public function setPaymentAccepted($value)
     {
         $this->setProperty('paymentAccepted', $value);
         return $this;
@@ -135,8 +139,9 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
 
     * @param string|array $value
     * @return $this
+    * @deprecated use setOpeningHours
     */
-    public function openingHours(?string $value)
+    public function openingHours($value)
     {
         $this->setProperty('openingHours', $value);
         return $this;
@@ -145,7 +150,7 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
     * @param string|array $value
     * @return $this
     */
-    public function setOpeningHours(?string $value)
+    public function setOpeningHours($value)
     {
         $this->setProperty('openingHours', $value);
         return $this;
@@ -160,7 +165,3 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness','Thing\\LocalBusiness');
-

@@ -15,7 +15,3 @@ class AdvertiserContentArticle extends Article
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Article\\AdvertiserContentArticle','Thing\\AdvertiserContentArticle');
-

@@ -20,19 +20,20 @@ class MedicalTest extends MedicalEntity
 
     /**
     * A sign detected by the test.
-    * @param MedicalSign|array $value
+    * @param MedicalSign|array|string $value
     * @return $this
+    * @deprecated use setSignDetected
     */
-    public function signDetected(?MedicalSign $value)
+    public function signDetected($value)
     {
         $this->setProperty('signDetected', $value);
         return $this;
     }
    /**
-    * @param MedicalSign|array $value
+    * @param MedicalSign|array|string $value
     * @return $this
     */
-    public function setSignDetected(?MedicalSign $value)
+    public function setSignDetected($value)
     {
         $this->setProperty('signDetected', $value);
         return $this;
@@ -49,6 +50,7 @@ class MedicalTest extends MedicalEntity
     * Range of acceptable values for a typical patient, when applicable.
     * @param string|MedicalEnumeration|array $value
     * @return $this
+    * @deprecated use setNormalRange
     */
     public function normalRange($value)
     {
@@ -74,19 +76,20 @@ class MedicalTest extends MedicalEntity
 
     /**
     * Device used to perform the test.
-    * @param MedicalDevice|array $value
+    * @param MedicalDevice|array|string $value
     * @return $this
+    * @deprecated use setUsesDevice
     */
-    public function usesDevice(?MedicalDevice $value)
+    public function usesDevice($value)
     {
         $this->setProperty('usesDevice', $value);
         return $this;
     }
    /**
-    * @param MedicalDevice|array $value
+    * @param MedicalDevice|array|string $value
     * @return $this
     */
-    public function setUsesDevice(?MedicalDevice $value)
+    public function setUsesDevice($value)
     {
         $this->setProperty('usesDevice', $value);
         return $this;
@@ -101,19 +104,20 @@ class MedicalTest extends MedicalEntity
 
     /**
     * A condition the test is used to diagnose.
-    * @param MedicalCondition|array $value
+    * @param MedicalCondition|array|string $value
     * @return $this
+    * @deprecated use setUsedToDiagnose
     */
-    public function usedToDiagnose(?MedicalCondition $value)
+    public function usedToDiagnose($value)
     {
         $this->setProperty('usedToDiagnose', $value);
         return $this;
     }
    /**
-    * @param MedicalCondition|array $value
+    * @param MedicalCondition|array|string $value
     * @return $this
     */
-    public function setUsedToDiagnose(?MedicalCondition $value)
+    public function setUsedToDiagnose($value)
     {
         $this->setProperty('usedToDiagnose', $value);
         return $this;
@@ -128,19 +132,20 @@ class MedicalTest extends MedicalEntity
 
     /**
     * Drugs that affect the test's results.
-    * @param Drug|array $value
+    * @param Drug|array|string $value
     * @return $this
+    * @deprecated use setAffectedBy
     */
-    public function affectedBy(?Drug $value)
+    public function affectedBy($value)
     {
         $this->setProperty('affectedBy', $value);
         return $this;
     }
    /**
-    * @param Drug|array $value
+    * @param Drug|array|string $value
     * @return $this
     */
-    public function setAffectedBy(?Drug $value)
+    public function setAffectedBy($value)
     {
         $this->setProperty('affectedBy', $value);
         return $this;
@@ -155,7 +160,3 @@ class MedicalTest extends MedicalEntity
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalTest','Thing\\MedicalTest');
-

@@ -15,7 +15,3 @@ class Zoo extends CivicStructure
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\CivicStructure\\Zoo','Thing\\Zoo');
-

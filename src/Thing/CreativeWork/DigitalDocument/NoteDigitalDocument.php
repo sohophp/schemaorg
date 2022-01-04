@@ -15,7 +15,3 @@ class NoteDigitalDocument extends DigitalDocument
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\DigitalDocument\\NoteDigitalDocument','Thing\\NoteDigitalDocument');
-

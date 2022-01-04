@@ -20,8 +20,9 @@ class OpeningHoursSpecification extends StructuredValue
 
     /**
     * The date when the item becomes valid.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setValidFrom
     */
     public function validFrom($value)
     {
@@ -29,7 +30,7 @@ class OpeningHoursSpecification extends StructuredValue
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setValidFrom($value)
@@ -47,8 +48,9 @@ class OpeningHoursSpecification extends StructuredValue
 
     /**
     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setValidThrough
     */
     public function validThrough($value)
     {
@@ -56,7 +58,7 @@ class OpeningHoursSpecification extends StructuredValue
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setValidThrough($value)
@@ -74,8 +76,9 @@ class OpeningHoursSpecification extends StructuredValue
 
     /**
     * The opening hour of the place or service on the given day(s) of the week.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setOpens
     */
     public function opens($value)
     {
@@ -83,7 +86,7 @@ class OpeningHoursSpecification extends StructuredValue
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setOpens($value)
@@ -101,8 +104,9 @@ class OpeningHoursSpecification extends StructuredValue
 
     /**
     * The closing hour of the place or service on the given day(s) of the week.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setCloses
     */
     public function closes($value)
     {
@@ -110,7 +114,7 @@ class OpeningHoursSpecification extends StructuredValue
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setCloses($value)
@@ -128,19 +132,20 @@ class OpeningHoursSpecification extends StructuredValue
 
     /**
     * The day of the week for which these opening hours are valid.
-    * @param DayOfWeek|array $value
+    * @param DayOfWeek|array|string $value
     * @return $this
+    * @deprecated use setDayOfWeek
     */
-    public function dayOfWeek(?DayOfWeek $value)
+    public function dayOfWeek($value)
     {
         $this->setProperty('dayOfWeek', $value);
         return $this;
     }
    /**
-    * @param DayOfWeek|array $value
+    * @param DayOfWeek|array|string $value
     * @return $this
     */
-    public function setDayOfWeek(?DayOfWeek $value)
+    public function setDayOfWeek($value)
     {
         $this->setProperty('dayOfWeek', $value);
         return $this;
@@ -155,7 +160,3 @@ class OpeningHoursSpecification extends StructuredValue
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue\\OpeningHoursSpecification','Thing\\OpeningHoursSpecification');
-

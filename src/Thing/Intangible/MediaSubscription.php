@@ -17,19 +17,20 @@ class MediaSubscription extends Intangible
 
     /**
     * The Organization responsible for authenticating the user's subscription. For example, many media apps require a cable/satellite provider to authenticate your subscription before playing media.
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
+    * @deprecated use setAuthenticator
     */
-    public function authenticator(?Organization $value)
+    public function authenticator($value)
     {
         $this->setProperty('authenticator', $value);
         return $this;
     }
    /**
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
     */
-    public function setAuthenticator(?Organization $value)
+    public function setAuthenticator($value)
     {
         $this->setProperty('authenticator', $value);
         return $this;
@@ -44,19 +45,20 @@ class MediaSubscription extends Intangible
 
     /**
     * An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.
-    * @param Offer|array $value
+    * @param Offer|array|string $value
     * @return $this
+    * @deprecated use setExpectsAcceptanceOf
     */
-    public function expectsAcceptanceOf(?Offer $value)
+    public function expectsAcceptanceOf($value)
     {
         $this->setProperty('expectsAcceptanceOf', $value);
         return $this;
     }
    /**
-    * @param Offer|array $value
+    * @param Offer|array|string $value
     * @return $this
     */
-    public function setExpectsAcceptanceOf(?Offer $value)
+    public function setExpectsAcceptanceOf($value)
     {
         $this->setProperty('expectsAcceptanceOf', $value);
         return $this;
@@ -71,7 +73,3 @@ class MediaSubscription extends Intangible
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\MediaSubscription','Thing\\MediaSubscription');
-

@@ -18,8 +18,9 @@ class MedicalTrial extends MedicalStudy
     * The phase of the clinical trial.
     * @param string|array $value
     * @return $this
+    * @deprecated use setPhase
     */
-    public function phase(?string $value)
+    public function phase($value)
     {
         $this->setProperty('phase', $value);
         return $this;
@@ -28,7 +29,7 @@ class MedicalTrial extends MedicalStudy
     * @param string|array $value
     * @return $this
     */
-    public function setPhase(?string $value)
+    public function setPhase($value)
     {
         $this->setProperty('phase', $value);
         return $this;
@@ -43,19 +44,20 @@ class MedicalTrial extends MedicalStudy
 
     /**
     * Specifics about the trial design (enumerated).
-    * @param MedicalTrialDesign|array $value
+    * @param MedicalTrialDesign|array|string $value
     * @return $this
+    * @deprecated use setTrialDesign
     */
-    public function trialDesign(?MedicalTrialDesign $value)
+    public function trialDesign($value)
     {
         $this->setProperty('trialDesign', $value);
         return $this;
     }
    /**
-    * @param MedicalTrialDesign|array $value
+    * @param MedicalTrialDesign|array|string $value
     * @return $this
     */
-    public function setTrialDesign(?MedicalTrialDesign $value)
+    public function setTrialDesign($value)
     {
         $this->setProperty('trialDesign', $value);
         return $this;
@@ -70,7 +72,3 @@ class MedicalTrial extends MedicalStudy
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalStudy\\MedicalTrial','Thing\\MedicalTrial');
-

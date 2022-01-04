@@ -15,7 +15,3 @@ class PhysicalTherapy extends MedicalTherapy
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalProcedure\\TherapeuticProcedure\\MedicalTherapy\\PhysicalTherapy','Thing\\PhysicalTherapy');
-

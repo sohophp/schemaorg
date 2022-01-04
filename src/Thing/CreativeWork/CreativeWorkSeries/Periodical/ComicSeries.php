@@ -17,7 +17,3 @@ class ComicSeries extends Periodical
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\CreativeWorkSeries\\Periodical\\ComicSeries','Thing\\ComicSeries');
-

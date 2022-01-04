@@ -23,19 +23,20 @@ class HowTo extends CreativeWork
 
     /**
     * The length of time it takes to prepare the items to be used in instructions or a direction, in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 duration format</a>.
-    * @param Duration|array $value
+    * @param Duration|array|string $value
     * @return $this
+    * @deprecated use setPrepTime
     */
-    public function prepTime(?Duration $value)
+    public function prepTime($value)
     {
         $this->setProperty('prepTime', $value);
         return $this;
     }
    /**
-    * @param Duration|array $value
+    * @param Duration|array|string $value
     * @return $this
     */
-    public function setPrepTime(?Duration $value)
+    public function setPrepTime($value)
     {
         $this->setProperty('prepTime', $value);
         return $this;
@@ -52,6 +53,7 @@ class HowTo extends CreativeWork
     * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).
     * @param string|CreativeWork|ItemList|array $value
     * @return $this
+    * @deprecated use setSteps
     */
     public function steps($value)
     {
@@ -79,6 +81,7 @@ class HowTo extends CreativeWork
     * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.
     * @param string|HowToSection|HowToStep|CreativeWork|array $value
     * @return $this
+    * @deprecated use setStep
     */
     public function step($value)
     {
@@ -104,19 +107,20 @@ class HowTo extends CreativeWork
 
     /**
     * The length of time it takes to perform instructions or a direction (not including time to prepare the supplies), in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 duration format</a>.
-    * @param Duration|array $value
+    * @param Duration|array|string $value
     * @return $this
+    * @deprecated use setPerformTime
     */
-    public function performTime(?Duration $value)
+    public function performTime($value)
     {
         $this->setProperty('performTime', $value);
         return $this;
     }
    /**
-    * @param Duration|array $value
+    * @param Duration|array|string $value
     * @return $this
     */
-    public function setPerformTime(?Duration $value)
+    public function setPerformTime($value)
     {
         $this->setProperty('performTime', $value);
         return $this;
@@ -133,6 +137,7 @@ class HowTo extends CreativeWork
     * The estimated cost of the supply or supplies consumed when performing instructions.
     * @param string|MonetaryAmount|array $value
     * @return $this
+    * @deprecated use setEstimatedCost
     */
     public function estimatedCost($value)
     {
@@ -158,19 +163,20 @@ class HowTo extends CreativeWork
 
     /**
     * The total time required to perform instructions or a direction (including time to prepare the supplies), in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 duration format</a>.
-    * @param Duration|array $value
+    * @param Duration|array|string $value
     * @return $this
+    * @deprecated use setTotalTime
     */
-    public function totalTime(?Duration $value)
+    public function totalTime($value)
     {
         $this->setProperty('totalTime', $value);
         return $this;
     }
    /**
-    * @param Duration|array $value
+    * @param Duration|array|string $value
     * @return $this
     */
-    public function setTotalTime(?Duration $value)
+    public function setTotalTime($value)
     {
         $this->setProperty('totalTime', $value);
         return $this;
@@ -187,6 +193,7 @@ class HowTo extends CreativeWork
     * A sub-property of instrument. A supply consumed when performing instructions or a direction.
     * @param HowToSupply|string|array $value
     * @return $this
+    * @deprecated use setSupply
     */
     public function supply($value)
     {
@@ -214,6 +221,7 @@ class HowTo extends CreativeWork
     * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
     * @param string|HowToTool|array $value
     * @return $this
+    * @deprecated use setTool
     */
     public function tool($value)
     {
@@ -241,6 +249,7 @@ class HowTo extends CreativeWork
     * The quantity that results by performing instructions. For example, a paper airplane, 10 personalized candles.
     * @param QuantitativeValue|string|array $value
     * @return $this
+    * @deprecated use setYield
     */
     public function yield($value)
     {
@@ -266,7 +275,3 @@ class HowTo extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\HowTo','Thing\\HowTo');
-

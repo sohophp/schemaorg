@@ -15,7 +15,3 @@ class AssessAction extends Action
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\AssessAction','Thing\\AssessAction');
-

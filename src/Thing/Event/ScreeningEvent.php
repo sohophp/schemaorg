@@ -19,8 +19,9 @@ class ScreeningEvent extends Event
     * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
     * @param string|array $value
     * @return $this
+    * @deprecated use setVideoFormat
     */
-    public function videoFormat(?string $value)
+    public function videoFormat($value)
     {
         $this->setProperty('videoFormat', $value);
         return $this;
@@ -29,7 +30,7 @@ class ScreeningEvent extends Event
     * @param string|array $value
     * @return $this
     */
-    public function setVideoFormat(?string $value)
+    public function setVideoFormat($value)
     {
         $this->setProperty('videoFormat', $value);
         return $this;
@@ -46,6 +47,7 @@ class ScreeningEvent extends Event
     * Languages in which subtitles/captions are available, in <a href="http://tools.ietf.org/html/bcp47">IETF BCP 47 standard format</a>.
     * @param Language|string|array $value
     * @return $this
+    * @deprecated use setSubtitleLanguage
     */
     public function subtitleLanguage($value)
     {
@@ -71,19 +73,20 @@ class ScreeningEvent extends Event
 
     /**
     * The movie presented during this event.
-    * @param Movie|array $value
+    * @param Movie|array|string $value
     * @return $this
+    * @deprecated use setWorkPresented
     */
-    public function workPresented(?Movie $value)
+    public function workPresented($value)
     {
         $this->setProperty('workPresented', $value);
         return $this;
     }
    /**
-    * @param Movie|array $value
+    * @param Movie|array|string $value
     * @return $this
     */
-    public function setWorkPresented(?Movie $value)
+    public function setWorkPresented($value)
     {
         $this->setProperty('workPresented', $value);
         return $this;
@@ -98,7 +101,3 @@ class ScreeningEvent extends Event
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Event\\ScreeningEvent','Thing\\ScreeningEvent');
-

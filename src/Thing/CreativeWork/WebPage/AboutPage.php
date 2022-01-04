@@ -15,7 +15,3 @@ class AboutPage extends WebPage
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\WebPage\\AboutPage','Thing\\AboutPage');
-

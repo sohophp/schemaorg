@@ -24,6 +24,7 @@ If the <a class="localLink" href="http://schema.org/variableMeasured">variableMe
 If there are several <a class="localLink" href="http://schema.org/variableMeasured">variableMeasured</a> properties recorded for some given data object, use a <a class="localLink" href="http://schema.org/PropertyValue">PropertyValue</a> for each <a class="localLink" href="http://schema.org/variableMeasured">variableMeasured</a> and attach the corresponding <a class="localLink" href="http://schema.org/measurementTechnique">measurementTechnique</a>.
     * @param string|string|array $value
     * @return $this
+    * @deprecated use setMeasurementTechnique
     */
     public function measurementTechnique($value)
     {
@@ -49,7 +50,3 @@ If there are several <a class="localLink" href="http://schema.org/variableMeasur
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\MediaObject\\DataDownload','Thing\\DataDownload');
-

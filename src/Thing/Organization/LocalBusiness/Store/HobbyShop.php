@@ -15,7 +15,3 @@ class HobbyShop extends Store
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\Store\\HobbyShop','Thing\\HobbyShop');
-

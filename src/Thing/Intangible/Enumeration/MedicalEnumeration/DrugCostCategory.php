@@ -15,7 +15,3 @@ class DrugCostCategory extends MedicalEnumeration
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\MedicalEnumeration\\DrugCostCategory','Thing\\DrugCostCategory');
-

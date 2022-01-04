@@ -15,7 +15,3 @@ class MedicalTrialDesign extends MedicalEnumeration
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\MedicalEnumeration\\MedicalTrialDesign','Thing\\MedicalTrialDesign');
-

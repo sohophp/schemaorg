@@ -15,19 +15,20 @@ class MedicalTestPanel extends MedicalTest
 
     /**
     * A component test of the panel.
-    * @param MedicalTest|array $value
+    * @param MedicalTest|array|string $value
     * @return $this
+    * @deprecated use setSubTest
     */
-    public function subTest(?MedicalTest $value)
+    public function subTest($value)
     {
         $this->setProperty('subTest', $value);
         return $this;
     }
    /**
-    * @param MedicalTest|array $value
+    * @param MedicalTest|array|string $value
     * @return $this
     */
-    public function setSubTest(?MedicalTest $value)
+    public function setSubTest($value)
     {
         $this->setProperty('subTest', $value);
         return $this;
@@ -42,7 +43,3 @@ class MedicalTestPanel extends MedicalTest
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalTest\\MedicalTestPanel','Thing\\MedicalTestPanel');
-

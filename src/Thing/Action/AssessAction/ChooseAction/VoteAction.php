@@ -16,19 +16,20 @@ class VoteAction extends ChooseAction
 
     /**
     * A sub property of object. The candidate subject of this action.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setCandidate
     */
-    public function candidate(?Person $value)
+    public function candidate($value)
     {
         $this->setProperty('candidate', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setCandidate(?Person $value)
+    public function setCandidate($value)
     {
         $this->setProperty('candidate', $value);
         return $this;
@@ -43,7 +44,3 @@ class VoteAction extends ChooseAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\AssessAction\\ChooseAction\\VoteAction','Thing\\VoteAction');
-

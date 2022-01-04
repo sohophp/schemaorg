@@ -17,8 +17,9 @@ class TechArticle extends Article
     * Prerequisites needed to fulfill steps in article.
     * @param string|array $value
     * @return $this
+    * @deprecated use setDependencies
     */
-    public function dependencies(?string $value)
+    public function dependencies($value)
     {
         $this->setProperty('dependencies', $value);
         return $this;
@@ -27,7 +28,7 @@ class TechArticle extends Article
     * @param string|array $value
     * @return $this
     */
-    public function setDependencies(?string $value)
+    public function setDependencies($value)
     {
         $this->setProperty('dependencies', $value);
         return $this;
@@ -44,8 +45,9 @@ class TechArticle extends Article
     * Proficiency needed for this content; expected values: 'Beginner', 'Expert'.
     * @param string|array $value
     * @return $this
+    * @deprecated use setProficiencyLevel
     */
-    public function proficiencyLevel(?string $value)
+    public function proficiencyLevel($value)
     {
         $this->setProperty('proficiencyLevel', $value);
         return $this;
@@ -54,7 +56,7 @@ class TechArticle extends Article
     * @param string|array $value
     * @return $this
     */
-    public function setProficiencyLevel(?string $value)
+    public function setProficiencyLevel($value)
     {
         $this->setProperty('proficiencyLevel', $value);
         return $this;
@@ -69,7 +71,3 @@ class TechArticle extends Article
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Article\\TechArticle','Thing\\TechArticle');
-

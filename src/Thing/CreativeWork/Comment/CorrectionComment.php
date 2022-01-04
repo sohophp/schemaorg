@@ -15,7 +15,3 @@ class CorrectionComment extends Comment
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Comment\\CorrectionComment','Thing\\CorrectionComment');
-

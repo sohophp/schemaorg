@@ -24,6 +24,7 @@ Text values are best if the elements in the list are plain strings. Existing ent
 Note: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
     * @param ListItem|string|Thing|array $value
     * @return $this
+    * @deprecated use setItemListElement
     */
     public function itemListElement($value)
     {
@@ -51,6 +52,7 @@ Note: The order of elements in your mark-up is not sufficient for indicating the
     * Type of ordering (e.g. Ascending, Descending, Unordered).
     * @param ItemListOrderType|string|array $value
     * @return $this
+    * @deprecated use setItemListOrder
     */
     public function itemListOrder($value)
     {
@@ -76,19 +78,20 @@ Note: The order of elements in your mark-up is not sufficient for indicating the
 
     /**
     * The number of items in an ItemList. Note that some descriptions might not fully describe all items in a list (e.g., multi-page pagination); in such cases, the numberOfItems would be for the entire list.
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
+    * @deprecated use setNumberOfItems
     */
-    public function numberOfItems(?int $value)
+    public function numberOfItems($value)
     {
         $this->setProperty('numberOfItems', $value);
         return $this;
     }
    /**
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
     */
-    public function setNumberOfItems(?int $value)
+    public function setNumberOfItems($value)
     {
         $this->setProperty('numberOfItems', $value);
         return $this;
@@ -103,7 +106,3 @@ Note: The order of elements in your mark-up is not sufficient for indicating the
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\ItemList','Thing\\ItemList');
-

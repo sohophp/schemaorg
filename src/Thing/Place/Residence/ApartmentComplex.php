@@ -15,7 +15,3 @@ class ApartmentComplex extends Residence
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\Residence\\ApartmentComplex','Thing\\ApartmentComplex');
-

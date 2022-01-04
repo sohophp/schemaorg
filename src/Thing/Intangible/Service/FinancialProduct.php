@@ -16,19 +16,20 @@ class FinancialProduct extends Service
 
     /**
     * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
+    * @deprecated use setAnnualPercentageRate
     */
-    public function annualPercentageRate(?QuantitativeValue $value)
+    public function annualPercentageRate($value)
     {
         $this->setProperty('annualPercentageRate', $value);
         return $this;
     }
    /**
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
     */
-    public function setAnnualPercentageRate(?QuantitativeValue $value)
+    public function setAnnualPercentageRate($value)
     {
         $this->setProperty('annualPercentageRate', $value);
         return $this;
@@ -43,19 +44,20 @@ class FinancialProduct extends Service
 
     /**
     * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
+    * @deprecated use setInterestRate
     */
-    public function interestRate(?QuantitativeValue $value)
+    public function interestRate($value)
     {
         $this->setProperty('interestRate', $value);
         return $this;
     }
    /**
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
     */
-    public function setInterestRate(?QuantitativeValue $value)
+    public function setInterestRate($value)
     {
         $this->setProperty('interestRate', $value);
         return $this;
@@ -72,6 +74,7 @@ class FinancialProduct extends Service
     * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
     * @param string|string|array $value
     * @return $this
+    * @deprecated use setFeesAndCommissionsSpecification
     */
     public function feesAndCommissionsSpecification($value)
     {
@@ -97,7 +100,3 @@ class FinancialProduct extends Service
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Service\\FinancialProduct','Thing\\FinancialProduct');
-

@@ -27,7 +27,3 @@ class EventSeries extends Series
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Series\\EventSeries','Thing\\EventSeries');
-

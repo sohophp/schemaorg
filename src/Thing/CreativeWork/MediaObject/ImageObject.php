@@ -18,6 +18,7 @@ class ImageObject extends MediaObject
     * exif data for this object.
     * @param string|PropertyValue|array $value
     * @return $this
+    * @deprecated use setExifData
     */
     public function exifData($value)
     {
@@ -43,19 +44,20 @@ class ImageObject extends MediaObject
 
     /**
     * Thumbnail image for an image or video.
-    * @param ImageObject|array $value
+    * @param ImageObject|array|string $value
     * @return $this
+    * @deprecated use setThumbnail
     */
-    public function thumbnail(?ImageObject $value)
+    public function thumbnail($value)
     {
         $this->setProperty('thumbnail', $value);
         return $this;
     }
    /**
-    * @param ImageObject|array $value
+    * @param ImageObject|array|string $value
     * @return $this
     */
-    public function setThumbnail(?ImageObject $value)
+    public function setThumbnail($value)
     {
         $this->setProperty('thumbnail', $value);
         return $this;
@@ -70,19 +72,20 @@ class ImageObject extends MediaObject
 
     /**
     * Indicates whether this image is representative of the content of the page.
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
+    * @deprecated use setRepresentativeOfPage
     */
-    public function representativeOfPage(?bool $value)
+    public function representativeOfPage($value)
     {
         $this->setProperty('representativeOfPage', $value);
         return $this;
     }
    /**
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
     */
-    public function setRepresentativeOfPage(?bool $value)
+    public function setRepresentativeOfPage($value)
     {
         $this->setProperty('representativeOfPage', $value);
         return $this;
@@ -99,6 +102,7 @@ class ImageObject extends MediaObject
     * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the <a class="localLink" href="http://schema.org/encodingFormat">encodingFormat</a>.
     * @param string|MediaObject|array $value
     * @return $this
+    * @deprecated use setCaption
     */
     public function caption($value)
     {
@@ -124,7 +128,3 @@ class ImageObject extends MediaObject
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\MediaObject\\ImageObject','Thing\\ImageObject');
-

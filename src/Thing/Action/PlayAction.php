@@ -25,19 +25,20 @@ class PlayAction extends Action
 
     /**
     * An intended audience, i.e. a group for whom something was created.
-    * @param Audience|array $value
+    * @param Audience|array|string $value
     * @return $this
+    * @deprecated use setAudience
     */
-    public function audience(?Audience $value)
+    public function audience($value)
     {
         $this->setProperty('audience', $value);
         return $this;
     }
    /**
-    * @param Audience|array $value
+    * @param Audience|array|string $value
     * @return $this
     */
-    public function setAudience(?Audience $value)
+    public function setAudience($value)
     {
         $this->setProperty('audience', $value);
         return $this;
@@ -52,19 +53,20 @@ class PlayAction extends Action
 
     /**
     * Upcoming or past event associated with this place, organization, or action.
-    * @param Event|array $value
+    * @param Event|array|string $value
     * @return $this
+    * @deprecated use setEvent
     */
-    public function event(?Event $value)
+    public function event($value)
     {
         $this->setProperty('event', $value);
         return $this;
     }
    /**
-    * @param Event|array $value
+    * @param Event|array|string $value
     * @return $this
     */
-    public function setEvent(?Event $value)
+    public function setEvent($value)
     {
         $this->setProperty('event', $value);
         return $this;
@@ -79,7 +81,3 @@ class PlayAction extends Action
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\PlayAction','Thing\\PlayAction');
-

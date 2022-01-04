@@ -15,7 +15,3 @@ class Painting extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Painting','Thing\\Painting');
-

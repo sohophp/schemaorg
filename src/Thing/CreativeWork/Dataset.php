@@ -20,6 +20,7 @@ class Dataset extends CreativeWork
     * The variableMeasured property can indicate (repeated as necessary) the  variables that are measured in some dataset, either described as text or as pairs of identifier and description using PropertyValue.
     * @param string|PropertyValue|array $value
     * @return $this
+    * @deprecated use setVariableMeasured
     */
     public function variableMeasured($value)
     {
@@ -45,19 +46,20 @@ class Dataset extends CreativeWork
 
     /**
     * A data catalog which contains this dataset.
-    * @param DataCatalog|array $value
+    * @param DataCatalog|array|string $value
     * @return $this
+    * @deprecated use setIncludedInDataCatalog
     */
-    public function includedInDataCatalog(?DataCatalog $value)
+    public function includedInDataCatalog($value)
     {
         $this->setProperty('includedInDataCatalog', $value);
         return $this;
     }
    /**
-    * @param DataCatalog|array $value
+    * @param DataCatalog|array|string $value
     * @return $this
     */
-    public function setIncludedInDataCatalog(?DataCatalog $value)
+    public function setIncludedInDataCatalog($value)
     {
         $this->setProperty('includedInDataCatalog', $value);
         return $this;
@@ -72,8 +74,9 @@ class Dataset extends CreativeWork
 
     /**
     * The range of temporal applicability of a dataset, e.g. for a 2011 census dataset, the year 2011 (in ISO 8601 time interval format).
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setDatasetTimeInterval
     */
     public function datasetTimeInterval($value)
     {
@@ -81,7 +84,7 @@ class Dataset extends CreativeWork
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setDatasetTimeInterval($value)
@@ -101,8 +104,9 @@ class Dataset extends CreativeWork
     * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
     * @param string|array $value
     * @return $this
+    * @deprecated use setIssn
     */
-    public function issn(?string $value)
+    public function issn($value)
     {
         $this->setProperty('issn', $value);
         return $this;
@@ -111,7 +115,7 @@ class Dataset extends CreativeWork
     * @param string|array $value
     * @return $this
     */
-    public function setIssn(?string $value)
+    public function setIssn($value)
     {
         $this->setProperty('issn', $value);
         return $this;
@@ -128,6 +132,7 @@ class Dataset extends CreativeWork
     * Originally named <a class="localLink" href="http://schema.org/variablesMeasured">variablesMeasured</a>, The <a class="localLink" href="http://schema.org/variableMeasured">variableMeasured</a> property can indicate (repeated as necessary) the  variables that are measured in some dataset, either described as text or as pairs of identifier and description using PropertyValue.
     * @param PropertyValue|string|array $value
     * @return $this
+    * @deprecated use setVariablesMeasured
     */
     public function variablesMeasured($value)
     {
@@ -162,6 +167,7 @@ If the <a class="localLink" href="http://schema.org/variableMeasured">variableMe
 If there are several <a class="localLink" href="http://schema.org/variableMeasured">variableMeasured</a> properties recorded for some given data object, use a <a class="localLink" href="http://schema.org/PropertyValue">PropertyValue</a> for each <a class="localLink" href="http://schema.org/variableMeasured">variableMeasured</a> and attach the corresponding <a class="localLink" href="http://schema.org/measurementTechnique">measurementTechnique</a>.
     * @param string|string|array $value
     * @return $this
+    * @deprecated use setMeasurementTechnique
     */
     public function measurementTechnique($value)
     {
@@ -187,19 +193,20 @@ If there are several <a class="localLink" href="http://schema.org/variableMeasur
 
     /**
     * A data catalog which contains this dataset.
-    * @param DataCatalog|array $value
+    * @param DataCatalog|array|string $value
     * @return $this
+    * @deprecated use setCatalog
     */
-    public function catalog(?DataCatalog $value)
+    public function catalog($value)
     {
         $this->setProperty('catalog', $value);
         return $this;
     }
    /**
-    * @param DataCatalog|array $value
+    * @param DataCatalog|array|string $value
     * @return $this
     */
-    public function setCatalog(?DataCatalog $value)
+    public function setCatalog($value)
     {
         $this->setProperty('catalog', $value);
         return $this;
@@ -214,19 +221,20 @@ If there are several <a class="localLink" href="http://schema.org/variableMeasur
 
     /**
     * A data catalog which contains this dataset (this property was previously 'catalog', preferred name is now 'includedInDataCatalog').
-    * @param DataCatalog|array $value
+    * @param DataCatalog|array|string $value
     * @return $this
+    * @deprecated use setIncludedDataCatalog
     */
-    public function includedDataCatalog(?DataCatalog $value)
+    public function includedDataCatalog($value)
     {
         $this->setProperty('includedDataCatalog', $value);
         return $this;
     }
    /**
-    * @param DataCatalog|array $value
+    * @param DataCatalog|array|string $value
     * @return $this
     */
-    public function setIncludedDataCatalog(?DataCatalog $value)
+    public function setIncludedDataCatalog($value)
     {
         $this->setProperty('includedDataCatalog', $value);
         return $this;
@@ -241,19 +249,20 @@ If there are several <a class="localLink" href="http://schema.org/variableMeasur
 
     /**
     * A downloadable form of this dataset, at a specific location, in a specific format.
-    * @param DataDownload|array $value
+    * @param DataDownload|array|string $value
     * @return $this
+    * @deprecated use setDistribution
     */
-    public function distribution(?DataDownload $value)
+    public function distribution($value)
     {
         $this->setProperty('distribution', $value);
         return $this;
     }
    /**
-    * @param DataDownload|array $value
+    * @param DataDownload|array|string $value
     * @return $this
     */
-    public function setDistribution(?DataDownload $value)
+    public function setDistribution($value)
     {
         $this->setProperty('distribution', $value);
         return $this;
@@ -268,7 +277,3 @@ If there are several <a class="localLink" href="http://schema.org/variableMeasur
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Dataset','Thing\\Dataset');
-

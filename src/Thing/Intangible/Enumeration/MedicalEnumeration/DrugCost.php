@@ -20,8 +20,9 @@ class DrugCost extends MedicalEnumeration
     * The currency (in 3-letter of the drug cost. See: http://en.wikipedia.org/wiki/ISO_4217
     * @param string|array $value
     * @return $this
+    * @deprecated use setCostCurrency
     */
-    public function costCurrency(?string $value)
+    public function costCurrency($value)
     {
         $this->setProperty('costCurrency', $value);
         return $this;
@@ -30,7 +31,7 @@ class DrugCost extends MedicalEnumeration
     * @param string|array $value
     * @return $this
     */
-    public function setCostCurrency(?string $value)
+    public function setCostCurrency($value)
     {
         $this->setProperty('costCurrency', $value);
         return $this;
@@ -47,6 +48,7 @@ class DrugCost extends MedicalEnumeration
     * The cost per unit of the drug.
     * @param QualitativeValue|string|array $value
     * @return $this
+    * @deprecated use setCostPerUnit
     */
     public function costPerUnit($value)
     {
@@ -72,19 +74,20 @@ class DrugCost extends MedicalEnumeration
 
     /**
     * The category of cost, such as wholesale, retail, reimbursement cap, etc.
-    * @param DrugCostCategory|array $value
+    * @param DrugCostCategory|array|string $value
     * @return $this
+    * @deprecated use setCostCategory
     */
-    public function costCategory(?DrugCostCategory $value)
+    public function costCategory($value)
     {
         $this->setProperty('costCategory', $value);
         return $this;
     }
    /**
-    * @param DrugCostCategory|array $value
+    * @param DrugCostCategory|array|string $value
     * @return $this
     */
-    public function setCostCategory(?DrugCostCategory $value)
+    public function setCostCategory($value)
     {
         $this->setProperty('costCategory', $value);
         return $this;
@@ -99,19 +102,20 @@ class DrugCost extends MedicalEnumeration
 
     /**
     * The location in which the status applies.
-    * @param AdministrativeArea|array $value
+    * @param AdministrativeArea|array|string $value
     * @return $this
+    * @deprecated use setApplicableLocation
     */
-    public function applicableLocation(?AdministrativeArea $value)
+    public function applicableLocation($value)
     {
         $this->setProperty('applicableLocation', $value);
         return $this;
     }
    /**
-    * @param AdministrativeArea|array $value
+    * @param AdministrativeArea|array|string $value
     * @return $this
     */
-    public function setApplicableLocation(?AdministrativeArea $value)
+    public function setApplicableLocation($value)
     {
         $this->setProperty('applicableLocation', $value);
         return $this;
@@ -128,8 +132,9 @@ class DrugCost extends MedicalEnumeration
     * Additional details to capture the origin of the cost data. For example, 'Medicare Part B'.
     * @param string|array $value
     * @return $this
+    * @deprecated use setCostOrigin
     */
-    public function costOrigin(?string $value)
+    public function costOrigin($value)
     {
         $this->setProperty('costOrigin', $value);
         return $this;
@@ -138,7 +143,7 @@ class DrugCost extends MedicalEnumeration
     * @param string|array $value
     * @return $this
     */
-    public function setCostOrigin(?string $value)
+    public function setCostOrigin($value)
     {
         $this->setProperty('costOrigin', $value);
         return $this;
@@ -155,8 +160,9 @@ class DrugCost extends MedicalEnumeration
     * The unit in which the drug is measured, e.g. '5 mg tablet'.
     * @param string|array $value
     * @return $this
+    * @deprecated use setDrugUnit
     */
-    public function drugUnit(?string $value)
+    public function drugUnit($value)
     {
         $this->setProperty('drugUnit', $value);
         return $this;
@@ -165,7 +171,7 @@ class DrugCost extends MedicalEnumeration
     * @param string|array $value
     * @return $this
     */
-    public function setDrugUnit(?string $value)
+    public function setDrugUnit($value)
     {
         $this->setProperty('drugUnit', $value);
         return $this;
@@ -180,7 +186,3 @@ class DrugCost extends MedicalEnumeration
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\MedicalEnumeration\\DrugCost','Thing\\DrugCost');
-

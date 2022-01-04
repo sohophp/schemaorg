@@ -20,7 +20,3 @@ class EndorsementRating extends Rating
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Rating\\EndorsementRating','Thing\\EndorsementRating');
-

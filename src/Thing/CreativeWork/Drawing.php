@@ -15,7 +15,3 @@ class Drawing extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Drawing','Thing\\Drawing');
-

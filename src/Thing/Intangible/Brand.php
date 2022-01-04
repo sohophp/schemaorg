@@ -18,19 +18,20 @@ class Brand extends Intangible
 
     /**
     * The overall rating, based on a collection of reviews or ratings, of the item.
-    * @param AggregateRating|array $value
+    * @param AggregateRating|array|string $value
     * @return $this
+    * @deprecated use setAggregateRating
     */
-    public function aggregateRating(?AggregateRating $value)
+    public function aggregateRating($value)
     {
         $this->setProperty('aggregateRating', $value);
         return $this;
     }
    /**
-    * @param AggregateRating|array $value
+    * @param AggregateRating|array|string $value
     * @return $this
     */
-    public function setAggregateRating(?AggregateRating $value)
+    public function setAggregateRating($value)
     {
         $this->setProperty('aggregateRating', $value);
         return $this;
@@ -47,6 +48,7 @@ class Brand extends Intangible
     * An associated logo.
     * @param ImageObject|string|array $value
     * @return $this
+    * @deprecated use setLogo
     */
     public function logo($value)
     {
@@ -72,19 +74,20 @@ class Brand extends Intangible
 
     /**
     * A review of the item.
-    * @param Review|array $value
+    * @param Review|array|string $value
     * @return $this
+    * @deprecated use setReview
     */
-    public function review(?Review $value)
+    public function review($value)
     {
         $this->setProperty('review', $value);
         return $this;
     }
    /**
-    * @param Review|array $value
+    * @param Review|array|string $value
     * @return $this
     */
-    public function setReview(?Review $value)
+    public function setReview($value)
     {
         $this->setProperty('review', $value);
         return $this;
@@ -101,8 +104,9 @@ class Brand extends Intangible
     * A slogan or motto associated with the item.
     * @param string|array $value
     * @return $this
+    * @deprecated use setSlogan
     */
-    public function slogan(?string $value)
+    public function slogan($value)
     {
         $this->setProperty('slogan', $value);
         return $this;
@@ -111,7 +115,7 @@ class Brand extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setSlogan(?string $value)
+    public function setSlogan($value)
     {
         $this->setProperty('slogan', $value);
         return $this;
@@ -126,7 +130,3 @@ class Brand extends Intangible
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Brand','Thing\\Brand');
-

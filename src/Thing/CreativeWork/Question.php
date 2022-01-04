@@ -17,19 +17,20 @@ class Question extends CreativeWork
 
     /**
     * The number of upvotes this question, answer or comment has received from the community.
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
+    * @deprecated use setUpvoteCount
     */
-    public function upvoteCount(?int $value)
+    public function upvoteCount($value)
     {
         $this->setProperty('upvoteCount', $value);
         return $this;
     }
    /**
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
     */
-    public function setUpvoteCount(?int $value)
+    public function setUpvoteCount($value)
     {
         $this->setProperty('upvoteCount', $value);
         return $this;
@@ -44,19 +45,20 @@ class Question extends CreativeWork
 
     /**
     * The number of answers this question has received.
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
+    * @deprecated use setAnswerCount
     */
-    public function answerCount(?int $value)
+    public function answerCount($value)
     {
         $this->setProperty('answerCount', $value);
         return $this;
     }
    /**
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
     */
-    public function setAnswerCount(?int $value)
+    public function setAnswerCount($value)
     {
         $this->setProperty('answerCount', $value);
         return $this;
@@ -71,8 +73,9 @@ class Question extends CreativeWork
 
     /**
     * An answer (possibly one of several, possibly incorrect) to a Question, e.g. on a Question/Answer site.
-    * @param Answer|ItemList|array $value
+    * @param Answer|ItemList|array|string $value
     * @return $this
+    * @deprecated use setSuggestedAnswer
     */
     public function suggestedAnswer($value)
     {
@@ -80,7 +83,7 @@ class Question extends CreativeWork
         return $this;
     }
    /**
-    * @param Answer|ItemList|array $value
+    * @param Answer|ItemList|array|string $value
     * @return $this
     */
     public function setSuggestedAnswer($value)
@@ -98,8 +101,9 @@ class Question extends CreativeWork
 
     /**
     * The answer(s) that has been accepted as best, typically on a Question/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and/or the view of the Question author.
-    * @param ItemList|Answer|array $value
+    * @param ItemList|Answer|array|string $value
     * @return $this
+    * @deprecated use setAcceptedAnswer
     */
     public function acceptedAnswer($value)
     {
@@ -107,7 +111,7 @@ class Question extends CreativeWork
         return $this;
     }
    /**
-    * @param ItemList|Answer|array $value
+    * @param ItemList|Answer|array|string $value
     * @return $this
     */
     public function setAcceptedAnswer($value)
@@ -125,19 +129,20 @@ class Question extends CreativeWork
 
     /**
     * The number of downvotes this question, answer or comment has received from the community.
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
+    * @deprecated use setDownvoteCount
     */
-    public function downvoteCount(?int $value)
+    public function downvoteCount($value)
     {
         $this->setProperty('downvoteCount', $value);
         return $this;
     }
    /**
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
     */
-    public function setDownvoteCount(?int $value)
+    public function setDownvoteCount($value)
     {
         $this->setProperty('downvoteCount', $value);
         return $this;
@@ -152,7 +157,3 @@ class Question extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Question','Thing\\Question');
-

@@ -16,19 +16,20 @@ class DiagnosticLab extends MedicalOrganization
 
     /**
     * A diagnostic test or procedure offered by this lab.
-    * @param MedicalTest|array $value
+    * @param MedicalTest|array|string $value
     * @return $this
+    * @deprecated use setAvailableTest
     */
-    public function availableTest(?MedicalTest $value)
+    public function availableTest($value)
     {
         $this->setProperty('availableTest', $value);
         return $this;
     }
    /**
-    * @param MedicalTest|array $value
+    * @param MedicalTest|array|string $value
     * @return $this
     */
-    public function setAvailableTest(?MedicalTest $value)
+    public function setAvailableTest($value)
     {
         $this->setProperty('availableTest', $value);
         return $this;
@@ -43,7 +44,3 @@ class DiagnosticLab extends MedicalOrganization
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\MedicalOrganization\\DiagnosticLab','Thing\\DiagnosticLab');
-

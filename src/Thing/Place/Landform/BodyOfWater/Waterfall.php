@@ -15,7 +15,3 @@ class Waterfall extends BodyOfWater
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\Landform\\BodyOfWater\\Waterfall','Thing\\Waterfall');
-

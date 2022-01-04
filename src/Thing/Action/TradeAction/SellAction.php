@@ -17,19 +17,20 @@ class SellAction extends TradeAction
 
     /**
     * A sub property of participant. The participant/person/organization that bought the object.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setBuyer
     */
-    public function buyer(?Person $value)
+    public function buyer($value)
     {
         $this->setProperty('buyer', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setBuyer(?Person $value)
+    public function setBuyer($value)
     {
         $this->setProperty('buyer', $value);
         return $this;
@@ -44,19 +45,20 @@ class SellAction extends TradeAction
 
     /**
     * The warranty promise(s) included in the offer.
-    * @param WarrantyPromise|array $value
+    * @param WarrantyPromise|array|string $value
     * @return $this
+    * @deprecated use setWarrantyPromise
     */
-    public function warrantyPromise(?WarrantyPromise $value)
+    public function warrantyPromise($value)
     {
         $this->setProperty('warrantyPromise', $value);
         return $this;
     }
    /**
-    * @param WarrantyPromise|array $value
+    * @param WarrantyPromise|array|string $value
     * @return $this
     */
-    public function setWarrantyPromise(?WarrantyPromise $value)
+    public function setWarrantyPromise($value)
     {
         $this->setProperty('warrantyPromise', $value);
         return $this;
@@ -71,7 +73,3 @@ class SellAction extends TradeAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\TradeAction\\SellAction','Thing\\SellAction');
-

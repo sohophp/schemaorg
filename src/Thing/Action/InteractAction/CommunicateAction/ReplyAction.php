@@ -23,19 +23,20 @@ class ReplyAction extends CommunicateAction
 
     /**
     * A sub property of result. The Comment created or sent as a result of this action.
-    * @param Comment|array $value
+    * @param Comment|array|string $value
     * @return $this
+    * @deprecated use setResultComment
     */
-    public function resultComment(?Comment $value)
+    public function resultComment($value)
     {
         $this->setProperty('resultComment', $value);
         return $this;
     }
    /**
-    * @param Comment|array $value
+    * @param Comment|array|string $value
     * @return $this
     */
-    public function setResultComment(?Comment $value)
+    public function setResultComment($value)
     {
         $this->setProperty('resultComment', $value);
         return $this;
@@ -50,7 +51,3 @@ class ReplyAction extends CommunicateAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\InteractAction\\CommunicateAction\\ReplyAction','Thing\\ReplyAction');
-

@@ -23,6 +23,7 @@ class Recipe extends HowTo
     * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
     * @param QuantitativeValue|string|array $value
     * @return $this
+    * @deprecated use setRecipeYield
     */
     public function recipeYield($value)
     {
@@ -50,8 +51,9 @@ class Recipe extends HowTo
     * The category of the recipe—for example, appetizer, entree, etc.
     * @param string|array $value
     * @return $this
+    * @deprecated use setRecipeCategory
     */
-    public function recipeCategory(?string $value)
+    public function recipeCategory($value)
     {
         $this->setProperty('recipeCategory', $value);
         return $this;
@@ -60,7 +62,7 @@ class Recipe extends HowTo
     * @param string|array $value
     * @return $this
     */
-    public function setRecipeCategory(?string $value)
+    public function setRecipeCategory($value)
     {
         $this->setProperty('recipeCategory', $value);
         return $this;
@@ -77,8 +79,9 @@ class Recipe extends HowTo
     * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
     * @param string|array $value
     * @return $this
+    * @deprecated use setRecipeIngredient
     */
-    public function recipeIngredient(?string $value)
+    public function recipeIngredient($value)
     {
         $this->setProperty('recipeIngredient', $value);
         return $this;
@@ -87,7 +90,7 @@ class Recipe extends HowTo
     * @param string|array $value
     * @return $this
     */
-    public function setRecipeIngredient(?string $value)
+    public function setRecipeIngredient($value)
     {
         $this->setProperty('recipeIngredient', $value);
         return $this;
@@ -104,6 +107,7 @@ class Recipe extends HowTo
     * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
     * @param ItemList|string|CreativeWork|array $value
     * @return $this
+    * @deprecated use setRecipeInstructions
     */
     public function recipeInstructions($value)
     {
@@ -129,19 +133,20 @@ class Recipe extends HowTo
 
     /**
     * Nutrition information about the recipe or menu item.
-    * @param NutritionInformation|array $value
+    * @param NutritionInformation|array|string $value
     * @return $this
+    * @deprecated use setNutrition
     */
-    public function nutrition(?NutritionInformation $value)
+    public function nutrition($value)
     {
         $this->setProperty('nutrition', $value);
         return $this;
     }
    /**
-    * @param NutritionInformation|array $value
+    * @param NutritionInformation|array|string $value
     * @return $this
     */
-    public function setNutrition(?NutritionInformation $value)
+    public function setNutrition($value)
     {
         $this->setProperty('nutrition', $value);
         return $this;
@@ -156,19 +161,20 @@ class Recipe extends HowTo
 
     /**
     * Indicates a dietary restriction or guideline for which this recipe or menu item is suitable, e.g. diabetic, halal etc.
-    * @param RestrictedDiet|array $value
+    * @param RestrictedDiet|array|string $value
     * @return $this
+    * @deprecated use setSuitableForDiet
     */
-    public function suitableForDiet(?RestrictedDiet $value)
+    public function suitableForDiet($value)
     {
         $this->setProperty('suitableForDiet', $value);
         return $this;
     }
    /**
-    * @param RestrictedDiet|array $value
+    * @param RestrictedDiet|array|string $value
     * @return $this
     */
-    public function setSuitableForDiet(?RestrictedDiet $value)
+    public function setSuitableForDiet($value)
     {
         $this->setProperty('suitableForDiet', $value);
         return $this;
@@ -185,8 +191,9 @@ class Recipe extends HowTo
     * The cuisine of the recipe (for example, French or Ethiopian).
     * @param string|array $value
     * @return $this
+    * @deprecated use setRecipeCuisine
     */
-    public function recipeCuisine(?string $value)
+    public function recipeCuisine($value)
     {
         $this->setProperty('recipeCuisine', $value);
         return $this;
@@ -195,7 +202,7 @@ class Recipe extends HowTo
     * @param string|array $value
     * @return $this
     */
-    public function setRecipeCuisine(?string $value)
+    public function setRecipeCuisine($value)
     {
         $this->setProperty('recipeCuisine', $value);
         return $this;
@@ -210,19 +217,20 @@ class Recipe extends HowTo
 
     /**
     * The time it takes to actually cook the dish, in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 duration format</a>.
-    * @param Duration|array $value
+    * @param Duration|array|string $value
     * @return $this
+    * @deprecated use setCookTime
     */
-    public function cookTime(?Duration $value)
+    public function cookTime($value)
     {
         $this->setProperty('cookTime', $value);
         return $this;
     }
    /**
-    * @param Duration|array $value
+    * @param Duration|array|string $value
     * @return $this
     */
-    public function setCookTime(?Duration $value)
+    public function setCookTime($value)
     {
         $this->setProperty('cookTime', $value);
         return $this;
@@ -239,8 +247,9 @@ class Recipe extends HowTo
     * The method of cooking, such as Frying, Steaming, ...
     * @param string|array $value
     * @return $this
+    * @deprecated use setCookingMethod
     */
-    public function cookingMethod(?string $value)
+    public function cookingMethod($value)
     {
         $this->setProperty('cookingMethod', $value);
         return $this;
@@ -249,7 +258,7 @@ class Recipe extends HowTo
     * @param string|array $value
     * @return $this
     */
-    public function setCookingMethod(?string $value)
+    public function setCookingMethod($value)
     {
         $this->setProperty('cookingMethod', $value);
         return $this;
@@ -266,8 +275,9 @@ class Recipe extends HowTo
     * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
     * @param string|array $value
     * @return $this
+    * @deprecated use setIngredients
     */
-    public function ingredients(?string $value)
+    public function ingredients($value)
     {
         $this->setProperty('ingredients', $value);
         return $this;
@@ -276,7 +286,7 @@ class Recipe extends HowTo
     * @param string|array $value
     * @return $this
     */
-    public function setIngredients(?string $value)
+    public function setIngredients($value)
     {
         $this->setProperty('ingredients', $value);
         return $this;
@@ -291,7 +301,3 @@ class Recipe extends HowTo
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\HowTo\\Recipe','Thing\\Recipe');
-

@@ -32,19 +32,20 @@ class Service extends Intangible
 
     /**
     * The audience eligible for this service.
-    * @param Audience|array $value
+    * @param Audience|array|string $value
     * @return $this
+    * @deprecated use setServiceAudience
     */
-    public function serviceAudience(?Audience $value)
+    public function serviceAudience($value)
     {
         $this->setProperty('serviceAudience', $value);
         return $this;
     }
    /**
-    * @param Audience|array $value
+    * @param Audience|array|string $value
     * @return $this
     */
-    public function setServiceAudience(?Audience $value)
+    public function setServiceAudience($value)
     {
         $this->setProperty('serviceAudience', $value);
         return $this;
@@ -59,8 +60,9 @@ class Service extends Intangible
 
     /**
     * The geographic area where the service is provided.
-    * @param Place|AdministrativeArea|GeoShape|array $value
+    * @param Place|AdministrativeArea|GeoShape|array|string $value
     * @return $this
+    * @deprecated use setServiceArea
     */
     public function serviceArea($value)
     {
@@ -68,7 +70,7 @@ class Service extends Intangible
         return $this;
     }
    /**
-    * @param Place|AdministrativeArea|GeoShape|array $value
+    * @param Place|AdministrativeArea|GeoShape|array|string $value
     * @return $this
     */
     public function setServiceArea($value)
@@ -86,8 +88,9 @@ class Service extends Intangible
 
     /**
     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
+    * @deprecated use setProvider
     */
     public function provider($value)
     {
@@ -95,7 +98,7 @@ class Service extends Intangible
         return $this;
     }
    /**
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
     */
     public function setProvider($value)
@@ -113,19 +116,20 @@ class Service extends Intangible
 
     /**
     * An intended audience, i.e. a group for whom something was created.
-    * @param Audience|array $value
+    * @param Audience|array|string $value
     * @return $this
+    * @deprecated use setAudience
     */
-    public function audience(?Audience $value)
+    public function audience($value)
     {
         $this->setProperty('audience', $value);
         return $this;
     }
    /**
-    * @param Audience|array $value
+    * @param Audience|array|string $value
     * @return $this
     */
-    public function setAudience(?Audience $value)
+    public function setAudience($value)
     {
         $this->setProperty('audience', $value);
         return $this;
@@ -140,19 +144,20 @@ class Service extends Intangible
 
     /**
     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
-    * @param OfferCatalog|array $value
+    * @param OfferCatalog|array|string $value
     * @return $this
+    * @deprecated use setHasOfferCatalog
     */
-    public function hasOfferCatalog(?OfferCatalog $value)
+    public function hasOfferCatalog($value)
     {
         $this->setProperty('hasOfferCatalog', $value);
         return $this;
     }
    /**
-    * @param OfferCatalog|array $value
+    * @param OfferCatalog|array|string $value
     * @return $this
     */
-    public function setHasOfferCatalog(?OfferCatalog $value)
+    public function setHasOfferCatalog($value)
     {
         $this->setProperty('hasOfferCatalog', $value);
         return $this;
@@ -167,19 +172,20 @@ class Service extends Intangible
 
     /**
     * The hours during which this service or contact is available.
-    * @param OpeningHoursSpecification|array $value
+    * @param OpeningHoursSpecification|array|string $value
     * @return $this
+    * @deprecated use setHoursAvailable
     */
-    public function hoursAvailable(?OpeningHoursSpecification $value)
+    public function hoursAvailable($value)
     {
         $this->setProperty('hoursAvailable', $value);
         return $this;
     }
    /**
-    * @param OpeningHoursSpecification|array $value
+    * @param OpeningHoursSpecification|array|string $value
     * @return $this
     */
-    public function setHoursAvailable(?OpeningHoursSpecification $value)
+    public function setHoursAvailable($value)
     {
         $this->setProperty('hoursAvailable', $value);
         return $this;
@@ -196,8 +202,9 @@ class Service extends Intangible
     * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
     * @param string|array $value
     * @return $this
+    * @deprecated use setProviderMobility
     */
-    public function providerMobility(?string $value)
+    public function providerMobility($value)
     {
         $this->setProperty('providerMobility', $value);
         return $this;
@@ -206,7 +213,7 @@ class Service extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setProviderMobility(?string $value)
+    public function setProviderMobility($value)
     {
         $this->setProperty('providerMobility', $value);
         return $this;
@@ -221,19 +228,20 @@ class Service extends Intangible
 
     /**
     * The overall rating, based on a collection of reviews or ratings, of the item.
-    * @param AggregateRating|array $value
+    * @param AggregateRating|array|string $value
     * @return $this
+    * @deprecated use setAggregateRating
     */
-    public function aggregateRating(?AggregateRating $value)
+    public function aggregateRating($value)
     {
         $this->setProperty('aggregateRating', $value);
         return $this;
     }
    /**
-    * @param AggregateRating|array $value
+    * @param AggregateRating|array|string $value
     * @return $this
     */
-    public function setAggregateRating(?AggregateRating $value)
+    public function setAggregateRating($value)
     {
         $this->setProperty('aggregateRating', $value);
         return $this;
@@ -248,19 +256,20 @@ class Service extends Intangible
 
     /**
     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.
-    * @param Offer|array $value
+    * @param Offer|array|string $value
     * @return $this
+    * @deprecated use setOffers
     */
-    public function offers(?Offer $value)
+    public function offers($value)
     {
         $this->setProperty('offers', $value);
         return $this;
     }
    /**
-    * @param Offer|array $value
+    * @param Offer|array|string $value
     * @return $this
     */
-    public function setOffers(?Offer $value)
+    public function setOffers($value)
     {
         $this->setProperty('offers', $value);
         return $this;
@@ -277,8 +286,9 @@ class Service extends Intangible
     * An award won by or for this item.
     * @param string|array $value
     * @return $this
+    * @deprecated use setAward
     */
-    public function award(?string $value)
+    public function award($value)
     {
         $this->setProperty('award', $value);
         return $this;
@@ -287,7 +297,7 @@ class Service extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setAward(?string $value)
+    public function setAward($value)
     {
         $this->setProperty('award', $value);
         return $this;
@@ -304,6 +314,7 @@ class Service extends Intangible
     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
     * @param string|PhysicalActivityCategory|Thing|array $value
     * @return $this
+    * @deprecated use setCategory
     */
     public function category($value)
     {
@@ -329,8 +340,9 @@ class Service extends Intangible
 
     /**
     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
+    * @deprecated use setBroker
     */
     public function broker($value)
     {
@@ -338,7 +350,7 @@ class Service extends Intangible
         return $this;
     }
    /**
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
     */
     public function setBroker($value)
@@ -356,19 +368,20 @@ class Service extends Intangible
 
     /**
     * The tangible thing generated by the service, e.g. a passport, permit, etc.
-    * @param Thing|array $value
+    * @param Thing|array|string $value
     * @return $this
+    * @deprecated use setServiceOutput
     */
-    public function serviceOutput(?Thing $value)
+    public function serviceOutput($value)
     {
         $this->setProperty('serviceOutput', $value);
         return $this;
     }
    /**
-    * @param Thing|array $value
+    * @param Thing|array|string $value
     * @return $this
     */
-    public function setServiceOutput(?Thing $value)
+    public function setServiceOutput($value)
     {
         $this->setProperty('serviceOutput', $value);
         return $this;
@@ -385,6 +398,7 @@ class Service extends Intangible
     * An associated logo.
     * @param ImageObject|string|array $value
     * @return $this
+    * @deprecated use setLogo
     */
     public function logo($value)
     {
@@ -410,8 +424,9 @@ class Service extends Intangible
 
     /**
     * A pointer to another, functionally similar product (or multiple products).
-    * @param Service|Product|array $value
+    * @param Service|Product|array|string $value
     * @return $this
+    * @deprecated use setIsSimilarTo
     */
     public function isSimilarTo($value)
     {
@@ -419,7 +434,7 @@ class Service extends Intangible
         return $this;
     }
    /**
-    * @param Service|Product|array $value
+    * @param Service|Product|array|string $value
     * @return $this
     */
     public function setIsSimilarTo($value)
@@ -437,8 +452,9 @@ class Service extends Intangible
 
     /**
     * A pointer to another, somehow related product (or multiple products).
-    * @param Product|Service|array $value
+    * @param Product|Service|array|string $value
     * @return $this
+    * @deprecated use setIsRelatedTo
     */
     public function isRelatedTo($value)
     {
@@ -446,7 +462,7 @@ class Service extends Intangible
         return $this;
     }
    /**
-    * @param Product|Service|array $value
+    * @param Product|Service|array|string $value
     * @return $this
     */
     public function setIsRelatedTo($value)
@@ -464,19 +480,20 @@ class Service extends Intangible
 
     /**
     * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
-    * @param ServiceChannel|array $value
+    * @param ServiceChannel|array|string $value
     * @return $this
+    * @deprecated use setAvailableChannel
     */
-    public function availableChannel(?ServiceChannel $value)
+    public function availableChannel($value)
     {
         $this->setProperty('availableChannel', $value);
         return $this;
     }
    /**
-    * @param ServiceChannel|array $value
+    * @param ServiceChannel|array|string $value
     * @return $this
     */
-    public function setAvailableChannel(?ServiceChannel $value)
+    public function setAvailableChannel($value)
     {
         $this->setProperty('availableChannel', $value);
         return $this;
@@ -491,19 +508,20 @@ class Service extends Intangible
 
     /**
     * The tangible thing generated by the service, e.g. a passport, permit, etc.
-    * @param Thing|array $value
+    * @param Thing|array|string $value
     * @return $this
+    * @deprecated use setProduces
     */
-    public function produces(?Thing $value)
+    public function produces($value)
     {
         $this->setProperty('produces', $value);
         return $this;
     }
    /**
-    * @param Thing|array $value
+    * @param Thing|array|string $value
     * @return $this
     */
-    public function setProduces(?Thing $value)
+    public function setProduces($value)
     {
         $this->setProperty('produces', $value);
         return $this;
@@ -518,19 +536,20 @@ class Service extends Intangible
 
     /**
     * A review of the item.
-    * @param Review|array $value
+    * @param Review|array|string $value
     * @return $this
+    * @deprecated use setReview
     */
-    public function review(?Review $value)
+    public function review($value)
     {
         $this->setProperty('review', $value);
         return $this;
     }
    /**
-    * @param Review|array $value
+    * @param Review|array|string $value
     * @return $this
     */
-    public function setReview(?Review $value)
+    public function setReview($value)
     {
         $this->setProperty('review', $value);
         return $this;
@@ -547,6 +566,7 @@ class Service extends Intangible
     * Human-readable terms of service documentation.
     * @param string|string|array $value
     * @return $this
+    * @deprecated use setTermsOfService
     */
     public function termsOfService($value)
     {
@@ -574,8 +594,9 @@ class Service extends Intangible
     * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
     * @param string|array $value
     * @return $this
+    * @deprecated use setServiceType
     */
-    public function serviceType(?string $value)
+    public function serviceType($value)
     {
         $this->setProperty('serviceType', $value);
         return $this;
@@ -584,7 +605,7 @@ class Service extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setServiceType(?string $value)
+    public function setServiceType($value)
     {
         $this->setProperty('serviceType', $value);
         return $this;
@@ -601,8 +622,9 @@ class Service extends Intangible
     * A slogan or motto associated with the item.
     * @param string|array $value
     * @return $this
+    * @deprecated use setSlogan
     */
-    public function slogan(?string $value)
+    public function slogan($value)
     {
         $this->setProperty('slogan', $value);
         return $this;
@@ -611,7 +633,7 @@ class Service extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setSlogan(?string $value)
+    public function setSlogan($value)
     {
         $this->setProperty('slogan', $value);
         return $this;
@@ -626,8 +648,9 @@ class Service extends Intangible
 
     /**
     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-    * @param Organization|Brand|array $value
+    * @param Organization|Brand|array|string $value
     * @return $this
+    * @deprecated use setBrand
     */
     public function brand($value)
     {
@@ -635,7 +658,7 @@ class Service extends Intangible
         return $this;
     }
    /**
-    * @param Organization|Brand|array $value
+    * @param Organization|Brand|array|string $value
     * @return $this
     */
     public function setBrand($value)
@@ -655,6 +678,7 @@ class Service extends Intangible
     * The geographic area where a service or offered item is provided.
     * @param string|GeoShape|Place|AdministrativeArea|array $value
     * @return $this
+    * @deprecated use setAreaServed
     */
     public function areaServed($value)
     {
@@ -680,7 +704,3 @@ class Service extends Intangible
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Service','Thing\\Service');
-

@@ -16,8 +16,9 @@ class PeopleAudience extends Audience
 
     /**
     * Maximal age recommended for viewing content.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setSuggestedMaxAge
     */
     public function suggestedMaxAge($value)
     {
@@ -25,7 +26,7 @@ class PeopleAudience extends Audience
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setSuggestedMaxAge($value)
@@ -43,19 +44,20 @@ class PeopleAudience extends Audience
 
     /**
     * Audiences defined by a person's minimum age.
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
+    * @deprecated use setRequiredMinAge
     */
-    public function requiredMinAge(?int $value)
+    public function requiredMinAge($value)
     {
         $this->setProperty('requiredMinAge', $value);
         return $this;
     }
    /**
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
     */
-    public function setRequiredMinAge(?int $value)
+    public function setRequiredMinAge($value)
     {
         $this->setProperty('requiredMinAge', $value);
         return $this;
@@ -70,19 +72,20 @@ class PeopleAudience extends Audience
 
     /**
     * Specifying the health condition(s) of a patient, medical study, or other target audience.
-    * @param MedicalCondition|array $value
+    * @param MedicalCondition|array|string $value
     * @return $this
+    * @deprecated use setHealthCondition
     */
-    public function healthCondition(?MedicalCondition $value)
+    public function healthCondition($value)
     {
         $this->setProperty('healthCondition', $value);
         return $this;
     }
    /**
-    * @param MedicalCondition|array $value
+    * @param MedicalCondition|array|string $value
     * @return $this
     */
-    public function setHealthCondition(?MedicalCondition $value)
+    public function setHealthCondition($value)
     {
         $this->setProperty('healthCondition', $value);
         return $this;
@@ -99,8 +102,9 @@ class PeopleAudience extends Audience
     * Audiences defined by a person's gender.
     * @param string|array $value
     * @return $this
+    * @deprecated use setRequiredGender
     */
-    public function requiredGender(?string $value)
+    public function requiredGender($value)
     {
         $this->setProperty('requiredGender', $value);
         return $this;
@@ -109,7 +113,7 @@ class PeopleAudience extends Audience
     * @param string|array $value
     * @return $this
     */
-    public function setRequiredGender(?string $value)
+    public function setRequiredGender($value)
     {
         $this->setProperty('requiredGender', $value);
         return $this;
@@ -126,8 +130,9 @@ class PeopleAudience extends Audience
     * The gender of the person or audience.
     * @param string|array $value
     * @return $this
+    * @deprecated use setSuggestedGender
     */
-    public function suggestedGender(?string $value)
+    public function suggestedGender($value)
     {
         $this->setProperty('suggestedGender', $value);
         return $this;
@@ -136,7 +141,7 @@ class PeopleAudience extends Audience
     * @param string|array $value
     * @return $this
     */
-    public function setSuggestedGender(?string $value)
+    public function setSuggestedGender($value)
     {
         $this->setProperty('suggestedGender', $value);
         return $this;
@@ -151,19 +156,20 @@ class PeopleAudience extends Audience
 
     /**
     * Audiences defined by a person's maximum age.
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
+    * @deprecated use setRequiredMaxAge
     */
-    public function requiredMaxAge(?int $value)
+    public function requiredMaxAge($value)
     {
         $this->setProperty('requiredMaxAge', $value);
         return $this;
     }
    /**
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
     */
-    public function setRequiredMaxAge(?int $value)
+    public function setRequiredMaxAge($value)
     {
         $this->setProperty('requiredMaxAge', $value);
         return $this;
@@ -178,8 +184,9 @@ class PeopleAudience extends Audience
 
     /**
     * Minimal age recommended for viewing content.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setSuggestedMinAge
     */
     public function suggestedMinAge($value)
     {
@@ -187,7 +194,7 @@ class PeopleAudience extends Audience
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setSuggestedMinAge($value)
@@ -205,7 +212,3 @@ class PeopleAudience extends Audience
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Audience\\PeopleAudience','Thing\\PeopleAudience');
-

@@ -15,7 +15,3 @@ class MusicVenue extends CivicStructure
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\CivicStructure\\MusicVenue','Thing\\MusicVenue');
-

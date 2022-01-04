@@ -17,8 +17,9 @@ class Vein extends Vessel
 
     /**
     * The anatomical or organ system drained by this vessel; generally refers to a specific part of an organ.
-    * @param AnatomicalStructure|AnatomicalSystem|array $value
+    * @param AnatomicalStructure|AnatomicalSystem|array|string $value
     * @return $this
+    * @deprecated use setRegionDrained
     */
     public function regionDrained($value)
     {
@@ -26,7 +27,7 @@ class Vein extends Vessel
         return $this;
     }
    /**
-    * @param AnatomicalStructure|AnatomicalSystem|array $value
+    * @param AnatomicalStructure|AnatomicalSystem|array|string $value
     * @return $this
     */
     public function setRegionDrained($value)
@@ -44,19 +45,20 @@ class Vein extends Vessel
 
     /**
     * The vasculature that the vein drains into.
-    * @param Vessel|array $value
+    * @param Vessel|array|string $value
     * @return $this
+    * @deprecated use setDrainsTo
     */
-    public function drainsTo(?Vessel $value)
+    public function drainsTo($value)
     {
         $this->setProperty('drainsTo', $value);
         return $this;
     }
    /**
-    * @param Vessel|array $value
+    * @param Vessel|array|string $value
     * @return $this
     */
-    public function setDrainsTo(?Vessel $value)
+    public function setDrainsTo($value)
     {
         $this->setProperty('drainsTo', $value);
         return $this;
@@ -71,19 +73,20 @@ class Vein extends Vessel
 
     /**
     * The anatomical or organ system that the vein flows into; a larger structure that the vein connects to.
-    * @param AnatomicalStructure|array $value
+    * @param AnatomicalStructure|array|string $value
     * @return $this
+    * @deprecated use setTributary
     */
-    public function tributary(?AnatomicalStructure $value)
+    public function tributary($value)
     {
         $this->setProperty('tributary', $value);
         return $this;
     }
    /**
-    * @param AnatomicalStructure|array $value
+    * @param AnatomicalStructure|array|string $value
     * @return $this
     */
-    public function setTributary(?AnatomicalStructure $value)
+    public function setTributary($value)
     {
         $this->setProperty('tributary', $value);
         return $this;
@@ -98,7 +101,3 @@ class Vein extends Vessel
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\AnatomicalStructure\\Vessel\\Vein','Thing\\Vein');
-

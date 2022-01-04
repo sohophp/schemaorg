@@ -17,8 +17,9 @@ class ClaimReview extends Review
     * A short summary of the specific claims reviewed in a ClaimReview.
     * @param string|array $value
     * @return $this
+    * @deprecated use setClaimReviewed
     */
-    public function claimReviewed(?string $value)
+    public function claimReviewed($value)
     {
         $this->setProperty('claimReviewed', $value);
         return $this;
@@ -27,7 +28,7 @@ class ClaimReview extends Review
     * @param string|array $value
     * @return $this
     */
-    public function setClaimReviewed(?string $value)
+    public function setClaimReviewed($value)
     {
         $this->setProperty('claimReviewed', $value);
         return $this;
@@ -42,7 +43,3 @@ class ClaimReview extends Review
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Review\\ClaimReview','Thing\\ClaimReview');
-

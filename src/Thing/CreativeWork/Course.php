@@ -20,6 +20,7 @@ class Course extends CreativeWork
     * Requirements for taking the Course. May be completion of another <a class="localLink" href="http://schema.org/Course">Course</a> or a textual description like "permission of instructor". Requirements may be a pre-requisite competency, referenced using <a class="localLink" href="http://schema.org/AlignmentObject">AlignmentObject</a>.
     * @param string|AlignmentObject|Course|array $value
     * @return $this
+    * @deprecated use setCoursePrerequisites
     */
     public function coursePrerequisites($value)
     {
@@ -47,6 +48,7 @@ class Course extends CreativeWork
     * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
     * @param EducationalOccupationalCredential|string|string|array $value
     * @return $this
+    * @deprecated use setEducationalCredentialAwarded
     */
     public function educationalCredentialAwarded($value)
     {
@@ -72,19 +74,20 @@ class Course extends CreativeWork
 
     /**
     * An offering of the course at a specific time and place or through specific media or mode of study or to a specific section of students.
-    * @param CourseInstance|array $value
+    * @param CourseInstance|array|string $value
     * @return $this
+    * @deprecated use setHasCourseInstance
     */
-    public function hasCourseInstance(?CourseInstance $value)
+    public function hasCourseInstance($value)
     {
         $this->setProperty('hasCourseInstance', $value);
         return $this;
     }
    /**
-    * @param CourseInstance|array $value
+    * @param CourseInstance|array|string $value
     * @return $this
     */
-    public function setHasCourseInstance(?CourseInstance $value)
+    public function setHasCourseInstance($value)
     {
         $this->setProperty('hasCourseInstance', $value);
         return $this;
@@ -101,6 +104,7 @@ class Course extends CreativeWork
     * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
     * @param string|EducationalOccupationalCredential|string|array $value
     * @return $this
+    * @deprecated use setOccupationalCredentialAwarded
     */
     public function occupationalCredentialAwarded($value)
     {
@@ -128,8 +132,9 @@ class Course extends CreativeWork
     * The identifier for the <a class="localLink" href="http://schema.org/Course">Course</a> used by the course <a class="localLink" href="http://schema.org/provider">provider</a> (e.g. CS101 or 6.001).
     * @param string|array $value
     * @return $this
+    * @deprecated use setCourseCode
     */
-    public function courseCode(?string $value)
+    public function courseCode($value)
     {
         $this->setProperty('courseCode', $value);
         return $this;
@@ -138,7 +143,7 @@ class Course extends CreativeWork
     * @param string|array $value
     * @return $this
     */
-    public function setCourseCode(?string $value)
+    public function setCourseCode($value)
     {
         $this->setProperty('courseCode', $value);
         return $this;
@@ -153,7 +158,3 @@ class Course extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Course','Thing\\Course');
-

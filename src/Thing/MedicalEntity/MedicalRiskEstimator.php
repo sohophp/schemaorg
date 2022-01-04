@@ -16,19 +16,20 @@ class MedicalRiskEstimator extends MedicalEntity
 
     /**
     * The condition, complication, or symptom whose risk is being estimated.
-    * @param MedicalEntity|array $value
+    * @param MedicalEntity|array|string $value
     * @return $this
+    * @deprecated use setEstimatesRiskOf
     */
-    public function estimatesRiskOf(?MedicalEntity $value)
+    public function estimatesRiskOf($value)
     {
         $this->setProperty('estimatesRiskOf', $value);
         return $this;
     }
    /**
-    * @param MedicalEntity|array $value
+    * @param MedicalEntity|array|string $value
     * @return $this
     */
-    public function setEstimatesRiskOf(?MedicalEntity $value)
+    public function setEstimatesRiskOf($value)
     {
         $this->setProperty('estimatesRiskOf', $value);
         return $this;
@@ -43,19 +44,20 @@ class MedicalRiskEstimator extends MedicalEntity
 
     /**
     * A modifiable or non-modifiable risk factor included in the calculation, e.g. age, coexisting condition.
-    * @param MedicalRiskFactor|array $value
+    * @param MedicalRiskFactor|array|string $value
     * @return $this
+    * @deprecated use setIncludedRiskFactor
     */
-    public function includedRiskFactor(?MedicalRiskFactor $value)
+    public function includedRiskFactor($value)
     {
         $this->setProperty('includedRiskFactor', $value);
         return $this;
     }
    /**
-    * @param MedicalRiskFactor|array $value
+    * @param MedicalRiskFactor|array|string $value
     * @return $this
     */
-    public function setIncludedRiskFactor(?MedicalRiskFactor $value)
+    public function setIncludedRiskFactor($value)
     {
         $this->setProperty('includedRiskFactor', $value);
         return $this;
@@ -70,7 +72,3 @@ class MedicalRiskEstimator extends MedicalEntity
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalRiskEstimator','Thing\\MedicalRiskEstimator');
-

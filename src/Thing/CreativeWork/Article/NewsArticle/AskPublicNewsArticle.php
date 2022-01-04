@@ -15,7 +15,3 @@ class AskPublicNewsArticle extends NewsArticle
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Article\\NewsArticle\\AskPublicNewsArticle','Thing\\AskPublicNewsArticle');
-

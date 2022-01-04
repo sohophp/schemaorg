@@ -15,7 +15,3 @@ class UseAction extends ConsumeAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\ConsumeAction\\UseAction','Thing\\UseAction');
-

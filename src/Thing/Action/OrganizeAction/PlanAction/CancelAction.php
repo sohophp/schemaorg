@@ -22,7 +22,3 @@ class CancelAction extends PlanAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\OrganizeAction\\PlanAction\\CancelAction','Thing\\CancelAction');
-

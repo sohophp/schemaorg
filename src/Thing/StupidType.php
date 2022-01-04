@@ -16,19 +16,20 @@ class StupidType extends Thing
 
     /**
     * This is a StupidProperty! - for testing only
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
+    * @deprecated use setStupidProperty
     */
-    public function stupidProperty(?QuantitativeValue $value)
+    public function stupidProperty($value)
     {
         $this->setProperty('stupidProperty', $value);
         return $this;
     }
    /**
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
     */
-    public function setStupidProperty(?QuantitativeValue $value)
+    public function setStupidProperty($value)
     {
         $this->setProperty('stupidProperty', $value);
         return $this;
@@ -43,7 +44,3 @@ class StupidType extends Thing
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\StupidType','Thing\\StupidType');
-

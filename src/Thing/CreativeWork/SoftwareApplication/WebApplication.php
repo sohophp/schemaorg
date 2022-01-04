@@ -17,8 +17,9 @@ class WebApplication extends SoftwareApplication
     * Specifies browser requirements in human-readable text. For example, 'requires HTML5 support'.
     * @param string|array $value
     * @return $this
+    * @deprecated use setBrowserRequirements
     */
-    public function browserRequirements(?string $value)
+    public function browserRequirements($value)
     {
         $this->setProperty('browserRequirements', $value);
         return $this;
@@ -27,7 +28,7 @@ class WebApplication extends SoftwareApplication
     * @param string|array $value
     * @return $this
     */
-    public function setBrowserRequirements(?string $value)
+    public function setBrowserRequirements($value)
     {
         $this->setProperty('browserRequirements', $value);
         return $this;
@@ -42,7 +43,3 @@ class WebApplication extends SoftwareApplication
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\SoftwareApplication\\WebApplication','Thing\\WebApplication');
-

@@ -16,19 +16,20 @@ class ArchiveOrganization extends LocalBusiness
 
     /**
     * Collection, <a href="https://en.wikipedia.org/wiki/Fonds">fonds</a>, or item held, kept or maintained by an <a class="localLink" href="http://schema.org/ArchiveOrganization">ArchiveOrganization</a>.
-    * @param ArchiveComponent|array $value
+    * @param ArchiveComponent|array|string $value
     * @return $this
+    * @deprecated use setArchiveHeld
     */
-    public function archiveHeld(?ArchiveComponent $value)
+    public function archiveHeld($value)
     {
         $this->setProperty('archiveHeld', $value);
         return $this;
     }
    /**
-    * @param ArchiveComponent|array $value
+    * @param ArchiveComponent|array|string $value
     * @return $this
     */
-    public function setArchiveHeld(?ArchiveComponent $value)
+    public function setArchiveHeld($value)
     {
         $this->setProperty('archiveHeld', $value);
         return $this;
@@ -43,7 +44,3 @@ class ArchiveOrganization extends LocalBusiness
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\ArchiveOrganization','Thing\\ArchiveOrganization');
-

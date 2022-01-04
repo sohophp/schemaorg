@@ -16,19 +16,20 @@ class MortgageLoan extends LoanOrCredit
 
     /**
     * Amount of mortgage mandate that can be converted into a proper mortgage at a later stage.
-    * @param MonetaryAmount|array $value
+    * @param MonetaryAmount|array|string $value
     * @return $this
+    * @deprecated use setLoanMortgageMandateAmount
     */
-    public function loanMortgageMandateAmount(?MonetaryAmount $value)
+    public function loanMortgageMandateAmount($value)
     {
         $this->setProperty('loanMortgageMandateAmount', $value);
         return $this;
     }
    /**
-    * @param MonetaryAmount|array $value
+    * @param MonetaryAmount|array|string $value
     * @return $this
     */
-    public function setLoanMortgageMandateAmount(?MonetaryAmount $value)
+    public function setLoanMortgageMandateAmount($value)
     {
         $this->setProperty('loanMortgageMandateAmount', $value);
         return $this;
@@ -43,19 +44,20 @@ class MortgageLoan extends LoanOrCredit
 
     /**
     * Whether borrower is a resident of the jurisdiction where the property is located.
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
+    * @deprecated use setDomiciledMortgage
     */
-    public function domiciledMortgage(?bool $value)
+    public function domiciledMortgage($value)
     {
         $this->setProperty('domiciledMortgage', $value);
         return $this;
     }
    /**
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
     */
-    public function setDomiciledMortgage(?bool $value)
+    public function setDomiciledMortgage($value)
     {
         $this->setProperty('domiciledMortgage', $value);
         return $this;
@@ -70,7 +72,3 @@ class MortgageLoan extends LoanOrCredit
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Service\\FinancialProduct\\LoanOrCredit\\MortgageLoan','Thing\\MortgageLoan');
-

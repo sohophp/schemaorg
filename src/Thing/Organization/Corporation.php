@@ -17,8 +17,9 @@ class Corporation extends Organization
     * The exchange traded instrument associated with a Corporation object. The tickerSymbol is expressed as an exchange and an instrument name separated by a space character. For the exchange component of the tickerSymbol attribute, we recommend using the controlled vocabulary of Market Identifier Codes (MIC) specified in ISO15022.
     * @param string|array $value
     * @return $this
+    * @deprecated use setTickerSymbol
     */
-    public function tickerSymbol(?string $value)
+    public function tickerSymbol($value)
     {
         $this->setProperty('tickerSymbol', $value);
         return $this;
@@ -27,7 +28,7 @@ class Corporation extends Organization
     * @param string|array $value
     * @return $this
     */
-    public function setTickerSymbol(?string $value)
+    public function setTickerSymbol($value)
     {
         $this->setProperty('tickerSymbol', $value);
         return $this;
@@ -42,7 +43,3 @@ class Corporation extends Organization
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\Corporation','Thing\\Corporation');
-

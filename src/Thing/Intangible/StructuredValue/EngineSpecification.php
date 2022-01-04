@@ -19,6 +19,7 @@ class EngineSpecification extends StructuredValue
     * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
     * @param string|string|QualitativeValue|array $value
     * @return $this
+    * @deprecated use setFuelType
     */
     public function fuelType($value)
     {
@@ -48,19 +49,20 @@ class EngineSpecification extends StructuredValue
 Typical unit code(s): CMQ for cubic centimeter, LTR for liters, INQ for cubic inches
 * Note 1: You can link to information about how the given value has been determined using the <a class="localLink" href="http://schema.org/valueReference">valueReference</a> property.
 * Note 2: You can use <a class="localLink" href="http://schema.org/minValue">minValue</a> and <a class="localLink" href="http://schema.org/maxValue">maxValue</a> to indicate ranges.
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
+    * @deprecated use setEngineDisplacement
     */
-    public function engineDisplacement(?QuantitativeValue $value)
+    public function engineDisplacement($value)
     {
         $this->setProperty('engineDisplacement', $value);
         return $this;
     }
    /**
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
     */
-    public function setEngineDisplacement(?QuantitativeValue $value)
+    public function setEngineDisplacement($value)
     {
         $this->setProperty('engineDisplacement', $value);
         return $this;
@@ -77,6 +79,7 @@ Typical unit code(s): CMQ for cubic centimeter, LTR for liters, INQ for cubic in
     * The type of engine or engines powering the vehicle.
     * @param string|QualitativeValue|string|array $value
     * @return $this
+    * @deprecated use setEngineType
     */
     public function engineType($value)
     {
@@ -110,19 +113,20 @@ Typical unit code(s): NU for newton metre (N m), F17 for pound-force per foot, o
 <li>Note 2: You can use <a class="localLink" href="http://schema.org/minValue">minValue</a> and <a class="localLink" href="http://schema.org/maxValue">maxValue</a> to indicate ranges.</li>
 </ul>
 
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
+    * @deprecated use setTorque
     */
-    public function torque(?QuantitativeValue $value)
+    public function torque($value)
     {
         $this->setProperty('torque', $value);
         return $this;
     }
    /**
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
     */
-    public function setTorque(?QuantitativeValue $value)
+    public function setTorque($value)
     {
         $this->setProperty('torque', $value);
         return $this;
@@ -145,19 +149,20 @@ Typical unit code(s): NU for newton metre (N m), F17 for pound-force per foot, o
 <li>Note 3: You can use <a class="localLink" href="http://schema.org/minValue">minValue</a> and <a class="localLink" href="http://schema.org/maxValue">maxValue</a> to indicate ranges.</li>
 </ul>
 
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
+    * @deprecated use setEnginePower
     */
-    public function enginePower(?QuantitativeValue $value)
+    public function enginePower($value)
     {
         $this->setProperty('enginePower', $value);
         return $this;
     }
    /**
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
     */
-    public function setEnginePower(?QuantitativeValue $value)
+    public function setEnginePower($value)
     {
         $this->setProperty('enginePower', $value);
         return $this;
@@ -172,7 +177,3 @@ Typical unit code(s): NU for newton metre (N m), F17 for pound-force per foot, o
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue\\EngineSpecification','Thing\\EngineSpecification');
-

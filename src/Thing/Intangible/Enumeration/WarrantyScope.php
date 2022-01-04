@@ -24,7 +24,3 @@ class WarrantyScope extends Enumeration
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\WarrantyScope','Thing\\WarrantyScope');
-

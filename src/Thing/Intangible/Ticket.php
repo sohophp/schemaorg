@@ -19,8 +19,9 @@ class Ticket extends Intangible
 
     /**
     * The person or organization the reservation or ticket is for.
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
+    * @deprecated use setUnderName
     */
     public function underName($value)
     {
@@ -28,7 +29,7 @@ class Ticket extends Intangible
         return $this;
     }
    /**
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
     */
     public function setUnderName($value)
@@ -56,6 +57,7 @@ Usage guidelines:<br/><br/>
 
     * @param PriceSpecification|string|array $value
     * @return $this
+    * @deprecated use setTotalPrice
     */
     public function totalPrice($value)
     {
@@ -85,8 +87,9 @@ Usage guidelines:<br/><br/>
 Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 currency format</a> e.g. "USD"; <a href="https://en.wikipedia.org/wiki/List_of_cryptocurrencies">Ticker symbol</a> for cryptocurrencies e.g. "BTC"; well known names for <a href="https://en.wikipedia.org/wiki/Local_exchange_trading_system">Local Exchange Tradings Systems</a> (LETS) and other currency types e.g. "Ithaca HOUR".
     * @param string|array $value
     * @return $this
+    * @deprecated use setPriceCurrency
     */
-    public function priceCurrency(?string $value)
+    public function priceCurrency($value)
     {
         $this->setProperty('priceCurrency', $value);
         return $this;
@@ -95,7 +98,7 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
     * @param string|array $value
     * @return $this
     */
-    public function setPriceCurrency(?string $value)
+    public function setPriceCurrency($value)
     {
         $this->setProperty('priceCurrency', $value);
         return $this;
@@ -112,8 +115,9 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
     * The unique identifier for the ticket.
     * @param string|array $value
     * @return $this
+    * @deprecated use setTicketNumber
     */
-    public function ticketNumber(?string $value)
+    public function ticketNumber($value)
     {
         $this->setProperty('ticketNumber', $value);
         return $this;
@@ -122,7 +126,7 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
     * @param string|array $value
     * @return $this
     */
-    public function setTicketNumber(?string $value)
+    public function setTicketNumber($value)
     {
         $this->setProperty('ticketNumber', $value);
         return $this;
@@ -137,19 +141,20 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
 
     /**
     * The organization issuing the ticket or permit.
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
+    * @deprecated use setIssuedBy
     */
-    public function issuedBy(?Organization $value)
+    public function issuedBy($value)
     {
         $this->setProperty('issuedBy', $value);
         return $this;
     }
    /**
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
     */
-    public function setIssuedBy(?Organization $value)
+    public function setIssuedBy($value)
     {
         $this->setProperty('issuedBy', $value);
         return $this;
@@ -166,6 +171,7 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
     * Reference to an asset (e.g., Barcode, QR code image or PDF) usable for entrance.
     * @param string|string|array $value
     * @return $this
+    * @deprecated use setTicketToken
     */
     public function ticketToken($value)
     {
@@ -191,19 +197,20 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
 
     /**
     * The seat associated with the ticket.
-    * @param Seat|array $value
+    * @param Seat|array|string $value
     * @return $this
+    * @deprecated use setTicketedSeat
     */
-    public function ticketedSeat(?Seat $value)
+    public function ticketedSeat($value)
     {
         $this->setProperty('ticketedSeat', $value);
         return $this;
     }
    /**
-    * @param Seat|array $value
+    * @param Seat|array|string $value
     * @return $this
     */
-    public function setTicketedSeat(?Seat $value)
+    public function setTicketedSeat($value)
     {
         $this->setProperty('ticketedSeat', $value);
         return $this;
@@ -218,8 +225,9 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
 
     /**
     * The date the ticket was issued.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setDateIssued
     */
     public function dateIssued($value)
     {
@@ -227,7 +235,7 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setDateIssued($value)
@@ -245,7 +253,3 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Ticket','Thing\\Ticket');
-

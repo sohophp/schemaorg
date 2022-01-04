@@ -15,7 +15,3 @@ class VeterinaryCare extends MedicalOrganization
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\MedicalOrganization\\VeterinaryCare','Thing\\VeterinaryCare');
-

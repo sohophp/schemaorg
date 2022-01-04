@@ -18,6 +18,7 @@ class BedDetails extends Intangible
     * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
     * @param BedType|string|array $value
     * @return $this
+    * @deprecated use setTypeOfBed
     */
     public function typeOfBed($value)
     {
@@ -43,8 +44,9 @@ class BedDetails extends Intangible
 
     /**
     * The quantity of the given bed type available in the HotelRoom, Suite, House, or Apartment.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setNumberOfBeds
     */
     public function numberOfBeds($value)
     {
@@ -52,7 +54,7 @@ class BedDetails extends Intangible
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setNumberOfBeds($value)
@@ -70,7 +72,3 @@ class BedDetails extends Intangible
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\BedDetails','Thing\\BedDetails');
-

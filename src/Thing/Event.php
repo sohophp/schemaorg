@@ -27,19 +27,20 @@ class Event extends Thing
 
     /**
     * The subject matter of the content.
-    * @param Thing|array $value
+    * @param Thing|array|string $value
     * @return $this
+    * @deprecated use setAbout
     */
-    public function about(?Thing $value)
+    public function about($value)
     {
         $this->setProperty('about', $value);
         return $this;
     }
    /**
-    * @param Thing|array $value
+    * @param Thing|array|string $value
     * @return $this
     */
-    public function setAbout(?Thing $value)
+    public function setAbout($value)
     {
         $this->setProperty('about', $value);
         return $this;
@@ -54,8 +55,9 @@ class Event extends Thing
 
     /**
     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
+    * @deprecated use setFunder
     */
     public function funder($value)
     {
@@ -63,7 +65,7 @@ class Event extends Thing
         return $this;
     }
    /**
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
     */
     public function setFunder($value)
@@ -81,19 +83,20 @@ class Event extends Thing
 
     /**
     * An intended audience, i.e. a group for whom something was created.
-    * @param Audience|array $value
+    * @param Audience|array|string $value
     * @return $this
+    * @deprecated use setAudience
     */
-    public function audience(?Audience $value)
+    public function audience($value)
     {
         $this->setProperty('audience', $value);
         return $this;
     }
    /**
-    * @param Audience|array $value
+    * @param Audience|array|string $value
     * @return $this
     */
-    public function setAudience(?Audience $value)
+    public function setAudience($value)
     {
         $this->setProperty('audience', $value);
         return $this;
@@ -108,19 +111,20 @@ class Event extends Thing
 
     /**
     * The number of attendee places for an event that remain unallocated.
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
+    * @deprecated use setRemainingAttendeeCapacity
     */
-    public function remainingAttendeeCapacity(?int $value)
+    public function remainingAttendeeCapacity($value)
     {
         $this->setProperty('remainingAttendeeCapacity', $value);
         return $this;
     }
    /**
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
     */
-    public function setRemainingAttendeeCapacity(?int $value)
+    public function setRemainingAttendeeCapacity($value)
     {
         $this->setProperty('remainingAttendeeCapacity', $value);
         return $this;
@@ -135,19 +139,20 @@ class Event extends Thing
 
     /**
     * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setActor
     */
-    public function actor(?Person $value)
+    public function actor($value)
     {
         $this->setProperty('actor', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setActor(?Person $value)
+    public function setActor($value)
     {
         $this->setProperty('actor', $value);
         return $this;
@@ -162,8 +167,9 @@ class Event extends Thing
 
     /**
     * The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
+    * @deprecated use setPerformers
     */
     public function performers($value)
     {
@@ -171,7 +177,7 @@ class Event extends Thing
         return $this;
     }
    /**
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
     */
     public function setPerformers($value)
@@ -189,8 +195,9 @@ class Event extends Thing
 
     /**
     * The end date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setEndDate
     */
     public function endDate($value)
     {
@@ -198,7 +205,7 @@ class Event extends Thing
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setEndDate($value)
@@ -216,8 +223,9 @@ class Event extends Thing
 
     /**
     * The time admission will commence.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setDoorTime
     */
     public function doorTime($value)
     {
@@ -225,7 +233,7 @@ class Event extends Thing
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setDoorTime($value)
@@ -243,8 +251,9 @@ class Event extends Thing
 
     /**
     * A secondary contributor to the CreativeWork or Event.
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
+    * @deprecated use setContributor
     */
     public function contributor($value)
     {
@@ -252,7 +261,7 @@ class Event extends Thing
         return $this;
     }
    /**
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
     */
     public function setContributor($value)
@@ -272,8 +281,9 @@ class Event extends Thing
     * The typical expected age range, e.g. '7-9', '11-'.
     * @param string|array $value
     * @return $this
+    * @deprecated use setTypicalAgeRange
     */
-    public function typicalAgeRange(?string $value)
+    public function typicalAgeRange($value)
     {
         $this->setProperty('typicalAgeRange', $value);
         return $this;
@@ -282,7 +292,7 @@ class Event extends Thing
     * @param string|array $value
     * @return $this
     */
-    public function setTypicalAgeRange(?string $value)
+    public function setTypicalAgeRange($value)
     {
         $this->setProperty('typicalAgeRange', $value);
         return $this;
@@ -297,8 +307,9 @@ class Event extends Thing
 
     /**
     * An organizer of an Event.
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
+    * @deprecated use setOrganizer
     */
     public function organizer($value)
     {
@@ -306,7 +317,7 @@ class Event extends Thing
         return $this;
     }
    /**
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
     */
     public function setOrganizer($value)
@@ -324,8 +335,9 @@ class Event extends Thing
 
     /**
     * A person attending the event.
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
+    * @deprecated use setAttendees
     */
     public function attendees($value)
     {
@@ -333,7 +345,7 @@ class Event extends Thing
         return $this;
     }
    /**
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
     */
     public function setAttendees($value)
@@ -351,19 +363,20 @@ class Event extends Thing
 
     /**
     * The overall rating, based on a collection of reviews or ratings, of the item.
-    * @param AggregateRating|array $value
+    * @param AggregateRating|array|string $value
     * @return $this
+    * @deprecated use setAggregateRating
     */
-    public function aggregateRating(?AggregateRating $value)
+    public function aggregateRating($value)
     {
         $this->setProperty('aggregateRating', $value);
         return $this;
     }
    /**
-    * @param AggregateRating|array $value
+    * @param AggregateRating|array|string $value
     * @return $this
     */
-    public function setAggregateRating(?AggregateRating $value)
+    public function setAggregateRating($value)
     {
         $this->setProperty('aggregateRating', $value);
         return $this;
@@ -378,19 +391,20 @@ class Event extends Thing
 
     /**
     * An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.
-    * @param Event|array $value
+    * @param Event|array|string $value
     * @return $this
+    * @deprecated use setSubEvent
     */
-    public function subEvent(?Event $value)
+    public function subEvent($value)
     {
         $this->setProperty('subEvent', $value);
         return $this;
     }
    /**
-    * @param Event|array $value
+    * @param Event|array|string $value
     * @return $this
     */
-    public function setSubEvent(?Event $value)
+    public function setSubEvent($value)
     {
         $this->setProperty('subEvent', $value);
         return $this;
@@ -405,19 +419,20 @@ class Event extends Thing
 
     /**
     * Events that are a part of this event. For example, a conference event includes many presentations, each subEvents of the conference.
-    * @param Event|array $value
+    * @param Event|array|string $value
     * @return $this
+    * @deprecated use setSubEvents
     */
-    public function subEvents(?Event $value)
+    public function subEvents($value)
     {
         $this->setProperty('subEvents', $value);
         return $this;
     }
    /**
-    * @param Event|array $value
+    * @param Event|array|string $value
     * @return $this
     */
-    public function setSubEvents(?Event $value)
+    public function setSubEvents($value)
     {
         $this->setProperty('subEvents', $value);
         return $this;
@@ -432,19 +447,20 @@ class Event extends Thing
 
     /**
     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.
-    * @param Offer|array $value
+    * @param Offer|array|string $value
     * @return $this
+    * @deprecated use setOffers
     */
-    public function offers(?Offer $value)
+    public function offers($value)
     {
         $this->setProperty('offers', $value);
         return $this;
     }
    /**
-    * @param Offer|array $value
+    * @param Offer|array|string $value
     * @return $this
     */
-    public function setOffers(?Offer $value)
+    public function setOffers($value)
     {
         $this->setProperty('offers', $value);
         return $this;
@@ -461,6 +477,7 @@ class Event extends Thing
     * The language of the content or performance or used in an action. Please use one of the language codes from the <a href="http://tools.ietf.org/html/bcp47">IETF BCP 47 standard</a>. See also <a class="localLink" href="http://schema.org/availableLanguage">availableLanguage</a>.
     * @param Language|string|array $value
     * @return $this
+    * @deprecated use setInLanguage
     */
     public function inLanguage($value)
     {
@@ -486,8 +503,9 @@ class Event extends Thing
 
     /**
     * A person or organization attending the event.
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
+    * @deprecated use setAttendee
     */
     public function attendee($value)
     {
@@ -495,7 +513,7 @@ class Event extends Thing
         return $this;
     }
    /**
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
     */
     public function setAttendee($value)
@@ -513,19 +531,20 @@ class Event extends Thing
 
     /**
     * A work performed in some event, for example a play performed in a TheaterEvent.
-    * @param CreativeWork|array $value
+    * @param CreativeWork|array|string $value
     * @return $this
+    * @deprecated use setWorkPerformed
     */
-    public function workPerformed(?CreativeWork $value)
+    public function workPerformed($value)
     {
         $this->setProperty('workPerformed', $value);
         return $this;
     }
    /**
-    * @param CreativeWork|array $value
+    * @param CreativeWork|array|string $value
     * @return $this
     */
-    public function setWorkPerformed(?CreativeWork $value)
+    public function setWorkPerformed($value)
     {
         $this->setProperty('workPerformed', $value);
         return $this;
@@ -540,19 +559,20 @@ class Event extends Thing
 
     /**
     * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
-    * @param EventStatusType|array $value
+    * @param EventStatusType|array|string $value
     * @return $this
+    * @deprecated use setEventStatus
     */
-    public function eventStatus(?EventStatusType $value)
+    public function eventStatus($value)
     {
         $this->setProperty('eventStatus', $value);
         return $this;
     }
    /**
-    * @param EventStatusType|array $value
+    * @param EventStatusType|array|string $value
     * @return $this
     */
-    public function setEventStatus(?EventStatusType $value)
+    public function setEventStatus($value)
     {
         $this->setProperty('eventStatus', $value);
         return $this;
@@ -567,8 +587,9 @@ class Event extends Thing
 
     /**
     * The start date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setStartDate
     */
     public function startDate($value)
     {
@@ -576,7 +597,7 @@ class Event extends Thing
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setStartDate($value)
@@ -594,19 +615,20 @@ class Event extends Thing
 
     /**
     * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setDirector
     */
-    public function director(?Person $value)
+    public function director($value)
     {
         $this->setProperty('director', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setDirector(?Person $value)
+    public function setDirector($value)
     {
         $this->setProperty('director', $value);
         return $this;
@@ -621,19 +643,20 @@ class Event extends Thing
 
     /**
     * An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.
-    * @param Event|array $value
+    * @param Event|array|string $value
     * @return $this
+    * @deprecated use setSuperEvent
     */
-    public function superEvent(?Event $value)
+    public function superEvent($value)
     {
         $this->setProperty('superEvent', $value);
         return $this;
     }
    /**
-    * @param Event|array $value
+    * @param Event|array|string $value
     * @return $this
     */
-    public function setSuperEvent(?Event $value)
+    public function setSuperEvent($value)
     {
         $this->setProperty('superEvent', $value);
         return $this;
@@ -649,19 +672,20 @@ class Event extends Thing
     /**
     * A work featured in some event, e.g. exhibited in an ExhibitionEvent.
        Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).
-    * @param CreativeWork|array $value
+    * @param CreativeWork|array|string $value
     * @return $this
+    * @deprecated use setWorkFeatured
     */
-    public function workFeatured(?CreativeWork $value)
+    public function workFeatured($value)
     {
         $this->setProperty('workFeatured', $value);
         return $this;
     }
    /**
-    * @param CreativeWork|array $value
+    * @param CreativeWork|array|string $value
     * @return $this
     */
-    public function setWorkFeatured(?CreativeWork $value)
+    public function setWorkFeatured($value)
     {
         $this->setProperty('workFeatured', $value);
         return $this;
@@ -676,19 +700,20 @@ class Event extends Thing
 
     /**
     * The duration of the item (movie, audio recording, event, etc.) in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>.
-    * @param Duration|array $value
+    * @param Duration|array|string $value
     * @return $this
+    * @deprecated use setDuration
     */
-    public function duration(?Duration $value)
+    public function duration($value)
     {
         $this->setProperty('duration', $value);
         return $this;
     }
    /**
-    * @param Duration|array $value
+    * @param Duration|array|string $value
     * @return $this
     */
-    public function setDuration(?Duration $value)
+    public function setDuration($value)
     {
         $this->setProperty('duration', $value);
         return $this;
@@ -703,8 +728,9 @@ class Event extends Thing
 
     /**
     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
+    * @deprecated use setTranslator
     */
     public function translator($value)
     {
@@ -712,7 +738,7 @@ class Event extends Thing
         return $this;
     }
    /**
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
     */
     public function setTranslator($value)
@@ -730,8 +756,9 @@ class Event extends Thing
 
     /**
     * Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setPreviousStartDate
     */
     public function previousStartDate($value)
     {
@@ -739,7 +766,7 @@ class Event extends Thing
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setPreviousStartDate($value)
@@ -757,19 +784,20 @@ class Event extends Thing
 
     /**
     * A review of the item.
-    * @param Review|array $value
+    * @param Review|array|string $value
     * @return $this
+    * @deprecated use setReview
     */
-    public function review(?Review $value)
+    public function review($value)
     {
         $this->setProperty('review', $value);
         return $this;
     }
    /**
-    * @param Review|array $value
+    * @param Review|array|string $value
     * @return $this
     */
-    public function setReview(?Review $value)
+    public function setReview($value)
     {
         $this->setProperty('review', $value);
         return $this;
@@ -784,8 +812,9 @@ class Event extends Thing
 
     /**
     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
+    * @deprecated use setSponsor
     */
     public function sponsor($value)
     {
@@ -793,7 +822,7 @@ class Event extends Thing
         return $this;
     }
    /**
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
     */
     public function setSponsor($value)
@@ -813,6 +842,7 @@ class Event extends Thing
     * The location of for example where the event is happening, an organization is located, or where an action takes place.
     * @param PostalAddress|string|Place|array $value
     * @return $this
+    * @deprecated use setLocation
     */
     public function location($value)
     {
@@ -838,19 +868,20 @@ class Event extends Thing
 
     /**
     * The CreativeWork that captured all or part of this Event.
-    * @param CreativeWork|array $value
+    * @param CreativeWork|array|string $value
     * @return $this
+    * @deprecated use setRecordedIn
     */
-    public function recordedIn(?CreativeWork $value)
+    public function recordedIn($value)
     {
         $this->setProperty('recordedIn', $value);
         return $this;
     }
    /**
-    * @param CreativeWork|array $value
+    * @param CreativeWork|array|string $value
     * @return $this
     */
-    public function setRecordedIn(?CreativeWork $value)
+    public function setRecordedIn($value)
     {
         $this->setProperty('recordedIn', $value);
         return $this;
@@ -865,8 +896,9 @@ class Event extends Thing
 
     /**
     * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
+    * @deprecated use setComposer
     */
     public function composer($value)
     {
@@ -874,7 +906,7 @@ class Event extends Thing
         return $this;
     }
    /**
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
     */
     public function setComposer($value)
@@ -892,19 +924,20 @@ class Event extends Thing
 
     /**
     * A flag to signal that the item, event, or place is accessible for free.
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
+    * @deprecated use setIsAccessibleForFree
     */
-    public function isAccessibleForFree(?bool $value)
+    public function isAccessibleForFree($value)
     {
         $this->setProperty('isAccessibleForFree', $value);
         return $this;
     }
    /**
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
     */
-    public function setIsAccessibleForFree(?bool $value)
+    public function setIsAccessibleForFree($value)
     {
         $this->setProperty('isAccessibleForFree', $value);
         return $this;
@@ -919,19 +952,20 @@ class Event extends Thing
 
     /**
     * The total number of individuals that may attend an event or venue.
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
+    * @deprecated use setMaximumAttendeeCapacity
     */
-    public function maximumAttendeeCapacity(?int $value)
+    public function maximumAttendeeCapacity($value)
     {
         $this->setProperty('maximumAttendeeCapacity', $value);
         return $this;
     }
    /**
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
     */
-    public function setMaximumAttendeeCapacity(?int $value)
+    public function setMaximumAttendeeCapacity($value)
     {
         $this->setProperty('maximumAttendeeCapacity', $value);
         return $this;
@@ -946,8 +980,9 @@ class Event extends Thing
 
     /**
     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
+    * @deprecated use setPerformer
     */
     public function performer($value)
     {
@@ -955,7 +990,7 @@ class Event extends Thing
         return $this;
     }
    /**
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
     */
     public function setPerformer($value)
@@ -973,7 +1008,3 @@ class Event extends Thing
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Event','Thing\\Event');
-

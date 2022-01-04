@@ -15,7 +15,3 @@ class WPHeader extends WebPageElement
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\WebPageElement\\WPHeader','Thing\\WPHeader');
-

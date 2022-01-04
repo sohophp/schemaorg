@@ -18,6 +18,7 @@ class BankAccount extends FinancialProduct
     * The type of a bank account.
     * @param string|string|array $value
     * @return $this
+    * @deprecated use setBankAccountType
     */
     public function bankAccountType($value)
     {
@@ -43,19 +44,20 @@ class BankAccount extends FinancialProduct
 
     /**
     * An overdraft is an extension of credit from a lending institution when an account reaches zero. An overdraft allows the individual to continue withdrawing money even if the account has no funds in it. Basically the bank allows people to borrow a set amount of money.
-    * @param MonetaryAmount|array $value
+    * @param MonetaryAmount|array|string $value
     * @return $this
+    * @deprecated use setAccountOverdraftLimit
     */
-    public function accountOverdraftLimit(?MonetaryAmount $value)
+    public function accountOverdraftLimit($value)
     {
         $this->setProperty('accountOverdraftLimit', $value);
         return $this;
     }
    /**
-    * @param MonetaryAmount|array $value
+    * @param MonetaryAmount|array|string $value
     * @return $this
     */
-    public function setAccountOverdraftLimit(?MonetaryAmount $value)
+    public function setAccountOverdraftLimit($value)
     {
         $this->setProperty('accountOverdraftLimit', $value);
         return $this;
@@ -70,19 +72,20 @@ class BankAccount extends FinancialProduct
 
     /**
     * A minimum amount that has to be paid in every month.
-    * @param MonetaryAmount|array $value
+    * @param MonetaryAmount|array|string $value
     * @return $this
+    * @deprecated use setAccountMinimumInflow
     */
-    public function accountMinimumInflow(?MonetaryAmount $value)
+    public function accountMinimumInflow($value)
     {
         $this->setProperty('accountMinimumInflow', $value);
         return $this;
     }
    /**
-    * @param MonetaryAmount|array $value
+    * @param MonetaryAmount|array|string $value
     * @return $this
     */
-    public function setAccountMinimumInflow(?MonetaryAmount $value)
+    public function setAccountMinimumInflow($value)
     {
         $this->setProperty('accountMinimumInflow', $value);
         return $this;
@@ -97,7 +100,3 @@ class BankAccount extends FinancialProduct
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Service\\FinancialProduct\\BankAccount','Thing\\BankAccount');
-

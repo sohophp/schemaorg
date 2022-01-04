@@ -15,7 +15,3 @@ class CafeOrCoffeeShop extends FoodEstablishment
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\FoodEstablishment\\CafeOrCoffeeShop','Thing\\CafeOrCoffeeShop');
-

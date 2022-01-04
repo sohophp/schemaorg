@@ -17,8 +17,9 @@ class WebSite extends CreativeWork
     * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
     * @param string|array $value
     * @return $this
+    * @deprecated use setIssn
     */
-    public function issn(?string $value)
+    public function issn($value)
     {
         $this->setProperty('issn', $value);
         return $this;
@@ -27,7 +28,7 @@ class WebSite extends CreativeWork
     * @param string|array $value
     * @return $this
     */
-    public function setIssn(?string $value)
+    public function setIssn($value)
     {
         $this->setProperty('issn', $value);
         return $this;
@@ -42,7 +43,3 @@ class WebSite extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\WebSite','Thing\\WebSite');
-

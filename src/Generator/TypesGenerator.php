@@ -44,6 +44,13 @@ class TypesGenerator
         $this->Logger = $Logger;
     }
 
+    public function clear()
+    {
+        $dir = $this->configure->getBaseDir() . '/Thing';
+        $output = shell_exec('rm -rf ' . $dir);
+        echo $output, PHP_EOL;
+    }
+
     /**
      * @return array
      * @throws LoaderError
@@ -53,6 +60,7 @@ class TypesGenerator
      */
     public function generate(): array
     {
+
         $classFiles = [];
         $entitiesMap = [];
         /**
@@ -116,15 +124,23 @@ class TypesGenerator
                 }
 
                 //rangeString可能有null
-                $range = array_filter(array_map(function ($var) {
-                    return trim((string)$var);
-                }, $range));
+                $range = array_filter($range, function ($var) {
+                    return !empty(trim((string)$var));
+                });
+                if (!in_array("array", $range)) {
+                    $range[] = 'array';
+                }
+
+                if (!in_array('string', $range)) {
+                    $range[] = 'string';
+                }
 
                 $class['properties'][] = [
                     'name' => $property->getName(),
                     'annotations' => [$property->getComment()],
                     'range' => implode('|', $range),
-                    'range_default' => count($range) === 1 && array_values($range)[0] ? '?' . array_values($range)[0] : null
+                    'range_default' => null
+//                    'range_default' => count($range) === 1 && array_values($range)[0] ? '?' . array_values($range)[0] : null
                 ];
             }
 

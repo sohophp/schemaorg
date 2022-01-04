@@ -17,8 +17,9 @@ class LymphaticVessel extends Vessel
 
     /**
     * The anatomical or organ system drained by this vessel; generally refers to a specific part of an organ.
-    * @param AnatomicalStructure|AnatomicalSystem|array $value
+    * @param AnatomicalStructure|AnatomicalSystem|array|string $value
     * @return $this
+    * @deprecated use setRegionDrained
     */
     public function regionDrained($value)
     {
@@ -26,7 +27,7 @@ class LymphaticVessel extends Vessel
         return $this;
     }
    /**
-    * @param AnatomicalStructure|AnatomicalSystem|array $value
+    * @param AnatomicalStructure|AnatomicalSystem|array|string $value
     * @return $this
     */
     public function setRegionDrained($value)
@@ -44,19 +45,20 @@ class LymphaticVessel extends Vessel
 
     /**
     * The vasculature the lymphatic structure runs, or efferents, to.
-    * @param Vessel|array $value
+    * @param Vessel|array|string $value
     * @return $this
+    * @deprecated use setRunsTo
     */
-    public function runsTo(?Vessel $value)
+    public function runsTo($value)
     {
         $this->setProperty('runsTo', $value);
         return $this;
     }
    /**
-    * @param Vessel|array $value
+    * @param Vessel|array|string $value
     * @return $this
     */
-    public function setRunsTo(?Vessel $value)
+    public function setRunsTo($value)
     {
         $this->setProperty('runsTo', $value);
         return $this;
@@ -71,19 +73,20 @@ class LymphaticVessel extends Vessel
 
     /**
     * The vasculature the lymphatic structure originates, or afferents, from.
-    * @param Vessel|array $value
+    * @param Vessel|array|string $value
     * @return $this
+    * @deprecated use setOriginatesFrom
     */
-    public function originatesFrom(?Vessel $value)
+    public function originatesFrom($value)
     {
         $this->setProperty('originatesFrom', $value);
         return $this;
     }
    /**
-    * @param Vessel|array $value
+    * @param Vessel|array|string $value
     * @return $this
     */
-    public function setOriginatesFrom(?Vessel $value)
+    public function setOriginatesFrom($value)
     {
         $this->setProperty('originatesFrom', $value);
         return $this;
@@ -98,7 +101,3 @@ class LymphaticVessel extends Vessel
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\AnatomicalStructure\\Vessel\\LymphaticVessel','Thing\\LymphaticVessel');
-

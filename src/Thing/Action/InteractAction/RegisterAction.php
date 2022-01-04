@@ -24,7 +24,3 @@ class RegisterAction extends InteractAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\InteractAction\\RegisterAction','Thing\\RegisterAction');
-

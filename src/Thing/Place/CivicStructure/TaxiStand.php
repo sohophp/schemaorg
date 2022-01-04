@@ -15,7 +15,3 @@ class TaxiStand extends CivicStructure
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\CivicStructure\\TaxiStand','Thing\\TaxiStand');
-

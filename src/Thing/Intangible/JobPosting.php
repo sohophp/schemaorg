@@ -24,19 +24,20 @@ class JobPosting extends Intangible
 
     /**
     * The location(s) applicants can apply from. This is usually used for telecommuting jobs where the applicant does not need to be in a physical office. Note: This should not be used for citizenship or work visa requirements.
-    * @param AdministrativeArea|array $value
+    * @param AdministrativeArea|array|string $value
     * @return $this
+    * @deprecated use setApplicantLocationRequirements
     */
-    public function applicantLocationRequirements(?AdministrativeArea $value)
+    public function applicantLocationRequirements($value)
     {
         $this->setProperty('applicantLocationRequirements', $value);
         return $this;
     }
    /**
-    * @param AdministrativeArea|array $value
+    * @param AdministrativeArea|array|string $value
     * @return $this
     */
-    public function setApplicantLocationRequirements(?AdministrativeArea $value)
+    public function setApplicantLocationRequirements($value)
     {
         $this->setProperty('applicantLocationRequirements', $value);
         return $this;
@@ -51,19 +52,20 @@ class JobPosting extends Intangible
 
     /**
     * An indicator as to whether a position is available for an immediate start.
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
+    * @deprecated use setJobImmediateStart
     */
-    public function jobImmediateStart(?bool $value)
+    public function jobImmediateStart($value)
     {
         $this->setProperty('jobImmediateStart', $value);
         return $this;
     }
    /**
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
     */
-    public function setJobImmediateStart(?bool $value)
+    public function setJobImmediateStart($value)
     {
         $this->setProperty('jobImmediateStart', $value);
         return $this;
@@ -78,19 +80,20 @@ class JobPosting extends Intangible
 
     /**
     * A (typically single) geographic location associated with the job position.
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
+    * @deprecated use setJobLocation
     */
-    public function jobLocation(?Place $value)
+    public function jobLocation($value)
     {
         $this->setProperty('jobLocation', $value);
         return $this;
     }
    /**
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
     */
-    public function setJobLocation(?Place $value)
+    public function setJobLocation($value)
     {
         $this->setProperty('jobLocation', $value);
         return $this;
@@ -107,8 +110,9 @@ class JobPosting extends Intangible
     * Description of benefits associated with the job.
     * @param string|array $value
     * @return $this
+    * @deprecated use setBenefits
     */
-    public function benefits(?string $value)
+    public function benefits($value)
     {
         $this->setProperty('benefits', $value);
         return $this;
@@ -117,7 +121,7 @@ class JobPosting extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setBenefits(?string $value)
+    public function setBenefits($value)
     {
         $this->setProperty('benefits', $value);
         return $this;
@@ -134,6 +138,7 @@ class JobPosting extends Intangible
     * Specific qualifications required for this role or Occupation.
     * @param string|EducationalOccupationalCredential|array $value
     * @return $this
+    * @deprecated use setQualifications
     */
     public function qualifications($value)
     {
@@ -161,8 +166,9 @@ class JobPosting extends Intangible
     * Description of bonus and commission compensation aspects of the job.
     * @param string|array $value
     * @return $this
+    * @deprecated use setIncentiveCompensation
     */
-    public function incentiveCompensation(?string $value)
+    public function incentiveCompensation($value)
     {
         $this->setProperty('incentiveCompensation', $value);
         return $this;
@@ -171,7 +177,7 @@ class JobPosting extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setIncentiveCompensation(?string $value)
+    public function setIncentiveCompensation($value)
     {
         $this->setProperty('incentiveCompensation', $value);
         return $this;
@@ -188,8 +194,9 @@ class JobPosting extends Intangible
     * A description of the job location (e.g TELECOMMUTE for telecommute jobs).
     * @param string|array $value
     * @return $this
+    * @deprecated use setJobLocationType
     */
-    public function jobLocationType(?string $value)
+    public function jobLocationType($value)
     {
         $this->setProperty('jobLocationType', $value);
         return $this;
@@ -198,7 +205,7 @@ class JobPosting extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setJobLocationType(?string $value)
+    public function setJobLocationType($value)
     {
         $this->setProperty('jobLocationType', $value);
         return $this;
@@ -215,8 +222,9 @@ class JobPosting extends Intangible
     * The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).
     * @param string|array $value
     * @return $this
+    * @deprecated use setWorkHours
     */
-    public function workHours(?string $value)
+    public function workHours($value)
     {
         $this->setProperty('workHours', $value);
         return $this;
@@ -225,7 +233,7 @@ class JobPosting extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setWorkHours(?string $value)
+    public function setWorkHours($value)
     {
         $this->setProperty('workHours', $value);
         return $this;
@@ -242,8 +250,9 @@ class JobPosting extends Intangible
     * The currency (coded using <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217</a> ) used for the main salary information in this job posting or for this employee.
     * @param string|array $value
     * @return $this
+    * @deprecated use setSalaryCurrency
     */
-    public function salaryCurrency(?string $value)
+    public function salaryCurrency($value)
     {
         $this->setProperty('salaryCurrency', $value);
         return $this;
@@ -252,7 +261,7 @@ class JobPosting extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setSalaryCurrency(?string $value)
+    public function setSalaryCurrency($value)
     {
         $this->setProperty('salaryCurrency', $value);
         return $this;
@@ -269,8 +278,9 @@ class JobPosting extends Intangible
     * Description of benefits associated with the job.
     * @param string|array $value
     * @return $this
+    * @deprecated use setJobBenefits
     */
-    public function jobBenefits(?string $value)
+    public function jobBenefits($value)
     {
         $this->setProperty('jobBenefits', $value);
         return $this;
@@ -279,7 +289,7 @@ class JobPosting extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setJobBenefits(?string $value)
+    public function setJobBenefits($value)
     {
         $this->setProperty('jobBenefits', $value);
         return $this;
@@ -294,8 +304,9 @@ class JobPosting extends Intangible
 
     /**
     * Publication date for the job posting.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setDatePosted
     */
     public function datePosted($value)
     {
@@ -303,7 +314,7 @@ class JobPosting extends Intangible
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setDatePosted($value)
@@ -323,8 +334,9 @@ class JobPosting extends Intangible
     * Skills required to fulfill this role or in this Occupation.
     * @param string|array $value
     * @return $this
+    * @deprecated use setSkills
     */
-    public function skills(?string $value)
+    public function skills($value)
     {
         $this->setProperty('skills', $value);
         return $this;
@@ -333,7 +345,7 @@ class JobPosting extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setSkills(?string $value)
+    public function setSkills($value)
     {
         $this->setProperty('skills', $value);
         return $this;
@@ -350,8 +362,9 @@ class JobPosting extends Intangible
     * Description of bonus and commission compensation aspects of the job.
     * @param string|array $value
     * @return $this
+    * @deprecated use setIncentives
     */
-    public function incentives(?string $value)
+    public function incentives($value)
     {
         $this->setProperty('incentives', $value);
         return $this;
@@ -360,7 +373,7 @@ class JobPosting extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setIncentives(?string $value)
+    public function setIncentives($value)
     {
         $this->setProperty('incentives', $value);
         return $this;
@@ -377,6 +390,7 @@ class JobPosting extends Intangible
     * Educational background needed for the position or Occupation.
     * @param EducationalOccupationalCredential|string|array $value
     * @return $this
+    * @deprecated use setEducationRequirements
     */
     public function educationRequirements($value)
     {
@@ -404,8 +418,9 @@ class JobPosting extends Intangible
     * Responsibilities associated with this role or Occupation.
     * @param string|array $value
     * @return $this
+    * @deprecated use setResponsibilities
     */
-    public function responsibilities(?string $value)
+    public function responsibilities($value)
     {
         $this->setProperty('responsibilities', $value);
         return $this;
@@ -414,7 +429,7 @@ class JobPosting extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setResponsibilities(?string $value)
+    public function setResponsibilities($value)
     {
         $this->setProperty('responsibilities', $value);
         return $this;
@@ -429,8 +444,9 @@ class JobPosting extends Intangible
 
     /**
     * The base salary of the job or of an employee in an EmployeeRole.
-    * @param MonetaryAmount|PriceSpecification|array $value
+    * @param MonetaryAmount|PriceSpecification|array|string $value
     * @return $this
+    * @deprecated use setBaseSalary
     */
     public function baseSalary($value)
     {
@@ -438,7 +454,7 @@ class JobPosting extends Intangible
         return $this;
     }
    /**
-    * @param MonetaryAmount|PriceSpecification|array $value
+    * @param MonetaryAmount|PriceSpecification|array|string $value
     * @return $this
     */
     public function setBaseSalary($value)
@@ -456,8 +472,9 @@ class JobPosting extends Intangible
 
     /**
     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setValidThrough
     */
     public function validThrough($value)
     {
@@ -465,7 +482,7 @@ class JobPosting extends Intangible
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setValidThrough($value)
@@ -483,19 +500,20 @@ class JobPosting extends Intangible
 
     /**
     * Organization offering the job position.
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
+    * @deprecated use setHiringOrganization
     */
-    public function hiringOrganization(?Organization $value)
+    public function hiringOrganization($value)
     {
         $this->setProperty('hiringOrganization', $value);
         return $this;
     }
    /**
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
     */
-    public function setHiringOrganization(?Organization $value)
+    public function setHiringOrganization($value)
     {
         $this->setProperty('hiringOrganization', $value);
         return $this;
@@ -510,19 +528,20 @@ class JobPosting extends Intangible
 
     /**
     * The Occupation for the JobPosting.
-    * @param Occupation|array $value
+    * @param Occupation|array|string $value
     * @return $this
+    * @deprecated use setRelevantOccupation
     */
-    public function relevantOccupation(?Occupation $value)
+    public function relevantOccupation($value)
     {
         $this->setProperty('relevantOccupation', $value);
         return $this;
     }
    /**
-    * @param Occupation|array $value
+    * @param Occupation|array|string $value
     * @return $this
     */
-    public function setRelevantOccupation(?Occupation $value)
+    public function setRelevantOccupation($value)
     {
         $this->setProperty('relevantOccupation', $value);
         return $this;
@@ -539,8 +558,9 @@ class JobPosting extends Intangible
     * Any special commitments associated with this job posting. Valid entries include VeteranCommit, MilitarySpouseCommit, etc.
     * @param string|array $value
     * @return $this
+    * @deprecated use setSpecialCommitments
     */
-    public function specialCommitments(?string $value)
+    public function specialCommitments($value)
     {
         $this->setProperty('specialCommitments', $value);
         return $this;
@@ -549,7 +569,7 @@ class JobPosting extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setSpecialCommitments(?string $value)
+    public function setSpecialCommitments($value)
     {
         $this->setProperty('specialCommitments', $value);
         return $this;
@@ -568,6 +588,7 @@ class JobPosting extends Intangible
 Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
     * @param string|CategoryCode|array $value
     * @return $this
+    * @deprecated use setOccupationalCategory
     */
     public function occupationalCategory($value)
     {
@@ -595,8 +616,9 @@ Note: for historical reasons, any textual label and formal code provided as a li
     * Description of skills and experience needed for the position or Occupation.
     * @param string|array $value
     * @return $this
+    * @deprecated use setExperienceRequirements
     */
-    public function experienceRequirements(?string $value)
+    public function experienceRequirements($value)
     {
         $this->setProperty('experienceRequirements', $value);
         return $this;
@@ -605,7 +627,7 @@ Note: for historical reasons, any textual label and formal code provided as a li
     * @param string|array $value
     * @return $this
     */
-    public function setExperienceRequirements(?string $value)
+    public function setExperienceRequirements($value)
     {
         $this->setProperty('experienceRequirements', $value);
         return $this;
@@ -622,8 +644,9 @@ Note: for historical reasons, any textual label and formal code provided as a li
     * Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).
     * @param string|array $value
     * @return $this
+    * @deprecated use setEmploymentType
     */
-    public function employmentType(?string $value)
+    public function employmentType($value)
     {
         $this->setProperty('employmentType', $value);
         return $this;
@@ -632,7 +655,7 @@ Note: for historical reasons, any textual label and formal code provided as a li
     * @param string|array $value
     * @return $this
     */
-    public function setEmploymentType(?string $value)
+    public function setEmploymentType($value)
     {
         $this->setProperty('employmentType', $value);
         return $this;
@@ -649,8 +672,9 @@ Note: for historical reasons, any textual label and formal code provided as a li
     * The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
     * @param string|array $value
     * @return $this
+    * @deprecated use setJobStartDate
     */
-    public function jobStartDate(?string $value)
+    public function jobStartDate($value)
     {
         $this->setProperty('jobStartDate', $value);
         return $this;
@@ -659,7 +683,7 @@ Note: for historical reasons, any textual label and formal code provided as a li
     * @param string|array $value
     * @return $this
     */
-    public function setJobStartDate(?string $value)
+    public function setJobStartDate($value)
     {
         $this->setProperty('jobStartDate', $value);
         return $this;
@@ -674,8 +698,9 @@ Note: for historical reasons, any textual label and formal code provided as a li
 
     /**
     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
-    * @param MonetaryAmountDistribution|MonetaryAmount|array $value
+    * @param MonetaryAmountDistribution|MonetaryAmount|array|string $value
     * @return $this
+    * @deprecated use setEstimatedSalary
     */
     public function estimatedSalary($value)
     {
@@ -683,7 +708,7 @@ Note: for historical reasons, any textual label and formal code provided as a li
         return $this;
     }
    /**
-    * @param MonetaryAmountDistribution|MonetaryAmount|array $value
+    * @param MonetaryAmountDistribution|MonetaryAmount|array|string $value
     * @return $this
     */
     public function setEstimatedSalary($value)
@@ -703,8 +728,9 @@ Note: for historical reasons, any textual label and formal code provided as a li
     * The title of the job.
     * @param string|array $value
     * @return $this
+    * @deprecated use setTitle
     */
-    public function title(?string $value)
+    public function title($value)
     {
         $this->setProperty('title', $value);
         return $this;
@@ -713,7 +739,7 @@ Note: for historical reasons, any textual label and formal code provided as a li
     * @param string|array $value
     * @return $this
     */
-    public function setTitle(?string $value)
+    public function setTitle($value)
     {
         $this->setProperty('title', $value);
         return $this;
@@ -730,8 +756,9 @@ Note: for historical reasons, any textual label and formal code provided as a li
     * The industry associated with the job position.
     * @param string|array $value
     * @return $this
+    * @deprecated use setIndustry
     */
-    public function industry(?string $value)
+    public function industry($value)
     {
         $this->setProperty('industry', $value);
         return $this;
@@ -740,7 +767,7 @@ Note: for historical reasons, any textual label and formal code provided as a li
     * @param string|array $value
     * @return $this
     */
-    public function setIndustry(?string $value)
+    public function setIndustry($value)
     {
         $this->setProperty('industry', $value);
         return $this;
@@ -755,7 +782,3 @@ Note: for historical reasons, any textual label and formal code provided as a li
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\JobPosting','Thing\\JobPosting');
-

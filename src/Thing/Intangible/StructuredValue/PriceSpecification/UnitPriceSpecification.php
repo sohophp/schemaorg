@@ -18,6 +18,7 @@ class UnitPriceSpecification extends PriceSpecification
     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
     * @param string|string|array $value
     * @return $this
+    * @deprecated use setUnitCode
     */
     public function unitCode($value)
     {
@@ -43,8 +44,9 @@ class UnitPriceSpecification extends PriceSpecification
 
     /**
     * This property specifies the minimal quantity and rounding increment that will be the basis for the billing. The unit of measurement is specified by the unitCode property.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setBillingIncrement
     */
     public function billingIncrement($value)
     {
@@ -52,7 +54,7 @@ class UnitPriceSpecification extends PriceSpecification
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setBillingIncrement($value)
@@ -73,8 +75,9 @@ class UnitPriceSpecification extends PriceSpecification
 <a href='unitCode'>unitCode</a>.
     * @param string|array $value
     * @return $this
+    * @deprecated use setUnitText
     */
-    public function unitText(?string $value)
+    public function unitText($value)
     {
         $this->setProperty('unitText', $value);
         return $this;
@@ -83,7 +86,7 @@ class UnitPriceSpecification extends PriceSpecification
     * @param string|array $value
     * @return $this
     */
-    public function setUnitText(?string $value)
+    public function setUnitText($value)
     {
         $this->setProperty('unitText', $value);
         return $this;
@@ -98,19 +101,20 @@ class UnitPriceSpecification extends PriceSpecification
 
     /**
     * The reference quantity for which a certain price applies, e.g. 1 EUR per 4 kWh of electricity. This property is a replacement for unitOfMeasurement for the advanced cases where the price does not relate to a standard unit.
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
+    * @deprecated use setReferenceQuantity
     */
-    public function referenceQuantity(?QuantitativeValue $value)
+    public function referenceQuantity($value)
     {
         $this->setProperty('referenceQuantity', $value);
         return $this;
     }
    /**
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
     */
-    public function setReferenceQuantity(?QuantitativeValue $value)
+    public function setReferenceQuantity($value)
     {
         $this->setProperty('referenceQuantity', $value);
         return $this;
@@ -127,8 +131,9 @@ class UnitPriceSpecification extends PriceSpecification
     * A short text or acronym indicating multiple price specifications for the same offer, e.g. SRP for the suggested retail price or INVOICE for the invoice price, mostly used in the car industry.
     * @param string|array $value
     * @return $this
+    * @deprecated use setPriceType
     */
-    public function priceType(?string $value)
+    public function priceType($value)
     {
         $this->setProperty('priceType', $value);
         return $this;
@@ -137,7 +142,7 @@ class UnitPriceSpecification extends PriceSpecification
     * @param string|array $value
     * @return $this
     */
-    public function setPriceType(?string $value)
+    public function setPriceType($value)
     {
         $this->setProperty('priceType', $value);
         return $this;
@@ -152,7 +157,3 @@ class UnitPriceSpecification extends PriceSpecification
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue\\PriceSpecification\\UnitPriceSpecification','Thing\\UnitPriceSpecification');
-

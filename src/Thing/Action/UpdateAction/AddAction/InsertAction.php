@@ -16,19 +16,20 @@ class InsertAction extends AddAction
 
     /**
     * A sub property of location. The final location of the object or the agent after the action.
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
+    * @deprecated use setToLocation
     */
-    public function toLocation(?Place $value)
+    public function toLocation($value)
     {
         $this->setProperty('toLocation', $value);
         return $this;
     }
    /**
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
     */
-    public function setToLocation(?Place $value)
+    public function setToLocation($value)
     {
         $this->setProperty('toLocation', $value);
         return $this;
@@ -43,7 +44,3 @@ class InsertAction extends AddAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\UpdateAction\\AddAction\\InsertAction','Thing\\InsertAction');
-

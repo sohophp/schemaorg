@@ -20,6 +20,7 @@ class TouristDestination extends Place
     * Attraction suitable for type(s) of tourist. eg. Children, visitors from a particular country, etc.
     * @param string|Audience|array $value
     * @return $this
+    * @deprecated use setTouristType
     */
     public function touristType($value)
     {
@@ -45,19 +46,20 @@ class TouristDestination extends Place
 
     /**
     * Attraction located at destination.
-    * @param TouristAttraction|array $value
+    * @param TouristAttraction|array|string $value
     * @return $this
+    * @deprecated use setIncludesAttraction
     */
-    public function includesAttraction(?TouristAttraction $value)
+    public function includesAttraction($value)
     {
         $this->setProperty('includesAttraction', $value);
         return $this;
     }
    /**
-    * @param TouristAttraction|array $value
+    * @param TouristAttraction|array|string $value
     * @return $this
     */
-    public function setIncludesAttraction(?TouristAttraction $value)
+    public function setIncludesAttraction($value)
     {
         $this->setProperty('includesAttraction', $value);
         return $this;
@@ -72,7 +74,3 @@ class TouristDestination extends Place
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\TouristDestination','Thing\\TouristDestination');
-

@@ -25,8 +25,9 @@ class CivicStructure extends Place
 
     * @param string|array $value
     * @return $this
+    * @deprecated use setOpeningHours
     */
-    public function openingHours(?string $value)
+    public function openingHours($value)
     {
         $this->setProperty('openingHours', $value);
         return $this;
@@ -35,7 +36,7 @@ class CivicStructure extends Place
     * @param string|array $value
     * @return $this
     */
-    public function setOpeningHours(?string $value)
+    public function setOpeningHours($value)
     {
         $this->setProperty('openingHours', $value);
         return $this;
@@ -50,7 +51,3 @@ class CivicStructure extends Place
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\CivicStructure','Thing\\CivicStructure');
-

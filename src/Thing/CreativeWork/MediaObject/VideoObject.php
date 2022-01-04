@@ -18,19 +18,20 @@ class VideoObject extends MediaObject
 
     /**
     * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setActor
     */
-    public function actor(?Person $value)
+    public function actor($value)
     {
         $this->setProperty('actor', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setActor(?Person $value)
+    public function setActor($value)
     {
         $this->setProperty('actor', $value);
         return $this;
@@ -47,8 +48,9 @@ class VideoObject extends MediaObject
     * The frame size of the video.
     * @param string|array $value
     * @return $this
+    * @deprecated use setVideoFrameSize
     */
-    public function videoFrameSize(?string $value)
+    public function videoFrameSize($value)
     {
         $this->setProperty('videoFrameSize', $value);
         return $this;
@@ -57,7 +59,7 @@ class VideoObject extends MediaObject
     * @param string|array $value
     * @return $this
     */
-    public function setVideoFrameSize(?string $value)
+    public function setVideoFrameSize($value)
     {
         $this->setProperty('videoFrameSize', $value);
         return $this;
@@ -72,8 +74,9 @@ class VideoObject extends MediaObject
 
     /**
     * The composer of the soundtrack.
-    * @param Person|MusicGroup|array $value
+    * @param Person|MusicGroup|array|string $value
     * @return $this
+    * @deprecated use setMusicBy
     */
     public function musicBy($value)
     {
@@ -81,7 +84,7 @@ class VideoObject extends MediaObject
         return $this;
     }
    /**
-    * @param Person|MusicGroup|array $value
+    * @param Person|MusicGroup|array|string $value
     * @return $this
     */
     public function setMusicBy($value)
@@ -99,19 +102,20 @@ class VideoObject extends MediaObject
 
     /**
     * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setDirectors
     */
-    public function directors(?Person $value)
+    public function directors($value)
     {
         $this->setProperty('directors', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setDirectors(?Person $value)
+    public function setDirectors($value)
     {
         $this->setProperty('directors', $value);
         return $this;
@@ -126,19 +130,20 @@ class VideoObject extends MediaObject
 
     /**
     * Thumbnail image for an image or video.
-    * @param ImageObject|array $value
+    * @param ImageObject|array|string $value
     * @return $this
+    * @deprecated use setThumbnail
     */
-    public function thumbnail(?ImageObject $value)
+    public function thumbnail($value)
     {
         $this->setProperty('thumbnail', $value);
         return $this;
     }
    /**
-    * @param ImageObject|array $value
+    * @param ImageObject|array|string $value
     * @return $this
     */
-    public function setThumbnail(?ImageObject $value)
+    public function setThumbnail($value)
     {
         $this->setProperty('thumbnail', $value);
         return $this;
@@ -153,19 +158,20 @@ class VideoObject extends MediaObject
 
     /**
     * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setDirector
     */
-    public function director(?Person $value)
+    public function director($value)
     {
         $this->setProperty('director', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setDirector(?Person $value)
+    public function setDirector($value)
     {
         $this->setProperty('director', $value);
         return $this;
@@ -182,8 +188,9 @@ class VideoObject extends MediaObject
     * If this MediaObject is an AudioObject or VideoObject, the transcript of that object.
     * @param string|array $value
     * @return $this
+    * @deprecated use setTranscript
     */
-    public function transcript(?string $value)
+    public function transcript($value)
     {
         $this->setProperty('transcript', $value);
         return $this;
@@ -192,7 +199,7 @@ class VideoObject extends MediaObject
     * @param string|array $value
     * @return $this
     */
-    public function setTranscript(?string $value)
+    public function setTranscript($value)
     {
         $this->setProperty('transcript', $value);
         return $this;
@@ -209,8 +216,9 @@ class VideoObject extends MediaObject
     * The quality of the video.
     * @param string|array $value
     * @return $this
+    * @deprecated use setVideoQuality
     */
-    public function videoQuality(?string $value)
+    public function videoQuality($value)
     {
         $this->setProperty('videoQuality', $value);
         return $this;
@@ -219,7 +227,7 @@ class VideoObject extends MediaObject
     * @param string|array $value
     * @return $this
     */
-    public function setVideoQuality(?string $value)
+    public function setVideoQuality($value)
     {
         $this->setProperty('videoQuality', $value);
         return $this;
@@ -236,6 +244,7 @@ class VideoObject extends MediaObject
     * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the <a class="localLink" href="http://schema.org/encodingFormat">encodingFormat</a>.
     * @param string|MediaObject|array $value
     * @return $this
+    * @deprecated use setCaption
     */
     public function caption($value)
     {
@@ -261,19 +270,20 @@ class VideoObject extends MediaObject
 
     /**
     * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setActors
     */
-    public function actors(?Person $value)
+    public function actors($value)
     {
         $this->setProperty('actors', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setActors(?Person $value)
+    public function setActors($value)
     {
         $this->setProperty('actors', $value);
         return $this;
@@ -288,7 +298,3 @@ class VideoObject extends MediaObject
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\MediaObject\\VideoObject','Thing\\VideoObject');
-

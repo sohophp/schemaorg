@@ -16,19 +16,20 @@ class Blog extends CreativeWork
 
     /**
     * The postings that are part of this blog.
-    * @param BlogPosting|array $value
+    * @param BlogPosting|array|string $value
     * @return $this
+    * @deprecated use setBlogPosts
     */
-    public function blogPosts(?BlogPosting $value)
+    public function blogPosts($value)
     {
         $this->setProperty('blogPosts', $value);
         return $this;
     }
    /**
-    * @param BlogPosting|array $value
+    * @param BlogPosting|array|string $value
     * @return $this
     */
-    public function setBlogPosts(?BlogPosting $value)
+    public function setBlogPosts($value)
     {
         $this->setProperty('blogPosts', $value);
         return $this;
@@ -43,19 +44,20 @@ class Blog extends CreativeWork
 
     /**
     * A posting that is part of this blog.
-    * @param BlogPosting|array $value
+    * @param BlogPosting|array|string $value
     * @return $this
+    * @deprecated use setBlogPost
     */
-    public function blogPost(?BlogPosting $value)
+    public function blogPost($value)
     {
         $this->setProperty('blogPost', $value);
         return $this;
     }
    /**
-    * @param BlogPosting|array $value
+    * @param BlogPosting|array|string $value
     * @return $this
     */
-    public function setBlogPost(?BlogPosting $value)
+    public function setBlogPost($value)
     {
         $this->setProperty('blogPost', $value);
         return $this;
@@ -72,8 +74,9 @@ class Blog extends CreativeWork
     * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
     * @param string|array $value
     * @return $this
+    * @deprecated use setIssn
     */
-    public function issn(?string $value)
+    public function issn($value)
     {
         $this->setProperty('issn', $value);
         return $this;
@@ -82,7 +85,7 @@ class Blog extends CreativeWork
     * @param string|array $value
     * @return $this
     */
-    public function setIssn(?string $value)
+    public function setIssn($value)
     {
         $this->setProperty('issn', $value);
         return $this;
@@ -97,7 +100,3 @@ class Blog extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Blog','Thing\\Blog');
-

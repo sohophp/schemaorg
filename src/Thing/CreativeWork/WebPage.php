@@ -35,6 +35,7 @@ For more sophisticated markup of speakable sections beyond simple ID references,
 we define a supporting type, <a class="localLink" href="http://schema.org/SpeakableSpecification">SpeakableSpecification</a>  which is defined to be a possible value of the <em>speakable</em> property.
     * @param SpeakableSpecification|string|array $value
     * @return $this
+    * @deprecated use setSpeakable
     */
     public function speakable($value)
     {
@@ -62,6 +63,7 @@ we define a supporting type, <a class="localLink" href="http://schema.org/Speaka
     * A set of links that can help a user understand and navigate a website hierarchy.
     * @param string|BreadcrumbList|array $value
     * @return $this
+    * @deprecated use setBreadcrumb
     */
     public function breadcrumb($value)
     {
@@ -89,8 +91,9 @@ we define a supporting type, <a class="localLink" href="http://schema.org/Speaka
     * One of the more significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
     * @param string|array $value
     * @return $this
+    * @deprecated use setSignificantLink
     */
-    public function significantLink(?string $value)
+    public function significantLink($value)
     {
         $this->setProperty('significantLink', $value);
         return $this;
@@ -99,7 +102,7 @@ we define a supporting type, <a class="localLink" href="http://schema.org/Speaka
     * @param string|array $value
     * @return $this
     */
-    public function setSignificantLink(?string $value)
+    public function setSignificantLink($value)
     {
         $this->setProperty('significantLink', $value);
         return $this;
@@ -116,8 +119,9 @@ we define a supporting type, <a class="localLink" href="http://schema.org/Speaka
     * A link related to this web page, for example to other related web pages.
     * @param string|array $value
     * @return $this
+    * @deprecated use setRelatedLink
     */
-    public function relatedLink(?string $value)
+    public function relatedLink($value)
     {
         $this->setProperty('relatedLink', $value);
         return $this;
@@ -126,7 +130,7 @@ we define a supporting type, <a class="localLink" href="http://schema.org/Speaka
     * @param string|array $value
     * @return $this
     */
-    public function setRelatedLink(?string $value)
+    public function setRelatedLink($value)
     {
         $this->setProperty('relatedLink', $value);
         return $this;
@@ -141,8 +145,9 @@ we define a supporting type, <a class="localLink" href="http://schema.org/Speaka
 
     /**
     * Date on which the content on this web page was last reviewed for accuracy and/or completeness.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setLastReviewed
     */
     public function lastReviewed($value)
     {
@@ -150,7 +155,7 @@ we define a supporting type, <a class="localLink" href="http://schema.org/Speaka
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setLastReviewed($value)
@@ -168,8 +173,9 @@ we define a supporting type, <a class="localLink" href="http://schema.org/Speaka
 
     /**
     * People or organizations that have reviewed the content on this web page for accuracy and/or completeness.
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
+    * @deprecated use setReviewedBy
     */
     public function reviewedBy($value)
     {
@@ -177,7 +183,7 @@ we define a supporting type, <a class="localLink" href="http://schema.org/Speaka
         return $this;
     }
    /**
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
     */
     public function setReviewedBy($value)
@@ -195,19 +201,20 @@ we define a supporting type, <a class="localLink" href="http://schema.org/Speaka
 
     /**
     * Indicates the main image on the page.
-    * @param ImageObject|array $value
+    * @param ImageObject|array|string $value
     * @return $this
+    * @deprecated use setPrimaryImageOfPage
     */
-    public function primaryImageOfPage(?ImageObject $value)
+    public function primaryImageOfPage($value)
     {
         $this->setProperty('primaryImageOfPage', $value);
         return $this;
     }
    /**
-    * @param ImageObject|array $value
+    * @param ImageObject|array|string $value
     * @return $this
     */
-    public function setPrimaryImageOfPage(?ImageObject $value)
+    public function setPrimaryImageOfPage($value)
     {
         $this->setProperty('primaryImageOfPage', $value);
         return $this;
@@ -222,19 +229,20 @@ we define a supporting type, <a class="localLink" href="http://schema.org/Speaka
 
     /**
     * Indicates if this web page element is the main subject of the page.
-    * @param WebPageElement|array $value
+    * @param WebPageElement|array|string $value
     * @return $this
+    * @deprecated use setMainContentOfPage
     */
-    public function mainContentOfPage(?WebPageElement $value)
+    public function mainContentOfPage($value)
     {
         $this->setProperty('mainContentOfPage', $value);
         return $this;
     }
    /**
-    * @param WebPageElement|array $value
+    * @param WebPageElement|array|string $value
     * @return $this
     */
-    public function setMainContentOfPage(?WebPageElement $value)
+    public function setMainContentOfPage($value)
     {
         $this->setProperty('mainContentOfPage', $value);
         return $this;
@@ -251,8 +259,9 @@ we define a supporting type, <a class="localLink" href="http://schema.org/Speaka
     * The most significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
     * @param string|array $value
     * @return $this
+    * @deprecated use setSignificantLinks
     */
-    public function significantLinks(?string $value)
+    public function significantLinks($value)
     {
         $this->setProperty('significantLinks', $value);
         return $this;
@@ -261,7 +270,7 @@ we define a supporting type, <a class="localLink" href="http://schema.org/Speaka
     * @param string|array $value
     * @return $this
     */
-    public function setSignificantLinks(?string $value)
+    public function setSignificantLinks($value)
     {
         $this->setProperty('significantLinks', $value);
         return $this;
@@ -276,19 +285,20 @@ we define a supporting type, <a class="localLink" href="http://schema.org/Speaka
 
     /**
     * One of the domain specialities to which this web page's content applies.
-    * @param Specialty|array $value
+    * @param Specialty|array|string $value
     * @return $this
+    * @deprecated use setSpecialty
     */
-    public function specialty(?Specialty $value)
+    public function specialty($value)
     {
         $this->setProperty('specialty', $value);
         return $this;
     }
    /**
-    * @param Specialty|array $value
+    * @param Specialty|array|string $value
     * @return $this
     */
-    public function setSpecialty(?Specialty $value)
+    public function setSpecialty($value)
     {
         $this->setProperty('specialty', $value);
         return $this;
@@ -303,7 +313,3 @@ we define a supporting type, <a class="localLink" href="http://schema.org/Speaka
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\WebPage','Thing\\WebPage');
-

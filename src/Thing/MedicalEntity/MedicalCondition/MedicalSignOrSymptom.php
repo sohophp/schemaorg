@@ -17,19 +17,20 @@ class MedicalSignOrSymptom extends MedicalCondition
 
     /**
     * Specifying a cause of something in general. e.g in medicine , one of the causative agent(s) that are most directly responsible for the pathophysiologic process that eventually results in the occurrence.
-    * @param MedicalCause|array $value
+    * @param MedicalCause|array|string $value
     * @return $this
+    * @deprecated use setCause
     */
-    public function cause(?MedicalCause $value)
+    public function cause($value)
     {
         $this->setProperty('cause', $value);
         return $this;
     }
    /**
-    * @param MedicalCause|array $value
+    * @param MedicalCause|array|string $value
     * @return $this
     */
-    public function setCause(?MedicalCause $value)
+    public function setCause($value)
     {
         $this->setProperty('cause', $value);
         return $this;
@@ -44,19 +45,20 @@ class MedicalSignOrSymptom extends MedicalCondition
 
     /**
     * A possible treatment to address this condition, sign or symptom.
-    * @param MedicalTherapy|array $value
+    * @param MedicalTherapy|array|string $value
     * @return $this
+    * @deprecated use setPossibleTreatment
     */
-    public function possibleTreatment(?MedicalTherapy $value)
+    public function possibleTreatment($value)
     {
         $this->setProperty('possibleTreatment', $value);
         return $this;
     }
    /**
-    * @param MedicalTherapy|array $value
+    * @param MedicalTherapy|array|string $value
     * @return $this
     */
-    public function setPossibleTreatment(?MedicalTherapy $value)
+    public function setPossibleTreatment($value)
     {
         $this->setProperty('possibleTreatment', $value);
         return $this;
@@ -71,7 +73,3 @@ class MedicalSignOrSymptom extends MedicalCondition
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalCondition\\MedicalSignOrSymptom','Thing\\MedicalSignOrSymptom');
-

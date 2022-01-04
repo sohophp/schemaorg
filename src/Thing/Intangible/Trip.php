@@ -20,8 +20,9 @@ class Trip extends Intangible
 
     /**
     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
+    * @deprecated use setProvider
     */
     public function provider($value)
     {
@@ -29,7 +30,7 @@ class Trip extends Intangible
         return $this;
     }
    /**
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
     */
     public function setProvider($value)
@@ -47,19 +48,20 @@ class Trip extends Intangible
 
     /**
     * Identifies a <a class="localLink" href="http://schema.org/Trip">Trip</a> that is a subTrip of this Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
-    * @param Trip|array $value
+    * @param Trip|array|string $value
     * @return $this
+    * @deprecated use setSubTrip
     */
-    public function subTrip(?Trip $value)
+    public function subTrip($value)
     {
         $this->setProperty('subTrip', $value);
         return $this;
     }
    /**
-    * @param Trip|array $value
+    * @param Trip|array|string $value
     * @return $this
     */
-    public function setSubTrip(?Trip $value)
+    public function setSubTrip($value)
     {
         $this->setProperty('subTrip', $value);
         return $this;
@@ -74,19 +76,20 @@ class Trip extends Intangible
 
     /**
     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.
-    * @param Offer|array $value
+    * @param Offer|array|string $value
     * @return $this
+    * @deprecated use setOffers
     */
-    public function offers(?Offer $value)
+    public function offers($value)
     {
         $this->setProperty('offers', $value);
         return $this;
     }
    /**
-    * @param Offer|array $value
+    * @param Offer|array|string $value
     * @return $this
     */
-    public function setOffers(?Offer $value)
+    public function setOffers($value)
     {
         $this->setProperty('offers', $value);
         return $this;
@@ -101,8 +104,9 @@ class Trip extends Intangible
 
     /**
     * The expected arrival time.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setArrivalTime
     */
     public function arrivalTime($value)
     {
@@ -110,7 +114,7 @@ class Trip extends Intangible
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setArrivalTime($value)
@@ -128,19 +132,20 @@ class Trip extends Intangible
 
     /**
     * Identifies that this <a class="localLink" href="http://schema.org/Trip">Trip</a> is a subTrip of another Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
-    * @param Trip|array $value
+    * @param Trip|array|string $value
     * @return $this
+    * @deprecated use setPartOfTrip
     */
-    public function partOfTrip(?Trip $value)
+    public function partOfTrip($value)
     {
         $this->setProperty('partOfTrip', $value);
         return $this;
     }
    /**
-    * @param Trip|array $value
+    * @param Trip|array|string $value
     * @return $this
     */
-    public function setPartOfTrip(?Trip $value)
+    public function setPartOfTrip($value)
     {
         $this->setProperty('partOfTrip', $value);
         return $this;
@@ -155,8 +160,9 @@ class Trip extends Intangible
 
     /**
     * The expected departure time.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setDepartureTime
     */
     public function departureTime($value)
     {
@@ -164,7 +170,7 @@ class Trip extends Intangible
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setDepartureTime($value)
@@ -182,8 +188,9 @@ class Trip extends Intangible
 
     /**
     * Destination(s) ( <a class="localLink" href="http://schema.org/Place">Place</a> ) that make up a trip. For a trip where destination order is important use <a class="localLink" href="http://schema.org/ItemList">ItemList</a> to specify that order (see examples).
-    * @param Place|ItemList|array $value
+    * @param Place|ItemList|array|string $value
     * @return $this
+    * @deprecated use setItinerary
     */
     public function itinerary($value)
     {
@@ -191,7 +198,7 @@ class Trip extends Intangible
         return $this;
     }
    /**
-    * @param Place|ItemList|array $value
+    * @param Place|ItemList|array|string $value
     * @return $this
     */
     public function setItinerary($value)
@@ -209,7 +216,3 @@ class Trip extends Intangible
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Trip','Thing\\Trip');
-

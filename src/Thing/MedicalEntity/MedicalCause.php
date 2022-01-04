@@ -15,19 +15,20 @@ class MedicalCause extends MedicalEntity
 
     /**
     * The condition, complication, symptom, sign, etc. caused.
-    * @param MedicalEntity|array $value
+    * @param MedicalEntity|array|string $value
     * @return $this
+    * @deprecated use setCauseOf
     */
-    public function causeOf(?MedicalEntity $value)
+    public function causeOf($value)
     {
         $this->setProperty('causeOf', $value);
         return $this;
     }
    /**
-    * @param MedicalEntity|array $value
+    * @param MedicalEntity|array|string $value
     * @return $this
     */
-    public function setCauseOf(?MedicalEntity $value)
+    public function setCauseOf($value)
     {
         $this->setProperty('causeOf', $value);
         return $this;
@@ -42,7 +43,3 @@ class MedicalCause extends MedicalEntity
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalCause','Thing\\MedicalCause');
-

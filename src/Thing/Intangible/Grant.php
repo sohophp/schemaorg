@@ -23,19 +23,20 @@ class Grant extends Intangible
 
     /**
     * Indicates an item funded or sponsored through a <a class="localLink" href="http://schema.org/Grant">Grant</a>.
-    * @param Thing|array $value
+    * @param Thing|array|string $value
     * @return $this
+    * @deprecated use setFundedItem
     */
-    public function fundedItem(?Thing $value)
+    public function fundedItem($value)
     {
         $this->setProperty('fundedItem', $value);
         return $this;
     }
    /**
-    * @param Thing|array $value
+    * @param Thing|array|string $value
     * @return $this
     */
-    public function setFundedItem(?Thing $value)
+    public function setFundedItem($value)
     {
         $this->setProperty('fundedItem', $value);
         return $this;
@@ -50,8 +51,9 @@ class Grant extends Intangible
 
     /**
     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
+    * @deprecated use setSponsor
     */
     public function sponsor($value)
     {
@@ -59,7 +61,7 @@ class Grant extends Intangible
         return $this;
     }
    /**
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
     */
     public function setSponsor($value)
@@ -77,7 +79,3 @@ class Grant extends Intangible
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Grant','Thing\\Grant');
-

@@ -16,19 +16,20 @@ class Artery extends Vessel
 
     /**
     * The area to which the artery supplies blood.
-    * @param AnatomicalStructure|array $value
+    * @param AnatomicalStructure|array|string $value
     * @return $this
+    * @deprecated use setSupplyTo
     */
-    public function supplyTo(?AnatomicalStructure $value)
+    public function supplyTo($value)
     {
         $this->setProperty('supplyTo', $value);
         return $this;
     }
    /**
-    * @param AnatomicalStructure|array $value
+    * @param AnatomicalStructure|array|string $value
     * @return $this
     */
-    public function setSupplyTo(?AnatomicalStructure $value)
+    public function setSupplyTo($value)
     {
         $this->setProperty('supplyTo', $value);
         return $this;
@@ -43,19 +44,20 @@ class Artery extends Vessel
 
     /**
     * The anatomical or organ system that the artery originates from.
-    * @param AnatomicalStructure|array $value
+    * @param AnatomicalStructure|array|string $value
     * @return $this
+    * @deprecated use setSource
     */
-    public function source(?AnatomicalStructure $value)
+    public function source($value)
     {
         $this->setProperty('source', $value);
         return $this;
     }
    /**
-    * @param AnatomicalStructure|array $value
+    * @param AnatomicalStructure|array|string $value
     * @return $this
     */
-    public function setSource(?AnatomicalStructure $value)
+    public function setSource($value)
     {
         $this->setProperty('source', $value);
         return $this;
@@ -70,19 +72,20 @@ class Artery extends Vessel
 
     /**
     * The branches that comprise the arterial structure.
-    * @param AnatomicalStructure|array $value
+    * @param AnatomicalStructure|array|string $value
     * @return $this
+    * @deprecated use setArterialBranch
     */
-    public function arterialBranch(?AnatomicalStructure $value)
+    public function arterialBranch($value)
     {
         $this->setProperty('arterialBranch', $value);
         return $this;
     }
    /**
-    * @param AnatomicalStructure|array $value
+    * @param AnatomicalStructure|array|string $value
     * @return $this
     */
-    public function setArterialBranch(?AnatomicalStructure $value)
+    public function setArterialBranch($value)
     {
         $this->setProperty('arterialBranch', $value);
         return $this;
@@ -97,7 +100,3 @@ class Artery extends Vessel
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\AnatomicalStructure\\Vessel\\Artery','Thing\\Artery');
-

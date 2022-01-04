@@ -15,7 +15,3 @@ class AdultEntertainment extends EntertainmentBusiness
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\EntertainmentBusiness\\AdultEntertainment','Thing\\AdultEntertainment');
-

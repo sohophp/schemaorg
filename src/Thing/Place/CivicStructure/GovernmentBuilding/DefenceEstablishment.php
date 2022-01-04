@@ -15,7 +15,3 @@ class DefenceEstablishment extends GovernmentBuilding
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\CivicStructure\\GovernmentBuilding\\DefenceEstablishment','Thing\\DefenceEstablishment');
-

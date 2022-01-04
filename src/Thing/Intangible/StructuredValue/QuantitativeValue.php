@@ -20,6 +20,7 @@ class QuantitativeValue extends StructuredValue
     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
     * @param string|string|array $value
     * @return $this
+    * @deprecated use setUnitCode
     */
     public function unitCode($value)
     {
@@ -45,8 +46,9 @@ class QuantitativeValue extends StructuredValue
 
     /**
     * The lower value of some characteristic or property.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setMinValue
     */
     public function minValue($value)
     {
@@ -54,7 +56,7 @@ class QuantitativeValue extends StructuredValue
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setMinValue($value)
@@ -82,6 +84,7 @@ class QuantitativeValue extends StructuredValue
 
     * @param StructuredValue|string|bool|array $value
     * @return $this
+    * @deprecated use setValue
     */
     public function value($value)
     {
@@ -109,19 +112,20 @@ class QuantitativeValue extends StructuredValue
     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>
 
 Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
-    * @param PropertyValue|array $value
+    * @param PropertyValue|array|string $value
     * @return $this
+    * @deprecated use setAdditionalProperty
     */
-    public function additionalProperty(?PropertyValue $value)
+    public function additionalProperty($value)
     {
         $this->setProperty('additionalProperty', $value);
         return $this;
     }
    /**
-    * @param PropertyValue|array $value
+    * @param PropertyValue|array|string $value
     * @return $this
     */
-    public function setAdditionalProperty(?PropertyValue $value)
+    public function setAdditionalProperty($value)
     {
         $this->setProperty('additionalProperty', $value);
         return $this;
@@ -136,8 +140,9 @@ Note: Publishers should be aware that applications designed to use specific sche
 
     /**
     * A pointer to a secondary value that provides additional information on the original value, e.g. a reference temperature.
-    * @param QuantitativeValue|QualitativeValue|StructuredValue|Enumeration|PropertyValue|array $value
+    * @param QuantitativeValue|QualitativeValue|StructuredValue|Enumeration|PropertyValue|array|string $value
     * @return $this
+    * @deprecated use setValueReference
     */
     public function valueReference($value)
     {
@@ -145,7 +150,7 @@ Note: Publishers should be aware that applications designed to use specific sche
         return $this;
     }
    /**
-    * @param QuantitativeValue|QualitativeValue|StructuredValue|Enumeration|PropertyValue|array $value
+    * @param QuantitativeValue|QualitativeValue|StructuredValue|Enumeration|PropertyValue|array|string $value
     * @return $this
     */
     public function setValueReference($value)
@@ -163,8 +168,9 @@ Note: Publishers should be aware that applications designed to use specific sche
 
     /**
     * The upper value of some characteristic or property.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setMaxValue
     */
     public function maxValue($value)
     {
@@ -172,7 +178,7 @@ Note: Publishers should be aware that applications designed to use specific sche
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setMaxValue($value)
@@ -193,8 +199,9 @@ Note: Publishers should be aware that applications designed to use specific sche
 <a href='unitCode'>unitCode</a>.
     * @param string|array $value
     * @return $this
+    * @deprecated use setUnitText
     */
-    public function unitText(?string $value)
+    public function unitText($value)
     {
         $this->setProperty('unitText', $value);
         return $this;
@@ -203,7 +210,7 @@ Note: Publishers should be aware that applications designed to use specific sche
     * @param string|array $value
     * @return $this
     */
-    public function setUnitText(?string $value)
+    public function setUnitText($value)
     {
         $this->setProperty('unitText', $value);
         return $this;
@@ -218,7 +225,3 @@ Note: Publishers should be aware that applications designed to use specific sche
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue\\QuantitativeValue','Thing\\QuantitativeValue');
-

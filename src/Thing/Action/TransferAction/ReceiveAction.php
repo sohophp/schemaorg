@@ -27,19 +27,20 @@ class ReceiveAction extends TransferAction
 
     /**
     * A sub property of instrument. The method of delivery.
-    * @param DeliveryMethod|array $value
+    * @param DeliveryMethod|array|string $value
     * @return $this
+    * @deprecated use setDeliveryMethod
     */
-    public function deliveryMethod(?DeliveryMethod $value)
+    public function deliveryMethod($value)
     {
         $this->setProperty('deliveryMethod', $value);
         return $this;
     }
    /**
-    * @param DeliveryMethod|array $value
+    * @param DeliveryMethod|array|string $value
     * @return $this
     */
-    public function setDeliveryMethod(?DeliveryMethod $value)
+    public function setDeliveryMethod($value)
     {
         $this->setProperty('deliveryMethod', $value);
         return $this;
@@ -54,8 +55,9 @@ class ReceiveAction extends TransferAction
 
     /**
     * A sub property of participant. The participant who is at the sending end of the action.
-    * @param Audience|Person|Organization|array $value
+    * @param Audience|Person|Organization|array|string $value
     * @return $this
+    * @deprecated use setSender
     */
     public function sender($value)
     {
@@ -63,7 +65,7 @@ class ReceiveAction extends TransferAction
         return $this;
     }
    /**
-    * @param Audience|Person|Organization|array $value
+    * @param Audience|Person|Organization|array|string $value
     * @return $this
     */
     public function setSender($value)
@@ -81,7 +83,3 @@ class ReceiveAction extends TransferAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\TransferAction\\ReceiveAction','Thing\\ReceiveAction');
-

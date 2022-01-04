@@ -21,6 +21,7 @@ class MedicalProcedure extends MedicalEntity
     * Typical preparation that a patient must undergo before having the procedure performed.
     * @param MedicalEntity|string|array $value
     * @return $this
+    * @deprecated use setPreparation
     */
     public function preparation($value)
     {
@@ -48,8 +49,9 @@ class MedicalProcedure extends MedicalEntity
     * Typical or recommended followup care after the procedure is performed.
     * @param string|array $value
     * @return $this
+    * @deprecated use setFollowup
     */
-    public function followup(?string $value)
+    public function followup($value)
     {
         $this->setProperty('followup', $value);
         return $this;
@@ -58,7 +60,7 @@ class MedicalProcedure extends MedicalEntity
     * @param string|array $value
     * @return $this
     */
-    public function setFollowup(?string $value)
+    public function setFollowup($value)
     {
         $this->setProperty('followup', $value);
         return $this;
@@ -75,6 +77,7 @@ class MedicalProcedure extends MedicalEntity
     * The status of the study (enumerated).
     * @param EventStatusType|string|MedicalStudyStatus|array $value
     * @return $this
+    * @deprecated use setStatus
     */
     public function status($value)
     {
@@ -102,8 +105,9 @@ class MedicalProcedure extends MedicalEntity
     * How the procedure is performed.
     * @param string|array $value
     * @return $this
+    * @deprecated use setHowPerformed
     */
-    public function howPerformed(?string $value)
+    public function howPerformed($value)
     {
         $this->setProperty('howPerformed', $value);
         return $this;
@@ -112,7 +116,7 @@ class MedicalProcedure extends MedicalEntity
     * @param string|array $value
     * @return $this
     */
-    public function setHowPerformed(?string $value)
+    public function setHowPerformed($value)
     {
         $this->setProperty('howPerformed', $value);
         return $this;
@@ -129,6 +133,7 @@ class MedicalProcedure extends MedicalEntity
     * Expected or actual outcomes of the study.
     * @param MedicalEntity|string|array $value
     * @return $this
+    * @deprecated use setOutcome
     */
     public function outcome($value)
     {
@@ -156,8 +161,9 @@ class MedicalProcedure extends MedicalEntity
     * Location in the body of the anatomical structure.
     * @param string|array $value
     * @return $this
+    * @deprecated use setBodyLocation
     */
-    public function bodyLocation(?string $value)
+    public function bodyLocation($value)
     {
         $this->setProperty('bodyLocation', $value);
         return $this;
@@ -166,7 +172,7 @@ class MedicalProcedure extends MedicalEntity
     * @param string|array $value
     * @return $this
     */
-    public function setBodyLocation(?string $value)
+    public function setBodyLocation($value)
     {
         $this->setProperty('bodyLocation', $value);
         return $this;
@@ -181,19 +187,20 @@ class MedicalProcedure extends MedicalEntity
 
     /**
     * A factor that indicates use of this therapy for treatment and/or prevention of a condition, symptom, etc. For therapies such as drugs, indications can include both officially-approved indications as well as off-label uses. These can be distinguished by using the ApprovedIndication subtype of MedicalIndication.
-    * @param MedicalIndication|array $value
+    * @param MedicalIndication|array|string $value
     * @return $this
+    * @deprecated use setIndication
     */
-    public function indication(?MedicalIndication $value)
+    public function indication($value)
     {
         $this->setProperty('indication', $value);
         return $this;
     }
    /**
-    * @param MedicalIndication|array $value
+    * @param MedicalIndication|array|string $value
     * @return $this
     */
-    public function setIndication(?MedicalIndication $value)
+    public function setIndication($value)
     {
         $this->setProperty('indication', $value);
         return $this;
@@ -208,19 +215,20 @@ class MedicalProcedure extends MedicalEntity
 
     /**
     * The type of procedure, for example Surgical, Noninvasive, or Percutaneous.
-    * @param MedicalProcedureType|array $value
+    * @param MedicalProcedureType|array|string $value
     * @return $this
+    * @deprecated use setProcedureType
     */
-    public function procedureType(?MedicalProcedureType $value)
+    public function procedureType($value)
     {
         $this->setProperty('procedureType', $value);
         return $this;
     }
    /**
-    * @param MedicalProcedureType|array $value
+    * @param MedicalProcedureType|array|string $value
     * @return $this
     */
-    public function setProcedureType(?MedicalProcedureType $value)
+    public function setProcedureType($value)
     {
         $this->setProperty('procedureType', $value);
         return $this;
@@ -235,7 +243,3 @@ class MedicalProcedure extends MedicalEntity
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalProcedure','Thing\\MedicalProcedure');
-

@@ -16,8 +16,9 @@ class MedicalGuideline extends MedicalEntity
 
     /**
     * Date on which this guideline's recommendation was made.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setGuidelineDate
     */
     public function guidelineDate($value)
     {
@@ -25,7 +26,7 @@ class MedicalGuideline extends MedicalEntity
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setGuidelineDate($value)
@@ -43,19 +44,20 @@ class MedicalGuideline extends MedicalEntity
 
     /**
     * Strength of evidence of the data used to formulate the guideline (enumerated).
-    * @param MedicalEvidenceLevel|array $value
+    * @param MedicalEvidenceLevel|array|string $value
     * @return $this
+    * @deprecated use setEvidenceLevel
     */
-    public function evidenceLevel(?MedicalEvidenceLevel $value)
+    public function evidenceLevel($value)
     {
         $this->setProperty('evidenceLevel', $value);
         return $this;
     }
    /**
-    * @param MedicalEvidenceLevel|array $value
+    * @param MedicalEvidenceLevel|array|string $value
     * @return $this
     */
-    public function setEvidenceLevel(?MedicalEvidenceLevel $value)
+    public function setEvidenceLevel($value)
     {
         $this->setProperty('evidenceLevel', $value);
         return $this;
@@ -70,19 +72,20 @@ class MedicalGuideline extends MedicalEntity
 
     /**
     * The medical conditions, treatments, etc. that are the subject of the guideline.
-    * @param MedicalEntity|array $value
+    * @param MedicalEntity|array|string $value
     * @return $this
+    * @deprecated use setGuidelineSubject
     */
-    public function guidelineSubject(?MedicalEntity $value)
+    public function guidelineSubject($value)
     {
         $this->setProperty('guidelineSubject', $value);
         return $this;
     }
    /**
-    * @param MedicalEntity|array $value
+    * @param MedicalEntity|array|string $value
     * @return $this
     */
-    public function setGuidelineSubject(?MedicalEntity $value)
+    public function setGuidelineSubject($value)
     {
         $this->setProperty('guidelineSubject', $value);
         return $this;
@@ -99,8 +102,9 @@ class MedicalGuideline extends MedicalEntity
     * Source of the data used to formulate the guidance, e.g. RCT, consensus opinion, etc.
     * @param string|array $value
     * @return $this
+    * @deprecated use setEvidenceOrigin
     */
-    public function evidenceOrigin(?string $value)
+    public function evidenceOrigin($value)
     {
         $this->setProperty('evidenceOrigin', $value);
         return $this;
@@ -109,7 +113,7 @@ class MedicalGuideline extends MedicalEntity
     * @param string|array $value
     * @return $this
     */
-    public function setEvidenceOrigin(?string $value)
+    public function setEvidenceOrigin($value)
     {
         $this->setProperty('evidenceOrigin', $value);
         return $this;
@@ -124,7 +128,3 @@ class MedicalGuideline extends MedicalEntity
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalGuideline','Thing\\MedicalGuideline');
-

@@ -16,19 +16,20 @@ class TVClip extends Clip
 
     /**
     * The TV series to which this episode or season belongs.
-    * @param TVSeries|array $value
+    * @param TVSeries|array|string $value
     * @return $this
+    * @deprecated use setPartOfTVSeries
     */
-    public function partOfTVSeries(?TVSeries $value)
+    public function partOfTVSeries($value)
     {
         $this->setProperty('partOfTVSeries', $value);
         return $this;
     }
    /**
-    * @param TVSeries|array $value
+    * @param TVSeries|array|string $value
     * @return $this
     */
-    public function setPartOfTVSeries(?TVSeries $value)
+    public function setPartOfTVSeries($value)
     {
         $this->setProperty('partOfTVSeries', $value);
         return $this;
@@ -43,7 +44,3 @@ class TVClip extends Clip
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Clip\\TVClip','Thing\\TVClip');
-

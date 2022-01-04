@@ -18,6 +18,7 @@ class HowToSupply extends HowToItem
     * The estimated cost of the supply or supplies consumed when performing instructions.
     * @param string|MonetaryAmount|array $value
     * @return $this
+    * @deprecated use setEstimatedCost
     */
     public function estimatedCost($value)
     {
@@ -43,7 +44,3 @@ class HowToSupply extends HowToItem
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\ListItem\\HowToItem\\HowToSupply','Thing\\HowToSupply');
-

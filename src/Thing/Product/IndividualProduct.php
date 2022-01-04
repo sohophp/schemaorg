@@ -17,8 +17,9 @@ class IndividualProduct extends Product
     * The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
     * @param string|array $value
     * @return $this
+    * @deprecated use setSerialNumber
     */
-    public function serialNumber(?string $value)
+    public function serialNumber($value)
     {
         $this->setProperty('serialNumber', $value);
         return $this;
@@ -27,7 +28,7 @@ class IndividualProduct extends Product
     * @param string|array $value
     * @return $this
     */
-    public function setSerialNumber(?string $value)
+    public function setSerialNumber($value)
     {
         $this->setProperty('serialNumber', $value);
         return $this;
@@ -42,7 +43,3 @@ class IndividualProduct extends Product
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Product\\IndividualProduct','Thing\\IndividualProduct');
-

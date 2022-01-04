@@ -20,6 +20,7 @@ class TypeAndQuantityNode extends StructuredValue
     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
     * @param string|string|array $value
     * @return $this
+    * @deprecated use setUnitCode
     */
     public function unitCode($value)
     {
@@ -45,8 +46,9 @@ class TypeAndQuantityNode extends StructuredValue
 
     /**
     * The product that this structured value is referring to.
-    * @param Product|Service|array $value
+    * @param Product|Service|array|string $value
     * @return $this
+    * @deprecated use setTypeOfGood
     */
     public function typeOfGood($value)
     {
@@ -54,7 +56,7 @@ class TypeAndQuantityNode extends StructuredValue
         return $this;
     }
    /**
-    * @param Product|Service|array $value
+    * @param Product|Service|array|string $value
     * @return $this
     */
     public function setTypeOfGood($value)
@@ -72,8 +74,9 @@ class TypeAndQuantityNode extends StructuredValue
 
     /**
     * The quantity of the goods included in the offer.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setAmountOfThisGood
     */
     public function amountOfThisGood($value)
     {
@@ -81,7 +84,7 @@ class TypeAndQuantityNode extends StructuredValue
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setAmountOfThisGood($value)
@@ -102,8 +105,9 @@ class TypeAndQuantityNode extends StructuredValue
 <a href='unitCode'>unitCode</a>.
     * @param string|array $value
     * @return $this
+    * @deprecated use setUnitText
     */
-    public function unitText(?string $value)
+    public function unitText($value)
     {
         $this->setProperty('unitText', $value);
         return $this;
@@ -112,7 +116,7 @@ class TypeAndQuantityNode extends StructuredValue
     * @param string|array $value
     * @return $this
     */
-    public function setUnitText(?string $value)
+    public function setUnitText($value)
     {
         $this->setProperty('unitText', $value);
         return $this;
@@ -127,19 +131,20 @@ class TypeAndQuantityNode extends StructuredValue
 
     /**
     * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
-    * @param BusinessFunction|array $value
+    * @param BusinessFunction|array|string $value
     * @return $this
+    * @deprecated use setBusinessFunction
     */
-    public function businessFunction(?BusinessFunction $value)
+    public function businessFunction($value)
     {
         $this->setProperty('businessFunction', $value);
         return $this;
     }
    /**
-    * @param BusinessFunction|array $value
+    * @param BusinessFunction|array|string $value
     * @return $this
     */
-    public function setBusinessFunction(?BusinessFunction $value)
+    public function setBusinessFunction($value)
     {
         $this->setProperty('businessFunction', $value);
         return $this;
@@ -154,7 +159,3 @@ class TypeAndQuantityNode extends StructuredValue
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue\\TypeAndQuantityNode','Thing\\TypeAndQuantityNode');
-

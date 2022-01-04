@@ -28,19 +28,20 @@ class CreditCard extends LoanOrCredit
 
     /**
     * The minimum payment is the lowest amount of money that one is required to pay on a credit card statement each month.
-    * @param MonetaryAmount|array $value
+    * @param MonetaryAmount|array|string $value
     * @return $this
+    * @deprecated use setMonthlyMinimumRepaymentAmount
     */
-    public function monthlyMinimumRepaymentAmount(?MonetaryAmount $value)
+    public function monthlyMinimumRepaymentAmount($value)
     {
         $this->setProperty('monthlyMinimumRepaymentAmount', $value);
         return $this;
     }
    /**
-    * @param MonetaryAmount|array $value
+    * @param MonetaryAmount|array|string $value
     * @return $this
     */
-    public function setMonthlyMinimumRepaymentAmount(?MonetaryAmount $value)
+    public function setMonthlyMinimumRepaymentAmount($value)
     {
         $this->setProperty('monthlyMinimumRepaymentAmount', $value);
         return $this;
@@ -55,7 +56,3 @@ class CreditCard extends LoanOrCredit
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Service\\FinancialProduct\\LoanOrCredit\\CreditCard','Thing\\CreditCard');
-

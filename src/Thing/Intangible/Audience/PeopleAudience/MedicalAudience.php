@@ -15,7 +15,3 @@ class MedicalAudience extends PeopleAudience
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Audience\\PeopleAudience\\MedicalAudience','Thing\\MedicalAudience');
-

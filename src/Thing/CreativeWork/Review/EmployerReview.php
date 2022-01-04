@@ -15,7 +15,3 @@ class EmployerReview extends Review
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Review\\EmployerReview','Thing\\EmployerReview');
-

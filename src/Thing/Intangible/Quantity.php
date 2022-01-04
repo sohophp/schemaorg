@@ -15,7 +15,3 @@ class Quantity extends Intangible
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Quantity','Thing\\Quantity');
-

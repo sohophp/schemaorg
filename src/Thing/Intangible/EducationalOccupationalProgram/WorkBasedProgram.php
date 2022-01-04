@@ -17,19 +17,20 @@ class WorkBasedProgram extends EducationalOccupationalProgram
 
     /**
     * The estimated salary earned while in the program.
-    * @param MonetaryAmountDistribution|array $value
+    * @param MonetaryAmountDistribution|array|string $value
     * @return $this
+    * @deprecated use setTrainingSalary
     */
-    public function trainingSalary(?MonetaryAmountDistribution $value)
+    public function trainingSalary($value)
     {
         $this->setProperty('trainingSalary', $value);
         return $this;
     }
    /**
-    * @param MonetaryAmountDistribution|array $value
+    * @param MonetaryAmountDistribution|array|string $value
     * @return $this
     */
-    public function setTrainingSalary(?MonetaryAmountDistribution $value)
+    public function setTrainingSalary($value)
     {
         $this->setProperty('trainingSalary', $value);
         return $this;
@@ -48,6 +49,7 @@ class WorkBasedProgram extends EducationalOccupationalProgram
 Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
     * @param string|CategoryCode|array $value
     * @return $this
+    * @deprecated use setOccupationalCategory
     */
     public function occupationalCategory($value)
     {
@@ -73,7 +75,3 @@ Note: for historical reasons, any textual label and formal code provided as a li
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\EducationalOccupationalProgram\\WorkBasedProgram','Thing\\WorkBasedProgram');
-

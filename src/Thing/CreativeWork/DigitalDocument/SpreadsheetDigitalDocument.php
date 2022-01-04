@@ -15,7 +15,3 @@ class SpreadsheetDigitalDocument extends DigitalDocument
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\DigitalDocument\\SpreadsheetDigitalDocument','Thing\\SpreadsheetDigitalDocument');
-

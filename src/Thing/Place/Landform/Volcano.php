@@ -15,7 +15,3 @@ class Volcano extends Landform
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\Landform\\Volcano','Thing\\Volcano');
-

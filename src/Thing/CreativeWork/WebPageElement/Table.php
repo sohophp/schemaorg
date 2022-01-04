@@ -15,7 +15,3 @@ class Table extends WebPageElement
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\WebPageElement\\Table','Thing\\Table');
-

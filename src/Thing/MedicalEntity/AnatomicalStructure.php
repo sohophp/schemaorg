@@ -19,19 +19,20 @@ class AnatomicalStructure extends MedicalEntity
 
     /**
     * A medical condition associated with this anatomy.
-    * @param MedicalCondition|array $value
+    * @param MedicalCondition|array|string $value
     * @return $this
+    * @deprecated use setRelatedCondition
     */
-    public function relatedCondition(?MedicalCondition $value)
+    public function relatedCondition($value)
     {
         $this->setProperty('relatedCondition', $value);
         return $this;
     }
    /**
-    * @param MedicalCondition|array $value
+    * @param MedicalCondition|array|string $value
     * @return $this
     */
-    public function setRelatedCondition(?MedicalCondition $value)
+    public function setRelatedCondition($value)
     {
         $this->setProperty('relatedCondition', $value);
         return $this;
@@ -46,19 +47,20 @@ class AnatomicalStructure extends MedicalEntity
 
     /**
     * Other anatomical structures to which this structure is connected.
-    * @param AnatomicalStructure|array $value
+    * @param AnatomicalStructure|array|string $value
     * @return $this
+    * @deprecated use setConnectedTo
     */
-    public function connectedTo(?AnatomicalStructure $value)
+    public function connectedTo($value)
     {
         $this->setProperty('connectedTo', $value);
         return $this;
     }
    /**
-    * @param AnatomicalStructure|array $value
+    * @param AnatomicalStructure|array|string $value
     * @return $this
     */
-    public function setConnectedTo(?AnatomicalStructure $value)
+    public function setConnectedTo($value)
     {
         $this->setProperty('connectedTo', $value);
         return $this;
@@ -73,19 +75,20 @@ class AnatomicalStructure extends MedicalEntity
 
     /**
     * An image containing a diagram that illustrates the structure and/or its component substructures and/or connections with other structures.
-    * @param ImageObject|array $value
+    * @param ImageObject|array|string $value
     * @return $this
+    * @deprecated use setDiagram
     */
-    public function diagram(?ImageObject $value)
+    public function diagram($value)
     {
         $this->setProperty('diagram', $value);
         return $this;
     }
    /**
-    * @param ImageObject|array $value
+    * @param ImageObject|array|string $value
     * @return $this
     */
-    public function setDiagram(?ImageObject $value)
+    public function setDiagram($value)
     {
         $this->setProperty('diagram', $value);
         return $this;
@@ -102,8 +105,9 @@ class AnatomicalStructure extends MedicalEntity
     * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
     * @param string|array $value
     * @return $this
+    * @deprecated use setAssociatedPathophysiology
     */
-    public function associatedPathophysiology(?string $value)
+    public function associatedPathophysiology($value)
     {
         $this->setProperty('associatedPathophysiology', $value);
         return $this;
@@ -112,7 +116,7 @@ class AnatomicalStructure extends MedicalEntity
     * @param string|array $value
     * @return $this
     */
-    public function setAssociatedPathophysiology(?string $value)
+    public function setAssociatedPathophysiology($value)
     {
         $this->setProperty('associatedPathophysiology', $value);
         return $this;
@@ -129,8 +133,9 @@ class AnatomicalStructure extends MedicalEntity
     * Location in the body of the anatomical structure.
     * @param string|array $value
     * @return $this
+    * @deprecated use setBodyLocation
     */
-    public function bodyLocation(?string $value)
+    public function bodyLocation($value)
     {
         $this->setProperty('bodyLocation', $value);
         return $this;
@@ -139,7 +144,7 @@ class AnatomicalStructure extends MedicalEntity
     * @param string|array $value
     * @return $this
     */
-    public function setBodyLocation(?string $value)
+    public function setBodyLocation($value)
     {
         $this->setProperty('bodyLocation', $value);
         return $this;
@@ -154,19 +159,20 @@ class AnatomicalStructure extends MedicalEntity
 
     /**
     * Component (sub-)structure(s) that comprise this anatomical structure.
-    * @param AnatomicalStructure|array $value
+    * @param AnatomicalStructure|array|string $value
     * @return $this
+    * @deprecated use setSubStructure
     */
-    public function subStructure(?AnatomicalStructure $value)
+    public function subStructure($value)
     {
         $this->setProperty('subStructure', $value);
         return $this;
     }
    /**
-    * @param AnatomicalStructure|array $value
+    * @param AnatomicalStructure|array|string $value
     * @return $this
     */
-    public function setSubStructure(?AnatomicalStructure $value)
+    public function setSubStructure($value)
     {
         $this->setProperty('subStructure', $value);
         return $this;
@@ -183,8 +189,9 @@ class AnatomicalStructure extends MedicalEntity
     * Function of the anatomical structure.
     * @param string|array $value
     * @return $this
+    * @deprecated use setFunction
     */
-    public function function(?string $value)
+    public function function($value)
     {
         $this->setProperty('function', $value);
         return $this;
@@ -193,7 +200,7 @@ class AnatomicalStructure extends MedicalEntity
     * @param string|array $value
     * @return $this
     */
-    public function setFunction(?string $value)
+    public function setFunction($value)
     {
         $this->setProperty('function', $value);
         return $this;
@@ -208,19 +215,20 @@ class AnatomicalStructure extends MedicalEntity
 
     /**
     * The anatomical or organ system that this structure is part of.
-    * @param AnatomicalSystem|array $value
+    * @param AnatomicalSystem|array|string $value
     * @return $this
+    * @deprecated use setPartOfSystem
     */
-    public function partOfSystem(?AnatomicalSystem $value)
+    public function partOfSystem($value)
     {
         $this->setProperty('partOfSystem', $value);
         return $this;
     }
    /**
-    * @param AnatomicalSystem|array $value
+    * @param AnatomicalSystem|array|string $value
     * @return $this
     */
-    public function setPartOfSystem(?AnatomicalSystem $value)
+    public function setPartOfSystem($value)
     {
         $this->setProperty('partOfSystem', $value);
         return $this;
@@ -235,19 +243,20 @@ class AnatomicalStructure extends MedicalEntity
 
     /**
     * A medical therapy related to this anatomy.
-    * @param MedicalTherapy|array $value
+    * @param MedicalTherapy|array|string $value
     * @return $this
+    * @deprecated use setRelatedTherapy
     */
-    public function relatedTherapy(?MedicalTherapy $value)
+    public function relatedTherapy($value)
     {
         $this->setProperty('relatedTherapy', $value);
         return $this;
     }
    /**
-    * @param MedicalTherapy|array $value
+    * @param MedicalTherapy|array|string $value
     * @return $this
     */
-    public function setRelatedTherapy(?MedicalTherapy $value)
+    public function setRelatedTherapy($value)
     {
         $this->setProperty('relatedTherapy', $value);
         return $this;
@@ -262,7 +271,3 @@ class AnatomicalStructure extends MedicalEntity
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\AnatomicalStructure','Thing\\AnatomicalStructure');
-

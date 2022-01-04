@@ -18,8 +18,9 @@ class Substance extends MedicalEntity
     * An active ingredient, typically chemical compounds and/or biologic substances.
     * @param string|array $value
     * @return $this
+    * @deprecated use setActiveIngredient
     */
-    public function activeIngredient(?string $value)
+    public function activeIngredient($value)
     {
         $this->setProperty('activeIngredient', $value);
         return $this;
@@ -28,7 +29,7 @@ class Substance extends MedicalEntity
     * @param string|array $value
     * @return $this
     */
-    public function setActiveIngredient(?string $value)
+    public function setActiveIngredient($value)
     {
         $this->setProperty('activeIngredient', $value);
         return $this;
@@ -43,19 +44,20 @@ class Substance extends MedicalEntity
 
     /**
     * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
-    * @param MaximumDoseSchedule|array $value
+    * @param MaximumDoseSchedule|array|string $value
     * @return $this
+    * @deprecated use setMaximumIntake
     */
-    public function maximumIntake(?MaximumDoseSchedule $value)
+    public function maximumIntake($value)
     {
         $this->setProperty('maximumIntake', $value);
         return $this;
     }
    /**
-    * @param MaximumDoseSchedule|array $value
+    * @param MaximumDoseSchedule|array|string $value
     * @return $this
     */
-    public function setMaximumIntake(?MaximumDoseSchedule $value)
+    public function setMaximumIntake($value)
     {
         $this->setProperty('maximumIntake', $value);
         return $this;
@@ -70,7 +72,3 @@ class Substance extends MedicalEntity
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\Substance','Thing\\Substance');
-

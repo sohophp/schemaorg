@@ -19,7 +19,3 @@ class HomeAndConstructionBusiness extends LocalBusiness
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\HomeAndConstructionBusiness','Thing\\HomeAndConstructionBusiness');
-

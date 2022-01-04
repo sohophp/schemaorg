@@ -19,19 +19,20 @@ class SuperficialAnatomy extends MedicalEntity
 
     /**
     * A medical condition associated with this anatomy.
-    * @param MedicalCondition|array $value
+    * @param MedicalCondition|array|string $value
     * @return $this
+    * @deprecated use setRelatedCondition
     */
-    public function relatedCondition(?MedicalCondition $value)
+    public function relatedCondition($value)
     {
         $this->setProperty('relatedCondition', $value);
         return $this;
     }
    /**
-    * @param MedicalCondition|array $value
+    * @param MedicalCondition|array|string $value
     * @return $this
     */
-    public function setRelatedCondition(?MedicalCondition $value)
+    public function setRelatedCondition($value)
     {
         $this->setProperty('relatedCondition', $value);
         return $this;
@@ -48,8 +49,9 @@ class SuperficialAnatomy extends MedicalEntity
     * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
     * @param string|array $value
     * @return $this
+    * @deprecated use setAssociatedPathophysiology
     */
-    public function associatedPathophysiology(?string $value)
+    public function associatedPathophysiology($value)
     {
         $this->setProperty('associatedPathophysiology', $value);
         return $this;
@@ -58,7 +60,7 @@ class SuperficialAnatomy extends MedicalEntity
     * @param string|array $value
     * @return $this
     */
-    public function setAssociatedPathophysiology(?string $value)
+    public function setAssociatedPathophysiology($value)
     {
         $this->setProperty('associatedPathophysiology', $value);
         return $this;
@@ -75,8 +77,9 @@ class SuperficialAnatomy extends MedicalEntity
     * The significance associated with the superficial anatomy; as an example, how characteristics of the superficial anatomy can suggest underlying medical conditions or courses of treatment.
     * @param string|array $value
     * @return $this
+    * @deprecated use setSignificance
     */
-    public function significance(?string $value)
+    public function significance($value)
     {
         $this->setProperty('significance', $value);
         return $this;
@@ -85,7 +88,7 @@ class SuperficialAnatomy extends MedicalEntity
     * @param string|array $value
     * @return $this
     */
-    public function setSignificance(?string $value)
+    public function setSignificance($value)
     {
         $this->setProperty('significance', $value);
         return $this;
@@ -100,8 +103,9 @@ class SuperficialAnatomy extends MedicalEntity
 
     /**
     * Anatomical systems or structures that relate to the superficial anatomy.
-    * @param AnatomicalSystem|AnatomicalStructure|array $value
+    * @param AnatomicalSystem|AnatomicalStructure|array|string $value
     * @return $this
+    * @deprecated use setRelatedAnatomy
     */
     public function relatedAnatomy($value)
     {
@@ -109,7 +113,7 @@ class SuperficialAnatomy extends MedicalEntity
         return $this;
     }
    /**
-    * @param AnatomicalSystem|AnatomicalStructure|array $value
+    * @param AnatomicalSystem|AnatomicalStructure|array|string $value
     * @return $this
     */
     public function setRelatedAnatomy($value)
@@ -127,19 +131,20 @@ class SuperficialAnatomy extends MedicalEntity
 
     /**
     * A medical therapy related to this anatomy.
-    * @param MedicalTherapy|array $value
+    * @param MedicalTherapy|array|string $value
     * @return $this
+    * @deprecated use setRelatedTherapy
     */
-    public function relatedTherapy(?MedicalTherapy $value)
+    public function relatedTherapy($value)
     {
         $this->setProperty('relatedTherapy', $value);
         return $this;
     }
    /**
-    * @param MedicalTherapy|array $value
+    * @param MedicalTherapy|array|string $value
     * @return $this
     */
-    public function setRelatedTherapy(?MedicalTherapy $value)
+    public function setRelatedTherapy($value)
     {
         $this->setProperty('relatedTherapy', $value);
         return $this;
@@ -154,7 +159,3 @@ class SuperficialAnatomy extends MedicalEntity
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\SuperficialAnatomy','Thing\\SuperficialAnatomy');
-

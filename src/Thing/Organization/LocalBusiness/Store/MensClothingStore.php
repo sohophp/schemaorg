@@ -15,7 +15,3 @@ class MensClothingStore extends Store
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\Store\\MensClothingStore','Thing\\MensClothingStore');
-

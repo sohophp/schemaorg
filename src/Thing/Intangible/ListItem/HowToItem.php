@@ -18,6 +18,7 @@ class HowToItem extends ListItem
     * The required quantity of the item(s).
     * @param string|QuantitativeValue|array $value
     * @return $this
+    * @deprecated use setRequiredQuantity
     */
     public function requiredQuantity($value)
     {
@@ -43,7 +44,3 @@ class HowToItem extends ListItem
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\ListItem\\HowToItem','Thing\\HowToItem');
-

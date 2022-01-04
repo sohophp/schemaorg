@@ -19,8 +19,9 @@ class MedicalClinic extends MedicalOrganization
 
     /**
     * A medical service available from this provider.
-    * @param MedicalTest|MedicalProcedure|MedicalTherapy|array $value
+    * @param MedicalTest|MedicalProcedure|MedicalTherapy|array|string $value
     * @return $this
+    * @deprecated use setAvailableService
     */
     public function availableService($value)
     {
@@ -28,7 +29,7 @@ class MedicalClinic extends MedicalOrganization
         return $this;
     }
    /**
-    * @param MedicalTest|MedicalProcedure|MedicalTherapy|array $value
+    * @param MedicalTest|MedicalProcedure|MedicalTherapy|array|string $value
     * @return $this
     */
     public function setAvailableService($value)
@@ -46,19 +47,20 @@ class MedicalClinic extends MedicalOrganization
 
     /**
     * A medical specialty of the provider.
-    * @param MedicalSpecialty|array $value
+    * @param MedicalSpecialty|array|string $value
     * @return $this
+    * @deprecated use setMedicalSpecialty
     */
-    public function medicalSpecialty(?MedicalSpecialty $value)
+    public function medicalSpecialty($value)
     {
         $this->setProperty('medicalSpecialty', $value);
         return $this;
     }
    /**
-    * @param MedicalSpecialty|array $value
+    * @param MedicalSpecialty|array|string $value
     * @return $this
     */
-    public function setMedicalSpecialty(?MedicalSpecialty $value)
+    public function setMedicalSpecialty($value)
     {
         $this->setProperty('medicalSpecialty', $value);
         return $this;
@@ -73,7 +75,3 @@ class MedicalClinic extends MedicalOrganization
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\MedicalOrganization\\MedicalClinic','Thing\\MedicalClinic');
-

@@ -16,19 +16,20 @@ class SocialMediaPosting extends Article
 
     /**
     * A CreativeWork such as an image, video, or audio clip shared as part of this posting.
-    * @param CreativeWork|array $value
+    * @param CreativeWork|array|string $value
     * @return $this
+    * @deprecated use setSharedContent
     */
-    public function sharedContent(?CreativeWork $value)
+    public function sharedContent($value)
     {
         $this->setProperty('sharedContent', $value);
         return $this;
     }
    /**
-    * @param CreativeWork|array $value
+    * @param CreativeWork|array|string $value
     * @return $this
     */
-    public function setSharedContent(?CreativeWork $value)
+    public function setSharedContent($value)
     {
         $this->setProperty('sharedContent', $value);
         return $this;
@@ -43,7 +44,3 @@ class SocialMediaPosting extends Article
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Article\\SocialMediaPosting','Thing\\SocialMediaPosting');
-

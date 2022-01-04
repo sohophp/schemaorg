@@ -18,19 +18,20 @@ class VisualArtwork extends CreativeWork
 
     /**
     * The individual who traces over the pencil drawings in ink after pencils are complete.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setInker
     */
-    public function inker(?Person $value)
+    public function inker($value)
     {
         $this->setProperty('inker', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setInker(?Person $value)
+    public function setInker($value)
     {
         $this->setProperty('inker', $value);
         return $this;
@@ -47,6 +48,7 @@ class VisualArtwork extends CreativeWork
     * The material used. (e.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)
     * @param string|string|array $value
     * @return $this
+    * @deprecated use setArtMedium
     */
     public function artMedium($value)
     {
@@ -72,8 +74,9 @@ class VisualArtwork extends CreativeWork
 
     /**
     * The height of the item.
-    * @param Distance|QuantitativeValue|array $value
+    * @param Distance|QuantitativeValue|array|string $value
     * @return $this
+    * @deprecated use setHeight
     */
     public function height($value)
     {
@@ -81,7 +84,7 @@ class VisualArtwork extends CreativeWork
         return $this;
     }
    /**
-    * @param Distance|QuantitativeValue|array $value
+    * @param Distance|QuantitativeValue|array|string $value
     * @return $this
     */
     public function setHeight($value)
@@ -101,19 +104,20 @@ class VisualArtwork extends CreativeWork
     * The primary artist for a work
     in a medium other than pencils or digital line art--for example, if the
     primary artwork is done in watercolors or digital paints.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setArtist
     */
-    public function artist(?Person $value)
+    public function artist($value)
     {
         $this->setProperty('artist', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setArtist(?Person $value)
+    public function setArtist($value)
     {
         $this->setProperty('artist', $value);
         return $this;
@@ -130,6 +134,7 @@ class VisualArtwork extends CreativeWork
     * e.g. Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc.
     * @param string|string|array $value
     * @return $this
+    * @deprecated use setArtform
     */
     public function artform($value)
     {
@@ -157,6 +162,7 @@ class VisualArtwork extends CreativeWork
     * The supporting materials for the artwork, e.g. Canvas, Paper, Wood, Board, etc.
     * @param string|string|array $value
     * @return $this
+    * @deprecated use setArtworkSurface
     */
     public function artworkSurface($value)
     {
@@ -184,6 +190,7 @@ class VisualArtwork extends CreativeWork
     * The number of copies when multiple copies of a piece of artwork are produced - e.g. for a limited edition of 20 prints, 'artEdition' refers to the total number of copies (in this example "20").
     * @param int|string|array $value
     * @return $this
+    * @deprecated use setArtEdition
     */
     public function artEdition($value)
     {
@@ -209,8 +216,9 @@ class VisualArtwork extends CreativeWork
 
     /**
     * The width of the item.
-    * @param QuantitativeValue|Distance|array $value
+    * @param QuantitativeValue|Distance|array|string $value
     * @return $this
+    * @deprecated use setWidth
     */
     public function width($value)
     {
@@ -218,7 +226,7 @@ class VisualArtwork extends CreativeWork
         return $this;
     }
    /**
-    * @param QuantitativeValue|Distance|array $value
+    * @param QuantitativeValue|Distance|array|string $value
     * @return $this
     */
     public function setWidth($value)
@@ -238,6 +246,7 @@ class VisualArtwork extends CreativeWork
     * A material used as a surface in some artwork, e.g. Canvas, Paper, Wood, Board, etc.
     * @param string|string|array $value
     * @return $this
+    * @deprecated use setSurface
     */
     public function surface($value)
     {
@@ -263,19 +272,20 @@ class VisualArtwork extends CreativeWork
 
     /**
     * The individual who draws the primary narrative artwork.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setPenciler
     */
-    public function penciler(?Person $value)
+    public function penciler($value)
     {
         $this->setProperty('penciler', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setPenciler(?Person $value)
+    public function setPenciler($value)
     {
         $this->setProperty('penciler', $value);
         return $this;
@@ -290,8 +300,9 @@ class VisualArtwork extends CreativeWork
 
     /**
     * The depth of the item.
-    * @param Distance|QuantitativeValue|array $value
+    * @param Distance|QuantitativeValue|array|string $value
     * @return $this
+    * @deprecated use setDepth
     */
     public function depth($value)
     {
@@ -299,7 +310,7 @@ class VisualArtwork extends CreativeWork
         return $this;
     }
    /**
-    * @param Distance|QuantitativeValue|array $value
+    * @param Distance|QuantitativeValue|array|string $value
     * @return $this
     */
     public function setDepth($value)
@@ -317,19 +328,20 @@ class VisualArtwork extends CreativeWork
 
     /**
     * The individual who adds color to inked drawings.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setColorist
     */
-    public function colorist(?Person $value)
+    public function colorist($value)
     {
         $this->setProperty('colorist', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setColorist(?Person $value)
+    public function setColorist($value)
     {
         $this->setProperty('colorist', $value);
         return $this;
@@ -344,19 +356,20 @@ class VisualArtwork extends CreativeWork
 
     /**
     * The individual who adds lettering, including speech balloons and sound effects, to artwork.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setLetterer
     */
-    public function letterer(?Person $value)
+    public function letterer($value)
     {
         $this->setProperty('letterer', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setLetterer(?Person $value)
+    public function setLetterer($value)
     {
         $this->setProperty('letterer', $value);
         return $this;
@@ -371,7 +384,3 @@ class VisualArtwork extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\VisualArtwork','Thing\\VisualArtwork');
-

@@ -15,7 +15,3 @@ class Distillery extends FoodEstablishment
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\FoodEstablishment\\Distillery','Thing\\Distillery');
-

@@ -15,7 +15,3 @@ class DeleteAction extends UpdateAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\UpdateAction\\DeleteAction','Thing\\DeleteAction');
-

@@ -15,7 +15,3 @@ class PhysicalActivityCategory extends Enumeration
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\PhysicalActivityCategory','Thing\\PhysicalActivityCategory');
-

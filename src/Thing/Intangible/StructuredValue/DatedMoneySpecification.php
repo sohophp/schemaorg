@@ -16,8 +16,9 @@ class DatedMoneySpecification extends StructuredValue
 
     /**
     * The end date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setEndDate
     */
     public function endDate($value)
     {
@@ -25,7 +26,7 @@ class DatedMoneySpecification extends StructuredValue
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setEndDate($value)
@@ -43,19 +44,20 @@ class DatedMoneySpecification extends StructuredValue
 
     /**
     * The amount of money.
-    * @param MonetaryAmount|array $value
+    * @param MonetaryAmount|array|string $value
     * @return $this
+    * @deprecated use setAmount
     */
-    public function amount(?MonetaryAmount $value)
+    public function amount($value)
     {
         $this->setProperty('amount', $value);
         return $this;
     }
    /**
-    * @param MonetaryAmount|array $value
+    * @param MonetaryAmount|array|string $value
     * @return $this
     */
-    public function setAmount(?MonetaryAmount $value)
+    public function setAmount($value)
     {
         $this->setProperty('amount', $value);
         return $this;
@@ -70,8 +72,9 @@ class DatedMoneySpecification extends StructuredValue
 
     /**
     * The start date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setStartDate
     */
     public function startDate($value)
     {
@@ -79,7 +82,7 @@ class DatedMoneySpecification extends StructuredValue
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setStartDate($value)
@@ -101,8 +104,9 @@ class DatedMoneySpecification extends StructuredValue
 Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 currency format</a> e.g. "USD"; <a href="https://en.wikipedia.org/wiki/List_of_cryptocurrencies">Ticker symbol</a> for cryptocurrencies e.g. "BTC"; well known names for <a href="https://en.wikipedia.org/wiki/Local_exchange_trading_system">Local Exchange Tradings Systems</a> (LETS) and other currency types e.g. "Ithaca HOUR".
     * @param string|array $value
     * @return $this
+    * @deprecated use setCurrency
     */
-    public function currency(?string $value)
+    public function currency($value)
     {
         $this->setProperty('currency', $value);
         return $this;
@@ -111,7 +115,7 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
     * @param string|array $value
     * @return $this
     */
-    public function setCurrency(?string $value)
+    public function setCurrency($value)
     {
         $this->setProperty('currency', $value);
         return $this;
@@ -126,7 +130,3 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue\\DatedMoneySpecification','Thing\\DatedMoneySpecification');
-

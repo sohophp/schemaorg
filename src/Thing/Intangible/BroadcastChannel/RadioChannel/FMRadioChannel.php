@@ -15,7 +15,3 @@ class FMRadioChannel extends RadioChannel
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\BroadcastChannel\\RadioChannel\\FMRadioChannel','Thing\\FMRadioChannel');
-

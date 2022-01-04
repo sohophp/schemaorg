@@ -15,7 +15,3 @@ class EmailMessage extends Message
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Message\\EmailMessage','Thing\\EmailMessage');
-

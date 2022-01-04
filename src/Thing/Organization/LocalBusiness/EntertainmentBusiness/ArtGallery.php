@@ -15,7 +15,3 @@ class ArtGallery extends EntertainmentBusiness
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\EntertainmentBusiness\\ArtGallery','Thing\\ArtGallery');
-

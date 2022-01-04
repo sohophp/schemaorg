@@ -15,7 +15,3 @@ class MarryAction extends InteractAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\InteractAction\\MarryAction','Thing\\MarryAction');
-

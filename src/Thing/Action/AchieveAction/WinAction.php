@@ -16,19 +16,20 @@ class WinAction extends AchieveAction
 
     /**
     * A sub property of participant. The loser of the action.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setLoser
     */
-    public function loser(?Person $value)
+    public function loser($value)
     {
         $this->setProperty('loser', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setLoser(?Person $value)
+    public function setLoser($value)
     {
         $this->setProperty('loser', $value);
         return $this;
@@ -43,7 +44,3 @@ class WinAction extends AchieveAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\AchieveAction\\WinAction','Thing\\WinAction');
-

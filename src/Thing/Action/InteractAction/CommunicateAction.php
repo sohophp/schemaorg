@@ -21,19 +21,20 @@ class CommunicateAction extends InteractAction
 
     /**
     * The subject matter of the content.
-    * @param Thing|array $value
+    * @param Thing|array|string $value
     * @return $this
+    * @deprecated use setAbout
     */
-    public function about(?Thing $value)
+    public function about($value)
     {
         $this->setProperty('about', $value);
         return $this;
     }
    /**
-    * @param Thing|array $value
+    * @param Thing|array|string $value
     * @return $this
     */
-    public function setAbout(?Thing $value)
+    public function setAbout($value)
     {
         $this->setProperty('about', $value);
         return $this;
@@ -50,6 +51,7 @@ class CommunicateAction extends InteractAction
     * The language of the content or performance or used in an action. Please use one of the language codes from the <a href="http://tools.ietf.org/html/bcp47">IETF BCP 47 standard</a>. See also <a class="localLink" href="http://schema.org/availableLanguage">availableLanguage</a>.
     * @param Language|string|array $value
     * @return $this
+    * @deprecated use setInLanguage
     */
     public function inLanguage($value)
     {
@@ -75,8 +77,9 @@ class CommunicateAction extends InteractAction
 
     /**
     * A sub property of participant. The participant who is at the receiving end of the action.
-    * @param Person|ContactPoint|Organization|Audience|array $value
+    * @param Person|ContactPoint|Organization|Audience|array|string $value
     * @return $this
+    * @deprecated use setRecipient
     */
     public function recipient($value)
     {
@@ -84,7 +87,7 @@ class CommunicateAction extends InteractAction
         return $this;
     }
    /**
-    * @param Person|ContactPoint|Organization|Audience|array $value
+    * @param Person|ContactPoint|Organization|Audience|array|string $value
     * @return $this
     */
     public function setRecipient($value)
@@ -102,19 +105,20 @@ class CommunicateAction extends InteractAction
 
     /**
     * A sub property of instrument. The language used on this action.
-    * @param Language|array $value
+    * @param Language|array|string $value
     * @return $this
+    * @deprecated use setLanguage
     */
-    public function language(?Language $value)
+    public function language($value)
     {
         $this->setProperty('language', $value);
         return $this;
     }
    /**
-    * @param Language|array $value
+    * @param Language|array|string $value
     * @return $this
     */
-    public function setLanguage(?Language $value)
+    public function setLanguage($value)
     {
         $this->setProperty('language', $value);
         return $this;
@@ -129,7 +133,3 @@ class CommunicateAction extends InteractAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\InteractAction\\CommunicateAction','Thing\\CommunicateAction');
-

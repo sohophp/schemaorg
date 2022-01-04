@@ -17,8 +17,9 @@ class MedicalRiskScore extends MedicalRiskEstimator
     * The algorithm or rules to follow to compute the score.
     * @param string|array $value
     * @return $this
+    * @deprecated use setAlgorithm
     */
-    public function algorithm(?string $value)
+    public function algorithm($value)
     {
         $this->setProperty('algorithm', $value);
         return $this;
@@ -27,7 +28,7 @@ class MedicalRiskScore extends MedicalRiskEstimator
     * @param string|array $value
     * @return $this
     */
-    public function setAlgorithm(?string $value)
+    public function setAlgorithm($value)
     {
         $this->setProperty('algorithm', $value);
         return $this;
@@ -42,7 +43,3 @@ class MedicalRiskScore extends MedicalRiskEstimator
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalRiskEstimator\\MedicalRiskScore','Thing\\MedicalRiskScore');
-

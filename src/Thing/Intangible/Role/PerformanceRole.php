@@ -17,8 +17,9 @@ class PerformanceRole extends Role
     * The name of a character played in some acting or performing role, i.e. in a PerformanceRole.
     * @param string|array $value
     * @return $this
+    * @deprecated use setCharacterName
     */
-    public function characterName(?string $value)
+    public function characterName($value)
     {
         $this->setProperty('characterName', $value);
         return $this;
@@ -27,7 +28,7 @@ class PerformanceRole extends Role
     * @param string|array $value
     * @return $this
     */
-    public function setCharacterName(?string $value)
+    public function setCharacterName($value)
     {
         $this->setProperty('characterName', $value);
         return $this;
@@ -42,7 +43,3 @@ class PerformanceRole extends Role
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Role\\PerformanceRole','Thing\\PerformanceRole');
-

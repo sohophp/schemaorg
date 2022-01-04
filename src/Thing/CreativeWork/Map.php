@@ -16,19 +16,20 @@ class Map extends CreativeWork
 
     /**
     * Indicates the kind of Map, from the MapCategoryType Enumeration.
-    * @param MapCategoryType|array $value
+    * @param MapCategoryType|array|string $value
     * @return $this
+    * @deprecated use setMapType
     */
-    public function mapType(?MapCategoryType $value)
+    public function mapType($value)
     {
         $this->setProperty('mapType', $value);
         return $this;
     }
    /**
-    * @param MapCategoryType|array $value
+    * @param MapCategoryType|array|string $value
     * @return $this
     */
-    public function setMapType(?MapCategoryType $value)
+    public function setMapType($value)
     {
         $this->setProperty('mapType', $value);
         return $this;
@@ -43,7 +44,3 @@ class Map extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Map','Thing\\Map');
-

@@ -15,7 +15,3 @@ class Brewery extends FoodEstablishment
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\FoodEstablishment\\Brewery','Thing\\Brewery');
-

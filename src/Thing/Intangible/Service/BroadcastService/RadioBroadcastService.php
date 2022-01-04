@@ -17,8 +17,9 @@ class RadioBroadcastService extends BroadcastService
     * The official callsign for the radio broadcast.
     * @param string|array $value
     * @return $this
+    * @deprecated use setCallSign
     */
-    public function callSign(?string $value)
+    public function callSign($value)
     {
         $this->setProperty('callSign', $value);
         return $this;
@@ -27,7 +28,7 @@ class RadioBroadcastService extends BroadcastService
     * @param string|array $value
     * @return $this
     */
-    public function setCallSign(?string $value)
+    public function setCallSign($value)
     {
         $this->setProperty('callSign', $value);
         return $this;
@@ -42,7 +43,3 @@ class RadioBroadcastService extends BroadcastService
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Service\\BroadcastService\\RadioBroadcastService','Thing\\RadioBroadcastService');
-

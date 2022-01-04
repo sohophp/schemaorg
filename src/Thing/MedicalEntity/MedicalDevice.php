@@ -21,8 +21,9 @@ class MedicalDevice extends MedicalEntity
     * A description of the postoperative procedures, care, and/or followups for this device.
     * @param string|array $value
     * @return $this
+    * @deprecated use setPostOp
     */
-    public function postOp(?string $value)
+    public function postOp($value)
     {
         $this->setProperty('postOp', $value);
         return $this;
@@ -31,7 +32,7 @@ class MedicalDevice extends MedicalEntity
     * @param string|array $value
     * @return $this
     */
-    public function setPostOp(?string $value)
+    public function setPostOp($value)
     {
         $this->setProperty('postOp', $value);
         return $this;
@@ -48,8 +49,9 @@ class MedicalDevice extends MedicalEntity
     * A description of the procedure involved in setting up, using, and/or installing the device.
     * @param string|array $value
     * @return $this
+    * @deprecated use setProcedure
     */
-    public function procedure(?string $value)
+    public function procedure($value)
     {
         $this->setProperty('procedure', $value);
         return $this;
@@ -58,7 +60,7 @@ class MedicalDevice extends MedicalEntity
     * @param string|array $value
     * @return $this
     */
-    public function setProcedure(?string $value)
+    public function setProcedure($value)
     {
         $this->setProperty('procedure', $value);
         return $this;
@@ -73,19 +75,20 @@ class MedicalDevice extends MedicalEntity
 
     /**
     * A possible complication and/or side effect of this therapy. If it is known that an adverse outcome is serious (resulting in death, disability, or permanent damage; requiring hospitalization; or is otherwise life-threatening or requires immediate medical attention), tag it as a seriouseAdverseOutcome instead.
-    * @param MedicalEntity|array $value
+    * @param MedicalEntity|array|string $value
     * @return $this
+    * @deprecated use setAdverseOutcome
     */
-    public function adverseOutcome(?MedicalEntity $value)
+    public function adverseOutcome($value)
     {
         $this->setProperty('adverseOutcome', $value);
         return $this;
     }
    /**
-    * @param MedicalEntity|array $value
+    * @param MedicalEntity|array|string $value
     * @return $this
     */
-    public function setAdverseOutcome(?MedicalEntity $value)
+    public function setAdverseOutcome($value)
     {
         $this->setProperty('adverseOutcome', $value);
         return $this;
@@ -100,19 +103,20 @@ class MedicalDevice extends MedicalEntity
 
     /**
     * A factor that indicates use of this therapy for treatment and/or prevention of a condition, symptom, etc. For therapies such as drugs, indications can include both officially-approved indications as well as off-label uses. These can be distinguished by using the ApprovedIndication subtype of MedicalIndication.
-    * @param MedicalIndication|array $value
+    * @param MedicalIndication|array|string $value
     * @return $this
+    * @deprecated use setIndication
     */
-    public function indication(?MedicalIndication $value)
+    public function indication($value)
     {
         $this->setProperty('indication', $value);
         return $this;
     }
    /**
-    * @param MedicalIndication|array $value
+    * @param MedicalIndication|array|string $value
     * @return $this
     */
-    public function setIndication(?MedicalIndication $value)
+    public function setIndication($value)
     {
         $this->setProperty('indication', $value);
         return $this;
@@ -127,8 +131,9 @@ class MedicalDevice extends MedicalEntity
 
     /**
     * A goal towards an action is taken. Can be concrete or abstract.
-    * @param MedicalDevicePurpose|Thing|array $value
+    * @param MedicalDevicePurpose|Thing|array|string $value
     * @return $this
+    * @deprecated use setPurpose
     */
     public function purpose($value)
     {
@@ -136,7 +141,7 @@ class MedicalDevice extends MedicalEntity
         return $this;
     }
    /**
-    * @param MedicalDevicePurpose|Thing|array $value
+    * @param MedicalDevicePurpose|Thing|array|string $value
     * @return $this
     */
     public function setPurpose($value)
@@ -154,19 +159,20 @@ class MedicalDevice extends MedicalEntity
 
     /**
     * A possible serious complication and/or serious side effect of this therapy. Serious adverse outcomes include those that are life-threatening; result in death, disability, or permanent damage; require hospitalization or prolong existing hospitalization; cause congenital anomalies or birth defects; or jeopardize the patient and may require medical or surgical intervention to prevent one of the outcomes in this definition.
-    * @param MedicalEntity|array $value
+    * @param MedicalEntity|array|string $value
     * @return $this
+    * @deprecated use setSeriousAdverseOutcome
     */
-    public function seriousAdverseOutcome(?MedicalEntity $value)
+    public function seriousAdverseOutcome($value)
     {
         $this->setProperty('seriousAdverseOutcome', $value);
         return $this;
     }
    /**
-    * @param MedicalEntity|array $value
+    * @param MedicalEntity|array|string $value
     * @return $this
     */
-    public function setSeriousAdverseOutcome(?MedicalEntity $value)
+    public function setSeriousAdverseOutcome($value)
     {
         $this->setProperty('seriousAdverseOutcome', $value);
         return $this;
@@ -183,6 +189,7 @@ class MedicalDevice extends MedicalEntity
     * A contraindication for this therapy.
     * @param MedicalContraindication|string|array $value
     * @return $this
+    * @deprecated use setContraindication
     */
     public function contraindication($value)
     {
@@ -210,8 +217,9 @@ class MedicalDevice extends MedicalEntity
     * A description of the workup, testing, and other preparations required before implanting this device.
     * @param string|array $value
     * @return $this
+    * @deprecated use setPreOp
     */
-    public function preOp(?string $value)
+    public function preOp($value)
     {
         $this->setProperty('preOp', $value);
         return $this;
@@ -220,7 +228,7 @@ class MedicalDevice extends MedicalEntity
     * @param string|array $value
     * @return $this
     */
-    public function setPreOp(?string $value)
+    public function setPreOp($value)
     {
         $this->setProperty('preOp', $value);
         return $this;
@@ -235,7 +243,3 @@ class MedicalDevice extends MedicalEntity
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalDevice','Thing\\MedicalDevice');
-

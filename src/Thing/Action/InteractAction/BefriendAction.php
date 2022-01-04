@@ -22,7 +22,3 @@ class BefriendAction extends InteractAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\InteractAction\\BefriendAction','Thing\\BefriendAction');
-

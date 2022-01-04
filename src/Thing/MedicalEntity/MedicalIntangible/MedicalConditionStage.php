@@ -17,8 +17,9 @@ class MedicalConditionStage extends MedicalIntangible
     * The substage, e.g. 'a' for Stage IIIa.
     * @param string|array $value
     * @return $this
+    * @deprecated use setSubStageSuffix
     */
-    public function subStageSuffix(?string $value)
+    public function subStageSuffix($value)
     {
         $this->setProperty('subStageSuffix', $value);
         return $this;
@@ -27,7 +28,7 @@ class MedicalConditionStage extends MedicalIntangible
     * @param string|array $value
     * @return $this
     */
-    public function setSubStageSuffix(?string $value)
+    public function setSubStageSuffix($value)
     {
         $this->setProperty('subStageSuffix', $value);
         return $this;
@@ -42,8 +43,9 @@ class MedicalConditionStage extends MedicalIntangible
 
     /**
     * The stage represented as a number, e.g. 3.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setStageAsNumber
     */
     public function stageAsNumber($value)
     {
@@ -51,7 +53,7 @@ class MedicalConditionStage extends MedicalIntangible
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setStageAsNumber($value)
@@ -69,7 +71,3 @@ class MedicalConditionStage extends MedicalIntangible
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalIntangible\\MedicalConditionStage','Thing\\MedicalConditionStage');
-

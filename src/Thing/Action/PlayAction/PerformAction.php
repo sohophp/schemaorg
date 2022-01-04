@@ -16,19 +16,20 @@ class PerformAction extends PlayAction
 
     /**
     * A sub property of location. The entertainment business where the action occurred.
-    * @param EntertainmentBusiness|array $value
+    * @param EntertainmentBusiness|array|string $value
     * @return $this
+    * @deprecated use setEntertainmentBusiness
     */
-    public function entertainmentBusiness(?EntertainmentBusiness $value)
+    public function entertainmentBusiness($value)
     {
         $this->setProperty('entertainmentBusiness', $value);
         return $this;
     }
    /**
-    * @param EntertainmentBusiness|array $value
+    * @param EntertainmentBusiness|array|string $value
     * @return $this
     */
-    public function setEntertainmentBusiness(?EntertainmentBusiness $value)
+    public function setEntertainmentBusiness($value)
     {
         $this->setProperty('entertainmentBusiness', $value);
         return $this;
@@ -43,7 +44,3 @@ class PerformAction extends PlayAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\PlayAction\\PerformAction','Thing\\PerformAction');
-

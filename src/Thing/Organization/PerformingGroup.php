@@ -15,7 +15,3 @@ class PerformingGroup extends Organization
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\PerformingGroup','Thing\\PerformingGroup');
-

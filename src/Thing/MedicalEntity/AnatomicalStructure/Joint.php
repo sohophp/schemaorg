@@ -18,8 +18,9 @@ class Joint extends AnatomicalStructure
     * The biomechanical properties of the bone.
     * @param string|array $value
     * @return $this
+    * @deprecated use setBiomechnicalClass
     */
-    public function biomechnicalClass(?string $value)
+    public function biomechnicalClass($value)
     {
         $this->setProperty('biomechnicalClass', $value);
         return $this;
@@ -28,7 +29,7 @@ class Joint extends AnatomicalStructure
     * @param string|array $value
     * @return $this
     */
-    public function setBiomechnicalClass(?string $value)
+    public function setBiomechnicalClass($value)
     {
         $this->setProperty('biomechnicalClass', $value);
         return $this;
@@ -45,8 +46,9 @@ class Joint extends AnatomicalStructure
     * The name given to how bone physically connects to each other.
     * @param string|array $value
     * @return $this
+    * @deprecated use setStructuralClass
     */
-    public function structuralClass(?string $value)
+    public function structuralClass($value)
     {
         $this->setProperty('structuralClass', $value);
         return $this;
@@ -55,7 +57,7 @@ class Joint extends AnatomicalStructure
     * @param string|array $value
     * @return $this
     */
-    public function setStructuralClass(?string $value)
+    public function setStructuralClass($value)
     {
         $this->setProperty('structuralClass', $value);
         return $this;
@@ -72,6 +74,7 @@ class Joint extends AnatomicalStructure
     * The degree of mobility the joint allows.
     * @param MedicalEntity|string|array $value
     * @return $this
+    * @deprecated use setFunctionalClass
     */
     public function functionalClass($value)
     {
@@ -97,7 +100,3 @@ class Joint extends AnatomicalStructure
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\AnatomicalStructure\\Joint','Thing\\Joint');
-

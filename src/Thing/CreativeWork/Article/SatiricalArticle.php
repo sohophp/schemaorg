@@ -15,7 +15,3 @@ class SatiricalArticle extends Article
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Article\\SatiricalArticle','Thing\\SatiricalArticle');
-

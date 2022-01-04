@@ -15,7 +15,3 @@ class MotorizedBicycle extends Vehicle
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Product\\Vehicle\\MotorizedBicycle','Thing\\MotorizedBicycle');
-

@@ -15,7 +15,3 @@ class GeneralContractor extends HomeAndConstructionBusiness
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\HomeAndConstructionBusiness\\GeneralContractor','Thing\\GeneralContractor');
-

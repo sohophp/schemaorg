@@ -18,6 +18,7 @@ class WriteAction extends CreateAction
     * The language of the content or performance or used in an action. Please use one of the language codes from the <a href="http://tools.ietf.org/html/bcp47">IETF BCP 47 standard</a>. See also <a class="localLink" href="http://schema.org/availableLanguage">availableLanguage</a>.
     * @param Language|string|array $value
     * @return $this
+    * @deprecated use setInLanguage
     */
     public function inLanguage($value)
     {
@@ -43,19 +44,20 @@ class WriteAction extends CreateAction
 
     /**
     * A sub property of instrument. The language used on this action.
-    * @param Language|array $value
+    * @param Language|array|string $value
     * @return $this
+    * @deprecated use setLanguage
     */
-    public function language(?Language $value)
+    public function language($value)
     {
         $this->setProperty('language', $value);
         return $this;
     }
    /**
-    * @param Language|array $value
+    * @param Language|array|string $value
     * @return $this
     */
-    public function setLanguage(?Language $value)
+    public function setLanguage($value)
     {
         $this->setProperty('language', $value);
         return $this;
@@ -70,7 +72,3 @@ class WriteAction extends CreateAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\CreateAction\\WriteAction','Thing\\WriteAction');
-

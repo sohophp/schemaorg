@@ -17,19 +17,20 @@ class Muscle extends AnatomicalStructure
 
     /**
     * The underlying innervation associated with the muscle.
-    * @param Nerve|array $value
+    * @param Nerve|array|string $value
     * @return $this
+    * @deprecated use setNerve
     */
-    public function nerve(?Nerve $value)
+    public function nerve($value)
     {
         $this->setProperty('nerve', $value);
         return $this;
     }
    /**
-    * @param Nerve|array $value
+    * @param Nerve|array|string $value
     * @return $this
     */
-    public function setNerve(?Nerve $value)
+    public function setNerve($value)
     {
         $this->setProperty('nerve', $value);
         return $this;
@@ -44,19 +45,20 @@ class Muscle extends AnatomicalStructure
 
     /**
     * The blood vessel that carries blood from the heart to the muscle.
-    * @param Vessel|array $value
+    * @param Vessel|array|string $value
     * @return $this
+    * @deprecated use setBloodSupply
     */
-    public function bloodSupply(?Vessel $value)
+    public function bloodSupply($value)
     {
         $this->setProperty('bloodSupply', $value);
         return $this;
     }
    /**
-    * @param Vessel|array $value
+    * @param Vessel|array|string $value
     * @return $this
     */
-    public function setBloodSupply(?Vessel $value)
+    public function setBloodSupply($value)
     {
         $this->setProperty('bloodSupply', $value);
         return $this;
@@ -73,8 +75,9 @@ class Muscle extends AnatomicalStructure
     * The movement the muscle generates.
     * @param string|array $value
     * @return $this
+    * @deprecated use setMuscleAction
     */
-    public function muscleAction(?string $value)
+    public function muscleAction($value)
     {
         $this->setProperty('muscleAction', $value);
         return $this;
@@ -83,7 +86,7 @@ class Muscle extends AnatomicalStructure
     * @param string|array $value
     * @return $this
     */
-    public function setMuscleAction(?string $value)
+    public function setMuscleAction($value)
     {
         $this->setProperty('muscleAction', $value);
         return $this;
@@ -100,8 +103,9 @@ class Muscle extends AnatomicalStructure
     * Obsolete term for <a class="localLink" href="http://schema.org/muscleAction">muscleAction</a>. Not to be confused with <a class="localLink" href="http://schema.org/potentialAction">potentialAction</a>.
     * @param string|array $value
     * @return $this
+    * @deprecated use setAction
     */
-    public function action(?string $value)
+    public function action($value)
     {
         $this->setProperty('action', $value);
         return $this;
@@ -110,7 +114,7 @@ class Muscle extends AnatomicalStructure
     * @param string|array $value
     * @return $this
     */
-    public function setAction(?string $value)
+    public function setAction($value)
     {
         $this->setProperty('action', $value);
         return $this;
@@ -125,19 +129,20 @@ class Muscle extends AnatomicalStructure
 
     /**
     * The muscle whose action counteracts the specified muscle.
-    * @param Muscle|array $value
+    * @param Muscle|array|string $value
     * @return $this
+    * @deprecated use setAntagonist
     */
-    public function antagonist(?Muscle $value)
+    public function antagonist($value)
     {
         $this->setProperty('antagonist', $value);
         return $this;
     }
    /**
-    * @param Muscle|array $value
+    * @param Muscle|array|string $value
     * @return $this
     */
-    public function setAntagonist(?Muscle $value)
+    public function setAntagonist($value)
     {
         $this->setProperty('antagonist', $value);
         return $this;
@@ -152,19 +157,20 @@ class Muscle extends AnatomicalStructure
 
     /**
     * The place or point where a muscle arises.
-    * @param AnatomicalStructure|array $value
+    * @param AnatomicalStructure|array|string $value
     * @return $this
+    * @deprecated use setOrigin
     */
-    public function origin(?AnatomicalStructure $value)
+    public function origin($value)
     {
         $this->setProperty('origin', $value);
         return $this;
     }
    /**
-    * @param AnatomicalStructure|array $value
+    * @param AnatomicalStructure|array|string $value
     * @return $this
     */
-    public function setOrigin(?AnatomicalStructure $value)
+    public function setOrigin($value)
     {
         $this->setProperty('origin', $value);
         return $this;
@@ -179,19 +185,20 @@ class Muscle extends AnatomicalStructure
 
     /**
     * The place of attachment of a muscle, or what the muscle moves.
-    * @param AnatomicalStructure|array $value
+    * @param AnatomicalStructure|array|string $value
     * @return $this
+    * @deprecated use setInsertion
     */
-    public function insertion(?AnatomicalStructure $value)
+    public function insertion($value)
     {
         $this->setProperty('insertion', $value);
         return $this;
     }
    /**
-    * @param AnatomicalStructure|array $value
+    * @param AnatomicalStructure|array|string $value
     * @return $this
     */
-    public function setInsertion(?AnatomicalStructure $value)
+    public function setInsertion($value)
     {
         $this->setProperty('insertion', $value);
         return $this;
@@ -206,7 +213,3 @@ class Muscle extends AnatomicalStructure
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\AnatomicalStructure\\Muscle','Thing\\Muscle');
-

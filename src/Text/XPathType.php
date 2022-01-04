@@ -15,7 +15,3 @@ class XPathType extends Text
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Text\\XPathType','Thing\\XPathType');
-

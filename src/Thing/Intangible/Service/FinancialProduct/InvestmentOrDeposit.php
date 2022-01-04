@@ -16,19 +16,20 @@ class InvestmentOrDeposit extends FinancialProduct
 
     /**
     * The amount of money.
-    * @param MonetaryAmount|array $value
+    * @param MonetaryAmount|array|string $value
     * @return $this
+    * @deprecated use setAmount
     */
-    public function amount(?MonetaryAmount $value)
+    public function amount($value)
     {
         $this->setProperty('amount', $value);
         return $this;
     }
    /**
-    * @param MonetaryAmount|array $value
+    * @param MonetaryAmount|array|string $value
     * @return $this
     */
-    public function setAmount(?MonetaryAmount $value)
+    public function setAmount($value)
     {
         $this->setProperty('amount', $value);
         return $this;
@@ -43,7 +44,3 @@ class InvestmentOrDeposit extends FinancialProduct
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Service\\FinancialProduct\\InvestmentOrDeposit','Thing\\InvestmentOrDeposit');
-

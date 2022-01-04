@@ -15,7 +15,3 @@ class ReportedDoseSchedule extends DoseSchedule
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalIntangible\\DoseSchedule\\ReportedDoseSchedule','Thing\\ReportedDoseSchedule');
-

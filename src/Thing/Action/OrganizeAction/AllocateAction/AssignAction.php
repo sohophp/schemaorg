@@ -15,7 +15,3 @@ class AssignAction extends AllocateAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\OrganizeAction\\AllocateAction\\AssignAction','Thing\\AssignAction');
-

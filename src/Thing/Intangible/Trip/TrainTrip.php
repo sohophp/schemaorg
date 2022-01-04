@@ -16,19 +16,20 @@ class TrainTrip extends Trip
 
     /**
     * The station from which the train departs.
-    * @param TrainStation|array $value
+    * @param TrainStation|array|string $value
     * @return $this
+    * @deprecated use setDepartureStation
     */
-    public function departureStation(?TrainStation $value)
+    public function departureStation($value)
     {
         $this->setProperty('departureStation', $value);
         return $this;
     }
    /**
-    * @param TrainStation|array $value
+    * @param TrainStation|array|string $value
     * @return $this
     */
-    public function setDepartureStation(?TrainStation $value)
+    public function setDepartureStation($value)
     {
         $this->setProperty('departureStation', $value);
         return $this;
@@ -45,8 +46,9 @@ class TrainTrip extends Trip
     * The platform where the train arrives.
     * @param string|array $value
     * @return $this
+    * @deprecated use setArrivalPlatform
     */
-    public function arrivalPlatform(?string $value)
+    public function arrivalPlatform($value)
     {
         $this->setProperty('arrivalPlatform', $value);
         return $this;
@@ -55,7 +57,7 @@ class TrainTrip extends Trip
     * @param string|array $value
     * @return $this
     */
-    public function setArrivalPlatform(?string $value)
+    public function setArrivalPlatform($value)
     {
         $this->setProperty('arrivalPlatform', $value);
         return $this;
@@ -72,8 +74,9 @@ class TrainTrip extends Trip
     * The platform from which the train departs.
     * @param string|array $value
     * @return $this
+    * @deprecated use setDeparturePlatform
     */
-    public function departurePlatform(?string $value)
+    public function departurePlatform($value)
     {
         $this->setProperty('departurePlatform', $value);
         return $this;
@@ -82,7 +85,7 @@ class TrainTrip extends Trip
     * @param string|array $value
     * @return $this
     */
-    public function setDeparturePlatform(?string $value)
+    public function setDeparturePlatform($value)
     {
         $this->setProperty('departurePlatform', $value);
         return $this;
@@ -99,8 +102,9 @@ class TrainTrip extends Trip
     * The name of the train (e.g. The Orient Express).
     * @param string|array $value
     * @return $this
+    * @deprecated use setTrainName
     */
-    public function trainName(?string $value)
+    public function trainName($value)
     {
         $this->setProperty('trainName', $value);
         return $this;
@@ -109,7 +113,7 @@ class TrainTrip extends Trip
     * @param string|array $value
     * @return $this
     */
-    public function setTrainName(?string $value)
+    public function setTrainName($value)
     {
         $this->setProperty('trainName', $value);
         return $this;
@@ -126,8 +130,9 @@ class TrainTrip extends Trip
     * The unique identifier for the train.
     * @param string|array $value
     * @return $this
+    * @deprecated use setTrainNumber
     */
-    public function trainNumber(?string $value)
+    public function trainNumber($value)
     {
         $this->setProperty('trainNumber', $value);
         return $this;
@@ -136,7 +141,7 @@ class TrainTrip extends Trip
     * @param string|array $value
     * @return $this
     */
-    public function setTrainNumber(?string $value)
+    public function setTrainNumber($value)
     {
         $this->setProperty('trainNumber', $value);
         return $this;
@@ -151,19 +156,20 @@ class TrainTrip extends Trip
 
     /**
     * The station where the train trip ends.
-    * @param TrainStation|array $value
+    * @param TrainStation|array|string $value
     * @return $this
+    * @deprecated use setArrivalStation
     */
-    public function arrivalStation(?TrainStation $value)
+    public function arrivalStation($value)
     {
         $this->setProperty('arrivalStation', $value);
         return $this;
     }
    /**
-    * @param TrainStation|array $value
+    * @param TrainStation|array|string $value
     * @return $this
     */
-    public function setArrivalStation(?TrainStation $value)
+    public function setArrivalStation($value)
     {
         $this->setProperty('arrivalStation', $value);
         return $this;
@@ -178,7 +184,3 @@ class TrainTrip extends Trip
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Trip\\TrainTrip','Thing\\TrainTrip');
-

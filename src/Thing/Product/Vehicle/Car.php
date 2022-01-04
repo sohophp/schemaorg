@@ -25,19 +25,20 @@ Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>
 <li>Note 3: Note that you can use <a class="localLink" href="http://schema.org/minValue">minValue</a> and <a class="localLink" href="http://schema.org/maxValue">maxValue</a> to indicate ranges.</li>
 </ul>
 
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
+    * @deprecated use setRoofLoad
     */
-    public function roofLoad(?QuantitativeValue $value)
+    public function roofLoad($value)
     {
         $this->setProperty('roofLoad', $value);
         return $this;
     }
    /**
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
     */
-    public function setRoofLoad(?QuantitativeValue $value)
+    public function setRoofLoad($value)
     {
         $this->setProperty('roofLoad', $value);
         return $this;
@@ -54,8 +55,9 @@ Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>
     * The ACRISS Car Classification Code is a code used by many car rental companies, for classifying vehicles. ACRISS stands for Association of Car Rental Industry Systems and Standards.
     * @param string|array $value
     * @return $this
+    * @deprecated use setAcrissCode
     */
-    public function acrissCode(?string $value)
+    public function acrissCode($value)
     {
         $this->setProperty('acrissCode', $value);
         return $this;
@@ -64,7 +66,7 @@ Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>
     * @param string|array $value
     * @return $this
     */
-    public function setAcrissCode(?string $value)
+    public function setAcrissCode($value)
     {
         $this->setProperty('acrissCode', $value);
         return $this;
@@ -79,7 +81,3 @@ Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Product\\Vehicle\\Car','Thing\\Car');
-

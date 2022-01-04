@@ -15,7 +15,3 @@ class AutoRental extends AutomotiveBusiness
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\AutomotiveBusiness\\AutoRental','Thing\\AutoRental');
-

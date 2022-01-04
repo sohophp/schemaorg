@@ -15,7 +15,3 @@ class DiagnosticProcedure extends MedicalProcedure
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalProcedure\\DiagnosticProcedure','Thing\\DiagnosticProcedure');
-

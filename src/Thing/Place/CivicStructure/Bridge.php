@@ -15,7 +15,3 @@ class Bridge extends CivicStructure
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\CivicStructure\\Bridge','Thing\\Bridge');
-

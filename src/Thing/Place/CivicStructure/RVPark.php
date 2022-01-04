@@ -15,7 +15,3 @@ class RVPark extends CivicStructure
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\CivicStructure\\RVPark','Thing\\RVPark');
-

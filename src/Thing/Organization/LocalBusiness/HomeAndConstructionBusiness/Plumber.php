@@ -15,7 +15,3 @@ class Plumber extends HomeAndConstructionBusiness
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\HomeAndConstructionBusiness\\Plumber','Thing\\Plumber');
-

@@ -22,19 +22,20 @@ class Flight extends Trip
 
     /**
     * The airport where the flight terminates.
-    * @param Airport|array $value
+    * @param Airport|array|string $value
     * @return $this
+    * @deprecated use setArrivalAirport
     */
-    public function arrivalAirport(?Airport $value)
+    public function arrivalAirport($value)
     {
         $this->setProperty('arrivalAirport', $value);
         return $this;
     }
    /**
-    * @param Airport|array $value
+    * @param Airport|array|string $value
     * @return $this
     */
-    public function setArrivalAirport(?Airport $value)
+    public function setArrivalAirport($value)
     {
         $this->setProperty('arrivalAirport', $value);
         return $this;
@@ -49,19 +50,20 @@ class Flight extends Trip
 
     /**
     * The airport where the flight originates.
-    * @param Airport|array $value
+    * @param Airport|array|string $value
     * @return $this
+    * @deprecated use setDepartureAirport
     */
-    public function departureAirport(?Airport $value)
+    public function departureAirport($value)
     {
         $this->setProperty('departureAirport', $value);
         return $this;
     }
    /**
-    * @param Airport|array $value
+    * @param Airport|array|string $value
     * @return $this
     */
-    public function setDepartureAirport(?Airport $value)
+    public function setDepartureAirport($value)
     {
         $this->setProperty('departureAirport', $value);
         return $this;
@@ -76,8 +78,9 @@ class Flight extends Trip
 
     /**
     * The time when a passenger can check into the flight online.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setWebCheckinTime
     */
     public function webCheckinTime($value)
     {
@@ -85,7 +88,7 @@ class Flight extends Trip
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setWebCheckinTime($value)
@@ -105,8 +108,9 @@ class Flight extends Trip
     * Identifier of the flight's arrival gate.
     * @param string|array $value
     * @return $this
+    * @deprecated use setArrivalGate
     */
-    public function arrivalGate(?string $value)
+    public function arrivalGate($value)
     {
         $this->setProperty('arrivalGate', $value);
         return $this;
@@ -115,7 +119,7 @@ class Flight extends Trip
     * @param string|array $value
     * @return $this
     */
-    public function setArrivalGate(?string $value)
+    public function setArrivalGate($value)
     {
         $this->setProperty('arrivalGate', $value);
         return $this;
@@ -132,8 +136,9 @@ class Flight extends Trip
     * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
     * @param string|array $value
     * @return $this
+    * @deprecated use setFlightNumber
     */
-    public function flightNumber(?string $value)
+    public function flightNumber($value)
     {
         $this->setProperty('flightNumber', $value);
         return $this;
@@ -142,7 +147,7 @@ class Flight extends Trip
     * @param string|array $value
     * @return $this
     */
-    public function setFlightNumber(?string $value)
+    public function setFlightNumber($value)
     {
         $this->setProperty('flightNumber', $value);
         return $this;
@@ -157,19 +162,20 @@ class Flight extends Trip
 
     /**
     * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
+    * @deprecated use setCarrier
     */
-    public function carrier(?Organization $value)
+    public function carrier($value)
     {
         $this->setProperty('carrier', $value);
         return $this;
     }
    /**
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
     */
-    public function setCarrier(?Organization $value)
+    public function setCarrier($value)
     {
         $this->setProperty('carrier', $value);
         return $this;
@@ -184,19 +190,20 @@ class Flight extends Trip
 
     /**
     * The type of boarding policy used by the airline (e.g. zone-based or group-based).
-    * @param BoardingPolicyType|array $value
+    * @param BoardingPolicyType|array|string $value
     * @return $this
+    * @deprecated use setBoardingPolicy
     */
-    public function boardingPolicy(?BoardingPolicyType $value)
+    public function boardingPolicy($value)
     {
         $this->setProperty('boardingPolicy', $value);
         return $this;
     }
    /**
-    * @param BoardingPolicyType|array $value
+    * @param BoardingPolicyType|array|string $value
     * @return $this
     */
-    public function setBoardingPolicy(?BoardingPolicyType $value)
+    public function setBoardingPolicy($value)
     {
         $this->setProperty('boardingPolicy', $value);
         return $this;
@@ -213,6 +220,7 @@ class Flight extends Trip
     * The kind of aircraft (e.g., "Boeing 747").
     * @param Vehicle|string|array $value
     * @return $this
+    * @deprecated use setAircraft
     */
     public function aircraft($value)
     {
@@ -238,8 +246,9 @@ class Flight extends Trip
 
     /**
     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
+    * @deprecated use setSeller
     */
     public function seller($value)
     {
@@ -247,7 +256,7 @@ class Flight extends Trip
         return $this;
     }
    /**
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
     */
     public function setSeller($value)
@@ -267,8 +276,9 @@ class Flight extends Trip
     * Description of the meals that will be provided or available for purchase.
     * @param string|array $value
     * @return $this
+    * @deprecated use setMealService
     */
-    public function mealService(?string $value)
+    public function mealService($value)
     {
         $this->setProperty('mealService', $value);
         return $this;
@@ -277,7 +287,7 @@ class Flight extends Trip
     * @param string|array $value
     * @return $this
     */
-    public function setMealService(?string $value)
+    public function setMealService($value)
     {
         $this->setProperty('mealService', $value);
         return $this;
@@ -294,8 +304,9 @@ class Flight extends Trip
     * Identifier of the flight's departure gate.
     * @param string|array $value
     * @return $this
+    * @deprecated use setDepartureGate
     */
-    public function departureGate(?string $value)
+    public function departureGate($value)
     {
         $this->setProperty('departureGate', $value);
         return $this;
@@ -304,7 +315,7 @@ class Flight extends Trip
     * @param string|array $value
     * @return $this
     */
-    public function setDepartureGate(?string $value)
+    public function setDepartureGate($value)
     {
         $this->setProperty('departureGate', $value);
         return $this;
@@ -321,8 +332,9 @@ class Flight extends Trip
     * Identifier of the flight's departure terminal.
     * @param string|array $value
     * @return $this
+    * @deprecated use setDepartureTerminal
     */
-    public function departureTerminal(?string $value)
+    public function departureTerminal($value)
     {
         $this->setProperty('departureTerminal', $value);
         return $this;
@@ -331,7 +343,7 @@ class Flight extends Trip
     * @param string|array $value
     * @return $this
     */
-    public function setDepartureTerminal(?string $value)
+    public function setDepartureTerminal($value)
     {
         $this->setProperty('departureTerminal', $value);
         return $this;
@@ -348,6 +360,7 @@ class Flight extends Trip
     * The estimated time the flight will take.
     * @param Duration|string|array $value
     * @return $this
+    * @deprecated use setEstimatedFlightDuration
     */
     public function estimatedFlightDuration($value)
     {
@@ -375,6 +388,7 @@ class Flight extends Trip
     * The distance of the flight.
     * @param Distance|string|array $value
     * @return $this
+    * @deprecated use setFlightDistance
     */
     public function flightDistance($value)
     {
@@ -402,8 +416,9 @@ class Flight extends Trip
     * Identifier of the flight's arrival terminal.
     * @param string|array $value
     * @return $this
+    * @deprecated use setArrivalTerminal
     */
-    public function arrivalTerminal(?string $value)
+    public function arrivalTerminal($value)
     {
         $this->setProperty('arrivalTerminal', $value);
         return $this;
@@ -412,7 +427,7 @@ class Flight extends Trip
     * @param string|array $value
     * @return $this
     */
-    public function setArrivalTerminal(?string $value)
+    public function setArrivalTerminal($value)
     {
         $this->setProperty('arrivalTerminal', $value);
         return $this;
@@ -427,7 +442,3 @@ class Flight extends Trip
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Trip\\Flight','Thing\\Flight');
-

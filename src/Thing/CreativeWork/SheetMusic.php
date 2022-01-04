@@ -15,7 +15,3 @@ class SheetMusic extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\SheetMusic','Thing\\SheetMusic');
-

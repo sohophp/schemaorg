@@ -19,8 +19,9 @@ class PublicationVolume extends CreativeWork
     * Any description of pages that is not separated into pageStart and pageEnd; for example, "1-6, 9, 55" or "10-12, 46-49".
     * @param string|array $value
     * @return $this
+    * @deprecated use setPagination
     */
-    public function pagination(?string $value)
+    public function pagination($value)
     {
         $this->setProperty('pagination', $value);
         return $this;
@@ -29,7 +30,7 @@ class PublicationVolume extends CreativeWork
     * @param string|array $value
     * @return $this
     */
-    public function setPagination(?string $value)
+    public function setPagination($value)
     {
         $this->setProperty('pagination', $value);
         return $this;
@@ -46,6 +47,7 @@ class PublicationVolume extends CreativeWork
     * The page on which the work ends; for example "138" or "xvi".
     * @param string|int|array $value
     * @return $this
+    * @deprecated use setPageEnd
     */
     public function pageEnd($value)
     {
@@ -73,6 +75,7 @@ class PublicationVolume extends CreativeWork
     * Identifies the volume of publication or multi-part work; for example, "iii" or "2".
     * @param int|string|array $value
     * @return $this
+    * @deprecated use setVolumeNumber
     */
     public function volumeNumber($value)
     {
@@ -100,6 +103,7 @@ class PublicationVolume extends CreativeWork
     * The page on which the work starts; for example "135" or "xiii".
     * @param string|int|array $value
     * @return $this
+    * @deprecated use setPageStart
     */
     public function pageStart($value)
     {
@@ -125,7 +129,3 @@ class PublicationVolume extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\PublicationVolume','Thing\\PublicationVolume');
-

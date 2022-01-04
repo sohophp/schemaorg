@@ -18,6 +18,7 @@ class WebAPI extends Service
     * Further documentation describing the Web API in more detail.
     * @param CreativeWork|string|array $value
     * @return $this
+    * @deprecated use setDocumentation
     */
     public function documentation($value)
     {
@@ -43,7 +44,3 @@ class WebAPI extends Service
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Service\\WebAPI','Thing\\WebAPI');
-

@@ -16,19 +16,20 @@ class SportsTeam extends SportsOrganization
 
     /**
     * A person that acts as performing member of a sports team; a player as opposed to a coach.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setAthlete
     */
-    public function athlete(?Person $value)
+    public function athlete($value)
     {
         $this->setProperty('athlete', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setAthlete(?Person $value)
+    public function setAthlete($value)
     {
         $this->setProperty('athlete', $value);
         return $this;
@@ -43,19 +44,20 @@ class SportsTeam extends SportsOrganization
 
     /**
     * A person that acts in a coaching role for a sports team.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setCoach
     */
-    public function coach(?Person $value)
+    public function coach($value)
     {
         $this->setProperty('coach', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setCoach(?Person $value)
+    public function setCoach($value)
     {
         $this->setProperty('coach', $value);
         return $this;
@@ -70,7 +72,3 @@ class SportsTeam extends SportsOrganization
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\SportsOrganization\\SportsTeam','Thing\\SportsTeam');
-

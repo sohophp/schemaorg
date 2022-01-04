@@ -19,19 +19,20 @@ class Game extends CreativeWork
 
     /**
     * An item is an object within the game world that can be collected by a player or, occasionally, a non-player character.
-    * @param Thing|array $value
+    * @param Thing|array|string $value
     * @return $this
+    * @deprecated use setGameItem
     */
-    public function gameItem(?Thing $value)
+    public function gameItem($value)
     {
         $this->setProperty('gameItem', $value);
         return $this;
     }
    /**
-    * @param Thing|array $value
+    * @param Thing|array|string $value
     * @return $this
     */
-    public function setGameItem(?Thing $value)
+    public function setGameItem($value)
     {
         $this->setProperty('gameItem', $value);
         return $this;
@@ -48,6 +49,7 @@ class Game extends CreativeWork
     * Real or fictional location of the game (or part of game).
     * @param PostalAddress|string|Place|array $value
     * @return $this
+    * @deprecated use setGameLocation
     */
     public function gameLocation($value)
     {
@@ -73,19 +75,20 @@ class Game extends CreativeWork
 
     /**
     * The task that a player-controlled character, or group of characters may complete in order to gain a reward.
-    * @param Thing|array $value
+    * @param Thing|array|string $value
     * @return $this
+    * @deprecated use setQuest
     */
-    public function quest(?Thing $value)
+    public function quest($value)
     {
         $this->setProperty('quest', $value);
         return $this;
     }
    /**
-    * @param Thing|array $value
+    * @param Thing|array|string $value
     * @return $this
     */
-    public function setQuest(?Thing $value)
+    public function setQuest($value)
     {
         $this->setProperty('quest', $value);
         return $this;
@@ -100,19 +103,20 @@ class Game extends CreativeWork
 
     /**
     * A piece of data that represents a particular aspect of a fictional character (skill, power, character points, advantage, disadvantage).
-    * @param Thing|array $value
+    * @param Thing|array|string $value
     * @return $this
+    * @deprecated use setCharacterAttribute
     */
-    public function characterAttribute(?Thing $value)
+    public function characterAttribute($value)
     {
         $this->setProperty('characterAttribute', $value);
         return $this;
     }
    /**
-    * @param Thing|array $value
+    * @param Thing|array|string $value
     * @return $this
     */
-    public function setCharacterAttribute(?Thing $value)
+    public function setCharacterAttribute($value)
     {
         $this->setProperty('characterAttribute', $value);
         return $this;
@@ -127,19 +131,20 @@ class Game extends CreativeWork
 
     /**
     * Indicate how many people can play this game (minimum, maximum, or range).
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
+    * @deprecated use setNumberOfPlayers
     */
-    public function numberOfPlayers(?QuantitativeValue $value)
+    public function numberOfPlayers($value)
     {
         $this->setProperty('numberOfPlayers', $value);
         return $this;
     }
    /**
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
     */
-    public function setNumberOfPlayers(?QuantitativeValue $value)
+    public function setNumberOfPlayers($value)
     {
         $this->setProperty('numberOfPlayers', $value);
         return $this;
@@ -154,7 +159,3 @@ class Game extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Game','Thing\\Game');
-

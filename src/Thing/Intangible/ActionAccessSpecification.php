@@ -21,8 +21,9 @@ class ActionAccessSpecification extends Intangible
 
     /**
     * The beginning of the availability of the product or service included in the offer.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setAvailabilityStarts
     */
     public function availabilityStarts($value)
     {
@@ -30,7 +31,7 @@ class ActionAccessSpecification extends Intangible
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setAvailabilityStarts($value)
@@ -48,8 +49,9 @@ class ActionAccessSpecification extends Intangible
 
     /**
     * Indicates if use of the media require a subscription  (either paid or free). Allowed values are <code>true</code> or <code>false</code> (note that an earlier version had 'yes', 'no').
-    * @param MediaSubscription|bool|array $value
+    * @param MediaSubscription|bool|array|string $value
     * @return $this
+    * @deprecated use setRequiresSubscription
     */
     public function requiresSubscription($value)
     {
@@ -57,7 +59,7 @@ class ActionAccessSpecification extends Intangible
         return $this;
     }
    /**
-    * @param MediaSubscription|bool|array $value
+    * @param MediaSubscription|bool|array|string $value
     * @return $this
     */
     public function setRequiresSubscription($value)
@@ -77,6 +79,7 @@ class ActionAccessSpecification extends Intangible
     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
     * @param string|PhysicalActivityCategory|Thing|array $value
     * @return $this
+    * @deprecated use setCategory
     */
     public function category($value)
     {
@@ -102,8 +105,9 @@ class ActionAccessSpecification extends Intangible
 
     /**
     * The end of the availability of the product or service included in the offer.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setAvailabilityEnds
     */
     public function availabilityEnds($value)
     {
@@ -111,7 +115,7 @@ class ActionAccessSpecification extends Intangible
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setAvailabilityEnds($value)
@@ -129,19 +133,20 @@ class ActionAccessSpecification extends Intangible
 
     /**
     * An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.
-    * @param Offer|array $value
+    * @param Offer|array|string $value
     * @return $this
+    * @deprecated use setExpectsAcceptanceOf
     */
-    public function expectsAcceptanceOf(?Offer $value)
+    public function expectsAcceptanceOf($value)
     {
         $this->setProperty('expectsAcceptanceOf', $value);
         return $this;
     }
    /**
-    * @param Offer|array $value
+    * @param Offer|array|string $value
     * @return $this
     */
-    public function setExpectsAcceptanceOf(?Offer $value)
+    public function setExpectsAcceptanceOf($value)
     {
         $this->setProperty('expectsAcceptanceOf', $value);
         return $this;
@@ -160,6 +165,7 @@ class ActionAccessSpecification extends Intangible
 See also <a class="localLink" href="http://schema.org/ineligibleRegion">ineligibleRegion</a>.
     * @param Place|string|GeoShape|array $value
     * @return $this
+    * @deprecated use setEligibleRegion
     */
     public function eligibleRegion($value)
     {
@@ -185,7 +191,3 @@ See also <a class="localLink" href="http://schema.org/ineligibleRegion">ineligib
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\ActionAccessSpecification','Thing\\ActionAccessSpecification');
-

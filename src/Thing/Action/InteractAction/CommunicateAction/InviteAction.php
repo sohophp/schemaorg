@@ -16,19 +16,20 @@ class InviteAction extends CommunicateAction
 
     /**
     * Upcoming or past event associated with this place, organization, or action.
-    * @param Event|array $value
+    * @param Event|array|string $value
     * @return $this
+    * @deprecated use setEvent
     */
-    public function event(?Event $value)
+    public function event($value)
     {
         $this->setProperty('event', $value);
         return $this;
     }
    /**
-    * @param Event|array $value
+    * @param Event|array|string $value
     * @return $this
     */
-    public function setEvent(?Event $value)
+    public function setEvent($value)
     {
         $this->setProperty('event', $value);
         return $this;
@@ -43,7 +44,3 @@ class InviteAction extends CommunicateAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\InteractAction\\CommunicateAction\\InviteAction','Thing\\InviteAction');
-

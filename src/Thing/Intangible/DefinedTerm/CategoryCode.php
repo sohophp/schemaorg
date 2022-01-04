@@ -18,6 +18,7 @@ class CategoryCode extends DefinedTerm
     * A <a class="localLink" href="http://schema.org/CategoryCodeSet">CategoryCodeSet</a> that contains this category code.
     * @param string|CategoryCodeSet|array $value
     * @return $this
+    * @deprecated use setInCodeSet
     */
     public function inCodeSet($value)
     {
@@ -45,8 +46,9 @@ class CategoryCode extends DefinedTerm
     * A short textual code that uniquely identifies the value.
     * @param string|array $value
     * @return $this
+    * @deprecated use setCodeValue
     */
-    public function codeValue(?string $value)
+    public function codeValue($value)
     {
         $this->setProperty('codeValue', $value);
         return $this;
@@ -55,7 +57,7 @@ class CategoryCode extends DefinedTerm
     * @param string|array $value
     * @return $this
     */
-    public function setCodeValue(?string $value)
+    public function setCodeValue($value)
     {
         $this->setProperty('codeValue', $value);
         return $this;
@@ -70,7 +72,3 @@ class CategoryCode extends DefinedTerm
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\DefinedTerm\\CategoryCode','Thing\\CategoryCode');
-

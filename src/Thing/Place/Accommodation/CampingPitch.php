@@ -20,7 +20,3 @@ class CampingPitch extends Accommodation
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\Accommodation\\CampingPitch','Thing\\CampingPitch');
-

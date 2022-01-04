@@ -15,7 +15,3 @@ class UserPageVisits extends UserInteraction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Event\\UserInteraction\\UserPageVisits','Thing\\UserPageVisits');
-

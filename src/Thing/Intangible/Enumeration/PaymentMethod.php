@@ -30,7 +30,3 @@ class PaymentMethod extends Enumeration
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\PaymentMethod','Thing\\PaymentMethod');
-

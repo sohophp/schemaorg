@@ -15,7 +15,3 @@ class Consortium extends Organization
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\Consortium','Thing\\Consortium');
-

@@ -15,7 +15,3 @@ class AdministrativeArea extends Place
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\AdministrativeArea','Thing\\AdministrativeArea');
-

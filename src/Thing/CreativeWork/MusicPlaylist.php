@@ -17,8 +17,9 @@ class MusicPlaylist extends CreativeWork
 
     /**
     * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
-    * @param ItemList|MusicRecording|array $value
+    * @param ItemList|MusicRecording|array|string $value
     * @return $this
+    * @deprecated use setTrack
     */
     public function track($value)
     {
@@ -26,7 +27,7 @@ class MusicPlaylist extends CreativeWork
         return $this;
     }
    /**
-    * @param ItemList|MusicRecording|array $value
+    * @param ItemList|MusicRecording|array|string $value
     * @return $this
     */
     public function setTrack($value)
@@ -44,19 +45,20 @@ class MusicPlaylist extends CreativeWork
 
     /**
     * The number of tracks in this album or playlist.
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
+    * @deprecated use setNumTracks
     */
-    public function numTracks(?int $value)
+    public function numTracks($value)
     {
         $this->setProperty('numTracks', $value);
         return $this;
     }
    /**
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
     */
-    public function setNumTracks(?int $value)
+    public function setNumTracks($value)
     {
         $this->setProperty('numTracks', $value);
         return $this;
@@ -71,19 +73,20 @@ class MusicPlaylist extends CreativeWork
 
     /**
     * A music recording (track)&#x2014;usually a single song.
-    * @param MusicRecording|array $value
+    * @param MusicRecording|array|string $value
     * @return $this
+    * @deprecated use setTracks
     */
-    public function tracks(?MusicRecording $value)
+    public function tracks($value)
     {
         $this->setProperty('tracks', $value);
         return $this;
     }
    /**
-    * @param MusicRecording|array $value
+    * @param MusicRecording|array|string $value
     * @return $this
     */
-    public function setTracks(?MusicRecording $value)
+    public function setTracks($value)
     {
         $this->setProperty('tracks', $value);
         return $this;
@@ -98,7 +101,3 @@ class MusicPlaylist extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\MusicPlaylist','Thing\\MusicPlaylist');
-

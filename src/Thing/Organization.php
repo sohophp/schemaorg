@@ -39,8 +39,9 @@ class Organization extends Thing
 
     /**
     * The geographic area where the service is provided.
-    * @param Place|AdministrativeArea|GeoShape|array $value
+    * @param Place|AdministrativeArea|GeoShape|array|string $value
     * @return $this
+    * @deprecated use setServiceArea
     */
     public function serviceArea($value)
     {
@@ -48,7 +49,7 @@ class Organization extends Thing
         return $this;
     }
    /**
-    * @param Place|AdministrativeArea|GeoShape|array $value
+    * @param Place|AdministrativeArea|GeoShape|array|string $value
     * @return $this
     */
     public function setServiceArea($value)
@@ -66,8 +67,9 @@ class Organization extends Thing
 
     /**
     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
-    * @param ProgramMembership|Organization|array $value
+    * @param ProgramMembership|Organization|array|string $value
     * @return $this
+    * @deprecated use setMemberOf
     */
     public function memberOf($value)
     {
@@ -75,7 +77,7 @@ class Organization extends Thing
         return $this;
     }
    /**
-    * @param ProgramMembership|Organization|array $value
+    * @param ProgramMembership|Organization|array|string $value
     * @return $this
     */
     public function setMemberOf($value)
@@ -93,8 +95,9 @@ class Organization extends Thing
 
     /**
     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
+    * @deprecated use setFunder
     */
     public function funder($value)
     {
@@ -102,7 +105,7 @@ class Organization extends Thing
         return $this;
     }
    /**
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
     */
     public function setFunder($value)
@@ -122,6 +125,7 @@ class Organization extends Thing
     * Of a <a class="localLink" href="http://schema.org/Person">Person</a>, and less typically of an <a class="localLink" href="http://schema.org/Organization">Organization</a>, to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or <a class="localLink" href="http://schema.org/JobPosting">JobPosting</a> descriptions.
     * @param Thing|string|string|array $value
     * @return $this
+    * @deprecated use setKnowsAbout
     */
     public function knowsAbout($value)
     {
@@ -149,6 +153,7 @@ class Organization extends Thing
     * For a <a class="localLink" href="http://schema.org/NewsMediaOrganization">NewsMediaOrganization</a> or other news-related <a class="localLink" href="http://schema.org/Organization">Organization</a>, a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
     * @param string|CreativeWork|array $value
     * @return $this
+    * @deprecated use setActionableFeedbackPolicy
     */
     public function actionableFeedbackPolicy($value)
     {
@@ -176,6 +181,7 @@ class Organization extends Thing
     * For an <a class="localLink" href="http://schema.org/Organization">Organization</a> (typically a <a class="localLink" href="http://schema.org/NewsMediaOrganization">NewsMediaOrganization</a>), a statement about policy on use of unnamed sources and the decision process required.
     * @param CreativeWork|string|array $value
     * @return $this
+    * @deprecated use setUnnamedSourcesPolicy
     */
     public function unnamedSourcesPolicy($value)
     {
@@ -201,19 +207,20 @@ class Organization extends Thing
 
     /**
     * Upcoming or past events associated with this place or organization.
-    * @param Event|array $value
+    * @param Event|array|string $value
     * @return $this
+    * @deprecated use setEvents
     */
-    public function events(?Event $value)
+    public function events($value)
     {
         $this->setProperty('events', $value);
         return $this;
     }
    /**
-    * @param Event|array $value
+    * @param Event|array|string $value
     * @return $this
     */
-    public function setEvents(?Event $value)
+    public function setEvents($value)
     {
         $this->setProperty('events', $value);
         return $this;
@@ -228,19 +235,20 @@ class Organization extends Thing
 
     /**
     * A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
+    * @deprecated use setSubOrganization
     */
-    public function subOrganization(?Organization $value)
+    public function subOrganization($value)
     {
         $this->setProperty('subOrganization', $value);
         return $this;
     }
    /**
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
     */
-    public function setSubOrganization(?Organization $value)
+    public function setSubOrganization($value)
     {
         $this->setProperty('subOrganization', $value);
         return $this;
@@ -255,19 +263,20 @@ class Organization extends Thing
 
     /**
     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
-    * @param OfferCatalog|array $value
+    * @param OfferCatalog|array|string $value
     * @return $this
+    * @deprecated use setHasOfferCatalog
     */
-    public function hasOfferCatalog(?OfferCatalog $value)
+    public function hasOfferCatalog($value)
     {
         $this->setProperty('hasOfferCatalog', $value);
         return $this;
     }
    /**
-    * @param OfferCatalog|array $value
+    * @param OfferCatalog|array|string $value
     * @return $this
     */
-    public function setHasOfferCatalog(?OfferCatalog $value)
+    public function setHasOfferCatalog($value)
     {
         $this->setProperty('hasOfferCatalog', $value);
         return $this;
@@ -284,8 +293,9 @@ class Organization extends Thing
     * The <a href="http://www.gs1.org/gln">Global Location Number</a> (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
     * @param string|array $value
     * @return $this
+    * @deprecated use setGlobalLocationNumber
     */
-    public function globalLocationNumber(?string $value)
+    public function globalLocationNumber($value)
     {
         $this->setProperty('globalLocationNumber', $value);
         return $this;
@@ -294,7 +304,7 @@ class Organization extends Thing
     * @param string|array $value
     * @return $this
     */
-    public function setGlobalLocationNumber(?string $value)
+    public function setGlobalLocationNumber($value)
     {
         $this->setProperty('globalLocationNumber', $value);
         return $this;
@@ -309,19 +319,20 @@ class Organization extends Thing
 
     /**
     * Review of the item.
-    * @param Review|array $value
+    * @param Review|array|string $value
     * @return $this
+    * @deprecated use setReviews
     */
-    public function reviews(?Review $value)
+    public function reviews($value)
     {
         $this->setProperty('reviews', $value);
         return $this;
     }
    /**
-    * @param Review|array $value
+    * @param Review|array|string $value
     * @return $this
     */
-    public function setReviews(?Review $value)
+    public function setReviews($value)
     {
         $this->setProperty('reviews', $value);
         return $this;
@@ -336,8 +347,9 @@ class Organization extends Thing
 
     /**
     * A member of this organization.
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
+    * @deprecated use setMembers
     */
     public function members($value)
     {
@@ -345,7 +357,7 @@ class Organization extends Thing
         return $this;
     }
    /**
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
     */
     public function setMembers($value)
@@ -363,19 +375,20 @@ class Organization extends Thing
 
     /**
     * The overall rating, based on a collection of reviews or ratings, of the item.
-    * @param AggregateRating|array $value
+    * @param AggregateRating|array|string $value
     * @return $this
+    * @deprecated use setAggregateRating
     */
-    public function aggregateRating(?AggregateRating $value)
+    public function aggregateRating($value)
     {
         $this->setProperty('aggregateRating', $value);
         return $this;
     }
    /**
-    * @param AggregateRating|array $value
+    * @param AggregateRating|array|string $value
     * @return $this
     */
-    public function setAggregateRating(?AggregateRating $value)
+    public function setAggregateRating($value)
     {
         $this->setProperty('aggregateRating', $value);
         return $this;
@@ -392,6 +405,7 @@ class Organization extends Thing
     * For an <a class="localLink" href="http://schema.org/Organization">Organization</a> (e.g. <a class="localLink" href="http://schema.org/NewsMediaOrganization">NewsMediaOrganization</a>), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.
     * @param string|CreativeWork|array $value
     * @return $this
+    * @deprecated use setCorrectionsPolicy
     */
     public function correctionsPolicy($value)
     {
@@ -417,19 +431,20 @@ class Organization extends Thing
 
     /**
     * Indicates a ProductReturnPolicy that may be applicable.
-    * @param ProductReturnPolicy|array $value
+    * @param ProductReturnPolicy|array|string $value
     * @return $this
+    * @deprecated use setHasProductReturnPolicy
     */
-    public function hasProductReturnPolicy(?ProductReturnPolicy $value)
+    public function hasProductReturnPolicy($value)
     {
         $this->setProperty('hasProductReturnPolicy', $value);
         return $this;
     }
    /**
-    * @param ProductReturnPolicy|array $value
+    * @param ProductReturnPolicy|array|string $value
     * @return $this
     */
-    public function setHasProductReturnPolicy(?ProductReturnPolicy $value)
+    public function setHasProductReturnPolicy($value)
     {
         $this->setProperty('hasProductReturnPolicy', $value);
         return $this;
@@ -446,6 +461,7 @@ class Organization extends Thing
     * Statement on diversity policy by an <a class="localLink" href="http://schema.org/Organization">Organization</a> e.g. a <a class="localLink" href="http://schema.org/NewsMediaOrganization">NewsMediaOrganization</a>. For a <a class="localLink" href="http://schema.org/NewsMediaOrganization">NewsMediaOrganization</a>, a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
     * @param string|CreativeWork|array $value
     * @return $this
+    * @deprecated use setDiversityPolicy
     */
     public function diversityPolicy($value)
     {
@@ -473,8 +489,9 @@ class Organization extends Thing
     * The Dun &amp; Bradstreet DUNS number for identifying an organization or business person.
     * @param string|array $value
     * @return $this
+    * @deprecated use setDuns
     */
-    public function duns(?string $value)
+    public function duns($value)
     {
         $this->setProperty('duns', $value);
         return $this;
@@ -483,7 +500,7 @@ class Organization extends Thing
     * @param string|array $value
     * @return $this
     */
-    public function setDuns(?string $value)
+    public function setDuns($value)
     {
         $this->setProperty('duns', $value);
         return $this;
@@ -500,8 +517,9 @@ class Organization extends Thing
     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
     * @param string|array $value
     * @return $this
+    * @deprecated use setTaxID
     */
-    public function taxID(?string $value)
+    public function taxID($value)
     {
         $this->setProperty('taxID', $value);
         return $this;
@@ -510,7 +528,7 @@ class Organization extends Thing
     * @param string|array $value
     * @return $this
     */
-    public function setTaxID(?string $value)
+    public function setTaxID($value)
     {
         $this->setProperty('taxID', $value);
         return $this;
@@ -527,8 +545,9 @@ class Organization extends Thing
     * An award won by or for this item.
     * @param string|array $value
     * @return $this
+    * @deprecated use setAward
     */
-    public function award(?string $value)
+    public function award($value)
     {
         $this->setProperty('award', $value);
         return $this;
@@ -537,7 +556,7 @@ class Organization extends Thing
     * @param string|array $value
     * @return $this
     */
-    public function setAward(?string $value)
+    public function setAward($value)
     {
         $this->setProperty('award', $value);
         return $this;
@@ -552,19 +571,20 @@ class Organization extends Thing
 
     /**
     * A pointer to products or services offered by the organization or person.
-    * @param Offer|array $value
+    * @param Offer|array|string $value
     * @return $this
+    * @deprecated use setMakesOffer
     */
-    public function makesOffer(?Offer $value)
+    public function makesOffer($value)
     {
         $this->setProperty('makesOffer', $value);
         return $this;
     }
    /**
-    * @param Offer|array $value
+    * @param Offer|array|string $value
     * @return $this
     */
-    public function setMakesOffer(?Offer $value)
+    public function setMakesOffer($value)
     {
         $this->setProperty('makesOffer', $value);
         return $this;
@@ -579,19 +599,20 @@ class Organization extends Thing
 
     /**
     * A contact point for a person or organization.
-    * @param ContactPoint|array $value
+    * @param ContactPoint|array|string $value
     * @return $this
+    * @deprecated use setContactPoints
     */
-    public function contactPoints(?ContactPoint $value)
+    public function contactPoints($value)
     {
         $this->setProperty('contactPoints', $value);
         return $this;
     }
    /**
-    * @param ContactPoint|array $value
+    * @param ContactPoint|array|string $value
     * @return $this
     */
-    public function setContactPoints(?ContactPoint $value)
+    public function setContactPoints($value)
     {
         $this->setProperty('contactPoints', $value);
         return $this;
@@ -608,6 +629,7 @@ class Organization extends Thing
     * For an <a class="localLink" href="http://schema.org/Organization">Organization</a> (often but not necessarily a <a class="localLink" href="http://schema.org/NewsMediaOrganization">NewsMediaOrganization</a>), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the <a class="localLink" href="http://schema.org/funder">funder</a> is also available and can be used to make basic funder information machine-readable.
     * @param string|CreativeWork|AboutPage|string|array $value
     * @return $this
+    * @deprecated use setOwnershipFundingInfo
     */
     public function ownershipFundingInfo($value)
     {
@@ -635,8 +657,9 @@ class Organization extends Thing
     * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
     * @param string|array $value
     * @return $this
+    * @deprecated use setLeiCode
     */
-    public function leiCode(?string $value)
+    public function leiCode($value)
     {
         $this->setProperty('leiCode', $value);
         return $this;
@@ -645,7 +668,7 @@ class Organization extends Thing
     * @param string|array $value
     * @return $this
     */
-    public function setLeiCode(?string $value)
+    public function setLeiCode($value)
     {
         $this->setProperty('leiCode', $value);
         return $this;
@@ -660,19 +683,20 @@ class Organization extends Thing
 
     /**
     * A pointer to products or services sought by the organization or person (demand).
-    * @param Demand|array $value
+    * @param Demand|array|string $value
     * @return $this
+    * @deprecated use setSeeks
     */
-    public function seeks(?Demand $value)
+    public function seeks($value)
     {
         $this->setProperty('seeks', $value);
         return $this;
     }
    /**
-    * @param Demand|array $value
+    * @param Demand|array|string $value
     * @return $this
     */
-    public function setSeeks(?Demand $value)
+    public function setSeeks($value)
     {
         $this->setProperty('seeks', $value);
         return $this;
@@ -687,8 +711,9 @@ class Organization extends Thing
 
     /**
     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
+    * @deprecated use setMember
     */
     public function member($value)
     {
@@ -696,7 +721,7 @@ class Organization extends Thing
         return $this;
     }
    /**
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
     */
     public function setMember($value)
@@ -714,19 +739,20 @@ class Organization extends Thing
 
     /**
     * A person who founded this organization.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setFounders
     */
-    public function founders(?Person $value)
+    public function founders($value)
     {
         $this->setProperty('founders', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setFounders(?Person $value)
+    public function setFounders($value)
     {
         $this->setProperty('founders', $value);
         return $this;
@@ -741,19 +767,20 @@ class Organization extends Thing
 
     /**
     * Alumni of an organization.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setAlumni
     */
-    public function alumni(?Person $value)
+    public function alumni($value)
     {
         $this->setProperty('alumni', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setAlumni(?Person $value)
+    public function setAlumni($value)
     {
         $this->setProperty('alumni', $value);
         return $this;
@@ -768,8 +795,9 @@ class Organization extends Thing
 
     /**
     * The date that this organization was dissolved.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setDissolutionDate
     */
     public function dissolutionDate($value)
     {
@@ -777,7 +805,7 @@ class Organization extends Thing
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setDissolutionDate($value)
@@ -797,6 +825,7 @@ class Organization extends Thing
     * Physical address of the item.
     * @param string|PostalAddress|array $value
     * @return $this
+    * @deprecated use setAddress
     */
     public function address($value)
     {
@@ -824,6 +853,7 @@ class Organization extends Thing
     * An associated logo.
     * @param ImageObject|string|array $value
     * @return $this
+    * @deprecated use setLogo
     */
     public function logo($value)
     {
@@ -849,19 +879,20 @@ class Organization extends Thing
 
     /**
     * People working for this organization.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setEmployees
     */
-    public function employees(?Person $value)
+    public function employees($value)
     {
         $this->setProperty('employees', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setEmployees(?Person $value)
+    public function setEmployees($value)
     {
         $this->setProperty('employees', $value);
         return $this;
@@ -878,8 +909,9 @@ class Organization extends Thing
     * The telephone number.
     * @param string|array $value
     * @return $this
+    * @deprecated use setTelephone
     */
-    public function telephone(?string $value)
+    public function telephone($value)
     {
         $this->setProperty('telephone', $value);
         return $this;
@@ -888,7 +920,7 @@ class Organization extends Thing
     * @param string|array $value
     * @return $this
     */
-    public function setTelephone(?string $value)
+    public function setTelephone($value)
     {
         $this->setProperty('telephone', $value);
         return $this;
@@ -905,8 +937,9 @@ class Organization extends Thing
     * Email address.
     * @param string|array $value
     * @return $this
+    * @deprecated use setEmail
     */
-    public function email(?string $value)
+    public function email($value)
     {
         $this->setProperty('email', $value);
         return $this;
@@ -915,7 +948,7 @@ class Organization extends Thing
     * @param string|array $value
     * @return $this
     */
-    public function setEmail(?string $value)
+    public function setEmail($value)
     {
         $this->setProperty('email', $value);
         return $this;
@@ -930,19 +963,20 @@ class Organization extends Thing
 
     /**
     * A contact point for a person or organization.
-    * @param ContactPoint|array $value
+    * @param ContactPoint|array|string $value
     * @return $this
+    * @deprecated use setContactPoint
     */
-    public function contactPoint(?ContactPoint $value)
+    public function contactPoint($value)
     {
         $this->setProperty('contactPoint', $value);
         return $this;
     }
    /**
-    * @param ContactPoint|array $value
+    * @param ContactPoint|array|string $value
     * @return $this
     */
-    public function setContactPoint(?ContactPoint $value)
+    public function setContactPoint($value)
     {
         $this->setProperty('contactPoint', $value);
         return $this;
@@ -957,19 +991,20 @@ class Organization extends Thing
 
     /**
     * The larger organization that this organization is a <a class="localLink" href="http://schema.org/subOrganization">subOrganization</a> of, if any.
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
+    * @deprecated use setParentOrganization
     */
-    public function parentOrganization(?Organization $value)
+    public function parentOrganization($value)
     {
         $this->setProperty('parentOrganization', $value);
         return $this;
     }
    /**
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
     */
-    public function setParentOrganization(?Organization $value)
+    public function setParentOrganization($value)
     {
         $this->setProperty('parentOrganization', $value);
         return $this;
@@ -986,8 +1021,9 @@ class Organization extends Thing
     * The official name of the organization, e.g. the registered company name.
     * @param string|array $value
     * @return $this
+    * @deprecated use setLegalName
     */
-    public function legalName(?string $value)
+    public function legalName($value)
     {
         $this->setProperty('legalName', $value);
         return $this;
@@ -996,7 +1032,7 @@ class Organization extends Thing
     * @param string|array $value
     * @return $this
     */
-    public function setLegalName(?string $value)
+    public function setLegalName($value)
     {
         $this->setProperty('legalName', $value);
         return $this;
@@ -1013,8 +1049,9 @@ class Organization extends Thing
     * Awards won by or for this item.
     * @param string|array $value
     * @return $this
+    * @deprecated use setAwards
     */
-    public function awards(?string $value)
+    public function awards($value)
     {
         $this->setProperty('awards', $value);
         return $this;
@@ -1023,7 +1060,7 @@ class Organization extends Thing
     * @param string|array $value
     * @return $this
     */
-    public function setAwards(?string $value)
+    public function setAwards($value)
     {
         $this->setProperty('awards', $value);
         return $this;
@@ -1040,6 +1077,7 @@ class Organization extends Thing
     * Statement about ethics policy, e.g. of a <a class="localLink" href="http://schema.org/NewsMediaOrganization">NewsMediaOrganization</a> regarding journalistic and publishing practices, or of a <a class="localLink" href="http://schema.org/Restaurant">Restaurant</a>, a page describing food source policies. In the case of a <a class="localLink" href="http://schema.org/NewsMediaOrganization">NewsMediaOrganization</a>, an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
     * @param CreativeWork|string|array $value
     * @return $this
+    * @deprecated use setEthicsPolicy
     */
     public function ethicsPolicy($value)
     {
@@ -1065,19 +1103,20 @@ class Organization extends Thing
 
     /**
     * Someone working for this organization.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setEmployee
     */
-    public function employee(?Person $value)
+    public function employee($value)
     {
         $this->setProperty('employee', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setEmployee(?Person $value)
+    public function setEmployee($value)
     {
         $this->setProperty('employee', $value);
         return $this;
@@ -1092,19 +1131,20 @@ class Organization extends Thing
 
     /**
     * The number of employees in an organization e.g. business.
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
+    * @deprecated use setNumberOfEmployees
     */
-    public function numberOfEmployees(?QuantitativeValue $value)
+    public function numberOfEmployees($value)
     {
         $this->setProperty('numberOfEmployees', $value);
         return $this;
     }
    /**
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
     */
-    public function setNumberOfEmployees(?QuantitativeValue $value)
+    public function setNumberOfEmployees($value)
     {
         $this->setProperty('numberOfEmployees', $value);
         return $this;
@@ -1121,8 +1161,9 @@ class Organization extends Thing
     * The North American Industry Classification System (NAICS) code for a particular organization or business person.
     * @param string|array $value
     * @return $this
+    * @deprecated use setNaics
     */
-    public function naics(?string $value)
+    public function naics($value)
     {
         $this->setProperty('naics', $value);
         return $this;
@@ -1131,7 +1172,7 @@ class Organization extends Thing
     * @param string|array $value
     * @return $this
     */
-    public function setNaics(?string $value)
+    public function setNaics($value)
     {
         $this->setProperty('naics', $value);
         return $this;
@@ -1146,19 +1187,20 @@ class Organization extends Thing
 
     /**
     * Points-of-Sales operated by the organization or person.
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
+    * @deprecated use setHasPOS
     */
-    public function hasPOS(?Place $value)
+    public function hasPOS($value)
     {
         $this->setProperty('hasPOS', $value);
         return $this;
     }
    /**
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
     */
-    public function setHasPOS(?Place $value)
+    public function setHasPOS($value)
     {
         $this->setProperty('hasPOS', $value);
         return $this;
@@ -1173,19 +1215,20 @@ class Organization extends Thing
 
     /**
     * A review of the item.
-    * @param Review|array $value
+    * @param Review|array|string $value
     * @return $this
+    * @deprecated use setReview
     */
-    public function review(?Review $value)
+    public function review($value)
     {
         $this->setProperty('review', $value);
         return $this;
     }
    /**
-    * @param Review|array $value
+    * @param Review|array|string $value
     * @return $this
     */
-    public function setReview(?Review $value)
+    public function setReview($value)
     {
         $this->setProperty('review', $value);
         return $this;
@@ -1200,19 +1243,20 @@ class Organization extends Thing
 
     /**
     * The place where the Organization was founded.
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
+    * @deprecated use setFoundingLocation
     */
-    public function foundingLocation(?Place $value)
+    public function foundingLocation($value)
     {
         $this->setProperty('foundingLocation', $value);
         return $this;
     }
    /**
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
     */
-    public function setFoundingLocation(?Place $value)
+    public function setFoundingLocation($value)
     {
         $this->setProperty('foundingLocation', $value);
         return $this;
@@ -1227,8 +1271,9 @@ class Organization extends Thing
 
     /**
     * Products owned by the organization or person.
-    * @param Product|OwnershipInfo|array $value
+    * @param Product|OwnershipInfo|array|string $value
     * @return $this
+    * @deprecated use setOwns
     */
     public function owns($value)
     {
@@ -1236,7 +1281,7 @@ class Organization extends Thing
         return $this;
     }
    /**
-    * @param Product|OwnershipInfo|array $value
+    * @param Product|OwnershipInfo|array|string $value
     * @return $this
     */
     public function setOwns($value)
@@ -1254,19 +1299,20 @@ class Organization extends Thing
 
     /**
     * Upcoming or past event associated with this place, organization, or action.
-    * @param Event|array $value
+    * @param Event|array|string $value
     * @return $this
+    * @deprecated use setEvent
     */
-    public function event(?Event $value)
+    public function event($value)
     {
         $this->setProperty('event', $value);
         return $this;
     }
    /**
-    * @param Event|array $value
+    * @param Event|array|string $value
     * @return $this
     */
-    public function setEvent(?Event $value)
+    public function setEvent($value)
     {
         $this->setProperty('event', $value);
         return $this;
@@ -1281,19 +1327,20 @@ class Organization extends Thing
 
     /**
     * A person who founded this organization.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setFounder
     */
-    public function founder(?Person $value)
+    public function founder($value)
     {
         $this->setProperty('founder', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setFounder(?Person $value)
+    public function setFounder($value)
     {
         $this->setProperty('founder', $value);
         return $this;
@@ -1312,6 +1359,7 @@ class Organization extends Thing
 While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a <a class="localLink" href="http://schema.org/funder">funder</a>) can be expressed using schema.org terminology.
     * @param CreativeWork|string|array $value
     * @return $this
+    * @deprecated use setPublishingPrinciples
     */
     public function publishingPrinciples($value)
     {
@@ -1337,8 +1385,9 @@ While such policies are most typically expressed in natural language, sometimes 
 
     /**
     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
+    * @deprecated use setSponsor
     */
     public function sponsor($value)
     {
@@ -1346,7 +1395,7 @@ While such policies are most typically expressed in natural language, sometimes 
         return $this;
     }
    /**
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
     */
     public function setSponsor($value)
@@ -1366,8 +1415,9 @@ While such policies are most typically expressed in natural language, sometimes 
     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
     * @param string|array $value
     * @return $this
+    * @deprecated use setIsicV4
     */
-    public function isicV4(?string $value)
+    public function isicV4($value)
     {
         $this->setProperty('isicV4', $value);
         return $this;
@@ -1376,7 +1426,7 @@ While such policies are most typically expressed in natural language, sometimes 
     * @param string|array $value
     * @return $this
     */
-    public function setIsicV4(?string $value)
+    public function setIsicV4($value)
     {
         $this->setProperty('isicV4', $value);
         return $this;
@@ -1393,8 +1443,9 @@ While such policies are most typically expressed in natural language, sometimes 
     * A slogan or motto associated with the item.
     * @param string|array $value
     * @return $this
+    * @deprecated use setSlogan
     */
-    public function slogan(?string $value)
+    public function slogan($value)
     {
         $this->setProperty('slogan', $value);
         return $this;
@@ -1403,7 +1454,7 @@ While such policies are most typically expressed in natural language, sometimes 
     * @param string|array $value
     * @return $this
     */
-    public function setSlogan(?string $value)
+    public function setSlogan($value)
     {
         $this->setProperty('slogan', $value);
         return $this;
@@ -1420,6 +1471,7 @@ While such policies are most typically expressed in natural language, sometimes 
     * The location of for example where the event is happening, an organization is located, or where an action takes place.
     * @param PostalAddress|string|Place|array $value
     * @return $this
+    * @deprecated use setLocation
     */
     public function location($value)
     {
@@ -1445,8 +1497,9 @@ While such policies are most typically expressed in natural language, sometimes 
 
     /**
     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-    * @param Organization|Brand|array $value
+    * @param Organization|Brand|array|string $value
     * @return $this
+    * @deprecated use setBrand
     */
     public function brand($value)
     {
@@ -1454,7 +1507,7 @@ While such policies are most typically expressed in natural language, sometimes 
         return $this;
     }
    /**
-    * @param Organization|Brand|array $value
+    * @param Organization|Brand|array|string $value
     * @return $this
     */
     public function setBrand($value)
@@ -1472,19 +1525,20 @@ While such policies are most typically expressed in natural language, sometimes 
 
     /**
     * A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
+    * @deprecated use setDepartment
     */
-    public function department(?Organization $value)
+    public function department($value)
     {
         $this->setProperty('department', $value);
         return $this;
     }
    /**
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
     */
-    public function setDepartment(?Organization $value)
+    public function setDepartment($value)
     {
         $this->setProperty('department', $value);
         return $this;
@@ -1501,8 +1555,9 @@ While such policies are most typically expressed in natural language, sometimes 
     * The Value-added Tax ID of the organization or person.
     * @param string|array $value
     * @return $this
+    * @deprecated use setVatID
     */
-    public function vatID(?string $value)
+    public function vatID($value)
     {
         $this->setProperty('vatID', $value);
         return $this;
@@ -1511,7 +1566,7 @@ While such policies are most typically expressed in natural language, sometimes 
     * @param string|array $value
     * @return $this
     */
-    public function setVatID(?string $value)
+    public function setVatID($value)
     {
         $this->setProperty('vatID', $value);
         return $this;
@@ -1526,19 +1581,20 @@ While such policies are most typically expressed in natural language, sometimes 
 
     /**
     * A credential awarded to the Person or Organization.
-    * @param EducationalOccupationalCredential|array $value
+    * @param EducationalOccupationalCredential|array|string $value
     * @return $this
+    * @deprecated use setHasCredential
     */
-    public function hasCredential(?EducationalOccupationalCredential $value)
+    public function hasCredential($value)
     {
         $this->setProperty('hasCredential', $value);
         return $this;
     }
    /**
-    * @param EducationalOccupationalCredential|array $value
+    * @param EducationalOccupationalCredential|array|string $value
     * @return $this
     */
-    public function setHasCredential(?EducationalOccupationalCredential $value)
+    public function setHasCredential($value)
     {
         $this->setProperty('hasCredential', $value);
         return $this;
@@ -1555,6 +1611,7 @@ While such policies are most typically expressed in natural language, sometimes 
     * Of a <a class="localLink" href="http://schema.org/Person">Person</a>, and less typically of an <a class="localLink" href="http://schema.org/Organization">Organization</a>, to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the <a href="http://tools.ietf.org/html/bcp47">IETF BCP 47 standard</a>.
     * @param string|Language|array $value
     * @return $this
+    * @deprecated use setKnowsLanguage
     */
     public function knowsLanguage($value)
     {
@@ -1582,8 +1639,9 @@ While such policies are most typically expressed in natural language, sometimes 
     * The fax number.
     * @param string|array $value
     * @return $this
+    * @deprecated use setFaxNumber
     */
-    public function faxNumber(?string $value)
+    public function faxNumber($value)
     {
         $this->setProperty('faxNumber', $value);
         return $this;
@@ -1592,7 +1650,7 @@ While such policies are most typically expressed in natural language, sometimes 
     * @param string|array $value
     * @return $this
     */
-    public function setFaxNumber(?string $value)
+    public function setFaxNumber($value)
     {
         $this->setProperty('faxNumber', $value);
         return $this;
@@ -1609,6 +1667,7 @@ While such policies are most typically expressed in natural language, sometimes 
     * The geographic area where a service or offered item is provided.
     * @param string|GeoShape|Place|AdministrativeArea|array $value
     * @return $this
+    * @deprecated use setAreaServed
     */
     public function areaServed($value)
     {
@@ -1636,6 +1695,7 @@ While such policies are most typically expressed in natural language, sometimes 
     * For an <a class="localLink" href="http://schema.org/Organization">Organization</a> (often but not necessarily a <a class="localLink" href="http://schema.org/NewsMediaOrganization">NewsMediaOrganization</a>), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
     * @param string|Article|array $value
     * @return $this
+    * @deprecated use setDiversityStaffingReport
     */
     public function diversityStaffingReport($value)
     {
@@ -1661,8 +1721,9 @@ While such policies are most typically expressed in natural language, sometimes 
 
     /**
     * The date that this organization was founded.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setFoundingDate
     */
     public function foundingDate($value)
     {
@@ -1670,7 +1731,7 @@ While such policies are most typically expressed in natural language, sometimes 
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setFoundingDate($value)
@@ -1688,7 +1749,3 @@ While such policies are most typically expressed in natural language, sometimes 
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization','Thing\\Organization');
-

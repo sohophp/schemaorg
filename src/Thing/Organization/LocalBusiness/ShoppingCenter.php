@@ -15,7 +15,3 @@ class ShoppingCenter extends LocalBusiness
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\ShoppingCenter','Thing\\ShoppingCenter');
-

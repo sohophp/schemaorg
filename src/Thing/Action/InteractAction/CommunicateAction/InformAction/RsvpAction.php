@@ -17,8 +17,9 @@ class RsvpAction extends InformAction
 
     /**
     * If responding yes, the number of guests who will attend in addition to the invitee.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setAdditionalNumberOfGuests
     */
     public function additionalNumberOfGuests($value)
     {
@@ -26,7 +27,7 @@ class RsvpAction extends InformAction
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setAdditionalNumberOfGuests($value)
@@ -44,19 +45,20 @@ class RsvpAction extends InformAction
 
     /**
     * Comments, typically from users.
-    * @param Comment|array $value
+    * @param Comment|array|string $value
     * @return $this
+    * @deprecated use setComment
     */
-    public function comment(?Comment $value)
+    public function comment($value)
     {
         $this->setProperty('comment', $value);
         return $this;
     }
    /**
-    * @param Comment|array $value
+    * @param Comment|array|string $value
     * @return $this
     */
-    public function setComment(?Comment $value)
+    public function setComment($value)
     {
         $this->setProperty('comment', $value);
         return $this;
@@ -71,19 +73,20 @@ class RsvpAction extends InformAction
 
     /**
     * The response (yes, no, maybe) to the RSVP.
-    * @param RsvpResponseType|array $value
+    * @param RsvpResponseType|array|string $value
     * @return $this
+    * @deprecated use setRsvpResponse
     */
-    public function rsvpResponse(?RsvpResponseType $value)
+    public function rsvpResponse($value)
     {
         $this->setProperty('rsvpResponse', $value);
         return $this;
     }
    /**
-    * @param RsvpResponseType|array $value
+    * @param RsvpResponseType|array|string $value
     * @return $this
     */
-    public function setRsvpResponse(?RsvpResponseType $value)
+    public function setRsvpResponse($value)
     {
         $this->setProperty('rsvpResponse', $value);
         return $this;
@@ -98,7 +101,3 @@ class RsvpAction extends InformAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\InteractAction\\CommunicateAction\\InformAction\\RsvpAction','Thing\\RsvpAction');
-

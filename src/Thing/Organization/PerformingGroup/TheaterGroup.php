@@ -15,7 +15,3 @@ class TheaterGroup extends PerformingGroup
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\PerformingGroup\\TheaterGroup','Thing\\TheaterGroup');
-

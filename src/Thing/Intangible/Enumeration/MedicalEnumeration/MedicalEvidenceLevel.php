@@ -15,7 +15,3 @@ class MedicalEvidenceLevel extends MedicalEnumeration
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\MedicalEnumeration\\MedicalEvidenceLevel','Thing\\MedicalEvidenceLevel');
-

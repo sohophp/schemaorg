@@ -18,19 +18,20 @@ class ExercisePlan extends PhysicalActivity
 
     /**
     * Number of times one should repeat the activity.
-    * @param QualitativeValue|array $value
+    * @param QualitativeValue|array|string $value
     * @return $this
+    * @deprecated use setRepetitions
     */
-    public function repetitions(?QualitativeValue $value)
+    public function repetitions($value)
     {
         $this->setProperty('repetitions', $value);
         return $this;
     }
    /**
-    * @param QualitativeValue|array $value
+    * @param QualitativeValue|array|string $value
     * @return $this
     */
-    public function setRepetitions(?QualitativeValue $value)
+    public function setRepetitions($value)
     {
         $this->setProperty('repetitions', $value);
         return $this;
@@ -47,8 +48,9 @@ class ExercisePlan extends PhysicalActivity
     * Any additional component of the exercise prescription that may need to be articulated to the patient. This may include the order of exercises, the number of repetitions of movement, quantitative distance, progressions over time, etc.
     * @param string|array $value
     * @return $this
+    * @deprecated use setAdditionalVariable
     */
-    public function additionalVariable(?string $value)
+    public function additionalVariable($value)
     {
         $this->setProperty('additionalVariable', $value);
         return $this;
@@ -57,7 +59,7 @@ class ExercisePlan extends PhysicalActivity
     * @param string|array $value
     * @return $this
     */
-    public function setAdditionalVariable(?string $value)
+    public function setAdditionalVariable($value)
     {
         $this->setProperty('additionalVariable', $value);
         return $this;
@@ -74,8 +76,9 @@ class ExercisePlan extends PhysicalActivity
     * Type(s) of exercise or activity, such as strength training, flexibility training, aerobics, cardiac rehabilitation, etc.
     * @param string|array $value
     * @return $this
+    * @deprecated use setExerciseType
     */
-    public function exerciseType(?string $value)
+    public function exerciseType($value)
     {
         $this->setProperty('exerciseType', $value);
         return $this;
@@ -84,7 +87,7 @@ class ExercisePlan extends PhysicalActivity
     * @param string|array $value
     * @return $this
     */
-    public function setExerciseType(?string $value)
+    public function setExerciseType($value)
     {
         $this->setProperty('exerciseType', $value);
         return $this;
@@ -99,8 +102,9 @@ class ExercisePlan extends PhysicalActivity
 
     /**
     * Length of time to engage in the activity.
-    * @param Duration|QualitativeValue|array $value
+    * @param Duration|QualitativeValue|array|string $value
     * @return $this
+    * @deprecated use setActivityDuration
     */
     public function activityDuration($value)
     {
@@ -108,7 +112,7 @@ class ExercisePlan extends PhysicalActivity
         return $this;
     }
    /**
-    * @param Duration|QualitativeValue|array $value
+    * @param Duration|QualitativeValue|array|string $value
     * @return $this
     */
     public function setActivityDuration($value)
@@ -128,6 +132,7 @@ class ExercisePlan extends PhysicalActivity
     * How often one should break from the activity.
     * @param string|QualitativeValue|array $value
     * @return $this
+    * @deprecated use setRestPeriods
     */
     public function restPeriods($value)
     {
@@ -155,6 +160,7 @@ class ExercisePlan extends PhysicalActivity
     * Quantitative measure gauging the degree of force involved in the exercise, for example, heartbeats per minute. May include the velocity of the movement.
     * @param string|QualitativeValue|array $value
     * @return $this
+    * @deprecated use setIntensity
     */
     public function intensity($value)
     {
@@ -182,6 +188,7 @@ class ExercisePlan extends PhysicalActivity
     * How often one should engage in the activity.
     * @param string|QualitativeValue|array $value
     * @return $this
+    * @deprecated use setActivityFrequency
     */
     public function activityFrequency($value)
     {
@@ -207,8 +214,9 @@ class ExercisePlan extends PhysicalActivity
 
     /**
     * Quantitative measure of the physiologic output of the exercise; also referred to as energy expenditure.
-    * @param Energy|QualitativeValue|array $value
+    * @param Energy|QualitativeValue|array|string $value
     * @return $this
+    * @deprecated use setWorkload
     */
     public function workload($value)
     {
@@ -216,7 +224,7 @@ class ExercisePlan extends PhysicalActivity
         return $this;
     }
    /**
-    * @param Energy|QualitativeValue|array $value
+    * @param Energy|QualitativeValue|array|string $value
     * @return $this
     */
     public function setWorkload($value)
@@ -234,7 +242,3 @@ class ExercisePlan extends PhysicalActivity
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\LifestyleModification\\PhysicalActivity\\ExercisePlan','Thing\\ExercisePlan');
-

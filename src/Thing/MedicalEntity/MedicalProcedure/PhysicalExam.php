@@ -15,7 +15,3 @@ class PhysicalExam extends MedicalProcedure
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalProcedure\\PhysicalExam','Thing\\PhysicalExam');
-

@@ -15,7 +15,3 @@ class CssSelectorType extends Text
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Text\\CssSelectorType','Thing\\CssSelectorType');
-

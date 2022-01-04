@@ -16,19 +16,20 @@ class DrugClass extends MedicalEnumeration
 
     /**
     * Specifying a drug or medicine used in a medication procedure
-    * @param Drug|array $value
+    * @param Drug|array|string $value
     * @return $this
+    * @deprecated use setDrug
     */
-    public function drug(?Drug $value)
+    public function drug($value)
     {
         $this->setProperty('drug', $value);
         return $this;
     }
    /**
-    * @param Drug|array $value
+    * @param Drug|array|string $value
     * @return $this
     */
-    public function setDrug(?Drug $value)
+    public function setDrug($value)
     {
         $this->setProperty('drug', $value);
         return $this;
@@ -43,7 +44,3 @@ class DrugClass extends MedicalEnumeration
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\MedicalEnumeration\\DrugClass','Thing\\DrugClass');
-

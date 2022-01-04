@@ -15,7 +15,3 @@ class MapCategoryType extends Enumeration
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\MapCategoryType','Thing\\MapCategoryType');
-

@@ -16,19 +16,20 @@ class UpdateAction extends Action
 
     /**
     * A sub property of object. The collection target of the action.
-    * @param Thing|array $value
+    * @param Thing|array|string $value
     * @return $this
+    * @deprecated use setCollection
     */
-    public function collection(?Thing $value)
+    public function collection($value)
     {
         $this->setProperty('collection', $value);
         return $this;
     }
    /**
-    * @param Thing|array $value
+    * @param Thing|array|string $value
     * @return $this
     */
-    public function setCollection(?Thing $value)
+    public function setCollection($value)
     {
         $this->setProperty('collection', $value);
         return $this;
@@ -43,19 +44,20 @@ class UpdateAction extends Action
 
     /**
     * A sub property of object. The collection target of the action.
-    * @param Thing|array $value
+    * @param Thing|array|string $value
     * @return $this
+    * @deprecated use setTargetCollection
     */
-    public function targetCollection(?Thing $value)
+    public function targetCollection($value)
     {
         $this->setProperty('targetCollection', $value);
         return $this;
     }
    /**
-    * @param Thing|array $value
+    * @param Thing|array|string $value
     * @return $this
     */
-    public function setTargetCollection(?Thing $value)
+    public function setTargetCollection($value)
     {
         $this->setProperty('targetCollection', $value);
         return $this;
@@ -70,7 +72,3 @@ class UpdateAction extends Action
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\UpdateAction','Thing\\UpdateAction');
-

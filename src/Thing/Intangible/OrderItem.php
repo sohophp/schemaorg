@@ -19,19 +19,20 @@ class OrderItem extends Intangible
 
     /**
     * The current status of the order item.
-    * @param OrderStatus|array $value
+    * @param OrderStatus|array|string $value
     * @return $this
+    * @deprecated use setOrderItemStatus
     */
-    public function orderItemStatus(?OrderStatus $value)
+    public function orderItemStatus($value)
     {
         $this->setProperty('orderItemStatus', $value);
         return $this;
     }
    /**
-    * @param OrderStatus|array $value
+    * @param OrderStatus|array|string $value
     * @return $this
     */
-    public function setOrderItemStatus(?OrderStatus $value)
+    public function setOrderItemStatus($value)
     {
         $this->setProperty('orderItemStatus', $value);
         return $this;
@@ -46,8 +47,9 @@ class OrderItem extends Intangible
 
     /**
     * The number of the item ordered. If the property is not set, assume the quantity is one.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setOrderQuantity
     */
     public function orderQuantity($value)
     {
@@ -55,7 +57,7 @@ class OrderItem extends Intangible
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setOrderQuantity($value)
@@ -73,19 +75,20 @@ class OrderItem extends Intangible
 
     /**
     * The delivery of the parcel related to this order or order item.
-    * @param ParcelDelivery|array $value
+    * @param ParcelDelivery|array|string $value
     * @return $this
+    * @deprecated use setOrderDelivery
     */
-    public function orderDelivery(?ParcelDelivery $value)
+    public function orderDelivery($value)
     {
         $this->setProperty('orderDelivery', $value);
         return $this;
     }
    /**
-    * @param ParcelDelivery|array $value
+    * @param ParcelDelivery|array|string $value
     * @return $this
     */
-    public function setOrderDelivery(?ParcelDelivery $value)
+    public function setOrderDelivery($value)
     {
         $this->setProperty('orderDelivery', $value);
         return $this;
@@ -100,8 +103,9 @@ class OrderItem extends Intangible
 
     /**
     * The item ordered.
-    * @param Service|OrderItem|Product|array $value
+    * @param Service|OrderItem|Product|array|string $value
     * @return $this
+    * @deprecated use setOrderedItem
     */
     public function orderedItem($value)
     {
@@ -109,7 +113,7 @@ class OrderItem extends Intangible
         return $this;
     }
    /**
-    * @param Service|OrderItem|Product|array $value
+    * @param Service|OrderItem|Product|array|string $value
     * @return $this
     */
     public function setOrderedItem($value)
@@ -129,8 +133,9 @@ class OrderItem extends Intangible
     * The identifier of the order item.
     * @param string|array $value
     * @return $this
+    * @deprecated use setOrderItemNumber
     */
-    public function orderItemNumber(?string $value)
+    public function orderItemNumber($value)
     {
         $this->setProperty('orderItemNumber', $value);
         return $this;
@@ -139,7 +144,7 @@ class OrderItem extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setOrderItemNumber(?string $value)
+    public function setOrderItemNumber($value)
     {
         $this->setProperty('orderItemNumber', $value);
         return $this;
@@ -154,7 +159,3 @@ class OrderItem extends Intangible
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\OrderItem','Thing\\OrderItem');
-

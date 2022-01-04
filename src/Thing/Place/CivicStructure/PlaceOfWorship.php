@@ -15,7 +15,3 @@ class PlaceOfWorship extends CivicStructure
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\CivicStructure\\PlaceOfWorship','Thing\\PlaceOfWorship');
-

@@ -15,8 +15,9 @@ class MovieTheater extends CivicStructure
 
     /**
     * The number of screens in the movie theater.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setScreenCount
     */
     public function screenCount($value)
     {
@@ -24,7 +25,7 @@ class MovieTheater extends CivicStructure
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setScreenCount($value)
@@ -42,7 +43,3 @@ class MovieTheater extends CivicStructure
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\CivicStructure\\MovieTheater','Thing\\MovieTheater');
-

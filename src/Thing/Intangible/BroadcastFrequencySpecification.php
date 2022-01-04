@@ -17,19 +17,20 @@ class BroadcastFrequencySpecification extends Intangible
 
     /**
     * The frequency in MHz for a particular broadcast.
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
+    * @deprecated use setBroadcastFrequencyValue
     */
-    public function broadcastFrequencyValue(?QuantitativeValue $value)
+    public function broadcastFrequencyValue($value)
     {
         $this->setProperty('broadcastFrequencyValue', $value);
         return $this;
     }
    /**
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
     */
-    public function setBroadcastFrequencyValue(?QuantitativeValue $value)
+    public function setBroadcastFrequencyValue($value)
     {
         $this->setProperty('broadcastFrequencyValue', $value);
         return $this;
@@ -46,8 +47,9 @@ class BroadcastFrequencySpecification extends Intangible
     * The subchannel used for the broadcast.
     * @param string|array $value
     * @return $this
+    * @deprecated use setBroadcastSubChannel
     */
-    public function broadcastSubChannel(?string $value)
+    public function broadcastSubChannel($value)
     {
         $this->setProperty('broadcastSubChannel', $value);
         return $this;
@@ -56,7 +58,7 @@ class BroadcastFrequencySpecification extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setBroadcastSubChannel(?string $value)
+    public function setBroadcastSubChannel($value)
     {
         $this->setProperty('broadcastSubChannel', $value);
         return $this;
@@ -73,6 +75,7 @@ class BroadcastFrequencySpecification extends Intangible
     * The modulation (e.g. FM, AM, etc) used by a particular broadcast service
     * @param QualitativeValue|string|array $value
     * @return $this
+    * @deprecated use setBroadcastSignalModulation
     */
     public function broadcastSignalModulation($value)
     {
@@ -98,7 +101,3 @@ class BroadcastFrequencySpecification extends Intangible
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\BroadcastFrequencySpecification','Thing\\BroadcastFrequencySpecification');
-

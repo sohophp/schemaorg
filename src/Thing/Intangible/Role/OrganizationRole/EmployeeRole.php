@@ -19,8 +19,9 @@ class EmployeeRole extends OrganizationRole
     * The currency (coded using <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217</a> ) used for the main salary information in this job posting or for this employee.
     * @param string|array $value
     * @return $this
+    * @deprecated use setSalaryCurrency
     */
-    public function salaryCurrency(?string $value)
+    public function salaryCurrency($value)
     {
         $this->setProperty('salaryCurrency', $value);
         return $this;
@@ -29,7 +30,7 @@ class EmployeeRole extends OrganizationRole
     * @param string|array $value
     * @return $this
     */
-    public function setSalaryCurrency(?string $value)
+    public function setSalaryCurrency($value)
     {
         $this->setProperty('salaryCurrency', $value);
         return $this;
@@ -44,8 +45,9 @@ class EmployeeRole extends OrganizationRole
 
     /**
     * The base salary of the job or of an employee in an EmployeeRole.
-    * @param MonetaryAmount|PriceSpecification|array $value
+    * @param MonetaryAmount|PriceSpecification|array|string $value
     * @return $this
+    * @deprecated use setBaseSalary
     */
     public function baseSalary($value)
     {
@@ -53,7 +55,7 @@ class EmployeeRole extends OrganizationRole
         return $this;
     }
    /**
-    * @param MonetaryAmount|PriceSpecification|array $value
+    * @param MonetaryAmount|PriceSpecification|array|string $value
     * @return $this
     */
     public function setBaseSalary($value)
@@ -71,7 +73,3 @@ class EmployeeRole extends OrganizationRole
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Role\\OrganizationRole\\EmployeeRole','Thing\\EmployeeRole');
-

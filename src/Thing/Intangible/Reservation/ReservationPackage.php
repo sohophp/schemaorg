@@ -15,19 +15,20 @@ class ReservationPackage extends Reservation
 
     /**
     * The individual reservations included in the package. Typically a repeated property.
-    * @param Reservation|array $value
+    * @param Reservation|array|string $value
     * @return $this
+    * @deprecated use setSubReservation
     */
-    public function subReservation(?Reservation $value)
+    public function subReservation($value)
     {
         $this->setProperty('subReservation', $value);
         return $this;
     }
    /**
-    * @param Reservation|array $value
+    * @param Reservation|array|string $value
     * @return $this
     */
-    public function setSubReservation(?Reservation $value)
+    public function setSubReservation($value)
     {
         $this->setProperty('subReservation', $value);
         return $this;
@@ -42,7 +43,3 @@ class ReservationPackage extends Reservation
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Reservation\\ReservationPackage','Thing\\ReservationPackage');
-

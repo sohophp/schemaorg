@@ -19,8 +19,9 @@ class TipAction extends TradeAction
 
     /**
     * A sub property of participant. The participant who is at the receiving end of the action.
-    * @param Person|ContactPoint|Organization|Audience|array $value
+    * @param Person|ContactPoint|Organization|Audience|array|string $value
     * @return $this
+    * @deprecated use setRecipient
     */
     public function recipient($value)
     {
@@ -28,7 +29,7 @@ class TipAction extends TradeAction
         return $this;
     }
    /**
-    * @param Person|ContactPoint|Organization|Audience|array $value
+    * @param Person|ContactPoint|Organization|Audience|array|string $value
     * @return $this
     */
     public function setRecipient($value)
@@ -46,7 +47,3 @@ class TipAction extends TradeAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\TradeAction\\TipAction','Thing\\TipAction');
-

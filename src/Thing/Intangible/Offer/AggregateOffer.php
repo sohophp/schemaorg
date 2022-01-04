@@ -15,19 +15,20 @@ class AggregateOffer extends Offer
 
     /**
     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.
-    * @param Offer|array $value
+    * @param Offer|array|string $value
     * @return $this
+    * @deprecated use setOffers
     */
-    public function offers(?Offer $value)
+    public function offers($value)
     {
         $this->setProperty('offers', $value);
         return $this;
     }
    /**
-    * @param Offer|array $value
+    * @param Offer|array|string $value
     * @return $this
     */
-    public function setOffers(?Offer $value)
+    public function setOffers($value)
     {
         $this->setProperty('offers', $value);
         return $this;
@@ -42,19 +43,20 @@ class AggregateOffer extends Offer
 
     /**
     * The number of offers for the product.
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
+    * @deprecated use setOfferCount
     */
-    public function offerCount(?int $value)
+    public function offerCount($value)
     {
         $this->setProperty('offerCount', $value);
         return $this;
     }
    /**
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
     */
-    public function setOfferCount(?int $value)
+    public function setOfferCount($value)
     {
         $this->setProperty('offerCount', $value);
         return $this;
@@ -79,8 +81,9 @@ Usage guidelines:<br/><br/>
 
     * @param string|array $value
     * @return $this
+    * @deprecated use setLowPrice
     */
-    public function lowPrice(?string $value)
+    public function lowPrice($value)
     {
         $this->setProperty('lowPrice', $value);
         return $this;
@@ -89,7 +92,7 @@ Usage guidelines:<br/><br/>
     * @param string|array $value
     * @return $this
     */
-    public function setLowPrice(?string $value)
+    public function setLowPrice($value)
     {
         $this->setProperty('lowPrice', $value);
         return $this;
@@ -114,8 +117,9 @@ Usage guidelines:<br/><br/>
 
     * @param string|array $value
     * @return $this
+    * @deprecated use setHighPrice
     */
-    public function highPrice(?string $value)
+    public function highPrice($value)
     {
         $this->setProperty('highPrice', $value);
         return $this;
@@ -124,7 +128,7 @@ Usage guidelines:<br/><br/>
     * @param string|array $value
     * @return $this
     */
-    public function setHighPrice(?string $value)
+    public function setHighPrice($value)
     {
         $this->setProperty('highPrice', $value);
         return $this;
@@ -139,7 +143,3 @@ Usage guidelines:<br/><br/>
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Offer\\AggregateOffer','Thing\\AggregateOffer');
-

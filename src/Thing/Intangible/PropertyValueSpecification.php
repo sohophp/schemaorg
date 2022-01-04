@@ -18,6 +18,7 @@ class PropertyValueSpecification extends Intangible
     * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
     * @param Thing|string|array $value
     * @return $this
+    * @deprecated use setDefaultValue
     */
     public function defaultValue($value)
     {
@@ -43,8 +44,9 @@ class PropertyValueSpecification extends Intangible
 
     /**
     * The lower value of some characteristic or property.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setMinValue
     */
     public function minValue($value)
     {
@@ -52,7 +54,7 @@ class PropertyValueSpecification extends Intangible
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setMinValue($value)
@@ -72,8 +74,9 @@ class PropertyValueSpecification extends Intangible
     * Specifies a regular expression for testing literal values according to the HTML spec.
     * @param string|array $value
     * @return $this
+    * @deprecated use setValuePattern
     */
-    public function valuePattern(?string $value)
+    public function valuePattern($value)
     {
         $this->setProperty('valuePattern', $value);
         return $this;
@@ -82,7 +85,7 @@ class PropertyValueSpecification extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setValuePattern(?string $value)
+    public function setValuePattern($value)
     {
         $this->setProperty('valuePattern', $value);
         return $this;
@@ -97,8 +100,9 @@ class PropertyValueSpecification extends Intangible
 
     /**
     * The stepValue attribute indicates the granularity that is expected (and required) of the value in a PropertyValueSpecification.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setStepValue
     */
     public function stepValue($value)
     {
@@ -106,7 +110,7 @@ class PropertyValueSpecification extends Intangible
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setStepValue($value)
@@ -124,8 +128,9 @@ class PropertyValueSpecification extends Intangible
 
     /**
     * Specifies the minimum allowed range for number of characters in a literal value.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setValueMinLength
     */
     public function valueMinLength($value)
     {
@@ -133,7 +138,7 @@ class PropertyValueSpecification extends Intangible
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setValueMinLength($value)
@@ -151,8 +156,9 @@ class PropertyValueSpecification extends Intangible
 
     /**
     * Specifies the allowed range for number of characters in a literal value.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setValueMaxLength
     */
     public function valueMaxLength($value)
     {
@@ -160,7 +166,7 @@ class PropertyValueSpecification extends Intangible
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setValueMaxLength($value)
@@ -178,19 +184,20 @@ class PropertyValueSpecification extends Intangible
 
     /**
     * Whether or not a property is mutable.  Default is false. Specifying this for a property that also has a value makes it act similar to a "hidden" input in an HTML form.
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
+    * @deprecated use setReadonlyValue
     */
-    public function readonlyValue(?bool $value)
+    public function readonlyValue($value)
     {
         $this->setProperty('readonlyValue', $value);
         return $this;
     }
    /**
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
     */
-    public function setReadonlyValue(?bool $value)
+    public function setReadonlyValue($value)
     {
         $this->setProperty('readonlyValue', $value);
         return $this;
@@ -205,8 +212,9 @@ class PropertyValueSpecification extends Intangible
 
     /**
     * The upper value of some characteristic or property.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setMaxValue
     */
     public function maxValue($value)
     {
@@ -214,7 +222,7 @@ class PropertyValueSpecification extends Intangible
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setMaxValue($value)
@@ -234,8 +242,9 @@ class PropertyValueSpecification extends Intangible
     * Indicates the name of the PropertyValueSpecification to be used in URL templates and form encoding in a manner analogous to HTML's input@name.
     * @param string|array $value
     * @return $this
+    * @deprecated use setValueName
     */
-    public function valueName(?string $value)
+    public function valueName($value)
     {
         $this->setProperty('valueName', $value);
         return $this;
@@ -244,7 +253,7 @@ class PropertyValueSpecification extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setValueName(?string $value)
+    public function setValueName($value)
     {
         $this->setProperty('valueName', $value);
         return $this;
@@ -259,19 +268,20 @@ class PropertyValueSpecification extends Intangible
 
     /**
     * Whether multiple values are allowed for the property.  Default is false.
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
+    * @deprecated use setMultipleValues
     */
-    public function multipleValues(?bool $value)
+    public function multipleValues($value)
     {
         $this->setProperty('multipleValues', $value);
         return $this;
     }
    /**
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
     */
-    public function setMultipleValues(?bool $value)
+    public function setMultipleValues($value)
     {
         $this->setProperty('multipleValues', $value);
         return $this;
@@ -286,19 +296,20 @@ class PropertyValueSpecification extends Intangible
 
     /**
     * Whether the property must be filled in to complete the action.  Default is false.
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
+    * @deprecated use setValueRequired
     */
-    public function valueRequired(?bool $value)
+    public function valueRequired($value)
     {
         $this->setProperty('valueRequired', $value);
         return $this;
     }
    /**
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
     */
-    public function setValueRequired(?bool $value)
+    public function setValueRequired($value)
     {
         $this->setProperty('valueRequired', $value);
         return $this;
@@ -313,7 +324,3 @@ class PropertyValueSpecification extends Intangible
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\PropertyValueSpecification','Thing\\PropertyValueSpecification');
-

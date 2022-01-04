@@ -18,6 +18,7 @@ class ChooseAction extends AssessAction
     * A sub property of object. The options subject to this action.
     * @param Thing|string|array $value
     * @return $this
+    * @deprecated use setActionOption
     */
     public function actionOption($value)
     {
@@ -45,6 +46,7 @@ class ChooseAction extends AssessAction
     * A sub property of object. The options subject to this action.
     * @param string|Thing|array $value
     * @return $this
+    * @deprecated use setOption
     */
     public function option($value)
     {
@@ -70,7 +72,3 @@ class ChooseAction extends AssessAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\AssessAction\\ChooseAction','Thing\\ChooseAction');
-

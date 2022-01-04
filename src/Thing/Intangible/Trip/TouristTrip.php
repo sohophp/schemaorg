@@ -19,6 +19,7 @@ class TouristTrip extends Trip
     * Attraction suitable for type(s) of tourist. eg. Children, visitors from a particular country, etc.
     * @param string|Audience|array $value
     * @return $this
+    * @deprecated use setTouristType
     */
     public function touristType($value)
     {
@@ -44,7 +45,3 @@ class TouristTrip extends Trip
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Trip\\TouristTrip','Thing\\TouristTrip');
-

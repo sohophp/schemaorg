@@ -15,7 +15,3 @@ class HowToStep extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\HowToStep','Thing\\HowToStep');
-

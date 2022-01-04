@@ -15,7 +15,3 @@ class StadiumOrArena extends CivicStructure
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\CivicStructure\\StadiumOrArena','Thing\\StadiumOrArena');
-

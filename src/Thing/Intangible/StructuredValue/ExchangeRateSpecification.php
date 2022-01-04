@@ -17,19 +17,20 @@ class ExchangeRateSpecification extends StructuredValue
 
     /**
     * The current price of a currency.
-    * @param UnitPriceSpecification|array $value
+    * @param UnitPriceSpecification|array|string $value
     * @return $this
+    * @deprecated use setCurrentExchangeRate
     */
-    public function currentExchangeRate(?UnitPriceSpecification $value)
+    public function currentExchangeRate($value)
     {
         $this->setProperty('currentExchangeRate', $value);
         return $this;
     }
    /**
-    * @param UnitPriceSpecification|array $value
+    * @param UnitPriceSpecification|array|string $value
     * @return $this
     */
-    public function setCurrentExchangeRate(?UnitPriceSpecification $value)
+    public function setCurrentExchangeRate($value)
     {
         $this->setProperty('currentExchangeRate', $value);
         return $this;
@@ -44,19 +45,20 @@ class ExchangeRateSpecification extends StructuredValue
 
     /**
     * The difference between the price at which a broker or other intermediary buys and sells foreign currency.
-    * @param MonetaryAmount|array $value
+    * @param MonetaryAmount|array|string $value
     * @return $this
+    * @deprecated use setExchangeRateSpread
     */
-    public function exchangeRateSpread(?MonetaryAmount $value)
+    public function exchangeRateSpread($value)
     {
         $this->setProperty('exchangeRateSpread', $value);
         return $this;
     }
    /**
-    * @param MonetaryAmount|array $value
+    * @param MonetaryAmount|array|string $value
     * @return $this
     */
-    public function setExchangeRateSpread(?MonetaryAmount $value)
+    public function setExchangeRateSpread($value)
     {
         $this->setProperty('exchangeRateSpread', $value);
         return $this;
@@ -75,8 +77,9 @@ class ExchangeRateSpecification extends StructuredValue
 Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 currency format</a> e.g. "USD"; <a href="https://en.wikipedia.org/wiki/List_of_cryptocurrencies">Ticker symbol</a> for cryptocurrencies e.g. "BTC"; well known names for <a href="https://en.wikipedia.org/wiki/Local_exchange_trading_system">Local Exchange Tradings Systems</a> (LETS) and other currency types e.g. "Ithaca HOUR".
     * @param string|array $value
     * @return $this
+    * @deprecated use setCurrency
     */
-    public function currency(?string $value)
+    public function currency($value)
     {
         $this->setProperty('currency', $value);
         return $this;
@@ -85,7 +88,7 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
     * @param string|array $value
     * @return $this
     */
-    public function setCurrency(?string $value)
+    public function setCurrency($value)
     {
         $this->setProperty('currency', $value);
         return $this;
@@ -100,7 +103,3 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue\\ExchangeRateSpecification','Thing\\ExchangeRateSpecification');
-

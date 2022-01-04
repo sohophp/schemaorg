@@ -17,7 +17,3 @@ class CompleteDataFeed extends DataFeed
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Dataset\\DataFeed\\CompleteDataFeed','Thing\\CompleteDataFeed');
-

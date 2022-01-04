@@ -23,8 +23,9 @@ class EducationalOccupationalProgram extends Intangible
 
     /**
     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
+    * @deprecated use setProvider
     */
     public function provider($value)
     {
@@ -32,7 +33,7 @@ class EducationalOccupationalProgram extends Intangible
         return $this;
     }
    /**
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
     */
     public function setProvider($value)
@@ -50,19 +51,20 @@ class EducationalOccupationalProgram extends Intangible
 
     /**
     * The expected length of time to complete the program if attending full-time.
-    * @param Duration|array $value
+    * @param Duration|array|string $value
     * @return $this
+    * @deprecated use setTimeToComplete
     */
-    public function timeToComplete(?Duration $value)
+    public function timeToComplete($value)
     {
         $this->setProperty('timeToComplete', $value);
         return $this;
     }
    /**
-    * @param Duration|array $value
+    * @param Duration|array|string $value
     * @return $this
     */
-    public function setTimeToComplete(?Duration $value)
+    public function setTimeToComplete($value)
     {
         $this->setProperty('timeToComplete', $value);
         return $this;
@@ -77,19 +79,20 @@ class EducationalOccupationalProgram extends Intangible
 
     /**
     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.
-    * @param Offer|array $value
+    * @param Offer|array|string $value
     * @return $this
+    * @deprecated use setOffers
     */
-    public function offers(?Offer $value)
+    public function offers($value)
     {
         $this->setProperty('offers', $value);
         return $this;
     }
    /**
-    * @param Offer|array $value
+    * @param Offer|array|string $value
     * @return $this
     */
-    public function setOffers(?Offer $value)
+    public function setOffers($value)
     {
         $this->setProperty('offers', $value);
         return $this;
@@ -106,6 +109,7 @@ class EducationalOccupationalProgram extends Intangible
     * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
     * @param EducationalOccupationalCredential|string|string|array $value
     * @return $this
+    * @deprecated use setEducationalCredentialAwarded
     */
     public function educationalCredentialAwarded($value)
     {
@@ -133,6 +137,7 @@ class EducationalOccupationalProgram extends Intangible
     * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
     * @param string|EducationalOccupationalCredential|string|array $value
     * @return $this
+    * @deprecated use setOccupationalCredentialAwarded
     */
     public function occupationalCredentialAwarded($value)
     {
@@ -158,19 +163,20 @@ class EducationalOccupationalProgram extends Intangible
 
     /**
     * The expected salary upon completing the training.
-    * @param MonetaryAmountDistribution|array $value
+    * @param MonetaryAmountDistribution|array|string $value
     * @return $this
+    * @deprecated use setSalaryUponCompletion
     */
-    public function salaryUponCompletion(?MonetaryAmountDistribution $value)
+    public function salaryUponCompletion($value)
     {
         $this->setProperty('salaryUponCompletion', $value);
         return $this;
     }
    /**
-    * @param MonetaryAmountDistribution|array $value
+    * @param MonetaryAmountDistribution|array|string $value
     * @return $this
     */
-    public function setSalaryUponCompletion(?MonetaryAmountDistribution $value)
+    public function setSalaryUponCompletion($value)
     {
         $this->setProperty('salaryUponCompletion', $value);
         return $this;
@@ -187,6 +193,7 @@ class EducationalOccupationalProgram extends Intangible
     * Prerequisites for enrolling in the program.
     * @param AlignmentObject|EducationalOccupationalCredential|Course|string|array $value
     * @return $this
+    * @deprecated use setProgramPrerequisites
     */
     public function programPrerequisites($value)
     {
@@ -212,7 +219,3 @@ class EducationalOccupationalProgram extends Intangible
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\EducationalOccupationalProgram','Thing\\EducationalOccupationalProgram');
-

@@ -18,8 +18,9 @@ class PostalAddress extends ContactPoint
     * The post office box number for PO box addresses.
     * @param string|array $value
     * @return $this
+    * @deprecated use setPostOfficeBoxNumber
     */
-    public function postOfficeBoxNumber(?string $value)
+    public function postOfficeBoxNumber($value)
     {
         $this->setProperty('postOfficeBoxNumber', $value);
         return $this;
@@ -28,7 +29,7 @@ class PostalAddress extends ContactPoint
     * @param string|array $value
     * @return $this
     */
-    public function setPostOfficeBoxNumber(?string $value)
+    public function setPostOfficeBoxNumber($value)
     {
         $this->setProperty('postOfficeBoxNumber', $value);
         return $this;
@@ -45,8 +46,9 @@ class PostalAddress extends ContactPoint
     * The street address. For example, 1600 Amphitheatre Pkwy.
     * @param string|array $value
     * @return $this
+    * @deprecated use setStreetAddress
     */
-    public function streetAddress(?string $value)
+    public function streetAddress($value)
     {
         $this->setProperty('streetAddress', $value);
         return $this;
@@ -55,7 +57,7 @@ class PostalAddress extends ContactPoint
     * @param string|array $value
     * @return $this
     */
-    public function setStreetAddress(?string $value)
+    public function setStreetAddress($value)
     {
         $this->setProperty('streetAddress', $value);
         return $this;
@@ -72,6 +74,7 @@ class PostalAddress extends ContactPoint
     * The country. For example, USA. You can also provide the two-letter <a href="http://en.wikipedia.org/wiki/ISO_3166-1">ISO 3166-1 alpha-2 country code</a>.
     * @param Country|string|array $value
     * @return $this
+    * @deprecated use setAddressCountry
     */
     public function addressCountry($value)
     {
@@ -99,8 +102,9 @@ class PostalAddress extends ContactPoint
     * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level <a href="https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country">Administrative division</a>
     * @param string|array $value
     * @return $this
+    * @deprecated use setAddressRegion
     */
-    public function addressRegion(?string $value)
+    public function addressRegion($value)
     {
         $this->setProperty('addressRegion', $value);
         return $this;
@@ -109,7 +113,7 @@ class PostalAddress extends ContactPoint
     * @param string|array $value
     * @return $this
     */
-    public function setAddressRegion(?string $value)
+    public function setAddressRegion($value)
     {
         $this->setProperty('addressRegion', $value);
         return $this;
@@ -126,8 +130,9 @@ class PostalAddress extends ContactPoint
     * The postal code. For example, 94043.
     * @param string|array $value
     * @return $this
+    * @deprecated use setPostalCode
     */
-    public function postalCode(?string $value)
+    public function postalCode($value)
     {
         $this->setProperty('postalCode', $value);
         return $this;
@@ -136,7 +141,7 @@ class PostalAddress extends ContactPoint
     * @param string|array $value
     * @return $this
     */
-    public function setPostalCode(?string $value)
+    public function setPostalCode($value)
     {
         $this->setProperty('postalCode', $value);
         return $this;
@@ -153,8 +158,9 @@ class PostalAddress extends ContactPoint
     * The locality in which the street address is, and which is in the region. For example, Mountain View.
     * @param string|array $value
     * @return $this
+    * @deprecated use setAddressLocality
     */
-    public function addressLocality(?string $value)
+    public function addressLocality($value)
     {
         $this->setProperty('addressLocality', $value);
         return $this;
@@ -163,7 +169,7 @@ class PostalAddress extends ContactPoint
     * @param string|array $value
     * @return $this
     */
-    public function setAddressLocality(?string $value)
+    public function setAddressLocality($value)
     {
         $this->setProperty('addressLocality', $value);
         return $this;
@@ -178,7 +184,3 @@ class PostalAddress extends ContactPoint
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue\\ContactPoint\\PostalAddress','Thing\\PostalAddress');
-

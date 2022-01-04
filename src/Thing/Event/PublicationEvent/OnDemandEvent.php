@@ -15,7 +15,3 @@ class OnDemandEvent extends PublicationEvent
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Event\\PublicationEvent\\OnDemandEvent','Thing\\OnDemandEvent');
-

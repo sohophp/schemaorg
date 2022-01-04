@@ -15,7 +15,3 @@ class BookSeries extends CreativeWorkSeries
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\CreativeWorkSeries\\BookSeries','Thing\\BookSeries');
-

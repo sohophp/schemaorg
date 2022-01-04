@@ -17,19 +17,20 @@ class WebPageElement extends CreativeWork
 
     /**
     * A CSS selector, e.g. of a <a class="localLink" href="http://schema.org/SpeakableSpecification">SpeakableSpecification</a> or <a class="localLink" href="http://schema.org/WebPageElement">WebPageElement</a>. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
-    * @param CssSelectorType|array $value
+    * @param CssSelectorType|array|string $value
     * @return $this
+    * @deprecated use setCssSelector
     */
-    public function cssSelector(?CssSelectorType $value)
+    public function cssSelector($value)
     {
         $this->setProperty('cssSelector', $value);
         return $this;
     }
    /**
-    * @param CssSelectorType|array $value
+    * @param CssSelectorType|array|string $value
     * @return $this
     */
-    public function setCssSelector(?CssSelectorType $value)
+    public function setCssSelector($value)
     {
         $this->setProperty('cssSelector', $value);
         return $this;
@@ -44,19 +45,20 @@ class WebPageElement extends CreativeWork
 
     /**
     * An XPath, e.g. of a <a class="localLink" href="http://schema.org/SpeakableSpecification">SpeakableSpecification</a> or <a class="localLink" href="http://schema.org/WebPageElement">WebPageElement</a>. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
-    * @param XPathType|array $value
+    * @param XPathType|array|string $value
     * @return $this
+    * @deprecated use setXpath
     */
-    public function xpath(?XPathType $value)
+    public function xpath($value)
     {
         $this->setProperty('xpath', $value);
         return $this;
     }
    /**
-    * @param XPathType|array $value
+    * @param XPathType|array|string $value
     * @return $this
     */
-    public function setXpath(?XPathType $value)
+    public function setXpath($value)
     {
         $this->setProperty('xpath', $value);
         return $this;
@@ -71,7 +73,3 @@ class WebPageElement extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\WebPageElement','Thing\\WebPageElement');
-

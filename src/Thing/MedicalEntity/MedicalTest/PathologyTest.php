@@ -17,8 +17,9 @@ class PathologyTest extends MedicalTest
     * The type of tissue sample required for the test.
     * @param string|array $value
     * @return $this
+    * @deprecated use setTissueSample
     */
-    public function tissueSample(?string $value)
+    public function tissueSample($value)
     {
         $this->setProperty('tissueSample', $value);
         return $this;
@@ -27,7 +28,7 @@ class PathologyTest extends MedicalTest
     * @param string|array $value
     * @return $this
     */
-    public function setTissueSample(?string $value)
+    public function setTissueSample($value)
     {
         $this->setProperty('tissueSample', $value);
         return $this;
@@ -42,7 +43,3 @@ class PathologyTest extends MedicalTest
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalTest\\PathologyTest','Thing\\PathologyTest');
-

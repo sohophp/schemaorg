@@ -16,8 +16,9 @@ class PriceSpecification extends StructuredValue
 
     /**
     * The lowest price if the price is a range.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setMinPrice
     */
     public function minPrice($value)
     {
@@ -25,7 +26,7 @@ class PriceSpecification extends StructuredValue
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setMinPrice($value)
@@ -43,19 +44,20 @@ class PriceSpecification extends StructuredValue
 
     /**
     * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
-    * @param PriceSpecification|array $value
+    * @param PriceSpecification|array|string $value
     * @return $this
+    * @deprecated use setEligibleTransactionVolume
     */
-    public function eligibleTransactionVolume(?PriceSpecification $value)
+    public function eligibleTransactionVolume($value)
     {
         $this->setProperty('eligibleTransactionVolume', $value);
         return $this;
     }
    /**
-    * @param PriceSpecification|array $value
+    * @param PriceSpecification|array|string $value
     * @return $this
     */
-    public function setEligibleTransactionVolume(?PriceSpecification $value)
+    public function setEligibleTransactionVolume($value)
     {
         $this->setProperty('eligibleTransactionVolume', $value);
         return $this;
@@ -70,8 +72,9 @@ class PriceSpecification extends StructuredValue
 
     /**
     * The highest price if the price is a range.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setMaxPrice
     */
     public function maxPrice($value)
     {
@@ -79,7 +82,7 @@ class PriceSpecification extends StructuredValue
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setMaxPrice($value)
@@ -101,8 +104,9 @@ class PriceSpecification extends StructuredValue
 Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 currency format</a> e.g. "USD"; <a href="https://en.wikipedia.org/wiki/List_of_cryptocurrencies">Ticker symbol</a> for cryptocurrencies e.g. "BTC"; well known names for <a href="https://en.wikipedia.org/wiki/Local_exchange_trading_system">Local Exchange Tradings Systems</a> (LETS) and other currency types e.g. "Ithaca HOUR".
     * @param string|array $value
     * @return $this
+    * @deprecated use setPriceCurrency
     */
-    public function priceCurrency(?string $value)
+    public function priceCurrency($value)
     {
         $this->setProperty('priceCurrency', $value);
         return $this;
@@ -111,7 +115,7 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
     * @param string|array $value
     * @return $this
     */
-    public function setPriceCurrency(?string $value)
+    public function setPriceCurrency($value)
     {
         $this->setProperty('priceCurrency', $value);
         return $this;
@@ -126,19 +130,20 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
 
     /**
     * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
+    * @deprecated use setEligibleQuantity
     */
-    public function eligibleQuantity(?QuantitativeValue $value)
+    public function eligibleQuantity($value)
     {
         $this->setProperty('eligibleQuantity', $value);
         return $this;
     }
    /**
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
     */
-    public function setEligibleQuantity(?QuantitativeValue $value)
+    public function setEligibleQuantity($value)
     {
         $this->setProperty('eligibleQuantity', $value);
         return $this;
@@ -153,8 +158,9 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
 
     /**
     * The date when the item becomes valid.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setValidFrom
     */
     public function validFrom($value)
     {
@@ -162,7 +168,7 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setValidFrom($value)
@@ -180,8 +186,9 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
 
     /**
     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setValidThrough
     */
     public function validThrough($value)
     {
@@ -189,7 +196,7 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setValidThrough($value)
@@ -219,8 +226,9 @@ Usage guidelines:<br/><br/>
 
     * @param string|array $value
     * @return $this
+    * @deprecated use setPrice
     */
-    public function price(?string $value)
+    public function price($value)
     {
         $this->setProperty('price', $value);
         return $this;
@@ -229,7 +237,7 @@ Usage guidelines:<br/><br/>
     * @param string|array $value
     * @return $this
     */
-    public function setPrice(?string $value)
+    public function setPrice($value)
     {
         $this->setProperty('price', $value);
         return $this;
@@ -244,19 +252,20 @@ Usage guidelines:<br/><br/>
 
     /**
     * Specifies whether the applicable value-added tax (VAT) is included in the price specification or not.
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
+    * @deprecated use setValueAddedTaxIncluded
     */
-    public function valueAddedTaxIncluded(?bool $value)
+    public function valueAddedTaxIncluded($value)
     {
         $this->setProperty('valueAddedTaxIncluded', $value);
         return $this;
     }
    /**
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
     */
-    public function setValueAddedTaxIncluded(?bool $value)
+    public function setValueAddedTaxIncluded($value)
     {
         $this->setProperty('valueAddedTaxIncluded', $value);
         return $this;
@@ -271,7 +280,3 @@ Usage guidelines:<br/><br/>
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue\\PriceSpecification','Thing\\PriceSpecification');
-

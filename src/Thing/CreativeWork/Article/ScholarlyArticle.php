@@ -15,7 +15,3 @@ class ScholarlyArticle extends Article
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Article\\ScholarlyArticle','Thing\\ScholarlyArticle');
-

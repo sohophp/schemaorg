@@ -15,7 +15,3 @@ class BuddhistTemple extends PlaceOfWorship
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\CivicStructure\\PlaceOfWorship\\BuddhistTemple','Thing\\BuddhistTemple');
-

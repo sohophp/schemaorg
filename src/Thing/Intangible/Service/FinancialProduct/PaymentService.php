@@ -15,7 +15,3 @@ class PaymentService extends FinancialProduct
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Service\\FinancialProduct\\PaymentService','Thing\\PaymentService');
-

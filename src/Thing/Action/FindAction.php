@@ -22,7 +22,3 @@ class FindAction extends Action
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\FindAction','Thing\\FindAction');
-

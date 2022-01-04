@@ -15,7 +15,3 @@ class Crematorium extends CivicStructure
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\CivicStructure\\Crematorium','Thing\\Crematorium');
-

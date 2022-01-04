@@ -15,7 +15,3 @@ class Mosque extends PlaceOfWorship
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\CivicStructure\\PlaceOfWorship\\Mosque','Thing\\Mosque');
-

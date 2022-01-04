@@ -15,7 +15,3 @@ class GolfCourse extends SportsActivityLocation
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\SportsActivityLocation\\GolfCourse','Thing\\GolfCourse');
-

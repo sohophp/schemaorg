@@ -15,7 +15,3 @@ class BrainStructure extends AnatomicalStructure
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\AnatomicalStructure\\BrainStructure','Thing\\BrainStructure');
-

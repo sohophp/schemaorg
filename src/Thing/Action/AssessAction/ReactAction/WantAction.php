@@ -15,7 +15,3 @@ class WantAction extends ReactAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\AssessAction\\ReactAction\\WantAction','Thing\\WantAction');
-

@@ -17,19 +17,20 @@ class MoneyTransfer extends TransferAction
 
     /**
     * The amount of money.
-    * @param MonetaryAmount|array $value
+    * @param MonetaryAmount|array|string $value
     * @return $this
+    * @deprecated use setAmount
     */
-    public function amount(?MonetaryAmount $value)
+    public function amount($value)
     {
         $this->setProperty('amount', $value);
         return $this;
     }
    /**
-    * @param MonetaryAmount|array $value
+    * @param MonetaryAmount|array|string $value
     * @return $this
     */
-    public function setAmount(?MonetaryAmount $value)
+    public function setAmount($value)
     {
         $this->setProperty('amount', $value);
         return $this;
@@ -46,6 +47,7 @@ class MoneyTransfer extends TransferAction
     * A bank or bank’s branch, financial institution or international financial institution operating the beneficiary’s bank account or releasing funds for the beneficiary
     * @param BankOrCreditUnion|string|array $value
     * @return $this
+    * @deprecated use setBeneficiaryBank
     */
     public function beneficiaryBank($value)
     {
@@ -71,7 +73,3 @@ class MoneyTransfer extends TransferAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\TransferAction\\MoneyTransfer','Thing\\MoneyTransfer');
-

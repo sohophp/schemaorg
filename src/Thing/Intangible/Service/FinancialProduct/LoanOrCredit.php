@@ -20,19 +20,20 @@ class LoanOrCredit extends FinancialProduct
 
     /**
     * The duration of the loan or credit agreement.
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
+    * @deprecated use setLoanTerm
     */
-    public function loanTerm(?QuantitativeValue $value)
+    public function loanTerm($value)
     {
         $this->setProperty('loanTerm', $value);
         return $this;
     }
    /**
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
     */
-    public function setLoanTerm(?QuantitativeValue $value)
+    public function setLoanTerm($value)
     {
         $this->setProperty('loanTerm', $value);
         return $this;
@@ -47,19 +48,20 @@ class LoanOrCredit extends FinancialProduct
 
     /**
     * Whether the terms for payment of interest can be renegotiated during the life of the loan.
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
+    * @deprecated use setRenegotiableLoan
     */
-    public function renegotiableLoan(?bool $value)
+    public function renegotiableLoan($value)
     {
         $this->setProperty('renegotiableLoan', $value);
         return $this;
     }
    /**
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
     */
-    public function setRenegotiableLoan(?bool $value)
+    public function setRenegotiableLoan($value)
     {
         $this->setProperty('renegotiableLoan', $value);
         return $this;
@@ -74,19 +76,20 @@ class LoanOrCredit extends FinancialProduct
 
     /**
     * A form of paying back money previously borrowed from a lender. Repayment usually takes the form of periodic payments that normally include part principal plus interest in each payment.
-    * @param RepaymentSpecification|array $value
+    * @param RepaymentSpecification|array|string $value
     * @return $this
+    * @deprecated use setLoanRepaymentForm
     */
-    public function loanRepaymentForm(?RepaymentSpecification $value)
+    public function loanRepaymentForm($value)
     {
         $this->setProperty('loanRepaymentForm', $value);
         return $this;
     }
    /**
-    * @param RepaymentSpecification|array $value
+    * @param RepaymentSpecification|array|string $value
     * @return $this
     */
-    public function setLoanRepaymentForm(?RepaymentSpecification $value)
+    public function setLoanRepaymentForm($value)
     {
         $this->setProperty('loanRepaymentForm', $value);
         return $this;
@@ -101,19 +104,20 @@ class LoanOrCredit extends FinancialProduct
 
     /**
     * The period of time after any due date that the borrower has to fulfil its obligations before a default (failure to pay) is deemed to have occurred.
-    * @param Duration|array $value
+    * @param Duration|array|string $value
     * @return $this
+    * @deprecated use setGracePeriod
     */
-    public function gracePeriod(?Duration $value)
+    public function gracePeriod($value)
     {
         $this->setProperty('gracePeriod', $value);
         return $this;
     }
    /**
-    * @param Duration|array $value
+    * @param Duration|array|string $value
     * @return $this
     */
-    public function setGracePeriod(?Duration $value)
+    public function setGracePeriod($value)
     {
         $this->setProperty('gracePeriod', $value);
         return $this;
@@ -128,19 +132,20 @@ class LoanOrCredit extends FinancialProduct
 
     /**
     * The amount of money.
-    * @param MonetaryAmount|array $value
+    * @param MonetaryAmount|array|string $value
     * @return $this
+    * @deprecated use setAmount
     */
-    public function amount(?MonetaryAmount $value)
+    public function amount($value)
     {
         $this->setProperty('amount', $value);
         return $this;
     }
    /**
-    * @param MonetaryAmount|array $value
+    * @param MonetaryAmount|array|string $value
     * @return $this
     */
-    public function setAmount(?MonetaryAmount $value)
+    public function setAmount($value)
     {
         $this->setProperty('amount', $value);
         return $this;
@@ -157,6 +162,7 @@ class LoanOrCredit extends FinancialProduct
     * Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)
     * @param string|Thing|array $value
     * @return $this
+    * @deprecated use setRequiredCollateral
     */
     public function requiredCollateral($value)
     {
@@ -182,19 +188,20 @@ class LoanOrCredit extends FinancialProduct
 
     /**
     * The only way you get the money back in the event of default is the security. Recourse is where you still have the opportunity to go back to the borrower for the rest of the money.
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
+    * @deprecated use setRecourseLoan
     */
-    public function recourseLoan(?bool $value)
+    public function recourseLoan($value)
     {
         $this->setProperty('recourseLoan', $value);
         return $this;
     }
    /**
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
     */
-    public function setRecourseLoan(?bool $value)
+    public function setRecourseLoan($value)
     {
         $this->setProperty('recourseLoan', $value);
         return $this;
@@ -213,8 +220,9 @@ class LoanOrCredit extends FinancialProduct
 Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 currency format</a> e.g. "USD"; <a href="https://en.wikipedia.org/wiki/List_of_cryptocurrencies">Ticker symbol</a> for cryptocurrencies e.g. "BTC"; well known names for <a href="https://en.wikipedia.org/wiki/Local_exchange_trading_system">Local Exchange Tradings Systems</a> (LETS) and other currency types e.g. "Ithaca HOUR".
     * @param string|array $value
     * @return $this
+    * @deprecated use setCurrency
     */
-    public function currency(?string $value)
+    public function currency($value)
     {
         $this->setProperty('currency', $value);
         return $this;
@@ -223,7 +231,7 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
     * @param string|array $value
     * @return $this
     */
-    public function setCurrency(?string $value)
+    public function setCurrency($value)
     {
         $this->setProperty('currency', $value);
         return $this;
@@ -240,6 +248,7 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
     * The type of a loan or credit.
     * @param string|string|array $value
     * @return $this
+    * @deprecated use setLoanType
     */
     public function loanType($value)
     {
@@ -265,7 +274,3 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Service\\FinancialProduct\\LoanOrCredit','Thing\\LoanOrCredit');
-

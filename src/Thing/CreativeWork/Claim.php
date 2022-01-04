@@ -19,19 +19,20 @@ class Claim extends CreativeWork
 
     /**
     * Indicates the first known occurence of a <a class="localLink" href="http://schema.org/Claim">Claim</a> in some <a class="localLink" href="http://schema.org/CreativeWork">CreativeWork</a>.
-    * @param CreativeWork|array $value
+    * @param CreativeWork|array|string $value
     * @return $this
+    * @deprecated use setFirstAppearance
     */
-    public function firstAppearance(?CreativeWork $value)
+    public function firstAppearance($value)
     {
         $this->setProperty('firstAppearance', $value);
         return $this;
     }
    /**
-    * @param CreativeWork|array $value
+    * @param CreativeWork|array|string $value
     * @return $this
     */
-    public function setFirstAppearance(?CreativeWork $value)
+    public function setFirstAppearance($value)
     {
         $this->setProperty('firstAppearance', $value);
         return $this;
@@ -46,19 +47,20 @@ class Claim extends CreativeWork
 
     /**
     * Indicates an occurence of a <a class="localLink" href="http://schema.org/Claim">Claim</a> in some <a class="localLink" href="http://schema.org/CreativeWork">CreativeWork</a>.
-    * @param CreativeWork|array $value
+    * @param CreativeWork|array|string $value
     * @return $this
+    * @deprecated use setAppearance
     */
-    public function appearance(?CreativeWork $value)
+    public function appearance($value)
     {
         $this->setProperty('appearance', $value);
         return $this;
     }
    /**
-    * @param CreativeWork|array $value
+    * @param CreativeWork|array|string $value
     * @return $this
     */
-    public function setAppearance(?CreativeWork $value)
+    public function setAppearance($value)
     {
         $this->setProperty('appearance', $value);
         return $this;
@@ -73,7 +75,3 @@ class Claim extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Claim','Thing\\Claim');
-

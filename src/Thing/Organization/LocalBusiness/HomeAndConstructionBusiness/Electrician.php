@@ -15,7 +15,3 @@ class Electrician extends HomeAndConstructionBusiness
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\HomeAndConstructionBusiness\\Electrician','Thing\\Electrician');
-

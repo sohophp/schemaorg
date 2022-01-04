@@ -16,19 +16,20 @@ class MenuSection extends CreativeWork
 
     /**
     * A food or drink item contained in a menu or menu section.
-    * @param MenuItem|array $value
+    * @param MenuItem|array|string $value
     * @return $this
+    * @deprecated use setHasMenuItem
     */
-    public function hasMenuItem(?MenuItem $value)
+    public function hasMenuItem($value)
     {
         $this->setProperty('hasMenuItem', $value);
         return $this;
     }
    /**
-    * @param MenuItem|array $value
+    * @param MenuItem|array|string $value
     * @return $this
     */
-    public function setHasMenuItem(?MenuItem $value)
+    public function setHasMenuItem($value)
     {
         $this->setProperty('hasMenuItem', $value);
         return $this;
@@ -43,19 +44,20 @@ class MenuSection extends CreativeWork
 
     /**
     * A subgrouping of the menu (by dishes, course, serving time period, etc.).
-    * @param MenuSection|array $value
+    * @param MenuSection|array|string $value
     * @return $this
+    * @deprecated use setHasMenuSection
     */
-    public function hasMenuSection(?MenuSection $value)
+    public function hasMenuSection($value)
     {
         $this->setProperty('hasMenuSection', $value);
         return $this;
     }
    /**
-    * @param MenuSection|array $value
+    * @param MenuSection|array|string $value
     * @return $this
     */
-    public function setHasMenuSection(?MenuSection $value)
+    public function setHasMenuSection($value)
     {
         $this->setProperty('hasMenuSection', $value);
         return $this;
@@ -70,7 +72,3 @@ class MenuSection extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\MenuSection','Thing\\MenuSection');
-

@@ -15,7 +15,3 @@ class LegislativeBuilding extends GovernmentBuilding
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\CivicStructure\\GovernmentBuilding\\LegislativeBuilding','Thing\\LegislativeBuilding');
-

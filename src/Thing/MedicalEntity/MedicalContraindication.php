@@ -15,7 +15,3 @@ class MedicalContraindication extends MedicalEntity
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalContraindication','Thing\\MedicalContraindication');
-

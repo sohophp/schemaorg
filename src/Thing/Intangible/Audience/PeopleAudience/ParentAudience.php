@@ -15,8 +15,9 @@ class ParentAudience extends PeopleAudience
 
     /**
     * Maximal age of the child.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setChildMaxAge
     */
     public function childMaxAge($value)
     {
@@ -24,7 +25,7 @@ class ParentAudience extends PeopleAudience
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setChildMaxAge($value)
@@ -42,8 +43,9 @@ class ParentAudience extends PeopleAudience
 
     /**
     * Minimal age of the child.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setChildMinAge
     */
     public function childMinAge($value)
     {
@@ -51,7 +53,7 @@ class ParentAudience extends PeopleAudience
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setChildMinAge($value)
@@ -69,7 +71,3 @@ class ParentAudience extends PeopleAudience
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Audience\\PeopleAudience\\ParentAudience','Thing\\ParentAudience');
-

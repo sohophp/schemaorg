@@ -22,6 +22,7 @@ class Accommodation extends Place
     * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
     * @param string|bool|array $value
     * @return $this
+    * @deprecated use setPetsAllowed
     */
     public function petsAllowed($value)
     {
@@ -47,19 +48,20 @@ class Accommodation extends Place
 
     /**
     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
-    * @param LocationFeatureSpecification|array $value
+    * @param LocationFeatureSpecification|array|string $value
     * @return $this
+    * @deprecated use setAmenityFeature
     */
-    public function amenityFeature(?LocationFeatureSpecification $value)
+    public function amenityFeature($value)
     {
         $this->setProperty('amenityFeature', $value);
         return $this;
     }
    /**
-    * @param LocationFeatureSpecification|array $value
+    * @param LocationFeatureSpecification|array|string $value
     * @return $this
     */
-    public function setAmenityFeature(?LocationFeatureSpecification $value)
+    public function setAmenityFeature($value)
     {
         $this->setProperty('amenityFeature', $value);
         return $this;
@@ -75,19 +77,20 @@ class Accommodation extends Place
     /**
     * The size of the accommodation, e.g. in square meter or squarefoot.
 Typical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
+    * @deprecated use setFloorSize
     */
-    public function floorSize(?QuantitativeValue $value)
+    public function floorSize($value)
     {
         $this->setProperty('floorSize', $value);
         return $this;
     }
    /**
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
     */
-    public function setFloorSize(?QuantitativeValue $value)
+    public function setFloorSize($value)
     {
         $this->setProperty('floorSize', $value);
         return $this;
@@ -103,19 +106,20 @@ Typical unit code(s): MTK for square meter, FTK for square foot, or YDK for squa
     /**
     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
 Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
+    * @deprecated use setNumberOfRooms
     */
-    public function numberOfRooms(?QuantitativeValue $value)
+    public function numberOfRooms($value)
     {
         $this->setProperty('numberOfRooms', $value);
         return $this;
     }
    /**
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
     */
-    public function setNumberOfRooms(?QuantitativeValue $value)
+    public function setNumberOfRooms($value)
     {
         $this->setProperty('numberOfRooms', $value);
         return $this;
@@ -132,8 +136,9 @@ Typical unit code(s): ROM for room or C62 for no unit. The type of room can be p
     * Indications regarding the permitted usage of the accommodation.
     * @param string|array $value
     * @return $this
+    * @deprecated use setPermittedUsage
     */
-    public function permittedUsage(?string $value)
+    public function permittedUsage($value)
     {
         $this->setProperty('permittedUsage', $value);
         return $this;
@@ -142,7 +147,7 @@ Typical unit code(s): ROM for room or C62 for no unit. The type of room can be p
     * @param string|array $value
     * @return $this
     */
-    public function setPermittedUsage(?string $value)
+    public function setPermittedUsage($value)
     {
         $this->setProperty('permittedUsage', $value);
         return $this;
@@ -157,7 +162,3 @@ Typical unit code(s): ROM for room or C62 for no unit. The type of room can be p
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\Accommodation','Thing\\Accommodation');
-

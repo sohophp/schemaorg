@@ -16,19 +16,20 @@ class DefinedTermSet extends CreativeWork
 
     /**
     * A Defined Term contained in this term set.
-    * @param DefinedTerm|array $value
+    * @param DefinedTerm|array|string $value
     * @return $this
+    * @deprecated use setHasDefinedTerm
     */
-    public function hasDefinedTerm(?DefinedTerm $value)
+    public function hasDefinedTerm($value)
     {
         $this->setProperty('hasDefinedTerm', $value);
         return $this;
     }
    /**
-    * @param DefinedTerm|array $value
+    * @param DefinedTerm|array|string $value
     * @return $this
     */
-    public function setHasDefinedTerm(?DefinedTerm $value)
+    public function setHasDefinedTerm($value)
     {
         $this->setProperty('hasDefinedTerm', $value);
         return $this;
@@ -43,7 +44,3 @@ class DefinedTermSet extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\DefinedTermSet','Thing\\DefinedTermSet');
-

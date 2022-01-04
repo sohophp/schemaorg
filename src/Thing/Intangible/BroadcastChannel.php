@@ -20,6 +20,7 @@ class BroadcastChannel extends Intangible
     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
     * @param string|BroadcastFrequencySpecification|array $value
     * @return $this
+    * @deprecated use setBroadcastFrequency
     */
     public function broadcastFrequency($value)
     {
@@ -47,8 +48,9 @@ class BroadcastChannel extends Intangible
     * The unique address by which the BroadcastService can be identified in a provider lineup. In US, this is typically a number.
     * @param string|array $value
     * @return $this
+    * @deprecated use setBroadcastChannelId
     */
-    public function broadcastChannelId(?string $value)
+    public function broadcastChannelId($value)
     {
         $this->setProperty('broadcastChannelId', $value);
         return $this;
@@ -57,7 +59,7 @@ class BroadcastChannel extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setBroadcastChannelId(?string $value)
+    public function setBroadcastChannelId($value)
     {
         $this->setProperty('broadcastChannelId', $value);
         return $this;
@@ -74,8 +76,9 @@ class BroadcastChannel extends Intangible
     * The type of service required to have access to the channel (e.g. Standard or Premium).
     * @param string|array $value
     * @return $this
+    * @deprecated use setBroadcastServiceTier
     */
-    public function broadcastServiceTier(?string $value)
+    public function broadcastServiceTier($value)
     {
         $this->setProperty('broadcastServiceTier', $value);
         return $this;
@@ -84,7 +87,7 @@ class BroadcastChannel extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setBroadcastServiceTier(?string $value)
+    public function setBroadcastServiceTier($value)
     {
         $this->setProperty('broadcastServiceTier', $value);
         return $this;
@@ -99,19 +102,20 @@ class BroadcastChannel extends Intangible
 
     /**
     * The CableOrSatelliteService offering the channel.
-    * @param CableOrSatelliteService|array $value
+    * @param CableOrSatelliteService|array|string $value
     * @return $this
+    * @deprecated use setInBroadcastLineup
     */
-    public function inBroadcastLineup(?CableOrSatelliteService $value)
+    public function inBroadcastLineup($value)
     {
         $this->setProperty('inBroadcastLineup', $value);
         return $this;
     }
    /**
-    * @param CableOrSatelliteService|array $value
+    * @param CableOrSatelliteService|array|string $value
     * @return $this
     */
-    public function setInBroadcastLineup(?CableOrSatelliteService $value)
+    public function setInBroadcastLineup($value)
     {
         $this->setProperty('inBroadcastLineup', $value);
         return $this;
@@ -126,19 +130,20 @@ class BroadcastChannel extends Intangible
 
     /**
     * The BroadcastService offered on this channel.
-    * @param BroadcastService|array $value
+    * @param BroadcastService|array|string $value
     * @return $this
+    * @deprecated use setProvidesBroadcastService
     */
-    public function providesBroadcastService(?BroadcastService $value)
+    public function providesBroadcastService($value)
     {
         $this->setProperty('providesBroadcastService', $value);
         return $this;
     }
    /**
-    * @param BroadcastService|array $value
+    * @param BroadcastService|array|string $value
     * @return $this
     */
-    public function setProvidesBroadcastService(?BroadcastService $value)
+    public function setProvidesBroadcastService($value)
     {
         $this->setProperty('providesBroadcastService', $value);
         return $this;
@@ -155,6 +160,7 @@ class BroadcastChannel extends Intangible
     * Genre of the creative work, broadcast channel or group.
     * @param string|string|array $value
     * @return $this
+    * @deprecated use setGenre
     */
     public function genre($value)
     {
@@ -180,7 +186,3 @@ class BroadcastChannel extends Intangible
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\BroadcastChannel','Thing\\BroadcastChannel');
-

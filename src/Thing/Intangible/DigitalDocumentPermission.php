@@ -20,8 +20,9 @@ class DigitalDocumentPermission extends Intangible
 
     /**
     * The person, organization, contact point, or audience that has been granted this permission.
-    * @param ContactPoint|Person|Audience|Organization|array $value
+    * @param ContactPoint|Person|Audience|Organization|array|string $value
     * @return $this
+    * @deprecated use setGrantee
     */
     public function grantee($value)
     {
@@ -29,7 +30,7 @@ class DigitalDocumentPermission extends Intangible
         return $this;
     }
    /**
-    * @param ContactPoint|Person|Audience|Organization|array $value
+    * @param ContactPoint|Person|Audience|Organization|array|string $value
     * @return $this
     */
     public function setGrantee($value)
@@ -47,19 +48,20 @@ class DigitalDocumentPermission extends Intangible
 
     /**
     * The type of permission granted the person, organization, or audience.
-    * @param DigitalDocumentPermissionType|array $value
+    * @param DigitalDocumentPermissionType|array|string $value
     * @return $this
+    * @deprecated use setPermissionType
     */
-    public function permissionType(?DigitalDocumentPermissionType $value)
+    public function permissionType($value)
     {
         $this->setProperty('permissionType', $value);
         return $this;
     }
    /**
-    * @param DigitalDocumentPermissionType|array $value
+    * @param DigitalDocumentPermissionType|array|string $value
     * @return $this
     */
-    public function setPermissionType(?DigitalDocumentPermissionType $value)
+    public function setPermissionType($value)
     {
         $this->setProperty('permissionType', $value);
         return $this;
@@ -74,7 +76,3 @@ class DigitalDocumentPermission extends Intangible
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\DigitalDocumentPermission','Thing\\DigitalDocumentPermission');
-

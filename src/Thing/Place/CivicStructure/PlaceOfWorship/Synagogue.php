@@ -15,7 +15,3 @@ class Synagogue extends PlaceOfWorship
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\CivicStructure\\PlaceOfWorship\\Synagogue','Thing\\Synagogue');
-

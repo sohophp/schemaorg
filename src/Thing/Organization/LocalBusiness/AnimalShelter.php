@@ -15,7 +15,3 @@ class AnimalShelter extends LocalBusiness
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\AnimalShelter','Thing\\AnimalShelter');
-

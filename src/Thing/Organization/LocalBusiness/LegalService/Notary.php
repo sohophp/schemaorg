@@ -15,7 +15,3 @@ class Notary extends LegalService
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\LegalService\\Notary','Thing\\Notary');
-

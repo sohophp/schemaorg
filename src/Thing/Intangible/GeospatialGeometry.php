@@ -16,8 +16,9 @@ class GeospatialGeometry extends Intangible
 
     /**
     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in <a href="https://en.wikipedia.org/wiki/DE-9IM">DE-9IM</a>.
-    * @param Place|GeospatialGeometry|array $value
+    * @param Place|GeospatialGeometry|array|string $value
     * @return $this
+    * @deprecated use setGeoWithin
     */
     public function geoWithin($value)
     {
@@ -25,7 +26,7 @@ class GeospatialGeometry extends Intangible
         return $this;
     }
    /**
-    * @param Place|GeospatialGeometry|array $value
+    * @param Place|GeospatialGeometry|array|string $value
     * @return $this
     */
     public function setGeoWithin($value)
@@ -43,8 +44,9 @@ class GeospatialGeometry extends Intangible
 
     /**
     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in <a href="https://en.wikipedia.org/wiki/DE-9IM">DE-9IM</a>.
-    * @param GeospatialGeometry|Place|array $value
+    * @param GeospatialGeometry|Place|array|string $value
     * @return $this
+    * @deprecated use setGeoContains
     */
     public function geoContains($value)
     {
@@ -52,7 +54,7 @@ class GeospatialGeometry extends Intangible
         return $this;
     }
    /**
-    * @param GeospatialGeometry|Place|array $value
+    * @param GeospatialGeometry|Place|array|string $value
     * @return $this
     */
     public function setGeoContains($value)
@@ -70,8 +72,9 @@ class GeospatialGeometry extends Intangible
 
     /**
     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in <a href="https://en.wikipedia.org/wiki/DE-9IM">DE-9IM</a>.
-    * @param GeospatialGeometry|Place|array $value
+    * @param GeospatialGeometry|Place|array|string $value
     * @return $this
+    * @deprecated use setGeoOverlaps
     */
     public function geoOverlaps($value)
     {
@@ -79,7 +82,7 @@ class GeospatialGeometry extends Intangible
         return $this;
     }
    /**
-    * @param GeospatialGeometry|Place|array $value
+    * @param GeospatialGeometry|Place|array|string $value
     * @return $this
     */
     public function setGeoOverlaps($value)
@@ -97,8 +100,9 @@ class GeospatialGeometry extends Intangible
 
     /**
     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in <a href="https://en.wikipedia.org/wiki/DE-9IM">DE-9IM</a>.
-    * @param GeospatialGeometry|Place|array $value
+    * @param GeospatialGeometry|Place|array|string $value
     * @return $this
+    * @deprecated use setGeoCrosses
     */
     public function geoCrosses($value)
     {
@@ -106,7 +110,7 @@ class GeospatialGeometry extends Intangible
         return $this;
     }
    /**
-    * @param GeospatialGeometry|Place|array $value
+    * @param GeospatialGeometry|Place|array|string $value
     * @return $this
     */
     public function setGeoCrosses($value)
@@ -124,8 +128,9 @@ class GeospatialGeometry extends Intangible
 
     /**
     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in <a href="https://en.wikipedia.org/wiki/DE-9IM">DE-9IM</a>.
-    * @param GeospatialGeometry|Place|array $value
+    * @param GeospatialGeometry|Place|array|string $value
     * @return $this
+    * @deprecated use setGeoCovers
     */
     public function geoCovers($value)
     {
@@ -133,7 +138,7 @@ class GeospatialGeometry extends Intangible
         return $this;
     }
    /**
-    * @param GeospatialGeometry|Place|array $value
+    * @param GeospatialGeometry|Place|array|string $value
     * @return $this
     */
     public function setGeoCovers($value)
@@ -151,8 +156,9 @@ class GeospatialGeometry extends Intangible
 
     /**
     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in <a href="https://en.wikipedia.org/wiki/DE-9IM">DE-9IM</a>. "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship)
-    * @param Place|GeospatialGeometry|array $value
+    * @param Place|GeospatialGeometry|array|string $value
     * @return $this
+    * @deprecated use setGeoEquals
     */
     public function geoEquals($value)
     {
@@ -160,7 +166,7 @@ class GeospatialGeometry extends Intangible
         return $this;
     }
    /**
-    * @param Place|GeospatialGeometry|array $value
+    * @param Place|GeospatialGeometry|array|string $value
     * @return $this
     */
     public function setGeoEquals($value)
@@ -178,8 +184,9 @@ class GeospatialGeometry extends Intangible
 
     /**
     * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points." (a symmetric relationship, as defined in <a href="https://en.wikipedia.org/wiki/DE-9IM">DE-9IM</a> )
-    * @param Place|GeospatialGeometry|array $value
+    * @param Place|GeospatialGeometry|array|string $value
     * @return $this
+    * @deprecated use setGeoTouches
     */
     public function geoTouches($value)
     {
@@ -187,7 +194,7 @@ class GeospatialGeometry extends Intangible
         return $this;
     }
    /**
-    * @param Place|GeospatialGeometry|array $value
+    * @param Place|GeospatialGeometry|array|string $value
     * @return $this
     */
     public function setGeoTouches($value)
@@ -205,8 +212,9 @@ class GeospatialGeometry extends Intangible
 
     /**
     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in <a href="https://en.wikipedia.org/wiki/DE-9IM">DE-9IM</a>.
-    * @param GeospatialGeometry|Place|array $value
+    * @param GeospatialGeometry|Place|array|string $value
     * @return $this
+    * @deprecated use setGeoIntersects
     */
     public function geoIntersects($value)
     {
@@ -214,7 +222,7 @@ class GeospatialGeometry extends Intangible
         return $this;
     }
    /**
-    * @param GeospatialGeometry|Place|array $value
+    * @param GeospatialGeometry|Place|array|string $value
     * @return $this
     */
     public function setGeoIntersects($value)
@@ -232,8 +240,9 @@ class GeospatialGeometry extends Intangible
 
     /**
     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries." (a symmetric relationship, as defined in <a href="https://en.wikipedia.org/wiki/DE-9IM">DE-9IM</a>)
-    * @param GeospatialGeometry|Place|array $value
+    * @param GeospatialGeometry|Place|array|string $value
     * @return $this
+    * @deprecated use setGeoDisjoint
     */
     public function geoDisjoint($value)
     {
@@ -241,7 +250,7 @@ class GeospatialGeometry extends Intangible
         return $this;
     }
    /**
-    * @param GeospatialGeometry|Place|array $value
+    * @param GeospatialGeometry|Place|array|string $value
     * @return $this
     */
     public function setGeoDisjoint($value)
@@ -259,8 +268,9 @@ class GeospatialGeometry extends Intangible
 
     /**
     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in <a href="https://en.wikipedia.org/wiki/DE-9IM">DE-9IM</a>.
-    * @param Place|GeospatialGeometry|array $value
+    * @param Place|GeospatialGeometry|array|string $value
     * @return $this
+    * @deprecated use setGeoCoveredBy
     */
     public function geoCoveredBy($value)
     {
@@ -268,7 +278,7 @@ class GeospatialGeometry extends Intangible
         return $this;
     }
    /**
-    * @param Place|GeospatialGeometry|array $value
+    * @param Place|GeospatialGeometry|array|string $value
     * @return $this
     */
     public function setGeoCoveredBy($value)
@@ -286,7 +296,3 @@ class GeospatialGeometry extends Intangible
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\GeospatialGeometry','Thing\\GeospatialGeometry');
-

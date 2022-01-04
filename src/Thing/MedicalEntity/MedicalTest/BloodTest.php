@@ -15,7 +15,3 @@ class BloodTest extends MedicalTest
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalTest\\BloodTest','Thing\\BloodTest');
-

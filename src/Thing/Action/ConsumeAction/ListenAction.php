@@ -15,7 +15,3 @@ class ListenAction extends ConsumeAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\ConsumeAction\\ListenAction','Thing\\ListenAction');
-

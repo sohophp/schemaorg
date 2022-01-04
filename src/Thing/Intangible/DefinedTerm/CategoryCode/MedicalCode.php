@@ -17,8 +17,9 @@ class MedicalCode extends CategoryCode
     * The coding system, e.g. 'ICD-10'.
     * @param string|array $value
     * @return $this
+    * @deprecated use setCodingSystem
     */
-    public function codingSystem(?string $value)
+    public function codingSystem($value)
     {
         $this->setProperty('codingSystem', $value);
         return $this;
@@ -27,7 +28,7 @@ class MedicalCode extends CategoryCode
     * @param string|array $value
     * @return $this
     */
-    public function setCodingSystem(?string $value)
+    public function setCodingSystem($value)
     {
         $this->setProperty('codingSystem', $value);
         return $this;
@@ -44,8 +45,9 @@ class MedicalCode extends CategoryCode
     * A short textual code that uniquely identifies the value.
     * @param string|array $value
     * @return $this
+    * @deprecated use setCodeValue
     */
-    public function codeValue(?string $value)
+    public function codeValue($value)
     {
         $this->setProperty('codeValue', $value);
         return $this;
@@ -54,7 +56,7 @@ class MedicalCode extends CategoryCode
     * @param string|array $value
     * @return $this
     */
-    public function setCodeValue(?string $value)
+    public function setCodeValue($value)
     {
         $this->setProperty('codeValue', $value);
         return $this;
@@ -69,7 +71,3 @@ class MedicalCode extends CategoryCode
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\DefinedTerm\\CategoryCode\\MedicalCode','Thing\\MedicalCode');
-

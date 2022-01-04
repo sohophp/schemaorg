@@ -15,7 +15,3 @@ class Optician extends MedicalBusiness
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\MedicalBusiness\\Optician','Thing\\Optician');
-

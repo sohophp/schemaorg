@@ -22,6 +22,7 @@ class PropertyValue extends StructuredValue
     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
     * @param string|string|array $value
     * @return $this
+    * @deprecated use setUnitCode
     */
     public function unitCode($value)
     {
@@ -47,8 +48,9 @@ class PropertyValue extends StructuredValue
 
     /**
     * The lower value of some characteristic or property.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setMinValue
     */
     public function minValue($value)
     {
@@ -56,7 +58,7 @@ class PropertyValue extends StructuredValue
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setMinValue($value)
@@ -79,6 +81,7 @@ a URL indicating the type of the property, either pointing to an external vocabu
 Standards bodies should promote a standard prefix for the identifiers of properties from their standards.
     * @param string|string|array $value
     * @return $this
+    * @deprecated use setPropertyID
     */
     public function propertyID($value)
     {
@@ -114,6 +117,7 @@ Standards bodies should promote a standard prefix for the identifiers of propert
 
     * @param StructuredValue|string|bool|array $value
     * @return $this
+    * @deprecated use setValue
     */
     public function value($value)
     {
@@ -139,8 +143,9 @@ Standards bodies should promote a standard prefix for the identifiers of propert
 
     /**
     * A pointer to a secondary value that provides additional information on the original value, e.g. a reference temperature.
-    * @param QuantitativeValue|QualitativeValue|StructuredValue|Enumeration|PropertyValue|array $value
+    * @param QuantitativeValue|QualitativeValue|StructuredValue|Enumeration|PropertyValue|array|string $value
     * @return $this
+    * @deprecated use setValueReference
     */
     public function valueReference($value)
     {
@@ -148,7 +153,7 @@ Standards bodies should promote a standard prefix for the identifiers of propert
         return $this;
     }
    /**
-    * @param QuantitativeValue|QualitativeValue|StructuredValue|Enumeration|PropertyValue|array $value
+    * @param QuantitativeValue|QualitativeValue|StructuredValue|Enumeration|PropertyValue|array|string $value
     * @return $this
     */
     public function setValueReference($value)
@@ -166,8 +171,9 @@ Standards bodies should promote a standard prefix for the identifiers of propert
 
     /**
     * The upper value of some characteristic or property.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setMaxValue
     */
     public function maxValue($value)
     {
@@ -175,7 +181,7 @@ Standards bodies should promote a standard prefix for the identifiers of propert
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setMaxValue($value)
@@ -196,8 +202,9 @@ Standards bodies should promote a standard prefix for the identifiers of propert
 <a href='unitCode'>unitCode</a>.
     * @param string|array $value
     * @return $this
+    * @deprecated use setUnitText
     */
-    public function unitText(?string $value)
+    public function unitText($value)
     {
         $this->setProperty('unitText', $value);
         return $this;
@@ -206,7 +213,7 @@ Standards bodies should promote a standard prefix for the identifiers of propert
     * @param string|array $value
     * @return $this
     */
-    public function setUnitText(?string $value)
+    public function setUnitText($value)
     {
         $this->setProperty('unitText', $value);
         return $this;
@@ -230,6 +237,7 @@ If the <a class="localLink" href="http://schema.org/variableMeasured">variableMe
 If there are several <a class="localLink" href="http://schema.org/variableMeasured">variableMeasured</a> properties recorded for some given data object, use a <a class="localLink" href="http://schema.org/PropertyValue">PropertyValue</a> for each <a class="localLink" href="http://schema.org/variableMeasured">variableMeasured</a> and attach the corresponding <a class="localLink" href="http://schema.org/measurementTechnique">measurementTechnique</a>.
     * @param string|string|array $value
     * @return $this
+    * @deprecated use setMeasurementTechnique
     */
     public function measurementTechnique($value)
     {
@@ -255,7 +263,3 @@ If there are several <a class="localLink" href="http://schema.org/variableMeasur
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue\\PropertyValue','Thing\\PropertyValue');
-

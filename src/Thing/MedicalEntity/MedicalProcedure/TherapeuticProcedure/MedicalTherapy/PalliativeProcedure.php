@@ -15,7 +15,3 @@ class PalliativeProcedure extends MedicalTherapy
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalProcedure\\TherapeuticProcedure\\MedicalTherapy\\PalliativeProcedure','Thing\\PalliativeProcedure');
-

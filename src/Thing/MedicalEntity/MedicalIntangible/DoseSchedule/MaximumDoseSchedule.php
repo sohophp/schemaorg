@@ -15,7 +15,3 @@ class MaximumDoseSchedule extends DoseSchedule
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalIntangible\\DoseSchedule\\MaximumDoseSchedule','Thing\\MaximumDoseSchedule');
-

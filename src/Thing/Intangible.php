@@ -15,7 +15,3 @@ class Intangible extends Thing
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible','Thing\\Intangible');
-

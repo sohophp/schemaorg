@@ -15,7 +15,3 @@ class CreateAction extends Action
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\CreateAction','Thing\\CreateAction');
-

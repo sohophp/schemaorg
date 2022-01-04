@@ -17,8 +17,9 @@ class Report extends Article
     * The number or other unique designator assigned to a Report by the publishing organization.
     * @param string|array $value
     * @return $this
+    * @deprecated use setReportNumber
     */
-    public function reportNumber(?string $value)
+    public function reportNumber($value)
     {
         $this->setProperty('reportNumber', $value);
         return $this;
@@ -27,7 +28,7 @@ class Report extends Article
     * @param string|array $value
     * @return $this
     */
-    public function setReportNumber(?string $value)
+    public function setReportNumber($value)
     {
         $this->setProperty('reportNumber', $value);
         return $this;
@@ -42,7 +43,3 @@ class Report extends Article
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Article\\Report','Thing\\Report');
-

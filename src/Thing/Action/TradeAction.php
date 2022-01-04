@@ -16,19 +16,20 @@ class TradeAction extends Action
 
     /**
     * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
-    * @param PriceSpecification|array $value
+    * @param PriceSpecification|array|string $value
     * @return $this
+    * @deprecated use setPriceSpecification
     */
-    public function priceSpecification(?PriceSpecification $value)
+    public function priceSpecification($value)
     {
         $this->setProperty('priceSpecification', $value);
         return $this;
     }
    /**
-    * @param PriceSpecification|array $value
+    * @param PriceSpecification|array|string $value
     * @return $this
     */
-    public function setPriceSpecification(?PriceSpecification $value)
+    public function setPriceSpecification($value)
     {
         $this->setProperty('priceSpecification', $value);
         return $this;
@@ -47,8 +48,9 @@ class TradeAction extends Action
 Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 currency format</a> e.g. "USD"; <a href="https://en.wikipedia.org/wiki/List_of_cryptocurrencies">Ticker symbol</a> for cryptocurrencies e.g. "BTC"; well known names for <a href="https://en.wikipedia.org/wiki/Local_exchange_trading_system">Local Exchange Tradings Systems</a> (LETS) and other currency types e.g. "Ithaca HOUR".
     * @param string|array $value
     * @return $this
+    * @deprecated use setPriceCurrency
     */
-    public function priceCurrency(?string $value)
+    public function priceCurrency($value)
     {
         $this->setProperty('priceCurrency', $value);
         return $this;
@@ -57,7 +59,7 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
     * @param string|array $value
     * @return $this
     */
-    public function setPriceCurrency(?string $value)
+    public function setPriceCurrency($value)
     {
         $this->setProperty('priceCurrency', $value);
         return $this;
@@ -84,8 +86,9 @@ Usage guidelines:<br/><br/>
 
     * @param string|array $value
     * @return $this
+    * @deprecated use setPrice
     */
-    public function price(?string $value)
+    public function price($value)
     {
         $this->setProperty('price', $value);
         return $this;
@@ -94,7 +97,7 @@ Usage guidelines:<br/><br/>
     * @param string|array $value
     * @return $this
     */
-    public function setPrice(?string $value)
+    public function setPrice($value)
     {
         $this->setProperty('price', $value);
         return $this;
@@ -109,7 +112,3 @@ Usage guidelines:<br/><br/>
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\TradeAction','Thing\\TradeAction');
-

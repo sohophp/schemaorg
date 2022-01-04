@@ -24,6 +24,7 @@ class VideoGame extends Game
     * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
     * @param Thing|string|string|array $value
     * @return $this
+    * @deprecated use setGamePlatform
     */
     public function gamePlatform($value)
     {
@@ -49,19 +50,20 @@ class VideoGame extends Game
 
     /**
     * The server on which  it is possible to play the game.
-    * @param GameServer|array $value
+    * @param GameServer|array|string $value
     * @return $this
+    * @deprecated use setGameServer
     */
-    public function gameServer(?GameServer $value)
+    public function gameServer($value)
     {
         $this->setProperty('gameServer', $value);
         return $this;
     }
    /**
-    * @param GameServer|array $value
+    * @param GameServer|array|string $value
     * @return $this
     */
-    public function setGameServer(?GameServer $value)
+    public function setGameServer($value)
     {
         $this->setProperty('gameServer', $value);
         return $this;
@@ -76,19 +78,20 @@ class VideoGame extends Game
 
     /**
     * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setActor
     */
-    public function actor(?Person $value)
+    public function actor($value)
     {
         $this->setProperty('actor', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setActor(?Person $value)
+    public function setActor($value)
     {
         $this->setProperty('actor', $value);
         return $this;
@@ -103,19 +106,20 @@ class VideoGame extends Game
 
     /**
     * The trailer of a movie or tv/radio series, season, episode, etc.
-    * @param VideoObject|array $value
+    * @param VideoObject|array|string $value
     * @return $this
+    * @deprecated use setTrailer
     */
-    public function trailer(?VideoObject $value)
+    public function trailer($value)
     {
         $this->setProperty('trailer', $value);
         return $this;
     }
    /**
-    * @param VideoObject|array $value
+    * @param VideoObject|array|string $value
     * @return $this
     */
-    public function setTrailer(?VideoObject $value)
+    public function setTrailer($value)
     {
         $this->setProperty('trailer', $value);
         return $this;
@@ -130,19 +134,20 @@ class VideoGame extends Game
 
     /**
     * Cheat codes to the game.
-    * @param CreativeWork|array $value
+    * @param CreativeWork|array|string $value
     * @return $this
+    * @deprecated use setCheatCode
     */
-    public function cheatCode(?CreativeWork $value)
+    public function cheatCode($value)
     {
         $this->setProperty('cheatCode', $value);
         return $this;
     }
    /**
-    * @param CreativeWork|array $value
+    * @param CreativeWork|array|string $value
     * @return $this
     */
-    public function setCheatCode(?CreativeWork $value)
+    public function setCheatCode($value)
     {
         $this->setProperty('cheatCode', $value);
         return $this;
@@ -157,19 +162,20 @@ class VideoGame extends Game
 
     /**
     * Links to tips, tactics, etc.
-    * @param CreativeWork|array $value
+    * @param CreativeWork|array|string $value
     * @return $this
+    * @deprecated use setGameTip
     */
-    public function gameTip(?CreativeWork $value)
+    public function gameTip($value)
     {
         $this->setProperty('gameTip', $value);
         return $this;
     }
    /**
-    * @param CreativeWork|array $value
+    * @param CreativeWork|array|string $value
     * @return $this
     */
-    public function setGameTip(?CreativeWork $value)
+    public function setGameTip($value)
     {
         $this->setProperty('gameTip', $value);
         return $this;
@@ -184,8 +190,9 @@ class VideoGame extends Game
 
     /**
     * The composer of the soundtrack.
-    * @param Person|MusicGroup|array $value
+    * @param Person|MusicGroup|array|string $value
     * @return $this
+    * @deprecated use setMusicBy
     */
     public function musicBy($value)
     {
@@ -193,7 +200,7 @@ class VideoGame extends Game
         return $this;
     }
    /**
-    * @param Person|MusicGroup|array $value
+    * @param Person|MusicGroup|array|string $value
     * @return $this
     */
     public function setMusicBy($value)
@@ -211,19 +218,20 @@ class VideoGame extends Game
 
     /**
     * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setDirectors
     */
-    public function directors(?Person $value)
+    public function directors($value)
     {
         $this->setProperty('directors', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setDirectors(?Person $value)
+    public function setDirectors($value)
     {
         $this->setProperty('directors', $value);
         return $this;
@@ -238,19 +246,20 @@ class VideoGame extends Game
 
     /**
     * Indicates whether this game is multi-player, co-op or single-player.  The game can be marked as multi-player, co-op and single-player at the same time.
-    * @param GamePlayMode|array $value
+    * @param GamePlayMode|array|string $value
     * @return $this
+    * @deprecated use setPlayMode
     */
-    public function playMode(?GamePlayMode $value)
+    public function playMode($value)
     {
         $this->setProperty('playMode', $value);
         return $this;
     }
    /**
-    * @param GamePlayMode|array $value
+    * @param GamePlayMode|array|string $value
     * @return $this
     */
-    public function setPlayMode(?GamePlayMode $value)
+    public function setPlayMode($value)
     {
         $this->setProperty('playMode', $value);
         return $this;
@@ -265,19 +274,20 @@ class VideoGame extends Game
 
     /**
     * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setDirector
     */
-    public function director(?Person $value)
+    public function director($value)
     {
         $this->setProperty('director', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setDirector(?Person $value)
+    public function setDirector($value)
     {
         $this->setProperty('director', $value);
         return $this;
@@ -292,19 +302,20 @@ class VideoGame extends Game
 
     /**
     * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setActors
     */
-    public function actors(?Person $value)
+    public function actors($value)
     {
         $this->setProperty('actors', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setActors(?Person $value)
+    public function setActors($value)
     {
         $this->setProperty('actors', $value);
         return $this;
@@ -319,7 +330,3 @@ class VideoGame extends Game
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Game\\VideoGame','Thing\\VideoGame');
-

@@ -15,7 +15,3 @@ class MedicalBusiness extends LocalBusiness
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\MedicalBusiness','Thing\\MedicalBusiness');
-

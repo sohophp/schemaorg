@@ -22,7 +22,3 @@ class ConfirmAction extends InformAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\InteractAction\\CommunicateAction\\InformAction\\ConfirmAction','Thing\\ConfirmAction');
-

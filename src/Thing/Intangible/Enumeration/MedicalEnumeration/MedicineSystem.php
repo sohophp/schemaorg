@@ -15,7 +15,3 @@ class MedicineSystem extends MedicalEnumeration
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\MedicalEnumeration\\MedicineSystem','Thing\\MedicineSystem');
-

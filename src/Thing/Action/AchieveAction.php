@@ -15,7 +15,3 @@ class AchieveAction extends Action
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\AchieveAction','Thing\\AchieveAction');
-

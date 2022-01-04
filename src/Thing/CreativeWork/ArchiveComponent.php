@@ -20,6 +20,7 @@ class ArchiveComponent extends CreativeWork
     * Current location of the item.
     * @param PostalAddress|Place|string|array $value
     * @return $this
+    * @deprecated use setItemLocation
     */
     public function itemLocation($value)
     {
@@ -45,19 +46,20 @@ class ArchiveComponent extends CreativeWork
 
     /**
     * <a class="localLink" href="http://schema.org/ArchiveOrganization">ArchiveOrganization</a> that holds, keeps or maintains the <a class="localLink" href="http://schema.org/ArchiveComponent">ArchiveComponent</a>.
-    * @param ArchiveOrganization|array $value
+    * @param ArchiveOrganization|array|string $value
     * @return $this
+    * @deprecated use setHoldingArchive
     */
-    public function holdingArchive(?ArchiveOrganization $value)
+    public function holdingArchive($value)
     {
         $this->setProperty('holdingArchive', $value);
         return $this;
     }
    /**
-    * @param ArchiveOrganization|array $value
+    * @param ArchiveOrganization|array|string $value
     * @return $this
     */
-    public function setHoldingArchive(?ArchiveOrganization $value)
+    public function setHoldingArchive($value)
     {
         $this->setProperty('holdingArchive', $value);
         return $this;
@@ -72,7 +74,3 @@ class ArchiveComponent extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\ArchiveComponent','Thing\\ArchiveComponent');
-

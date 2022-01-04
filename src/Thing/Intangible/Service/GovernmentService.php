@@ -16,19 +16,20 @@ class GovernmentService extends Service
 
     /**
     * The operating organization, if different from the provider.  This enables the representation of services that are provided by an organization, but operated by another organization like a subcontractor.
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
+    * @deprecated use setServiceOperator
     */
-    public function serviceOperator(?Organization $value)
+    public function serviceOperator($value)
     {
         $this->setProperty('serviceOperator', $value);
         return $this;
     }
    /**
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
     */
-    public function setServiceOperator(?Organization $value)
+    public function setServiceOperator($value)
     {
         $this->setProperty('serviceOperator', $value);
         return $this;
@@ -43,7 +44,3 @@ class GovernmentService extends Service
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Service\\GovernmentService','Thing\\GovernmentService');
-

@@ -24,7 +24,3 @@ class ParcelService extends DeliveryMethod
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\DeliveryMethod\\ParcelService','Thing\\ParcelService');
-

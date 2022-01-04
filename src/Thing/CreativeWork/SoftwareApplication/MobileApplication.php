@@ -17,8 +17,9 @@ class MobileApplication extends SoftwareApplication
     * Specifies specific carrier(s) requirements for the application (e.g. an application may only work on a specific carrier network).
     * @param string|array $value
     * @return $this
+    * @deprecated use setCarrierRequirements
     */
-    public function carrierRequirements(?string $value)
+    public function carrierRequirements($value)
     {
         $this->setProperty('carrierRequirements', $value);
         return $this;
@@ -27,7 +28,7 @@ class MobileApplication extends SoftwareApplication
     * @param string|array $value
     * @return $this
     */
-    public function setCarrierRequirements(?string $value)
+    public function setCarrierRequirements($value)
     {
         $this->setProperty('carrierRequirements', $value);
         return $this;
@@ -42,7 +43,3 @@ class MobileApplication extends SoftwareApplication
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\SoftwareApplication\\MobileApplication','Thing\\MobileApplication');
-

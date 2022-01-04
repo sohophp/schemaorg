@@ -17,8 +17,9 @@ class AllocateAction extends OrganizeAction
 
     /**
     * A goal towards an action is taken. Can be concrete or abstract.
-    * @param MedicalDevicePurpose|Thing|array $value
+    * @param MedicalDevicePurpose|Thing|array|string $value
     * @return $this
+    * @deprecated use setPurpose
     */
     public function purpose($value)
     {
@@ -26,7 +27,7 @@ class AllocateAction extends OrganizeAction
         return $this;
     }
    /**
-    * @param MedicalDevicePurpose|Thing|array $value
+    * @param MedicalDevicePurpose|Thing|array|string $value
     * @return $this
     */
     public function setPurpose($value)
@@ -44,7 +45,3 @@ class AllocateAction extends OrganizeAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\OrganizeAction\\AllocateAction','Thing\\AllocateAction');
-

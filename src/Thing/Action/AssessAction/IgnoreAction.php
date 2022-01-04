@@ -15,7 +15,3 @@ class IgnoreAction extends AssessAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\AssessAction\\IgnoreAction','Thing\\IgnoreAction');
-

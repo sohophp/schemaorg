@@ -15,7 +15,3 @@ class GasStation extends AutomotiveBusiness
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\AutomotiveBusiness\\GasStation','Thing\\GasStation');
-

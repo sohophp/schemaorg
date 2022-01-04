@@ -15,7 +15,3 @@ class ChildCare extends LocalBusiness
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\ChildCare','Thing\\ChildCare');
-

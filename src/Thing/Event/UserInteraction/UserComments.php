@@ -20,8 +20,9 @@ class UserComments extends UserInteraction
     * The text of the UserComment.
     * @param string|array $value
     * @return $this
+    * @deprecated use setCommentText
     */
-    public function commentText(?string $value)
+    public function commentText($value)
     {
         $this->setProperty('commentText', $value);
         return $this;
@@ -30,7 +31,7 @@ class UserComments extends UserInteraction
     * @param string|array $value
     * @return $this
     */
-    public function setCommentText(?string $value)
+    public function setCommentText($value)
     {
         $this->setProperty('commentText', $value);
         return $this;
@@ -45,19 +46,20 @@ class UserComments extends UserInteraction
 
     /**
     * Specifies the CreativeWork associated with the UserComment.
-    * @param CreativeWork|array $value
+    * @param CreativeWork|array|string $value
     * @return $this
+    * @deprecated use setDiscusses
     */
-    public function discusses(?CreativeWork $value)
+    public function discusses($value)
     {
         $this->setProperty('discusses', $value);
         return $this;
     }
    /**
-    * @param CreativeWork|array $value
+    * @param CreativeWork|array|string $value
     * @return $this
     */
-    public function setDiscusses(?CreativeWork $value)
+    public function setDiscusses($value)
     {
         $this->setProperty('discusses', $value);
         return $this;
@@ -72,8 +74,9 @@ class UserComments extends UserInteraction
 
     /**
     * The time at which the UserComment was made.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setCommentTime
     */
     public function commentTime($value)
     {
@@ -81,7 +84,7 @@ class UserComments extends UserInteraction
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setCommentTime($value)
@@ -99,8 +102,9 @@ class UserComments extends UserInteraction
 
     /**
     * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
+    * @deprecated use setCreator
     */
     public function creator($value)
     {
@@ -108,7 +112,7 @@ class UserComments extends UserInteraction
         return $this;
     }
    /**
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
     */
     public function setCreator($value)
@@ -128,8 +132,9 @@ class UserComments extends UserInteraction
     * The URL at which a reply may be posted to the specified UserComment.
     * @param string|array $value
     * @return $this
+    * @deprecated use setReplyToUrl
     */
-    public function replyToUrl(?string $value)
+    public function replyToUrl($value)
     {
         $this->setProperty('replyToUrl', $value);
         return $this;
@@ -138,7 +143,7 @@ class UserComments extends UserInteraction
     * @param string|array $value
     * @return $this
     */
-    public function setReplyToUrl(?string $value)
+    public function setReplyToUrl($value)
     {
         $this->setProperty('replyToUrl', $value);
         return $this;
@@ -153,7 +158,3 @@ class UserComments extends UserInteraction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Event\\UserInteraction\\UserComments','Thing\\UserComments');
-

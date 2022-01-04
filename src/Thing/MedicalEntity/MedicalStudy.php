@@ -21,19 +21,20 @@ class MedicalStudy extends MedicalEntity
 
     /**
     * A subject of the study, i.e. one of the medical conditions, therapies, devices, drugs, etc. investigated by the study.
-    * @param MedicalEntity|array $value
+    * @param MedicalEntity|array|string $value
     * @return $this
+    * @deprecated use setStudySubject
     */
-    public function studySubject(?MedicalEntity $value)
+    public function studySubject($value)
     {
         $this->setProperty('studySubject', $value);
         return $this;
     }
    /**
-    * @param MedicalEntity|array $value
+    * @param MedicalEntity|array|string $value
     * @return $this
     */
-    public function setStudySubject(?MedicalEntity $value)
+    public function setStudySubject($value)
     {
         $this->setProperty('studySubject', $value);
         return $this;
@@ -50,8 +51,9 @@ class MedicalStudy extends MedicalEntity
     * Any characteristics of the population used in the study, e.g. 'males under 65'.
     * @param string|array $value
     * @return $this
+    * @deprecated use setPopulation
     */
-    public function population(?string $value)
+    public function population($value)
     {
         $this->setProperty('population', $value);
         return $this;
@@ -60,7 +62,7 @@ class MedicalStudy extends MedicalEntity
     * @param string|array $value
     * @return $this
     */
-    public function setPopulation(?string $value)
+    public function setPopulation($value)
     {
         $this->setProperty('population', $value);
         return $this;
@@ -77,6 +79,7 @@ class MedicalStudy extends MedicalEntity
     * The status of the study (enumerated).
     * @param EventStatusType|string|MedicalStudyStatus|array $value
     * @return $this
+    * @deprecated use setStatus
     */
     public function status($value)
     {
@@ -104,6 +107,7 @@ class MedicalStudy extends MedicalEntity
     * Expected or actual outcomes of the study.
     * @param MedicalEntity|string|array $value
     * @return $this
+    * @deprecated use setOutcome
     */
     public function outcome($value)
     {
@@ -129,19 +133,20 @@ class MedicalStudy extends MedicalEntity
 
     /**
     * Specifying the health condition(s) of a patient, medical study, or other target audience.
-    * @param MedicalCondition|array $value
+    * @param MedicalCondition|array|string $value
     * @return $this
+    * @deprecated use setHealthCondition
     */
-    public function healthCondition(?MedicalCondition $value)
+    public function healthCondition($value)
     {
         $this->setProperty('healthCondition', $value);
         return $this;
     }
    /**
-    * @param MedicalCondition|array $value
+    * @param MedicalCondition|array|string $value
     * @return $this
     */
-    public function setHealthCondition(?MedicalCondition $value)
+    public function setHealthCondition($value)
     {
         $this->setProperty('healthCondition', $value);
         return $this;
@@ -156,19 +161,20 @@ class MedicalStudy extends MedicalEntity
 
     /**
     * The location in which the study is taking/took place.
-    * @param AdministrativeArea|array $value
+    * @param AdministrativeArea|array|string $value
     * @return $this
+    * @deprecated use setStudyLocation
     */
-    public function studyLocation(?AdministrativeArea $value)
+    public function studyLocation($value)
     {
         $this->setProperty('studyLocation', $value);
         return $this;
     }
    /**
-    * @param AdministrativeArea|array $value
+    * @param AdministrativeArea|array|string $value
     * @return $this
     */
-    public function setStudyLocation(?AdministrativeArea $value)
+    public function setStudyLocation($value)
     {
         $this->setProperty('studyLocation', $value);
         return $this;
@@ -183,8 +189,9 @@ class MedicalStudy extends MedicalEntity
 
     /**
     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
+    * @deprecated use setSponsor
     */
     public function sponsor($value)
     {
@@ -192,7 +199,7 @@ class MedicalStudy extends MedicalEntity
         return $this;
     }
    /**
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
     */
     public function setSponsor($value)
@@ -210,7 +217,3 @@ class MedicalStudy extends MedicalEntity
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalStudy','Thing\\MedicalStudy');
-

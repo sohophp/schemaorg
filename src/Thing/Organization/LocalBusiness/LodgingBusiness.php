@@ -20,19 +20,20 @@ class LodgingBusiness extends LocalBusiness
 
     /**
     * An intended audience, i.e. a group for whom something was created.
-    * @param Audience|array $value
+    * @param Audience|array|string $value
     * @return $this
+    * @deprecated use setAudience
     */
-    public function audience(?Audience $value)
+    public function audience($value)
     {
         $this->setProperty('audience', $value);
         return $this;
     }
    /**
-    * @param Audience|array $value
+    * @param Audience|array|string $value
     * @return $this
     */
-    public function setAudience(?Audience $value)
+    public function setAudience($value)
     {
         $this->setProperty('audience', $value);
         return $this;
@@ -47,8 +48,9 @@ class LodgingBusiness extends LocalBusiness
 
     /**
     * The earliest someone may check into a lodging establishment.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setCheckinTime
     */
     public function checkinTime($value)
     {
@@ -56,7 +58,7 @@ class LodgingBusiness extends LocalBusiness
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setCheckinTime($value)
@@ -76,6 +78,7 @@ class LodgingBusiness extends LocalBusiness
     * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
     * @param string|bool|array $value
     * @return $this
+    * @deprecated use setPetsAllowed
     */
     public function petsAllowed($value)
     {
@@ -103,6 +106,7 @@ class LodgingBusiness extends LocalBusiness
     * A language someone may use with or at the item, service or place. Please use one of the language codes from the <a href="http://tools.ietf.org/html/bcp47">IETF BCP 47 standard</a>. See also <a class="localLink" href="http://schema.org/inLanguage">inLanguage</a>
     * @param string|Language|array $value
     * @return $this
+    * @deprecated use setAvailableLanguage
     */
     public function availableLanguage($value)
     {
@@ -128,19 +132,20 @@ class LodgingBusiness extends LocalBusiness
 
     /**
     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
-    * @param LocationFeatureSpecification|array $value
+    * @param LocationFeatureSpecification|array|string $value
     * @return $this
+    * @deprecated use setAmenityFeature
     */
-    public function amenityFeature(?LocationFeatureSpecification $value)
+    public function amenityFeature($value)
     {
         $this->setProperty('amenityFeature', $value);
         return $this;
     }
    /**
-    * @param LocationFeatureSpecification|array $value
+    * @param LocationFeatureSpecification|array|string $value
     * @return $this
     */
-    public function setAmenityFeature(?LocationFeatureSpecification $value)
+    public function setAmenityFeature($value)
     {
         $this->setProperty('amenityFeature', $value);
         return $this;
@@ -155,19 +160,20 @@ class LodgingBusiness extends LocalBusiness
 
     /**
     * An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).
-    * @param Rating|array $value
+    * @param Rating|array|string $value
     * @return $this
+    * @deprecated use setStarRating
     */
-    public function starRating(?Rating $value)
+    public function starRating($value)
     {
         $this->setProperty('starRating', $value);
         return $this;
     }
    /**
-    * @param Rating|array $value
+    * @param Rating|array|string $value
     * @return $this
     */
-    public function setStarRating(?Rating $value)
+    public function setStarRating($value)
     {
         $this->setProperty('starRating', $value);
         return $this;
@@ -182,8 +188,9 @@ class LodgingBusiness extends LocalBusiness
 
     /**
     * The latest someone may check out of a lodging establishment.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setCheckoutTime
     */
     public function checkoutTime($value)
     {
@@ -191,7 +198,7 @@ class LodgingBusiness extends LocalBusiness
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setCheckoutTime($value)
@@ -210,19 +217,20 @@ class LodgingBusiness extends LocalBusiness
     /**
     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
 Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
+    * @deprecated use setNumberOfRooms
     */
-    public function numberOfRooms(?QuantitativeValue $value)
+    public function numberOfRooms($value)
     {
         $this->setProperty('numberOfRooms', $value);
         return $this;
     }
    /**
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
     */
-    public function setNumberOfRooms(?QuantitativeValue $value)
+    public function setNumberOfRooms($value)
     {
         $this->setProperty('numberOfRooms', $value);
         return $this;
@@ -237,7 +245,3 @@ Typical unit code(s): ROM for room or C62 for no unit. The type of room can be p
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\LodgingBusiness','Thing\\LodgingBusiness');
-

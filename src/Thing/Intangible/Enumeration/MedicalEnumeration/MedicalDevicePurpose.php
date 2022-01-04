@@ -15,7 +15,3 @@ class MedicalDevicePurpose extends MedicalEnumeration
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\MedicalEnumeration\\MedicalDevicePurpose','Thing\\MedicalDevicePurpose');
-

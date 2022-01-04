@@ -15,7 +15,3 @@ class DrawAction extends CreateAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\CreateAction\\DrawAction','Thing\\DrawAction');
-

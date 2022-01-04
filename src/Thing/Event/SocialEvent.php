@@ -15,7 +15,3 @@ class SocialEvent extends Event
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Event\\SocialEvent','Thing\\SocialEvent');
-

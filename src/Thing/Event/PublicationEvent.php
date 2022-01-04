@@ -18,19 +18,20 @@ class PublicationEvent extends Event
 
     /**
     * A broadcast service associated with the publication event.
-    * @param BroadcastService|array $value
+    * @param BroadcastService|array|string $value
     * @return $this
+    * @deprecated use setPublishedOn
     */
-    public function publishedOn(?BroadcastService $value)
+    public function publishedOn($value)
     {
         $this->setProperty('publishedOn', $value);
         return $this;
     }
    /**
-    * @param BroadcastService|array $value
+    * @param BroadcastService|array|string $value
     * @return $this
     */
-    public function setPublishedOn(?BroadcastService $value)
+    public function setPublishedOn($value)
     {
         $this->setProperty('publishedOn', $value);
         return $this;
@@ -45,19 +46,20 @@ class PublicationEvent extends Event
 
     /**
     * A flag to signal that the item, event, or place is accessible for free.
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
+    * @deprecated use setFree
     */
-    public function free(?bool $value)
+    public function free($value)
     {
         $this->setProperty('free', $value);
         return $this;
     }
    /**
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
     */
-    public function setFree(?bool $value)
+    public function setFree($value)
     {
         $this->setProperty('free', $value);
         return $this;
@@ -72,8 +74,9 @@ class PublicationEvent extends Event
 
     /**
     * An agent associated with the publication event.
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
+    * @deprecated use setPublishedBy
     */
     public function publishedBy($value)
     {
@@ -81,7 +84,7 @@ class PublicationEvent extends Event
         return $this;
     }
    /**
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
     */
     public function setPublishedBy($value)
@@ -99,19 +102,20 @@ class PublicationEvent extends Event
 
     /**
     * A flag to signal that the item, event, or place is accessible for free.
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
+    * @deprecated use setIsAccessibleForFree
     */
-    public function isAccessibleForFree(?bool $value)
+    public function isAccessibleForFree($value)
     {
         $this->setProperty('isAccessibleForFree', $value);
         return $this;
     }
    /**
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
     */
-    public function setIsAccessibleForFree(?bool $value)
+    public function setIsAccessibleForFree($value)
     {
         $this->setProperty('isAccessibleForFree', $value);
         return $this;
@@ -126,7 +130,3 @@ class PublicationEvent extends Event
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Event\\PublicationEvent','Thing\\PublicationEvent');
-

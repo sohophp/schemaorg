@@ -17,19 +17,20 @@ class PaymentChargeSpecification extends PriceSpecification
 
     /**
     * The payment method(s) to which the payment charge specification applies.
-    * @param PaymentMethod|array $value
+    * @param PaymentMethod|array|string $value
     * @return $this
+    * @deprecated use setAppliesToPaymentMethod
     */
-    public function appliesToPaymentMethod(?PaymentMethod $value)
+    public function appliesToPaymentMethod($value)
     {
         $this->setProperty('appliesToPaymentMethod', $value);
         return $this;
     }
    /**
-    * @param PaymentMethod|array $value
+    * @param PaymentMethod|array|string $value
     * @return $this
     */
-    public function setAppliesToPaymentMethod(?PaymentMethod $value)
+    public function setAppliesToPaymentMethod($value)
     {
         $this->setProperty('appliesToPaymentMethod', $value);
         return $this;
@@ -44,19 +45,20 @@ class PaymentChargeSpecification extends PriceSpecification
 
     /**
     * The delivery method(s) to which the delivery charge or payment charge specification applies.
-    * @param DeliveryMethod|array $value
+    * @param DeliveryMethod|array|string $value
     * @return $this
+    * @deprecated use setAppliesToDeliveryMethod
     */
-    public function appliesToDeliveryMethod(?DeliveryMethod $value)
+    public function appliesToDeliveryMethod($value)
     {
         $this->setProperty('appliesToDeliveryMethod', $value);
         return $this;
     }
    /**
-    * @param DeliveryMethod|array $value
+    * @param DeliveryMethod|array|string $value
     * @return $this
     */
-    public function setAppliesToDeliveryMethod(?DeliveryMethod $value)
+    public function setAppliesToDeliveryMethod($value)
     {
         $this->setProperty('appliesToDeliveryMethod', $value);
         return $this;
@@ -71,7 +73,3 @@ class PaymentChargeSpecification extends PriceSpecification
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue\\PriceSpecification\\PaymentChargeSpecification','Thing\\PaymentChargeSpecification');
-

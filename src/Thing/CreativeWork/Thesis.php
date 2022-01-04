@@ -17,8 +17,9 @@ class Thesis extends CreativeWork
     * Qualification, candidature, degree, application that Thesis supports.
     * @param string|array $value
     * @return $this
+    * @deprecated use setInSupportOf
     */
-    public function inSupportOf(?string $value)
+    public function inSupportOf($value)
     {
         $this->setProperty('inSupportOf', $value);
         return $this;
@@ -27,7 +28,7 @@ class Thesis extends CreativeWork
     * @param string|array $value
     * @return $this
     */
-    public function setInSupportOf(?string $value)
+    public function setInSupportOf($value)
     {
         $this->setProperty('inSupportOf', $value);
         return $this;
@@ -42,7 +43,3 @@ class Thesis extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Thesis','Thing\\Thesis');
-

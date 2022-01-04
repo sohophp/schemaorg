@@ -20,19 +20,20 @@ class MusicAlbum extends MusicPlaylist
 
     /**
     * Classification of the album by it's type of content: soundtrack, live album, studio album, etc.
-    * @param MusicAlbumProductionType|array $value
+    * @param MusicAlbumProductionType|array|string $value
     * @return $this
+    * @deprecated use setAlbumProductionType
     */
-    public function albumProductionType(?MusicAlbumProductionType $value)
+    public function albumProductionType($value)
     {
         $this->setProperty('albumProductionType', $value);
         return $this;
     }
    /**
-    * @param MusicAlbumProductionType|array $value
+    * @param MusicAlbumProductionType|array|string $value
     * @return $this
     */
-    public function setAlbumProductionType(?MusicAlbumProductionType $value)
+    public function setAlbumProductionType($value)
     {
         $this->setProperty('albumProductionType', $value);
         return $this;
@@ -47,8 +48,9 @@ class MusicAlbum extends MusicPlaylist
 
     /**
     * The artist that performed this album or recording.
-    * @param Person|MusicGroup|array $value
+    * @param Person|MusicGroup|array|string $value
     * @return $this
+    * @deprecated use setByArtist
     */
     public function byArtist($value)
     {
@@ -56,7 +58,7 @@ class MusicAlbum extends MusicPlaylist
         return $this;
     }
    /**
-    * @param Person|MusicGroup|array $value
+    * @param Person|MusicGroup|array|string $value
     * @return $this
     */
     public function setByArtist($value)
@@ -74,19 +76,20 @@ class MusicAlbum extends MusicPlaylist
 
     /**
     * A release of this album.
-    * @param MusicRelease|array $value
+    * @param MusicRelease|array|string $value
     * @return $this
+    * @deprecated use setAlbumRelease
     */
-    public function albumRelease(?MusicRelease $value)
+    public function albumRelease($value)
     {
         $this->setProperty('albumRelease', $value);
         return $this;
     }
    /**
-    * @param MusicRelease|array $value
+    * @param MusicRelease|array|string $value
     * @return $this
     */
-    public function setAlbumRelease(?MusicRelease $value)
+    public function setAlbumRelease($value)
     {
         $this->setProperty('albumRelease', $value);
         return $this;
@@ -101,19 +104,20 @@ class MusicAlbum extends MusicPlaylist
 
     /**
     * The kind of release which this album is: single, EP or album.
-    * @param MusicAlbumReleaseType|array $value
+    * @param MusicAlbumReleaseType|array|string $value
     * @return $this
+    * @deprecated use setAlbumReleaseType
     */
-    public function albumReleaseType(?MusicAlbumReleaseType $value)
+    public function albumReleaseType($value)
     {
         $this->setProperty('albumReleaseType', $value);
         return $this;
     }
    /**
-    * @param MusicAlbumReleaseType|array $value
+    * @param MusicAlbumReleaseType|array|string $value
     * @return $this
     */
-    public function setAlbumReleaseType(?MusicAlbumReleaseType $value)
+    public function setAlbumReleaseType($value)
     {
         $this->setProperty('albumReleaseType', $value);
         return $this;
@@ -128,7 +132,3 @@ class MusicAlbum extends MusicPlaylist
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\MusicPlaylist\\MusicAlbum','Thing\\MusicAlbum');
-

@@ -15,7 +15,3 @@ class BusinessEvent extends Event
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Event\\BusinessEvent','Thing\\BusinessEvent');
-

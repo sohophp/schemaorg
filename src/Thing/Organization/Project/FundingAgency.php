@@ -21,7 +21,3 @@ class FundingAgency extends Project
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\Project\\FundingAgency','Thing\\FundingAgency');
-

@@ -18,8 +18,9 @@ class BuyAction extends TradeAction
 
     /**
     * 'vendor' is an earlier term for 'seller'.
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
+    * @deprecated use setVendor
     */
     public function vendor($value)
     {
@@ -27,7 +28,7 @@ class BuyAction extends TradeAction
         return $this;
     }
    /**
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
     */
     public function setVendor($value)
@@ -45,8 +46,9 @@ class BuyAction extends TradeAction
 
     /**
     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
+    * @deprecated use setSeller
     */
     public function seller($value)
     {
@@ -54,7 +56,7 @@ class BuyAction extends TradeAction
         return $this;
     }
    /**
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
     */
     public function setSeller($value)
@@ -72,19 +74,20 @@ class BuyAction extends TradeAction
 
     /**
     * The warranty promise(s) included in the offer.
-    * @param WarrantyPromise|array $value
+    * @param WarrantyPromise|array|string $value
     * @return $this
+    * @deprecated use setWarrantyPromise
     */
-    public function warrantyPromise(?WarrantyPromise $value)
+    public function warrantyPromise($value)
     {
         $this->setProperty('warrantyPromise', $value);
         return $this;
     }
    /**
-    * @param WarrantyPromise|array $value
+    * @param WarrantyPromise|array|string $value
     * @return $this
     */
-    public function setWarrantyPromise(?WarrantyPromise $value)
+    public function setWarrantyPromise($value)
     {
         $this->setProperty('warrantyPromise', $value);
         return $this;
@@ -99,7 +102,3 @@ class BuyAction extends TradeAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\TradeAction\\BuyAction','Thing\\BuyAction');
-

@@ -21,8 +21,9 @@ class PayAction extends TradeAction
 
     /**
     * A sub property of participant. The participant who is at the receiving end of the action.
-    * @param Person|ContactPoint|Organization|Audience|array $value
+    * @param Person|ContactPoint|Organization|Audience|array|string $value
     * @return $this
+    * @deprecated use setRecipient
     */
     public function recipient($value)
     {
@@ -30,7 +31,7 @@ class PayAction extends TradeAction
         return $this;
     }
    /**
-    * @param Person|ContactPoint|Organization|Audience|array $value
+    * @param Person|ContactPoint|Organization|Audience|array|string $value
     * @return $this
     */
     public function setRecipient($value)
@@ -48,8 +49,9 @@ class PayAction extends TradeAction
 
     /**
     * A goal towards an action is taken. Can be concrete or abstract.
-    * @param MedicalDevicePurpose|Thing|array $value
+    * @param MedicalDevicePurpose|Thing|array|string $value
     * @return $this
+    * @deprecated use setPurpose
     */
     public function purpose($value)
     {
@@ -57,7 +59,7 @@ class PayAction extends TradeAction
         return $this;
     }
    /**
-    * @param MedicalDevicePurpose|Thing|array $value
+    * @param MedicalDevicePurpose|Thing|array|string $value
     * @return $this
     */
     public function setPurpose($value)
@@ -75,7 +77,3 @@ class PayAction extends TradeAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\TradeAction\\PayAction','Thing\\PayAction');
-

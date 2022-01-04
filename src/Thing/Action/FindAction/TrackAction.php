@@ -24,19 +24,20 @@ class TrackAction extends FindAction
 
     /**
     * A sub property of instrument. The method of delivery.
-    * @param DeliveryMethod|array $value
+    * @param DeliveryMethod|array|string $value
     * @return $this
+    * @deprecated use setDeliveryMethod
     */
-    public function deliveryMethod(?DeliveryMethod $value)
+    public function deliveryMethod($value)
     {
         $this->setProperty('deliveryMethod', $value);
         return $this;
     }
    /**
-    * @param DeliveryMethod|array $value
+    * @param DeliveryMethod|array|string $value
     * @return $this
     */
-    public function setDeliveryMethod(?DeliveryMethod $value)
+    public function setDeliveryMethod($value)
     {
         $this->setProperty('deliveryMethod', $value);
         return $this;
@@ -51,7 +52,3 @@ class TrackAction extends FindAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\FindAction\\TrackAction','Thing\\TrackAction');
-

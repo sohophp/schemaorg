@@ -15,7 +15,3 @@ class BeautySalon extends HealthAndBeautyBusiness
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\HealthAndBeautyBusiness\\BeautySalon','Thing\\BeautySalon');
-

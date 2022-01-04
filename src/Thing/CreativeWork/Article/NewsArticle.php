@@ -19,8 +19,9 @@ class NewsArticle extends Article
     * The number of the column in which the NewsArticle appears in the print edition.
     * @param string|array $value
     * @return $this
+    * @deprecated use setPrintColumn
     */
-    public function printColumn(?string $value)
+    public function printColumn($value)
     {
         $this->setProperty('printColumn', $value);
         return $this;
@@ -29,7 +30,7 @@ class NewsArticle extends Article
     * @param string|array $value
     * @return $this
     */
-    public function setPrintColumn(?string $value)
+    public function setPrintColumn($value)
     {
         $this->setProperty('printColumn', $value);
         return $this;
@@ -46,8 +47,9 @@ class NewsArticle extends Article
     * The edition of the print product in which the NewsArticle appears.
     * @param string|array $value
     * @return $this
+    * @deprecated use setPrintEdition
     */
-    public function printEdition(?string $value)
+    public function printEdition($value)
     {
         $this->setProperty('printEdition', $value);
         return $this;
@@ -56,7 +58,7 @@ class NewsArticle extends Article
     * @param string|array $value
     * @return $this
     */
-    public function setPrintEdition(?string $value)
+    public function setPrintEdition($value)
     {
         $this->setProperty('printEdition', $value);
         return $this;
@@ -73,8 +75,9 @@ class NewsArticle extends Article
     * If this NewsArticle appears in print, this field indicates the print section in which the article appeared.
     * @param string|array $value
     * @return $this
+    * @deprecated use setPrintSection
     */
-    public function printSection(?string $value)
+    public function printSection($value)
     {
         $this->setProperty('printSection', $value);
         return $this;
@@ -83,7 +86,7 @@ class NewsArticle extends Article
     * @param string|array $value
     * @return $this
     */
-    public function setPrintSection(?string $value)
+    public function setPrintSection($value)
     {
         $this->setProperty('printSection', $value);
         return $this;
@@ -100,8 +103,9 @@ class NewsArticle extends Article
     * If this NewsArticle appears in print, this field indicates the name of the page on which the article is found. Please note that this field is intended for the exact page name (e.g. A5, B18).
     * @param string|array $value
     * @return $this
+    * @deprecated use setPrintPage
     */
-    public function printPage(?string $value)
+    public function printPage($value)
     {
         $this->setProperty('printPage', $value);
         return $this;
@@ -110,7 +114,7 @@ class NewsArticle extends Article
     * @param string|array $value
     * @return $this
     */
-    public function setPrintPage(?string $value)
+    public function setPrintPage($value)
     {
         $this->setProperty('printPage', $value);
         return $this;
@@ -131,8 +135,9 @@ Structured representations of dateline-related information can also be expressed
 Dateline summaries are oriented more towards human readers than towards automated processing, and can vary substantially. Some examples: "BEIRUT, Lebanon, June 2.", "Paris, France", "December 19, 2017 11:43AM Reporting from Washington", "Beijing/Moscow", "QUEZON CITY, Philippines".
     * @param string|array $value
     * @return $this
+    * @deprecated use setDateline
     */
-    public function dateline(?string $value)
+    public function dateline($value)
     {
         $this->setProperty('dateline', $value);
         return $this;
@@ -141,7 +146,7 @@ Dateline summaries are oriented more towards human readers than towards automate
     * @param string|array $value
     * @return $this
     */
-    public function setDateline(?string $value)
+    public function setDateline($value)
     {
         $this->setProperty('dateline', $value);
         return $this;
@@ -156,7 +161,3 @@ Dateline summaries are oriented more towards human readers than towards automate
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Article\\NewsArticle','Thing\\NewsArticle');
-

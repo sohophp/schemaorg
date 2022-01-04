@@ -28,8 +28,9 @@ class Place extends Thing
 
     /**
     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in <a href="https://en.wikipedia.org/wiki/DE-9IM">DE-9IM</a>.
-    * @param Place|GeospatialGeometry|array $value
+    * @param Place|GeospatialGeometry|array|string $value
     * @return $this
+    * @deprecated use setGeoWithin
     */
     public function geoWithin($value)
     {
@@ -37,7 +38,7 @@ class Place extends Thing
         return $this;
     }
    /**
-    * @param Place|GeospatialGeometry|array $value
+    * @param Place|GeospatialGeometry|array|string $value
     * @return $this
     */
     public function setGeoWithin($value)
@@ -55,8 +56,9 @@ class Place extends Thing
 
     /**
     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in <a href="https://en.wikipedia.org/wiki/DE-9IM">DE-9IM</a>.
-    * @param GeospatialGeometry|Place|array $value
+    * @param GeospatialGeometry|Place|array|string $value
     * @return $this
+    * @deprecated use setGeoContains
     */
     public function geoContains($value)
     {
@@ -64,7 +66,7 @@ class Place extends Thing
         return $this;
     }
    /**
-    * @param GeospatialGeometry|Place|array $value
+    * @param GeospatialGeometry|Place|array|string $value
     * @return $this
     */
     public function setGeoContains($value)
@@ -82,19 +84,20 @@ class Place extends Thing
 
     /**
     * The opening hours of a certain place.
-    * @param OpeningHoursSpecification|array $value
+    * @param OpeningHoursSpecification|array|string $value
     * @return $this
+    * @deprecated use setOpeningHoursSpecification
     */
-    public function openingHoursSpecification(?OpeningHoursSpecification $value)
+    public function openingHoursSpecification($value)
     {
         $this->setProperty('openingHoursSpecification', $value);
         return $this;
     }
    /**
-    * @param OpeningHoursSpecification|array $value
+    * @param OpeningHoursSpecification|array|string $value
     * @return $this
     */
-    public function setOpeningHoursSpecification(?OpeningHoursSpecification $value)
+    public function setOpeningHoursSpecification($value)
     {
         $this->setProperty('openingHoursSpecification', $value);
         return $this;
@@ -111,8 +114,9 @@ class Place extends Thing
     * A URL to a map of the place.
     * @param string|array $value
     * @return $this
+    * @deprecated use setMaps
     */
-    public function maps(?string $value)
+    public function maps($value)
     {
         $this->setProperty('maps', $value);
         return $this;
@@ -121,7 +125,7 @@ class Place extends Thing
     * @param string|array $value
     * @return $this
     */
-    public function setMaps(?string $value)
+    public function setMaps($value)
     {
         $this->setProperty('maps', $value);
         return $this;
@@ -136,19 +140,20 @@ class Place extends Thing
 
     /**
     * Upcoming or past events associated with this place or organization.
-    * @param Event|array $value
+    * @param Event|array|string $value
     * @return $this
+    * @deprecated use setEvents
     */
-    public function events(?Event $value)
+    public function events($value)
     {
         $this->setProperty('events', $value);
         return $this;
     }
    /**
-    * @param Event|array $value
+    * @param Event|array|string $value
     * @return $this
     */
-    public function setEvents(?Event $value)
+    public function setEvents($value)
     {
         $this->setProperty('events', $value);
         return $this;
@@ -163,8 +168,9 @@ class Place extends Thing
 
     /**
     * A photograph of this place.
-    * @param ImageObject|Photograph|array $value
+    * @param ImageObject|Photograph|array|string $value
     * @return $this
+    * @deprecated use setPhoto
     */
     public function photo($value)
     {
@@ -172,7 +178,7 @@ class Place extends Thing
         return $this;
     }
    /**
-    * @param ImageObject|Photograph|array $value
+    * @param ImageObject|Photograph|array|string $value
     * @return $this
     */
     public function setPhoto($value)
@@ -190,8 +196,9 @@ class Place extends Thing
 
     /**
     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in <a href="https://en.wikipedia.org/wiki/DE-9IM">DE-9IM</a>.
-    * @param GeospatialGeometry|Place|array $value
+    * @param GeospatialGeometry|Place|array|string $value
     * @return $this
+    * @deprecated use setGeoOverlaps
     */
     public function geoOverlaps($value)
     {
@@ -199,7 +206,7 @@ class Place extends Thing
         return $this;
     }
    /**
-    * @param GeospatialGeometry|Place|array $value
+    * @param GeospatialGeometry|Place|array|string $value
     * @return $this
     */
     public function setGeoOverlaps($value)
@@ -217,19 +224,20 @@ class Place extends Thing
 
     /**
     * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
+    * @deprecated use setSmokingAllowed
     */
-    public function smokingAllowed(?bool $value)
+    public function smokingAllowed($value)
     {
         $this->setProperty('smokingAllowed', $value);
         return $this;
     }
    /**
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
     */
-    public function setSmokingAllowed(?bool $value)
+    public function setSmokingAllowed($value)
     {
         $this->setProperty('smokingAllowed', $value);
         return $this;
@@ -246,8 +254,9 @@ class Place extends Thing
     * The <a href="http://www.gs1.org/gln">Global Location Number</a> (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
     * @param string|array $value
     * @return $this
+    * @deprecated use setGlobalLocationNumber
     */
-    public function globalLocationNumber(?string $value)
+    public function globalLocationNumber($value)
     {
         $this->setProperty('globalLocationNumber', $value);
         return $this;
@@ -256,7 +265,7 @@ class Place extends Thing
     * @param string|array $value
     * @return $this
     */
-    public function setGlobalLocationNumber(?string $value)
+    public function setGlobalLocationNumber($value)
     {
         $this->setProperty('globalLocationNumber', $value);
         return $this;
@@ -271,19 +280,20 @@ class Place extends Thing
 
     /**
     * Review of the item.
-    * @param Review|array $value
+    * @param Review|array|string $value
     * @return $this
+    * @deprecated use setReviews
     */
-    public function reviews(?Review $value)
+    public function reviews($value)
     {
         $this->setProperty('reviews', $value);
         return $this;
     }
    /**
-    * @param Review|array $value
+    * @param Review|array|string $value
     * @return $this
     */
-    public function setReviews(?Review $value)
+    public function setReviews($value)
     {
         $this->setProperty('reviews', $value);
         return $this;
@@ -298,8 +308,9 @@ class Place extends Thing
 
     /**
     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in <a href="https://en.wikipedia.org/wiki/DE-9IM">DE-9IM</a>.
-    * @param GeospatialGeometry|Place|array $value
+    * @param GeospatialGeometry|Place|array|string $value
     * @return $this
+    * @deprecated use setGeoCrosses
     */
     public function geoCrosses($value)
     {
@@ -307,7 +318,7 @@ class Place extends Thing
         return $this;
     }
    /**
-    * @param GeospatialGeometry|Place|array $value
+    * @param GeospatialGeometry|Place|array|string $value
     * @return $this
     */
     public function setGeoCrosses($value)
@@ -325,19 +336,20 @@ class Place extends Thing
 
     /**
     * The overall rating, based on a collection of reviews or ratings, of the item.
-    * @param AggregateRating|array $value
+    * @param AggregateRating|array|string $value
     * @return $this
+    * @deprecated use setAggregateRating
     */
-    public function aggregateRating(?AggregateRating $value)
+    public function aggregateRating($value)
     {
         $this->setProperty('aggregateRating', $value);
         return $this;
     }
    /**
-    * @param AggregateRating|array $value
+    * @param AggregateRating|array|string $value
     * @return $this
     */
-    public function setAggregateRating(?AggregateRating $value)
+    public function setAggregateRating($value)
     {
         $this->setProperty('aggregateRating', $value);
         return $this;
@@ -352,8 +364,9 @@ class Place extends Thing
 
     /**
     * Photographs of this place.
-    * @param Photograph|ImageObject|array $value
+    * @param Photograph|ImageObject|array|string $value
     * @return $this
+    * @deprecated use setPhotos
     */
     public function photos($value)
     {
@@ -361,7 +374,7 @@ class Place extends Thing
         return $this;
     }
    /**
-    * @param Photograph|ImageObject|array $value
+    * @param Photograph|ImageObject|array|string $value
     * @return $this
     */
     public function setPhotos($value)
@@ -381,8 +394,9 @@ class Place extends Thing
     * A URL to a map of the place.
     * @param string|array $value
     * @return $this
+    * @deprecated use setMap
     */
-    public function map(?string $value)
+    public function map($value)
     {
         $this->setProperty('map', $value);
         return $this;
@@ -391,7 +405,7 @@ class Place extends Thing
     * @param string|array $value
     * @return $this
     */
-    public function setMap(?string $value)
+    public function setMap($value)
     {
         $this->setProperty('map', $value);
         return $this;
@@ -410,8 +424,9 @@ class Place extends Thing
 For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.
     * @param string|array $value
     * @return $this
+    * @deprecated use setBranchCode
     */
-    public function branchCode(?string $value)
+    public function branchCode($value)
     {
         $this->setProperty('branchCode', $value);
         return $this;
@@ -420,7 +435,7 @@ For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047
     * @param string|array $value
     * @return $this
     */
-    public function setBranchCode(?string $value)
+    public function setBranchCode($value)
     {
         $this->setProperty('branchCode', $value);
         return $this;
@@ -437,6 +452,7 @@ For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047
     * A URL to a map of the place.
     * @param Map|string|array $value
     * @return $this
+    * @deprecated use setHasMap
     */
     public function hasMap($value)
     {
@@ -464,19 +480,20 @@ For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047
     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>
 
 Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
-    * @param PropertyValue|array $value
+    * @param PropertyValue|array|string $value
     * @return $this
+    * @deprecated use setAdditionalProperty
     */
-    public function additionalProperty(?PropertyValue $value)
+    public function additionalProperty($value)
     {
         $this->setProperty('additionalProperty', $value);
         return $this;
     }
    /**
-    * @param PropertyValue|array $value
+    * @param PropertyValue|array|string $value
     * @return $this
     */
-    public function setAdditionalProperty(?PropertyValue $value)
+    public function setAdditionalProperty($value)
     {
         $this->setProperty('additionalProperty', $value);
         return $this;
@@ -493,6 +510,7 @@ Note: Publishers should be aware that applications designed to use specific sche
     * Physical address of the item.
     * @param string|PostalAddress|array $value
     * @return $this
+    * @deprecated use setAddress
     */
     public function address($value)
     {
@@ -520,19 +538,20 @@ Note: Publishers should be aware that applications designed to use specific sche
     * The special opening hours of a certain place.<br/><br/>
 
 Use this to explicitly override general opening hours brought in scope by <a class="localLink" href="http://schema.org/openingHoursSpecification">openingHoursSpecification</a> or <a class="localLink" href="http://schema.org/openingHours">openingHours</a>.
-    * @param OpeningHoursSpecification|array $value
+    * @param OpeningHoursSpecification|array|string $value
     * @return $this
+    * @deprecated use setSpecialOpeningHoursSpecification
     */
-    public function specialOpeningHoursSpecification(?OpeningHoursSpecification $value)
+    public function specialOpeningHoursSpecification($value)
     {
         $this->setProperty('specialOpeningHoursSpecification', $value);
         return $this;
     }
    /**
-    * @param OpeningHoursSpecification|array $value
+    * @param OpeningHoursSpecification|array|string $value
     * @return $this
     */
-    public function setSpecialOpeningHoursSpecification(?OpeningHoursSpecification $value)
+    public function setSpecialOpeningHoursSpecification($value)
     {
         $this->setProperty('specialOpeningHoursSpecification', $value);
         return $this;
@@ -547,19 +566,20 @@ Use this to explicitly override general opening hours brought in scope by <a cla
 
     /**
     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
-    * @param LocationFeatureSpecification|array $value
+    * @param LocationFeatureSpecification|array|string $value
     * @return $this
+    * @deprecated use setAmenityFeature
     */
-    public function amenityFeature(?LocationFeatureSpecification $value)
+    public function amenityFeature($value)
     {
         $this->setProperty('amenityFeature', $value);
         return $this;
     }
    /**
-    * @param LocationFeatureSpecification|array $value
+    * @param LocationFeatureSpecification|array|string $value
     * @return $this
     */
-    public function setAmenityFeature(?LocationFeatureSpecification $value)
+    public function setAmenityFeature($value)
     {
         $this->setProperty('amenityFeature', $value);
         return $this;
@@ -576,6 +596,7 @@ Use this to explicitly override general opening hours brought in scope by <a cla
     * An associated logo.
     * @param ImageObject|string|array $value
     * @return $this
+    * @deprecated use setLogo
     */
     public function logo($value)
     {
@@ -603,8 +624,9 @@ Use this to explicitly override general opening hours brought in scope by <a cla
     * The telephone number.
     * @param string|array $value
     * @return $this
+    * @deprecated use setTelephone
     */
-    public function telephone(?string $value)
+    public function telephone($value)
     {
         $this->setProperty('telephone', $value);
         return $this;
@@ -613,7 +635,7 @@ Use this to explicitly override general opening hours brought in scope by <a cla
     * @param string|array $value
     * @return $this
     */
-    public function setTelephone(?string $value)
+    public function setTelephone($value)
     {
         $this->setProperty('telephone', $value);
         return $this;
@@ -628,8 +650,9 @@ Use this to explicitly override general opening hours brought in scope by <a cla
 
     /**
     * The geo coordinates of the place.
-    * @param GeoShape|GeoCoordinates|array $value
+    * @param GeoShape|GeoCoordinates|array|string $value
     * @return $this
+    * @deprecated use setGeo
     */
     public function geo($value)
     {
@@ -637,7 +660,7 @@ Use this to explicitly override general opening hours brought in scope by <a cla
         return $this;
     }
    /**
-    * @param GeoShape|GeoCoordinates|array $value
+    * @param GeoShape|GeoCoordinates|array|string $value
     * @return $this
     */
     public function setGeo($value)
@@ -655,8 +678,9 @@ Use this to explicitly override general opening hours brought in scope by <a cla
 
     /**
     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in <a href="https://en.wikipedia.org/wiki/DE-9IM">DE-9IM</a>.
-    * @param GeospatialGeometry|Place|array $value
+    * @param GeospatialGeometry|Place|array|string $value
     * @return $this
+    * @deprecated use setGeoCovers
     */
     public function geoCovers($value)
     {
@@ -664,7 +688,7 @@ Use this to explicitly override general opening hours brought in scope by <a cla
         return $this;
     }
    /**
-    * @param GeospatialGeometry|Place|array $value
+    * @param GeospatialGeometry|Place|array|string $value
     * @return $this
     */
     public function setGeoCovers($value)
@@ -682,8 +706,9 @@ Use this to explicitly override general opening hours brought in scope by <a cla
 
     /**
     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in <a href="https://en.wikipedia.org/wiki/DE-9IM">DE-9IM</a>. "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship)
-    * @param Place|GeospatialGeometry|array $value
+    * @param Place|GeospatialGeometry|array|string $value
     * @return $this
+    * @deprecated use setGeoEquals
     */
     public function geoEquals($value)
     {
@@ -691,7 +716,7 @@ Use this to explicitly override general opening hours brought in scope by <a cla
         return $this;
     }
    /**
-    * @param Place|GeospatialGeometry|array $value
+    * @param Place|GeospatialGeometry|array|string $value
     * @return $this
     */
     public function setGeoEquals($value)
@@ -709,19 +734,20 @@ Use this to explicitly override general opening hours brought in scope by <a cla
 
     /**
     * The basic containment relation between a place and one that contains it.
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
+    * @deprecated use setContainedInPlace
     */
-    public function containedInPlace(?Place $value)
+    public function containedInPlace($value)
     {
         $this->setProperty('containedInPlace', $value);
         return $this;
     }
    /**
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
     */
-    public function setContainedInPlace(?Place $value)
+    public function setContainedInPlace($value)
     {
         $this->setProperty('containedInPlace', $value);
         return $this;
@@ -736,19 +762,20 @@ Use this to explicitly override general opening hours brought in scope by <a cla
 
     /**
     * A review of the item.
-    * @param Review|array $value
+    * @param Review|array|string $value
     * @return $this
+    * @deprecated use setReview
     */
-    public function review(?Review $value)
+    public function review($value)
     {
         $this->setProperty('review', $value);
         return $this;
     }
    /**
-    * @param Review|array $value
+    * @param Review|array|string $value
     * @return $this
     */
-    public function setReview(?Review $value)
+    public function setReview($value)
     {
         $this->setProperty('review', $value);
         return $this;
@@ -763,19 +790,20 @@ Use this to explicitly override general opening hours brought in scope by <a cla
 
     /**
     * Upcoming or past event associated with this place, organization, or action.
-    * @param Event|array $value
+    * @param Event|array|string $value
     * @return $this
+    * @deprecated use setEvent
     */
-    public function event(?Event $value)
+    public function event($value)
     {
         $this->setProperty('event', $value);
         return $this;
     }
    /**
-    * @param Event|array $value
+    * @param Event|array|string $value
     * @return $this
     */
-    public function setEvent(?Event $value)
+    public function setEvent($value)
     {
         $this->setProperty('event', $value);
         return $this;
@@ -790,8 +818,9 @@ Use this to explicitly override general opening hours brought in scope by <a cla
 
     /**
     * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points." (a symmetric relationship, as defined in <a href="https://en.wikipedia.org/wiki/DE-9IM">DE-9IM</a> )
-    * @param Place|GeospatialGeometry|array $value
+    * @param Place|GeospatialGeometry|array|string $value
     * @return $this
+    * @deprecated use setGeoTouches
     */
     public function geoTouches($value)
     {
@@ -799,7 +828,7 @@ Use this to explicitly override general opening hours brought in scope by <a cla
         return $this;
     }
    /**
-    * @param Place|GeospatialGeometry|array $value
+    * @param Place|GeospatialGeometry|array|string $value
     * @return $this
     */
     public function setGeoTouches($value)
@@ -817,19 +846,20 @@ Use this to explicitly override general opening hours brought in scope by <a cla
 
     /**
     * The basic containment relation between a place and another that it contains.
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
+    * @deprecated use setContainsPlace
     */
-    public function containsPlace(?Place $value)
+    public function containsPlace($value)
     {
         $this->setProperty('containsPlace', $value);
         return $this;
     }
    /**
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
     */
-    public function setContainsPlace(?Place $value)
+    public function setContainsPlace($value)
     {
         $this->setProperty('containsPlace', $value);
         return $this;
@@ -844,8 +874,9 @@ Use this to explicitly override general opening hours brought in scope by <a cla
 
     /**
     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in <a href="https://en.wikipedia.org/wiki/DE-9IM">DE-9IM</a>.
-    * @param GeospatialGeometry|Place|array $value
+    * @param GeospatialGeometry|Place|array|string $value
     * @return $this
+    * @deprecated use setGeoIntersects
     */
     public function geoIntersects($value)
     {
@@ -853,7 +884,7 @@ Use this to explicitly override general opening hours brought in scope by <a cla
         return $this;
     }
    /**
-    * @param GeospatialGeometry|Place|array $value
+    * @param GeospatialGeometry|Place|array|string $value
     * @return $this
     */
     public function setGeoIntersects($value)
@@ -871,8 +902,9 @@ Use this to explicitly override general opening hours brought in scope by <a cla
 
     /**
     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries." (a symmetric relationship, as defined in <a href="https://en.wikipedia.org/wiki/DE-9IM">DE-9IM</a>)
-    * @param GeospatialGeometry|Place|array $value
+    * @param GeospatialGeometry|Place|array|string $value
     * @return $this
+    * @deprecated use setGeoDisjoint
     */
     public function geoDisjoint($value)
     {
@@ -880,7 +912,7 @@ Use this to explicitly override general opening hours brought in scope by <a cla
         return $this;
     }
    /**
-    * @param GeospatialGeometry|Place|array $value
+    * @param GeospatialGeometry|Place|array|string $value
     * @return $this
     */
     public function setGeoDisjoint($value)
@@ -900,8 +932,9 @@ Use this to explicitly override general opening hours brought in scope by <a cla
     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
     * @param string|array $value
     * @return $this
+    * @deprecated use setIsicV4
     */
-    public function isicV4(?string $value)
+    public function isicV4($value)
     {
         $this->setProperty('isicV4', $value);
         return $this;
@@ -910,7 +943,7 @@ Use this to explicitly override general opening hours brought in scope by <a cla
     * @param string|array $value
     * @return $this
     */
-    public function setIsicV4(?string $value)
+    public function setIsicV4($value)
     {
         $this->setProperty('isicV4', $value);
         return $this;
@@ -927,8 +960,9 @@ Use this to explicitly override general opening hours brought in scope by <a cla
     * A slogan or motto associated with the item.
     * @param string|array $value
     * @return $this
+    * @deprecated use setSlogan
     */
-    public function slogan(?string $value)
+    public function slogan($value)
     {
         $this->setProperty('slogan', $value);
         return $this;
@@ -937,7 +971,7 @@ Use this to explicitly override general opening hours brought in scope by <a cla
     * @param string|array $value
     * @return $this
     */
-    public function setSlogan(?string $value)
+    public function setSlogan($value)
     {
         $this->setProperty('slogan', $value);
         return $this;
@@ -952,19 +986,20 @@ Use this to explicitly override general opening hours brought in scope by <a cla
 
     /**
     * The basic containment relation between a place and one that contains it.
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
+    * @deprecated use setContainedIn
     */
-    public function containedIn(?Place $value)
+    public function containedIn($value)
     {
         $this->setProperty('containedIn', $value);
         return $this;
     }
    /**
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
     */
-    public function setContainedIn(?Place $value)
+    public function setContainedIn($value)
     {
         $this->setProperty('containedIn', $value);
         return $this;
@@ -981,8 +1016,9 @@ Use this to explicitly override general opening hours brought in scope by <a cla
     * The fax number.
     * @param string|array $value
     * @return $this
+    * @deprecated use setFaxNumber
     */
-    public function faxNumber(?string $value)
+    public function faxNumber($value)
     {
         $this->setProperty('faxNumber', $value);
         return $this;
@@ -991,7 +1027,7 @@ Use this to explicitly override general opening hours brought in scope by <a cla
     * @param string|array $value
     * @return $this
     */
-    public function setFaxNumber(?string $value)
+    public function setFaxNumber($value)
     {
         $this->setProperty('faxNumber', $value);
         return $this;
@@ -1006,19 +1042,20 @@ Use this to explicitly override general opening hours brought in scope by <a cla
 
     /**
     * A flag to signal that the item, event, or place is accessible for free.
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
+    * @deprecated use setIsAccessibleForFree
     */
-    public function isAccessibleForFree(?bool $value)
+    public function isAccessibleForFree($value)
     {
         $this->setProperty('isAccessibleForFree', $value);
         return $this;
     }
    /**
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
     */
-    public function setIsAccessibleForFree(?bool $value)
+    public function setIsAccessibleForFree($value)
     {
         $this->setProperty('isAccessibleForFree', $value);
         return $this;
@@ -1033,8 +1070,9 @@ Use this to explicitly override general opening hours brought in scope by <a cla
 
     /**
     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in <a href="https://en.wikipedia.org/wiki/DE-9IM">DE-9IM</a>.
-    * @param Place|GeospatialGeometry|array $value
+    * @param Place|GeospatialGeometry|array|string $value
     * @return $this
+    * @deprecated use setGeoCoveredBy
     */
     public function geoCoveredBy($value)
     {
@@ -1042,7 +1080,7 @@ Use this to explicitly override general opening hours brought in scope by <a cla
         return $this;
     }
    /**
-    * @param Place|GeospatialGeometry|array $value
+    * @param Place|GeospatialGeometry|array|string $value
     * @return $this
     */
     public function setGeoCoveredBy($value)
@@ -1060,19 +1098,20 @@ Use this to explicitly override general opening hours brought in scope by <a cla
 
     /**
     * A flag to signal that the <a class="localLink" href="http://schema.org/Place">Place</a> is open to public visitors.  If this property is omitted there is no assumed default boolean value
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
+    * @deprecated use setPublicAccess
     */
-    public function publicAccess(?bool $value)
+    public function publicAccess($value)
     {
         $this->setProperty('publicAccess', $value);
         return $this;
     }
    /**
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
     */
-    public function setPublicAccess(?bool $value)
+    public function setPublicAccess($value)
     {
         $this->setProperty('publicAccess', $value);
         return $this;
@@ -1087,19 +1126,20 @@ Use this to explicitly override general opening hours brought in scope by <a cla
 
     /**
     * The total number of individuals that may attend an event or venue.
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
+    * @deprecated use setMaximumAttendeeCapacity
     */
-    public function maximumAttendeeCapacity(?int $value)
+    public function maximumAttendeeCapacity($value)
     {
         $this->setProperty('maximumAttendeeCapacity', $value);
         return $this;
     }
    /**
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
     */
-    public function setMaximumAttendeeCapacity(?int $value)
+    public function setMaximumAttendeeCapacity($value)
     {
         $this->setProperty('maximumAttendeeCapacity', $value);
         return $this;
@@ -1114,7 +1154,3 @@ Use this to explicitly override general opening hours brought in scope by <a cla
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Place','Thing\\Place');
-

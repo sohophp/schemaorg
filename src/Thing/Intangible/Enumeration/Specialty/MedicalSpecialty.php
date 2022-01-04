@@ -15,7 +15,3 @@ class MedicalSpecialty extends Specialty
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\Specialty\\MedicalSpecialty','Thing\\MedicalSpecialty');
-

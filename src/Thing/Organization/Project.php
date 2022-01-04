@@ -16,7 +16,3 @@ class Project extends Organization
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\Project','Thing\\Project');
-

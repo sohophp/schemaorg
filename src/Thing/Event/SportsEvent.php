@@ -17,8 +17,9 @@ class SportsEvent extends Event
 
     /**
     * The away team in a sports event.
-    * @param SportsTeam|Person|array $value
+    * @param SportsTeam|Person|array|string $value
     * @return $this
+    * @deprecated use setAwayTeam
     */
     public function awayTeam($value)
     {
@@ -26,7 +27,7 @@ class SportsEvent extends Event
         return $this;
     }
    /**
-    * @param SportsTeam|Person|array $value
+    * @param SportsTeam|Person|array|string $value
     * @return $this
     */
     public function setAwayTeam($value)
@@ -44,8 +45,9 @@ class SportsEvent extends Event
 
     /**
     * The home team in a sports event.
-    * @param Person|SportsTeam|array $value
+    * @param Person|SportsTeam|array|string $value
     * @return $this
+    * @deprecated use setHomeTeam
     */
     public function homeTeam($value)
     {
@@ -53,7 +55,7 @@ class SportsEvent extends Event
         return $this;
     }
    /**
-    * @param Person|SportsTeam|array $value
+    * @param Person|SportsTeam|array|string $value
     * @return $this
     */
     public function setHomeTeam($value)
@@ -71,8 +73,9 @@ class SportsEvent extends Event
 
     /**
     * A competitor in a sports event.
-    * @param Person|SportsTeam|array $value
+    * @param Person|SportsTeam|array|string $value
     * @return $this
+    * @deprecated use setCompetitor
     */
     public function competitor($value)
     {
@@ -80,7 +83,7 @@ class SportsEvent extends Event
         return $this;
     }
    /**
-    * @param Person|SportsTeam|array $value
+    * @param Person|SportsTeam|array|string $value
     * @return $this
     */
     public function setCompetitor($value)
@@ -98,7 +101,3 @@ class SportsEvent extends Event
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Event\\SportsEvent','Thing\\SportsEvent');
-

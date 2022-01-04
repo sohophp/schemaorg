@@ -16,19 +16,20 @@ class DigitalDocument extends CreativeWork
 
     /**
     * A permission related to the access to this document (e.g. permission to read or write an electronic document). For a public document, specify a grantee with an Audience with audienceType equal to "public".
-    * @param DigitalDocumentPermission|array $value
+    * @param DigitalDocumentPermission|array|string $value
     * @return $this
+    * @deprecated use setHasDigitalDocumentPermission
     */
-    public function hasDigitalDocumentPermission(?DigitalDocumentPermission $value)
+    public function hasDigitalDocumentPermission($value)
     {
         $this->setProperty('hasDigitalDocumentPermission', $value);
         return $this;
     }
    /**
-    * @param DigitalDocumentPermission|array $value
+    * @param DigitalDocumentPermission|array|string $value
     * @return $this
     */
-    public function setHasDigitalDocumentPermission(?DigitalDocumentPermission $value)
+    public function setHasDigitalDocumentPermission($value)
     {
         $this->setProperty('hasDigitalDocumentPermission', $value);
         return $this;
@@ -43,7 +44,3 @@ class DigitalDocument extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\DigitalDocument','Thing\\DigitalDocument');
-

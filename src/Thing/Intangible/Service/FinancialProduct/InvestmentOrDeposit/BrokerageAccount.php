@@ -15,7 +15,3 @@ class BrokerageAccount extends InvestmentOrDeposit
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Service\\FinancialProduct\\InvestmentOrDeposit\\BrokerageAccount','Thing\\BrokerageAccount');
-

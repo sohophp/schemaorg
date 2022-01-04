@@ -19,7 +19,3 @@ class Campground extends LodgingBusiness
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\LodgingBusiness\\Campground','Thing\\Campground');
-

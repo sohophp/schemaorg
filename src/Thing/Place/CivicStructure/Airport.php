@@ -17,8 +17,9 @@ class Airport extends CivicStructure
     * IATA identifier for an airline or airport.
     * @param string|array $value
     * @return $this
+    * @deprecated use setIataCode
     */
-    public function iataCode(?string $value)
+    public function iataCode($value)
     {
         $this->setProperty('iataCode', $value);
         return $this;
@@ -27,7 +28,7 @@ class Airport extends CivicStructure
     * @param string|array $value
     * @return $this
     */
-    public function setIataCode(?string $value)
+    public function setIataCode($value)
     {
         $this->setProperty('iataCode', $value);
         return $this;
@@ -44,8 +45,9 @@ class Airport extends CivicStructure
     * ICAO identifier for an airport.
     * @param string|array $value
     * @return $this
+    * @deprecated use setIcaoCode
     */
-    public function icaoCode(?string $value)
+    public function icaoCode($value)
     {
         $this->setProperty('icaoCode', $value);
         return $this;
@@ -54,7 +56,7 @@ class Airport extends CivicStructure
     * @param string|array $value
     * @return $this
     */
-    public function setIcaoCode(?string $value)
+    public function setIcaoCode($value)
     {
         $this->setProperty('icaoCode', $value);
         return $this;
@@ -69,7 +71,3 @@ class Airport extends CivicStructure
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\CivicStructure\\Airport','Thing\\Airport');
-

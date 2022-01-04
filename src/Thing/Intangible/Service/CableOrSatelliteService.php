@@ -15,7 +15,3 @@ class CableOrSatelliteService extends Service
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Service\\CableOrSatelliteService','Thing\\CableOrSatelliteService');
-

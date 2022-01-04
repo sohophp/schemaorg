@@ -17,7 +17,3 @@ class AccountingService extends FinancialService
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\FinancialService\\AccountingService','Thing\\AccountingService');
-

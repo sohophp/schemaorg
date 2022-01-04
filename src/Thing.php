@@ -22,8 +22,9 @@ class Thing extends BaseType
     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
     * @param string|array $value
     * @return $this
+    * @deprecated use setSameAs
     */
-    public function sameAs(?string $value)
+    public function sameAs($value)
     {
         $this->setProperty('sameAs', $value);
         return $this;
@@ -32,7 +33,7 @@ class Thing extends BaseType
     * @param string|array $value
     * @return $this
     */
-    public function setSameAs(?string $value)
+    public function setSameAs($value)
     {
         $this->setProperty('sameAs', $value);
         return $this;
@@ -49,8 +50,9 @@ class Thing extends BaseType
     * URL of the item.
     * @param string|array $value
     * @return $this
+    * @deprecated use setUrl
     */
-    public function url(?string $value)
+    public function url($value)
     {
         $this->setProperty('url', $value);
         return $this;
@@ -59,7 +61,7 @@ class Thing extends BaseType
     * @param string|array $value
     * @return $this
     */
-    public function setUrl(?string $value)
+    public function setUrl($value)
     {
         $this->setProperty('url', $value);
         return $this;
@@ -76,8 +78,9 @@ class Thing extends BaseType
     * An alias for the item.
     * @param string|array $value
     * @return $this
+    * @deprecated use setAlternateName
     */
-    public function alternateName(?string $value)
+    public function alternateName($value)
     {
         $this->setProperty('alternateName', $value);
         return $this;
@@ -86,7 +89,7 @@ class Thing extends BaseType
     * @param string|array $value
     * @return $this
     */
-    public function setAlternateName(?string $value)
+    public function setAlternateName($value)
     {
         $this->setProperty('alternateName', $value);
         return $this;
@@ -103,6 +106,7 @@ class Thing extends BaseType
     * An image of the item. This can be a <a class="localLink" href="http://schema.org/URL">URL</a> or a fully described <a class="localLink" href="http://schema.org/ImageObject">ImageObject</a>.
     * @param ImageObject|string|array $value
     * @return $this
+    * @deprecated use setImage
     */
     public function image($value)
     {
@@ -130,8 +134,9 @@ class Thing extends BaseType
     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
     * @param string|array $value
     * @return $this
+    * @deprecated use setAdditionalType
     */
-    public function additionalType(?string $value)
+    public function additionalType($value)
     {
         $this->setProperty('additionalType', $value);
         return $this;
@@ -140,7 +145,7 @@ class Thing extends BaseType
     * @param string|array $value
     * @return $this
     */
-    public function setAdditionalType(?string $value)
+    public function setAdditionalType($value)
     {
         $this->setProperty('additionalType', $value);
         return $this;
@@ -157,8 +162,9 @@ class Thing extends BaseType
     * The name of the item.
     * @param string|array $value
     * @return $this
+    * @deprecated use setName
     */
-    public function name(?string $value)
+    public function name($value)
     {
         $this->setProperty('name', $value);
         return $this;
@@ -167,7 +173,7 @@ class Thing extends BaseType
     * @param string|array $value
     * @return $this
     */
-    public function setName(?string $value)
+    public function setName($value)
     {
         $this->setProperty('name', $value);
         return $this;
@@ -184,6 +190,7 @@ class Thing extends BaseType
     * The identifier property represents any kind of identifier for any kind of <a class="localLink" href="http://schema.org/Thing">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href="/docs/datamodel.html#identifierBg">background notes</a> for more details.
     * @param PropertyValue|string|string|array $value
     * @return $this
+    * @deprecated use setIdentifier
     */
     public function identifier($value)
     {
@@ -209,8 +216,9 @@ class Thing extends BaseType
 
     /**
     * A CreativeWork or Event about this Thing.
-    * @param CreativeWork|Event|array $value
+    * @param CreativeWork|Event|array|string $value
     * @return $this
+    * @deprecated use setSubjectOf
     */
     public function subjectOf($value)
     {
@@ -218,7 +226,7 @@ class Thing extends BaseType
         return $this;
     }
    /**
-    * @param CreativeWork|Event|array $value
+    * @param CreativeWork|Event|array|string $value
     * @return $this
     */
     public function setSubjectOf($value)
@@ -236,19 +244,20 @@ class Thing extends BaseType
 
     /**
     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-    * @param Action|array $value
+    * @param Action|array|string $value
     * @return $this
+    * @deprecated use setPotentialAction
     */
-    public function potentialAction(?Action $value)
+    public function potentialAction($value)
     {
         $this->setProperty('potentialAction', $value);
         return $this;
     }
    /**
-    * @param Action|array $value
+    * @param Action|array|string $value
     * @return $this
     */
-    public function setPotentialAction(?Action $value)
+    public function setPotentialAction($value)
     {
         $this->setProperty('potentialAction', $value);
         return $this;
@@ -265,6 +274,7 @@ class Thing extends BaseType
     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href="/docs/datamodel.html#mainEntityBackground">background notes</a> for details.
     * @param CreativeWork|string|array $value
     * @return $this
+    * @deprecated use setMainEntityOfPage
     */
     public function mainEntityOfPage($value)
     {
@@ -292,8 +302,9 @@ class Thing extends BaseType
     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
     * @param string|array $value
     * @return $this
+    * @deprecated use setDisambiguatingDescription
     */
-    public function disambiguatingDescription(?string $value)
+    public function disambiguatingDescription($value)
     {
         $this->setProperty('disambiguatingDescription', $value);
         return $this;
@@ -302,7 +313,7 @@ class Thing extends BaseType
     * @param string|array $value
     * @return $this
     */
-    public function setDisambiguatingDescription(?string $value)
+    public function setDisambiguatingDescription($value)
     {
         $this->setProperty('disambiguatingDescription', $value);
         return $this;
@@ -319,8 +330,9 @@ class Thing extends BaseType
     * A description of the item.
     * @param string|array $value
     * @return $this
+    * @deprecated use setDescription
     */
-    public function description(?string $value)
+    public function description($value)
     {
         $this->setProperty('description', $value);
         return $this;
@@ -329,7 +341,7 @@ class Thing extends BaseType
     * @param string|array $value
     * @return $this
     */
-    public function setDescription(?string $value)
+    public function setDescription($value)
     {
         $this->setProperty('description', $value);
         return $this;
@@ -344,7 +356,3 @@ class Thing extends BaseType
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing','Thing\\Thing');
-

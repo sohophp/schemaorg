@@ -15,7 +15,3 @@ class HowToTip extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\HowToTip','Thing\\HowToTip');
-

@@ -15,7 +15,3 @@ class LakeBodyOfWater extends BodyOfWater
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\Landform\\BodyOfWater\\LakeBodyOfWater','Thing\\LakeBodyOfWater');
-

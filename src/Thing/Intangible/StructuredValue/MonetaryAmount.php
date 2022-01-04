@@ -15,8 +15,9 @@ class MonetaryAmount extends StructuredValue
 
     /**
     * The lower value of some characteristic or property.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setMinValue
     */
     public function minValue($value)
     {
@@ -24,7 +25,7 @@ class MonetaryAmount extends StructuredValue
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setMinValue($value)
@@ -52,6 +53,7 @@ class MonetaryAmount extends StructuredValue
 
     * @param StructuredValue|string|bool|array $value
     * @return $this
+    * @deprecated use setValue
     */
     public function value($value)
     {
@@ -77,8 +79,9 @@ class MonetaryAmount extends StructuredValue
 
     /**
     * The date when the item becomes valid.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setValidFrom
     */
     public function validFrom($value)
     {
@@ -86,7 +89,7 @@ class MonetaryAmount extends StructuredValue
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setValidFrom($value)
@@ -104,8 +107,9 @@ class MonetaryAmount extends StructuredValue
 
     /**
     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setValidThrough
     */
     public function validThrough($value)
     {
@@ -113,7 +117,7 @@ class MonetaryAmount extends StructuredValue
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setValidThrough($value)
@@ -131,8 +135,9 @@ class MonetaryAmount extends StructuredValue
 
     /**
     * The upper value of some characteristic or property.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setMaxValue
     */
     public function maxValue($value)
     {
@@ -140,7 +145,7 @@ class MonetaryAmount extends StructuredValue
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setMaxValue($value)
@@ -162,8 +167,9 @@ class MonetaryAmount extends StructuredValue
 Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 currency format</a> e.g. "USD"; <a href="https://en.wikipedia.org/wiki/List_of_cryptocurrencies">Ticker symbol</a> for cryptocurrencies e.g. "BTC"; well known names for <a href="https://en.wikipedia.org/wiki/Local_exchange_trading_system">Local Exchange Tradings Systems</a> (LETS) and other currency types e.g. "Ithaca HOUR".
     * @param string|array $value
     * @return $this
+    * @deprecated use setCurrency
     */
-    public function currency(?string $value)
+    public function currency($value)
     {
         $this->setProperty('currency', $value);
         return $this;
@@ -172,7 +178,7 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
     * @param string|array $value
     * @return $this
     */
-    public function setCurrency(?string $value)
+    public function setCurrency($value)
     {
         $this->setProperty('currency', $value);
         return $this;
@@ -187,7 +193,3 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue\\MonetaryAmount','Thing\\MonetaryAmount');
-

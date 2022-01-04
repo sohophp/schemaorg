@@ -15,7 +15,3 @@ class PreventionIndication extends MedicalIndication
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalIndication\\PreventionIndication','Thing\\PreventionIndication');
-

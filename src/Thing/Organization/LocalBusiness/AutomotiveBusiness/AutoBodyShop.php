@@ -15,7 +15,3 @@ class AutoBodyShop extends AutomotiveBusiness
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\AutomotiveBusiness\\AutoBodyShop','Thing\\AutoBodyShop');
-

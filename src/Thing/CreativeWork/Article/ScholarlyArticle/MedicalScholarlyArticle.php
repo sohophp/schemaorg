@@ -17,8 +17,9 @@ class MedicalScholarlyArticle extends ScholarlyArticle
     * The type of the medical article, taken from the US NLM MeSH publication type catalog. See also <a href="http://www.nlm.nih.gov/mesh/pubtypes.html">MeSH documentation</a>.
     * @param string|array $value
     * @return $this
+    * @deprecated use setPublicationType
     */
-    public function publicationType(?string $value)
+    public function publicationType($value)
     {
         $this->setProperty('publicationType', $value);
         return $this;
@@ -27,7 +28,7 @@ class MedicalScholarlyArticle extends ScholarlyArticle
     * @param string|array $value
     * @return $this
     */
-    public function setPublicationType(?string $value)
+    public function setPublicationType($value)
     {
         $this->setProperty('publicationType', $value);
         return $this;
@@ -42,7 +43,3 @@ class MedicalScholarlyArticle extends ScholarlyArticle
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Article\\ScholarlyArticle\\MedicalScholarlyArticle','Thing\\MedicalScholarlyArticle');
-

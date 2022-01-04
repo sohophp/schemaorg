@@ -16,19 +16,20 @@ class LegislationObject extends Legislation
 
     /**
     * The legal value of this legislation file. The same legislation can be written in multiple files with different legal values. Typically a digitally signed PDF have a "stronger" legal value than the HTML file of the same act.
-    * @param LegalValueLevel|array $value
+    * @param LegalValueLevel|array|string $value
     * @return $this
+    * @deprecated use setLegislationLegalValue
     */
-    public function legislationLegalValue(?LegalValueLevel $value)
+    public function legislationLegalValue($value)
     {
         $this->setProperty('legislationLegalValue', $value);
         return $this;
     }
    /**
-    * @param LegalValueLevel|array $value
+    * @param LegalValueLevel|array|string $value
     * @return $this
     */
-    public function setLegislationLegalValue(?LegalValueLevel $value)
+    public function setLegislationLegalValue($value)
     {
         $this->setProperty('legislationLegalValue', $value);
         return $this;
@@ -43,7 +44,3 @@ class LegislationObject extends Legislation
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Legislation\\LegislationObject','Thing\\LegislationObject');
-

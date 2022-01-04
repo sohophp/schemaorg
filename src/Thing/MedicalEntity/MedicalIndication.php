@@ -15,7 +15,3 @@ class MedicalIndication extends MedicalEntity
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalIndication','Thing\\MedicalIndication');
-

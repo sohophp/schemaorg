@@ -15,8 +15,9 @@ class PlanAction extends OrganizeAction
 
     /**
     * The time the object is scheduled to.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setScheduledTime
     */
     public function scheduledTime($value)
     {
@@ -24,7 +25,7 @@ class PlanAction extends OrganizeAction
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setScheduledTime($value)
@@ -42,7 +43,3 @@ class PlanAction extends OrganizeAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\OrganizeAction\\PlanAction','Thing\\PlanAction');
-

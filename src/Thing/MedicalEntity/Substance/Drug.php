@@ -26,19 +26,20 @@ class Drug extends Substance
 
     /**
     * True if the drug is available in a generic form (regardless of name).
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
+    * @deprecated use setIsAvailableGenerically
     */
-    public function isAvailableGenerically(?bool $value)
+    public function isAvailableGenerically($value)
     {
         $this->setProperty('isAvailableGenerically', $value);
         return $this;
     }
    /**
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
     */
-    public function setIsAvailableGenerically(?bool $value)
+    public function setIsAvailableGenerically($value)
     {
         $this->setProperty('isAvailableGenerically', $value);
         return $this;
@@ -53,19 +54,20 @@ class Drug extends Substance
 
     /**
     * Cost per unit of the drug, as reported by the source being tagged.
-    * @param DrugCost|array $value
+    * @param DrugCost|array|string $value
     * @return $this
+    * @deprecated use setCost
     */
-    public function cost(?DrugCost $value)
+    public function cost($value)
     {
         $this->setProperty('cost', $value);
         return $this;
     }
    /**
-    * @param DrugCost|array $value
+    * @param DrugCost|array|string $value
     * @return $this
     */
-    public function setCost(?DrugCost $value)
+    public function setCost($value)
     {
         $this->setProperty('cost', $value);
         return $this;
@@ -80,19 +82,20 @@ class Drug extends Substance
 
     /**
     * The manufacturer of the product.
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
+    * @deprecated use setManufacturer
     */
-    public function manufacturer(?Organization $value)
+    public function manufacturer($value)
     {
         $this->setProperty('manufacturer', $value);
         return $this;
     }
    /**
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
     */
-    public function setManufacturer(?Organization $value)
+    public function setManufacturer($value)
     {
         $this->setProperty('manufacturer', $value);
         return $this;
@@ -109,8 +112,9 @@ class Drug extends Substance
     * Link to prescribing information for the drug.
     * @param string|array $value
     * @return $this
+    * @deprecated use setPrescribingInfo
     */
-    public function prescribingInfo(?string $value)
+    public function prescribingInfo($value)
     {
         $this->setProperty('prescribingInfo', $value);
         return $this;
@@ -119,7 +123,7 @@ class Drug extends Substance
     * @param string|array $value
     * @return $this
     */
-    public function setPrescribingInfo(?string $value)
+    public function setPrescribingInfo($value)
     {
         $this->setProperty('prescribingInfo', $value);
         return $this;
@@ -134,19 +138,20 @@ class Drug extends Substance
 
     /**
     * The class of drug this belongs to (e.g., statins).
-    * @param DrugClass|array $value
+    * @param DrugClass|array|string $value
     * @return $this
+    * @deprecated use setDrugClass
     */
-    public function drugClass(?DrugClass $value)
+    public function drugClass($value)
     {
         $this->setProperty('drugClass', $value);
         return $this;
     }
    /**
-    * @param DrugClass|array $value
+    * @param DrugClass|array|string $value
     * @return $this
     */
-    public function setDrugClass(?DrugClass $value)
+    public function setDrugClass($value)
     {
         $this->setProperty('drugClass', $value);
         return $this;
@@ -163,6 +168,7 @@ class Drug extends Substance
     * Any FDA or other warnings about the drug (text or URL).
     * @param string|string|array $value
     * @return $this
+    * @deprecated use setWarning
     */
     public function warning($value)
     {
@@ -190,6 +196,7 @@ class Drug extends Substance
     * Indicates the status of drug prescription eg. local catalogs classifications or whether the drug is available by prescription or over-the-counter, etc.
     * @param string|DrugPrescriptionStatus|array $value
     * @return $this
+    * @deprecated use setPrescriptionStatus
     */
     public function prescriptionStatus($value)
     {
@@ -215,19 +222,20 @@ class Drug extends Substance
 
     /**
     * Any other drug related to this one, for example commonly-prescribed alternatives.
-    * @param Drug|array $value
+    * @param Drug|array|string $value
     * @return $this
+    * @deprecated use setRelatedDrug
     */
-    public function relatedDrug(?Drug $value)
+    public function relatedDrug($value)
     {
         $this->setProperty('relatedDrug', $value);
         return $this;
     }
    /**
-    * @param Drug|array $value
+    * @param Drug|array|string $value
     * @return $this
     */
-    public function setRelatedDrug(?Drug $value)
+    public function setRelatedDrug($value)
     {
         $this->setProperty('relatedDrug', $value);
         return $this;
@@ -244,8 +252,9 @@ class Drug extends Substance
     * The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
     * @param string|array $value
     * @return $this
+    * @deprecated use setMechanismOfAction
     */
-    public function mechanismOfAction(?string $value)
+    public function mechanismOfAction($value)
     {
         $this->setProperty('mechanismOfAction', $value);
         return $this;
@@ -254,7 +263,7 @@ class Drug extends Substance
     * @param string|array $value
     * @return $this
     */
-    public function setMechanismOfAction(?string $value)
+    public function setMechanismOfAction($value)
     {
         $this->setProperty('mechanismOfAction', $value);
         return $this;
@@ -271,8 +280,9 @@ class Drug extends Substance
     * Any precaution, guidance, contraindication, etc. related to this drug's use by breastfeeding mothers.
     * @param string|array $value
     * @return $this
+    * @deprecated use setBreastfeedingWarning
     */
-    public function breastfeedingWarning(?string $value)
+    public function breastfeedingWarning($value)
     {
         $this->setProperty('breastfeedingWarning', $value);
         return $this;
@@ -281,7 +291,7 @@ class Drug extends Substance
     * @param string|array $value
     * @return $this
     */
-    public function setBreastfeedingWarning(?string $value)
+    public function setBreastfeedingWarning($value)
     {
         $this->setProperty('breastfeedingWarning', $value);
         return $this;
@@ -298,6 +308,7 @@ class Drug extends Substance
     * The drug or supplement's legal status, including any controlled substance schedules that apply.
     * @param DrugLegalStatus|string|MedicalEnumeration|array $value
     * @return $this
+    * @deprecated use setLegalStatus
     */
     public function legalStatus($value)
     {
@@ -325,8 +336,9 @@ class Drug extends Substance
     * The RxCUI drug identifier from RXNORM.
     * @param string|array $value
     * @return $this
+    * @deprecated use setRxcui
     */
-    public function rxcui(?string $value)
+    public function rxcui($value)
     {
         $this->setProperty('rxcui', $value);
         return $this;
@@ -335,7 +347,7 @@ class Drug extends Substance
     * @param string|array $value
     * @return $this
     */
-    public function setRxcui(?string $value)
+    public function setRxcui($value)
     {
         $this->setProperty('rxcui', $value);
         return $this;
@@ -352,8 +364,9 @@ class Drug extends Substance
     * Proprietary name given to the diet plan, typically by its originator or creator.
     * @param string|array $value
     * @return $this
+    * @deprecated use setProprietaryName
     */
-    public function proprietaryName(?string $value)
+    public function proprietaryName($value)
     {
         $this->setProperty('proprietaryName', $value);
         return $this;
@@ -362,7 +375,7 @@ class Drug extends Substance
     * @param string|array $value
     * @return $this
     */
-    public function setProprietaryName(?string $value)
+    public function setProprietaryName($value)
     {
         $this->setProperty('proprietaryName', $value);
         return $this;
@@ -377,19 +390,20 @@ class Drug extends Substance
 
     /**
     * An available dosage strength for the drug.
-    * @param DrugStrength|array $value
+    * @param DrugStrength|array|string $value
     * @return $this
+    * @deprecated use setAvailableStrength
     */
-    public function availableStrength(?DrugStrength $value)
+    public function availableStrength($value)
     {
         $this->setProperty('availableStrength', $value);
         return $this;
     }
    /**
-    * @param DrugStrength|array $value
+    * @param DrugStrength|array|string $value
     * @return $this
     */
-    public function setAvailableStrength(?DrugStrength $value)
+    public function setAvailableStrength($value)
     {
         $this->setProperty('availableStrength', $value);
         return $this;
@@ -406,8 +420,9 @@ class Drug extends Substance
     * Any precaution, guidance, contraindication, etc. related to consumption of alcohol while taking this drug.
     * @param string|array $value
     * @return $this
+    * @deprecated use setAlcoholWarning
     */
-    public function alcoholWarning(?string $value)
+    public function alcoholWarning($value)
     {
         $this->setProperty('alcoholWarning', $value);
         return $this;
@@ -416,7 +431,7 @@ class Drug extends Substance
     * @param string|array $value
     * @return $this
     */
-    public function setAlcoholWarning(?string $value)
+    public function setAlcoholWarning($value)
     {
         $this->setProperty('alcoholWarning', $value);
         return $this;
@@ -433,8 +448,9 @@ class Drug extends Substance
     * Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).
     * @param string|array $value
     * @return $this
+    * @deprecated use setClincalPharmacology
     */
-    public function clincalPharmacology(?string $value)
+    public function clincalPharmacology($value)
     {
         $this->setProperty('clincalPharmacology', $value);
         return $this;
@@ -443,7 +459,7 @@ class Drug extends Substance
     * @param string|array $value
     * @return $this
     */
-    public function setClincalPharmacology(?string $value)
+    public function setClincalPharmacology($value)
     {
         $this->setProperty('clincalPharmacology', $value);
         return $this;
@@ -460,8 +476,9 @@ class Drug extends Substance
     * A dosage form in which this drug/supplement is available, e.g. 'tablet', 'suspension', 'injection'.
     * @param string|array $value
     * @return $this
+    * @deprecated use setDosageForm
     */
-    public function dosageForm(?string $value)
+    public function dosageForm($value)
     {
         $this->setProperty('dosageForm', $value);
         return $this;
@@ -470,7 +487,7 @@ class Drug extends Substance
     * @param string|array $value
     * @return $this
     */
-    public function setDosageForm(?string $value)
+    public function setDosageForm($value)
     {
         $this->setProperty('dosageForm', $value);
         return $this;
@@ -485,19 +502,20 @@ class Drug extends Substance
 
     /**
     * A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.
-    * @param DoseSchedule|array $value
+    * @param DoseSchedule|array|string $value
     * @return $this
+    * @deprecated use setDoseSchedule
     */
-    public function doseSchedule(?DoseSchedule $value)
+    public function doseSchedule($value)
     {
         $this->setProperty('doseSchedule', $value);
         return $this;
     }
    /**
-    * @param DoseSchedule|array $value
+    * @param DoseSchedule|array|string $value
     * @return $this
     */
-    public function setDoseSchedule(?DoseSchedule $value)
+    public function setDoseSchedule($value)
     {
         $this->setProperty('doseSchedule', $value);
         return $this;
@@ -514,8 +532,9 @@ class Drug extends Substance
     * Any precaution, guidance, contraindication, etc. related to consumption of specific foods while taking this drug.
     * @param string|array $value
     * @return $this
+    * @deprecated use setFoodWarning
     */
-    public function foodWarning(?string $value)
+    public function foodWarning($value)
     {
         $this->setProperty('foodWarning', $value);
         return $this;
@@ -524,7 +543,7 @@ class Drug extends Substance
     * @param string|array $value
     * @return $this
     */
-    public function setFoodWarning(?string $value)
+    public function setFoodWarning($value)
     {
         $this->setProperty('foodWarning', $value);
         return $this;
@@ -541,8 +560,9 @@ class Drug extends Substance
     * An active ingredient, typically chemical compounds and/or biologic substances.
     * @param string|array $value
     * @return $this
+    * @deprecated use setActiveIngredient
     */
-    public function activeIngredient(?string $value)
+    public function activeIngredient($value)
     {
         $this->setProperty('activeIngredient', $value);
         return $this;
@@ -551,7 +571,7 @@ class Drug extends Substance
     * @param string|array $value
     * @return $this
     */
-    public function setActiveIngredient(?string $value)
+    public function setActiveIngredient($value)
     {
         $this->setProperty('activeIngredient', $value);
         return $this;
@@ -566,19 +586,20 @@ class Drug extends Substance
 
     /**
     * Pregnancy category of this drug.
-    * @param DrugPregnancyCategory|array $value
+    * @param DrugPregnancyCategory|array|string $value
     * @return $this
+    * @deprecated use setPregnancyCategory
     */
-    public function pregnancyCategory(?DrugPregnancyCategory $value)
+    public function pregnancyCategory($value)
     {
         $this->setProperty('pregnancyCategory', $value);
         return $this;
     }
    /**
-    * @param DrugPregnancyCategory|array $value
+    * @param DrugPregnancyCategory|array|string $value
     * @return $this
     */
-    public function setPregnancyCategory(?DrugPregnancyCategory $value)
+    public function setPregnancyCategory($value)
     {
         $this->setProperty('pregnancyCategory', $value);
         return $this;
@@ -595,8 +616,9 @@ class Drug extends Substance
     * A route by which this drug may be administered, e.g. 'oral'.
     * @param string|array $value
     * @return $this
+    * @deprecated use setAdministrationRoute
     */
-    public function administrationRoute(?string $value)
+    public function administrationRoute($value)
     {
         $this->setProperty('administrationRoute', $value);
         return $this;
@@ -605,7 +627,7 @@ class Drug extends Substance
     * @param string|array $value
     * @return $this
     */
-    public function setAdministrationRoute(?string $value)
+    public function setAdministrationRoute($value)
     {
         $this->setProperty('administrationRoute', $value);
         return $this;
@@ -622,8 +644,9 @@ class Drug extends Substance
     * Any precaution, guidance, contraindication, etc. related to this drug's use during pregnancy.
     * @param string|array $value
     * @return $this
+    * @deprecated use setPregnancyWarning
     */
-    public function pregnancyWarning(?string $value)
+    public function pregnancyWarning($value)
     {
         $this->setProperty('pregnancyWarning', $value);
         return $this;
@@ -632,7 +655,7 @@ class Drug extends Substance
     * @param string|array $value
     * @return $this
     */
-    public function setPregnancyWarning(?string $value)
+    public function setPregnancyWarning($value)
     {
         $this->setProperty('pregnancyWarning', $value);
         return $this;
@@ -647,19 +670,20 @@ class Drug extends Substance
 
     /**
     * The insurance plans that cover this drug.
-    * @param HealthInsurancePlan|array $value
+    * @param HealthInsurancePlan|array|string $value
     * @return $this
+    * @deprecated use setIncludedInHealthInsurancePlan
     */
-    public function includedInHealthInsurancePlan(?HealthInsurancePlan $value)
+    public function includedInHealthInsurancePlan($value)
     {
         $this->setProperty('includedInHealthInsurancePlan', $value);
         return $this;
     }
    /**
-    * @param HealthInsurancePlan|array $value
+    * @param HealthInsurancePlan|array|string $value
     * @return $this
     */
-    public function setIncludedInHealthInsurancePlan(?HealthInsurancePlan $value)
+    public function setIncludedInHealthInsurancePlan($value)
     {
         $this->setProperty('includedInHealthInsurancePlan', $value);
         return $this;
@@ -674,19 +698,20 @@ class Drug extends Substance
 
     /**
     * Another drug that is known to interact with this drug in a way that impacts the effect of this drug or causes a risk to the patient. Note: disease interactions are typically captured as contraindications.
-    * @param Drug|array $value
+    * @param Drug|array|string $value
     * @return $this
+    * @deprecated use setInteractingDrug
     */
-    public function interactingDrug(?Drug $value)
+    public function interactingDrug($value)
     {
         $this->setProperty('interactingDrug', $value);
         return $this;
     }
    /**
-    * @param Drug|array $value
+    * @param Drug|array|string $value
     * @return $this
     */
-    public function setInteractingDrug(?Drug $value)
+    public function setInteractingDrug($value)
     {
         $this->setProperty('interactingDrug', $value);
         return $this;
@@ -703,8 +728,9 @@ class Drug extends Substance
     * Any information related to overdose on a drug, including signs or symptoms, treatments, contact information for emergency response.
     * @param string|array $value
     * @return $this
+    * @deprecated use setOverdosage
     */
-    public function overdosage(?string $value)
+    public function overdosage($value)
     {
         $this->setProperty('overdosage', $value);
         return $this;
@@ -713,7 +739,7 @@ class Drug extends Substance
     * @param string|array $value
     * @return $this
     */
-    public function setOverdosage(?string $value)
+    public function setOverdosage($value)
     {
         $this->setProperty('overdosage', $value);
         return $this;
@@ -730,8 +756,9 @@ class Drug extends Substance
     * Link to the drug's label details.
     * @param string|array $value
     * @return $this
+    * @deprecated use setLabelDetails
     */
-    public function labelDetails(?string $value)
+    public function labelDetails($value)
     {
         $this->setProperty('labelDetails', $value);
         return $this;
@@ -740,7 +767,7 @@ class Drug extends Substance
     * @param string|array $value
     * @return $this
     */
-    public function setLabelDetails(?string $value)
+    public function setLabelDetails($value)
     {
         $this->setProperty('labelDetails', $value);
         return $this;
@@ -755,19 +782,20 @@ class Drug extends Substance
 
     /**
     * True if this item's name is a proprietary/brand name (vs. generic name).
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
+    * @deprecated use setIsProprietary
     */
-    public function isProprietary(?bool $value)
+    public function isProprietary($value)
     {
         $this->setProperty('isProprietary', $value);
         return $this;
     }
    /**
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
     */
-    public function setIsProprietary(?bool $value)
+    public function setIsProprietary($value)
     {
         $this->setProperty('isProprietary', $value);
         return $this;
@@ -784,8 +812,9 @@ class Drug extends Substance
     * The unit in which the drug is measured, e.g. '5 mg tablet'.
     * @param string|array $value
     * @return $this
+    * @deprecated use setDrugUnit
     */
-    public function drugUnit(?string $value)
+    public function drugUnit($value)
     {
         $this->setProperty('drugUnit', $value);
         return $this;
@@ -794,7 +823,7 @@ class Drug extends Substance
     * @param string|array $value
     * @return $this
     */
-    public function setDrugUnit(?string $value)
+    public function setDrugUnit($value)
     {
         $this->setProperty('drugUnit', $value);
         return $this;
@@ -811,8 +840,9 @@ class Drug extends Substance
     * The generic name of this drug or supplement.
     * @param string|array $value
     * @return $this
+    * @deprecated use setNonProprietaryName
     */
-    public function nonProprietaryName(?string $value)
+    public function nonProprietaryName($value)
     {
         $this->setProperty('nonProprietaryName', $value);
         return $this;
@@ -821,7 +851,7 @@ class Drug extends Substance
     * @param string|array $value
     * @return $this
     */
-    public function setNonProprietaryName(?string $value)
+    public function setNonProprietaryName($value)
     {
         $this->setProperty('nonProprietaryName', $value);
         return $this;
@@ -836,19 +866,20 @@ class Drug extends Substance
 
     /**
     * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
-    * @param MaximumDoseSchedule|array $value
+    * @param MaximumDoseSchedule|array|string $value
     * @return $this
+    * @deprecated use setMaximumIntake
     */
-    public function maximumIntake(?MaximumDoseSchedule $value)
+    public function maximumIntake($value)
     {
         $this->setProperty('maximumIntake', $value);
         return $this;
     }
    /**
-    * @param MaximumDoseSchedule|array $value
+    * @param MaximumDoseSchedule|array|string $value
     * @return $this
     */
-    public function setMaximumIntake(?MaximumDoseSchedule $value)
+    public function setMaximumIntake($value)
     {
         $this->setProperty('maximumIntake', $value);
         return $this;
@@ -865,8 +896,9 @@ class Drug extends Substance
     * Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).
     * @param string|array $value
     * @return $this
+    * @deprecated use setClinicalPharmacology
     */
-    public function clinicalPharmacology(?string $value)
+    public function clinicalPharmacology($value)
     {
         $this->setProperty('clinicalPharmacology', $value);
         return $this;
@@ -875,7 +907,7 @@ class Drug extends Substance
     * @param string|array $value
     * @return $this
     */
-    public function setClinicalPharmacology(?string $value)
+    public function setClinicalPharmacology($value)
     {
         $this->setProperty('clinicalPharmacology', $value);
         return $this;
@@ -890,7 +922,3 @@ class Drug extends Substance
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\Substance\\Drug','Thing\\Drug');
-

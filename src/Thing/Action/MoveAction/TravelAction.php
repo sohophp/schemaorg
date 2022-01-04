@@ -16,19 +16,20 @@ class TravelAction extends MoveAction
 
     /**
     * The distance travelled, e.g. exercising or travelling.
-    * @param Distance|array $value
+    * @param Distance|array|string $value
     * @return $this
+    * @deprecated use setDistance
     */
-    public function distance(?Distance $value)
+    public function distance($value)
     {
         $this->setProperty('distance', $value);
         return $this;
     }
    /**
-    * @param Distance|array $value
+    * @param Distance|array|string $value
     * @return $this
     */
-    public function setDistance(?Distance $value)
+    public function setDistance($value)
     {
         $this->setProperty('distance', $value);
         return $this;
@@ -43,7 +44,3 @@ class TravelAction extends MoveAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\MoveAction\\TravelAction','Thing\\TravelAction');
-

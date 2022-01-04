@@ -16,19 +16,20 @@ class BusinessAudience extends Audience
 
     /**
     * The age of the business.
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
+    * @deprecated use setYearsInOperation
     */
-    public function yearsInOperation(?QuantitativeValue $value)
+    public function yearsInOperation($value)
     {
         $this->setProperty('yearsInOperation', $value);
         return $this;
     }
    /**
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
     */
-    public function setYearsInOperation(?QuantitativeValue $value)
+    public function setYearsInOperation($value)
     {
         $this->setProperty('yearsInOperation', $value);
         return $this;
@@ -43,19 +44,20 @@ class BusinessAudience extends Audience
 
     /**
     * The size of the business in annual revenue.
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
+    * @deprecated use setYearlyRevenue
     */
-    public function yearlyRevenue(?QuantitativeValue $value)
+    public function yearlyRevenue($value)
     {
         $this->setProperty('yearlyRevenue', $value);
         return $this;
     }
    /**
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
     */
-    public function setYearlyRevenue(?QuantitativeValue $value)
+    public function setYearlyRevenue($value)
     {
         $this->setProperty('yearlyRevenue', $value);
         return $this;
@@ -70,19 +72,20 @@ class BusinessAudience extends Audience
 
     /**
     * The number of employees in an organization e.g. business.
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
+    * @deprecated use setNumberOfEmployees
     */
-    public function numberOfEmployees(?QuantitativeValue $value)
+    public function numberOfEmployees($value)
     {
         $this->setProperty('numberOfEmployees', $value);
         return $this;
     }
    /**
-    * @param QuantitativeValue|array $value
+    * @param QuantitativeValue|array|string $value
     * @return $this
     */
-    public function setNumberOfEmployees(?QuantitativeValue $value)
+    public function setNumberOfEmployees($value)
     {
         $this->setProperty('numberOfEmployees', $value);
         return $this;
@@ -97,7 +100,3 @@ class BusinessAudience extends Audience
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Audience\\BusinessAudience','Thing\\BusinessAudience');
-

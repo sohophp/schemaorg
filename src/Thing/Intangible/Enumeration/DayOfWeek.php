@@ -17,7 +17,3 @@ class DayOfWeek extends Enumeration
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\DayOfWeek','Thing\\DayOfWeek');
-

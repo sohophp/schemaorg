@@ -15,7 +15,3 @@ class DepositAccount extends BankAccount
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Service\\FinancialProduct\\BankAccount\\DepositAccount','Thing\\DepositAccount');
-

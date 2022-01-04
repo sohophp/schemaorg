@@ -17,7 +17,3 @@ class BreadcrumbList extends ItemList
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\ItemList\\BreadcrumbList','Thing\\BreadcrumbList');
-

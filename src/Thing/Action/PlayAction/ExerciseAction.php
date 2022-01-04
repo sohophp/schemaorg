@@ -23,19 +23,20 @@ class ExerciseAction extends PlayAction
 
     /**
     * A sub property of location. The final location of the object or the agent after the action.
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
+    * @deprecated use setToLocation
     */
-    public function toLocation(?Place $value)
+    public function toLocation($value)
     {
         $this->setProperty('toLocation', $value);
         return $this;
     }
    /**
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
     */
-    public function setToLocation(?Place $value)
+    public function setToLocation($value)
     {
         $this->setProperty('toLocation', $value);
         return $this;
@@ -50,19 +51,20 @@ class ExerciseAction extends PlayAction
 
     /**
     * A sub property of location. The course where this action was taken.
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
+    * @deprecated use setCourse
     */
-    public function course(?Place $value)
+    public function course($value)
     {
         $this->setProperty('course', $value);
         return $this;
     }
    /**
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
     */
-    public function setCourse(?Place $value)
+    public function setCourse($value)
     {
         $this->setProperty('course', $value);
         return $this;
@@ -79,8 +81,9 @@ class ExerciseAction extends PlayAction
     * Type(s) of exercise or activity, such as strength training, flexibility training, aerobics, cardiac rehabilitation, etc.
     * @param string|array $value
     * @return $this
+    * @deprecated use setExerciseType
     */
-    public function exerciseType(?string $value)
+    public function exerciseType($value)
     {
         $this->setProperty('exerciseType', $value);
         return $this;
@@ -89,7 +92,7 @@ class ExerciseAction extends PlayAction
     * @param string|array $value
     * @return $this
     */
-    public function setExerciseType(?string $value)
+    public function setExerciseType($value)
     {
         $this->setProperty('exerciseType', $value);
         return $this;
@@ -104,19 +107,20 @@ class ExerciseAction extends PlayAction
 
     /**
     * A sub property of participant. The sports team that participated on this action.
-    * @param SportsTeam|array $value
+    * @param SportsTeam|array|string $value
     * @return $this
+    * @deprecated use setSportsTeam
     */
-    public function sportsTeam(?SportsTeam $value)
+    public function sportsTeam($value)
     {
         $this->setProperty('sportsTeam', $value);
         return $this;
     }
    /**
-    * @param SportsTeam|array $value
+    * @param SportsTeam|array|string $value
     * @return $this
     */
-    public function setSportsTeam(?SportsTeam $value)
+    public function setSportsTeam($value)
     {
         $this->setProperty('sportsTeam', $value);
         return $this;
@@ -131,19 +135,20 @@ class ExerciseAction extends PlayAction
 
     /**
     * A sub property of location. The sports event where this action occurred.
-    * @param SportsEvent|array $value
+    * @param SportsEvent|array|string $value
     * @return $this
+    * @deprecated use setSportsEvent
     */
-    public function sportsEvent(?SportsEvent $value)
+    public function sportsEvent($value)
     {
         $this->setProperty('sportsEvent', $value);
         return $this;
     }
    /**
-    * @param SportsEvent|array $value
+    * @param SportsEvent|array|string $value
     * @return $this
     */
-    public function setSportsEvent(?SportsEvent $value)
+    public function setSportsEvent($value)
     {
         $this->setProperty('sportsEvent', $value);
         return $this;
@@ -158,19 +163,20 @@ class ExerciseAction extends PlayAction
 
     /**
     * The distance travelled, e.g. exercising or travelling.
-    * @param Distance|array $value
+    * @param Distance|array|string $value
     * @return $this
+    * @deprecated use setDistance
     */
-    public function distance(?Distance $value)
+    public function distance($value)
     {
         $this->setProperty('distance', $value);
         return $this;
     }
    /**
-    * @param Distance|array $value
+    * @param Distance|array|string $value
     * @return $this
     */
-    public function setDistance(?Distance $value)
+    public function setDistance($value)
     {
         $this->setProperty('distance', $value);
         return $this;
@@ -185,19 +191,20 @@ class ExerciseAction extends PlayAction
 
     /**
     * A sub property of participant. The opponent on this action.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setOpponent
     */
-    public function opponent(?Person $value)
+    public function opponent($value)
     {
         $this->setProperty('opponent', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setOpponent(?Person $value)
+    public function setOpponent($value)
     {
         $this->setProperty('opponent', $value);
         return $this;
@@ -212,19 +219,20 @@ class ExerciseAction extends PlayAction
 
     /**
     * A sub property of instrument. The diet used in this action.
-    * @param Diet|array $value
+    * @param Diet|array|string $value
     * @return $this
+    * @deprecated use setExerciseRelatedDiet
     */
-    public function exerciseRelatedDiet(?Diet $value)
+    public function exerciseRelatedDiet($value)
     {
         $this->setProperty('exerciseRelatedDiet', $value);
         return $this;
     }
    /**
-    * @param Diet|array $value
+    * @param Diet|array|string $value
     * @return $this
     */
-    public function setExerciseRelatedDiet(?Diet $value)
+    public function setExerciseRelatedDiet($value)
     {
         $this->setProperty('exerciseRelatedDiet', $value);
         return $this;
@@ -239,19 +247,20 @@ class ExerciseAction extends PlayAction
 
     /**
     * A sub property of instrument. The exercise plan used on this action.
-    * @param ExercisePlan|array $value
+    * @param ExercisePlan|array|string $value
     * @return $this
+    * @deprecated use setExercisePlan
     */
-    public function exercisePlan(?ExercisePlan $value)
+    public function exercisePlan($value)
     {
         $this->setProperty('exercisePlan', $value);
         return $this;
     }
    /**
-    * @param ExercisePlan|array $value
+    * @param ExercisePlan|array|string $value
     * @return $this
     */
-    public function setExercisePlan(?ExercisePlan $value)
+    public function setExercisePlan($value)
     {
         $this->setProperty('exercisePlan', $value);
         return $this;
@@ -266,19 +275,20 @@ class ExerciseAction extends PlayAction
 
     /**
     * A sub property of location. The sports activity location where this action occurred.
-    * @param SportsActivityLocation|array $value
+    * @param SportsActivityLocation|array|string $value
     * @return $this
+    * @deprecated use setSportsActivityLocation
     */
-    public function sportsActivityLocation(?SportsActivityLocation $value)
+    public function sportsActivityLocation($value)
     {
         $this->setProperty('sportsActivityLocation', $value);
         return $this;
     }
    /**
-    * @param SportsActivityLocation|array $value
+    * @param SportsActivityLocation|array|string $value
     * @return $this
     */
-    public function setSportsActivityLocation(?SportsActivityLocation $value)
+    public function setSportsActivityLocation($value)
     {
         $this->setProperty('sportsActivityLocation', $value);
         return $this;
@@ -293,19 +303,20 @@ class ExerciseAction extends PlayAction
 
     /**
     * A sub property of location. The original location of the object or the agent before the action.
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
+    * @deprecated use setFromLocation
     */
-    public function fromLocation(?Place $value)
+    public function fromLocation($value)
     {
         $this->setProperty('fromLocation', $value);
         return $this;
     }
    /**
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
     */
-    public function setFromLocation(?Place $value)
+    public function setFromLocation($value)
     {
         $this->setProperty('fromLocation', $value);
         return $this;
@@ -320,19 +331,20 @@ class ExerciseAction extends PlayAction
 
     /**
     * A sub property of location. The course where this action was taken.
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
+    * @deprecated use setExerciseCourse
     */
-    public function exerciseCourse(?Place $value)
+    public function exerciseCourse($value)
     {
         $this->setProperty('exerciseCourse', $value);
         return $this;
     }
    /**
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
     */
-    public function setExerciseCourse(?Place $value)
+    public function setExerciseCourse($value)
     {
         $this->setProperty('exerciseCourse', $value);
         return $this;
@@ -347,19 +359,20 @@ class ExerciseAction extends PlayAction
 
     /**
     * A sub property of instrument. The diet used in this action.
-    * @param Diet|array $value
+    * @param Diet|array|string $value
     * @return $this
+    * @deprecated use setDiet
     */
-    public function diet(?Diet $value)
+    public function diet($value)
     {
         $this->setProperty('diet', $value);
         return $this;
     }
    /**
-    * @param Diet|array $value
+    * @param Diet|array|string $value
     * @return $this
     */
-    public function setDiet(?Diet $value)
+    public function setDiet($value)
     {
         $this->setProperty('diet', $value);
         return $this;
@@ -374,7 +387,3 @@ class ExerciseAction extends PlayAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\PlayAction\\ExerciseAction','Thing\\ExerciseAction');
-

@@ -15,8 +15,9 @@ class LiveBlogPosting extends BlogPosting
 
     /**
     * The time when the live blog will begin covering the Event. Note that coverage may begin before the Event's start time. The LiveBlogPosting may also be created before coverage begins.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setCoverageStartTime
     */
     public function coverageStartTime($value)
     {
@@ -24,7 +25,7 @@ class LiveBlogPosting extends BlogPosting
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setCoverageStartTime($value)
@@ -42,8 +43,9 @@ class LiveBlogPosting extends BlogPosting
 
     /**
     * The time when the live blog will stop covering the Event. Note that coverage may continue after the Event concludes.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setCoverageEndTime
     */
     public function coverageEndTime($value)
     {
@@ -51,7 +53,7 @@ class LiveBlogPosting extends BlogPosting
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setCoverageEndTime($value)
@@ -69,19 +71,20 @@ class LiveBlogPosting extends BlogPosting
 
     /**
     * An update to the LiveBlog.
-    * @param BlogPosting|array $value
+    * @param BlogPosting|array|string $value
     * @return $this
+    * @deprecated use setLiveBlogUpdate
     */
-    public function liveBlogUpdate(?BlogPosting $value)
+    public function liveBlogUpdate($value)
     {
         $this->setProperty('liveBlogUpdate', $value);
         return $this;
     }
    /**
-    * @param BlogPosting|array $value
+    * @param BlogPosting|array|string $value
     * @return $this
     */
-    public function setLiveBlogUpdate(?BlogPosting $value)
+    public function setLiveBlogUpdate($value)
     {
         $this->setProperty('liveBlogUpdate', $value);
         return $this;
@@ -96,7 +99,3 @@ class LiveBlogPosting extends BlogPosting
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Article\\SocialMediaPosting\\BlogPosting\\LiveBlogPosting','Thing\\LiveBlogPosting');
-

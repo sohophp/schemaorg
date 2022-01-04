@@ -17,19 +17,20 @@ class DDxElement extends MedicalIntangible
 
     /**
     * One or more alternative conditions considered in the differential diagnosis process as output of a diagnosis process.
-    * @param MedicalCondition|array $value
+    * @param MedicalCondition|array|string $value
     * @return $this
+    * @deprecated use setDiagnosis
     */
-    public function diagnosis(?MedicalCondition $value)
+    public function diagnosis($value)
     {
         $this->setProperty('diagnosis', $value);
         return $this;
     }
    /**
-    * @param MedicalCondition|array $value
+    * @param MedicalCondition|array|string $value
     * @return $this
     */
-    public function setDiagnosis(?MedicalCondition $value)
+    public function setDiagnosis($value)
     {
         $this->setProperty('diagnosis', $value);
         return $this;
@@ -44,19 +45,20 @@ class DDxElement extends MedicalIntangible
 
     /**
     * One of a set of signs and symptoms that can be used to distinguish this diagnosis from others in the differential diagnosis.
-    * @param MedicalSignOrSymptom|array $value
+    * @param MedicalSignOrSymptom|array|string $value
     * @return $this
+    * @deprecated use setDistinguishingSign
     */
-    public function distinguishingSign(?MedicalSignOrSymptom $value)
+    public function distinguishingSign($value)
     {
         $this->setProperty('distinguishingSign', $value);
         return $this;
     }
    /**
-    * @param MedicalSignOrSymptom|array $value
+    * @param MedicalSignOrSymptom|array|string $value
     * @return $this
     */
-    public function setDistinguishingSign(?MedicalSignOrSymptom $value)
+    public function setDistinguishingSign($value)
     {
         $this->setProperty('distinguishingSign', $value);
         return $this;
@@ -71,7 +73,3 @@ class DDxElement extends MedicalIntangible
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalIntangible\\DDxElement','Thing\\DDxElement');
-

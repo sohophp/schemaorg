@@ -19,8 +19,9 @@ class Diet extends LifestyleModification
     * Specific physiologic risks associated to the diet plan.
     * @param string|array $value
     * @return $this
+    * @deprecated use setRisks
     */
-    public function risks(?string $value)
+    public function risks($value)
     {
         $this->setProperty('risks', $value);
         return $this;
@@ -29,7 +30,7 @@ class Diet extends LifestyleModification
     * @param string|array $value
     * @return $this
     */
-    public function setRisks(?string $value)
+    public function setRisks($value)
     {
         $this->setProperty('risks', $value);
         return $this;
@@ -46,8 +47,9 @@ class Diet extends LifestyleModification
     * Descriptive information establishing the overarching theory/philosophy of the plan. May include the rationale for the name, the population where the plan first came to prominence, etc.
     * @param string|array $value
     * @return $this
+    * @deprecated use setOverview
     */
-    public function overview(?string $value)
+    public function overview($value)
     {
         $this->setProperty('overview', $value);
         return $this;
@@ -56,7 +58,7 @@ class Diet extends LifestyleModification
     * @param string|array $value
     * @return $this
     */
-    public function setOverview(?string $value)
+    public function setOverview($value)
     {
         $this->setProperty('overview', $value);
         return $this;
@@ -73,8 +75,9 @@ class Diet extends LifestyleModification
     * Specific physiologic benefits associated to the plan.
     * @param string|array $value
     * @return $this
+    * @deprecated use setPhysiologicalBenefits
     */
-    public function physiologicalBenefits(?string $value)
+    public function physiologicalBenefits($value)
     {
         $this->setProperty('physiologicalBenefits', $value);
         return $this;
@@ -83,7 +86,7 @@ class Diet extends LifestyleModification
     * @param string|array $value
     * @return $this
     */
-    public function setPhysiologicalBenefits(?string $value)
+    public function setPhysiologicalBenefits($value)
     {
         $this->setProperty('physiologicalBenefits', $value);
         return $this;
@@ -100,8 +103,9 @@ class Diet extends LifestyleModification
     * Medical expert advice related to the plan.
     * @param string|array $value
     * @return $this
+    * @deprecated use setExpertConsiderations
     */
-    public function expertConsiderations(?string $value)
+    public function expertConsiderations($value)
     {
         $this->setProperty('expertConsiderations', $value);
         return $this;
@@ -110,7 +114,7 @@ class Diet extends LifestyleModification
     * @param string|array $value
     * @return $this
     */
-    public function setExpertConsiderations(?string $value)
+    public function setExpertConsiderations($value)
     {
         $this->setProperty('expertConsiderations', $value);
         return $this;
@@ -125,8 +129,9 @@ class Diet extends LifestyleModification
 
     /**
     * People or organizations that endorse the plan.
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
+    * @deprecated use setEndorsers
     */
     public function endorsers($value)
     {
@@ -134,7 +139,7 @@ class Diet extends LifestyleModification
         return $this;
     }
    /**
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
     */
     public function setEndorsers($value)
@@ -154,8 +159,9 @@ class Diet extends LifestyleModification
     * Nutritional information specific to the dietary plan. May include dietary recommendations on what foods to avoid, what foods to consume, and specific alterations/deviations from the USDA or other regulatory body's approved dietary guidelines.
     * @param string|array $value
     * @return $this
+    * @deprecated use setDietFeatures
     */
-    public function dietFeatures(?string $value)
+    public function dietFeatures($value)
     {
         $this->setProperty('dietFeatures', $value);
         return $this;
@@ -164,7 +170,7 @@ class Diet extends LifestyleModification
     * @param string|array $value
     * @return $this
     */
-    public function setDietFeatures(?string $value)
+    public function setDietFeatures($value)
     {
         $this->setProperty('dietFeatures', $value);
         return $this;
@@ -179,7 +185,3 @@ class Diet extends LifestyleModification
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\LifestyleModification\\Diet','Thing\\Diet');
-

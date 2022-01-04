@@ -22,7 +22,3 @@ class ReportageNewsArticle extends NewsArticle
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Article\\NewsArticle\\ReportageNewsArticle','Thing\\ReportageNewsArticle');
-

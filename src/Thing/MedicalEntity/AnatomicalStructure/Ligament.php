@@ -15,7 +15,3 @@ class Ligament extends AnatomicalStructure
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\AnatomicalStructure\\Ligament','Thing\\Ligament');
-

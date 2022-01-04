@@ -22,7 +22,3 @@ class AcceptAction extends AllocateAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\OrganizeAction\\AllocateAction\\AcceptAction','Thing\\AcceptAction');
-

@@ -15,7 +15,3 @@ class SearchResultsPage extends WebPage
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\WebPage\\SearchResultsPage','Thing\\SearchResultsPage');
-

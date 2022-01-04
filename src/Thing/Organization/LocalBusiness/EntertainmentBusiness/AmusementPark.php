@@ -15,7 +15,3 @@ class AmusementPark extends EntertainmentBusiness
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\EntertainmentBusiness\\AmusementPark','Thing\\AmusementPark');
-

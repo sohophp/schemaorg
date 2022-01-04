@@ -19,8 +19,9 @@ class OwnershipInfo extends StructuredValue
 
     /**
     * The product that this structured value is referring to.
-    * @param Product|Service|array $value
+    * @param Product|Service|array|string $value
     * @return $this
+    * @deprecated use setTypeOfGood
     */
     public function typeOfGood($value)
     {
@@ -28,7 +29,7 @@ class OwnershipInfo extends StructuredValue
         return $this;
     }
    /**
-    * @param Product|Service|array $value
+    * @param Product|Service|array|string $value
     * @return $this
     */
     public function setTypeOfGood($value)
@@ -46,8 +47,9 @@ class OwnershipInfo extends StructuredValue
 
     /**
     * The date and time of giving up ownership on the product.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setOwnedThrough
     */
     public function ownedThrough($value)
     {
@@ -55,7 +57,7 @@ class OwnershipInfo extends StructuredValue
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setOwnedThrough($value)
@@ -73,8 +75,9 @@ class OwnershipInfo extends StructuredValue
 
     /**
     * The organization or person from which the product was acquired.
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
+    * @deprecated use setAcquiredFrom
     */
     public function acquiredFrom($value)
     {
@@ -82,7 +85,7 @@ class OwnershipInfo extends StructuredValue
         return $this;
     }
    /**
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
     */
     public function setAcquiredFrom($value)
@@ -100,8 +103,9 @@ class OwnershipInfo extends StructuredValue
 
     /**
     * The date and time of obtaining the product.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setOwnedFrom
     */
     public function ownedFrom($value)
     {
@@ -109,7 +113,7 @@ class OwnershipInfo extends StructuredValue
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setOwnedFrom($value)
@@ -127,7 +131,3 @@ class OwnershipInfo extends StructuredValue
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue\\OwnershipInfo','Thing\\OwnershipInfo');
-

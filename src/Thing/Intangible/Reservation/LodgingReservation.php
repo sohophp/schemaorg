@@ -21,8 +21,9 @@ class LodgingReservation extends Reservation
     * A full description of the lodging unit.
     * @param string|array $value
     * @return $this
+    * @deprecated use setLodgingUnitDescription
     */
-    public function lodgingUnitDescription(?string $value)
+    public function lodgingUnitDescription($value)
     {
         $this->setProperty('lodgingUnitDescription', $value);
         return $this;
@@ -31,7 +32,7 @@ class LodgingReservation extends Reservation
     * @param string|array $value
     * @return $this
     */
-    public function setLodgingUnitDescription(?string $value)
+    public function setLodgingUnitDescription($value)
     {
         $this->setProperty('lodgingUnitDescription', $value);
         return $this;
@@ -46,8 +47,9 @@ class LodgingReservation extends Reservation
 
     /**
     * The earliest someone may check into a lodging establishment.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setCheckinTime
     */
     public function checkinTime($value)
     {
@@ -55,7 +57,7 @@ class LodgingReservation extends Reservation
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setCheckinTime($value)
@@ -73,8 +75,9 @@ class LodgingReservation extends Reservation
 
     /**
     * The number of children staying in the unit.
-    * @param QuantitativeValue|int|array $value
+    * @param QuantitativeValue|int|array|string $value
     * @return $this
+    * @deprecated use setNumChildren
     */
     public function numChildren($value)
     {
@@ -82,7 +85,7 @@ class LodgingReservation extends Reservation
         return $this;
     }
    /**
-    * @param QuantitativeValue|int|array $value
+    * @param QuantitativeValue|int|array|string $value
     * @return $this
     */
     public function setNumChildren($value)
@@ -100,8 +103,9 @@ class LodgingReservation extends Reservation
 
     /**
     * The latest someone may check out of a lodging establishment.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setCheckoutTime
     */
     public function checkoutTime($value)
     {
@@ -109,7 +113,7 @@ class LodgingReservation extends Reservation
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setCheckoutTime($value)
@@ -129,6 +133,7 @@ class LodgingReservation extends Reservation
     * Textual description of the unit type (including suite vs. room, size of bed, etc.).
     * @param QualitativeValue|string|array $value
     * @return $this
+    * @deprecated use setLodgingUnitType
     */
     public function lodgingUnitType($value)
     {
@@ -154,8 +159,9 @@ class LodgingReservation extends Reservation
 
     /**
     * The number of adults staying in the unit.
-    * @param QuantitativeValue|int|array $value
+    * @param QuantitativeValue|int|array|string $value
     * @return $this
+    * @deprecated use setNumAdults
     */
     public function numAdults($value)
     {
@@ -163,7 +169,7 @@ class LodgingReservation extends Reservation
         return $this;
     }
    /**
-    * @param QuantitativeValue|int|array $value
+    * @param QuantitativeValue|int|array|string $value
     * @return $this
     */
     public function setNumAdults($value)
@@ -181,7 +187,3 @@ class LodgingReservation extends Reservation
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Reservation\\LodgingReservation','Thing\\LodgingReservation');
-

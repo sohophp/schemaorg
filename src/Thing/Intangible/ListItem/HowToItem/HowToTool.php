@@ -15,7 +15,3 @@ class HowToTool extends HowToItem
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\ListItem\\HowToItem\\HowToTool','Thing\\HowToTool');
-

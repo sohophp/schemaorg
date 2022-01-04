@@ -26,8 +26,9 @@ class SendAction extends TransferAction
 
     /**
     * A sub property of participant. The participant who is at the receiving end of the action.
-    * @param Person|ContactPoint|Organization|Audience|array $value
+    * @param Person|ContactPoint|Organization|Audience|array|string $value
     * @return $this
+    * @deprecated use setRecipient
     */
     public function recipient($value)
     {
@@ -35,7 +36,7 @@ class SendAction extends TransferAction
         return $this;
     }
    /**
-    * @param Person|ContactPoint|Organization|Audience|array $value
+    * @param Person|ContactPoint|Organization|Audience|array|string $value
     * @return $this
     */
     public function setRecipient($value)
@@ -53,19 +54,20 @@ class SendAction extends TransferAction
 
     /**
     * A sub property of instrument. The method of delivery.
-    * @param DeliveryMethod|array $value
+    * @param DeliveryMethod|array|string $value
     * @return $this
+    * @deprecated use setDeliveryMethod
     */
-    public function deliveryMethod(?DeliveryMethod $value)
+    public function deliveryMethod($value)
     {
         $this->setProperty('deliveryMethod', $value);
         return $this;
     }
    /**
-    * @param DeliveryMethod|array $value
+    * @param DeliveryMethod|array|string $value
     * @return $this
     */
-    public function setDeliveryMethod(?DeliveryMethod $value)
+    public function setDeliveryMethod($value)
     {
         $this->setProperty('deliveryMethod', $value);
         return $this;
@@ -80,7 +82,3 @@ class SendAction extends TransferAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\TransferAction\\SendAction','Thing\\SendAction');
-

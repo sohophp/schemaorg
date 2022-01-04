@@ -15,7 +15,3 @@ class OpinionNewsArticle extends NewsArticle
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Article\\NewsArticle\\OpinionNewsArticle','Thing\\OpinionNewsArticle');
-

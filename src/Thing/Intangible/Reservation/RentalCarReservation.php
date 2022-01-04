@@ -18,8 +18,9 @@ class RentalCarReservation extends Reservation
 
     /**
     * When a taxi will pickup a passenger or a rental car can be picked up.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setPickupTime
     */
     public function pickupTime($value)
     {
@@ -27,7 +28,7 @@ class RentalCarReservation extends Reservation
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setPickupTime($value)
@@ -45,19 +46,20 @@ class RentalCarReservation extends Reservation
 
     /**
     * Where a rental car can be dropped off.
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
+    * @deprecated use setDropoffLocation
     */
-    public function dropoffLocation(?Place $value)
+    public function dropoffLocation($value)
     {
         $this->setProperty('dropoffLocation', $value);
         return $this;
     }
    /**
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
     */
-    public function setDropoffLocation(?Place $value)
+    public function setDropoffLocation($value)
     {
         $this->setProperty('dropoffLocation', $value);
         return $this;
@@ -72,8 +74,9 @@ class RentalCarReservation extends Reservation
 
     /**
     * When a rental car can be dropped off.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setDropoffTime
     */
     public function dropoffTime($value)
     {
@@ -81,7 +84,7 @@ class RentalCarReservation extends Reservation
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setDropoffTime($value)
@@ -99,19 +102,20 @@ class RentalCarReservation extends Reservation
 
     /**
     * Where a taxi will pick up a passenger or a rental car can be picked up.
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
+    * @deprecated use setPickupLocation
     */
-    public function pickupLocation(?Place $value)
+    public function pickupLocation($value)
     {
         $this->setProperty('pickupLocation', $value);
         return $this;
     }
    /**
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
     */
-    public function setPickupLocation(?Place $value)
+    public function setPickupLocation($value)
     {
         $this->setProperty('pickupLocation', $value);
         return $this;
@@ -126,7 +130,3 @@ class RentalCarReservation extends Reservation
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Reservation\\RentalCarReservation','Thing\\RentalCarReservation');
-

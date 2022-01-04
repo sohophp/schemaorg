@@ -22,8 +22,9 @@ class ContactPoint extends StructuredValue
 
     /**
     * The geographic area where the service is provided.
-    * @param Place|AdministrativeArea|GeoShape|array $value
+    * @param Place|AdministrativeArea|GeoShape|array|string $value
     * @return $this
+    * @deprecated use setServiceArea
     */
     public function serviceArea($value)
     {
@@ -31,7 +32,7 @@ class ContactPoint extends StructuredValue
         return $this;
     }
    /**
-    * @param Place|AdministrativeArea|GeoShape|array $value
+    * @param Place|AdministrativeArea|GeoShape|array|string $value
     * @return $this
     */
     public function setServiceArea($value)
@@ -49,19 +50,20 @@ class ContactPoint extends StructuredValue
 
     /**
     * The hours during which this service or contact is available.
-    * @param OpeningHoursSpecification|array $value
+    * @param OpeningHoursSpecification|array|string $value
     * @return $this
+    * @deprecated use setHoursAvailable
     */
-    public function hoursAvailable(?OpeningHoursSpecification $value)
+    public function hoursAvailable($value)
     {
         $this->setProperty('hoursAvailable', $value);
         return $this;
     }
    /**
-    * @param OpeningHoursSpecification|array $value
+    * @param OpeningHoursSpecification|array|string $value
     * @return $this
     */
-    public function setHoursAvailable(?OpeningHoursSpecification $value)
+    public function setHoursAvailable($value)
     {
         $this->setProperty('hoursAvailable', $value);
         return $this;
@@ -76,19 +78,20 @@ class ContactPoint extends StructuredValue
 
     /**
     * An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).
-    * @param ContactPointOption|array $value
+    * @param ContactPointOption|array|string $value
     * @return $this
+    * @deprecated use setContactOption
     */
-    public function contactOption(?ContactPointOption $value)
+    public function contactOption($value)
     {
         $this->setProperty('contactOption', $value);
         return $this;
     }
    /**
-    * @param ContactPointOption|array $value
+    * @param ContactPointOption|array|string $value
     * @return $this
     */
-    public function setContactOption(?ContactPointOption $value)
+    public function setContactOption($value)
     {
         $this->setProperty('contactOption', $value);
         return $this;
@@ -105,6 +108,7 @@ class ContactPoint extends StructuredValue
     * A language someone may use with or at the item, service or place. Please use one of the language codes from the <a href="http://tools.ietf.org/html/bcp47">IETF BCP 47 standard</a>. See also <a class="localLink" href="http://schema.org/inLanguage">inLanguage</a>
     * @param string|Language|array $value
     * @return $this
+    * @deprecated use setAvailableLanguage
     */
     public function availableLanguage($value)
     {
@@ -132,8 +136,9 @@ class ContactPoint extends StructuredValue
     * The telephone number.
     * @param string|array $value
     * @return $this
+    * @deprecated use setTelephone
     */
-    public function telephone(?string $value)
+    public function telephone($value)
     {
         $this->setProperty('telephone', $value);
         return $this;
@@ -142,7 +147,7 @@ class ContactPoint extends StructuredValue
     * @param string|array $value
     * @return $this
     */
-    public function setTelephone(?string $value)
+    public function setTelephone($value)
     {
         $this->setProperty('telephone', $value);
         return $this;
@@ -159,8 +164,9 @@ class ContactPoint extends StructuredValue
     * Email address.
     * @param string|array $value
     * @return $this
+    * @deprecated use setEmail
     */
-    public function email(?string $value)
+    public function email($value)
     {
         $this->setProperty('email', $value);
         return $this;
@@ -169,7 +175,7 @@ class ContactPoint extends StructuredValue
     * @param string|array $value
     * @return $this
     */
-    public function setEmail(?string $value)
+    public function setEmail($value)
     {
         $this->setProperty('email', $value);
         return $this;
@@ -186,8 +192,9 @@ class ContactPoint extends StructuredValue
     * A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point.
     * @param string|array $value
     * @return $this
+    * @deprecated use setContactType
     */
-    public function contactType(?string $value)
+    public function contactType($value)
     {
         $this->setProperty('contactType', $value);
         return $this;
@@ -196,7 +203,7 @@ class ContactPoint extends StructuredValue
     * @param string|array $value
     * @return $this
     */
-    public function setContactType(?string $value)
+    public function setContactType($value)
     {
         $this->setProperty('contactType', $value);
         return $this;
@@ -213,6 +220,7 @@ class ContactPoint extends StructuredValue
     * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
     * @param string|Product|array $value
     * @return $this
+    * @deprecated use setProductSupported
     */
     public function productSupported($value)
     {
@@ -240,8 +248,9 @@ class ContactPoint extends StructuredValue
     * The fax number.
     * @param string|array $value
     * @return $this
+    * @deprecated use setFaxNumber
     */
-    public function faxNumber(?string $value)
+    public function faxNumber($value)
     {
         $this->setProperty('faxNumber', $value);
         return $this;
@@ -250,7 +259,7 @@ class ContactPoint extends StructuredValue
     * @param string|array $value
     * @return $this
     */
-    public function setFaxNumber(?string $value)
+    public function setFaxNumber($value)
     {
         $this->setProperty('faxNumber', $value);
         return $this;
@@ -267,6 +276,7 @@ class ContactPoint extends StructuredValue
     * The geographic area where a service or offered item is provided.
     * @param string|GeoShape|Place|AdministrativeArea|array $value
     * @return $this
+    * @deprecated use setAreaServed
     */
     public function areaServed($value)
     {
@@ -292,7 +302,3 @@ class ContactPoint extends StructuredValue
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue\\ContactPoint','Thing\\ContactPoint');
-

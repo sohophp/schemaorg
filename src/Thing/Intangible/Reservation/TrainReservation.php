@@ -17,7 +17,3 @@ class TrainReservation extends Reservation
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Reservation\\TrainReservation','Thing\\TrainReservation');
-

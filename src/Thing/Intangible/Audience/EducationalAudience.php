@@ -17,8 +17,9 @@ class EducationalAudience extends Audience
     * An educationalRole of an EducationalAudience.
     * @param string|array $value
     * @return $this
+    * @deprecated use setEducationalRole
     */
-    public function educationalRole(?string $value)
+    public function educationalRole($value)
     {
         $this->setProperty('educationalRole', $value);
         return $this;
@@ -27,7 +28,7 @@ class EducationalAudience extends Audience
     * @param string|array $value
     * @return $this
     */
-    public function setEducationalRole(?string $value)
+    public function setEducationalRole($value)
     {
         $this->setProperty('educationalRole', $value);
         return $this;
@@ -42,7 +43,3 @@ class EducationalAudience extends Audience
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Audience\\EducationalAudience','Thing\\EducationalAudience');
-

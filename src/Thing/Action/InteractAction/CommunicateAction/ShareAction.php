@@ -15,7 +15,3 @@ class ShareAction extends CommunicateAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\InteractAction\\CommunicateAction\\ShareAction','Thing\\ShareAction');
-

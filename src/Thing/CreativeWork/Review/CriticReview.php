@@ -15,7 +15,3 @@ class CriticReview extends Review
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Review\\CriticReview','Thing\\CriticReview');
-

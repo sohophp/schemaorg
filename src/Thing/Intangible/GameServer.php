@@ -17,19 +17,20 @@ class GameServer extends Intangible
 
     /**
     * Video game which is played on this server.
-    * @param VideoGame|array $value
+    * @param VideoGame|array|string $value
     * @return $this
+    * @deprecated use setGame
     */
-    public function game(?VideoGame $value)
+    public function game($value)
     {
         $this->setProperty('game', $value);
         return $this;
     }
    /**
-    * @param VideoGame|array $value
+    * @param VideoGame|array|string $value
     * @return $this
     */
-    public function setGame(?VideoGame $value)
+    public function setGame($value)
     {
         $this->setProperty('game', $value);
         return $this;
@@ -44,19 +45,20 @@ class GameServer extends Intangible
 
     /**
     * Number of players on the server.
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
+    * @deprecated use setPlayersOnline
     */
-    public function playersOnline(?int $value)
+    public function playersOnline($value)
     {
         $this->setProperty('playersOnline', $value);
         return $this;
     }
    /**
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
     */
-    public function setPlayersOnline(?int $value)
+    public function setPlayersOnline($value)
     {
         $this->setProperty('playersOnline', $value);
         return $this;
@@ -71,19 +73,20 @@ class GameServer extends Intangible
 
     /**
     * Status of a game server.
-    * @param GameServerStatus|array $value
+    * @param GameServerStatus|array|string $value
     * @return $this
+    * @deprecated use setServerStatus
     */
-    public function serverStatus(?GameServerStatus $value)
+    public function serverStatus($value)
     {
         $this->setProperty('serverStatus', $value);
         return $this;
     }
    /**
-    * @param GameServerStatus|array $value
+    * @param GameServerStatus|array|string $value
     * @return $this
     */
-    public function setServerStatus(?GameServerStatus $value)
+    public function setServerStatus($value)
     {
         $this->setProperty('serverStatus', $value);
         return $this;
@@ -98,7 +101,3 @@ class GameServer extends Intangible
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\GameServer','Thing\\GameServer');
-

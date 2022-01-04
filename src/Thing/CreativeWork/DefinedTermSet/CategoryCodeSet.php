@@ -16,19 +16,20 @@ class CategoryCodeSet extends DefinedTermSet
 
     /**
     * A Category code contained in this code set.
-    * @param CategoryCode|array $value
+    * @param CategoryCode|array|string $value
     * @return $this
+    * @deprecated use setHasCategoryCode
     */
-    public function hasCategoryCode(?CategoryCode $value)
+    public function hasCategoryCode($value)
     {
         $this->setProperty('hasCategoryCode', $value);
         return $this;
     }
    /**
-    * @param CategoryCode|array $value
+    * @param CategoryCode|array|string $value
     * @return $this
     */
-    public function setHasCategoryCode(?CategoryCode $value)
+    public function setHasCategoryCode($value)
     {
         $this->setProperty('hasCategoryCode', $value);
         return $this;
@@ -43,7 +44,3 @@ class CategoryCodeSet extends DefinedTermSet
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\DefinedTermSet\\CategoryCodeSet','Thing\\CategoryCodeSet');
-

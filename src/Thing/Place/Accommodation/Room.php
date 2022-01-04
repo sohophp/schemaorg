@@ -17,7 +17,3 @@ class Room extends Accommodation
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\Accommodation\\Room','Thing\\Room');
-

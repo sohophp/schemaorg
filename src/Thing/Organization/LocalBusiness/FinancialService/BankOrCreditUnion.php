@@ -15,7 +15,3 @@ class BankOrCreditUnion extends FinancialService
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\FinancialService\\BankOrCreditUnion','Thing\\BankOrCreditUnion');
-

@@ -17,8 +17,9 @@ class Enumeration extends Intangible
 
     /**
     * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
-    * @param Class|Enumeration|Property|array $value
+    * @param Class|Enumeration|Property|array|string $value
     * @return $this
+    * @deprecated use setSupersededBy
     */
     public function supersededBy($value)
     {
@@ -26,7 +27,7 @@ class Enumeration extends Intangible
         return $this;
     }
    /**
-    * @param Class|Enumeration|Property|array $value
+    * @param Class|Enumeration|Property|array|string $value
     * @return $this
     */
     public function setSupersededBy($value)
@@ -44,7 +45,3 @@ class Enumeration extends Intangible
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration','Thing\\Enumeration');
-

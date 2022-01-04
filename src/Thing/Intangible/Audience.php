@@ -18,8 +18,9 @@ class Audience extends Intangible
     * The target group associated with a given audience (e.g. veterans, car owners, musicians, etc.).
     * @param string|array $value
     * @return $this
+    * @deprecated use setAudienceType
     */
-    public function audienceType(?string $value)
+    public function audienceType($value)
     {
         $this->setProperty('audienceType', $value);
         return $this;
@@ -28,7 +29,7 @@ class Audience extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setAudienceType(?string $value)
+    public function setAudienceType($value)
     {
         $this->setProperty('audienceType', $value);
         return $this;
@@ -43,19 +44,20 @@ class Audience extends Intangible
 
     /**
     * The geographic area associated with the audience.
-    * @param AdministrativeArea|array $value
+    * @param AdministrativeArea|array|string $value
     * @return $this
+    * @deprecated use setGeographicArea
     */
-    public function geographicArea(?AdministrativeArea $value)
+    public function geographicArea($value)
     {
         $this->setProperty('geographicArea', $value);
         return $this;
     }
    /**
-    * @param AdministrativeArea|array $value
+    * @param AdministrativeArea|array|string $value
     * @return $this
     */
-    public function setGeographicArea(?AdministrativeArea $value)
+    public function setGeographicArea($value)
     {
         $this->setProperty('geographicArea', $value);
         return $this;
@@ -70,7 +72,3 @@ class Audience extends Intangible
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Audience','Thing\\Audience');
-

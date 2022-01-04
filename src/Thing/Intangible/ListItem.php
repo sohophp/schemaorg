@@ -16,19 +16,20 @@ class ListItem extends Intangible
 
     /**
     * A link to the ListItem that follows the current one.
-    * @param ListItem|array $value
+    * @param ListItem|array|string $value
     * @return $this
+    * @deprecated use setNextItem
     */
-    public function nextItem(?ListItem $value)
+    public function nextItem($value)
     {
         $this->setProperty('nextItem', $value);
         return $this;
     }
    /**
-    * @param ListItem|array $value
+    * @param ListItem|array|string $value
     * @return $this
     */
-    public function setNextItem(?ListItem $value)
+    public function setNextItem($value)
     {
         $this->setProperty('nextItem', $value);
         return $this;
@@ -45,6 +46,7 @@ class ListItem extends Intangible
     * The position of an item in a series or sequence of items.
     * @param string|int|array $value
     * @return $this
+    * @deprecated use setPosition
     */
     public function position($value)
     {
@@ -70,19 +72,20 @@ class ListItem extends Intangible
 
     /**
     * A link to the ListItem that preceeds the current one.
-    * @param ListItem|array $value
+    * @param ListItem|array|string $value
     * @return $this
+    * @deprecated use setPreviousItem
     */
-    public function previousItem(?ListItem $value)
+    public function previousItem($value)
     {
         $this->setProperty('previousItem', $value);
         return $this;
     }
    /**
-    * @param ListItem|array $value
+    * @param ListItem|array|string $value
     * @return $this
     */
-    public function setPreviousItem(?ListItem $value)
+    public function setPreviousItem($value)
     {
         $this->setProperty('previousItem', $value);
         return $this;
@@ -97,19 +100,20 @@ class ListItem extends Intangible
 
     /**
     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.
-    * @param Thing|array $value
+    * @param Thing|array|string $value
     * @return $this
+    * @deprecated use setItem
     */
-    public function item(?Thing $value)
+    public function item($value)
     {
         $this->setProperty('item', $value);
         return $this;
     }
    /**
-    * @param Thing|array $value
+    * @param Thing|array|string $value
     * @return $this
     */
-    public function setItem(?Thing $value)
+    public function setItem($value)
     {
         $this->setProperty('item', $value);
         return $this;
@@ -124,7 +128,3 @@ class ListItem extends Intangible
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\ListItem','Thing\\ListItem');
-

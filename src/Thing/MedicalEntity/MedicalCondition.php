@@ -28,19 +28,20 @@ class MedicalCondition extends MedicalEntity
 
     /**
     * Specifying a cause of something in general. e.g in medicine , one of the causative agent(s) that are most directly responsible for the pathophysiologic process that eventually results in the occurrence.
-    * @param MedicalCause|array $value
+    * @param MedicalCause|array|string $value
     * @return $this
+    * @deprecated use setCause
     */
-    public function cause(?MedicalCause $value)
+    public function cause($value)
     {
         $this->setProperty('cause', $value);
         return $this;
     }
    /**
-    * @param MedicalCause|array $value
+    * @param MedicalCause|array|string $value
     * @return $this
     */
-    public function setCause(?MedicalCause $value)
+    public function setCause($value)
     {
         $this->setProperty('cause', $value);
         return $this;
@@ -55,19 +56,20 @@ class MedicalCondition extends MedicalEntity
 
     /**
     * Specifying a drug or medicine used in a medication procedure
-    * @param Drug|array $value
+    * @param Drug|array|string $value
     * @return $this
+    * @deprecated use setDrug
     */
-    public function drug(?Drug $value)
+    public function drug($value)
     {
         $this->setProperty('drug', $value);
         return $this;
     }
    /**
-    * @param Drug|array $value
+    * @param Drug|array|string $value
     * @return $this
     */
-    public function setDrug(?Drug $value)
+    public function setDrug($value)
     {
         $this->setProperty('drug', $value);
         return $this;
@@ -82,19 +84,20 @@ class MedicalCondition extends MedicalEntity
 
     /**
     * A sign or symptom of this condition. Signs are objective or physically observable manifestations of the medical condition while symptoms are the subjective experience of the medical condition.
-    * @param MedicalSignOrSymptom|array $value
+    * @param MedicalSignOrSymptom|array|string $value
     * @return $this
+    * @deprecated use setSignOrSymptom
     */
-    public function signOrSymptom(?MedicalSignOrSymptom $value)
+    public function signOrSymptom($value)
     {
         $this->setProperty('signOrSymptom', $value);
         return $this;
     }
    /**
-    * @param MedicalSignOrSymptom|array $value
+    * @param MedicalSignOrSymptom|array|string $value
     * @return $this
     */
-    public function setSignOrSymptom(?MedicalSignOrSymptom $value)
+    public function setSignOrSymptom($value)
     {
         $this->setProperty('signOrSymptom', $value);
         return $this;
@@ -111,8 +114,9 @@ class MedicalCondition extends MedicalEntity
     * The expected progression of the condition if it is not treated and allowed to progress naturally.
     * @param string|array $value
     * @return $this
+    * @deprecated use setNaturalProgression
     */
-    public function naturalProgression(?string $value)
+    public function naturalProgression($value)
     {
         $this->setProperty('naturalProgression', $value);
         return $this;
@@ -121,7 +125,7 @@ class MedicalCondition extends MedicalEntity
     * @param string|array $value
     * @return $this
     */
-    public function setNaturalProgression(?string $value)
+    public function setNaturalProgression($value)
     {
         $this->setProperty('naturalProgression', $value);
         return $this;
@@ -136,19 +140,20 @@ class MedicalCondition extends MedicalEntity
 
     /**
     * A preventative therapy used to prevent an initial occurrence of the medical condition, such as vaccination.
-    * @param MedicalTherapy|array $value
+    * @param MedicalTherapy|array|string $value
     * @return $this
+    * @deprecated use setPrimaryPrevention
     */
-    public function primaryPrevention(?MedicalTherapy $value)
+    public function primaryPrevention($value)
     {
         $this->setProperty('primaryPrevention', $value);
         return $this;
     }
    /**
-    * @param MedicalTherapy|array $value
+    * @param MedicalTherapy|array|string $value
     * @return $this
     */
-    public function setPrimaryPrevention(?MedicalTherapy $value)
+    public function setPrimaryPrevention($value)
     {
         $this->setProperty('primaryPrevention', $value);
         return $this;
@@ -165,6 +170,7 @@ class MedicalCondition extends MedicalEntity
     * The status of the study (enumerated).
     * @param EventStatusType|string|MedicalStudyStatus|array $value
     * @return $this
+    * @deprecated use setStatus
     */
     public function status($value)
     {
@@ -190,19 +196,20 @@ class MedicalCondition extends MedicalEntity
 
     /**
     * A modifiable or non-modifiable factor that increases the risk of a patient contracting this condition, e.g. age,  coexisting condition.
-    * @param MedicalRiskFactor|array $value
+    * @param MedicalRiskFactor|array|string $value
     * @return $this
+    * @deprecated use setRiskFactor
     */
-    public function riskFactor(?MedicalRiskFactor $value)
+    public function riskFactor($value)
     {
         $this->setProperty('riskFactor', $value);
         return $this;
     }
    /**
-    * @param MedicalRiskFactor|array $value
+    * @param MedicalRiskFactor|array|string $value
     * @return $this
     */
-    public function setRiskFactor(?MedicalRiskFactor $value)
+    public function setRiskFactor($value)
     {
         $this->setProperty('riskFactor', $value);
         return $this;
@@ -219,8 +226,9 @@ class MedicalCondition extends MedicalEntity
     * A more specific type of the condition, where applicable, for example 'Type 1 Diabetes', 'Type 2 Diabetes', or 'Gestational Diabetes' for Diabetes.
     * @param string|array $value
     * @return $this
+    * @deprecated use setSubtype
     */
-    public function subtype(?string $value)
+    public function subtype($value)
     {
         $this->setProperty('subtype', $value);
         return $this;
@@ -229,7 +237,7 @@ class MedicalCondition extends MedicalEntity
     * @param string|array $value
     * @return $this
     */
-    public function setSubtype(?string $value)
+    public function setSubtype($value)
     {
         $this->setProperty('subtype', $value);
         return $this;
@@ -246,8 +254,9 @@ class MedicalCondition extends MedicalEntity
     * The likely outcome in either the short term or long term of the medical condition.
     * @param string|array $value
     * @return $this
+    * @deprecated use setExpectedPrognosis
     */
-    public function expectedPrognosis(?string $value)
+    public function expectedPrognosis($value)
     {
         $this->setProperty('expectedPrognosis', $value);
         return $this;
@@ -256,7 +265,7 @@ class MedicalCondition extends MedicalEntity
     * @param string|array $value
     * @return $this
     */
-    public function setExpectedPrognosis(?string $value)
+    public function setExpectedPrognosis($value)
     {
         $this->setProperty('expectedPrognosis', $value);
         return $this;
@@ -271,19 +280,20 @@ class MedicalCondition extends MedicalEntity
 
     /**
     * A preventative therapy used to prevent reoccurrence of the medical condition after an initial episode of the condition.
-    * @param MedicalTherapy|array $value
+    * @param MedicalTherapy|array|string $value
     * @return $this
+    * @deprecated use setSecondaryPrevention
     */
-    public function secondaryPrevention(?MedicalTherapy $value)
+    public function secondaryPrevention($value)
     {
         $this->setProperty('secondaryPrevention', $value);
         return $this;
     }
    /**
-    * @param MedicalTherapy|array $value
+    * @param MedicalTherapy|array|string $value
     * @return $this
     */
-    public function setSecondaryPrevention(?MedicalTherapy $value)
+    public function setSecondaryPrevention($value)
     {
         $this->setProperty('secondaryPrevention', $value);
         return $this;
@@ -298,19 +308,20 @@ class MedicalCondition extends MedicalEntity
 
     /**
     * One of a set of differential diagnoses for the condition. Specifically, a closely-related or competing diagnosis typically considered later in the cognitive process whereby this medical condition is distinguished from others most likely responsible for a similar collection of signs and symptoms to reach the most parsimonious diagnosis or diagnoses in a patient.
-    * @param DDxElement|array $value
+    * @param DDxElement|array|string $value
     * @return $this
+    * @deprecated use setDifferentialDiagnosis
     */
-    public function differentialDiagnosis(?DDxElement $value)
+    public function differentialDiagnosis($value)
     {
         $this->setProperty('differentialDiagnosis', $value);
         return $this;
     }
    /**
-    * @param DDxElement|array $value
+    * @param DDxElement|array|string $value
     * @return $this
     */
-    public function setDifferentialDiagnosis(?DDxElement $value)
+    public function setDifferentialDiagnosis($value)
     {
         $this->setProperty('differentialDiagnosis', $value);
         return $this;
@@ -325,19 +336,20 @@ class MedicalCondition extends MedicalEntity
 
     /**
     * A medical test typically performed given this condition.
-    * @param MedicalTest|array $value
+    * @param MedicalTest|array|string $value
     * @return $this
+    * @deprecated use setTypicalTest
     */
-    public function typicalTest(?MedicalTest $value)
+    public function typicalTest($value)
     {
         $this->setProperty('typicalTest', $value);
         return $this;
     }
    /**
-    * @param MedicalTest|array $value
+    * @param MedicalTest|array|string $value
     * @return $this
     */
-    public function setTypicalTest(?MedicalTest $value)
+    public function setTypicalTest($value)
     {
         $this->setProperty('typicalTest', $value);
         return $this;
@@ -352,19 +364,20 @@ class MedicalCondition extends MedicalEntity
 
     /**
     * The stage of the condition, if applicable.
-    * @param MedicalConditionStage|array $value
+    * @param MedicalConditionStage|array|string $value
     * @return $this
+    * @deprecated use setStage
     */
-    public function stage(?MedicalConditionStage $value)
+    public function stage($value)
     {
         $this->setProperty('stage', $value);
         return $this;
     }
    /**
-    * @param MedicalConditionStage|array $value
+    * @param MedicalConditionStage|array|string $value
     * @return $this
     */
-    public function setStage(?MedicalConditionStage $value)
+    public function setStage($value)
     {
         $this->setProperty('stage', $value);
         return $this;
@@ -381,8 +394,9 @@ class MedicalCondition extends MedicalEntity
     * A possible unexpected and unfavorable evolution of a medical condition. Complications may include worsening of the signs or symptoms of the disease, extension of the condition to other organ systems, etc.
     * @param string|array $value
     * @return $this
+    * @deprecated use setPossibleComplication
     */
-    public function possibleComplication(?string $value)
+    public function possibleComplication($value)
     {
         $this->setProperty('possibleComplication', $value);
         return $this;
@@ -391,7 +405,7 @@ class MedicalCondition extends MedicalEntity
     * @param string|array $value
     * @return $this
     */
-    public function setPossibleComplication(?string $value)
+    public function setPossibleComplication($value)
     {
         $this->setProperty('possibleComplication', $value);
         return $this;
@@ -406,8 +420,9 @@ class MedicalCondition extends MedicalEntity
 
     /**
     * The anatomy of the underlying organ system or structures associated with this entity.
-    * @param SuperficialAnatomy|AnatomicalStructure|AnatomicalSystem|array $value
+    * @param SuperficialAnatomy|AnatomicalStructure|AnatomicalSystem|array|string $value
     * @return $this
+    * @deprecated use setAssociatedAnatomy
     */
     public function associatedAnatomy($value)
     {
@@ -415,7 +430,7 @@ class MedicalCondition extends MedicalEntity
         return $this;
     }
    /**
-    * @param SuperficialAnatomy|AnatomicalStructure|AnatomicalSystem|array $value
+    * @param SuperficialAnatomy|AnatomicalStructure|AnatomicalSystem|array|string $value
     * @return $this
     */
     public function setAssociatedAnatomy($value)
@@ -435,8 +450,9 @@ class MedicalCondition extends MedicalEntity
     * The characteristics of associated patients, such as age, gender, race etc.
     * @param string|array $value
     * @return $this
+    * @deprecated use setEpidemiology
     */
-    public function epidemiology(?string $value)
+    public function epidemiology($value)
     {
         $this->setProperty('epidemiology', $value);
         return $this;
@@ -445,7 +461,7 @@ class MedicalCondition extends MedicalEntity
     * @param string|array $value
     * @return $this
     */
-    public function setEpidemiology(?string $value)
+    public function setEpidemiology($value)
     {
         $this->setProperty('epidemiology', $value);
         return $this;
@@ -462,8 +478,9 @@ class MedicalCondition extends MedicalEntity
     * Changes in the normal mechanical, physical, and biochemical functions that are associated with this activity or condition.
     * @param string|array $value
     * @return $this
+    * @deprecated use setPathophysiology
     */
-    public function pathophysiology(?string $value)
+    public function pathophysiology($value)
     {
         $this->setProperty('pathophysiology', $value);
         return $this;
@@ -472,7 +489,7 @@ class MedicalCondition extends MedicalEntity
     * @param string|array $value
     * @return $this
     */
-    public function setPathophysiology(?string $value)
+    public function setPathophysiology($value)
     {
         $this->setProperty('pathophysiology', $value);
         return $this;
@@ -487,19 +504,20 @@ class MedicalCondition extends MedicalEntity
 
     /**
     * A possible treatment to address this condition, sign or symptom.
-    * @param MedicalTherapy|array $value
+    * @param MedicalTherapy|array|string $value
     * @return $this
+    * @deprecated use setPossibleTreatment
     */
-    public function possibleTreatment(?MedicalTherapy $value)
+    public function possibleTreatment($value)
     {
         $this->setProperty('possibleTreatment', $value);
         return $this;
     }
    /**
-    * @param MedicalTherapy|array $value
+    * @param MedicalTherapy|array|string $value
     * @return $this
     */
-    public function setPossibleTreatment(?MedicalTherapy $value)
+    public function setPossibleTreatment($value)
     {
         $this->setProperty('possibleTreatment', $value);
         return $this;
@@ -514,7 +532,3 @@ class MedicalCondition extends MedicalEntity
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalCondition','Thing\\MedicalCondition');
-

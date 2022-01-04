@@ -20,19 +20,20 @@ class Clip extends CreativeWork
 
     /**
     * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setActor
     */
-    public function actor(?Person $value)
+    public function actor($value)
     {
         $this->setProperty('actor', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setActor(?Person $value)
+    public function setActor($value)
     {
         $this->setProperty('actor', $value);
         return $this;
@@ -47,19 +48,20 @@ class Clip extends CreativeWork
 
     /**
     * The series to which this episode or season belongs.
-    * @param CreativeWorkSeries|array $value
+    * @param CreativeWorkSeries|array|string $value
     * @return $this
+    * @deprecated use setPartOfSeries
     */
-    public function partOfSeries(?CreativeWorkSeries $value)
+    public function partOfSeries($value)
     {
         $this->setProperty('partOfSeries', $value);
         return $this;
     }
    /**
-    * @param CreativeWorkSeries|array $value
+    * @param CreativeWorkSeries|array|string $value
     * @return $this
     */
-    public function setPartOfSeries(?CreativeWorkSeries $value)
+    public function setPartOfSeries($value)
     {
         $this->setProperty('partOfSeries', $value);
         return $this;
@@ -74,19 +76,20 @@ class Clip extends CreativeWork
 
     /**
     * The episode to which this clip belongs.
-    * @param Episode|array $value
+    * @param Episode|array|string $value
     * @return $this
+    * @deprecated use setPartOfEpisode
     */
-    public function partOfEpisode(?Episode $value)
+    public function partOfEpisode($value)
     {
         $this->setProperty('partOfEpisode', $value);
         return $this;
     }
    /**
-    * @param Episode|array $value
+    * @param Episode|array|string $value
     * @return $this
     */
-    public function setPartOfEpisode(?Episode $value)
+    public function setPartOfEpisode($value)
     {
         $this->setProperty('partOfEpisode', $value);
         return $this;
@@ -101,19 +104,20 @@ class Clip extends CreativeWork
 
     /**
     * The season to which this episode belongs.
-    * @param CreativeWorkSeason|array $value
+    * @param CreativeWorkSeason|array|string $value
     * @return $this
+    * @deprecated use setPartOfSeason
     */
-    public function partOfSeason(?CreativeWorkSeason $value)
+    public function partOfSeason($value)
     {
         $this->setProperty('partOfSeason', $value);
         return $this;
     }
    /**
-    * @param CreativeWorkSeason|array $value
+    * @param CreativeWorkSeason|array|string $value
     * @return $this
     */
-    public function setPartOfSeason(?CreativeWorkSeason $value)
+    public function setPartOfSeason($value)
     {
         $this->setProperty('partOfSeason', $value);
         return $this;
@@ -128,8 +132,9 @@ class Clip extends CreativeWork
 
     /**
     * The composer of the soundtrack.
-    * @param Person|MusicGroup|array $value
+    * @param Person|MusicGroup|array|string $value
     * @return $this
+    * @deprecated use setMusicBy
     */
     public function musicBy($value)
     {
@@ -137,7 +142,7 @@ class Clip extends CreativeWork
         return $this;
     }
    /**
-    * @param Person|MusicGroup|array $value
+    * @param Person|MusicGroup|array|string $value
     * @return $this
     */
     public function setMusicBy($value)
@@ -155,19 +160,20 @@ class Clip extends CreativeWork
 
     /**
     * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setDirectors
     */
-    public function directors(?Person $value)
+    public function directors($value)
     {
         $this->setProperty('directors', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setDirectors(?Person $value)
+    public function setDirectors($value)
     {
         $this->setProperty('directors', $value);
         return $this;
@@ -182,8 +188,9 @@ class Clip extends CreativeWork
 
     /**
     * The end time of the clip expressed as the number of seconds from the beginning of the work.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setEndOffset
     */
     public function endOffset($value)
     {
@@ -191,7 +198,7 @@ class Clip extends CreativeWork
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setEndOffset($value)
@@ -209,19 +216,20 @@ class Clip extends CreativeWork
 
     /**
     * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setDirector
     */
-    public function director(?Person $value)
+    public function director($value)
     {
         $this->setProperty('director', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setDirector(?Person $value)
+    public function setDirector($value)
     {
         $this->setProperty('director', $value);
         return $this;
@@ -236,19 +244,20 @@ class Clip extends CreativeWork
 
     /**
     * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setActors
     */
-    public function actors(?Person $value)
+    public function actors($value)
     {
         $this->setProperty('actors', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setActors(?Person $value)
+    public function setActors($value)
     {
         $this->setProperty('actors', $value);
         return $this;
@@ -263,8 +272,9 @@ class Clip extends CreativeWork
 
     /**
     * The start time of the clip expressed as the number of seconds from the beginning of the work.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setStartOffset
     */
     public function startOffset($value)
     {
@@ -272,7 +282,7 @@ class Clip extends CreativeWork
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setStartOffset($value)
@@ -292,6 +302,7 @@ class Clip extends CreativeWork
     * Position of the clip within an ordered group of clips.
     * @param string|int|array $value
     * @return $this
+    * @deprecated use setClipNumber
     */
     public function clipNumber($value)
     {
@@ -317,7 +328,3 @@ class Clip extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Clip','Thing\\Clip');
-

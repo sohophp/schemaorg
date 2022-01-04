@@ -16,19 +16,20 @@ class EducationalOrganization extends Organization
 
     /**
     * Alumni of an organization.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setAlumni
     */
-    public function alumni(?Person $value)
+    public function alumni($value)
     {
         $this->setProperty('alumni', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setAlumni(?Person $value)
+    public function setAlumni($value)
     {
         $this->setProperty('alumni', $value);
         return $this;
@@ -43,7 +44,3 @@ class EducationalOrganization extends Organization
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\EducationalOrganization','Thing\\EducationalOrganization');
-

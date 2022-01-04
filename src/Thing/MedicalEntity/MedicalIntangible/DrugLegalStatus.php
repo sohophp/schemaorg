@@ -16,19 +16,20 @@ class DrugLegalStatus extends MedicalIntangible
 
     /**
     * The location in which the status applies.
-    * @param AdministrativeArea|array $value
+    * @param AdministrativeArea|array|string $value
     * @return $this
+    * @deprecated use setApplicableLocation
     */
-    public function applicableLocation(?AdministrativeArea $value)
+    public function applicableLocation($value)
     {
         $this->setProperty('applicableLocation', $value);
         return $this;
     }
    /**
-    * @param AdministrativeArea|array $value
+    * @param AdministrativeArea|array|string $value
     * @return $this
     */
-    public function setApplicableLocation(?AdministrativeArea $value)
+    public function setApplicableLocation($value)
     {
         $this->setProperty('applicableLocation', $value);
         return $this;
@@ -43,7 +44,3 @@ class DrugLegalStatus extends MedicalIntangible
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalIntangible\\DrugLegalStatus','Thing\\DrugLegalStatus');
-

@@ -19,19 +19,20 @@ class EducationalOccupationalCredential extends CreativeWork
 
     /**
     * The duration of validity of a permit or similar thing.
-    * @param Duration|array $value
+    * @param Duration|array|string $value
     * @return $this
+    * @deprecated use setValidFor
     */
-    public function validFor(?Duration $value)
+    public function validFor($value)
     {
         $this->setProperty('validFor', $value);
         return $this;
     }
    /**
-    * @param Duration|array $value
+    * @param Duration|array|string $value
     * @return $this
     */
-    public function setValidFor(?Duration $value)
+    public function setValidFor($value)
     {
         $this->setProperty('validFor', $value);
         return $this;
@@ -48,6 +49,7 @@ class EducationalOccupationalCredential extends CreativeWork
     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
     * @param string|DefinedTerm|string|array $value
     * @return $this
+    * @deprecated use setEducationalLevel
     */
     public function educationalLevel($value)
     {
@@ -73,19 +75,20 @@ class EducationalOccupationalCredential extends CreativeWork
 
     /**
     * An organization that acknowledges the validity, value or utility of a credential. Note: recognition may include a process of quality assurance or accreditation.
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
+    * @deprecated use setRecognizedBy
     */
-    public function recognizedBy(?Organization $value)
+    public function recognizedBy($value)
     {
         $this->setProperty('recognizedBy', $value);
         return $this;
     }
    /**
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
     */
-    public function setRecognizedBy(?Organization $value)
+    public function setRecognizedBy($value)
     {
         $this->setProperty('recognizedBy', $value);
         return $this;
@@ -102,6 +105,7 @@ class EducationalOccupationalCredential extends CreativeWork
     * Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity.
     * @param string|string|DefinedTerm|array $value
     * @return $this
+    * @deprecated use setCompetencyRequired
     */
     public function competencyRequired($value)
     {
@@ -129,6 +133,7 @@ class EducationalOccupationalCredential extends CreativeWork
     * The category or type of credential being described, for example "degree”, “certificate”, “badge”, or more specific term.
     * @param DefinedTerm|string|string|array $value
     * @return $this
+    * @deprecated use setCredentialCategory
     */
     public function credentialCategory($value)
     {
@@ -154,19 +159,20 @@ class EducationalOccupationalCredential extends CreativeWork
 
     /**
     * The geographic area where a permit or similar thing is valid.
-    * @param AdministrativeArea|array $value
+    * @param AdministrativeArea|array|string $value
     * @return $this
+    * @deprecated use setValidIn
     */
-    public function validIn(?AdministrativeArea $value)
+    public function validIn($value)
     {
         $this->setProperty('validIn', $value);
         return $this;
     }
    /**
-    * @param AdministrativeArea|array $value
+    * @param AdministrativeArea|array|string $value
     * @return $this
     */
-    public function setValidIn(?AdministrativeArea $value)
+    public function setValidIn($value)
     {
         $this->setProperty('validIn', $value);
         return $this;
@@ -181,7 +187,3 @@ class EducationalOccupationalCredential extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\EducationalOccupationalCredential','Thing\\EducationalOccupationalCredential');
-

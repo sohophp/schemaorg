@@ -15,7 +15,3 @@ class ElementarySchool extends EducationalOrganization
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\EducationalOrganization\\ElementarySchool','Thing\\ElementarySchool');
-

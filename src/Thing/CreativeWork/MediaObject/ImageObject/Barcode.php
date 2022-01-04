@@ -15,7 +15,3 @@ class Barcode extends ImageObject
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\MediaObject\\ImageObject\\Barcode','Thing\\Barcode');
-

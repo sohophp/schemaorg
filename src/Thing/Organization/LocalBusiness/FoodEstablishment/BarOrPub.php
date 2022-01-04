@@ -15,7 +15,3 @@ class BarOrPub extends FoodEstablishment
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\FoodEstablishment\\BarOrPub','Thing\\BarOrPub');
-

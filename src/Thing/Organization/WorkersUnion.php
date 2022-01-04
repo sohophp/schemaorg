@@ -15,7 +15,3 @@ class WorkersUnion extends Organization
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\WorkersUnion','Thing\\WorkersUnion');
-

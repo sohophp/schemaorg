@@ -24,19 +24,20 @@ class Reservation extends Intangible
 
     /**
     * The current status of the reservation.
-    * @param ReservationStatusType|array $value
+    * @param ReservationStatusType|array|string $value
     * @return $this
+    * @deprecated use setReservationStatus
     */
-    public function reservationStatus(?ReservationStatusType $value)
+    public function reservationStatus($value)
     {
         $this->setProperty('reservationStatus', $value);
         return $this;
     }
    /**
-    * @param ReservationStatusType|array $value
+    * @param ReservationStatusType|array|string $value
     * @return $this
     */
-    public function setReservationStatus(?ReservationStatusType $value)
+    public function setReservationStatus($value)
     {
         $this->setProperty('reservationStatus', $value);
         return $this;
@@ -51,8 +52,9 @@ class Reservation extends Intangible
 
     /**
     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
+    * @deprecated use setProvider
     */
     public function provider($value)
     {
@@ -60,7 +62,7 @@ class Reservation extends Intangible
         return $this;
     }
    /**
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
     */
     public function setProvider($value)
@@ -78,19 +80,20 @@ class Reservation extends Intangible
 
     /**
     * Any membership in a frequent flyer, hotel loyalty program, etc. being applied to the reservation.
-    * @param ProgramMembership|array $value
+    * @param ProgramMembership|array|string $value
     * @return $this
+    * @deprecated use setProgramMembershipUsed
     */
-    public function programMembershipUsed(?ProgramMembership $value)
+    public function programMembershipUsed($value)
     {
         $this->setProperty('programMembershipUsed', $value);
         return $this;
     }
    /**
-    * @param ProgramMembership|array $value
+    * @param ProgramMembership|array|string $value
     * @return $this
     */
-    public function setProgramMembershipUsed(?ProgramMembership $value)
+    public function setProgramMembershipUsed($value)
     {
         $this->setProperty('programMembershipUsed', $value);
         return $this;
@@ -105,8 +108,9 @@ class Reservation extends Intangible
 
     /**
     * The person or organization the reservation or ticket is for.
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
+    * @deprecated use setUnderName
     */
     public function underName($value)
     {
@@ -114,7 +118,7 @@ class Reservation extends Intangible
         return $this;
     }
    /**
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
     */
     public function setUnderName($value)
@@ -132,8 +136,9 @@ class Reservation extends Intangible
 
     /**
     * 'bookingAgent' is an out-dated term indicating a 'broker' that serves as a booking agent.
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
+    * @deprecated use setBookingAgent
     */
     public function bookingAgent($value)
     {
@@ -141,7 +146,7 @@ class Reservation extends Intangible
         return $this;
     }
    /**
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
     */
     public function setBookingAgent($value)
@@ -169,6 +174,7 @@ Usage guidelines:<br/><br/>
 
     * @param PriceSpecification|string|array $value
     * @return $this
+    * @deprecated use setTotalPrice
     */
     public function totalPrice($value)
     {
@@ -194,19 +200,20 @@ Usage guidelines:<br/><br/>
 
     /**
     * The thing -- flight, event, restaurant,etc. being reserved.
-    * @param Thing|array $value
+    * @param Thing|array|string $value
     * @return $this
+    * @deprecated use setReservationFor
     */
-    public function reservationFor(?Thing $value)
+    public function reservationFor($value)
     {
         $this->setProperty('reservationFor', $value);
         return $this;
     }
    /**
-    * @param Thing|array $value
+    * @param Thing|array|string $value
     * @return $this
     */
-    public function setReservationFor(?Thing $value)
+    public function setReservationFor($value)
     {
         $this->setProperty('reservationFor', $value);
         return $this;
@@ -225,8 +232,9 @@ Usage guidelines:<br/><br/>
 Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 currency format</a> e.g. "USD"; <a href="https://en.wikipedia.org/wiki/List_of_cryptocurrencies">Ticker symbol</a> for cryptocurrencies e.g. "BTC"; well known names for <a href="https://en.wikipedia.org/wiki/Local_exchange_trading_system">Local Exchange Tradings Systems</a> (LETS) and other currency types e.g. "Ithaca HOUR".
     * @param string|array $value
     * @return $this
+    * @deprecated use setPriceCurrency
     */
-    public function priceCurrency(?string $value)
+    public function priceCurrency($value)
     {
         $this->setProperty('priceCurrency', $value);
         return $this;
@@ -235,7 +243,7 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
     * @param string|array $value
     * @return $this
     */
-    public function setPriceCurrency(?string $value)
+    public function setPriceCurrency($value)
     {
         $this->setProperty('priceCurrency', $value);
         return $this;
@@ -250,8 +258,9 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
 
     /**
     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
+    * @deprecated use setBroker
     */
     public function broker($value)
     {
@@ -259,7 +268,7 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
         return $this;
     }
    /**
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
     */
     public function setBroker($value)
@@ -277,8 +286,9 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
 
     /**
     * The date and time the reservation was modified.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setModifiedTime
     */
     public function modifiedTime($value)
     {
@@ -286,7 +296,7 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setModifiedTime($value)
@@ -304,8 +314,9 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
 
     /**
     * The date and time the reservation was booked.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setBookingTime
     */
     public function bookingTime($value)
     {
@@ -313,7 +324,7 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setBookingTime($value)
@@ -333,8 +344,9 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
     * A unique identifier for the reservation.
     * @param string|array $value
     * @return $this
+    * @deprecated use setReservationId
     */
-    public function reservationId(?string $value)
+    public function reservationId($value)
     {
         $this->setProperty('reservationId', $value);
         return $this;
@@ -343,7 +355,7 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
     * @param string|array $value
     * @return $this
     */
-    public function setReservationId(?string $value)
+    public function setReservationId($value)
     {
         $this->setProperty('reservationId', $value);
         return $this;
@@ -358,19 +370,20 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
 
     /**
     * A ticket associated with the reservation.
-    * @param Ticket|array $value
+    * @param Ticket|array|string $value
     * @return $this
+    * @deprecated use setReservedTicket
     */
-    public function reservedTicket(?Ticket $value)
+    public function reservedTicket($value)
     {
         $this->setProperty('reservedTicket', $value);
         return $this;
     }
    /**
-    * @param Ticket|array $value
+    * @param Ticket|array|string $value
     * @return $this
     */
-    public function setReservedTicket(?Ticket $value)
+    public function setReservedTicket($value)
     {
         $this->setProperty('reservedTicket', $value);
         return $this;
@@ -385,7 +398,3 @@ Use standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 c
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Reservation','Thing\\Reservation');
-

@@ -19,8 +19,9 @@ class MusicGroup extends PerformingGroup
 
     /**
     * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
-    * @param ItemList|MusicRecording|array $value
+    * @param ItemList|MusicRecording|array|string $value
     * @return $this
+    * @deprecated use setTrack
     */
     public function track($value)
     {
@@ -28,7 +29,7 @@ class MusicGroup extends PerformingGroup
         return $this;
     }
    /**
-    * @param ItemList|MusicRecording|array $value
+    * @param ItemList|MusicRecording|array|string $value
     * @return $this
     */
     public function setTrack($value)
@@ -48,6 +49,7 @@ class MusicGroup extends PerformingGroup
     * Genre of the creative work, broadcast channel or group.
     * @param string|string|array $value
     * @return $this
+    * @deprecated use setGenre
     */
     public function genre($value)
     {
@@ -73,19 +75,20 @@ class MusicGroup extends PerformingGroup
 
     /**
     * A music recording (track)&#x2014;usually a single song.
-    * @param MusicRecording|array $value
+    * @param MusicRecording|array|string $value
     * @return $this
+    * @deprecated use setTracks
     */
-    public function tracks(?MusicRecording $value)
+    public function tracks($value)
     {
         $this->setProperty('tracks', $value);
         return $this;
     }
    /**
-    * @param MusicRecording|array $value
+    * @param MusicRecording|array|string $value
     * @return $this
     */
-    public function setTracks(?MusicRecording $value)
+    public function setTracks($value)
     {
         $this->setProperty('tracks', $value);
         return $this;
@@ -100,19 +103,20 @@ class MusicGroup extends PerformingGroup
 
     /**
     * A member of a music group&#x2014;for example, John, Paul, George, or Ringo.
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
+    * @deprecated use setMusicGroupMember
     */
-    public function musicGroupMember(?Person $value)
+    public function musicGroupMember($value)
     {
         $this->setProperty('musicGroupMember', $value);
         return $this;
     }
    /**
-    * @param Person|array $value
+    * @param Person|array|string $value
     * @return $this
     */
-    public function setMusicGroupMember(?Person $value)
+    public function setMusicGroupMember($value)
     {
         $this->setProperty('musicGroupMember', $value);
         return $this;
@@ -127,19 +131,20 @@ class MusicGroup extends PerformingGroup
 
     /**
     * A collection of music albums.
-    * @param MusicAlbum|array $value
+    * @param MusicAlbum|array|string $value
     * @return $this
+    * @deprecated use setAlbums
     */
-    public function albums(?MusicAlbum $value)
+    public function albums($value)
     {
         $this->setProperty('albums', $value);
         return $this;
     }
    /**
-    * @param MusicAlbum|array $value
+    * @param MusicAlbum|array|string $value
     * @return $this
     */
-    public function setAlbums(?MusicAlbum $value)
+    public function setAlbums($value)
     {
         $this->setProperty('albums', $value);
         return $this;
@@ -154,19 +159,20 @@ class MusicGroup extends PerformingGroup
 
     /**
     * A music album.
-    * @param MusicAlbum|array $value
+    * @param MusicAlbum|array|string $value
     * @return $this
+    * @deprecated use setAlbum
     */
-    public function album(?MusicAlbum $value)
+    public function album($value)
     {
         $this->setProperty('album', $value);
         return $this;
     }
    /**
-    * @param MusicAlbum|array $value
+    * @param MusicAlbum|array|string $value
     * @return $this
     */
-    public function setAlbum(?MusicAlbum $value)
+    public function setAlbum($value)
     {
         $this->setProperty('album', $value);
         return $this;
@@ -181,7 +187,3 @@ class MusicGroup extends PerformingGroup
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\PerformingGroup\\MusicGroup','Thing\\MusicGroup');
-

@@ -24,8 +24,9 @@ class MediaObject extends CreativeWork
     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from <em>January</em> to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>
 
 Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setStartTime
     */
     public function startTime($value)
     {
@@ -33,7 +34,7 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setStartTime($value)
@@ -51,8 +52,9 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
 
     /**
     * Date when this media object was uploaded to this site.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setUploadDate
     */
     public function uploadDate($value)
     {
@@ -60,7 +62,7 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setUploadDate($value)
@@ -80,8 +82,9 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
     * Player type required&#x2014;for example, Flash or Silverlight.
     * @param string|array $value
     * @return $this
+    * @deprecated use setPlayerType
     */
-    public function playerType(?string $value)
+    public function playerType($value)
     {
         $this->setProperty('playerType', $value);
         return $this;
@@ -90,7 +93,7 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
     * @param string|array $value
     * @return $this
     */
-    public function setPlayerType(?string $value)
+    public function setPlayerType($value)
     {
         $this->setProperty('playerType', $value);
         return $this;
@@ -105,8 +108,9 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
 
     /**
     * The height of the item.
-    * @param Distance|QuantitativeValue|array $value
+    * @param Distance|QuantitativeValue|array|string $value
     * @return $this
+    * @deprecated use setHeight
     */
     public function height($value)
     {
@@ -114,7 +118,7 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
         return $this;
     }
    /**
-    * @param Distance|QuantitativeValue|array $value
+    * @param Distance|QuantitativeValue|array|string $value
     * @return $this
     */
     public function setHeight($value)
@@ -134,8 +138,9 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
     * The bitrate of the media object.
     * @param string|array $value
     * @return $this
+    * @deprecated use setBitrate
     */
-    public function bitrate(?string $value)
+    public function bitrate($value)
     {
         $this->setProperty('bitrate', $value);
         return $this;
@@ -144,7 +149,7 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
     * @param string|array $value
     * @return $this
     */
-    public function setBitrate(?string $value)
+    public function setBitrate($value)
     {
         $this->setProperty('bitrate', $value);
         return $this;
@@ -159,8 +164,9 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
 
     /**
     * Indicates if use of the media require a subscription  (either paid or free). Allowed values are <code>true</code> or <code>false</code> (note that an earlier version had 'yes', 'no').
-    * @param MediaSubscription|bool|array $value
+    * @param MediaSubscription|bool|array|string $value
     * @return $this
+    * @deprecated use setRequiresSubscription
     */
     public function requiresSubscription($value)
     {
@@ -168,7 +174,7 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
         return $this;
     }
    /**
-    * @param MediaSubscription|bool|array $value
+    * @param MediaSubscription|bool|array|string $value
     * @return $this
     */
     public function setRequiresSubscription($value)
@@ -186,19 +192,20 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
 
     /**
     * The regions where the media is allowed. If not specified, then it's assumed to be allowed everywhere. Specify the countries in <a href="http://en.wikipedia.org/wiki/ISO_3166">ISO 3166 format</a>.
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
+    * @deprecated use setRegionsAllowed
     */
-    public function regionsAllowed(?Place $value)
+    public function regionsAllowed($value)
     {
         $this->setProperty('regionsAllowed', $value);
         return $this;
     }
    /**
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
     */
-    public function setRegionsAllowed(?Place $value)
+    public function setRegionsAllowed($value)
     {
         $this->setProperty('regionsAllowed', $value);
         return $this;
@@ -215,8 +222,9 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
     * File size in (mega/kilo) bytes.
     * @param string|array $value
     * @return $this
+    * @deprecated use setContentSize
     */
-    public function contentSize(?string $value)
+    public function contentSize($value)
     {
         $this->setProperty('contentSize', $value);
         return $this;
@@ -225,7 +233,7 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
     * @param string|array $value
     * @return $this
     */
-    public function setContentSize(?string $value)
+    public function setContentSize($value)
     {
         $this->setProperty('contentSize', $value);
         return $this;
@@ -242,8 +250,9 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
     * A URL pointing to a player for a specific video. In general, this is the information in the <code>src</code> element of an <code>embed</code> tag and should not be the same as the content of the <code>loc</code> tag.
     * @param string|array $value
     * @return $this
+    * @deprecated use setEmbedUrl
     */
-    public function embedUrl(?string $value)
+    public function embedUrl($value)
     {
         $this->setProperty('embedUrl', $value);
         return $this;
@@ -252,7 +261,7 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
     * @param string|array $value
     * @return $this
     */
-    public function setEmbedUrl(?string $value)
+    public function setEmbedUrl($value)
     {
         $this->setProperty('embedUrl', $value);
         return $this;
@@ -267,8 +276,9 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
 
     /**
     * The width of the item.
-    * @param QuantitativeValue|Distance|array $value
+    * @param QuantitativeValue|Distance|array|string $value
     * @return $this
+    * @deprecated use setWidth
     */
     public function width($value)
     {
@@ -276,7 +286,7 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
         return $this;
     }
    /**
-    * @param QuantitativeValue|Distance|array $value
+    * @param QuantitativeValue|Distance|array|string $value
     * @return $this
     */
     public function setWidth($value)
@@ -296,8 +306,9 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
     * Actual bytes of the media object, for example the image file or video file.
     * @param string|array $value
     * @return $this
+    * @deprecated use setContentUrl
     */
-    public function contentUrl(?string $value)
+    public function contentUrl($value)
     {
         $this->setProperty('contentUrl', $value);
         return $this;
@@ -306,7 +317,7 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
     * @param string|array $value
     * @return $this
     */
-    public function setContentUrl(?string $value)
+    public function setContentUrl($value)
     {
         $this->setProperty('contentUrl', $value);
         return $this;
@@ -323,8 +334,9 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to <em>December</em>. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>
 
 Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setEndTime
     */
     public function endTime($value)
     {
@@ -332,7 +344,7 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setEndTime($value)
@@ -350,19 +362,20 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
 
     /**
     * A NewsArticle associated with the Media Object.
-    * @param NewsArticle|array $value
+    * @param NewsArticle|array|string $value
     * @return $this
+    * @deprecated use setAssociatedArticle
     */
-    public function associatedArticle(?NewsArticle $value)
+    public function associatedArticle($value)
     {
         $this->setProperty('associatedArticle', $value);
         return $this;
     }
    /**
-    * @param NewsArticle|array $value
+    * @param NewsArticle|array|string $value
     * @return $this
     */
-    public function setAssociatedArticle(?NewsArticle $value)
+    public function setAssociatedArticle($value)
     {
         $this->setProperty('associatedArticle', $value);
         return $this;
@@ -377,19 +390,20 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
 
     /**
     * The production company or studio responsible for the item e.g. series, video game, episode etc.
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
+    * @deprecated use setProductionCompany
     */
-    public function productionCompany(?Organization $value)
+    public function productionCompany($value)
     {
         $this->setProperty('productionCompany', $value);
         return $this;
     }
    /**
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
     */
-    public function setProductionCompany(?Organization $value)
+    public function setProductionCompany($value)
     {
         $this->setProperty('productionCompany', $value);
         return $this;
@@ -404,19 +418,20 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
 
     /**
     * The duration of the item (movie, audio recording, event, etc.) in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>.
-    * @param Duration|array $value
+    * @param Duration|array|string $value
     * @return $this
+    * @deprecated use setDuration
     */
-    public function duration(?Duration $value)
+    public function duration($value)
     {
         $this->setProperty('duration', $value);
         return $this;
     }
    /**
-    * @param Duration|array $value
+    * @param Duration|array|string $value
     * @return $this
     */
-    public function setDuration(?Duration $value)
+    public function setDuration($value)
     {
         $this->setProperty('duration', $value);
         return $this;
@@ -431,19 +446,20 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
 
     /**
     * The CreativeWork encoded by this media object.
-    * @param CreativeWork|array $value
+    * @param CreativeWork|array|string $value
     * @return $this
+    * @deprecated use setEncodesCreativeWork
     */
-    public function encodesCreativeWork(?CreativeWork $value)
+    public function encodesCreativeWork($value)
     {
         $this->setProperty('encodesCreativeWork', $value);
         return $this;
     }
    /**
-    * @param CreativeWork|array $value
+    * @param CreativeWork|array|string $value
     * @return $this
     */
-    public function setEncodesCreativeWork(?CreativeWork $value)
+    public function setEncodesCreativeWork($value)
     {
         $this->setProperty('encodesCreativeWork', $value);
         return $this;
@@ -464,6 +480,7 @@ In cases where a <a class="localLink" href="http://schema.org/CreativeWork">Crea
 Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
     * @param string|string|array $value
     * @return $this
+    * @deprecated use setEncodingFormat
     */
     public function encodingFormat($value)
     {
@@ -489,7 +506,3 @@ Unregistered or niche encoding and file formats can be indicated instead via the
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\MediaObject','Thing\\MediaObject');
-

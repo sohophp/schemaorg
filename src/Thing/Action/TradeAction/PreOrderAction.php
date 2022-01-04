@@ -15,7 +15,3 @@ class PreOrderAction extends TradeAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\TradeAction\\PreOrderAction','Thing\\PreOrderAction');
-

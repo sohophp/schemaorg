@@ -15,7 +15,3 @@ class EmergencyService extends LocalBusiness
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\EmergencyService','Thing\\EmergencyService');
-

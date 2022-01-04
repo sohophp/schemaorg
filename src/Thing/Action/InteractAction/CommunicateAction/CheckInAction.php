@@ -24,7 +24,3 @@ class CheckInAction extends CommunicateAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\InteractAction\\CommunicateAction\\CheckInAction','Thing\\CheckInAction');
-

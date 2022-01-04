@@ -15,7 +15,3 @@ class MedicalStudyStatus extends MedicalEnumeration
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\MedicalEnumeration\\MedicalStudyStatus','Thing\\MedicalStudyStatus');
-

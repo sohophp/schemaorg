@@ -15,7 +15,3 @@ class FoodService extends Service
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Service\\FoodService','Thing\\FoodService');
-

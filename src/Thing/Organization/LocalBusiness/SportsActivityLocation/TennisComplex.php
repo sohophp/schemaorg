@@ -15,7 +15,3 @@ class TennisComplex extends SportsActivityLocation
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\SportsActivityLocation\\TennisComplex','Thing\\TennisComplex');
-

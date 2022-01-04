@@ -15,7 +15,3 @@ class MedicalObservationalStudyDesign extends MedicalEnumeration
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\MedicalEnumeration\\MedicalObservationalStudyDesign','Thing\\MedicalObservationalStudyDesign');
-

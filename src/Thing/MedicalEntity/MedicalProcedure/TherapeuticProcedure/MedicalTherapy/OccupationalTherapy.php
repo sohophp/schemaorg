@@ -15,7 +15,3 @@ class OccupationalTherapy extends MedicalTherapy
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalProcedure\\TherapeuticProcedure\\MedicalTherapy\\OccupationalTherapy','Thing\\OccupationalTherapy');
-

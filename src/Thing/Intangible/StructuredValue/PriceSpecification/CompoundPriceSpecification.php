@@ -16,19 +16,20 @@ class CompoundPriceSpecification extends PriceSpecification
 
     /**
     * This property links to all <a class="localLink" href="http://schema.org/UnitPriceSpecification">UnitPriceSpecification</a> nodes that apply in parallel for the <a class="localLink" href="http://schema.org/CompoundPriceSpecification">CompoundPriceSpecification</a> node.
-    * @param UnitPriceSpecification|array $value
+    * @param UnitPriceSpecification|array|string $value
     * @return $this
+    * @deprecated use setPriceComponent
     */
-    public function priceComponent(?UnitPriceSpecification $value)
+    public function priceComponent($value)
     {
         $this->setProperty('priceComponent', $value);
         return $this;
     }
    /**
-    * @param UnitPriceSpecification|array $value
+    * @param UnitPriceSpecification|array|string $value
     * @return $this
     */
-    public function setPriceComponent(?UnitPriceSpecification $value)
+    public function setPriceComponent($value)
     {
         $this->setProperty('priceComponent', $value);
         return $this;
@@ -43,7 +44,3 @@ class CompoundPriceSpecification extends PriceSpecification
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue\\PriceSpecification\\CompoundPriceSpecification','Thing\\CompoundPriceSpecification');
-

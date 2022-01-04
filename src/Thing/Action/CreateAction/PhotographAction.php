@@ -15,7 +15,3 @@ class PhotographAction extends CreateAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\CreateAction\\PhotographAction','Thing\\PhotographAction');
-

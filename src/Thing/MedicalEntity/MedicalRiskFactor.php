@@ -15,19 +15,20 @@ class MedicalRiskFactor extends MedicalEntity
 
     /**
     * The condition, complication, etc. influenced by this factor.
-    * @param MedicalEntity|array $value
+    * @param MedicalEntity|array|string $value
     * @return $this
+    * @deprecated use setIncreasesRiskOf
     */
-    public function increasesRiskOf(?MedicalEntity $value)
+    public function increasesRiskOf($value)
     {
         $this->setProperty('increasesRiskOf', $value);
         return $this;
     }
    /**
-    * @param MedicalEntity|array $value
+    * @param MedicalEntity|array|string $value
     * @return $this
     */
-    public function setIncreasesRiskOf(?MedicalEntity $value)
+    public function setIncreasesRiskOf($value)
     {
         $this->setProperty('increasesRiskOf', $value);
         return $this;
@@ -42,7 +43,3 @@ class MedicalRiskFactor extends MedicalEntity
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalRiskFactor','Thing\\MedicalRiskFactor');
-

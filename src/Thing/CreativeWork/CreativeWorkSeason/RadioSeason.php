@@ -15,7 +15,3 @@ class RadioSeason extends CreativeWorkSeason
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\CreativeWorkSeason\\RadioSeason','Thing\\RadioSeason');
-

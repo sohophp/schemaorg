@@ -15,19 +15,20 @@ class Collection extends CreativeWork
 
     /**
     * The number of items in the <a class="localLink" href="http://schema.org/Collection">Collection</a>.
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
+    * @deprecated use setCollectionSize
     */
-    public function collectionSize(?int $value)
+    public function collectionSize($value)
     {
         $this->setProperty('collectionSize', $value);
         return $this;
     }
    /**
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
     */
-    public function setCollectionSize(?int $value)
+    public function setCollectionSize($value)
     {
         $this->setProperty('collectionSize', $value);
         return $this;
@@ -42,7 +43,3 @@ class Collection extends CreativeWork
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\CreativeWork\\Collection','Thing\\Collection');
-

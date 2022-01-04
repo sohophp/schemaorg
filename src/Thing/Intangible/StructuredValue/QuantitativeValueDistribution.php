@@ -16,8 +16,9 @@ class QuantitativeValueDistribution extends StructuredValue
 
     /**
     * The 10th percentile value.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setPercentile10
     */
     public function percentile10($value)
     {
@@ -25,7 +26,7 @@ class QuantitativeValueDistribution extends StructuredValue
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setPercentile10($value)
@@ -43,8 +44,9 @@ class QuantitativeValueDistribution extends StructuredValue
 
     /**
     * The 25th percentile value.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setPercentile25
     */
     public function percentile25($value)
     {
@@ -52,7 +54,7 @@ class QuantitativeValueDistribution extends StructuredValue
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setPercentile25($value)
@@ -70,8 +72,9 @@ class QuantitativeValueDistribution extends StructuredValue
 
     /**
     * The median value.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setMedian
     */
     public function median($value)
     {
@@ -79,7 +82,7 @@ class QuantitativeValueDistribution extends StructuredValue
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setMedian($value)
@@ -97,8 +100,9 @@ class QuantitativeValueDistribution extends StructuredValue
 
     /**
     * The 75th percentile value.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setPercentile75
     */
     public function percentile75($value)
     {
@@ -106,7 +110,7 @@ class QuantitativeValueDistribution extends StructuredValue
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setPercentile75($value)
@@ -124,19 +128,20 @@ class QuantitativeValueDistribution extends StructuredValue
 
     /**
     * The duration of the item (movie, audio recording, event, etc.) in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>.
-    * @param Duration|array $value
+    * @param Duration|array|string $value
     * @return $this
+    * @deprecated use setDuration
     */
-    public function duration(?Duration $value)
+    public function duration($value)
     {
         $this->setProperty('duration', $value);
         return $this;
     }
    /**
-    * @param Duration|array $value
+    * @param Duration|array|string $value
     * @return $this
     */
-    public function setDuration(?Duration $value)
+    public function setDuration($value)
     {
         $this->setProperty('duration', $value);
         return $this;
@@ -151,8 +156,9 @@ class QuantitativeValueDistribution extends StructuredValue
 
     /**
     * The 90th percentile value.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setPercentile90
     */
     public function percentile90($value)
     {
@@ -160,7 +166,7 @@ class QuantitativeValueDistribution extends StructuredValue
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setPercentile90($value)
@@ -178,7 +184,3 @@ class QuantitativeValueDistribution extends StructuredValue
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue\\QuantitativeValueDistribution','Thing\\QuantitativeValueDistribution');
-

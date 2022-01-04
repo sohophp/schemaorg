@@ -15,7 +15,3 @@ class MedicalGuidelineContraindication extends MedicalGuideline
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\MedicalGuideline\\MedicalGuidelineContraindication','Thing\\MedicalGuidelineContraindication');
-

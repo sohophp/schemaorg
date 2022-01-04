@@ -15,7 +15,3 @@ class HardwareStore extends Store
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Organization\\LocalBusiness\\Store\\HardwareStore','Thing\\HardwareStore');
-

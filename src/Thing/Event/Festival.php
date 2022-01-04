@@ -15,7 +15,3 @@ class Festival extends Event
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Event\\Festival','Thing\\Festival');
-

@@ -16,19 +16,20 @@ class PaymentCard extends PaymentMethod
 
     /**
     * A floor limit is the amount of money above which credit card transactions must be authorized.
-    * @param MonetaryAmount|array $value
+    * @param MonetaryAmount|array|string $value
     * @return $this
+    * @deprecated use setFloorLimit
     */
-    public function floorLimit(?MonetaryAmount $value)
+    public function floorLimit($value)
     {
         $this->setProperty('floorLimit', $value);
         return $this;
     }
    /**
-    * @param MonetaryAmount|array $value
+    * @param MonetaryAmount|array|string $value
     * @return $this
     */
-    public function setFloorLimit(?MonetaryAmount $value)
+    public function setFloorLimit($value)
     {
         $this->setProperty('floorLimit', $value);
         return $this;
@@ -43,19 +44,20 @@ class PaymentCard extends PaymentMethod
 
     /**
     * A secure method for consumers to purchase products or services via debit, credit or smartcards by using RFID or NFC technology.
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
+    * @deprecated use setContactlessPayment
     */
-    public function contactlessPayment(?bool $value)
+    public function contactlessPayment($value)
     {
         $this->setProperty('contactlessPayment', $value);
         return $this;
     }
    /**
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
     */
-    public function setContactlessPayment(?bool $value)
+    public function setContactlessPayment($value)
     {
         $this->setProperty('contactlessPayment', $value);
         return $this;
@@ -70,19 +72,20 @@ class PaymentCard extends PaymentMethod
 
     /**
     * A cardholder benefit that pays the cardholder a small percentage of their net expenditures.
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
+    * @deprecated use setCashBack
     */
-    public function cashBack(?bool $value)
+    public function cashBack($value)
     {
         $this->setProperty('cashBack', $value);
         return $this;
     }
    /**
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
     */
-    public function setCashBack(?bool $value)
+    public function setCashBack($value)
     {
         $this->setProperty('cashBack', $value);
         return $this;
@@ -97,7 +100,3 @@ class PaymentCard extends PaymentMethod
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Enumeration\\PaymentMethod\\PaymentCard','Thing\\PaymentCard');
-

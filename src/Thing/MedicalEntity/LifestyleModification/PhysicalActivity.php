@@ -22,6 +22,7 @@ class PhysicalActivity extends LifestyleModification
     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
     * @param string|PhysicalActivityCategory|Thing|array $value
     * @return $this
+    * @deprecated use setCategory
     */
     public function category($value)
     {
@@ -47,8 +48,9 @@ class PhysicalActivity extends LifestyleModification
 
     /**
     * The anatomy of the underlying organ system or structures associated with this entity.
-    * @param SuperficialAnatomy|AnatomicalStructure|AnatomicalSystem|array $value
+    * @param SuperficialAnatomy|AnatomicalStructure|AnatomicalSystem|array|string $value
     * @return $this
+    * @deprecated use setAssociatedAnatomy
     */
     public function associatedAnatomy($value)
     {
@@ -56,7 +58,7 @@ class PhysicalActivity extends LifestyleModification
         return $this;
     }
    /**
-    * @param SuperficialAnatomy|AnatomicalStructure|AnatomicalSystem|array $value
+    * @param SuperficialAnatomy|AnatomicalStructure|AnatomicalSystem|array|string $value
     * @return $this
     */
     public function setAssociatedAnatomy($value)
@@ -76,8 +78,9 @@ class PhysicalActivity extends LifestyleModification
     * The characteristics of associated patients, such as age, gender, race etc.
     * @param string|array $value
     * @return $this
+    * @deprecated use setEpidemiology
     */
-    public function epidemiology(?string $value)
+    public function epidemiology($value)
     {
         $this->setProperty('epidemiology', $value);
         return $this;
@@ -86,7 +89,7 @@ class PhysicalActivity extends LifestyleModification
     * @param string|array $value
     * @return $this
     */
-    public function setEpidemiology(?string $value)
+    public function setEpidemiology($value)
     {
         $this->setProperty('epidemiology', $value);
         return $this;
@@ -103,8 +106,9 @@ class PhysicalActivity extends LifestyleModification
     * Changes in the normal mechanical, physical, and biochemical functions that are associated with this activity or condition.
     * @param string|array $value
     * @return $this
+    * @deprecated use setPathophysiology
     */
-    public function pathophysiology(?string $value)
+    public function pathophysiology($value)
     {
         $this->setProperty('pathophysiology', $value);
         return $this;
@@ -113,7 +117,7 @@ class PhysicalActivity extends LifestyleModification
     * @param string|array $value
     * @return $this
     */
-    public function setPathophysiology(?string $value)
+    public function setPathophysiology($value)
     {
         $this->setProperty('pathophysiology', $value);
         return $this;
@@ -128,7 +132,3 @@ class PhysicalActivity extends LifestyleModification
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\LifestyleModification\\PhysicalActivity','Thing\\PhysicalActivity');
-

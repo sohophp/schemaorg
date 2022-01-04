@@ -15,7 +15,3 @@ class Beach extends CivicStructure
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Place\\CivicStructure\\Beach','Thing\\Beach');
-

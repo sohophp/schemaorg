@@ -23,6 +23,7 @@ class DeliveryChargeSpecification extends PriceSpecification
 See also <a class="localLink" href="http://schema.org/eligibleRegion">eligibleRegion</a>.
     * @param Place|string|GeoShape|array $value
     * @return $this
+    * @deprecated use setIneligibleRegion
     */
     public function ineligibleRegion($value)
     {
@@ -48,19 +49,20 @@ See also <a class="localLink" href="http://schema.org/eligibleRegion">eligibleRe
 
     /**
     * The delivery method(s) to which the delivery charge or payment charge specification applies.
-    * @param DeliveryMethod|array $value
+    * @param DeliveryMethod|array|string $value
     * @return $this
+    * @deprecated use setAppliesToDeliveryMethod
     */
-    public function appliesToDeliveryMethod(?DeliveryMethod $value)
+    public function appliesToDeliveryMethod($value)
     {
         $this->setProperty('appliesToDeliveryMethod', $value);
         return $this;
     }
    /**
-    * @param DeliveryMethod|array $value
+    * @param DeliveryMethod|array|string $value
     * @return $this
     */
-    public function setAppliesToDeliveryMethod(?DeliveryMethod $value)
+    public function setAppliesToDeliveryMethod($value)
     {
         $this->setProperty('appliesToDeliveryMethod', $value);
         return $this;
@@ -77,6 +79,7 @@ See also <a class="localLink" href="http://schema.org/eligibleRegion">eligibleRe
     * The geographic area where a service or offered item is provided.
     * @param string|GeoShape|Place|AdministrativeArea|array $value
     * @return $this
+    * @deprecated use setAreaServed
     */
     public function areaServed($value)
     {
@@ -106,6 +109,7 @@ See also <a class="localLink" href="http://schema.org/eligibleRegion">eligibleRe
 See also <a class="localLink" href="http://schema.org/ineligibleRegion">ineligibleRegion</a>.
     * @param Place|string|GeoShape|array $value
     * @return $this
+    * @deprecated use setEligibleRegion
     */
     public function eligibleRegion($value)
     {
@@ -131,7 +135,3 @@ See also <a class="localLink" href="http://schema.org/ineligibleRegion">ineligib
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\StructuredValue\\PriceSpecification\\DeliveryChargeSpecification','Thing\\DeliveryChargeSpecification');
-

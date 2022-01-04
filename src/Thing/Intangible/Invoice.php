@@ -25,8 +25,9 @@ class Invoice extends Intangible
 
     /**
     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
+    * @deprecated use setProvider
     */
     public function provider($value)
     {
@@ -34,7 +35,7 @@ class Invoice extends Intangible
         return $this;
     }
    /**
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
     */
     public function setProvider($value)
@@ -52,8 +53,9 @@ class Invoice extends Intangible
 
     /**
     * The date that payment is due.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setPaymentDue
     */
     public function paymentDue($value)
     {
@@ -61,7 +63,7 @@ class Invoice extends Intangible
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setPaymentDue($value)
@@ -79,19 +81,20 @@ class Invoice extends Intangible
 
     /**
     * The time interval used to compute the invoice.
-    * @param Duration|array $value
+    * @param Duration|array|string $value
     * @return $this
+    * @deprecated use setBillingPeriod
     */
-    public function billingPeriod(?Duration $value)
+    public function billingPeriod($value)
     {
         $this->setProperty('billingPeriod', $value);
         return $this;
     }
    /**
-    * @param Duration|array $value
+    * @param Duration|array|string $value
     * @return $this
     */
-    public function setBillingPeriod(?Duration $value)
+    public function setBillingPeriod($value)
     {
         $this->setProperty('billingPeriod', $value);
         return $this;
@@ -108,8 +111,9 @@ class Invoice extends Intangible
     * A number that confirms the given order or payment has been received.
     * @param string|array $value
     * @return $this
+    * @deprecated use setConfirmationNumber
     */
-    public function confirmationNumber(?string $value)
+    public function confirmationNumber($value)
     {
         $this->setProperty('confirmationNumber', $value);
         return $this;
@@ -118,7 +122,7 @@ class Invoice extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setConfirmationNumber(?string $value)
+    public function setConfirmationNumber($value)
     {
         $this->setProperty('confirmationNumber', $value);
         return $this;
@@ -135,8 +139,9 @@ class Invoice extends Intangible
     * The identifier for the account the payment will be applied to.
     * @param string|array $value
     * @return $this
+    * @deprecated use setAccountId
     */
-    public function accountId(?string $value)
+    public function accountId($value)
     {
         $this->setProperty('accountId', $value);
         return $this;
@@ -145,7 +150,7 @@ class Invoice extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setAccountId(?string $value)
+    public function setAccountId($value)
     {
         $this->setProperty('accountId', $value);
         return $this;
@@ -160,8 +165,9 @@ class Invoice extends Intangible
 
     /**
     * The date the invoice is scheduled to be paid.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setScheduledPaymentDate
     */
     public function scheduledPaymentDate($value)
     {
@@ -169,7 +175,7 @@ class Invoice extends Intangible
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setScheduledPaymentDate($value)
@@ -187,8 +193,9 @@ class Invoice extends Intangible
 
     /**
     * Party placing the order or paying the invoice.
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
+    * @deprecated use setCustomer
     */
     public function customer($value)
     {
@@ -196,7 +203,7 @@ class Invoice extends Intangible
         return $this;
     }
    /**
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
     */
     public function setCustomer($value)
@@ -216,6 +223,7 @@ class Invoice extends Intangible
     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
     * @param string|PhysicalActivityCategory|Thing|array $value
     * @return $this
+    * @deprecated use setCategory
     */
     public function category($value)
     {
@@ -243,6 +251,7 @@ class Invoice extends Intangible
     * The status of payment; whether the invoice has been paid or not.
     * @param string|PaymentStatusType|array $value
     * @return $this
+    * @deprecated use setPaymentStatus
     */
     public function paymentStatus($value)
     {
@@ -268,8 +277,9 @@ class Invoice extends Intangible
 
     /**
     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
+    * @deprecated use setBroker
     */
     public function broker($value)
     {
@@ -277,7 +287,7 @@ class Invoice extends Intangible
         return $this;
     }
    /**
-    * @param Person|Organization|array $value
+    * @param Person|Organization|array|string $value
     * @return $this
     */
     public function setBroker($value)
@@ -295,19 +305,20 @@ class Invoice extends Intangible
 
     /**
     * The name of the credit card or other method of payment for the order.
-    * @param PaymentMethod|array $value
+    * @param PaymentMethod|array|string $value
     * @return $this
+    * @deprecated use setPaymentMethod
     */
-    public function paymentMethod(?PaymentMethod $value)
+    public function paymentMethod($value)
     {
         $this->setProperty('paymentMethod', $value);
         return $this;
     }
    /**
-    * @param PaymentMethod|array $value
+    * @param PaymentMethod|array|string $value
     * @return $this
     */
-    public function setPaymentMethod(?PaymentMethod $value)
+    public function setPaymentMethod($value)
     {
         $this->setProperty('paymentMethod', $value);
         return $this;
@@ -324,8 +335,9 @@ class Invoice extends Intangible
     * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
     * @param string|array $value
     * @return $this
+    * @deprecated use setPaymentMethodId
     */
-    public function paymentMethodId(?string $value)
+    public function paymentMethodId($value)
     {
         $this->setProperty('paymentMethodId', $value);
         return $this;
@@ -334,7 +346,7 @@ class Invoice extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setPaymentMethodId(?string $value)
+    public function setPaymentMethodId($value)
     {
         $this->setProperty('paymentMethodId', $value);
         return $this;
@@ -349,8 +361,9 @@ class Invoice extends Intangible
 
     /**
     * The minimum payment required at this time.
-    * @param PriceSpecification|MonetaryAmount|array $value
+    * @param PriceSpecification|MonetaryAmount|array|string $value
     * @return $this
+    * @deprecated use setMinimumPaymentDue
     */
     public function minimumPaymentDue($value)
     {
@@ -358,7 +371,7 @@ class Invoice extends Intangible
         return $this;
     }
    /**
-    * @param PriceSpecification|MonetaryAmount|array $value
+    * @param PriceSpecification|MonetaryAmount|array|string $value
     * @return $this
     */
     public function setMinimumPaymentDue($value)
@@ -376,8 +389,9 @@ class Invoice extends Intangible
 
     /**
     * The total amount due.
-    * @param MonetaryAmount|PriceSpecification|array $value
+    * @param MonetaryAmount|PriceSpecification|array|string $value
     * @return $this
+    * @deprecated use setTotalPaymentDue
     */
     public function totalPaymentDue($value)
     {
@@ -385,7 +399,7 @@ class Invoice extends Intangible
         return $this;
     }
    /**
-    * @param MonetaryAmount|PriceSpecification|array $value
+    * @param MonetaryAmount|PriceSpecification|array|string $value
     * @return $this
     */
     public function setTotalPaymentDue($value)
@@ -403,19 +417,20 @@ class Invoice extends Intangible
 
     /**
     * The Order(s) related to this Invoice. One or more Orders may be combined into a single Invoice.
-    * @param Order|array $value
+    * @param Order|array|string $value
     * @return $this
+    * @deprecated use setReferencesOrder
     */
-    public function referencesOrder(?Order $value)
+    public function referencesOrder($value)
     {
         $this->setProperty('referencesOrder', $value);
         return $this;
     }
    /**
-    * @param Order|array $value
+    * @param Order|array|string $value
     * @return $this
     */
-    public function setReferencesOrder(?Order $value)
+    public function setReferencesOrder($value)
     {
         $this->setProperty('referencesOrder', $value);
         return $this;
@@ -430,8 +445,9 @@ class Invoice extends Intangible
 
     /**
     * The date that payment is due.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setPaymentDueDate
     */
     public function paymentDueDate($value)
     {
@@ -439,7 +455,7 @@ class Invoice extends Intangible
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setPaymentDueDate($value)
@@ -457,7 +473,3 @@ class Invoice extends Intangible
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\Invoice','Thing\\Invoice');
-

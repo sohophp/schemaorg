@@ -20,19 +20,20 @@ class DietarySupplement extends Substance
 
     /**
     * The manufacturer of the product.
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
+    * @deprecated use setManufacturer
     */
-    public function manufacturer(?Organization $value)
+    public function manufacturer($value)
     {
         $this->setProperty('manufacturer', $value);
         return $this;
     }
    /**
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
     */
-    public function setManufacturer(?Organization $value)
+    public function setManufacturer($value)
     {
         $this->setProperty('manufacturer', $value);
         return $this;
@@ -49,8 +50,9 @@ class DietarySupplement extends Substance
     * The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
     * @param string|array $value
     * @return $this
+    * @deprecated use setMechanismOfAction
     */
-    public function mechanismOfAction(?string $value)
+    public function mechanismOfAction($value)
     {
         $this->setProperty('mechanismOfAction', $value);
         return $this;
@@ -59,7 +61,7 @@ class DietarySupplement extends Substance
     * @param string|array $value
     * @return $this
     */
-    public function setMechanismOfAction(?string $value)
+    public function setMechanismOfAction($value)
     {
         $this->setProperty('mechanismOfAction', $value);
         return $this;
@@ -76,6 +78,7 @@ class DietarySupplement extends Substance
     * The drug or supplement's legal status, including any controlled substance schedules that apply.
     * @param DrugLegalStatus|string|MedicalEnumeration|array $value
     * @return $this
+    * @deprecated use setLegalStatus
     */
     public function legalStatus($value)
     {
@@ -101,19 +104,20 @@ class DietarySupplement extends Substance
 
     /**
     * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
-    * @param RecommendedDoseSchedule|array $value
+    * @param RecommendedDoseSchedule|array|string $value
     * @return $this
+    * @deprecated use setRecommendedIntake
     */
-    public function recommendedIntake(?RecommendedDoseSchedule $value)
+    public function recommendedIntake($value)
     {
         $this->setProperty('recommendedIntake', $value);
         return $this;
     }
    /**
-    * @param RecommendedDoseSchedule|array $value
+    * @param RecommendedDoseSchedule|array|string $value
     * @return $this
     */
-    public function setRecommendedIntake(?RecommendedDoseSchedule $value)
+    public function setRecommendedIntake($value)
     {
         $this->setProperty('recommendedIntake', $value);
         return $this;
@@ -130,8 +134,9 @@ class DietarySupplement extends Substance
     * Proprietary name given to the diet plan, typically by its originator or creator.
     * @param string|array $value
     * @return $this
+    * @deprecated use setProprietaryName
     */
-    public function proprietaryName(?string $value)
+    public function proprietaryName($value)
     {
         $this->setProperty('proprietaryName', $value);
         return $this;
@@ -140,7 +145,7 @@ class DietarySupplement extends Substance
     * @param string|array $value
     * @return $this
     */
-    public function setProprietaryName(?string $value)
+    public function setProprietaryName($value)
     {
         $this->setProperty('proprietaryName', $value);
         return $this;
@@ -157,8 +162,9 @@ class DietarySupplement extends Substance
     * Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.
     * @param string|array $value
     * @return $this
+    * @deprecated use setTargetPopulation
     */
-    public function targetPopulation(?string $value)
+    public function targetPopulation($value)
     {
         $this->setProperty('targetPopulation', $value);
         return $this;
@@ -167,7 +173,7 @@ class DietarySupplement extends Substance
     * @param string|array $value
     * @return $this
     */
-    public function setTargetPopulation(?string $value)
+    public function setTargetPopulation($value)
     {
         $this->setProperty('targetPopulation', $value);
         return $this;
@@ -184,8 +190,9 @@ class DietarySupplement extends Substance
     * Any potential safety concern associated with the supplement. May include interactions with other drugs and foods, pregnancy, breastfeeding, known adverse reactions, and documented efficacy of the supplement.
     * @param string|array $value
     * @return $this
+    * @deprecated use setSafetyConsideration
     */
-    public function safetyConsideration(?string $value)
+    public function safetyConsideration($value)
     {
         $this->setProperty('safetyConsideration', $value);
         return $this;
@@ -194,7 +201,7 @@ class DietarySupplement extends Substance
     * @param string|array $value
     * @return $this
     */
-    public function setSafetyConsideration(?string $value)
+    public function setSafetyConsideration($value)
     {
         $this->setProperty('safetyConsideration', $value);
         return $this;
@@ -211,8 +218,9 @@ class DietarySupplement extends Substance
     * An active ingredient, typically chemical compounds and/or biologic substances.
     * @param string|array $value
     * @return $this
+    * @deprecated use setActiveIngredient
     */
-    public function activeIngredient(?string $value)
+    public function activeIngredient($value)
     {
         $this->setProperty('activeIngredient', $value);
         return $this;
@@ -221,7 +229,7 @@ class DietarySupplement extends Substance
     * @param string|array $value
     * @return $this
     */
-    public function setActiveIngredient(?string $value)
+    public function setActiveIngredient($value)
     {
         $this->setProperty('activeIngredient', $value);
         return $this;
@@ -238,8 +246,9 @@ class DietarySupplement extends Substance
     * Descriptive information establishing a historical perspective on the supplement. May include the rationale for the name, the population where the supplement first came to prominence, etc.
     * @param string|array $value
     * @return $this
+    * @deprecated use setBackground
     */
-    public function background(?string $value)
+    public function background($value)
     {
         $this->setProperty('background', $value);
         return $this;
@@ -248,7 +257,7 @@ class DietarySupplement extends Substance
     * @param string|array $value
     * @return $this
     */
-    public function setBackground(?string $value)
+    public function setBackground($value)
     {
         $this->setProperty('background', $value);
         return $this;
@@ -263,19 +272,20 @@ class DietarySupplement extends Substance
 
     /**
     * True if this item's name is a proprietary/brand name (vs. generic name).
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
+    * @deprecated use setIsProprietary
     */
-    public function isProprietary(?bool $value)
+    public function isProprietary($value)
     {
         $this->setProperty('isProprietary', $value);
         return $this;
     }
    /**
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
     */
-    public function setIsProprietary(?bool $value)
+    public function setIsProprietary($value)
     {
         $this->setProperty('isProprietary', $value);
         return $this;
@@ -292,8 +302,9 @@ class DietarySupplement extends Substance
     * The generic name of this drug or supplement.
     * @param string|array $value
     * @return $this
+    * @deprecated use setNonProprietaryName
     */
-    public function nonProprietaryName(?string $value)
+    public function nonProprietaryName($value)
     {
         $this->setProperty('nonProprietaryName', $value);
         return $this;
@@ -302,7 +313,7 @@ class DietarySupplement extends Substance
     * @param string|array $value
     * @return $this
     */
-    public function setNonProprietaryName(?string $value)
+    public function setNonProprietaryName($value)
     {
         $this->setProperty('nonProprietaryName', $value);
         return $this;
@@ -317,19 +328,20 @@ class DietarySupplement extends Substance
 
     /**
     * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
-    * @param MaximumDoseSchedule|array $value
+    * @param MaximumDoseSchedule|array|string $value
     * @return $this
+    * @deprecated use setMaximumIntake
     */
-    public function maximumIntake(?MaximumDoseSchedule $value)
+    public function maximumIntake($value)
     {
         $this->setProperty('maximumIntake', $value);
         return $this;
     }
    /**
-    * @param MaximumDoseSchedule|array $value
+    * @param MaximumDoseSchedule|array|string $value
     * @return $this
     */
-    public function setMaximumIntake(?MaximumDoseSchedule $value)
+    public function setMaximumIntake($value)
     {
         $this->setProperty('maximumIntake', $value);
         return $this;
@@ -344,7 +356,3 @@ class DietarySupplement extends Substance
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\MedicalEntity\\Substance\\DietarySupplement','Thing\\DietarySupplement');
-

@@ -15,7 +15,3 @@ class TieAction extends AchieveAction
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Action\\AchieveAction\\TieAction','Thing\\TieAction');
-

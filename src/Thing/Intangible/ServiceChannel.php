@@ -21,19 +21,20 @@ class ServiceChannel extends Intangible
 
     /**
     * The service provided by this channel.
-    * @param Service|array $value
+    * @param Service|array|string $value
     * @return $this
+    * @deprecated use setProvidesService
     */
-    public function providesService(?Service $value)
+    public function providesService($value)
     {
         $this->setProperty('providesService', $value);
         return $this;
     }
    /**
-    * @param Service|array $value
+    * @param Service|array|string $value
     * @return $this
     */
-    public function setProvidesService(?Service $value)
+    public function setProvidesService($value)
     {
         $this->setProperty('providesService', $value);
         return $this;
@@ -48,19 +49,20 @@ class ServiceChannel extends Intangible
 
     /**
     * The location (e.g. civic structure, local business, etc.) where a person can go to access the service.
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
+    * @deprecated use setServiceLocation
     */
-    public function serviceLocation(?Place $value)
+    public function serviceLocation($value)
     {
         $this->setProperty('serviceLocation', $value);
         return $this;
     }
    /**
-    * @param Place|array $value
+    * @param Place|array|string $value
     * @return $this
     */
-    public function setServiceLocation(?Place $value)
+    public function setServiceLocation($value)
     {
         $this->setProperty('serviceLocation', $value);
         return $this;
@@ -75,19 +77,20 @@ class ServiceChannel extends Intangible
 
     /**
     * The address for accessing the service by mail.
-    * @param PostalAddress|array $value
+    * @param PostalAddress|array|string $value
     * @return $this
+    * @deprecated use setServicePostalAddress
     */
-    public function servicePostalAddress(?PostalAddress $value)
+    public function servicePostalAddress($value)
     {
         $this->setProperty('servicePostalAddress', $value);
         return $this;
     }
    /**
-    * @param PostalAddress|array $value
+    * @param PostalAddress|array|string $value
     * @return $this
     */
-    public function setServicePostalAddress(?PostalAddress $value)
+    public function setServicePostalAddress($value)
     {
         $this->setProperty('servicePostalAddress', $value);
         return $this;
@@ -104,6 +107,7 @@ class ServiceChannel extends Intangible
     * A language someone may use with or at the item, service or place. Please use one of the language codes from the <a href="http://tools.ietf.org/html/bcp47">IETF BCP 47 standard</a>. See also <a class="localLink" href="http://schema.org/inLanguage">inLanguage</a>
     * @param string|Language|array $value
     * @return $this
+    * @deprecated use setAvailableLanguage
     */
     public function availableLanguage($value)
     {
@@ -131,8 +135,9 @@ class ServiceChannel extends Intangible
     * The website to access the service.
     * @param string|array $value
     * @return $this
+    * @deprecated use setServiceUrl
     */
-    public function serviceUrl(?string $value)
+    public function serviceUrl($value)
     {
         $this->setProperty('serviceUrl', $value);
         return $this;
@@ -141,7 +146,7 @@ class ServiceChannel extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setServiceUrl(?string $value)
+    public function setServiceUrl($value)
     {
         $this->setProperty('serviceUrl', $value);
         return $this;
@@ -156,19 +161,20 @@ class ServiceChannel extends Intangible
 
     /**
     * The phone number to use to access the service.
-    * @param ContactPoint|array $value
+    * @param ContactPoint|array|string $value
     * @return $this
+    * @deprecated use setServicePhone
     */
-    public function servicePhone(?ContactPoint $value)
+    public function servicePhone($value)
     {
         $this->setProperty('servicePhone', $value);
         return $this;
     }
    /**
-    * @param ContactPoint|array $value
+    * @param ContactPoint|array|string $value
     * @return $this
     */
-    public function setServicePhone(?ContactPoint $value)
+    public function setServicePhone($value)
     {
         $this->setProperty('servicePhone', $value);
         return $this;
@@ -183,19 +189,20 @@ class ServiceChannel extends Intangible
 
     /**
     * The number to access the service by text message.
-    * @param ContactPoint|array $value
+    * @param ContactPoint|array|string $value
     * @return $this
+    * @deprecated use setServiceSmsNumber
     */
-    public function serviceSmsNumber(?ContactPoint $value)
+    public function serviceSmsNumber($value)
     {
         $this->setProperty('serviceSmsNumber', $value);
         return $this;
     }
    /**
-    * @param ContactPoint|array $value
+    * @param ContactPoint|array|string $value
     * @return $this
     */
-    public function setServiceSmsNumber(?ContactPoint $value)
+    public function setServiceSmsNumber($value)
     {
         $this->setProperty('serviceSmsNumber', $value);
         return $this;
@@ -210,19 +217,20 @@ class ServiceChannel extends Intangible
 
     /**
     * Estimated processing time for the service using this channel.
-    * @param Duration|array $value
+    * @param Duration|array|string $value
     * @return $this
+    * @deprecated use setProcessingTime
     */
-    public function processingTime(?Duration $value)
+    public function processingTime($value)
     {
         $this->setProperty('processingTime', $value);
         return $this;
     }
    /**
-    * @param Duration|array $value
+    * @param Duration|array|string $value
     * @return $this
     */
-    public function setProcessingTime(?Duration $value)
+    public function setProcessingTime($value)
     {
         $this->setProperty('processingTime', $value);
         return $this;
@@ -237,7 +245,3 @@ class ServiceChannel extends Intangible
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\ServiceChannel','Thing\\ServiceChannel');
-

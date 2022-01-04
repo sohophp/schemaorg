@@ -22,8 +22,9 @@ class ParcelDelivery extends Intangible
 
     /**
     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
+    * @deprecated use setProvider
     */
     public function provider($value)
     {
@@ -31,7 +32,7 @@ class ParcelDelivery extends Intangible
         return $this;
     }
    /**
-    * @param Organization|Person|array $value
+    * @param Organization|Person|array|string $value
     * @return $this
     */
     public function setProvider($value)
@@ -51,8 +52,9 @@ class ParcelDelivery extends Intangible
     * Tracking url for the parcel delivery.
     * @param string|array $value
     * @return $this
+    * @deprecated use setTrackingUrl
     */
-    public function trackingUrl(?string $value)
+    public function trackingUrl($value)
     {
         $this->setProperty('trackingUrl', $value);
         return $this;
@@ -61,7 +63,7 @@ class ParcelDelivery extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setTrackingUrl(?string $value)
+    public function setTrackingUrl($value)
     {
         $this->setProperty('trackingUrl', $value);
         return $this;
@@ -78,8 +80,9 @@ class ParcelDelivery extends Intangible
     * Shipper tracking number.
     * @param string|array $value
     * @return $this
+    * @deprecated use setTrackingNumber
     */
-    public function trackingNumber(?string $value)
+    public function trackingNumber($value)
     {
         $this->setProperty('trackingNumber', $value);
         return $this;
@@ -88,7 +91,7 @@ class ParcelDelivery extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setTrackingNumber(?string $value)
+    public function setTrackingNumber($value)
     {
         $this->setProperty('trackingNumber', $value);
         return $this;
@@ -103,19 +106,20 @@ class ParcelDelivery extends Intangible
 
     /**
     * Method used for delivery or shipping.
-    * @param DeliveryMethod|array $value
+    * @param DeliveryMethod|array|string $value
     * @return $this
+    * @deprecated use setHasDeliveryMethod
     */
-    public function hasDeliveryMethod(?DeliveryMethod $value)
+    public function hasDeliveryMethod($value)
     {
         $this->setProperty('hasDeliveryMethod', $value);
         return $this;
     }
    /**
-    * @param DeliveryMethod|array $value
+    * @param DeliveryMethod|array|string $value
     * @return $this
     */
-    public function setHasDeliveryMethod(?DeliveryMethod $value)
+    public function setHasDeliveryMethod($value)
     {
         $this->setProperty('hasDeliveryMethod', $value);
         return $this;
@@ -130,19 +134,20 @@ class ParcelDelivery extends Intangible
 
     /**
     * New entry added as the package passes through each leg of its journey (from shipment to final delivery).
-    * @param DeliveryEvent|array $value
+    * @param DeliveryEvent|array|string $value
     * @return $this
+    * @deprecated use setDeliveryStatus
     */
-    public function deliveryStatus(?DeliveryEvent $value)
+    public function deliveryStatus($value)
     {
         $this->setProperty('deliveryStatus', $value);
         return $this;
     }
    /**
-    * @param DeliveryEvent|array $value
+    * @param DeliveryEvent|array|string $value
     * @return $this
     */
-    public function setDeliveryStatus(?DeliveryEvent $value)
+    public function setDeliveryStatus($value)
     {
         $this->setProperty('deliveryStatus', $value);
         return $this;
@@ -157,19 +162,20 @@ class ParcelDelivery extends Intangible
 
     /**
     * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
+    * @deprecated use setCarrier
     */
-    public function carrier(?Organization $value)
+    public function carrier($value)
     {
         $this->setProperty('carrier', $value);
         return $this;
     }
    /**
-    * @param Organization|array $value
+    * @param Organization|array|string $value
     * @return $this
     */
-    public function setCarrier(?Organization $value)
+    public function setCarrier($value)
     {
         $this->setProperty('carrier', $value);
         return $this;
@@ -184,19 +190,20 @@ class ParcelDelivery extends Intangible
 
     /**
     * Item(s) being shipped.
-    * @param Product|array $value
+    * @param Product|array|string $value
     * @return $this
+    * @deprecated use setItemShipped
     */
-    public function itemShipped(?Product $value)
+    public function itemShipped($value)
     {
         $this->setProperty('itemShipped', $value);
         return $this;
     }
    /**
-    * @param Product|array $value
+    * @param Product|array|string $value
     * @return $this
     */
-    public function setItemShipped(?Product $value)
+    public function setItemShipped($value)
     {
         $this->setProperty('itemShipped', $value);
         return $this;
@@ -211,19 +218,20 @@ class ParcelDelivery extends Intangible
 
     /**
     * The overall order the items in this delivery were included in.
-    * @param Order|array $value
+    * @param Order|array|string $value
     * @return $this
+    * @deprecated use setPartOfOrder
     */
-    public function partOfOrder(?Order $value)
+    public function partOfOrder($value)
     {
         $this->setProperty('partOfOrder', $value);
         return $this;
     }
    /**
-    * @param Order|array $value
+    * @param Order|array|string $value
     * @return $this
     */
-    public function setPartOfOrder(?Order $value)
+    public function setPartOfOrder($value)
     {
         $this->setProperty('partOfOrder', $value);
         return $this;
@@ -238,8 +246,9 @@ class ParcelDelivery extends Intangible
 
     /**
     * The earliest date the package may arrive.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setExpectedArrivalFrom
     */
     public function expectedArrivalFrom($value)
     {
@@ -247,7 +256,7 @@ class ParcelDelivery extends Intangible
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setExpectedArrivalFrom($value)
@@ -265,19 +274,20 @@ class ParcelDelivery extends Intangible
 
     /**
     * Shipper's address.
-    * @param PostalAddress|array $value
+    * @param PostalAddress|array|string $value
     * @return $this
+    * @deprecated use setOriginAddress
     */
-    public function originAddress(?PostalAddress $value)
+    public function originAddress($value)
     {
         $this->setProperty('originAddress', $value);
         return $this;
     }
    /**
-    * @param PostalAddress|array $value
+    * @param PostalAddress|array|string $value
     * @return $this
     */
-    public function setOriginAddress(?PostalAddress $value)
+    public function setOriginAddress($value)
     {
         $this->setProperty('originAddress', $value);
         return $this;
@@ -292,19 +302,20 @@ class ParcelDelivery extends Intangible
 
     /**
     * Destination address.
-    * @param PostalAddress|array $value
+    * @param PostalAddress|array|string $value
     * @return $this
+    * @deprecated use setDeliveryAddress
     */
-    public function deliveryAddress(?PostalAddress $value)
+    public function deliveryAddress($value)
     {
         $this->setProperty('deliveryAddress', $value);
         return $this;
     }
    /**
-    * @param PostalAddress|array $value
+    * @param PostalAddress|array|string $value
     * @return $this
     */
-    public function setDeliveryAddress(?PostalAddress $value)
+    public function setDeliveryAddress($value)
     {
         $this->setProperty('deliveryAddress', $value);
         return $this;
@@ -319,8 +330,9 @@ class ParcelDelivery extends Intangible
 
     /**
     * The latest date the package may arrive.
-    * @param |array $value
+    * @param array|string $value
     * @return $this
+    * @deprecated use setExpectedArrivalUntil
     */
     public function expectedArrivalUntil($value)
     {
@@ -328,7 +340,7 @@ class ParcelDelivery extends Intangible
         return $this;
     }
    /**
-    * @param |array $value
+    * @param array|string $value
     * @return $this
     */
     public function setExpectedArrivalUntil($value)
@@ -346,7 +358,3 @@ class ParcelDelivery extends Intangible
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\ParcelDelivery','Thing\\ParcelDelivery');
-

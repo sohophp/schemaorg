@@ -18,19 +18,20 @@ class ProductReturnPolicy extends Intangible
 
     /**
     * A refundType, from an enumerated list.
-    * @param RefundTypeEnumeration|array $value
+    * @param RefundTypeEnumeration|array|string $value
     * @return $this
+    * @deprecated use setRefundType
     */
-    public function refundType(?RefundTypeEnumeration $value)
+    public function refundType($value)
     {
         $this->setProperty('refundType', $value);
         return $this;
     }
    /**
-    * @param RefundTypeEnumeration|array $value
+    * @param RefundTypeEnumeration|array|string $value
     * @return $this
     */
-    public function setRefundType(?RefundTypeEnumeration $value)
+    public function setRefundType($value)
     {
         $this->setProperty('refundType', $value);
         return $this;
@@ -45,19 +46,20 @@ class ProductReturnPolicy extends Intangible
 
     /**
     * The productReturnDays property indicates the number of days (from purchase) within which relevant product return policy is applicable.
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
+    * @deprecated use setProductReturnDays
     */
-    public function productReturnDays(?int $value)
+    public function productReturnDays($value)
     {
         $this->setProperty('productReturnDays', $value);
         return $this;
     }
    /**
-    * @param int|array $value
+    * @param int|array|string $value
     * @return $this
     */
-    public function setProductReturnDays(?int $value)
+    public function setProductReturnDays($value)
     {
         $this->setProperty('productReturnDays', $value);
         return $this;
@@ -72,19 +74,20 @@ class ProductReturnPolicy extends Intangible
 
     /**
     * Indicates (via enumerated options) the return fees policy for a ProductReturnPolicy
-    * @param ReturnFeesEnumeration|array $value
+    * @param ReturnFeesEnumeration|array|string $value
     * @return $this
+    * @deprecated use setReturnFees
     */
-    public function returnFees(?ReturnFeesEnumeration $value)
+    public function returnFees($value)
     {
         $this->setProperty('returnFees', $value);
         return $this;
     }
    /**
-    * @param ReturnFeesEnumeration|array $value
+    * @param ReturnFeesEnumeration|array|string $value
     * @return $this
     */
-    public function setReturnFees(?ReturnFeesEnumeration $value)
+    public function setReturnFees($value)
     {
         $this->setProperty('returnFees', $value);
         return $this;
@@ -99,19 +102,20 @@ class ProductReturnPolicy extends Intangible
 
     /**
     * A returnPolicyCategory expresses at most one of several enumerated kinds of return.
-    * @param ProductReturnEnumeration|array $value
+    * @param ProductReturnEnumeration|array|string $value
     * @return $this
+    * @deprecated use setReturnPolicyCategory
     */
-    public function returnPolicyCategory(?ProductReturnEnumeration $value)
+    public function returnPolicyCategory($value)
     {
         $this->setProperty('returnPolicyCategory', $value);
         return $this;
     }
    /**
-    * @param ProductReturnEnumeration|array $value
+    * @param ProductReturnEnumeration|array|string $value
     * @return $this
     */
-    public function setReturnPolicyCategory(?ProductReturnEnumeration $value)
+    public function setReturnPolicyCategory($value)
     {
         $this->setProperty('returnPolicyCategory', $value);
         return $this;
@@ -126,19 +130,20 @@ class ProductReturnPolicy extends Intangible
 
     /**
     * Are in-store returns offered?
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
+    * @deprecated use setInStoreReturnsOffered
     */
-    public function inStoreReturnsOffered(?bool $value)
+    public function inStoreReturnsOffered($value)
     {
         $this->setProperty('inStoreReturnsOffered', $value);
         return $this;
     }
    /**
-    * @param bool|array $value
+    * @param bool|array|string $value
     * @return $this
     */
-    public function setInStoreReturnsOffered(?bool $value)
+    public function setInStoreReturnsOffered($value)
     {
         $this->setProperty('inStoreReturnsOffered', $value);
         return $this;
@@ -155,8 +160,9 @@ class ProductReturnPolicy extends Intangible
     * Indicates a Web page or service by URL, for product return.
     * @param string|array $value
     * @return $this
+    * @deprecated use setProductReturnLink
     */
-    public function productReturnLink(?string $value)
+    public function productReturnLink($value)
     {
         $this->setProperty('productReturnLink', $value);
         return $this;
@@ -165,7 +171,7 @@ class ProductReturnPolicy extends Intangible
     * @param string|array $value
     * @return $this
     */
-    public function setProductReturnLink(?string $value)
+    public function setProductReturnLink($value)
     {
         $this->setProperty('productReturnLink', $value);
         return $this;
@@ -180,7 +186,3 @@ class ProductReturnPolicy extends Intangible
 
 
 }
-
-
-class_alias('Sohophp\\SchemaOrg\\Thing\\Intangible\\ProductReturnPolicy','Thing\\ProductReturnPolicy');
-
