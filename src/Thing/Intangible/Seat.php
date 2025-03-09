@@ -2,59 +2,37 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible;
 
 use Sohophp\SchemaOrg\Thing\Intangible;
-use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\QualitativeValue;
 
 /**
 * Used to describe a seat, such as a reserved seat in an event reservation.
-* @see http://schema.org/Seat
+* @see schema:Seat
 * @package Sohophp\SchemaOrg\Thing\Intangible
-
-*
 */
 class Seat extends Intangible
 {
+   /**
+        * The section location of the reserved seat (e.g. Orchestra).
+        */
+    protected $seatSection = null;
+
+   /**
+        * The type/class of the seat.
+        */
+    protected $seatingType = null;
+
+   /**
+        * The row location of the reserved seat (e.g., B).
+        */
+    protected $seatRow = null;
+
+   /**
+        * The location of the reserved seat (e.g., 27).
+        */
+    protected $seatNumber = null;
+
 
     /**
-    * The type/class of the seat.
-    * @param QualitativeValue|string|array $value
-    * @return $this
-    * @deprecated use setSeatingType
-    */
-    public function seatingType($value)
-    {
-        $this->setProperty('seatingType', $value);
-        return $this;
-    }
-   /**
-    * @param QualitativeValue|string|array $value
-    * @return $this
-    */
-    public function setSeatingType($value)
-    {
-        $this->setProperty('seatingType', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getSeatingType()
-    {
-       return $this->getProperty('seatingType');
-    }
-
-    /**
-    * The section location of the reserved seat (e.g. Orchestra).
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setSeatSection
-    */
-    public function seatSection($value)
-    {
-        $this->setProperty('seatSection', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
+    * @param array|string $value
     * @return $this
     */
     public function setSeatSection($value)
@@ -62,8 +40,9 @@ class Seat extends Intangible
         $this->setProperty('seatSection', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getSeatSection()
     {
@@ -71,18 +50,25 @@ class Seat extends Intangible
     }
 
     /**
-    * The row location of the reserved seat (e.g., B).
-    * @param string|array $value
+    * @param array|string $value
     * @return $this
-    * @deprecated use setSeatRow
     */
-    public function seatRow($value)
+    public function setSeatingType($value)
     {
-        $this->setProperty('seatRow', $value);
+        $this->setProperty('seatingType', $value);
         return $this;
     }
-   /**
-    * @param string|array $value
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getSeatingType()
+    {
+       return $this->getProperty('seatingType');
+    }
+
+    /**
+    * @param array|string $value
     * @return $this
     */
     public function setSeatRow($value)
@@ -90,8 +76,9 @@ class Seat extends Intangible
         $this->setProperty('seatRow', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getSeatRow()
     {
@@ -99,18 +86,7 @@ class Seat extends Intangible
     }
 
     /**
-    * The location of the reserved seat (e.g., 27).
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setSeatNumber
-    */
-    public function seatNumber($value)
-    {
-        $this->setProperty('seatNumber', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
+    * @param array|string $value
     * @return $this
     */
     public function setSeatNumber($value)
@@ -118,8 +94,9 @@ class Seat extends Intangible
         $this->setProperty('seatNumber', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getSeatNumber()
     {

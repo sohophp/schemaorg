@@ -5,26 +5,18 @@ use Sohophp\SchemaOrg\Thing\Action\OrganizeAction;
 
 /**
 * The act of planning the execution of an event/task/action/reservation/plan to a future date.
-* @see http://schema.org/PlanAction
+* @see schema:PlanAction
 * @package Sohophp\SchemaOrg\Thing\Action\OrganizeAction
-
-*
 */
 class PlanAction extends OrganizeAction
 {
+   /**
+        * The time the object is scheduled to.
+        */
+    protected $scheduledTime = null;
+
 
     /**
-    * The time the object is scheduled to.
-    * @param array|string $value
-    * @return $this
-    * @deprecated use setScheduledTime
-    */
-    public function scheduledTime($value)
-    {
-        $this->setProperty('scheduledTime', $value);
-        return $this;
-    }
-   /**
     * @param array|string $value
     * @return $this
     */
@@ -33,8 +25,9 @@ class PlanAction extends OrganizeAction
         $this->setProperty('scheduledTime', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getScheduledTime()
     {

@@ -5,27 +5,19 @@ use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalRiskEstimator;
 
 /**
 * A simple system that adds up the number of risk factors to yield a score that is associated with prognosis, e.g. CHAD score, TIMI risk score.
-* @see http://schema.org/MedicalRiskScore
+* @see schema:MedicalRiskScore
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalRiskEstimator
-
-*
 */
 class MedicalRiskScore extends MedicalRiskEstimator
 {
+   /**
+        * The algorithm or rules to follow to compute the score.
+        */
+    protected $algorithm = null;
+
 
     /**
-    * The algorithm or rules to follow to compute the score.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setAlgorithm
-    */
-    public function algorithm($value)
-    {
-        $this->setProperty('algorithm', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
+    * @param array|string $value
     * @return $this
     */
     public function setAlgorithm($value)
@@ -33,8 +25,9 @@ class MedicalRiskScore extends MedicalRiskEstimator
         $this->setProperty('algorithm', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getAlgorithm()
     {

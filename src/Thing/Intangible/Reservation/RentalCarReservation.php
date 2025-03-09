@@ -2,32 +2,72 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible\Reservation;
 
 use Sohophp\SchemaOrg\Thing\Intangible\Reservation;
-use Sohophp\SchemaOrg\Thing\Place;
 
 /**
-* A reservation for a rental car.<br/><br/>
-
-Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.
-* @see http://schema.org/RentalCarReservation
+* A reservation for a rental car.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.
+* @see schema:RentalCarReservation
 * @package Sohophp\SchemaOrg\Thing\Intangible\Reservation
-
-*
 */
 class RentalCarReservation extends Reservation
 {
+   /**
+        * Where a rental car can be dropped off.
+        */
+    protected $dropoffLocation = null;
+
+   /**
+        * Where a taxi will pick up a passenger or a rental car can be picked up.
+        */
+    protected $pickupLocation = null;
+
+   /**
+        * When a taxi will pick up a passenger or a rental car can be picked up.
+        */
+    protected $pickupTime = null;
+
+   /**
+        * When a rental car can be dropped off.
+        */
+    protected $dropoffTime = null;
+
 
     /**
-    * When a taxi will pickup a passenger or a rental car can be picked up.
     * @param array|string $value
     * @return $this
-    * @deprecated use setPickupTime
     */
-    public function pickupTime($value)
+    public function setDropoffLocation($value)
     {
-        $this->setProperty('pickupTime', $value);
+        $this->setProperty('dropoffLocation', $value);
         return $this;
     }
-   /**
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getDropoffLocation()
+    {
+       return $this->getProperty('dropoffLocation');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setPickupLocation($value)
+    {
+        $this->setProperty('pickupLocation', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getPickupLocation()
+    {
+       return $this->getProperty('pickupLocation');
+    }
+
+    /**
     * @param array|string $value
     * @return $this
     */
@@ -36,8 +76,9 @@ class RentalCarReservation extends Reservation
         $this->setProperty('pickupTime', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getPickupTime()
     {
@@ -45,45 +86,6 @@ class RentalCarReservation extends Reservation
     }
 
     /**
-    * Where a rental car can be dropped off.
-    * @param Place|array|string $value
-    * @return $this
-    * @deprecated use setDropoffLocation
-    */
-    public function dropoffLocation($value)
-    {
-        $this->setProperty('dropoffLocation', $value);
-        return $this;
-    }
-   /**
-    * @param Place|array|string $value
-    * @return $this
-    */
-    public function setDropoffLocation($value)
-    {
-        $this->setProperty('dropoffLocation', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getDropoffLocation()
-    {
-       return $this->getProperty('dropoffLocation');
-    }
-
-    /**
-    * When a rental car can be dropped off.
-    * @param array|string $value
-    * @return $this
-    * @deprecated use setDropoffTime
-    */
-    public function dropoffTime($value)
-    {
-        $this->setProperty('dropoffTime', $value);
-        return $this;
-    }
-   /**
     * @param array|string $value
     * @return $this
     */
@@ -92,40 +94,13 @@ class RentalCarReservation extends Reservation
         $this->setProperty('dropoffTime', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getDropoffTime()
     {
        return $this->getProperty('dropoffTime');
-    }
-
-    /**
-    * Where a taxi will pick up a passenger or a rental car can be picked up.
-    * @param Place|array|string $value
-    * @return $this
-    * @deprecated use setPickupLocation
-    */
-    public function pickupLocation($value)
-    {
-        $this->setProperty('pickupLocation', $value);
-        return $this;
-    }
-   /**
-    * @param Place|array|string $value
-    * @return $this
-    */
-    public function setPickupLocation($value)
-    {
-        $this->setProperty('pickupLocation', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getPickupLocation()
-    {
-       return $this->getProperty('pickupLocation');
     }
 
 

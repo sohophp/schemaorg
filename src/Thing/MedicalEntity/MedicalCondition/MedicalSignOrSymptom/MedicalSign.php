@@ -2,32 +2,27 @@
 namespace Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalCondition\MedicalSignOrSymptom;
 
 use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalCondition\MedicalSignOrSymptom;
-use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalProcedure\PhysicalExam;
-use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalTest;
 
 /**
 * Any physical manifestation of a person's medical condition discoverable by objective diagnostic tests or physical examination.
-* @see http://schema.org/MedicalSign
+* @see schema:MedicalSign
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalCondition\MedicalSignOrSymptom
-
-*
 */
 class MedicalSign extends MedicalSignOrSymptom
 {
+   /**
+        * A physical examination that can identify this sign.
+        */
+    protected $identifyingExam = null;
+
+   /**
+        * A diagnostic test that can identify this sign.
+        */
+    protected $identifyingTest = null;
+
 
     /**
-    * A physical examination that can identify this sign.
-    * @param PhysicalExam|array|string $value
-    * @return $this
-    * @deprecated use setIdentifyingExam
-    */
-    public function identifyingExam($value)
-    {
-        $this->setProperty('identifyingExam', $value);
-        return $this;
-    }
-   /**
-    * @param PhysicalExam|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setIdentifyingExam($value)
@@ -35,8 +30,9 @@ class MedicalSign extends MedicalSignOrSymptom
         $this->setProperty('identifyingExam', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getIdentifyingExam()
     {
@@ -44,18 +40,7 @@ class MedicalSign extends MedicalSignOrSymptom
     }
 
     /**
-    * A diagnostic test that can identify this sign.
-    * @param MedicalTest|array|string $value
-    * @return $this
-    * @deprecated use setIdentifyingTest
-    */
-    public function identifyingTest($value)
-    {
-        $this->setProperty('identifyingTest', $value);
-        return $this;
-    }
-   /**
-    * @param MedicalTest|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setIdentifyingTest($value)
@@ -63,8 +48,9 @@ class MedicalSign extends MedicalSignOrSymptom
         $this->setProperty('identifyingTest', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getIdentifyingTest()
     {

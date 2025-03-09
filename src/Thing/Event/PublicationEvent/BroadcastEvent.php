@@ -2,59 +2,37 @@
 namespace Sohophp\SchemaOrg\Thing\Event\PublicationEvent;
 
 use Sohophp\SchemaOrg\Thing\Event\PublicationEvent;
-use Sohophp\SchemaOrg\Thing\Event;
 
 /**
 * An over the air or online broadcast event.
-* @see http://schema.org/BroadcastEvent
+* @see schema:BroadcastEvent
 * @package Sohophp\SchemaOrg\Thing\Event\PublicationEvent
-
-*
 */
 class BroadcastEvent extends PublicationEvent
 {
+   /**
+        * True if the broadcast is of a live event.
+        */
+    protected $isLiveBroadcast = null;
+
+   /**
+        * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
+        */
+    protected $videoFormat = null;
+
+   /**
+        * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
+        */
+    protected $subtitleLanguage = null;
+
+   /**
+        * The event being broadcast such as a sporting event or awards ceremony.
+        */
+    protected $broadcastOfEvent = null;
+
 
     /**
-    * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setVideoFormat
-    */
-    public function videoFormat($value)
-    {
-        $this->setProperty('videoFormat', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setVideoFormat($value)
-    {
-        $this->setProperty('videoFormat', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getVideoFormat()
-    {
-       return $this->getProperty('videoFormat');
-    }
-
-    /**
-    * True is the broadcast is of a live event.
-    * @param bool|array|string $value
-    * @return $this
-    * @deprecated use setIsLiveBroadcast
-    */
-    public function isLiveBroadcast($value)
-    {
-        $this->setProperty('isLiveBroadcast', $value);
-        return $this;
-    }
-   /**
-    * @param bool|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setIsLiveBroadcast($value)
@@ -62,8 +40,9 @@ class BroadcastEvent extends PublicationEvent
         $this->setProperty('isLiveBroadcast', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getIsLiveBroadcast()
     {
@@ -71,18 +50,43 @@ class BroadcastEvent extends PublicationEvent
     }
 
     /**
-    * The event being broadcast such as a sporting event or awards ceremony.
-    * @param Event|array|string $value
+    * @param array|string $value
     * @return $this
-    * @deprecated use setBroadcastOfEvent
     */
-    public function broadcastOfEvent($value)
+    public function setVideoFormat($value)
     {
-        $this->setProperty('broadcastOfEvent', $value);
+        $this->setProperty('videoFormat', $value);
         return $this;
     }
-   /**
-    * @param Event|array|string $value
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getVideoFormat()
+    {
+       return $this->getProperty('videoFormat');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setSubtitleLanguage($value)
+    {
+        $this->setProperty('subtitleLanguage', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getSubtitleLanguage()
+    {
+       return $this->getProperty('subtitleLanguage');
+    }
+
+    /**
+    * @param array|string $value
     * @return $this
     */
     public function setBroadcastOfEvent($value)
@@ -90,8 +94,9 @@ class BroadcastEvent extends PublicationEvent
         $this->setProperty('broadcastOfEvent', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getBroadcastOfEvent()
     {

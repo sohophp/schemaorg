@@ -5,27 +5,41 @@ use Sohophp\SchemaOrg\Thing\Intangible;
 
 /**
 * An intangible item that describes an alignment between a learning resource and a node in an educational framework.
-* @see http://schema.org/AlignmentObject
-* @package Sohophp\SchemaOrg\Thing\Intangible
 
-*
+Should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.
+* @see schema:AlignmentObject
+* @package Sohophp\SchemaOrg\Thing\Intangible
 */
 class AlignmentObject extends Intangible
 {
+   /**
+        * The description of a node in an established educational framework.
+        */
+    protected $targetDescription = null;
+
+   /**
+        * The URL of a node in an established educational framework.
+        */
+    protected $targetUrl = null;
+
+   /**
+        * The name of a node in an established educational framework.
+        */
+    protected $targetName = null;
+
+   /**
+        * A category of alignment between the learning resource and the framework node. Recommended values include: 'requires', 'textComplexity', 'readingLevel', and 'educationalSubject'.
+        */
+    protected $alignmentType = null;
+
+   /**
+        * The framework to which the resource being described is aligned.
+        */
+    protected $educationalFramework = null;
+
 
     /**
-    * The description of a node in an established educational framework.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setTargetDescription
-    */
-    public function targetDescription($value)
-    {
-        $this->setProperty('targetDescription', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
+    * @param array|string $value
     * @return $this
     */
     public function setTargetDescription($value)
@@ -33,8 +47,9 @@ class AlignmentObject extends Intangible
         $this->setProperty('targetDescription', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getTargetDescription()
     {
@@ -42,46 +57,7 @@ class AlignmentObject extends Intangible
     }
 
     /**
-    * A category of alignment between the learning resource and the framework node. Recommended values include: 'assesses', 'teaches', 'requires', 'textComplexity', 'readingLevel', 'educationalSubject', and 'educationalLevel'.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setAlignmentType
-    */
-    public function alignmentType($value)
-    {
-        $this->setProperty('alignmentType', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setAlignmentType($value)
-    {
-        $this->setProperty('alignmentType', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getAlignmentType()
-    {
-       return $this->getProperty('alignmentType');
-    }
-
-    /**
-    * The URL of a node in an established educational framework.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setTargetUrl
-    */
-    public function targetUrl($value)
-    {
-        $this->setProperty('targetUrl', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
+    * @param array|string $value
     * @return $this
     */
     public function setTargetUrl($value)
@@ -89,8 +65,9 @@ class AlignmentObject extends Intangible
         $this->setProperty('targetUrl', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getTargetUrl()
     {
@@ -98,18 +75,7 @@ class AlignmentObject extends Intangible
     }
 
     /**
-    * The name of a node in an established educational framework.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setTargetName
-    */
-    public function targetName($value)
-    {
-        $this->setProperty('targetName', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
+    * @param array|string $value
     * @return $this
     */
     public function setTargetName($value)
@@ -117,8 +83,9 @@ class AlignmentObject extends Intangible
         $this->setProperty('targetName', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getTargetName()
     {
@@ -126,18 +93,25 @@ class AlignmentObject extends Intangible
     }
 
     /**
-    * The framework to which the resource being described is aligned.
-    * @param string|array $value
+    * @param array|string $value
     * @return $this
-    * @deprecated use setEducationalFramework
     */
-    public function educationalFramework($value)
+    public function setAlignmentType($value)
     {
-        $this->setProperty('educationalFramework', $value);
+        $this->setProperty('alignmentType', $value);
         return $this;
     }
-   /**
-    * @param string|array $value
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getAlignmentType()
+    {
+       return $this->getProperty('alignmentType');
+    }
+
+    /**
+    * @param array|string $value
     * @return $this
     */
     public function setEducationalFramework($value)
@@ -145,8 +119,9 @@ class AlignmentObject extends Intangible
         $this->setProperty('educationalFramework', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getEducationalFramework()
     {

@@ -5,10 +5,8 @@ use Sohophp\SchemaOrg\Thing\Action;
 
 /**
 * The act of interacting with another person or organization.
-* @see http://schema.org/InteractAction
+* @see schema:InteractAction
 * @package Sohophp\SchemaOrg\Thing\Action
-
-*
 */
 class InteractAction extends Action
 {

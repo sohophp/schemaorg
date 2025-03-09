@@ -2,31 +2,22 @@
 namespace Sohophp\SchemaOrg\Thing\Organization\MedicalOrganization;
 
 use Sohophp\SchemaOrg\Thing\Organization\MedicalOrganization;
-use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalTest;
 
 /**
 * A medical laboratory that offers on-site or off-site diagnostic services.
-* @see http://schema.org/DiagnosticLab
+* @see schema:DiagnosticLab
 * @package Sohophp\SchemaOrg\Thing\Organization\MedicalOrganization
-
-*
 */
 class DiagnosticLab extends MedicalOrganization
 {
+   /**
+        * A diagnostic test or procedure offered by this lab.
+        */
+    protected $availableTest = null;
+
 
     /**
-    * A diagnostic test or procedure offered by this lab.
-    * @param MedicalTest|array|string $value
-    * @return $this
-    * @deprecated use setAvailableTest
-    */
-    public function availableTest($value)
-    {
-        $this->setProperty('availableTest', $value);
-        return $this;
-    }
-   /**
-    * @param MedicalTest|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setAvailableTest($value)
@@ -34,8 +25,9 @@ class DiagnosticLab extends MedicalOrganization
         $this->setProperty('availableTest', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getAvailableTest()
     {

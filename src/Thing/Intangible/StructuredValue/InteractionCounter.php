@@ -2,61 +2,47 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
 
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
-use Sohophp\SchemaOrg\Thing\CreativeWork\SoftwareApplication;
-use Sohophp\SchemaOrg\Thing\CreativeWork\WebSite;
-use Sohophp\SchemaOrg\Thing\Action;
 
 /**
 * A summary of how users have interacted with this CreativeWork. In most cases, authors will use a subtype to specify the specific type of interaction.
-* @see http://schema.org/InteractionCounter
+* @see schema:InteractionCounter
 * @package Sohophp\SchemaOrg\Thing\Intangible\StructuredValue
-
-*
 */
 class InteractionCounter extends StructuredValue
 {
+   /**
+        * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication.
+        */
+    protected $userInteractionCount = null;
+
+   /**
+        * The Action representing the type of interaction. For up votes, +1s, etc. use [[LikeAction]]. For down votes use [[DislikeAction]]. Otherwise, use the most specific Action.
+        */
+    protected $interactionType = null;
+
+   /**
+        * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+        */
+    protected $startTime = null;
+
+   /**
+        * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+        */
+    protected $endTime = null;
+
+   /**
+        * The WebSite or SoftwareApplication where the interactions took place.
+        */
+    protected $interactionService = null;
+
+   /**
+        * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+        */
+    protected $location = null;
+
 
     /**
-    * The WebSite or SoftwareApplication where the interactions took place.
-    * @param SoftwareApplication|WebSite|array|string $value
-    * @return $this
-    * @deprecated use setInteractionService
-    */
-    public function interactionService($value)
-    {
-        $this->setProperty('interactionService', $value);
-        return $this;
-    }
-   /**
-    * @param SoftwareApplication|WebSite|array|string $value
-    * @return $this
-    */
-    public function setInteractionService($value)
-    {
-        $this->setProperty('interactionService', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getInteractionService()
-    {
-       return $this->getProperty('interactionService');
-    }
-
-    /**
-    * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication.
-    * @param int|array|string $value
-    * @return $this
-    * @deprecated use setUserInteractionCount
-    */
-    public function userInteractionCount($value)
-    {
-        $this->setProperty('userInteractionCount', $value);
-        return $this;
-    }
-   /**
-    * @param int|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setUserInteractionCount($value)
@@ -64,8 +50,9 @@ class InteractionCounter extends StructuredValue
         $this->setProperty('userInteractionCount', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getUserInteractionCount()
     {
@@ -73,18 +60,7 @@ class InteractionCounter extends StructuredValue
     }
 
     /**
-    * The Action representing the type of interaction. For up votes, +1s, etc. use <a class="localLink" href="http://schema.org/LikeAction">LikeAction</a>. For down votes use <a class="localLink" href="http://schema.org/DislikeAction">DislikeAction</a>. Otherwise, use the most specific Action.
-    * @param Action|array|string $value
-    * @return $this
-    * @deprecated use setInteractionType
-    */
-    public function interactionType($value)
-    {
-        $this->setProperty('interactionType', $value);
-        return $this;
-    }
-   /**
-    * @param Action|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setInteractionType($value)
@@ -92,12 +68,85 @@ class InteractionCounter extends StructuredValue
         $this->setProperty('interactionType', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getInteractionType()
     {
        return $this->getProperty('interactionType');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setStartTime($value)
+    {
+        $this->setProperty('startTime', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getStartTime()
+    {
+       return $this->getProperty('startTime');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setEndTime($value)
+    {
+        $this->setProperty('endTime', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getEndTime()
+    {
+       return $this->getProperty('endTime');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setInteractionService($value)
+    {
+        $this->setProperty('interactionService', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getInteractionService()
+    {
+       return $this->getProperty('interactionService');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setLocation($value)
+    {
+        $this->setProperty('location', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getLocation()
+    {
+       return $this->getProperty('location');
     }
 
 

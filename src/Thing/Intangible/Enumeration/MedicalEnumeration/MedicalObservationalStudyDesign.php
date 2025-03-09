@@ -5,10 +5,8 @@ use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MedicalEnumeration;
 
 /**
 * Design models for observational medical studies. Enumerated type.
-* @see http://schema.org/MedicalObservationalStudyDesign
+* @see schema:MedicalObservationalStudyDesign
 * @package Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MedicalEnumeration
-
-*
 */
 class MedicalObservationalStudyDesign extends MedicalEnumeration
 {

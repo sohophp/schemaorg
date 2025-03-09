@@ -5,10 +5,8 @@ use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MedicalEnumeration;
 
 /**
 * Any medical imaging modality typically used for diagnostic purposes. Enumerated type.
-* @see http://schema.org/MedicalImagingTechnique
+* @see schema:MedicalImagingTechnique
 * @package Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MedicalEnumeration
-
-*
 */
 class MedicalImagingTechnique extends MedicalEnumeration
 {

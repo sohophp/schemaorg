@@ -2,60 +2,41 @@
 namespace Sohophp\SchemaOrg\Thing\CreativeWork\CreativeWorkSeason;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork\CreativeWorkSeason;
-use Sohophp\SchemaOrg\Thing\CreativeWork\CreativeWorkSeries\TVSeries;
-use Sohophp\SchemaOrg\Thing\Place\AdministrativeArea\Country;
 
 /**
 * Season dedicated to TV broadcast and associated online delivery.
-* @see http://schema.org/TVSeason
+* @see schema:TVSeason
 * @package Sohophp\SchemaOrg\Thing\CreativeWork\CreativeWorkSeason
-
-*
 */
 class TVSeason extends CreativeWorkSeason
 {
+   /**
+        * The country of origin of something, including products as well as creative  works such as movie and TV content.
+
+In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of [[CreativeWork]] it is difficult to provide fully general guidance, and properties such as [[contentLocation]] and [[locationCreated]] may be more applicable.
+
+In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
+        */
+    protected $countryOfOrigin = null;
+
+   /**
+        * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing at the most general/abstract level, a work of film or television.
+
+For example, the motion picture known as "Ghostbusters" has a titleEIDR of  "10.5240/7EC7-228A-510A-053E-CBB8-J". This title (or work) may have several variants, which EIDR calls "edits". See [[editEIDR]].
+
+Since schema.org types like [[Movie]], [[TVEpisode]], [[TVSeason]], and [[TVSeries]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
+
+        */
+    protected $titleEIDR = null;
+
+   /**
+        * The TV series to which this episode or season belongs.
+        */
+    protected $partOfTVSeries = null;
+
 
     /**
-    * The TV series to which this episode or season belongs.
-    * @param TVSeries|array|string $value
-    * @return $this
-    * @deprecated use setPartOfTVSeries
-    */
-    public function partOfTVSeries($value)
-    {
-        $this->setProperty('partOfTVSeries', $value);
-        return $this;
-    }
-   /**
-    * @param TVSeries|array|string $value
-    * @return $this
-    */
-    public function setPartOfTVSeries($value)
-    {
-        $this->setProperty('partOfTVSeries', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getPartOfTVSeries()
-    {
-       return $this->getProperty('partOfTVSeries');
-    }
-
-    /**
-    * The country of the principal offices of the production company or individual responsible for the movie or program.
-    * @param Country|array|string $value
-    * @return $this
-    * @deprecated use setCountryOfOrigin
-    */
-    public function countryOfOrigin($value)
-    {
-        $this->setProperty('countryOfOrigin', $value);
-        return $this;
-    }
-   /**
-    * @param Country|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setCountryOfOrigin($value)
@@ -63,12 +44,49 @@ class TVSeason extends CreativeWorkSeason
         $this->setProperty('countryOfOrigin', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getCountryOfOrigin()
     {
        return $this->getProperty('countryOfOrigin');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setTitleEIDR($value)
+    {
+        $this->setProperty('titleEIDR', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getTitleEIDR()
+    {
+       return $this->getProperty('titleEIDR');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setPartOfTVSeries($value)
+    {
+        $this->setProperty('partOfTVSeries', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getPartOfTVSeries()
+    {
+       return $this->getProperty('partOfTVSeries');
     }
 
 

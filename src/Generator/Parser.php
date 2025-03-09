@@ -16,7 +16,7 @@ class Parser
     /**
      * @var Configure
      */
-    private $configure;
+    private Configure $configure;
 
     private $graphs = [];
     private $classes = [];
@@ -27,7 +27,7 @@ class Parser
     /**
      * @param Configure $configure
      */
-    public function parse(Configure $configure)
+    public function parse(Configure $configure): void
     {
         $this->configure = $configure;
         $this->parseJsonld($this->configure->getSchemaJsonldFilePath());

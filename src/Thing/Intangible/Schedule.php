@@ -2,68 +2,160 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible;
 
 use Sohophp\SchemaOrg\Thing\Intangible;
-use Sohophp\SchemaOrg\Thing\Intangible\Quantity\Duration;
-use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\DayOfWeek;
 
 /**
-* A schedule defines a repeating time period used to describe a regularly occurring <a class="localLink" href="http://schema.org/Event">Event</a>. At a minimum a schedule will specify <a class="localLink" href="http://schema.org/repeatFrequency">repeatFrequency</a> which describes the interval between occurences of the event. Additional information can be provided to specify the schedule more precisely. 
+* A schedule defines a repeating time period used to describe a regularly occurring [[Event]]. At a minimum a schedule will specify [[repeatFrequency]] which describes the interval between occurrences of the event. Additional information can be provided to specify the schedule more precisely.
       This includes identifying the day(s) of the week or month when the recurring event will take place, in addition to its start and end time. Schedules may also
       have start and end dates to indicate when they are active, e.g. to define a limited calendar of events.
-* @see http://schema.org/Schedule
+* @see schema:Schedule
 * @package Sohophp\SchemaOrg\Thing\Intangible
-
-*
 */
 class Schedule extends Intangible
 {
+   /**
+        * Indicates the timezone for which the time(s) indicated in the [[Schedule]] are given. The value provided should be among those listed in the IANA Time Zone Database.
+        */
+    protected $scheduleTimezone = null;
+
+   /**
+        * Defines the month(s) of the year on which a recurring [[Event]] takes place. Specified as an [[Integer]] between 1-12. January is 1.
+        */
+    protected $byMonth = null;
+
+   /**
+        * Defines the day(s) of the week on which a recurring [[Event]] takes place. May be specified using either [[DayOfWeek]], or alternatively [[Text]] conforming to iCal's syntax for byDay recurrence rules.
+        */
+    protected $byDay = null;
+
+   /**
+        * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+        */
+    protected $endDate = null;
+
+   /**
+        * Defines the frequency at which [[Event]]s will occur according to a schedule [[Schedule]]. The intervals between
+      events should be defined as a [[Duration]] of time.
+        */
+    protected $repeatFrequency = null;
+
+   /**
+        * Defines the number of times a recurring [[Event]] will take place.
+        */
+    protected $repeatCount = null;
+
+   /**
+        * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+        */
+    protected $startDate = null;
+
+   /**
+        * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
+        */
+    protected $duration = null;
+
+   /**
+        * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+        */
+    protected $startTime = null;
+
+   /**
+        * Defines the week(s) of the month on which a recurring Event takes place. Specified as an Integer between 1-5. For clarity, byMonthWeek is best used in conjunction with byDay to indicate concepts like the first and third Mondays of a month.
+        */
+    protected $byMonthWeek = null;
+
+   /**
+        * Defines the day(s) of the month on which a recurring [[Event]] takes place. Specified as an [[Integer]] between 1-31.
+        */
+    protected $byMonthDay = null;
+
+   /**
+        * Defines a [[Date]] or [[DateTime]] during which a scheduled [[Event]] will not take place. The property allows exceptions to
+      a [[Schedule]] to be specified. If an exception is specified as a [[DateTime]] then only the event that would have started at that specific date and time
+      should be excluded from the schedule. If an exception is specified as a [[Date]] then any event that is scheduled for that 24 hour period should be
+      excluded from the schedule. This allows a whole day to be excluded from the schedule without having to itemise every scheduled event.
+        */
+    protected $exceptDate = null;
+
+   /**
+        * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+        */
+    protected $endTime = null;
+
 
     /**
-    * Associates an <a class="localLink" href="http://schema.org/Event">Event</a> with a <a class="localLink" href="http://schema.org/Schedule">Schedule</a>. There are circumstances where it is preferable to share a schedule for a series of
-      repeating events rather than data on the individual events themselves. For example, a website or application might prefer to publish a schedule for a weekly
-      gym class rather than provide data on every event. A schedule could be processed by applications to add forthcoming events to a calendar. An <a class="localLink" href="http://schema.org/Event">Event</a> that
-      is associated with a <a class="localLink" href="http://schema.org/Schedule">Schedule</a> using this property should not have <a class="localLink" href="http://schema.org/startDate">startDate</a> or <a class="localLink" href="http://schema.org/endDate">endDate</a> properties. These are instead defined within the associated
-      <a class="localLink" href="http://schema.org/Schedule">Schedule</a>, this avoids any ambiguity for clients using the data. The propery might have repeated values to specify different schedules, e.g. for different months
-      or seasons.
-    * @param Duration|array|string $value
-    * @return $this
-    * @deprecated use setEventSchedule
-    */
-    public function eventSchedule($value)
-    {
-        $this->setProperty('eventSchedule', $value);
-        return $this;
-    }
-   /**
-    * @param Duration|array|string $value
+    * @param array|string $value
     * @return $this
     */
-    public function setEventSchedule($value)
+    public function setScheduleTimezone($value)
     {
-        $this->setProperty('eventSchedule', $value);
+        $this->setProperty('scheduleTimezone', $value);
         return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getEventSchedule()
-    {
-       return $this->getProperty('eventSchedule');
     }
 
     /**
-    * Defines the frequency at which <a class="localLink" href="http://schema.org/Events">Events</a> will occur according to a schedule <a class="localLink" href="http://schema.org/Schedule">Schedule</a>. The intervals between
-      events should be defined as a <a class="localLink" href="http://schema.org/Duration">Duration</a> of time.
-    * @param string|Duration|array $value
-    * @return $this
-    * @deprecated use setRepeatFrequency
+    * @return string|array|mixed
     */
-    public function repeatFrequency($value)
+    public function getScheduleTimezone()
     {
-        $this->setProperty('repeatFrequency', $value);
+       return $this->getProperty('scheduleTimezone');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setByMonth($value)
+    {
+        $this->setProperty('byMonth', $value);
         return $this;
     }
-   /**
-    * @param string|Duration|array $value
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getByMonth()
+    {
+       return $this->getProperty('byMonth');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setByDay($value)
+    {
+        $this->setProperty('byDay', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getByDay()
+    {
+       return $this->getProperty('byDay');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setEndDate($value)
+    {
+        $this->setProperty('endDate', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getEndDate()
+    {
+       return $this->getProperty('endDate');
+    }
+
+    /**
+    * @param array|string $value
     * @return $this
     */
     public function setRepeatFrequency($value)
@@ -71,8 +163,9 @@ class Schedule extends Intangible
         $this->setProperty('repeatFrequency', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getRepeatFrequency()
     {
@@ -80,20 +173,114 @@ class Schedule extends Intangible
     }
 
     /**
-    * Defines a <a class="localLink" href="http://schema.org/Date">Date</a> or <a class="localLink" href="http://schema.org/DateTime">DateTime</a> during which a scheduled <a class="localLink" href="http://schema.org/Event">Event</a> will not take place. The property allows exceptions to
-      a <a class="localLink" href="http://schema.org/Schedule">Schedule</a> to be specified. If an exception is specified as a <a class="localLink" href="http://schema.org/DateTime">DateTime</a> then only the event that would have started at that specific date and time
-      should be excluded from the schedule. If an exception is specified as a <a class="localLink" href="http://schema.org/Date">Date</a> then any event that is scheduled for that 24 hour period should be
-      excluded from the schedule. This allows a whole day to be excluded from the schedule without having to itemise every scheduled event.
     * @param array|string $value
     * @return $this
-    * @deprecated use setExceptDate
     */
-    public function exceptDate($value)
+    public function setRepeatCount($value)
     {
-        $this->setProperty('exceptDate', $value);
+        $this->setProperty('repeatCount', $value);
         return $this;
     }
-   /**
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getRepeatCount()
+    {
+       return $this->getProperty('repeatCount');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setStartDate($value)
+    {
+        $this->setProperty('startDate', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getStartDate()
+    {
+       return $this->getProperty('startDate');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setDuration($value)
+    {
+        $this->setProperty('duration', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getDuration()
+    {
+       return $this->getProperty('duration');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setStartTime($value)
+    {
+        $this->setProperty('startTime', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getStartTime()
+    {
+       return $this->getProperty('startTime');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setByMonthWeek($value)
+    {
+        $this->setProperty('byMonthWeek', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getByMonthWeek()
+    {
+       return $this->getProperty('byMonthWeek');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setByMonthDay($value)
+    {
+        $this->setProperty('byMonthDay', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getByMonthDay()
+    {
+       return $this->getProperty('byMonthDay');
+    }
+
+    /**
     * @param array|string $value
     * @return $this
     */
@@ -102,8 +289,9 @@ class Schedule extends Intangible
         $this->setProperty('exceptDate', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getExceptDate()
     {
@@ -111,115 +299,21 @@ class Schedule extends Intangible
     }
 
     /**
-    * Defines the day(s) of the week on which a recurring <a class="localLink" href="http://schema.org/Event">Event</a> takes place
-    * @param DayOfWeek|array|string $value
-    * @return $this
-    * @deprecated use setByDay
-    */
-    public function byDay($value)
-    {
-        $this->setProperty('byDay', $value);
-        return $this;
-    }
-   /**
-    * @param DayOfWeek|array|string $value
+    * @param array|string $value
     * @return $this
     */
-    public function setByDay($value)
+    public function setEndTime($value)
     {
-        $this->setProperty('byDay', $value);
+        $this->setProperty('endTime', $value);
         return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getByDay()
-    {
-       return $this->getProperty('byDay');
     }
 
     /**
-    * Defines the number of times a recurring <a class="localLink" href="http://schema.org/Event">Event</a> will take place
-    * @param int|array|string $value
-    * @return $this
-    * @deprecated use setRepeatCount
+    * @return string|array|mixed
     */
-    public function repeatCount($value)
+    public function getEndTime()
     {
-        $this->setProperty('repeatCount', $value);
-        return $this;
-    }
-   /**
-    * @param int|array|string $value
-    * @return $this
-    */
-    public function setRepeatCount($value)
-    {
-        $this->setProperty('repeatCount', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getRepeatCount()
-    {
-       return $this->getProperty('repeatCount');
-    }
-
-    /**
-    * Defines the day(s) of the month on which a recurring <a class="localLink" href="http://schema.org/Event">Event</a> takes place. Specified as an <a class="localLink" href="http://schema.org/Integer">Integer</a> between 1-31.
-    * @param int|array|string $value
-    * @return $this
-    * @deprecated use setByMonthDay
-    */
-    public function byMonthDay($value)
-    {
-        $this->setProperty('byMonthDay', $value);
-        return $this;
-    }
-   /**
-    * @param int|array|string $value
-    * @return $this
-    */
-    public function setByMonthDay($value)
-    {
-        $this->setProperty('byMonthDay', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getByMonthDay()
-    {
-       return $this->getProperty('byMonthDay');
-    }
-
-    /**
-    * Defines the month(s) of the year on which a recurring <a class="localLink" href="http://schema.org/Event">Event</a> takes place. Specified as an <a class="localLink" href="http://schema.org/Integer">Integer</a> between 1-12. January is 1.
-    * @param int|array|string $value
-    * @return $this
-    * @deprecated use setByMonth
-    */
-    public function byMonth($value)
-    {
-        $this->setProperty('byMonth', $value);
-        return $this;
-    }
-   /**
-    * @param int|array|string $value
-    * @return $this
-    */
-    public function setByMonth($value)
-    {
-        $this->setProperty('byMonth', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getByMonth()
-    {
-       return $this->getProperty('byMonth');
+       return $this->getProperty('endTime');
     }
 
 

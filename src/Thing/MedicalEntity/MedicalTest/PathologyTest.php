@@ -5,27 +5,19 @@ use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalTest;
 
 /**
 * A medical test performed by a laboratory that typically involves examination of a tissue sample by a pathologist.
-* @see http://schema.org/PathologyTest
+* @see schema:PathologyTest
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalTest
-
-*
 */
 class PathologyTest extends MedicalTest
 {
+   /**
+        * The type of tissue sample required for the test.
+        */
+    protected $tissueSample = null;
+
 
     /**
-    * The type of tissue sample required for the test.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setTissueSample
-    */
-    public function tissueSample($value)
-    {
-        $this->setProperty('tissueSample', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
+    * @param array|string $value
     * @return $this
     */
     public function setTissueSample($value)
@@ -33,8 +25,9 @@ class PathologyTest extends MedicalTest
         $this->setProperty('tissueSample', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getTissueSample()
     {

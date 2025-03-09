@@ -5,10 +5,8 @@ use Sohophp\SchemaOrg\Thing\Place\AdministrativeArea;
 
 /**
 * A country.
-* @see http://schema.org/Country
+* @see schema:Country
 * @package Sohophp\SchemaOrg\Thing\Place\AdministrativeArea
-
-*
 */
 class Country extends AdministrativeArea
 {

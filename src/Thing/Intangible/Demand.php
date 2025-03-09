@@ -2,470 +2,199 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible;
 
 use Sohophp\SchemaOrg\Thing\Intangible;
-use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\DeliveryMethod;
-use Sohophp\SchemaOrg\Thing\Place;
-use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\GeoShape;
-use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\PriceSpecification;
-use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\QuantitativeValue;
-use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\WarrantyPromise;
-use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\TypeAndQuantityNode;
-use Sohophp\SchemaOrg\Thing\Person;
-use Sohophp\SchemaOrg\Thing\Organization;
-use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\ItemAvailability;
-use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\BusinessEntityType;
-use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\OfferItemCondition;
-use Sohophp\SchemaOrg\Thing\Product;
-use Sohophp\SchemaOrg\Thing\Intangible\Service;
-use Sohophp\SchemaOrg\Thing\Intangible\Service\FinancialProduct\LoanOrCredit;
-use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\PaymentMethod;
-use Sohophp\SchemaOrg\Thing\Place\AdministrativeArea;
-use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\BusinessFunction;
 
 /**
 * A demand entity represents the public, not necessarily binding, not necessarily exclusive, announcement by an organization or person to seek a certain type of goods or services. For describing demand using this type, the very same properties used for Offer apply.
-* @see http://schema.org/Demand
+* @see schema:Demand
 * @package Sohophp\SchemaOrg\Thing\Intangible
-
-*
 */
 class Demand extends Intangible
 {
-
-    /**
-    * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setSku
-    */
-    public function sku($value)
-    {
-        $this->setProperty('sku', $value);
-        return $this;
-    }
    /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setSku($value)
-    {
-        $this->setProperty('sku', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getSku()
-    {
-       return $this->getProperty('sku');
-    }
+        * The amount of time that is required between accepting the offer and the actual usage of the resource or service.
+        */
+    protected $advanceBookingRequirement = null;
+
+   /**
+        * The type(s) of customers for which the given offer is valid.
+        */
+    protected $eligibleCustomerType = null;
+
+   /**
+        * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
+        */
+    protected $eligibleQuantity = null;
+
+   /**
+        * The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
+        */
+    protected $serialNumber = null;
+
+   /**
+        * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
+        */
+    protected $mpn = null;
+
+   /**
+        * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+        */
+    protected $validThrough = null;
+
+   /**
+        * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes.
+
+A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties.
+
+The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) expresses GTINs as URLs (URIs, IRIs, etc.).
+Digital Links should be populated into the [[hasGS1DigitalLink]] attribute.
+
+Note also that this is a definition for how to include GTINs in Schema.org data, and not a definition of GTINs in general - see the GS1 documentation for authoritative details.
+        */
+    protected $gtin = null;
+
+   /**
+        * The delivery method(s) available for this offer.
+        */
+    protected $availableDeliveryMethod = null;
+
+   /**
+        * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+        */
+    protected $gtin12 = null;
+
+   /**
+        * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
+        */
+    protected $sku = null;
+
+   /**
+        * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
+        */
+    protected $itemCondition = null;
+
+   /**
+        * The end of the availability of the product or service included in the offer.
+        */
+    protected $availabilityEnds = null;
+
+   /**
+        * The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.
+        */
+    protected $acceptedPaymentMethod = null;
+
+   /**
+        * An Amazon Standard Identification Number (ASIN) is a 10-character alphanumeric unique identifier assigned by Amazon.com and its partners for product identification within the Amazon organization (summary from [Wikipedia](https://en.wikipedia.org/wiki/Amazon_Standard_Identification_Number)'s article).
+
+Note also that this is a definition for how to include ASINs in Schema.org data, and not a definition of ASINs in general - see documentation from Amazon for authoritative details.
+ASINs are most commonly encoded as text strings, but the [asin] property supports URL/URI as potential values too.
+        */
+    protected $asin = null;
+
+   /**
+        * The warranty promise(s) included in the offer.
+        */
+    protected $warranty = null;
+
+   /**
+        * The date when the item becomes valid.
+        */
+    protected $validFrom = null;
+
+   /**
+        * The duration for which the given offer is valid.
+        */
+    protected $eligibleDuration = null;
+
+   /**
+        * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
+        */
+    protected $priceSpecification = null;
+
+   /**
+        * The current approximate inventory level for the item or items.
+        */
+    protected $inventoryLevel = null;
+
+   /**
+        * The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.
+        */
+    protected $deliveryLeadTime = null;
+
+   /**
+        * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+        */
+    protected $itemOffered = null;
+
+   /**
+        * The availability of this item&#x2014;for example In stock, Out of stock, Pre-order, etc.
+        */
+    protected $availability = null;
+
+   /**
+        * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+        */
+    protected $gtin8 = null;
+
+   /**
+        * The place(s) from which the offer can be obtained (e.g. store locations).
+        */
+    protected $availableAtOrFrom = null;
+
+   /**
+        * The geographic area where a service or offered item is provided.
+        */
+    protected $areaServed = null;
+
+   /**
+        * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
+        */
+    protected $businessFunction = null;
+
+   /**
+        * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+        */
+    protected $gtin13 = null;
+
+   /**
+        * The beginning of the availability of the product or service included in the offer.
+        */
+    protected $availabilityStarts = null;
+
+   /**
+        * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
+    
+        */
+    protected $eligibleRegion = null;
+
+   /**
+        * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.\n\nSee also [[eligibleRegion]].
+      
+        */
+    protected $ineligibleRegion = null;
+
+   /**
+        * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
+        */
+    protected $includesObject = null;
+
+   /**
+        * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
+        */
+    protected $eligibleTransactionVolume = null;
+
+   /**
+        * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+        */
+    protected $gtin14 = null;
+
+   /**
+        * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+        */
+    protected $seller = null;
+
 
     /**
-    * The beginning of the availability of the product or service included in the offer.
     * @param array|string $value
-    * @return $this
-    * @deprecated use setAvailabilityStarts
-    */
-    public function availabilityStarts($value)
-    {
-        $this->setProperty('availabilityStarts', $value);
-        return $this;
-    }
-   /**
-    * @param array|string $value
-    * @return $this
-    */
-    public function setAvailabilityStarts($value)
-    {
-        $this->setProperty('availabilityStarts', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getAvailabilityStarts()
-    {
-       return $this->getProperty('availabilityStarts');
-    }
-
-    /**
-    * The delivery method(s) available for this offer.
-    * @param DeliveryMethod|array|string $value
-    * @return $this
-    * @deprecated use setAvailableDeliveryMethod
-    */
-    public function availableDeliveryMethod($value)
-    {
-        $this->setProperty('availableDeliveryMethod', $value);
-        return $this;
-    }
-   /**
-    * @param DeliveryMethod|array|string $value
-    * @return $this
-    */
-    public function setAvailableDeliveryMethod($value)
-    {
-        $this->setProperty('availableDeliveryMethod', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getAvailableDeliveryMethod()
-    {
-       return $this->getProperty('availableDeliveryMethod');
-    }
-
-    /**
-    * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setMpn
-    */
-    public function mpn($value)
-    {
-        $this->setProperty('mpn', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setMpn($value)
-    {
-        $this->setProperty('mpn', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getMpn()
-    {
-       return $this->getProperty('mpn');
-    }
-
-    /**
-    * The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setSerialNumber
-    */
-    public function serialNumber($value)
-    {
-        $this->setProperty('serialNumber', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setSerialNumber($value)
-    {
-        $this->setProperty('serialNumber', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getSerialNumber()
-    {
-       return $this->getProperty('serialNumber');
-    }
-
-    /**
-    * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>
-
-See also <a class="localLink" href="http://schema.org/eligibleRegion">eligibleRegion</a>.
-    * @param Place|string|GeoShape|array $value
-    * @return $this
-    * @deprecated use setIneligibleRegion
-    */
-    public function ineligibleRegion($value)
-    {
-        $this->setProperty('ineligibleRegion', $value);
-        return $this;
-    }
-   /**
-    * @param Place|string|GeoShape|array $value
-    * @return $this
-    */
-    public function setIneligibleRegion($value)
-    {
-        $this->setProperty('ineligibleRegion', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getIneligibleRegion()
-    {
-       return $this->getProperty('ineligibleRegion');
-    }
-
-    /**
-    * The <a href="http://apps.gs1.org/GDD/glossary/Pages/GTIN-8.aspx">GTIN-8</a> code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See <a href="http://www.gs1.org/barcodes/technical/idkeys/gtin">GS1 GTIN Summary</a> for more details.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setGtin8
-    */
-    public function gtin8($value)
-    {
-        $this->setProperty('gtin8', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setGtin8($value)
-    {
-        $this->setProperty('gtin8', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getGtin8()
-    {
-       return $this->getProperty('gtin8');
-    }
-
-    /**
-    * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
-    * @param PriceSpecification|array|string $value
-    * @return $this
-    * @deprecated use setPriceSpecification
-    */
-    public function priceSpecification($value)
-    {
-        $this->setProperty('priceSpecification', $value);
-        return $this;
-    }
-   /**
-    * @param PriceSpecification|array|string $value
-    * @return $this
-    */
-    public function setPriceSpecification($value)
-    {
-        $this->setProperty('priceSpecification', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getPriceSpecification()
-    {
-       return $this->getProperty('priceSpecification');
-    }
-
-    /**
-    * The current approximate inventory level for the item or items.
-    * @param QuantitativeValue|array|string $value
-    * @return $this
-    * @deprecated use setInventoryLevel
-    */
-    public function inventoryLevel($value)
-    {
-        $this->setProperty('inventoryLevel', $value);
-        return $this;
-    }
-   /**
-    * @param QuantitativeValue|array|string $value
-    * @return $this
-    */
-    public function setInventoryLevel($value)
-    {
-        $this->setProperty('inventoryLevel', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getInventoryLevel()
-    {
-       return $this->getProperty('inventoryLevel');
-    }
-
-    /**
-    * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
-    * @param PriceSpecification|array|string $value
-    * @return $this
-    * @deprecated use setEligibleTransactionVolume
-    */
-    public function eligibleTransactionVolume($value)
-    {
-        $this->setProperty('eligibleTransactionVolume', $value);
-        return $this;
-    }
-   /**
-    * @param PriceSpecification|array|string $value
-    * @return $this
-    */
-    public function setEligibleTransactionVolume($value)
-    {
-        $this->setProperty('eligibleTransactionVolume', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getEligibleTransactionVolume()
-    {
-       return $this->getProperty('eligibleTransactionVolume');
-    }
-
-    /**
-    * The place(s) from which the offer can be obtained (e.g. store locations).
-    * @param Place|array|string $value
-    * @return $this
-    * @deprecated use setAvailableAtOrFrom
-    */
-    public function availableAtOrFrom($value)
-    {
-        $this->setProperty('availableAtOrFrom', $value);
-        return $this;
-    }
-   /**
-    * @param Place|array|string $value
-    * @return $this
-    */
-    public function setAvailableAtOrFrom($value)
-    {
-        $this->setProperty('availableAtOrFrom', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getAvailableAtOrFrom()
-    {
-       return $this->getProperty('availableAtOrFrom');
-    }
-
-    /**
-    * The warranty promise(s) included in the offer.
-    * @param WarrantyPromise|array|string $value
-    * @return $this
-    * @deprecated use setWarranty
-    */
-    public function warranty($value)
-    {
-        $this->setProperty('warranty', $value);
-        return $this;
-    }
-   /**
-    * @param WarrantyPromise|array|string $value
-    * @return $this
-    */
-    public function setWarranty($value)
-    {
-        $this->setProperty('warranty', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getWarranty()
-    {
-       return $this->getProperty('warranty');
-    }
-
-    /**
-    * This links to a node or nodes indicating the exact quantity of the products included in the offer.
-    * @param TypeAndQuantityNode|array|string $value
-    * @return $this
-    * @deprecated use setIncludesObject
-    */
-    public function includesObject($value)
-    {
-        $this->setProperty('includesObject', $value);
-        return $this;
-    }
-   /**
-    * @param TypeAndQuantityNode|array|string $value
-    * @return $this
-    */
-    public function setIncludesObject($value)
-    {
-        $this->setProperty('includesObject', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getIncludesObject()
-    {
-       return $this->getProperty('includesObject');
-    }
-
-    /**
-    * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
-    * @param QuantitativeValue|array|string $value
-    * @return $this
-    * @deprecated use setEligibleQuantity
-    */
-    public function eligibleQuantity($value)
-    {
-        $this->setProperty('eligibleQuantity', $value);
-        return $this;
-    }
-   /**
-    * @param QuantitativeValue|array|string $value
-    * @return $this
-    */
-    public function setEligibleQuantity($value)
-    {
-        $this->setProperty('eligibleQuantity', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getEligibleQuantity()
-    {
-       return $this->getProperty('eligibleQuantity');
-    }
-
-    /**
-    * The date when the item becomes valid.
-    * @param array|string $value
-    * @return $this
-    * @deprecated use setValidFrom
-    */
-    public function validFrom($value)
-    {
-        $this->setProperty('validFrom', $value);
-        return $this;
-    }
-   /**
-    * @param array|string $value
-    * @return $this
-    */
-    public function setValidFrom($value)
-    {
-        $this->setProperty('validFrom', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getValidFrom()
-    {
-       return $this->getProperty('validFrom');
-    }
-
-    /**
-    * The amount of time that is required between accepting the offer and the actual usage of the resource or service.
-    * @param QuantitativeValue|array|string $value
-    * @return $this
-    * @deprecated use setAdvanceBookingRequirement
-    */
-    public function advanceBookingRequirement($value)
-    {
-        $this->setProperty('advanceBookingRequirement', $value);
-        return $this;
-    }
-   /**
-    * @param QuantitativeValue|array|string $value
     * @return $this
     */
     public function setAdvanceBookingRequirement($value)
@@ -473,8 +202,9 @@ See also <a class="localLink" href="http://schema.org/eligibleRegion">eligibleRe
         $this->setProperty('advanceBookingRequirement', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getAdvanceBookingRequirement()
     {
@@ -482,17 +212,78 @@ See also <a class="localLink" href="http://schema.org/eligibleRegion">eligibleRe
     }
 
     /**
-    * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
     * @param array|string $value
     * @return $this
-    * @deprecated use setValidThrough
     */
-    public function validThrough($value)
+    public function setEligibleCustomerType($value)
     {
-        $this->setProperty('validThrough', $value);
+        $this->setProperty('eligibleCustomerType', $value);
         return $this;
     }
-   /**
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getEligibleCustomerType()
+    {
+       return $this->getProperty('eligibleCustomerType');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setEligibleQuantity($value)
+    {
+        $this->setProperty('eligibleQuantity', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getEligibleQuantity()
+    {
+       return $this->getProperty('eligibleQuantity');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setSerialNumber($value)
+    {
+        $this->setProperty('serialNumber', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getSerialNumber()
+    {
+       return $this->getProperty('serialNumber');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setMpn($value)
+    {
+        $this->setProperty('mpn', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getMpn()
+    {
+       return $this->getProperty('mpn');
+    }
+
+    /**
     * @param array|string $value
     * @return $this
     */
@@ -501,8 +292,9 @@ See also <a class="localLink" href="http://schema.org/eligibleRegion">eligibleRe
         $this->setProperty('validThrough', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getValidThrough()
     {
@@ -510,158 +302,7 @@ See also <a class="localLink" href="http://schema.org/eligibleRegion">eligibleRe
     }
 
     /**
-    * The GTIN-14 code of the product, or the product to which the offer refers. See <a href="http://www.gs1.org/barcodes/technical/idkeys/gtin">GS1 GTIN Summary</a> for more details.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setGtin14
-    */
-    public function gtin14($value)
-    {
-        $this->setProperty('gtin14', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setGtin14($value)
-    {
-        $this->setProperty('gtin14', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getGtin14()
-    {
-       return $this->getProperty('gtin14');
-    }
-
-    /**
-    * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceeding zero. See <a href="http://www.gs1.org/barcodes/technical/idkeys/gtin">GS1 GTIN Summary</a> for more details.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setGtin13
-    */
-    public function gtin13($value)
-    {
-        $this->setProperty('gtin13', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setGtin13($value)
-    {
-        $this->setProperty('gtin13', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getGtin13()
-    {
-       return $this->getProperty('gtin13');
-    }
-
-    /**
-    * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See <a href="http://www.gs1.org/barcodes/technical/idkeys/gtin">GS1 GTIN Summary</a> for more details.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setGtin12
-    */
-    public function gtin12($value)
-    {
-        $this->setProperty('gtin12', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setGtin12($value)
-    {
-        $this->setProperty('gtin12', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getGtin12()
-    {
-       return $this->getProperty('gtin12');
-    }
-
-    /**
-    * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-    * @param Person|Organization|array|string $value
-    * @return $this
-    * @deprecated use setSeller
-    */
-    public function seller($value)
-    {
-        $this->setProperty('seller', $value);
-        return $this;
-    }
-   /**
-    * @param Person|Organization|array|string $value
-    * @return $this
-    */
-    public function setSeller($value)
-    {
-        $this->setProperty('seller', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getSeller()
-    {
-       return $this->getProperty('seller');
-    }
-
-    /**
-    * The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.
-    * @param QuantitativeValue|array|string $value
-    * @return $this
-    * @deprecated use setDeliveryLeadTime
-    */
-    public function deliveryLeadTime($value)
-    {
-        $this->setProperty('deliveryLeadTime', $value);
-        return $this;
-    }
-   /**
-    * @param QuantitativeValue|array|string $value
-    * @return $this
-    */
-    public function setDeliveryLeadTime($value)
-    {
-        $this->setProperty('deliveryLeadTime', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getDeliveryLeadTime()
-    {
-       return $this->getProperty('deliveryLeadTime');
-    }
-
-    /**
-    * A Global Trade Item Number (<a href="https://www.gs1.org/standards/id-keys/gtin">GTIN</a>). GTINs identify trade items, including products and services, using numeric identification codes. The <a class="localLink" href="http://schema.org/gtin">gtin</a> property generalizes the earlier <a class="localLink" href="http://schema.org/gtin8">gtin8</a>, <a class="localLink" href="http://schema.org/gtin12">gtin12</a>, <a class="localLink" href="http://schema.org/gtin13">gtin13</a>, and <a class="localLink" href="http://schema.org/gtin14">gtin14</a> properties. The GS1 <a href="https://www.gs1.org/standards/Digital-Link/">digital link specifications</a> express GTINs as URLs. A correct <a class="localLink" href="http://schema.org/gtin">gtin</a> value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a <a href="https://www.gs1.org/services/check-digit-calculator">valid GS1 check digit</a> and meet the other rules for valid GTINs. See also <a href="http://www.gs1.org/barcodes/technical/idkeys/gtin">GS1's GTIN Summary</a> and <a href="https://en.wikipedia.org/wiki/Global_Trade_Item_Number">Wikipedia</a> for more details. Left-padding of the gtin values is not required or encouraged.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setGtin
-    */
-    public function gtin($value)
-    {
-        $this->setProperty('gtin', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
+    * @param array|string $value
     * @return $this
     */
     public function setGtin($value)
@@ -669,8 +310,9 @@ See also <a class="localLink" href="http://schema.org/eligibleRegion">eligibleRe
         $this->setProperty('gtin', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getGtin()
     {
@@ -678,17 +320,78 @@ See also <a class="localLink" href="http://schema.org/eligibleRegion">eligibleRe
     }
 
     /**
-    * The end of the availability of the product or service included in the offer.
     * @param array|string $value
     * @return $this
-    * @deprecated use setAvailabilityEnds
     */
-    public function availabilityEnds($value)
+    public function setAvailableDeliveryMethod($value)
     {
-        $this->setProperty('availabilityEnds', $value);
+        $this->setProperty('availableDeliveryMethod', $value);
         return $this;
     }
-   /**
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getAvailableDeliveryMethod()
+    {
+       return $this->getProperty('availableDeliveryMethod');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setGtin12($value)
+    {
+        $this->setProperty('gtin12', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getGtin12()
+    {
+       return $this->getProperty('gtin12');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setSku($value)
+    {
+        $this->setProperty('sku', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getSku()
+    {
+       return $this->getProperty('sku');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setItemCondition($value)
+    {
+        $this->setProperty('itemCondition', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getItemCondition()
+    {
+       return $this->getProperty('itemCondition');
+    }
+
+    /**
     * @param array|string $value
     * @return $this
     */
@@ -697,8 +400,9 @@ See also <a class="localLink" href="http://schema.org/eligibleRegion">eligibleRe
         $this->setProperty('availabilityEnds', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getAvailabilityEnds()
     {
@@ -706,158 +410,7 @@ See also <a class="localLink" href="http://schema.org/eligibleRegion">eligibleRe
     }
 
     /**
-    * The availability of this item&#x2014;for example In stock, Out of stock, Pre-order, etc.
-    * @param ItemAvailability|array|string $value
-    * @return $this
-    * @deprecated use setAvailability
-    */
-    public function availability($value)
-    {
-        $this->setProperty('availability', $value);
-        return $this;
-    }
-   /**
-    * @param ItemAvailability|array|string $value
-    * @return $this
-    */
-    public function setAvailability($value)
-    {
-        $this->setProperty('availability', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getAvailability()
-    {
-       return $this->getProperty('availability');
-    }
-
-    /**
-    * The type(s) of customers for which the given offer is valid.
-    * @param BusinessEntityType|array|string $value
-    * @return $this
-    * @deprecated use setEligibleCustomerType
-    */
-    public function eligibleCustomerType($value)
-    {
-        $this->setProperty('eligibleCustomerType', $value);
-        return $this;
-    }
-   /**
-    * @param BusinessEntityType|array|string $value
-    * @return $this
-    */
-    public function setEligibleCustomerType($value)
-    {
-        $this->setProperty('eligibleCustomerType', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getEligibleCustomerType()
-    {
-       return $this->getProperty('eligibleCustomerType');
-    }
-
-    /**
-    * A predefined value from OfferItemCondition or a textual description of the condition of the product or service, or the products or services included in the offer.
-    * @param OfferItemCondition|array|string $value
-    * @return $this
-    * @deprecated use setItemCondition
-    */
-    public function itemCondition($value)
-    {
-        $this->setProperty('itemCondition', $value);
-        return $this;
-    }
-   /**
-    * @param OfferItemCondition|array|string $value
-    * @return $this
-    */
-    public function setItemCondition($value)
-    {
-        $this->setProperty('itemCondition', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getItemCondition()
-    {
-       return $this->getProperty('itemCondition');
-    }
-
-    /**
-    * The item being offered.
-    * @param Product|Service|array|string $value
-    * @return $this
-    * @deprecated use setItemOffered
-    */
-    public function itemOffered($value)
-    {
-        $this->setProperty('itemOffered', $value);
-        return $this;
-    }
-   /**
-    * @param Product|Service|array|string $value
-    * @return $this
-    */
-    public function setItemOffered($value)
-    {
-        $this->setProperty('itemOffered', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getItemOffered()
-    {
-       return $this->getProperty('itemOffered');
-    }
-
-    /**
-    * The duration for which the given offer is valid.
-    * @param QuantitativeValue|array|string $value
-    * @return $this
-    * @deprecated use setEligibleDuration
-    */
-    public function eligibleDuration($value)
-    {
-        $this->setProperty('eligibleDuration', $value);
-        return $this;
-    }
-   /**
-    * @param QuantitativeValue|array|string $value
-    * @return $this
-    */
-    public function setEligibleDuration($value)
-    {
-        $this->setProperty('eligibleDuration', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getEligibleDuration()
-    {
-       return $this->getProperty('eligibleDuration');
-    }
-
-    /**
-    * The payment method(s) accepted by seller for this offer.
-    * @param LoanOrCredit|PaymentMethod|array|string $value
-    * @return $this
-    * @deprecated use setAcceptedPaymentMethod
-    */
-    public function acceptedPaymentMethod($value)
-    {
-        $this->setProperty('acceptedPaymentMethod', $value);
-        return $this;
-    }
-   /**
-    * @param LoanOrCredit|PaymentMethod|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setAcceptedPaymentMethod($value)
@@ -865,8 +418,9 @@ See also <a class="localLink" href="http://schema.org/eligibleRegion">eligibleRe
         $this->setProperty('acceptedPaymentMethod', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getAcceptedPaymentMethod()
     {
@@ -874,18 +428,205 @@ See also <a class="localLink" href="http://schema.org/eligibleRegion">eligibleRe
     }
 
     /**
-    * The geographic area where a service or offered item is provided.
-    * @param string|GeoShape|Place|AdministrativeArea|array $value
+    * @param array|string $value
     * @return $this
-    * @deprecated use setAreaServed
     */
-    public function areaServed($value)
+    public function setAsin($value)
     {
-        $this->setProperty('areaServed', $value);
+        $this->setProperty('asin', $value);
         return $this;
     }
-   /**
-    * @param string|GeoShape|Place|AdministrativeArea|array $value
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getAsin()
+    {
+       return $this->getProperty('asin');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setWarranty($value)
+    {
+        $this->setProperty('warranty', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getWarranty()
+    {
+       return $this->getProperty('warranty');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setValidFrom($value)
+    {
+        $this->setProperty('validFrom', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getValidFrom()
+    {
+       return $this->getProperty('validFrom');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setEligibleDuration($value)
+    {
+        $this->setProperty('eligibleDuration', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getEligibleDuration()
+    {
+       return $this->getProperty('eligibleDuration');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setPriceSpecification($value)
+    {
+        $this->setProperty('priceSpecification', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getPriceSpecification()
+    {
+       return $this->getProperty('priceSpecification');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setInventoryLevel($value)
+    {
+        $this->setProperty('inventoryLevel', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getInventoryLevel()
+    {
+       return $this->getProperty('inventoryLevel');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setDeliveryLeadTime($value)
+    {
+        $this->setProperty('deliveryLeadTime', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getDeliveryLeadTime()
+    {
+       return $this->getProperty('deliveryLeadTime');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setItemOffered($value)
+    {
+        $this->setProperty('itemOffered', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getItemOffered()
+    {
+       return $this->getProperty('itemOffered');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setAvailability($value)
+    {
+        $this->setProperty('availability', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getAvailability()
+    {
+       return $this->getProperty('availability');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setGtin8($value)
+    {
+        $this->setProperty('gtin8', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getGtin8()
+    {
+       return $this->getProperty('gtin8');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setAvailableAtOrFrom($value)
+    {
+        $this->setProperty('availableAtOrFrom', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getAvailableAtOrFrom()
+    {
+       return $this->getProperty('availableAtOrFrom');
+    }
+
+    /**
+    * @param array|string $value
     * @return $this
     */
     public function setAreaServed($value)
@@ -893,8 +634,9 @@ See also <a class="localLink" href="http://schema.org/eligibleRegion">eligibleRe
         $this->setProperty('areaServed', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getAreaServed()
     {
@@ -902,18 +644,7 @@ See also <a class="localLink" href="http://schema.org/eligibleRegion">eligibleRe
     }
 
     /**
-    * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
-    * @param BusinessFunction|array|string $value
-    * @return $this
-    * @deprecated use setBusinessFunction
-    */
-    public function businessFunction($value)
-    {
-        $this->setProperty('businessFunction', $value);
-        return $this;
-    }
-   /**
-    * @param BusinessFunction|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setBusinessFunction($value)
@@ -921,8 +652,9 @@ See also <a class="localLink" href="http://schema.org/eligibleRegion">eligibleRe
         $this->setProperty('businessFunction', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getBusinessFunction()
     {
@@ -930,20 +662,43 @@ See also <a class="localLink" href="http://schema.org/eligibleRegion">eligibleRe
     }
 
     /**
-    * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>
-
-See also <a class="localLink" href="http://schema.org/ineligibleRegion">ineligibleRegion</a>.
-    * @param Place|string|GeoShape|array $value
+    * @param array|string $value
     * @return $this
-    * @deprecated use setEligibleRegion
     */
-    public function eligibleRegion($value)
+    public function setGtin13($value)
     {
-        $this->setProperty('eligibleRegion', $value);
+        $this->setProperty('gtin13', $value);
         return $this;
     }
-   /**
-    * @param Place|string|GeoShape|array $value
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getGtin13()
+    {
+       return $this->getProperty('gtin13');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setAvailabilityStarts($value)
+    {
+        $this->setProperty('availabilityStarts', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getAvailabilityStarts()
+    {
+       return $this->getProperty('availabilityStarts');
+    }
+
+    /**
+    * @param array|string $value
     * @return $this
     */
     public function setEligibleRegion($value)
@@ -951,12 +706,103 @@ See also <a class="localLink" href="http://schema.org/ineligibleRegion">ineligib
         $this->setProperty('eligibleRegion', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getEligibleRegion()
     {
        return $this->getProperty('eligibleRegion');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setIneligibleRegion($value)
+    {
+        $this->setProperty('ineligibleRegion', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getIneligibleRegion()
+    {
+       return $this->getProperty('ineligibleRegion');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setIncludesObject($value)
+    {
+        $this->setProperty('includesObject', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getIncludesObject()
+    {
+       return $this->getProperty('includesObject');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setEligibleTransactionVolume($value)
+    {
+        $this->setProperty('eligibleTransactionVolume', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getEligibleTransactionVolume()
+    {
+       return $this->getProperty('eligibleTransactionVolume');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setGtin14($value)
+    {
+        $this->setProperty('gtin14', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getGtin14()
+    {
+       return $this->getProperty('gtin14');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setSeller($value)
+    {
+        $this->setProperty('seller', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getSeller()
+    {
+       return $this->getProperty('seller');
     }
 
 

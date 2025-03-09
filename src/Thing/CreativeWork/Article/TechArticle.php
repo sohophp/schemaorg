@@ -5,55 +5,24 @@ use Sohophp\SchemaOrg\Thing\CreativeWork\Article;
 
 /**
 * A technical article - Example: How-to (task) topics, step-by-step, procedural troubleshooting, specifications, etc.
-* @see http://schema.org/TechArticle
+* @see schema:TechArticle
 * @package Sohophp\SchemaOrg\Thing\CreativeWork\Article
-
-*
 */
 class TechArticle extends Article
 {
+   /**
+        * Proficiency needed for this content; expected values: 'Beginner', 'Expert'.
+        */
+    protected $proficiencyLevel = null;
+
+   /**
+        * Prerequisites needed to fulfill steps in article.
+        */
+    protected $dependencies = null;
+
 
     /**
-    * Prerequisites needed to fulfill steps in article.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setDependencies
-    */
-    public function dependencies($value)
-    {
-        $this->setProperty('dependencies', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setDependencies($value)
-    {
-        $this->setProperty('dependencies', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getDependencies()
-    {
-       return $this->getProperty('dependencies');
-    }
-
-    /**
-    * Proficiency needed for this content; expected values: 'Beginner', 'Expert'.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setProficiencyLevel
-    */
-    public function proficiencyLevel($value)
-    {
-        $this->setProperty('proficiencyLevel', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
+    * @param array|string $value
     * @return $this
     */
     public function setProficiencyLevel($value)
@@ -61,12 +30,31 @@ class TechArticle extends Article
         $this->setProperty('proficiencyLevel', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getProficiencyLevel()
     {
        return $this->getProperty('proficiencyLevel');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setDependencies($value)
+    {
+        $this->setProperty('dependencies', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getDependencies()
+    {
+       return $this->getProperty('dependencies');
     }
 
 

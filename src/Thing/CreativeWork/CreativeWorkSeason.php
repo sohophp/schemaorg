@@ -2,63 +2,90 @@
 namespace Sohophp\SchemaOrg\Thing\CreativeWork;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork;
-use Sohophp\SchemaOrg\Thing\Person;
-use Sohophp\SchemaOrg\Thing\CreativeWork\CreativeWorkSeries;
-use Sohophp\SchemaOrg\Thing\CreativeWork\MediaObject\VideoObject;
-use Sohophp\SchemaOrg\Thing\CreativeWork\Episode;
-use Sohophp\SchemaOrg\Thing\Organization;
 
 /**
-* A media season e.g. tv, radio, video game etc.
-* @see http://schema.org/CreativeWorkSeason
+* A media season, e.g. TV, radio, video game etc.
+* @see schema:CreativeWorkSeason
 * @package Sohophp\SchemaOrg\Thing\CreativeWork
-
-*
 */
 class CreativeWorkSeason extends CreativeWork
 {
+   /**
+        * An episode of a TV, radio or game media within a series or season.
+        */
+    protected $episode = null;
+
+   /**
+        * The series to which this episode or season belongs.
+        */
+    protected $partOfSeries = null;
+
+   /**
+        * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+        */
+    protected $endDate = null;
+
+   /**
+        * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+        */
+    protected $director = null;
+
+   /**
+        * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+        */
+    protected $startDate = null;
+
+   /**
+        * The number of episodes in this season or series.
+        */
+    protected $numberOfEpisodes = null;
+
+   /**
+        * An episode of a TV/radio series or season.
+        */
+    protected $episodes = null;
+
+   /**
+        * Position of the season within an ordered group of seasons.
+        */
+    protected $seasonNumber = null;
+
+   /**
+        * The production company or studio responsible for the item, e.g. series, video game, episode etc.
+        */
+    protected $productionCompany = null;
+
+   /**
+        * The trailer of a movie or TV/radio series, season, episode, etc.
+        */
+    protected $trailer = null;
+
+   /**
+        * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+        */
+    protected $actor = null;
+
 
     /**
-    * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
-    * @param Person|array|string $value
-    * @return $this
-    * @deprecated use setActor
-    */
-    public function actor($value)
-    {
-        $this->setProperty('actor', $value);
-        return $this;
-    }
-   /**
-    * @param Person|array|string $value
+    * @param array|string $value
     * @return $this
     */
-    public function setActor($value)
+    public function setEpisode($value)
     {
-        $this->setProperty('actor', $value);
+        $this->setProperty('episode', $value);
         return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getActor()
-    {
-       return $this->getProperty('actor');
     }
 
     /**
-    * The series to which this episode or season belongs.
-    * @param CreativeWorkSeries|array|string $value
-    * @return $this
-    * @deprecated use setPartOfSeries
+    * @return string|array|mixed
     */
-    public function partOfSeries($value)
+    public function getEpisode()
     {
-        $this->setProperty('partOfSeries', $value);
-        return $this;
+       return $this->getProperty('episode');
     }
-   /**
-    * @param CreativeWorkSeries|array|string $value
+
+    /**
+    * @param array|string $value
     * @return $this
     */
     public function setPartOfSeries($value)
@@ -66,8 +93,9 @@ class CreativeWorkSeason extends CreativeWork
         $this->setProperty('partOfSeries', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getPartOfSeries()
     {
@@ -75,73 +103,6 @@ class CreativeWorkSeason extends CreativeWork
     }
 
     /**
-    * The number of episodes in this season or series.
-    * @param int|array|string $value
-    * @return $this
-    * @deprecated use setNumberOfEpisodes
-    */
-    public function numberOfEpisodes($value)
-    {
-        $this->setProperty('numberOfEpisodes', $value);
-        return $this;
-    }
-   /**
-    * @param int|array|string $value
-    * @return $this
-    */
-    public function setNumberOfEpisodes($value)
-    {
-        $this->setProperty('numberOfEpisodes', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getNumberOfEpisodes()
-    {
-       return $this->getProperty('numberOfEpisodes');
-    }
-
-    /**
-    * The trailer of a movie or tv/radio series, season, episode, etc.
-    * @param VideoObject|array|string $value
-    * @return $this
-    * @deprecated use setTrailer
-    */
-    public function trailer($value)
-    {
-        $this->setProperty('trailer', $value);
-        return $this;
-    }
-   /**
-    * @param VideoObject|array|string $value
-    * @return $this
-    */
-    public function setTrailer($value)
-    {
-        $this->setProperty('trailer', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getTrailer()
-    {
-       return $this->getProperty('trailer');
-    }
-
-    /**
-    * The end date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).
-    * @param array|string $value
-    * @return $this
-    * @deprecated use setEndDate
-    */
-    public function endDate($value)
-    {
-        $this->setProperty('endDate', $value);
-        return $this;
-    }
-   /**
     * @param array|string $value
     * @return $this
     */
@@ -150,8 +111,9 @@ class CreativeWorkSeason extends CreativeWork
         $this->setProperty('endDate', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getEndDate()
     {
@@ -159,45 +121,24 @@ class CreativeWorkSeason extends CreativeWork
     }
 
     /**
-    * An episode of a TV/radio series or season.
-    * @param Episode|array|string $value
-    * @return $this
-    * @deprecated use setEpisodes
-    */
-    public function episodes($value)
-    {
-        $this->setProperty('episodes', $value);
-        return $this;
-    }
-   /**
-    * @param Episode|array|string $value
+    * @param array|string $value
     * @return $this
     */
-    public function setEpisodes($value)
+    public function setDirector($value)
     {
-        $this->setProperty('episodes', $value);
+        $this->setProperty('director', $value);
         return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getEpisodes()
-    {
-       return $this->getProperty('episodes');
     }
 
     /**
-    * The start date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).
-    * @param array|string $value
-    * @return $this
-    * @deprecated use setStartDate
+    * @return string|array|mixed
     */
-    public function startDate($value)
+    public function getDirector()
     {
-        $this->setProperty('startDate', $value);
-        return $this;
+       return $this->getProperty('director');
     }
-   /**
+
+    /**
     * @param array|string $value
     * @return $this
     */
@@ -206,8 +147,9 @@ class CreativeWorkSeason extends CreativeWork
         $this->setProperty('startDate', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getStartDate()
     {
@@ -215,102 +157,43 @@ class CreativeWorkSeason extends CreativeWork
     }
 
     /**
-    * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
-    * @param Person|array|string $value
-    * @return $this
-    * @deprecated use setDirector
-    */
-    public function director($value)
-    {
-        $this->setProperty('director', $value);
-        return $this;
-    }
-   /**
-    * @param Person|array|string $value
+    * @param array|string $value
     * @return $this
     */
-    public function setDirector($value)
+    public function setNumberOfEpisodes($value)
     {
-        $this->setProperty('director', $value);
+        $this->setProperty('numberOfEpisodes', $value);
         return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getDirector()
-    {
-       return $this->getProperty('director');
     }
 
     /**
-    * The production company or studio responsible for the item e.g. series, video game, episode etc.
-    * @param Organization|array|string $value
-    * @return $this
-    * @deprecated use setProductionCompany
+    * @return string|array|mixed
     */
-    public function productionCompany($value)
+    public function getNumberOfEpisodes()
     {
-        $this->setProperty('productionCompany', $value);
-        return $this;
-    }
-   /**
-    * @param Organization|array|string $value
-    * @return $this
-    */
-    public function setProductionCompany($value)
-    {
-        $this->setProperty('productionCompany', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getProductionCompany()
-    {
-       return $this->getProperty('productionCompany');
+       return $this->getProperty('numberOfEpisodes');
     }
 
     /**
-    * An episode of a tv, radio or game media within a series or season.
-    * @param Episode|array|string $value
-    * @return $this
-    * @deprecated use setEpisode
-    */
-    public function episode($value)
-    {
-        $this->setProperty('episode', $value);
-        return $this;
-    }
-   /**
-    * @param Episode|array|string $value
+    * @param array|string $value
     * @return $this
     */
-    public function setEpisode($value)
+    public function setEpisodes($value)
     {
-        $this->setProperty('episode', $value);
+        $this->setProperty('episodes', $value);
         return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getEpisode()
-    {
-       return $this->getProperty('episode');
     }
 
     /**
-    * Position of the season within an ordered group of seasons.
-    * @param int|string|array $value
-    * @return $this
-    * @deprecated use setSeasonNumber
+    * @return string|array|mixed
     */
-    public function seasonNumber($value)
+    public function getEpisodes()
     {
-        $this->setProperty('seasonNumber', $value);
-        return $this;
+       return $this->getProperty('episodes');
     }
-   /**
-    * @param int|string|array $value
+
+    /**
+    * @param array|string $value
     * @return $this
     */
     public function setSeasonNumber($value)
@@ -318,12 +201,67 @@ class CreativeWorkSeason extends CreativeWork
         $this->setProperty('seasonNumber', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getSeasonNumber()
     {
        return $this->getProperty('seasonNumber');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setProductionCompany($value)
+    {
+        $this->setProperty('productionCompany', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getProductionCompany()
+    {
+       return $this->getProperty('productionCompany');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setTrailer($value)
+    {
+        $this->setProperty('trailer', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getTrailer()
+    {
+       return $this->getProperty('trailer');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setActor($value)
+    {
+        $this->setProperty('actor', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getActor()
+    {
+       return $this->getProperty('actor');
     }
 
 

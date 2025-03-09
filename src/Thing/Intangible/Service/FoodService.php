@@ -5,10 +5,8 @@ use Sohophp\SchemaOrg\Thing\Intangible\Service;
 
 /**
 * A food service, like breakfast, lunch, or dinner.
-* @see http://schema.org/FoodService
+* @see schema:FoodService
 * @package Sohophp\SchemaOrg\Thing\Intangible\Service
-
-*
 */
 class FoodService extends Service
 {

@@ -4,11 +4,9 @@ namespace Sohophp\SchemaOrg\Thing\Place\Landform;
 use Sohophp\SchemaOrg\Thing\Place\Landform;
 
 /**
-* A volcano, like Fuji san.
-* @see http://schema.org/Volcano
+* A volcano, like Fujisan.
+* @see schema:Volcano
 * @package Sohophp\SchemaOrg\Thing\Place\Landform
-
-*
 */
 class Volcano extends Landform
 {

@@ -2,368 +2,137 @@
 namespace Sohophp\SchemaOrg\Thing\CreativeWork;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork;
-use Sohophp\SchemaOrg\Thing\CreativeWork\MediaObject\ImageObject;
-use Sohophp\SchemaOrg\Thing\CreativeWork\Dataset\DataFeed;
 
 /**
 * A software application.
-* @see http://schema.org/SoftwareApplication
+* @see schema:SoftwareApplication
 * @package Sohophp\SchemaOrg\Thing\CreativeWork
-
-*
 */
 class SoftwareApplication extends CreativeWork
 {
+   /**
+        * Minimum memory requirements.
+        */
+    protected $memoryRequirements = null;
+
+   /**
+        * URL at which the app may be installed, if different from the URL of the item.
+        */
+    protected $installUrl = null;
+
+   /**
+        * Countries for which the application is supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
+        */
+    protected $countriesSupported = null;
+
+   /**
+        * Description of what changed in this version.
+        */
+    protected $releaseNotes = null;
+
+   /**
+        * Subcategory of the application, e.g. 'Arcade Game'.
+        */
+    protected $applicationSubCategory = null;
+
+   /**
+        * Permission(s) required to run the app (for example, a mobile app may require full internet access or may run only on wifi).
+        */
+    protected $permissions = null;
+
+   /**
+        * Type of software application, e.g. 'Game, Multimedia'.
+        */
+    protected $applicationCategory = null;
+
+   /**
+        * Device required to run the application. Used in cases where a specific make/model is required to run the application.
+        */
+    protected $device = null;
+
+   /**
+        * Supporting data for a SoftwareApplication.
+        */
+    protected $supportingData = null;
+
+   /**
+        * Operating systems supported (Windows 7, OS X 10.6, Android 1.6).
+        */
+    protected $operatingSystem = null;
+
+   /**
+        * Device required to run the application. Used in cases where a specific make/model is required to run the application.
+        */
+    protected $availableOnDevice = null;
+
+   /**
+        * Countries for which the application is not supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
+        */
+    protected $countriesNotSupported = null;
+
+   /**
+        * Storage requirements (free space required).
+        */
+    protected $storageRequirements = null;
+
+   /**
+        * If the file can be downloaded, URL to download the binary.
+        */
+    protected $downloadUrl = null;
+
+   /**
+        * A link to a screenshot image of the app.
+        */
+    protected $screenshot = null;
+
+   /**
+        * Software application help.
+        */
+    protected $softwareHelp = null;
+
+   /**
+        * Features or modules provided by this application (and possibly required by other applications).
+        */
+    protected $featureList = null;
+
+   /**
+        * The name of the application suite to which the application belongs (e.g. Excel belongs to Office).
+        */
+    protected $applicationSuite = null;
+
+   /**
+        * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (examples: DirectX, Java or .NET runtime).
+        */
+    protected $requirements = null;
+
+   /**
+        * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (examples: DirectX, Java or .NET runtime).
+        */
+    protected $softwareRequirements = null;
+
+   /**
+        * Version of the software instance.
+        */
+    protected $softwareVersion = null;
+
+   /**
+        * Processor architecture required to run the application (e.g. IA64).
+        */
+    protected $processorRequirements = null;
+
+   /**
+        * Size of the application / package (e.g. 18MB). In the absence of a unit (MB, KB etc.), KB will be assumed.
+        */
+    protected $fileSize = null;
+
+   /**
+        * Additional content for a software application.
+        */
+    protected $softwareAddOn = null;
+
 
     /**
-    * Permission(s) required to run the app (for example, a mobile app may require full internet access or may run only on wifi).
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setPermissions
-    */
-    public function permissions($value)
-    {
-        $this->setProperty('permissions', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setPermissions($value)
-    {
-        $this->setProperty('permissions', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getPermissions()
-    {
-       return $this->getProperty('permissions');
-    }
-
-    /**
-    * Processor architecture required to run the application (e.g. IA64).
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setProcessorRequirements
-    */
-    public function processorRequirements($value)
-    {
-        $this->setProperty('processorRequirements', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setProcessorRequirements($value)
-    {
-        $this->setProperty('processorRequirements', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getProcessorRequirements()
-    {
-       return $this->getProperty('processorRequirements');
-    }
-
-    /**
-    * Device required to run the application. Used in cases where a specific make/model is required to run the application.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setAvailableOnDevice
-    */
-    public function availableOnDevice($value)
-    {
-        $this->setProperty('availableOnDevice', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setAvailableOnDevice($value)
-    {
-        $this->setProperty('availableOnDevice', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getAvailableOnDevice()
-    {
-       return $this->getProperty('availableOnDevice');
-    }
-
-    /**
-    * If the file can be downloaded, URL to download the binary.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setDownloadUrl
-    */
-    public function downloadUrl($value)
-    {
-        $this->setProperty('downloadUrl', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setDownloadUrl($value)
-    {
-        $this->setProperty('downloadUrl', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getDownloadUrl()
-    {
-       return $this->getProperty('downloadUrl');
-    }
-
-    /**
-    * Subcategory of the application, e.g. 'Arcade Game'.
-    * @param string|string|array $value
-    * @return $this
-    * @deprecated use setApplicationSubCategory
-    */
-    public function applicationSubCategory($value)
-    {
-        $this->setProperty('applicationSubCategory', $value);
-        return $this;
-    }
-   /**
-    * @param string|string|array $value
-    * @return $this
-    */
-    public function setApplicationSubCategory($value)
-    {
-        $this->setProperty('applicationSubCategory', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getApplicationSubCategory()
-    {
-       return $this->getProperty('applicationSubCategory');
-    }
-
-    /**
-    * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).
-    * @param string|string|array $value
-    * @return $this
-    * @deprecated use setRequirements
-    */
-    public function requirements($value)
-    {
-        $this->setProperty('requirements', $value);
-        return $this;
-    }
-   /**
-    * @param string|string|array $value
-    * @return $this
-    */
-    public function setRequirements($value)
-    {
-        $this->setProperty('requirements', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getRequirements()
-    {
-       return $this->getProperty('requirements');
-    }
-
-    /**
-    * Device required to run the application. Used in cases where a specific make/model is required to run the application.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setDevice
-    */
-    public function device($value)
-    {
-        $this->setProperty('device', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setDevice($value)
-    {
-        $this->setProperty('device', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getDevice()
-    {
-       return $this->getProperty('device');
-    }
-
-    /**
-    * Type of software application, e.g. 'Game, Multimedia'.
-    * @param string|string|array $value
-    * @return $this
-    * @deprecated use setApplicationCategory
-    */
-    public function applicationCategory($value)
-    {
-        $this->setProperty('applicationCategory', $value);
-        return $this;
-    }
-   /**
-    * @param string|string|array $value
-    * @return $this
-    */
-    public function setApplicationCategory($value)
-    {
-        $this->setProperty('applicationCategory', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getApplicationCategory()
-    {
-       return $this->getProperty('applicationCategory');
-    }
-
-    /**
-    * Version of the software instance.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setSoftwareVersion
-    */
-    public function softwareVersion($value)
-    {
-        $this->setProperty('softwareVersion', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setSoftwareVersion($value)
-    {
-        $this->setProperty('softwareVersion', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getSoftwareVersion()
-    {
-       return $this->getProperty('softwareVersion');
-    }
-
-    /**
-    * Features or modules provided by this application (and possibly required by other applications).
-    * @param string|string|array $value
-    * @return $this
-    * @deprecated use setFeatureList
-    */
-    public function featureList($value)
-    {
-        $this->setProperty('featureList', $value);
-        return $this;
-    }
-   /**
-    * @param string|string|array $value
-    * @return $this
-    */
-    public function setFeatureList($value)
-    {
-        $this->setProperty('featureList', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getFeatureList()
-    {
-       return $this->getProperty('featureList');
-    }
-
-    /**
-    * Storage requirements (free space required).
-    * @param string|string|array $value
-    * @return $this
-    * @deprecated use setStorageRequirements
-    */
-    public function storageRequirements($value)
-    {
-        $this->setProperty('storageRequirements', $value);
-        return $this;
-    }
-   /**
-    * @param string|string|array $value
-    * @return $this
-    */
-    public function setStorageRequirements($value)
-    {
-        $this->setProperty('storageRequirements', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getStorageRequirements()
-    {
-       return $this->getProperty('storageRequirements');
-    }
-
-    /**
-    * The name of the application suite to which the application belongs (e.g. Excel belongs to Office).
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setApplicationSuite
-    */
-    public function applicationSuite($value)
-    {
-        $this->setProperty('applicationSuite', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setApplicationSuite($value)
-    {
-        $this->setProperty('applicationSuite', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getApplicationSuite()
-    {
-       return $this->getProperty('applicationSuite');
-    }
-
-    /**
-    * Minimum memory requirements.
-    * @param string|string|array $value
-    * @return $this
-    * @deprecated use setMemoryRequirements
-    */
-    public function memoryRequirements($value)
-    {
-        $this->setProperty('memoryRequirements', $value);
-        return $this;
-    }
-   /**
-    * @param string|string|array $value
+    * @param array|string $value
     * @return $this
     */
     public function setMemoryRequirements($value)
@@ -371,8 +140,9 @@ class SoftwareApplication extends CreativeWork
         $this->setProperty('memoryRequirements', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getMemoryRequirements()
     {
@@ -380,298 +150,7 @@ class SoftwareApplication extends CreativeWork
     }
 
     /**
-    * A link to a screenshot image of the app.
-    * @param ImageObject|string|array $value
-    * @return $this
-    * @deprecated use setScreenshot
-    */
-    public function screenshot($value)
-    {
-        $this->setProperty('screenshot', $value);
-        return $this;
-    }
-   /**
-    * @param ImageObject|string|array $value
-    * @return $this
-    */
-    public function setScreenshot($value)
-    {
-        $this->setProperty('screenshot', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getScreenshot()
-    {
-       return $this->getProperty('screenshot');
-    }
-
-    /**
-    * Countries for which the application is supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setCountriesSupported
-    */
-    public function countriesSupported($value)
-    {
-        $this->setProperty('countriesSupported', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setCountriesSupported($value)
-    {
-        $this->setProperty('countriesSupported', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getCountriesSupported()
-    {
-       return $this->getProperty('countriesSupported');
-    }
-
-    /**
-    * Software application help.
-    * @param CreativeWork|array|string $value
-    * @return $this
-    * @deprecated use setSoftwareHelp
-    */
-    public function softwareHelp($value)
-    {
-        $this->setProperty('softwareHelp', $value);
-        return $this;
-    }
-   /**
-    * @param CreativeWork|array|string $value
-    * @return $this
-    */
-    public function setSoftwareHelp($value)
-    {
-        $this->setProperty('softwareHelp', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getSoftwareHelp()
-    {
-       return $this->getProperty('softwareHelp');
-    }
-
-    /**
-    * Additional content for a software application.
-    * @param SoftwareApplication|array|string $value
-    * @return $this
-    * @deprecated use setSoftwareAddOn
-    */
-    public function softwareAddOn($value)
-    {
-        $this->setProperty('softwareAddOn', $value);
-        return $this;
-    }
-   /**
-    * @param SoftwareApplication|array|string $value
-    * @return $this
-    */
-    public function setSoftwareAddOn($value)
-    {
-        $this->setProperty('softwareAddOn', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getSoftwareAddOn()
-    {
-       return $this->getProperty('softwareAddOn');
-    }
-
-    /**
-    * Description of what changed in this version.
-    * @param string|string|array $value
-    * @return $this
-    * @deprecated use setReleaseNotes
-    */
-    public function releaseNotes($value)
-    {
-        $this->setProperty('releaseNotes', $value);
-        return $this;
-    }
-   /**
-    * @param string|string|array $value
-    * @return $this
-    */
-    public function setReleaseNotes($value)
-    {
-        $this->setProperty('releaseNotes', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getReleaseNotes()
-    {
-       return $this->getProperty('releaseNotes');
-    }
-
-    /**
-    * Supporting data for a SoftwareApplication.
-    * @param DataFeed|array|string $value
-    * @return $this
-    * @deprecated use setSupportingData
-    */
-    public function supportingData($value)
-    {
-        $this->setProperty('supportingData', $value);
-        return $this;
-    }
-   /**
-    * @param DataFeed|array|string $value
-    * @return $this
-    */
-    public function setSupportingData($value)
-    {
-        $this->setProperty('supportingData', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getSupportingData()
-    {
-       return $this->getProperty('supportingData');
-    }
-
-    /**
-    * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).
-    * @param string|string|array $value
-    * @return $this
-    * @deprecated use setSoftwareRequirements
-    */
-    public function softwareRequirements($value)
-    {
-        $this->setProperty('softwareRequirements', $value);
-        return $this;
-    }
-   /**
-    * @param string|string|array $value
-    * @return $this
-    */
-    public function setSoftwareRequirements($value)
-    {
-        $this->setProperty('softwareRequirements', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getSoftwareRequirements()
-    {
-       return $this->getProperty('softwareRequirements');
-    }
-
-    /**
-    * Countries for which the application is not supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setCountriesNotSupported
-    */
-    public function countriesNotSupported($value)
-    {
-        $this->setProperty('countriesNotSupported', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setCountriesNotSupported($value)
-    {
-        $this->setProperty('countriesNotSupported', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getCountriesNotSupported()
-    {
-       return $this->getProperty('countriesNotSupported');
-    }
-
-    /**
-    * Operating systems supported (Windows 7, OSX 10.6, Android 1.6).
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setOperatingSystem
-    */
-    public function operatingSystem($value)
-    {
-        $this->setProperty('operatingSystem', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setOperatingSystem($value)
-    {
-        $this->setProperty('operatingSystem', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getOperatingSystem()
-    {
-       return $this->getProperty('operatingSystem');
-    }
-
-    /**
-    * Size of the application / package (e.g. 18MB). In the absence of a unit (MB, KB etc.), KB will be assumed.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setFileSize
-    */
-    public function fileSize($value)
-    {
-        $this->setProperty('fileSize', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setFileSize($value)
-    {
-        $this->setProperty('fileSize', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getFileSize()
-    {
-       return $this->getProperty('fileSize');
-    }
-
-    /**
-    * URL at which the app may be installed, if different from the URL of the item.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setInstallUrl
-    */
-    public function installUrl($value)
-    {
-        $this->setProperty('installUrl', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
+    * @param array|string $value
     * @return $this
     */
     public function setInstallUrl($value)
@@ -679,12 +158,409 @@ class SoftwareApplication extends CreativeWork
         $this->setProperty('installUrl', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getInstallUrl()
     {
        return $this->getProperty('installUrl');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setCountriesSupported($value)
+    {
+        $this->setProperty('countriesSupported', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getCountriesSupported()
+    {
+       return $this->getProperty('countriesSupported');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setReleaseNotes($value)
+    {
+        $this->setProperty('releaseNotes', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getReleaseNotes()
+    {
+       return $this->getProperty('releaseNotes');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setApplicationSubCategory($value)
+    {
+        $this->setProperty('applicationSubCategory', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getApplicationSubCategory()
+    {
+       return $this->getProperty('applicationSubCategory');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setPermissions($value)
+    {
+        $this->setProperty('permissions', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getPermissions()
+    {
+       return $this->getProperty('permissions');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setApplicationCategory($value)
+    {
+        $this->setProperty('applicationCategory', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getApplicationCategory()
+    {
+       return $this->getProperty('applicationCategory');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setDevice($value)
+    {
+        $this->setProperty('device', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getDevice()
+    {
+       return $this->getProperty('device');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setSupportingData($value)
+    {
+        $this->setProperty('supportingData', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getSupportingData()
+    {
+       return $this->getProperty('supportingData');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setOperatingSystem($value)
+    {
+        $this->setProperty('operatingSystem', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getOperatingSystem()
+    {
+       return $this->getProperty('operatingSystem');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setAvailableOnDevice($value)
+    {
+        $this->setProperty('availableOnDevice', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getAvailableOnDevice()
+    {
+       return $this->getProperty('availableOnDevice');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setCountriesNotSupported($value)
+    {
+        $this->setProperty('countriesNotSupported', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getCountriesNotSupported()
+    {
+       return $this->getProperty('countriesNotSupported');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setStorageRequirements($value)
+    {
+        $this->setProperty('storageRequirements', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getStorageRequirements()
+    {
+       return $this->getProperty('storageRequirements');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setDownloadUrl($value)
+    {
+        $this->setProperty('downloadUrl', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getDownloadUrl()
+    {
+       return $this->getProperty('downloadUrl');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setScreenshot($value)
+    {
+        $this->setProperty('screenshot', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getScreenshot()
+    {
+       return $this->getProperty('screenshot');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setSoftwareHelp($value)
+    {
+        $this->setProperty('softwareHelp', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getSoftwareHelp()
+    {
+       return $this->getProperty('softwareHelp');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setFeatureList($value)
+    {
+        $this->setProperty('featureList', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getFeatureList()
+    {
+       return $this->getProperty('featureList');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setApplicationSuite($value)
+    {
+        $this->setProperty('applicationSuite', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getApplicationSuite()
+    {
+       return $this->getProperty('applicationSuite');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setRequirements($value)
+    {
+        $this->setProperty('requirements', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getRequirements()
+    {
+       return $this->getProperty('requirements');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setSoftwareRequirements($value)
+    {
+        $this->setProperty('softwareRequirements', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getSoftwareRequirements()
+    {
+       return $this->getProperty('softwareRequirements');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setSoftwareVersion($value)
+    {
+        $this->setProperty('softwareVersion', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getSoftwareVersion()
+    {
+       return $this->getProperty('softwareVersion');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setProcessorRequirements($value)
+    {
+        $this->setProperty('processorRequirements', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getProcessorRequirements()
+    {
+       return $this->getProperty('processorRequirements');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setFileSize($value)
+    {
+        $this->setProperty('fileSize', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getFileSize()
+    {
+       return $this->getProperty('fileSize');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setSoftwareAddOn($value)
+    {
+        $this->setProperty('softwareAddOn', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getSoftwareAddOn()
+    {
+       return $this->getProperty('softwareAddOn');
     }
 
 

@@ -2,59 +2,27 @@
 namespace Sohophp\SchemaOrg\Thing\MedicalEntity;
 
 use Sohophp\SchemaOrg\Thing\MedicalEntity;
-use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalIntangible\DoseSchedule\MaximumDoseSchedule;
 
 /**
 * Any matter of defined composition that has discrete existence, whose origin may be biological, mineral or chemical.
-* @see http://schema.org/Substance
+* @see schema:Substance
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity
-
-*
 */
 class Substance extends MedicalEntity
 {
+   /**
+        * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
+        */
+    protected $maximumIntake = null;
+
+   /**
+        * An active ingredient, typically chemical compounds and/or biologic substances.
+        */
+    protected $activeIngredient = null;
+
 
     /**
-    * An active ingredient, typically chemical compounds and/or biologic substances.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setActiveIngredient
-    */
-    public function activeIngredient($value)
-    {
-        $this->setProperty('activeIngredient', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setActiveIngredient($value)
-    {
-        $this->setProperty('activeIngredient', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getActiveIngredient()
-    {
-       return $this->getProperty('activeIngredient');
-    }
-
-    /**
-    * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
-    * @param MaximumDoseSchedule|array|string $value
-    * @return $this
-    * @deprecated use setMaximumIntake
-    */
-    public function maximumIntake($value)
-    {
-        $this->setProperty('maximumIntake', $value);
-        return $this;
-    }
-   /**
-    * @param MaximumDoseSchedule|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setMaximumIntake($value)
@@ -62,12 +30,31 @@ class Substance extends MedicalEntity
         $this->setProperty('maximumIntake', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getMaximumIntake()
     {
        return $this->getProperty('maximumIntake');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setActiveIngredient($value)
+    {
+        $this->setProperty('activeIngredient', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getActiveIngredient()
+    {
+       return $this->getProperty('activeIngredient');
     }
 
 

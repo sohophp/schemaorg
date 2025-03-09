@@ -5,27 +5,42 @@ use Sohophp\SchemaOrg\Thing\CreativeWork\WebPage;
 
 /**
 * A web page that provides medical information.
-* @see http://schema.org/MedicalWebPage
+* @see schema:MedicalWebPage
 * @package Sohophp\SchemaOrg\Thing\CreativeWork\WebPage
-
-*
 */
 class MedicalWebPage extends WebPage
 {
+   /**
+        * Medical audience for page.
+        */
+    protected $medicalAudience = null;
+
+   /**
+        * An aspect of medical practice that is considered on the page, such as 'diagnosis', 'treatment', 'causes', 'prognosis', 'etiology', 'epidemiology', etc.
+        */
+    protected $aspect = null;
+
 
     /**
-    * An aspect of medical practice that is considered on the page, such as 'diagnosis', 'treatment', 'causes', 'prognosis', 'etiology', 'epidemiology', etc.
-    * @param string|array $value
+    * @param array|string $value
     * @return $this
-    * @deprecated use setAspect
     */
-    public function aspect($value)
+    public function setMedicalAudience($value)
     {
-        $this->setProperty('aspect', $value);
+        $this->setProperty('medicalAudience', $value);
         return $this;
     }
-   /**
-    * @param string|array $value
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getMedicalAudience()
+    {
+       return $this->getProperty('medicalAudience');
+    }
+
+    /**
+    * @param array|string $value
     * @return $this
     */
     public function setAspect($value)
@@ -33,8 +48,9 @@ class MedicalWebPage extends WebPage
         $this->setProperty('aspect', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getAspect()
     {

@@ -4,18 +4,9 @@ namespace Sohophp\SchemaOrg\Thing\Action\OrganizeAction\PlanAction;
 use Sohophp\SchemaOrg\Thing\Action\OrganizeAction\PlanAction;
 
 /**
-* The act of asserting that a future event/action is no longer going to happen.<br/><br/>
-
-Related actions:<br/><br/>
-
-<ul>
-<li><a class="localLink" href="http://schema.org/ConfirmAction">ConfirmAction</a>: The antonym of CancelAction.</li>
-</ul>
-
-* @see http://schema.org/CancelAction
+* The act of asserting that a future event/action is no longer going to happen.\n\nRelated actions:\n\n* [[ConfirmAction]]: The antonym of CancelAction.
+* @see schema:CancelAction
 * @package Sohophp\SchemaOrg\Thing\Action\OrganizeAction\PlanAction
-
-*
 */
 class CancelAction extends PlanAction
 {

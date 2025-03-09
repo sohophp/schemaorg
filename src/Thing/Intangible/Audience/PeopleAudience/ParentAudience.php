@@ -5,26 +5,23 @@ use Sohophp\SchemaOrg\Thing\Intangible\Audience\PeopleAudience;
 
 /**
 * A set of characteristics describing parents, who can be interested in viewing some content.
-* @see http://schema.org/ParentAudience
+* @see schema:ParentAudience
 * @package Sohophp\SchemaOrg\Thing\Intangible\Audience\PeopleAudience
-
-*
 */
 class ParentAudience extends PeopleAudience
 {
+   /**
+        * Maximal age of the child.
+        */
+    protected $childMaxAge = null;
+
+   /**
+        * Minimal age of the child.
+        */
+    protected $childMinAge = null;
+
 
     /**
-    * Maximal age of the child.
-    * @param array|string $value
-    * @return $this
-    * @deprecated use setChildMaxAge
-    */
-    public function childMaxAge($value)
-    {
-        $this->setProperty('childMaxAge', $value);
-        return $this;
-    }
-   /**
     * @param array|string $value
     * @return $this
     */
@@ -33,8 +30,9 @@ class ParentAudience extends PeopleAudience
         $this->setProperty('childMaxAge', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getChildMaxAge()
     {
@@ -42,17 +40,6 @@ class ParentAudience extends PeopleAudience
     }
 
     /**
-    * Minimal age of the child.
-    * @param array|string $value
-    * @return $this
-    * @deprecated use setChildMinAge
-    */
-    public function childMinAge($value)
-    {
-        $this->setProperty('childMinAge', $value);
-        return $this;
-    }
-   /**
     * @param array|string $value
     * @return $this
     */
@@ -61,8 +48,9 @@ class ParentAudience extends PeopleAudience
         $this->setProperty('childMinAge', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getChildMinAge()
     {

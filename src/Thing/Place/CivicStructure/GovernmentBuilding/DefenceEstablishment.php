@@ -5,10 +5,8 @@ use Sohophp\SchemaOrg\Thing\Place\CivicStructure\GovernmentBuilding;
 
 /**
 * A defence establishment, such as an army or navy base.
-* @see http://schema.org/DefenceEstablishment
+* @see schema:DefenceEstablishment
 * @package Sohophp\SchemaOrg\Thing\Place\CivicStructure\GovernmentBuilding
-
-*
 */
 class DefenceEstablishment extends GovernmentBuilding
 {

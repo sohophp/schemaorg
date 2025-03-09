@@ -2,38 +2,22 @@
 namespace Sohophp\SchemaOrg\Thing\Action\InteractAction\CommunicateAction;
 
 use Sohophp\SchemaOrg\Thing\Action\InteractAction\CommunicateAction;
-use Sohophp\SchemaOrg\Thing\CreativeWork\Question;
 
 /**
-* The act of posing a question / favor to someone.<br/><br/>
-
-Related actions:<br/><br/>
-
-<ul>
-<li><a class="localLink" href="http://schema.org/ReplyAction">ReplyAction</a>: Appears generally as a response to AskAction.</li>
-</ul>
-
-* @see http://schema.org/AskAction
+* The act of posing a question / favor to someone.\n\nRelated actions:\n\n* [[ReplyAction]]: Appears generally as a response to AskAction.
+* @see schema:AskAction
 * @package Sohophp\SchemaOrg\Thing\Action\InteractAction\CommunicateAction
-
-*
 */
 class AskAction extends CommunicateAction
 {
+   /**
+        * A sub property of object. A question.
+        */
+    protected $question = null;
+
 
     /**
-    * A sub property of object. A question.
-    * @param Question|array|string $value
-    * @return $this
-    * @deprecated use setQuestion
-    */
-    public function question($value)
-    {
-        $this->setProperty('question', $value);
-        return $this;
-    }
-   /**
-    * @param Question|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setQuestion($value)
@@ -41,8 +25,9 @@ class AskAction extends CommunicateAction
         $this->setProperty('question', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getQuestion()
     {

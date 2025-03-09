@@ -2,31 +2,22 @@
 namespace Sohophp\SchemaOrg\Thing\Action\MoveAction;
 
 use Sohophp\SchemaOrg\Thing\Action\MoveAction;
-use Sohophp\SchemaOrg\Thing\Intangible\Quantity\Distance;
 
 /**
-* The act of traveling from an fromLocation to a destination by a specified mode of transport, optionally with participants.
-* @see http://schema.org/TravelAction
+* The act of traveling from a fromLocation to a destination by a specified mode of transport, optionally with participants.
+* @see schema:TravelAction
 * @package Sohophp\SchemaOrg\Thing\Action\MoveAction
-
-*
 */
 class TravelAction extends MoveAction
 {
+   /**
+        * The distance travelled, e.g. exercising or travelling.
+        */
+    protected $distance = null;
+
 
     /**
-    * The distance travelled, e.g. exercising or travelling.
-    * @param Distance|array|string $value
-    * @return $this
-    * @deprecated use setDistance
-    */
-    public function distance($value)
-    {
-        $this->setProperty('distance', $value);
-        return $this;
-    }
-   /**
-    * @param Distance|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setDistance($value)
@@ -34,8 +25,9 @@ class TravelAction extends MoveAction
         $this->setProperty('distance', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getDistance()
     {

@@ -5,10 +5,8 @@ use Sohophp\SchemaOrg\Thing\Event;
 
 /**
 * Event type: A social dance.
-* @see http://schema.org/DanceEvent
+* @see schema:DanceEvent
 * @package Sohophp\SchemaOrg\Thing\Event
-
-*
 */
 class DanceEvent extends Event
 {

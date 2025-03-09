@@ -5,10 +5,8 @@ use Sohophp\SchemaOrg\Thing\CreativeWork\WebPage;
 
 /**
 * Web page type: Contact page.
-* @see http://schema.org/ContactPage
+* @see schema:ContactPage
 * @package Sohophp\SchemaOrg\Thing\CreativeWork\WebPage
-
-*
 */
 class ContactPage extends WebPage
 {

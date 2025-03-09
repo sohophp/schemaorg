@@ -13,11 +13,11 @@ class ParserItem
     /**
      * @var \stdClass
      */
-    private $item;
+    private \stdClass $item;
     /**
      * @var Parser
      */
-    private $parser;
+    private Parser $parser;
 
     /**
      * ParserItem constructor.
@@ -32,7 +32,7 @@ class ParserItem
 
     /**
      * @param $key
-     * @return |null
+     * @return null|string|mixed
      */
     public function __get($key)
     {
@@ -41,7 +41,7 @@ class ParserItem
 
     /**
      * @param $key
-     * @return |null
+     * @return null|string|mixed|array|object|\stdClass
      */
     public function getProperty($key)
     {
@@ -102,7 +102,7 @@ class ParserItem
     public function isDataType(): bool
     {
         $types = $this->getTypes();
-        $names = ['Boolean', 'Float', 'Integer', 'Text', 'URL', 'Date', 'DateTime', 'Time', 'DataType', 'Number'];
+        $names = ['Boolean', 'Float', 'Integer', 'Text', 'URL', 'Date', 'DateTime', 'Time', 'DataType', 'Number','schema:DataType'];
         return in_array($this->getName(), $names) || in_array('http://schema.org/DataType', $types);
     }
 
@@ -120,6 +120,10 @@ class ParserItem
      */
     public function getComment(): ?string
     {
+        $comment = $this->getProperty('rdfs:comment');
+        if (is_object($comment)) {
+            return $comment->{'@value'} ?? null;
+        }
         return $this->getProperty('rdfs:comment');
     }
 
@@ -140,6 +144,15 @@ class ParserItem
      */
     public function getRangeIncludes(): array
     {
+        $search = [];
+        foreach (['http://schema.org/rangeIncludes', 'schema:rangeIncludes'] as $property) {
+            $s = $this->getProperty($property);
+            if (is_array($s)) {
+                $search = array_merge($search, $s);
+            } elseif ($s) {
+                $search[] = $s;
+            }
+        }
         return $this->itemIds($this->getProperty('http://schema.org/rangeIncludes'));
     }
 
@@ -148,7 +161,17 @@ class ParserItem
      */
     public function getDomainIncludes(): array
     {
-        return $this->itemIds($this->getProperty('http://schema.org/domainIncludes'));
+        $search = [];
+        foreach (['http://schema.org/domainIncludes', 'schema:domainIncludes'] as $property) {
+            $s = $this->getProperty($property);
+            if (is_array($s)) {
+                $search = array_merge($search, $s);
+            } elseif ($s) {
+                $search[] = $s;
+            }
+        }
+
+        return $this->itemIds($search);
     }
 
     /**
@@ -182,6 +205,7 @@ class ParserItem
                 $properties[] = $property;
             }
         }
+
         return $properties;
     }
 
@@ -268,11 +292,11 @@ class ParserItem
                 }
             }
             return array_filter($ids);
-        } elseif (is_object($search)) {
-            return array_filter([$search->{'@id'} ?? null]);
-        } else {
-            return array_filter([$search]);
         }
+        if (is_object($search)) {
+            return array_filter([$search->{'@id'} ?? null]);
+        }
+        return array_filter([$search]);
     }
 
     /**
@@ -343,7 +367,7 @@ class ParserItem
     /**
      * @return array
      */
-    public function __debugInfo():array
+    public function __debugInfo(): array
     {
         return ['item' => $this->item];
     }

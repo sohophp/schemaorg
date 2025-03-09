@@ -2,174 +2,90 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible\Service;
 
 use Sohophp\SchemaOrg\Thing\Intangible\Service;
-use Sohophp\SchemaOrg\Thing\Intangible\BroadcastFrequencySpecification;
-use Sohophp\SchemaOrg\Thing\Organization;
-use Sohophp\SchemaOrg\Thing\Place;
-use Sohophp\SchemaOrg\Thing\Intangible\BroadcastChannel;
 
 /**
 * A delivery service through which content is provided via broadcast over the air or online.
-* @see http://schema.org/BroadcastService
+* @see schema:BroadcastService
 * @package Sohophp\SchemaOrg\Thing\Intangible\Service
-
-*
 */
 class BroadcastService extends Service
 {
+   /**
+        * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+        */
+    protected $inLanguage = null;
+
+   /**
+        * The media network(s) whose content is broadcast on this station.
+        */
+    protected $broadcastAffiliateOf = null;
+
+   /**
+        * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
+        */
+    protected $videoFormat = null;
+
+   /**
+        * The area within which users can expect to reach the broadcast service.
+        */
+    protected $area = null;
+
+   /**
+        * The timezone in [ISO 8601 format](http://en.wikipedia.org/wiki/ISO_8601) for which the service bases its broadcasts.
+        */
+    protected $broadcastTimezone = null;
+
+   /**
+        * The frequency used for over-the-air broadcasts. Numeric values or simple ranges, e.g. 87-99. In addition a shortcut idiom is supported for frequencies of AM and FM radio channels, e.g. "87 FM".
+        */
+    protected $broadcastFrequency = null;
+
+   /**
+        * A broadcast service to which the broadcast service may belong to such as regional variations of a national channel.
+        */
+    protected $parentService = null;
+
+   /**
+        * The organization owning or operating the broadcast service.
+        */
+    protected $broadcaster = null;
+
+   /**
+        * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
+        */
+    protected $callSign = null;
+
+   /**
+        * The name displayed in the channel guide. For many US affiliates, it is the network name.
+        */
+    protected $broadcastDisplayName = null;
+
+   /**
+        * A broadcast channel of a broadcast service.
+        */
+    protected $hasBroadcastChannel = null;
+
 
     /**
-    * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
-    * @param string|BroadcastFrequencySpecification|array $value
-    * @return $this
-    * @deprecated use setBroadcastFrequency
-    */
-    public function broadcastFrequency($value)
-    {
-        $this->setProperty('broadcastFrequency', $value);
-        return $this;
-    }
-   /**
-    * @param string|BroadcastFrequencySpecification|array $value
+    * @param array|string $value
     * @return $this
     */
-    public function setBroadcastFrequency($value)
+    public function setInLanguage($value)
     {
-        $this->setProperty('broadcastFrequency', $value);
+        $this->setProperty('inLanguage', $value);
         return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getBroadcastFrequency()
-    {
-       return $this->getProperty('broadcastFrequency');
-    }
-
-    /**
-    * The timezone in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> for which the service bases its broadcasts
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setBroadcastTimezone
-    */
-    public function broadcastTimezone($value)
-    {
-        $this->setProperty('broadcastTimezone', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setBroadcastTimezone($value)
-    {
-        $this->setProperty('broadcastTimezone', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getBroadcastTimezone()
-    {
-       return $this->getProperty('broadcastTimezone');
-    }
-
-    /**
-    * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setVideoFormat
-    */
-    public function videoFormat($value)
-    {
-        $this->setProperty('videoFormat', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setVideoFormat($value)
-    {
-        $this->setProperty('videoFormat', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getVideoFormat()
-    {
-       return $this->getProperty('videoFormat');
     }
 
     /**
-    * A broadcast service to which the broadcast service may belong to such as regional variations of a national channel.
-    * @param BroadcastService|array|string $value
-    * @return $this
-    * @deprecated use setParentService
+    * @return string|array|mixed
     */
-    public function parentService($value)
+    public function getInLanguage()
     {
-        $this->setProperty('parentService', $value);
-        return $this;
-    }
-   /**
-    * @param BroadcastService|array|string $value
-    * @return $this
-    */
-    public function setParentService($value)
-    {
-        $this->setProperty('parentService', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getParentService()
-    {
-       return $this->getProperty('parentService');
+       return $this->getProperty('inLanguage');
     }
 
     /**
-    * The name displayed in the channel guide. For many US affiliates, it is the network name.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setBroadcastDisplayName
-    */
-    public function broadcastDisplayName($value)
-    {
-        $this->setProperty('broadcastDisplayName', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setBroadcastDisplayName($value)
-    {
-        $this->setProperty('broadcastDisplayName', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getBroadcastDisplayName()
-    {
-       return $this->getProperty('broadcastDisplayName');
-    }
-
-    /**
-    * The media network(s) whose content is broadcast on this station.
-    * @param Organization|array|string $value
-    * @return $this
-    * @deprecated use setBroadcastAffiliateOf
-    */
-    public function broadcastAffiliateOf($value)
-    {
-        $this->setProperty('broadcastAffiliateOf', $value);
-        return $this;
-    }
-   /**
-    * @param Organization|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setBroadcastAffiliateOf($value)
@@ -177,8 +93,9 @@ class BroadcastService extends Service
         $this->setProperty('broadcastAffiliateOf', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getBroadcastAffiliateOf()
     {
@@ -186,18 +103,25 @@ class BroadcastService extends Service
     }
 
     /**
-    * The area within which users can expect to reach the broadcast service.
-    * @param Place|array|string $value
+    * @param array|string $value
     * @return $this
-    * @deprecated use setArea
     */
-    public function area($value)
+    public function setVideoFormat($value)
     {
-        $this->setProperty('area', $value);
+        $this->setProperty('videoFormat', $value);
         return $this;
     }
-   /**
-    * @param Place|array|string $value
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getVideoFormat()
+    {
+       return $this->getProperty('videoFormat');
+    }
+
+    /**
+    * @param array|string $value
     * @return $this
     */
     public function setArea($value)
@@ -205,8 +129,9 @@ class BroadcastService extends Service
         $this->setProperty('area', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getArea()
     {
@@ -214,46 +139,61 @@ class BroadcastService extends Service
     }
 
     /**
-    * A broadcast channel of a broadcast service.
-    * @param BroadcastChannel|array|string $value
-    * @return $this
-    * @deprecated use setHasBroadcastChannel
-    */
-    public function hasBroadcastChannel($value)
-    {
-        $this->setProperty('hasBroadcastChannel', $value);
-        return $this;
-    }
-   /**
-    * @param BroadcastChannel|array|string $value
+    * @param array|string $value
     * @return $this
     */
-    public function setHasBroadcastChannel($value)
+    public function setBroadcastTimezone($value)
     {
-        $this->setProperty('hasBroadcastChannel', $value);
+        $this->setProperty('broadcastTimezone', $value);
         return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getHasBroadcastChannel()
-    {
-       return $this->getProperty('hasBroadcastChannel');
     }
 
     /**
-    * The organization owning or operating the broadcast service.
-    * @param Organization|array|string $value
-    * @return $this
-    * @deprecated use setBroadcaster
+    * @return string|array|mixed
     */
-    public function broadcaster($value)
+    public function getBroadcastTimezone()
     {
-        $this->setProperty('broadcaster', $value);
+       return $this->getProperty('broadcastTimezone');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setBroadcastFrequency($value)
+    {
+        $this->setProperty('broadcastFrequency', $value);
         return $this;
     }
-   /**
-    * @param Organization|array|string $value
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getBroadcastFrequency()
+    {
+       return $this->getProperty('broadcastFrequency');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setParentService($value)
+    {
+        $this->setProperty('parentService', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getParentService()
+    {
+       return $this->getProperty('parentService');
+    }
+
+    /**
+    * @param array|string $value
     * @return $this
     */
     public function setBroadcaster($value)
@@ -261,12 +201,67 @@ class BroadcastService extends Service
         $this->setProperty('broadcaster', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getBroadcaster()
     {
        return $this->getProperty('broadcaster');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setCallSign($value)
+    {
+        $this->setProperty('callSign', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getCallSign()
+    {
+       return $this->getProperty('callSign');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setBroadcastDisplayName($value)
+    {
+        $this->setProperty('broadcastDisplayName', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getBroadcastDisplayName()
+    {
+       return $this->getProperty('broadcastDisplayName');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setHasBroadcastChannel($value)
+    {
+        $this->setProperty('hasBroadcastChannel', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getHasBroadcastChannel()
+    {
+       return $this->getProperty('hasBroadcastChannel');
     }
 
 

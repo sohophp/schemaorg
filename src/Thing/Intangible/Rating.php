@@ -2,40 +2,47 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible;
 
 use Sohophp\SchemaOrg\Thing\Intangible;
-use Sohophp\SchemaOrg\Thing\Person;
-use Sohophp\SchemaOrg\Thing\Organization;
 
 /**
 * A rating is an evaluation on a numeric scale, such as 1 to 5 stars.
-* @see http://schema.org/Rating
+* @see schema:Rating
 * @package Sohophp\SchemaOrg\Thing\Intangible
-
-*
 */
 class Rating extends Intangible
 {
+   /**
+        * The rating for the content.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+        */
+    protected $ratingValue = null;
+
+   /**
+        * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
+        */
+    protected $author = null;
+
+   /**
+        * This Review or Rating is relevant to this part or facet of the itemReviewed.
+        */
+    protected $reviewAspect = null;
+
+   /**
+        * The highest value allowed in this rating system.
+        */
+    protected $bestRating = null;
+
+   /**
+        * The lowest value allowed in this rating system.
+        */
+    protected $worstRating = null;
+
+   /**
+        * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with "fact check" markup using [[ClaimReview]].
+        */
+    protected $ratingExplanation = null;
+
 
     /**
-    * The rating for the content.<br/><br/>
-
-Usage guidelines:<br/><br/>
-
-<ul>
-<li>Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.</li>
-<li>Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.</li>
-</ul>
-
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setRatingValue
-    */
-    public function ratingValue($value)
-    {
-        $this->setProperty('ratingValue', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
+    * @param array|string $value
     * @return $this
     */
     public function setRatingValue($value)
@@ -43,8 +50,9 @@ Usage guidelines:<br/><br/>
         $this->setProperty('ratingValue', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getRatingValue()
     {
@@ -52,74 +60,7 @@ Usage guidelines:<br/><br/>
     }
 
     /**
-    * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setBestRating
-    */
-    public function bestRating($value)
-    {
-        $this->setProperty('bestRating', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setBestRating($value)
-    {
-        $this->setProperty('bestRating', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getBestRating()
-    {
-       return $this->getProperty('bestRating');
-    }
-
-    /**
-    * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setWorstRating
-    */
-    public function worstRating($value)
-    {
-        $this->setProperty('worstRating', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setWorstRating($value)
-    {
-        $this->setProperty('worstRating', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getWorstRating()
-    {
-       return $this->getProperty('worstRating');
-    }
-
-    /**
-    * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
-    * @param Person|Organization|array|string $value
-    * @return $this
-    * @deprecated use setAuthor
-    */
-    public function author($value)
-    {
-        $this->setProperty('author', $value);
-        return $this;
-    }
-   /**
-    * @param Person|Organization|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setAuthor($value)
@@ -127,8 +68,9 @@ Usage guidelines:<br/><br/>
         $this->setProperty('author', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getAuthor()
     {
@@ -136,46 +78,7 @@ Usage guidelines:<br/><br/>
     }
 
     /**
-    * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with "fact check" markup using <a class="localLink" href="http://schema.org/ClaimReview">ClaimReview</a>.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setRatingExplanation
-    */
-    public function ratingExplanation($value)
-    {
-        $this->setProperty('ratingExplanation', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setRatingExplanation($value)
-    {
-        $this->setProperty('ratingExplanation', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getRatingExplanation()
-    {
-       return $this->getProperty('ratingExplanation');
-    }
-
-    /**
-    * This Review or Rating is relevant to this part or facet of the itemReviewed.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setReviewAspect
-    */
-    public function reviewAspect($value)
-    {
-        $this->setProperty('reviewAspect', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
+    * @param array|string $value
     * @return $this
     */
     public function setReviewAspect($value)
@@ -183,12 +86,67 @@ Usage guidelines:<br/><br/>
         $this->setProperty('reviewAspect', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getReviewAspect()
     {
        return $this->getProperty('reviewAspect');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setBestRating($value)
+    {
+        $this->setProperty('bestRating', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getBestRating()
+    {
+       return $this->getProperty('bestRating');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setWorstRating($value)
+    {
+        $this->setProperty('worstRating', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getWorstRating()
+    {
+       return $this->getProperty('worstRating');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setRatingExplanation($value)
+    {
+        $this->setProperty('ratingExplanation', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getRatingExplanation()
+    {
+       return $this->getProperty('ratingExplanation');
     }
 
 

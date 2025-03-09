@@ -5,27 +5,24 @@ use Sohophp\SchemaOrg\Thing\Place\CivicStructure;
 
 /**
 * An airport.
-* @see http://schema.org/Airport
+* @see schema:Airport
 * @package Sohophp\SchemaOrg\Thing\Place\CivicStructure
-
-*
 */
 class Airport extends CivicStructure
 {
+   /**
+        * IATA identifier for an airline or airport.
+        */
+    protected $iataCode = null;
+
+   /**
+        * ICAO identifier for an airport.
+        */
+    protected $icaoCode = null;
+
 
     /**
-    * IATA identifier for an airline or airport.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setIataCode
-    */
-    public function iataCode($value)
-    {
-        $this->setProperty('iataCode', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
+    * @param array|string $value
     * @return $this
     */
     public function setIataCode($value)
@@ -33,8 +30,9 @@ class Airport extends CivicStructure
         $this->setProperty('iataCode', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getIataCode()
     {
@@ -42,18 +40,7 @@ class Airport extends CivicStructure
     }
 
     /**
-    * ICAO identifier for an airport.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setIcaoCode
-    */
-    public function icaoCode($value)
-    {
-        $this->setProperty('icaoCode', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
+    * @param array|string $value
     * @return $this
     */
     public function setIcaoCode($value)
@@ -61,8 +48,9 @@ class Airport extends CivicStructure
         $this->setProperty('icaoCode', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getIcaoCode()
     {

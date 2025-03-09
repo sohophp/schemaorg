@@ -5,10 +5,8 @@ use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MedicalEnumeration;
 
 /**
 * Categories of medical devices, organized by the purpose or intended use of the device.
-* @see http://schema.org/MedicalDevicePurpose
+* @see schema:MedicalDevicePurpose
 * @package Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MedicalEnumeration
-
-*
 */
 class MedicalDevicePurpose extends MedicalEnumeration
 {

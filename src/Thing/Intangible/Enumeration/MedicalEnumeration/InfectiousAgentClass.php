@@ -5,10 +5,8 @@ use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MedicalEnumeration;
 
 /**
 * Classes of agents or pathogens that transmit infectious diseases. Enumerated type.
-* @see http://schema.org/InfectiousAgentClass
+* @see schema:InfectiousAgentClass
 * @package Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MedicalEnumeration
-
-*
 */
 class InfectiousAgentClass extends MedicalEnumeration
 {

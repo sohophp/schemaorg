@@ -2,59 +2,37 @@
 namespace Sohophp\SchemaOrg\Thing\Event;
 
 use Sohophp\SchemaOrg\Thing\Event;
-use Sohophp\SchemaOrg\Thing\Person;
 
 /**
-* An instance of a <a class="localLink" href="http://schema.org/Course">Course</a> which is distinct from other instances because it is offered at a different time or location or through different media or modes of study or to a specific section of students.
-* @see http://schema.org/CourseInstance
+* An instance of a [[Course]] which is distinct from other instances because it is offered at a different time or location or through different media or modes of study or to a specific section of students.
+* @see schema:CourseInstance
 * @package Sohophp\SchemaOrg\Thing\Event
-
-*
 */
 class CourseInstance extends Event
 {
+   /**
+        * The medium or means of delivery of the course instance or the mode of study, either as a text label (e.g. "online", "onsite" or "blended"; "synchronous" or "asynchronous"; "full-time" or "part-time") or as a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous).
+        */
+    protected $courseMode = null;
+
+   /**
+        * Represents the length and pace of a course, expressed as a [[Schedule]].
+        */
+    protected $courseSchedule = null;
+
+   /**
+        * The amount of work expected of students taking the course, often provided as a figure per week or per month, and may be broken down by type. For example, "2 hours of lectures, 1 hour of lab work and 3 hours of independent study per week".
+        */
+    protected $courseWorkload = null;
+
+   /**
+        * A person assigned to instruct or provide instructional assistance for the [[CourseInstance]].
+        */
+    protected $instructor = null;
+
 
     /**
-    * A person assigned to instruct or provide instructional assistance for the <a class="localLink" href="http://schema.org/CourseInstance">CourseInstance</a>.
-    * @param Person|array|string $value
-    * @return $this
-    * @deprecated use setInstructor
-    */
-    public function instructor($value)
-    {
-        $this->setProperty('instructor', $value);
-        return $this;
-    }
-   /**
-    * @param Person|array|string $value
-    * @return $this
-    */
-    public function setInstructor($value)
-    {
-        $this->setProperty('instructor', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getInstructor()
-    {
-       return $this->getProperty('instructor');
-    }
-
-    /**
-    * The medium or means of delivery of the course instance or the mode of study, either as a text label (e.g. "online", "onsite" or "blended"; "synchronous" or "asynchronous"; "full-time" or "part-time") or as a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ).
-    * @param string|string|array $value
-    * @return $this
-    * @deprecated use setCourseMode
-    */
-    public function courseMode($value)
-    {
-        $this->setProperty('courseMode', $value);
-        return $this;
-    }
-   /**
-    * @param string|string|array $value
+    * @param array|string $value
     * @return $this
     */
     public function setCourseMode($value)
@@ -62,8 +40,9 @@ class CourseInstance extends Event
         $this->setProperty('courseMode', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getCourseMode()
     {
@@ -71,18 +50,25 @@ class CourseInstance extends Event
     }
 
     /**
-    * The amount of work expected of students taking the course, often provided as a figure per week or per month, and may be broken down by type. For example, "2 hours of lectures, 1 hour of lab work and 3 hours of independent study per week".
-    * @param string|array $value
+    * @param array|string $value
     * @return $this
-    * @deprecated use setCourseWorkload
     */
-    public function courseWorkload($value)
+    public function setCourseSchedule($value)
     {
-        $this->setProperty('courseWorkload', $value);
+        $this->setProperty('courseSchedule', $value);
         return $this;
     }
-   /**
-    * @param string|array $value
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getCourseSchedule()
+    {
+       return $this->getProperty('courseSchedule');
+    }
+
+    /**
+    * @param array|string $value
     * @return $this
     */
     public function setCourseWorkload($value)
@@ -90,12 +76,31 @@ class CourseInstance extends Event
         $this->setProperty('courseWorkload', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getCourseWorkload()
     {
        return $this->getProperty('courseWorkload');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setInstructor($value)
+    {
+        $this->setProperty('instructor', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getInstructor()
+    {
+       return $this->getProperty('instructor');
     }
 
 

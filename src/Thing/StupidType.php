@@ -2,31 +2,22 @@
 namespace Sohophp\SchemaOrg\Thing;
 
 use Sohophp\SchemaOrg\Thing;
-use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\QuantitativeValue;
 
 /**
 * A StupidType for testing.
-* @see http://schema.org/StupidType
+* @see schema:StupidType
 * @package Sohophp\SchemaOrg\Thing
-
-*
 */
 class StupidType extends Thing
 {
+   /**
+        * This is a StupidProperty! - for testing only.
+        */
+    protected $stupidProperty = null;
+
 
     /**
-    * This is a StupidProperty! - for testing only
-    * @param QuantitativeValue|array|string $value
-    * @return $this
-    * @deprecated use setStupidProperty
-    */
-    public function stupidProperty($value)
-    {
-        $this->setProperty('stupidProperty', $value);
-        return $this;
-    }
-   /**
-    * @param QuantitativeValue|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setStupidProperty($value)
@@ -34,8 +25,9 @@ class StupidType extends Thing
         $this->setProperty('stupidProperty', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getStupidProperty()
     {

@@ -5,10 +5,8 @@ use Sohophp\SchemaOrg\Thing\Place\AdministrativeArea;
 
 /**
 * A city or town.
-* @see http://schema.org/City
+* @see schema:City
 * @package Sohophp\SchemaOrg\Thing\Place\AdministrativeArea
-
-*
 */
 class City extends AdministrativeArea
 {

@@ -23,7 +23,7 @@ class BaseType implements \ArrayAccess, \JsonSerializable
      * @param mixed $offset
      * @param mixed $value
      */
-    public function offsetSet(mixed $offset, mixed $value):void
+    public function offsetSet(mixed $offset, mixed $value): void
     {
         $this->properties[$offset] = $value;
     }
@@ -32,7 +32,7 @@ class BaseType implements \ArrayAccess, \JsonSerializable
      * @param mixed $offset
      * @return mixed
      */
-    public function offsetGet(mixed $offset):mixed
+    public function offsetGet(mixed $offset): mixed
     {
         return $this->properties[$offset];
     }
@@ -41,7 +41,7 @@ class BaseType implements \ArrayAccess, \JsonSerializable
      * @param mixed $offset
      * @return bool
      */
-    public function offsetExists(mixed $offset):bool
+    public function offsetExists(mixed $offset): bool
     {
         return array_key_exists($offset, $this->properties);
     }
@@ -49,7 +49,7 @@ class BaseType implements \ArrayAccess, \JsonSerializable
     /**
      * @param mixed $offset
      */
-    public function offsetUnset(mixed $offset):void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->properties[$offset]);
     }
@@ -57,7 +57,7 @@ class BaseType implements \ArrayAccess, \JsonSerializable
     /**
      * @return array
      */
-    public function jsonSerialize():array
+    public function jsonSerialize(): array
     {
         return $this->toArray();
     }
@@ -87,7 +87,7 @@ class BaseType implements \ArrayAccess, \JsonSerializable
      * @param bool $context
      * @return array
      */
-    public function toArray(bool $context = true):  array
+    public function toArray(bool $context = true): array
     {
 
         $vars = $this->properties;
@@ -107,17 +107,19 @@ class BaseType implements \ArrayAccess, \JsonSerializable
      * @param mixed $vars
      * @return mixed
      */
-    public function filterArray(mixed $vars):mixed
+    public function filterArray(mixed $vars): mixed
     {
         if ($vars instanceof BaseType) {
             return $vars->toArray(false);
-        } elseif ($vars instanceof DataType) {
-            return $vars->getValue();
-        } elseif (is_array($vars)) {
-            return array_map([$this, 'filterArray'], $vars);
-        } else {
-            return $vars;
         }
+        if ($vars instanceof DataType) {
+            return $vars->getValue();
+        }
+        if (is_array($vars)) {
+            return array_map([$this, 'filterArray'], $vars);
+        }
+        return $vars;
+
     }
 
     /**
@@ -137,7 +139,7 @@ class BaseType implements \ArrayAccess, \JsonSerializable
      */
     public function getProperty($property): mixed
     {
-        return $this->properties[$property]??null;
+        return $this->properties[$property] ?? null;
     }
 
     /**
@@ -155,8 +157,8 @@ class BaseType implements \ArrayAccess, \JsonSerializable
     {
         try {
             return $this->type ?? (new \ReflectionClass($this))->getShortName();
-        } catch (\Throwable ) {
-            $arr = preg_split('#\#', static::class);
+        } catch (\Throwable) {
+            $arr = explode("\\", static::class);
             return $arr[count($arr) - 1];
         }
     }
@@ -164,28 +166,21 @@ class BaseType implements \ArrayAccess, \JsonSerializable
     /**
      * @param int $options
      * @return false|string
+     * @deprecated @see SchemaUtils::toJSON
      */
     public function toJson(int $options = JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES): bool|string
     {
-        return json_encode($this->toArray(), $options | JSON_UNESCAPED_SLASHES);
+        return SchemaUtils::toJSON($this, $options);
     }
 
     /**
-     *
      * @param int $options
      * @return string
+     * @deprecated @see SchemaUtils::toScript
      */
 
     public function toScript(int $options = JSON_UNESCAPED_UNICODE): string
     {
-        $script = [];
-        $script[] = '<script type="application/ld+json">';
-        $script[] = $this->toJson($options);
-        $script[] = '</script>';
-        if ($options & JSON_PRETTY_PRINT) {
-            return implode(PHP_EOL, $script);
-        } else {
-            return implode('', $script);
-        }
+        return SchemaUtils::toScript($this, $options);
     }
 }

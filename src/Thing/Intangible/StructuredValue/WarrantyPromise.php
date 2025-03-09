@@ -2,32 +2,27 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
 
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
-use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\QuantitativeValue;
-use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\WarrantyScope;
 
 /**
 * A structured value representing the duration and scope of services that will be provided to a customer free of charge in case of a defect or malfunction of a product.
-* @see http://schema.org/WarrantyPromise
+* @see schema:WarrantyPromise
 * @package Sohophp\SchemaOrg\Thing\Intangible\StructuredValue
-
-*
 */
 class WarrantyPromise extends StructuredValue
 {
+   /**
+        * The duration of the warranty promise. Common unitCode values are ANN for year, MON for months, or DAY for days.
+        */
+    protected $durationOfWarranty = null;
+
+   /**
+        * The scope of the warranty promise.
+        */
+    protected $warrantyScope = null;
+
 
     /**
-    * The duration of the warranty promise. Common unitCode values are ANN for year, MON for months, or DAY for days.
-    * @param QuantitativeValue|array|string $value
-    * @return $this
-    * @deprecated use setDurationOfWarranty
-    */
-    public function durationOfWarranty($value)
-    {
-        $this->setProperty('durationOfWarranty', $value);
-        return $this;
-    }
-   /**
-    * @param QuantitativeValue|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setDurationOfWarranty($value)
@@ -35,8 +30,9 @@ class WarrantyPromise extends StructuredValue
         $this->setProperty('durationOfWarranty', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getDurationOfWarranty()
     {
@@ -44,18 +40,7 @@ class WarrantyPromise extends StructuredValue
     }
 
     /**
-    * The scope of the warranty promise.
-    * @param WarrantyScope|array|string $value
-    * @return $this
-    * @deprecated use setWarrantyScope
-    */
-    public function warrantyScope($value)
-    {
-        $this->setProperty('warrantyScope', $value);
-        return $this;
-    }
-   /**
-    * @param WarrantyScope|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setWarrantyScope($value)
@@ -63,8 +48,9 @@ class WarrantyPromise extends StructuredValue
         $this->setProperty('warrantyScope', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getWarrantyScope()
     {

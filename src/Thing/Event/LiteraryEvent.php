@@ -5,10 +5,8 @@ use Sohophp\SchemaOrg\Thing\Event;
 
 /**
 * Event type: Literary event.
-* @see http://schema.org/LiteraryEvent
+* @see schema:LiteraryEvent
 * @package Sohophp\SchemaOrg\Thing\Event
-
-*
 */
 class LiteraryEvent extends Event
 {

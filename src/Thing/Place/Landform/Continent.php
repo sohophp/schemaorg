@@ -5,10 +5,8 @@ use Sohophp\SchemaOrg\Thing\Place\Landform;
 
 /**
 * One of the continents (for example, Europe or Africa).
-* @see http://schema.org/Continent
+* @see schema:Continent
 * @package Sohophp\SchemaOrg\Thing\Place\Landform
-
-*
 */
 class Continent extends Landform
 {

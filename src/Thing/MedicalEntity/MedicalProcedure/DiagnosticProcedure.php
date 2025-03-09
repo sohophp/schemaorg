@@ -5,10 +5,8 @@ use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalProcedure;
 
 /**
 * A medical procedure intended primarily for diagnostic, as opposed to therapeutic, purposes.
-* @see http://schema.org/DiagnosticProcedure
+* @see schema:DiagnosticProcedure
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalProcedure
-
-*
 */
 class DiagnosticProcedure extends MedicalProcedure
 {

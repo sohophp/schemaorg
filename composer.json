@@ -24,7 +24,7 @@
   },
   "require-dev": {
     "symfony/console": "^6.0",
-    "phpunit/phpunit": "10.0.x-dev",
+    "phpunit/phpunit": "^10.0",
     "twig/twig": "^3.3",
     "doctrine/inflector": "*",
     "friendsofphp/php-cs-fixer": "*",

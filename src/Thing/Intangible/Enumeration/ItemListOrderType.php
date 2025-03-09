@@ -5,10 +5,8 @@ use Sohophp\SchemaOrg\Thing\Intangible\Enumeration;
 
 /**
 * Enumerated for values for itemListOrder for indicating how an ordered ItemList is organized.
-* @see http://schema.org/ItemListOrderType
+* @see schema:ItemListOrderType
 * @package Sohophp\SchemaOrg\Thing\Intangible\Enumeration
-
-*
 */
 class ItemListOrderType extends Enumeration
 {

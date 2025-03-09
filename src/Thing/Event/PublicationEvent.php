@@ -2,61 +2,32 @@
 namespace Sohophp\SchemaOrg\Thing\Event;
 
 use Sohophp\SchemaOrg\Thing\Event;
-use Sohophp\SchemaOrg\Thing\Intangible\Service\BroadcastService;
-use Sohophp\SchemaOrg\Thing\Person;
-use Sohophp\SchemaOrg\Thing\Organization;
 
 /**
-* A PublicationEvent corresponds indifferently to the event of publication for a CreativeWork of any type e.g. a broadcast event, an on-demand event, a book/journal publication via a variety of delivery media.
-* @see http://schema.org/PublicationEvent
+* A PublicationEvent corresponds indifferently to the event of publication for a CreativeWork of any type, e.g. a broadcast event, an on-demand event, a book/journal publication via a variety of delivery media.
+* @see schema:PublicationEvent
 * @package Sohophp\SchemaOrg\Thing\Event
-
-*
 */
 class PublicationEvent extends Event
 {
+   /**
+        * A flag to signal that the item, event, or place is accessible for free.
+        */
+    protected $free = null;
+
+   /**
+        * An agent associated with the publication event.
+        */
+    protected $publishedBy = null;
+
+   /**
+        * A broadcast service associated with the publication event.
+        */
+    protected $publishedOn = null;
+
 
     /**
-    * A broadcast service associated with the publication event.
-    * @param BroadcastService|array|string $value
-    * @return $this
-    * @deprecated use setPublishedOn
-    */
-    public function publishedOn($value)
-    {
-        $this->setProperty('publishedOn', $value);
-        return $this;
-    }
-   /**
-    * @param BroadcastService|array|string $value
-    * @return $this
-    */
-    public function setPublishedOn($value)
-    {
-        $this->setProperty('publishedOn', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getPublishedOn()
-    {
-       return $this->getProperty('publishedOn');
-    }
-
-    /**
-    * A flag to signal that the item, event, or place is accessible for free.
-    * @param bool|array|string $value
-    * @return $this
-    * @deprecated use setFree
-    */
-    public function free($value)
-    {
-        $this->setProperty('free', $value);
-        return $this;
-    }
-   /**
-    * @param bool|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setFree($value)
@@ -64,8 +35,9 @@ class PublicationEvent extends Event
         $this->setProperty('free', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getFree()
     {
@@ -73,18 +45,7 @@ class PublicationEvent extends Event
     }
 
     /**
-    * An agent associated with the publication event.
-    * @param Person|Organization|array|string $value
-    * @return $this
-    * @deprecated use setPublishedBy
-    */
-    public function publishedBy($value)
-    {
-        $this->setProperty('publishedBy', $value);
-        return $this;
-    }
-   /**
-    * @param Person|Organization|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setPublishedBy($value)
@@ -92,8 +53,9 @@ class PublicationEvent extends Event
         $this->setProperty('publishedBy', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getPublishedBy()
     {
@@ -101,31 +63,21 @@ class PublicationEvent extends Event
     }
 
     /**
-    * A flag to signal that the item, event, or place is accessible for free.
-    * @param bool|array|string $value
-    * @return $this
-    * @deprecated use setIsAccessibleForFree
-    */
-    public function isAccessibleForFree($value)
-    {
-        $this->setProperty('isAccessibleForFree', $value);
-        return $this;
-    }
-   /**
-    * @param bool|array|string $value
+    * @param array|string $value
     * @return $this
     */
-    public function setIsAccessibleForFree($value)
+    public function setPublishedOn($value)
     {
-        $this->setProperty('isAccessibleForFree', $value);
+        $this->setProperty('publishedOn', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
-    public function getIsAccessibleForFree()
+    public function getPublishedOn()
     {
-       return $this->getProperty('isAccessibleForFree');
+       return $this->getProperty('publishedOn');
     }
 
 

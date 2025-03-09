@@ -2,31 +2,22 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible\ListItem\HowToItem;
 
 use Sohophp\SchemaOrg\Thing\Intangible\ListItem\HowToItem;
-use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\MonetaryAmount;
 
 /**
 * A supply consumed when performing the instructions for how to achieve a result.
-* @see http://schema.org/HowToSupply
+* @see schema:HowToSupply
 * @package Sohophp\SchemaOrg\Thing\Intangible\ListItem\HowToItem
-
-*
 */
 class HowToSupply extends HowToItem
 {
+   /**
+        * The estimated cost of the supply or supplies consumed when performing instructions.
+        */
+    protected $estimatedCost = null;
+
 
     /**
-    * The estimated cost of the supply or supplies consumed when performing instructions.
-    * @param string|MonetaryAmount|array $value
-    * @return $this
-    * @deprecated use setEstimatedCost
-    */
-    public function estimatedCost($value)
-    {
-        $this->setProperty('estimatedCost', $value);
-        return $this;
-    }
-   /**
-    * @param string|MonetaryAmount|array $value
+    * @param array|string $value
     * @return $this
     */
     public function setEstimatedCost($value)
@@ -34,8 +25,9 @@ class HowToSupply extends HowToItem
         $this->setProperty('estimatedCost', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getEstimatedCost()
     {

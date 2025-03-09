@@ -5,10 +5,8 @@ use Sohophp\SchemaOrg\Thing\Place\CivicStructure;
 
 /**
 * A zoo.
-* @see http://schema.org/Zoo
+* @see schema:Zoo
 * @package Sohophp\SchemaOrg\Thing\Place\CivicStructure
-
-*
 */
 class Zoo extends CivicStructure
 {

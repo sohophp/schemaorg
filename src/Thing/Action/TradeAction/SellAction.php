@@ -2,32 +2,27 @@
 namespace Sohophp\SchemaOrg\Thing\Action\TradeAction;
 
 use Sohophp\SchemaOrg\Thing\Action\TradeAction;
-use Sohophp\SchemaOrg\Thing\Person;
-use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\WarrantyPromise;
 
 /**
 * The act of taking money from a buyer in exchange for goods or services rendered. An agent sells an object, product, or service to a buyer for a price. Reciprocal of BuyAction.
-* @see http://schema.org/SellAction
+* @see schema:SellAction
 * @package Sohophp\SchemaOrg\Thing\Action\TradeAction
-
-*
 */
 class SellAction extends TradeAction
 {
+   /**
+        * A sub property of participant. The participant/person/organization that bought the object.
+        */
+    protected $buyer = null;
+
+   /**
+        * The warranty promise(s) included in the offer.
+        */
+    protected $warrantyPromise = null;
+
 
     /**
-    * A sub property of participant. The participant/person/organization that bought the object.
-    * @param Person|array|string $value
-    * @return $this
-    * @deprecated use setBuyer
-    */
-    public function buyer($value)
-    {
-        $this->setProperty('buyer', $value);
-        return $this;
-    }
-   /**
-    * @param Person|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setBuyer($value)
@@ -35,8 +30,9 @@ class SellAction extends TradeAction
         $this->setProperty('buyer', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getBuyer()
     {
@@ -44,18 +40,7 @@ class SellAction extends TradeAction
     }
 
     /**
-    * The warranty promise(s) included in the offer.
-    * @param WarrantyPromise|array|string $value
-    * @return $this
-    * @deprecated use setWarrantyPromise
-    */
-    public function warrantyPromise($value)
-    {
-        $this->setProperty('warrantyPromise', $value);
-        return $this;
-    }
-   /**
-    * @param WarrantyPromise|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setWarrantyPromise($value)
@@ -63,8 +48,9 @@ class SellAction extends TradeAction
         $this->setProperty('warrantyPromise', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getWarrantyPromise()
     {

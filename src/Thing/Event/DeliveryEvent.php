@@ -2,58 +2,54 @@
 namespace Sohophp\SchemaOrg\Thing\Event;
 
 use Sohophp\SchemaOrg\Thing\Event;
-use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\DeliveryMethod;
 
 /**
 * An event involving the delivery of an item.
-* @see http://schema.org/DeliveryEvent
+* @see schema:DeliveryEvent
 * @package Sohophp\SchemaOrg\Thing\Event
-
-*
 */
 class DeliveryEvent extends Event
 {
-
-    /**
-    * Method used for delivery or shipping.
-    * @param DeliveryMethod|array|string $value
-    * @return $this
-    * @deprecated use setHasDeliveryMethod
-    */
-    public function hasDeliveryMethod($value)
-    {
-        $this->setProperty('hasDeliveryMethod', $value);
-        return $this;
-    }
    /**
-    * @param DeliveryMethod|array|string $value
-    * @return $this
-    */
-    public function setHasDeliveryMethod($value)
-    {
-        $this->setProperty('hasDeliveryMethod', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getHasDeliveryMethod()
-    {
-       return $this->getProperty('hasDeliveryMethod');
-    }
+        * Password, PIN, or access code needed for delivery (e.g. from a locker).
+        */
+    protected $accessCode = null;
+
+   /**
+        * After this date, the item will no longer be available for pickup.
+        */
+    protected $availableThrough = null;
+
+   /**
+        * Method used for delivery or shipping.
+        */
+    protected $hasDeliveryMethod = null;
+
+   /**
+        * When the item is available for pickup from the store, locker, etc.
+        */
+    protected $availableFrom = null;
+
 
     /**
-    * After this date, the item will no longer be available for pickup.
     * @param array|string $value
     * @return $this
-    * @deprecated use setAvailableThrough
     */
-    public function availableThrough($value)
+    public function setAccessCode($value)
     {
-        $this->setProperty('availableThrough', $value);
+        $this->setProperty('accessCode', $value);
         return $this;
     }
-   /**
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getAccessCode()
+    {
+       return $this->getProperty('accessCode');
+    }
+
+    /**
     * @param array|string $value
     * @return $this
     */
@@ -62,8 +58,9 @@ class DeliveryEvent extends Event
         $this->setProperty('availableThrough', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getAvailableThrough()
     {
@@ -71,17 +68,24 @@ class DeliveryEvent extends Event
     }
 
     /**
-    * When the item is available for pickup from the store, locker, etc.
     * @param array|string $value
     * @return $this
-    * @deprecated use setAvailableFrom
     */
-    public function availableFrom($value)
+    public function setHasDeliveryMethod($value)
     {
-        $this->setProperty('availableFrom', $value);
+        $this->setProperty('hasDeliveryMethod', $value);
         return $this;
     }
-   /**
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getHasDeliveryMethod()
+    {
+       return $this->getProperty('hasDeliveryMethod');
+    }
+
+    /**
     * @param array|string $value
     * @return $this
     */
@@ -90,40 +94,13 @@ class DeliveryEvent extends Event
         $this->setProperty('availableFrom', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getAvailableFrom()
     {
        return $this->getProperty('availableFrom');
-    }
-
-    /**
-    * Password, PIN, or access code needed for delivery (e.g. from a locker).
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setAccessCode
-    */
-    public function accessCode($value)
-    {
-        $this->setProperty('accessCode', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setAccessCode($value)
-    {
-        $this->setProperty('accessCode', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getAccessCode()
-    {
-       return $this->getProperty('accessCode');
     }
 
 

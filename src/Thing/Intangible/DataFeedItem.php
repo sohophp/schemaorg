@@ -2,30 +2,36 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible;
 
 use Sohophp\SchemaOrg\Thing\Intangible;
-use Sohophp\SchemaOrg\Thing;
 
 /**
 * A single item within a larger data feed.
-* @see http://schema.org/DataFeedItem
+* @see schema:DataFeedItem
 * @package Sohophp\SchemaOrg\Thing\Intangible
-
-*
 */
 class DataFeedItem extends Intangible
 {
+   /**
+        * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
+        */
+    protected $dateModified = null;
+
+   /**
+        * The datetime the item was removed from the DataFeed.
+        */
+    protected $dateDeleted = null;
+
+   /**
+        * The date on which the CreativeWork was created or the item was added to a DataFeed.
+        */
+    protected $dateCreated = null;
+
+   /**
+        * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists').
+        */
+    protected $item = null;
+
 
     /**
-    * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
-    * @param array|string $value
-    * @return $this
-    * @deprecated use setDateModified
-    */
-    public function dateModified($value)
-    {
-        $this->setProperty('dateModified', $value);
-        return $this;
-    }
-   /**
     * @param array|string $value
     * @return $this
     */
@@ -34,8 +40,9 @@ class DataFeedItem extends Intangible
         $this->setProperty('dateModified', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getDateModified()
     {
@@ -43,17 +50,6 @@ class DataFeedItem extends Intangible
     }
 
     /**
-    * The datetime the item was removed from the DataFeed.
-    * @param array|string $value
-    * @return $this
-    * @deprecated use setDateDeleted
-    */
-    public function dateDeleted($value)
-    {
-        $this->setProperty('dateDeleted', $value);
-        return $this;
-    }
-   /**
     * @param array|string $value
     * @return $this
     */
@@ -62,8 +58,9 @@ class DataFeedItem extends Intangible
         $this->setProperty('dateDeleted', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getDateDeleted()
     {
@@ -71,17 +68,6 @@ class DataFeedItem extends Intangible
     }
 
     /**
-    * The date on which the CreativeWork was created or the item was added to a DataFeed.
-    * @param array|string $value
-    * @return $this
-    * @deprecated use setDateCreated
-    */
-    public function dateCreated($value)
-    {
-        $this->setProperty('dateCreated', $value);
-        return $this;
-    }
-   /**
     * @param array|string $value
     * @return $this
     */
@@ -90,8 +76,9 @@ class DataFeedItem extends Intangible
         $this->setProperty('dateCreated', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getDateCreated()
     {
@@ -99,18 +86,7 @@ class DataFeedItem extends Intangible
     }
 
     /**
-    * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.
-    * @param Thing|array|string $value
-    * @return $this
-    * @deprecated use setItem
-    */
-    public function item($value)
-    {
-        $this->setProperty('item', $value);
-        return $this;
-    }
-   /**
-    * @param Thing|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setItem($value)
@@ -118,8 +94,9 @@ class DataFeedItem extends Intangible
         $this->setProperty('item', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getItem()
     {

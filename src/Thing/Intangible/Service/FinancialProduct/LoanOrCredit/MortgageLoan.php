@@ -2,31 +2,27 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible\Service\FinancialProduct\LoanOrCredit;
 
 use Sohophp\SchemaOrg\Thing\Intangible\Service\FinancialProduct\LoanOrCredit;
-use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\MonetaryAmount;
 
 /**
 * A loan in which property or real estate is used as collateral. (A loan securitized against some real estate.)
-* @see http://schema.org/MortgageLoan
+* @see schema:MortgageLoan
 * @package Sohophp\SchemaOrg\Thing\Intangible\Service\FinancialProduct\LoanOrCredit
-
-*
 */
 class MortgageLoan extends LoanOrCredit
 {
+   /**
+        * Amount of mortgage mandate that can be converted into a proper mortgage at a later stage.
+        */
+    protected $loanMortgageMandateAmount = null;
+
+   /**
+        * Whether borrower is a resident of the jurisdiction where the property is located.
+        */
+    protected $domiciledMortgage = null;
+
 
     /**
-    * Amount of mortgage mandate that can be converted into a proper mortgage at a later stage.
-    * @param MonetaryAmount|array|string $value
-    * @return $this
-    * @deprecated use setLoanMortgageMandateAmount
-    */
-    public function loanMortgageMandateAmount($value)
-    {
-        $this->setProperty('loanMortgageMandateAmount', $value);
-        return $this;
-    }
-   /**
-    * @param MonetaryAmount|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setLoanMortgageMandateAmount($value)
@@ -34,8 +30,9 @@ class MortgageLoan extends LoanOrCredit
         $this->setProperty('loanMortgageMandateAmount', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getLoanMortgageMandateAmount()
     {
@@ -43,18 +40,7 @@ class MortgageLoan extends LoanOrCredit
     }
 
     /**
-    * Whether borrower is a resident of the jurisdiction where the property is located.
-    * @param bool|array|string $value
-    * @return $this
-    * @deprecated use setDomiciledMortgage
-    */
-    public function domiciledMortgage($value)
-    {
-        $this->setProperty('domiciledMortgage', $value);
-        return $this;
-    }
-   /**
-    * @param bool|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setDomiciledMortgage($value)
@@ -62,8 +48,9 @@ class MortgageLoan extends LoanOrCredit
         $this->setProperty('domiciledMortgage', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getDomiciledMortgage()
     {

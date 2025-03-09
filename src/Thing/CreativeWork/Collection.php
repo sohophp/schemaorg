@@ -4,28 +4,20 @@ namespace Sohophp\SchemaOrg\Thing\CreativeWork;
 use Sohophp\SchemaOrg\Thing\CreativeWork;
 
 /**
-* A created collection of Creative Works or other artefacts.
-* @see http://schema.org/Collection
+* A collection of items, e.g. creative works or products.
+* @see schema:Collection
 * @package Sohophp\SchemaOrg\Thing\CreativeWork
-
-*
 */
 class Collection extends CreativeWork
 {
+   /**
+        * The number of items in the [[Collection]].
+        */
+    protected $collectionSize = null;
+
 
     /**
-    * The number of items in the <a class="localLink" href="http://schema.org/Collection">Collection</a>.
-    * @param int|array|string $value
-    * @return $this
-    * @deprecated use setCollectionSize
-    */
-    public function collectionSize($value)
-    {
-        $this->setProperty('collectionSize', $value);
-        return $this;
-    }
-   /**
-    * @param int|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setCollectionSize($value)
@@ -33,8 +25,9 @@ class Collection extends CreativeWork
         $this->setProperty('collectionSize', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getCollectionSize()
     {

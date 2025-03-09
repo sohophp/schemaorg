@@ -5,10 +5,8 @@ use Sohophp\SchemaOrg\Thing\Intangible\Enumeration;
 
 /**
 * Indicates whether this game is multi-player, co-op or single-player.
-* @see http://schema.org/GamePlayMode
+* @see schema:GamePlayMode
 * @package Sohophp\SchemaOrg\Thing\Intangible\Enumeration
-
-*
 */
 class GamePlayMode extends Enumeration
 {

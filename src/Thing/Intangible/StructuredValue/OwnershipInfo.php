@@ -2,34 +2,55 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
 
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
-use Sohophp\SchemaOrg\Thing\Product;
-use Sohophp\SchemaOrg\Thing\Intangible\Service;
-use Sohophp\SchemaOrg\Thing\Organization;
-use Sohophp\SchemaOrg\Thing\Person;
 
 /**
 * A structured value providing information about when a certain organization or person owned a certain product.
-* @see http://schema.org/OwnershipInfo
+* @see schema:OwnershipInfo
 * @package Sohophp\SchemaOrg\Thing\Intangible\StructuredValue
-
-*
 */
 class OwnershipInfo extends StructuredValue
 {
+   /**
+        * The organization or person from which the product was acquired.
+        */
+    protected $acquiredFrom = null;
+
+   /**
+        * The product that this structured value is referring to.
+        */
+    protected $typeOfGood = null;
+
+   /**
+        * The date and time of giving up ownership on the product.
+        */
+    protected $ownedThrough = null;
+
+   /**
+        * The date and time of obtaining the product.
+        */
+    protected $ownedFrom = null;
+
 
     /**
-    * The product that this structured value is referring to.
-    * @param Product|Service|array|string $value
+    * @param array|string $value
     * @return $this
-    * @deprecated use setTypeOfGood
     */
-    public function typeOfGood($value)
+    public function setAcquiredFrom($value)
     {
-        $this->setProperty('typeOfGood', $value);
+        $this->setProperty('acquiredFrom', $value);
         return $this;
     }
-   /**
-    * @param Product|Service|array|string $value
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getAcquiredFrom()
+    {
+       return $this->getProperty('acquiredFrom');
+    }
+
+    /**
+    * @param array|string $value
     * @return $this
     */
     public function setTypeOfGood($value)
@@ -37,8 +58,9 @@ class OwnershipInfo extends StructuredValue
         $this->setProperty('typeOfGood', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getTypeOfGood()
     {
@@ -46,17 +68,6 @@ class OwnershipInfo extends StructuredValue
     }
 
     /**
-    * The date and time of giving up ownership on the product.
-    * @param array|string $value
-    * @return $this
-    * @deprecated use setOwnedThrough
-    */
-    public function ownedThrough($value)
-    {
-        $this->setProperty('ownedThrough', $value);
-        return $this;
-    }
-   /**
     * @param array|string $value
     * @return $this
     */
@@ -65,8 +76,9 @@ class OwnershipInfo extends StructuredValue
         $this->setProperty('ownedThrough', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getOwnedThrough()
     {
@@ -74,45 +86,6 @@ class OwnershipInfo extends StructuredValue
     }
 
     /**
-    * The organization or person from which the product was acquired.
-    * @param Organization|Person|array|string $value
-    * @return $this
-    * @deprecated use setAcquiredFrom
-    */
-    public function acquiredFrom($value)
-    {
-        $this->setProperty('acquiredFrom', $value);
-        return $this;
-    }
-   /**
-    * @param Organization|Person|array|string $value
-    * @return $this
-    */
-    public function setAcquiredFrom($value)
-    {
-        $this->setProperty('acquiredFrom', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getAcquiredFrom()
-    {
-       return $this->getProperty('acquiredFrom');
-    }
-
-    /**
-    * The date and time of obtaining the product.
-    * @param array|string $value
-    * @return $this
-    * @deprecated use setOwnedFrom
-    */
-    public function ownedFrom($value)
-    {
-        $this->setProperty('ownedFrom', $value);
-        return $this;
-    }
-   /**
     * @param array|string $value
     * @return $this
     */
@@ -121,8 +94,9 @@ class OwnershipInfo extends StructuredValue
         $this->setProperty('ownedFrom', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getOwnedFrom()
     {

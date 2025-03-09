@@ -10,27 +10,21 @@ use {{ use }};
 * {{ annotation }}
 {% endfor %}
 * @package {{ class.namespace }}
-
-*
 */
 class {{ class.name }} extends {{ class.parent }}
 {
+{% for property in class.properties %}
+   /**
+    {% for annotation in property.annotations %}
+    * {{ annotation }}
+    {% endfor %}
+    */
+    protected ${{ property.name }} = null;
+
+{% endfor %}
 
 {% for property in class.properties %}
     /**
-{% for annotation in property.annotations %}
-    * {{ annotation }}
-{% endfor %}
-    * @param {{ property.range }} $value
-    * @return $this
-    * @deprecated use set{{ property.name|ucfirst }}
-    */
-    public function {{ property.name }}({{ property.range_default?property.range_default~' $value':'$value' }})
-    {
-        $this->setProperty('{{ property.name }}', $value);
-        return $this;
-    }
-   /**
     * @param {{ property.range }} $value
     * @return $this
     */
@@ -39,8 +33,9 @@ class {{ class.name }} extends {{ class.parent }}
         $this->setProperty('{{ property.name }}', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function get{{ property.name|ucfirst }}()
     {

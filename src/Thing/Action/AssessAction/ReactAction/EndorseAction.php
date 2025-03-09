@@ -2,32 +2,22 @@
 namespace Sohophp\SchemaOrg\Thing\Action\AssessAction\ReactAction;
 
 use Sohophp\SchemaOrg\Thing\Action\AssessAction\ReactAction;
-use Sohophp\SchemaOrg\Thing\Person;
-use Sohophp\SchemaOrg\Thing\Organization;
 
 /**
-* An agent approves/certifies/likes/supports/sanction an object.
-* @see http://schema.org/EndorseAction
+* An agent approves/certifies/likes/supports/sanctions an object.
+* @see schema:EndorseAction
 * @package Sohophp\SchemaOrg\Thing\Action\AssessAction\ReactAction
-
-*
 */
 class EndorseAction extends ReactAction
 {
+   /**
+        * A sub property of participant. The person/organization being supported.
+        */
+    protected $endorsee = null;
+
 
     /**
-    * A sub property of participant. The person/organization being supported.
-    * @param Person|Organization|array|string $value
-    * @return $this
-    * @deprecated use setEndorsee
-    */
-    public function endorsee($value)
-    {
-        $this->setProperty('endorsee', $value);
-        return $this;
-    }
-   /**
-    * @param Person|Organization|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setEndorsee($value)
@@ -35,8 +25,9 @@ class EndorseAction extends ReactAction
         $this->setProperty('endorsee', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getEndorsee()
     {

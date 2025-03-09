@@ -2,39 +2,22 @@
 namespace Sohophp\SchemaOrg\Thing\Action\TransferAction;
 
 use Sohophp\SchemaOrg\Thing\Action\TransferAction;
-use Sohophp\SchemaOrg\Thing\Person;
-use Sohophp\SchemaOrg\Thing\Organization;
 
 /**
-* The act of obtaining an object under an agreement to return it at a later date. Reciprocal of LendAction.<br/><br/>
-
-Related actions:<br/><br/>
-
-<ul>
-<li><a class="localLink" href="http://schema.org/LendAction">LendAction</a>: Reciprocal of BorrowAction.</li>
-</ul>
-
-* @see http://schema.org/BorrowAction
+* The act of obtaining an object under an agreement to return it at a later date. Reciprocal of LendAction.\n\nRelated actions:\n\n* [[LendAction]]: Reciprocal of BorrowAction.
+* @see schema:BorrowAction
 * @package Sohophp\SchemaOrg\Thing\Action\TransferAction
-
-*
 */
 class BorrowAction extends TransferAction
 {
+   /**
+        * A sub property of participant. The person that lends the object being borrowed.
+        */
+    protected $lender = null;
+
 
     /**
-    * A sub property of participant. The person that lends the object being borrowed.
-    * @param Person|Organization|array|string $value
-    * @return $this
-    * @deprecated use setLender
-    */
-    public function lender($value)
-    {
-        $this->setProperty('lender', $value);
-        return $this;
-    }
-   /**
-    * @param Person|Organization|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setLender($value)
@@ -42,8 +25,9 @@ class BorrowAction extends TransferAction
         $this->setProperty('lender', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getLender()
     {

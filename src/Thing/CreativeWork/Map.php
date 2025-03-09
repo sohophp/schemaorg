@@ -2,31 +2,22 @@
 namespace Sohophp\SchemaOrg\Thing\CreativeWork;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork;
-use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MapCategoryType;
 
 /**
 * A map.
-* @see http://schema.org/Map
+* @see schema:Map
 * @package Sohophp\SchemaOrg\Thing\CreativeWork
-
-*
 */
 class Map extends CreativeWork
 {
+   /**
+        * Indicates the kind of Map, from the MapCategoryType Enumeration.
+        */
+    protected $mapType = null;
+
 
     /**
-    * Indicates the kind of Map, from the MapCategoryType Enumeration.
-    * @param MapCategoryType|array|string $value
-    * @return $this
-    * @deprecated use setMapType
-    */
-    public function mapType($value)
-    {
-        $this->setProperty('mapType', $value);
-        return $this;
-    }
-   /**
-    * @param MapCategoryType|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setMapType($value)
@@ -34,8 +25,9 @@ class Map extends CreativeWork
         $this->setProperty('mapType', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getMapType()
     {

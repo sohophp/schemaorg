@@ -2,31 +2,27 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible;
 
 use Sohophp\SchemaOrg\Thing\Intangible;
-use Sohophp\SchemaOrg\Thing\Place\AdministrativeArea;
 
 /**
 * Intended audience for an item, i.e. the group for whom the item was created.
-* @see http://schema.org/Audience
+* @see schema:Audience
 * @package Sohophp\SchemaOrg\Thing\Intangible
-
-*
 */
 class Audience extends Intangible
 {
+   /**
+        * The target group associated with a given audience (e.g. veterans, car owners, musicians, etc.).
+        */
+    protected $audienceType = null;
+
+   /**
+        * The geographic area associated with the audience.
+        */
+    protected $geographicArea = null;
+
 
     /**
-    * The target group associated with a given audience (e.g. veterans, car owners, musicians, etc.).
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setAudienceType
-    */
-    public function audienceType($value)
-    {
-        $this->setProperty('audienceType', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
+    * @param array|string $value
     * @return $this
     */
     public function setAudienceType($value)
@@ -34,8 +30,9 @@ class Audience extends Intangible
         $this->setProperty('audienceType', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getAudienceType()
     {
@@ -43,18 +40,7 @@ class Audience extends Intangible
     }
 
     /**
-    * The geographic area associated with the audience.
-    * @param AdministrativeArea|array|string $value
-    * @return $this
-    * @deprecated use setGeographicArea
-    */
-    public function geographicArea($value)
-    {
-        $this->setProperty('geographicArea', $value);
-        return $this;
-    }
-   /**
-    * @param AdministrativeArea|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setGeographicArea($value)
@@ -62,8 +48,9 @@ class Audience extends Intangible
         $this->setProperty('geographicArea', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getGeographicArea()
     {

@@ -1,11 +1,10 @@
 # phpschemaorg
 
 ###  schema.org PHP library
-
-
-- @since 2019/08/13 updated 3.9  ,  800 classes
-- @since 2020/03/12 v1.5.0   加入 set 和 get 方法
+- @since 2025/03/10 v4.0.0  v28.1/schemaorg-all-https.jsonld
 - @since 2021/12/23 v3.0.0 升级至 PHP8.1
+- @since 2020/03/12 v1.5.0   加入 set 和 get 方法
+- @since 2019/08/13 updated 3.9  ,  800 classes
 
 ## 特点:
 

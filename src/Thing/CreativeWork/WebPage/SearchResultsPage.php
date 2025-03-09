@@ -5,10 +5,8 @@ use Sohophp\SchemaOrg\Thing\CreativeWork\WebPage;
 
 /**
 * Web page type: Search results page.
-* @see http://schema.org/SearchResultsPage
+* @see schema:SearchResultsPage
 * @package Sohophp\SchemaOrg\Thing\CreativeWork\WebPage
-
-*
 */
 class SearchResultsPage extends WebPage
 {

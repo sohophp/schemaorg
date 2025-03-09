@@ -2,263 +2,221 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible;
 
 use Sohophp\SchemaOrg\Thing\Intangible;
-use Sohophp\SchemaOrg\Thing\Place\AdministrativeArea;
-use Sohophp\SchemaOrg\Thing\Place;
-use Sohophp\SchemaOrg\Thing\CreativeWork\EducationalOccupationalCredential;
-use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\MonetaryAmount;
-use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\PriceSpecification;
-use Sohophp\SchemaOrg\Thing\Organization;
-use Sohophp\SchemaOrg\Thing\Intangible\Occupation;
-use Sohophp\SchemaOrg\Thing\Intangible\DefinedTerm\CategoryCode;
-use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\QuantitativeValueDistribution\MonetaryAmountDistribution;
 
 /**
 * A listing that describes a job opening in a certain organization.
-* @see http://schema.org/JobPosting
+* @see schema:JobPosting
 * @package Sohophp\SchemaOrg\Thing\Intangible
-
-*
 */
 class JobPosting extends Intangible
 {
+   /**
+        * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+        */
+    protected $estimatedSalary = null;
+
+   /**
+        * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217)) used for the main salary information in this job posting or for this employee.
+        */
+    protected $salaryCurrency = null;
+
+   /**
+        * The location(s) applicants can apply from. This is usually used for telecommuting jobs where the applicant does not need to be in a physical office. Note: This should not be used for citizenship or work visa requirements.
+        */
+    protected $applicantLocationRequirements = null;
+
+   /**
+        * Publication date of an online listing.
+        */
+    protected $datePosted = null;
+
+   /**
+        * Description of bonus and commission compensation aspects of the job.
+        */
+    protected $incentives = null;
+
+   /**
+        * Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).
+        */
+    protected $employmentType = null;
+
+   /**
+        * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+        */
+    protected $validThrough = null;
+
+   /**
+        * Specific qualifications required for this role or Occupation.
+        */
+    protected $qualifications = null;
+
+   /**
+        * Description of benefits associated with the job.
+        */
+    protected $jobBenefits = null;
+
+   /**
+        * A description of the job location (e.g. TELECOMMUTE for telecommute jobs).
+        */
+    protected $jobLocationType = null;
+
+   /**
+        * Description of benefits associated with the job.
+        */
+    protected $benefits = null;
+
+   /**
+        * Indicates whether a [[JobPosting]] will accept experience (as indicated by [[OccupationalExperienceRequirements]]) in place of its formal educational qualifications (as indicated by [[educationRequirements]]). If true, indicates that satisfying one of these requirements is sufficient.
+        */
+    protected $experienceInPlaceOfEducation = null;
+
+   /**
+        * Organization or Person offering the job position.
+        */
+    protected $hiringOrganization = null;
+
+   /**
+        * Any special commitments associated with this job posting. Valid entries include VeteranCommit, MilitarySpouseCommit, etc.
+        */
+    protected $specialCommitments = null;
+
+   /**
+        * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
+        */
+    protected $skills = null;
+
+   /**
+        * The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).
+        */
+    protected $workHours = null;
+
+   /**
+        * Contact details for further information relevant to this job posting.
+        */
+    protected $applicationContact = null;
+
+   /**
+        * A description of the types of physical activity associated with the job. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
+        */
+    protected $physicalRequirement = null;
+
+   /**
+        * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
+        */
+    protected $sensoryRequirement = null;
+
+   /**
+        * The legal requirements such as citizenship, visa and other documentation required for an applicant to this job.
+        */
+    protected $eligibilityToWorkRequirement = null;
+
+   /**
+        * The title of the job.
+        */
+    protected $title = null;
+
+   /**
+        * A (typically single) geographic location associated with the job position.
+        */
+    protected $jobLocation = null;
+
+   /**
+        * The industry associated with the job position.
+        */
+    protected $industry = null;
+
+   /**
+        * The number of positions open for this job posting. Use a positive integer. Do not use if the number of positions is unclear or not known.
+        */
+    protected $totalJobOpenings = null;
+
+   /**
+        * An indicator as to whether a position is available for an immediate start.
+        */
+    protected $jobImmediateStart = null;
+
+   /**
+        * Description of bonus and commission compensation aspects of the job.
+        */
+    protected $incentiveCompensation = null;
+
+   /**
+        * Indicates the department, unit and/or facility where the employee reports and/or in which the job is to be performed.
+        */
+    protected $employmentUnit = null;
+
+   /**
+        * Responsibilities associated with this role or Occupation.
+        */
+    protected $responsibilities = null;
+
+   /**
+        * A description of any security clearance requirements of the job.
+        */
+    protected $securityClearanceRequirement = null;
+
+   /**
+        * Indicates whether an [[url]] that is associated with a [[JobPosting]] enables direct application for the job, via the posting website. A job posting is considered to have directApply of [[True]] if an application process for the specified job can be directly initiated via the url(s) given (noting that e.g. multiple internet domains might nevertheless be involved at an implementation level). A value of [[False]] is appropriate if there is no clear path to applying directly online for the specified job, navigating directly from the JobPosting url(s) supplied.
+        */
+    protected $directApply = null;
+
+   /**
+        * A description of the employer, career opportunities and work environment for this position.
+        */
+    protected $employerOverview = null;
+
+   /**
+        * Educational background needed for the position or Occupation.
+        */
+    protected $educationRequirements = null;
+
+   /**
+        * Description of skills and experience needed for the position or Occupation.
+        */
+    protected $experienceRequirements = null;
+
+   /**
+        * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.\n
+Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+        */
+    protected $occupationalCategory = null;
+
+   /**
+        * The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
+        */
+    protected $jobStartDate = null;
+
+   /**
+        * The base salary of the job or of an employee in an EmployeeRole.
+        */
+    protected $baseSalary = null;
+
+   /**
+        * The Occupation for the JobPosting.
+        */
+    protected $relevantOccupation = null;
+
 
     /**
-    * The location(s) applicants can apply from. This is usually used for telecommuting jobs where the applicant does not need to be in a physical office. Note: This should not be used for citizenship or work visa requirements.
-    * @param AdministrativeArea|array|string $value
-    * @return $this
-    * @deprecated use setApplicantLocationRequirements
-    */
-    public function applicantLocationRequirements($value)
-    {
-        $this->setProperty('applicantLocationRequirements', $value);
-        return $this;
-    }
-   /**
-    * @param AdministrativeArea|array|string $value
+    * @param array|string $value
     * @return $this
     */
-    public function setApplicantLocationRequirements($value)
+    public function setEstimatedSalary($value)
     {
-        $this->setProperty('applicantLocationRequirements', $value);
+        $this->setProperty('estimatedSalary', $value);
         return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getApplicantLocationRequirements()
-    {
-       return $this->getProperty('applicantLocationRequirements');
-    }
-
-    /**
-    * An indicator as to whether a position is available for an immediate start.
-    * @param bool|array|string $value
-    * @return $this
-    * @deprecated use setJobImmediateStart
-    */
-    public function jobImmediateStart($value)
-    {
-        $this->setProperty('jobImmediateStart', $value);
-        return $this;
-    }
-   /**
-    * @param bool|array|string $value
-    * @return $this
-    */
-    public function setJobImmediateStart($value)
-    {
-        $this->setProperty('jobImmediateStart', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getJobImmediateStart()
-    {
-       return $this->getProperty('jobImmediateStart');
-    }
-
-    /**
-    * A (typically single) geographic location associated with the job position.
-    * @param Place|array|string $value
-    * @return $this
-    * @deprecated use setJobLocation
-    */
-    public function jobLocation($value)
-    {
-        $this->setProperty('jobLocation', $value);
-        return $this;
-    }
-   /**
-    * @param Place|array|string $value
-    * @return $this
-    */
-    public function setJobLocation($value)
-    {
-        $this->setProperty('jobLocation', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getJobLocation()
-    {
-       return $this->getProperty('jobLocation');
-    }
-
-    /**
-    * Description of benefits associated with the job.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setBenefits
-    */
-    public function benefits($value)
-    {
-        $this->setProperty('benefits', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setBenefits($value)
-    {
-        $this->setProperty('benefits', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getBenefits()
-    {
-       return $this->getProperty('benefits');
-    }
-
-    /**
-    * Specific qualifications required for this role or Occupation.
-    * @param string|EducationalOccupationalCredential|array $value
-    * @return $this
-    * @deprecated use setQualifications
-    */
-    public function qualifications($value)
-    {
-        $this->setProperty('qualifications', $value);
-        return $this;
-    }
-   /**
-    * @param string|EducationalOccupationalCredential|array $value
-    * @return $this
-    */
-    public function setQualifications($value)
-    {
-        $this->setProperty('qualifications', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getQualifications()
-    {
-       return $this->getProperty('qualifications');
-    }
-
-    /**
-    * Description of bonus and commission compensation aspects of the job.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setIncentiveCompensation
-    */
-    public function incentiveCompensation($value)
-    {
-        $this->setProperty('incentiveCompensation', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setIncentiveCompensation($value)
-    {
-        $this->setProperty('incentiveCompensation', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getIncentiveCompensation()
-    {
-       return $this->getProperty('incentiveCompensation');
-    }
-
-    /**
-    * A description of the job location (e.g TELECOMMUTE for telecommute jobs).
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setJobLocationType
-    */
-    public function jobLocationType($value)
-    {
-        $this->setProperty('jobLocationType', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setJobLocationType($value)
-    {
-        $this->setProperty('jobLocationType', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getJobLocationType()
-    {
-       return $this->getProperty('jobLocationType');
-    }
-
-    /**
-    * The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setWorkHours
-    */
-    public function workHours($value)
-    {
-        $this->setProperty('workHours', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setWorkHours($value)
-    {
-        $this->setProperty('workHours', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getWorkHours()
-    {
-       return $this->getProperty('workHours');
     }
 
     /**
-    * The currency (coded using <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217</a> ) used for the main salary information in this job posting or for this employee.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setSalaryCurrency
+    * @return string|array|mixed
     */
-    public function salaryCurrency($value)
+    public function getEstimatedSalary()
     {
-        $this->setProperty('salaryCurrency', $value);
-        return $this;
+       return $this->getProperty('estimatedSalary');
     }
-   /**
-    * @param string|array $value
+
+    /**
+    * @param array|string $value
     * @return $this
     */
     public function setSalaryCurrency($value)
@@ -266,8 +224,9 @@ class JobPosting extends Intangible
         $this->setProperty('salaryCurrency', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getSalaryCurrency()
     {
@@ -275,45 +234,24 @@ class JobPosting extends Intangible
     }
 
     /**
-    * Description of benefits associated with the job.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setJobBenefits
-    */
-    public function jobBenefits($value)
-    {
-        $this->setProperty('jobBenefits', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
+    * @param array|string $value
     * @return $this
     */
-    public function setJobBenefits($value)
+    public function setApplicantLocationRequirements($value)
     {
-        $this->setProperty('jobBenefits', $value);
+        $this->setProperty('applicantLocationRequirements', $value);
         return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getJobBenefits()
-    {
-       return $this->getProperty('jobBenefits');
     }
 
     /**
-    * Publication date for the job posting.
-    * @param array|string $value
-    * @return $this
-    * @deprecated use setDatePosted
+    * @return string|array|mixed
     */
-    public function datePosted($value)
+    public function getApplicantLocationRequirements()
     {
-        $this->setProperty('datePosted', $value);
-        return $this;
+       return $this->getProperty('applicantLocationRequirements');
     }
-   /**
+
+    /**
     * @param array|string $value
     * @return $this
     */
@@ -322,8 +260,9 @@ class JobPosting extends Intangible
         $this->setProperty('datePosted', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getDatePosted()
     {
@@ -331,46 +270,7 @@ class JobPosting extends Intangible
     }
 
     /**
-    * Skills required to fulfill this role or in this Occupation.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setSkills
-    */
-    public function skills($value)
-    {
-        $this->setProperty('skills', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setSkills($value)
-    {
-        $this->setProperty('skills', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getSkills()
-    {
-       return $this->getProperty('skills');
-    }
-
-    /**
-    * Description of bonus and commission compensation aspects of the job.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setIncentives
-    */
-    public function incentives($value)
-    {
-        $this->setProperty('incentives', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
+    * @param array|string $value
     * @return $this
     */
     public function setIncentives($value)
@@ -378,8 +278,9 @@ class JobPosting extends Intangible
         $this->setProperty('incentives', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getIncentives()
     {
@@ -387,101 +288,24 @@ class JobPosting extends Intangible
     }
 
     /**
-    * Educational background needed for the position or Occupation.
-    * @param EducationalOccupationalCredential|string|array $value
-    * @return $this
-    * @deprecated use setEducationRequirements
-    */
-    public function educationRequirements($value)
-    {
-        $this->setProperty('educationRequirements', $value);
-        return $this;
-    }
-   /**
-    * @param EducationalOccupationalCredential|string|array $value
-    * @return $this
-    */
-    public function setEducationRequirements($value)
-    {
-        $this->setProperty('educationRequirements', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getEducationRequirements()
-    {
-       return $this->getProperty('educationRequirements');
-    }
-
-    /**
-    * Responsibilities associated with this role or Occupation.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setResponsibilities
-    */
-    public function responsibilities($value)
-    {
-        $this->setProperty('responsibilities', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setResponsibilities($value)
-    {
-        $this->setProperty('responsibilities', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getResponsibilities()
-    {
-       return $this->getProperty('responsibilities');
-    }
-
-    /**
-    * The base salary of the job or of an employee in an EmployeeRole.
-    * @param MonetaryAmount|PriceSpecification|array|string $value
-    * @return $this
-    * @deprecated use setBaseSalary
-    */
-    public function baseSalary($value)
-    {
-        $this->setProperty('baseSalary', $value);
-        return $this;
-    }
-   /**
-    * @param MonetaryAmount|PriceSpecification|array|string $value
-    * @return $this
-    */
-    public function setBaseSalary($value)
-    {
-        $this->setProperty('baseSalary', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getBaseSalary()
-    {
-       return $this->getProperty('baseSalary');
-    }
-
-    /**
-    * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
     * @param array|string $value
     * @return $this
-    * @deprecated use setValidThrough
     */
-    public function validThrough($value)
+    public function setEmploymentType($value)
     {
-        $this->setProperty('validThrough', $value);
+        $this->setProperty('employmentType', $value);
         return $this;
     }
-   /**
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getEmploymentType()
+    {
+       return $this->getProperty('employmentType');
+    }
+
+    /**
     * @param array|string $value
     * @return $this
     */
@@ -490,8 +314,9 @@ class JobPosting extends Intangible
         $this->setProperty('validThrough', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getValidThrough()
     {
@@ -499,18 +324,97 @@ class JobPosting extends Intangible
     }
 
     /**
-    * Organization offering the job position.
-    * @param Organization|array|string $value
+    * @param array|string $value
     * @return $this
-    * @deprecated use setHiringOrganization
     */
-    public function hiringOrganization($value)
+    public function setQualifications($value)
     {
-        $this->setProperty('hiringOrganization', $value);
+        $this->setProperty('qualifications', $value);
         return $this;
     }
-   /**
-    * @param Organization|array|string $value
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getQualifications()
+    {
+       return $this->getProperty('qualifications');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setJobBenefits($value)
+    {
+        $this->setProperty('jobBenefits', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getJobBenefits()
+    {
+       return $this->getProperty('jobBenefits');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setJobLocationType($value)
+    {
+        $this->setProperty('jobLocationType', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getJobLocationType()
+    {
+       return $this->getProperty('jobLocationType');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setBenefits($value)
+    {
+        $this->setProperty('benefits', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getBenefits()
+    {
+       return $this->getProperty('benefits');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setExperienceInPlaceOfEducation($value)
+    {
+        $this->setProperty('experienceInPlaceOfEducation', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getExperienceInPlaceOfEducation()
+    {
+       return $this->getProperty('experienceInPlaceOfEducation');
+    }
+
+    /**
+    * @param array|string $value
     * @return $this
     */
     public function setHiringOrganization($value)
@@ -518,8 +422,9 @@ class JobPosting extends Intangible
         $this->setProperty('hiringOrganization', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getHiringOrganization()
     {
@@ -527,46 +432,7 @@ class JobPosting extends Intangible
     }
 
     /**
-    * The Occupation for the JobPosting.
-    * @param Occupation|array|string $value
-    * @return $this
-    * @deprecated use setRelevantOccupation
-    */
-    public function relevantOccupation($value)
-    {
-        $this->setProperty('relevantOccupation', $value);
-        return $this;
-    }
-   /**
-    * @param Occupation|array|string $value
-    * @return $this
-    */
-    public function setRelevantOccupation($value)
-    {
-        $this->setProperty('relevantOccupation', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getRelevantOccupation()
-    {
-       return $this->getProperty('relevantOccupation');
-    }
-
-    /**
-    * Any special commitments associated with this job posting. Valid entries include VeteranCommit, MilitarySpouseCommit, etc.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setSpecialCommitments
-    */
-    public function specialCommitments($value)
-    {
-        $this->setProperty('specialCommitments', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
+    * @param array|string $value
     * @return $this
     */
     public function setSpecialCommitments($value)
@@ -574,8 +440,9 @@ class JobPosting extends Intangible
         $this->setProperty('specialCommitments', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getSpecialCommitments()
     {
@@ -583,160 +450,115 @@ class JobPosting extends Intangible
     }
 
     /**
-    * A category describing the job, preferably using a term from a taxonomy such as <a href="http://www.onetcenter.org/taxonomy.html">BLS O*NET-SOC</a>, <a href="https://www.ilo.org/public/english/bureau/stat/isco/isco08/">ISCO-08</a> or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/><br/>
-
-Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
-    * @param string|CategoryCode|array $value
-    * @return $this
-    * @deprecated use setOccupationalCategory
-    */
-    public function occupationalCategory($value)
-    {
-        $this->setProperty('occupationalCategory', $value);
-        return $this;
-    }
-   /**
-    * @param string|CategoryCode|array $value
+    * @param array|string $value
     * @return $this
     */
-    public function setOccupationalCategory($value)
+    public function setSkills($value)
     {
-        $this->setProperty('occupationalCategory', $value);
+        $this->setProperty('skills', $value);
         return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getOccupationalCategory()
-    {
-       return $this->getProperty('occupationalCategory');
     }
 
     /**
-    * Description of skills and experience needed for the position or Occupation.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setExperienceRequirements
+    * @return string|array|mixed
     */
-    public function experienceRequirements($value)
+    public function getSkills()
     {
-        $this->setProperty('experienceRequirements', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setExperienceRequirements($value)
-    {
-        $this->setProperty('experienceRequirements', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getExperienceRequirements()
-    {
-       return $this->getProperty('experienceRequirements');
+       return $this->getProperty('skills');
     }
 
     /**
-    * Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setEmploymentType
-    */
-    public function employmentType($value)
-    {
-        $this->setProperty('employmentType', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
+    * @param array|string $value
     * @return $this
     */
-    public function setEmploymentType($value)
+    public function setWorkHours($value)
     {
-        $this->setProperty('employmentType', $value);
+        $this->setProperty('workHours', $value);
         return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getEmploymentType()
-    {
-       return $this->getProperty('employmentType');
     }
 
     /**
-    * The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setJobStartDate
+    * @return string|array|mixed
     */
-    public function jobStartDate($value)
+    public function getWorkHours()
     {
-        $this->setProperty('jobStartDate', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setJobStartDate($value)
-    {
-        $this->setProperty('jobStartDate', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getJobStartDate()
-    {
-       return $this->getProperty('jobStartDate');
+       return $this->getProperty('workHours');
     }
 
     /**
-    * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
-    * @param MonetaryAmountDistribution|MonetaryAmount|array|string $value
-    * @return $this
-    * @deprecated use setEstimatedSalary
-    */
-    public function estimatedSalary($value)
-    {
-        $this->setProperty('estimatedSalary', $value);
-        return $this;
-    }
-   /**
-    * @param MonetaryAmountDistribution|MonetaryAmount|array|string $value
+    * @param array|string $value
     * @return $this
     */
-    public function setEstimatedSalary($value)
+    public function setApplicationContact($value)
     {
-        $this->setProperty('estimatedSalary', $value);
+        $this->setProperty('applicationContact', $value);
         return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getEstimatedSalary()
-    {
-       return $this->getProperty('estimatedSalary');
     }
 
     /**
-    * The title of the job.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setTitle
+    * @return string|array|mixed
     */
-    public function title($value)
+    public function getApplicationContact()
     {
-        $this->setProperty('title', $value);
+       return $this->getProperty('applicationContact');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setPhysicalRequirement($value)
+    {
+        $this->setProperty('physicalRequirement', $value);
         return $this;
     }
-   /**
-    * @param string|array $value
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getPhysicalRequirement()
+    {
+       return $this->getProperty('physicalRequirement');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setSensoryRequirement($value)
+    {
+        $this->setProperty('sensoryRequirement', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getSensoryRequirement()
+    {
+       return $this->getProperty('sensoryRequirement');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setEligibilityToWorkRequirement($value)
+    {
+        $this->setProperty('eligibilityToWorkRequirement', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getEligibilityToWorkRequirement()
+    {
+       return $this->getProperty('eligibilityToWorkRequirement');
+    }
+
+    /**
+    * @param array|string $value
     * @return $this
     */
     public function setTitle($value)
@@ -744,8 +566,9 @@ Note: for historical reasons, any textual label and formal code provided as a li
         $this->setProperty('title', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getTitle()
     {
@@ -753,18 +576,25 @@ Note: for historical reasons, any textual label and formal code provided as a li
     }
 
     /**
-    * The industry associated with the job position.
-    * @param string|array $value
+    * @param array|string $value
     * @return $this
-    * @deprecated use setIndustry
     */
-    public function industry($value)
+    public function setJobLocation($value)
     {
-        $this->setProperty('industry', $value);
+        $this->setProperty('jobLocation', $value);
         return $this;
     }
-   /**
-    * @param string|array $value
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getJobLocation()
+    {
+       return $this->getProperty('jobLocation');
+    }
+
+    /**
+    * @param array|string $value
     * @return $this
     */
     public function setIndustry($value)
@@ -772,12 +602,265 @@ Note: for historical reasons, any textual label and formal code provided as a li
         $this->setProperty('industry', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getIndustry()
     {
        return $this->getProperty('industry');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setTotalJobOpenings($value)
+    {
+        $this->setProperty('totalJobOpenings', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getTotalJobOpenings()
+    {
+       return $this->getProperty('totalJobOpenings');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setJobImmediateStart($value)
+    {
+        $this->setProperty('jobImmediateStart', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getJobImmediateStart()
+    {
+       return $this->getProperty('jobImmediateStart');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setIncentiveCompensation($value)
+    {
+        $this->setProperty('incentiveCompensation', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getIncentiveCompensation()
+    {
+       return $this->getProperty('incentiveCompensation');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setEmploymentUnit($value)
+    {
+        $this->setProperty('employmentUnit', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getEmploymentUnit()
+    {
+       return $this->getProperty('employmentUnit');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setResponsibilities($value)
+    {
+        $this->setProperty('responsibilities', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getResponsibilities()
+    {
+       return $this->getProperty('responsibilities');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setSecurityClearanceRequirement($value)
+    {
+        $this->setProperty('securityClearanceRequirement', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getSecurityClearanceRequirement()
+    {
+       return $this->getProperty('securityClearanceRequirement');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setDirectApply($value)
+    {
+        $this->setProperty('directApply', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getDirectApply()
+    {
+       return $this->getProperty('directApply');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setEmployerOverview($value)
+    {
+        $this->setProperty('employerOverview', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getEmployerOverview()
+    {
+       return $this->getProperty('employerOverview');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setEducationRequirements($value)
+    {
+        $this->setProperty('educationRequirements', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getEducationRequirements()
+    {
+       return $this->getProperty('educationRequirements');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setExperienceRequirements($value)
+    {
+        $this->setProperty('experienceRequirements', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getExperienceRequirements()
+    {
+       return $this->getProperty('experienceRequirements');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setOccupationalCategory($value)
+    {
+        $this->setProperty('occupationalCategory', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getOccupationalCategory()
+    {
+       return $this->getProperty('occupationalCategory');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setJobStartDate($value)
+    {
+        $this->setProperty('jobStartDate', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getJobStartDate()
+    {
+       return $this->getProperty('jobStartDate');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setBaseSalary($value)
+    {
+        $this->setProperty('baseSalary', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getBaseSalary()
+    {
+       return $this->getProperty('baseSalary');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setRelevantOccupation($value)
+    {
+        $this->setProperty('relevantOccupation', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getRelevantOccupation()
+    {
+       return $this->getProperty('relevantOccupation');
     }
 
 

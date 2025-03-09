@@ -5,10 +5,8 @@ use Sohophp\SchemaOrg\Thing\Action\TransferAction;
 
 /**
 * The act of downloading an object.
-* @see http://schema.org/DownloadAction
+* @see schema:DownloadAction
 * @package Sohophp\SchemaOrg\Thing\Action\TransferAction
-
-*
 */
 class DownloadAction extends TransferAction
 {

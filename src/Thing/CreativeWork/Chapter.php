@@ -5,55 +5,29 @@ use Sohophp\SchemaOrg\Thing\CreativeWork;
 
 /**
 * One of the sections into which a book is divided. A chapter usually has a section number or a name.
-* @see http://schema.org/Chapter
+* @see schema:Chapter
 * @package Sohophp\SchemaOrg\Thing\CreativeWork
-
-*
 */
 class Chapter extends CreativeWork
 {
+   /**
+        * The page on which the work ends; for example "138" or "xvi".
+        */
+    protected $pageEnd = null;
+
+   /**
+        * Any description of pages that is not separated into pageStart and pageEnd; for example, "1-6, 9, 55" or "10-12, 46-49".
+        */
+    protected $pagination = null;
+
+   /**
+        * The page on which the work starts; for example "135" or "xiii".
+        */
+    protected $pageStart = null;
+
 
     /**
-    * Any description of pages that is not separated into pageStart and pageEnd; for example, "1-6, 9, 55" or "10-12, 46-49".
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setPagination
-    */
-    public function pagination($value)
-    {
-        $this->setProperty('pagination', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setPagination($value)
-    {
-        $this->setProperty('pagination', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getPagination()
-    {
-       return $this->getProperty('pagination');
-    }
-
-    /**
-    * The page on which the work ends; for example "138" or "xvi".
-    * @param string|int|array $value
-    * @return $this
-    * @deprecated use setPageEnd
-    */
-    public function pageEnd($value)
-    {
-        $this->setProperty('pageEnd', $value);
-        return $this;
-    }
-   /**
-    * @param string|int|array $value
+    * @param array|string $value
     * @return $this
     */
     public function setPageEnd($value)
@@ -61,8 +35,9 @@ class Chapter extends CreativeWork
         $this->setProperty('pageEnd', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getPageEnd()
     {
@@ -70,18 +45,25 @@ class Chapter extends CreativeWork
     }
 
     /**
-    * The page on which the work starts; for example "135" or "xiii".
-    * @param string|int|array $value
+    * @param array|string $value
     * @return $this
-    * @deprecated use setPageStart
     */
-    public function pageStart($value)
+    public function setPagination($value)
     {
-        $this->setProperty('pageStart', $value);
+        $this->setProperty('pagination', $value);
         return $this;
     }
-   /**
-    * @param string|int|array $value
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getPagination()
+    {
+       return $this->getProperty('pagination');
+    }
+
+    /**
+    * @param array|string $value
     * @return $this
     */
     public function setPageStart($value)
@@ -89,8 +71,9 @@ class Chapter extends CreativeWork
         $this->setProperty('pageStart', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getPageStart()
     {

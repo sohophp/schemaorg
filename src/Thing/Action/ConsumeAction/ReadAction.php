@@ -5,10 +5,8 @@ use Sohophp\SchemaOrg\Thing\Action\ConsumeAction;
 
 /**
 * The act of consuming written content.
-* @see http://schema.org/ReadAction
+* @see schema:ReadAction
 * @package Sohophp\SchemaOrg\Thing\Action\ConsumeAction
-
-*
 */
 class ReadAction extends ConsumeAction
 {

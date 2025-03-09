@@ -2,60 +2,55 @@
 namespace Sohophp\SchemaOrg\Thing\Event;
 
 use Sohophp\SchemaOrg\Thing\Event;
-use Sohophp\SchemaOrg\Thing\Organization\SportsOrganization\SportsTeam;
-use Sohophp\SchemaOrg\Thing\Person;
 
 /**
 * Event type: Sports event.
-* @see http://schema.org/SportsEvent
+* @see schema:SportsEvent
 * @package Sohophp\SchemaOrg\Thing\Event
-
-*
 */
 class SportsEvent extends Event
 {
+   /**
+        * A type of sport (e.g. Baseball).
+        */
+    protected $sport = null;
+
+   /**
+        * The home team in a sports event.
+        */
+    protected $homeTeam = null;
+
+   /**
+        * The away team in a sports event.
+        */
+    protected $awayTeam = null;
+
+   /**
+        * A competitor in a sports event.
+        */
+    protected $competitor = null;
+
 
     /**
-    * The away team in a sports event.
-    * @param SportsTeam|Person|array|string $value
-    * @return $this
-    * @deprecated use setAwayTeam
-    */
-    public function awayTeam($value)
-    {
-        $this->setProperty('awayTeam', $value);
-        return $this;
-    }
-   /**
-    * @param SportsTeam|Person|array|string $value
+    * @param array|string $value
     * @return $this
     */
-    public function setAwayTeam($value)
+    public function setSport($value)
     {
-        $this->setProperty('awayTeam', $value);
+        $this->setProperty('sport', $value);
         return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getAwayTeam()
-    {
-       return $this->getProperty('awayTeam');
     }
 
     /**
-    * The home team in a sports event.
-    * @param Person|SportsTeam|array|string $value
-    * @return $this
-    * @deprecated use setHomeTeam
+    * @return string|array|mixed
     */
-    public function homeTeam($value)
+    public function getSport()
     {
-        $this->setProperty('homeTeam', $value);
-        return $this;
+       return $this->getProperty('sport');
     }
-   /**
-    * @param Person|SportsTeam|array|string $value
+
+    /**
+    * @param array|string $value
     * @return $this
     */
     public function setHomeTeam($value)
@@ -63,8 +58,9 @@ class SportsEvent extends Event
         $this->setProperty('homeTeam', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getHomeTeam()
     {
@@ -72,18 +68,25 @@ class SportsEvent extends Event
     }
 
     /**
-    * A competitor in a sports event.
-    * @param Person|SportsTeam|array|string $value
+    * @param array|string $value
     * @return $this
-    * @deprecated use setCompetitor
     */
-    public function competitor($value)
+    public function setAwayTeam($value)
     {
-        $this->setProperty('competitor', $value);
+        $this->setProperty('awayTeam', $value);
         return $this;
     }
-   /**
-    * @param Person|SportsTeam|array|string $value
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getAwayTeam()
+    {
+       return $this->getProperty('awayTeam');
+    }
+
+    /**
+    * @param array|string $value
     * @return $this
     */
     public function setCompetitor($value)
@@ -91,8 +94,9 @@ class SportsEvent extends Event
         $this->setProperty('competitor', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getCompetitor()
     {

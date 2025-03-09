@@ -5,10 +5,8 @@ use Sohophp\SchemaOrg\Thing\CreativeWork\WebPageElement;
 
 /**
 * An advertising section of the page.
-* @see http://schema.org/WPAdBlock
+* @see schema:WPAdBlock
 * @package Sohophp\SchemaOrg\Thing\CreativeWork\WebPageElement
-
-*
 */
 class WPAdBlock extends WebPageElement
 {

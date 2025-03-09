@@ -5,10 +5,8 @@ use Sohophp\SchemaOrg\Thing\Action\CreateAction;
 
 /**
 * The act of producing a visual/graphical representation of an object, typically with a pen/pencil and paper as instruments.
-* @see http://schema.org/DrawAction
+* @see schema:DrawAction
 * @package Sohophp\SchemaOrg\Thing\Action\CreateAction
-
-*
 */
 class DrawAction extends CreateAction
 {

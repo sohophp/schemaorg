@@ -4,27 +4,29 @@ namespace Sohophp\SchemaOrg\Thing\CreativeWork\Article\SocialMediaPosting\BlogPo
 use Sohophp\SchemaOrg\Thing\CreativeWork\Article\SocialMediaPosting\BlogPosting;
 
 /**
-* A blog post intended to provide a rolling textual coverage of an ongoing event through continuous updates.
-* @see http://schema.org/LiveBlogPosting
+* A [[LiveBlogPosting]] is a [[BlogPosting]] intended to provide a rolling textual coverage of an ongoing event through continuous updates.
+* @see schema:LiveBlogPosting
 * @package Sohophp\SchemaOrg\Thing\CreativeWork\Article\SocialMediaPosting\BlogPosting
-
-*
 */
 class LiveBlogPosting extends BlogPosting
 {
+   /**
+        * The time when the live blog will begin covering the Event. Note that coverage may begin before the Event's start time. The LiveBlogPosting may also be created before coverage begins.
+        */
+    protected $coverageStartTime = null;
+
+   /**
+        * The time when the live blog will stop covering the Event. Note that coverage may continue after the Event concludes.
+        */
+    protected $coverageEndTime = null;
+
+   /**
+        * An update to the LiveBlog.
+        */
+    protected $liveBlogUpdate = null;
+
 
     /**
-    * The time when the live blog will begin covering the Event. Note that coverage may begin before the Event's start time. The LiveBlogPosting may also be created before coverage begins.
-    * @param array|string $value
-    * @return $this
-    * @deprecated use setCoverageStartTime
-    */
-    public function coverageStartTime($value)
-    {
-        $this->setProperty('coverageStartTime', $value);
-        return $this;
-    }
-   /**
     * @param array|string $value
     * @return $this
     */
@@ -33,8 +35,9 @@ class LiveBlogPosting extends BlogPosting
         $this->setProperty('coverageStartTime', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getCoverageStartTime()
     {
@@ -42,17 +45,6 @@ class LiveBlogPosting extends BlogPosting
     }
 
     /**
-    * The time when the live blog will stop covering the Event. Note that coverage may continue after the Event concludes.
-    * @param array|string $value
-    * @return $this
-    * @deprecated use setCoverageEndTime
-    */
-    public function coverageEndTime($value)
-    {
-        $this->setProperty('coverageEndTime', $value);
-        return $this;
-    }
-   /**
     * @param array|string $value
     * @return $this
     */
@@ -61,8 +53,9 @@ class LiveBlogPosting extends BlogPosting
         $this->setProperty('coverageEndTime', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getCoverageEndTime()
     {
@@ -70,18 +63,7 @@ class LiveBlogPosting extends BlogPosting
     }
 
     /**
-    * An update to the LiveBlog.
-    * @param BlogPosting|array|string $value
-    * @return $this
-    * @deprecated use setLiveBlogUpdate
-    */
-    public function liveBlogUpdate($value)
-    {
-        $this->setProperty('liveBlogUpdate', $value);
-        return $this;
-    }
-   /**
-    * @param BlogPosting|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setLiveBlogUpdate($value)
@@ -89,8 +71,9 @@ class LiveBlogPosting extends BlogPosting
         $this->setProperty('liveBlogUpdate', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getLiveBlogUpdate()
     {

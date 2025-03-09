@@ -5,10 +5,8 @@ use Sohophp\SchemaOrg\Thing\CreativeWork\Clip;
 
 /**
 * A short segment/part of a video game.
-* @see http://schema.org/VideoGameClip
+* @see schema:VideoGameClip
 * @package Sohophp\SchemaOrg\Thing\CreativeWork\Clip
-
-*
 */
 class VideoGameClip extends Clip
 {

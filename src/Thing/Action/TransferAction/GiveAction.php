@@ -2,42 +2,22 @@
 namespace Sohophp\SchemaOrg\Thing\Action\TransferAction;
 
 use Sohophp\SchemaOrg\Thing\Action\TransferAction;
-use Sohophp\SchemaOrg\Thing\Person;
-use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\ContactPoint;
-use Sohophp\SchemaOrg\Thing\Organization;
-use Sohophp\SchemaOrg\Thing\Intangible\Audience;
 
 /**
-* The act of transferring ownership of an object to a destination. Reciprocal of TakeAction.<br/><br/>
-
-Related actions:<br/><br/>
-
-<ul>
-<li><a class="localLink" href="http://schema.org/TakeAction">TakeAction</a>: Reciprocal of GiveAction.</li>
-<li><a class="localLink" href="http://schema.org/SendAction">SendAction</a>: Unlike SendAction, GiveAction implies that ownership is being transferred (e.g. I may send my laptop to you, but that doesn't mean I'm giving it to you).</li>
-</ul>
-
-* @see http://schema.org/GiveAction
+* The act of transferring ownership of an object to a destination. Reciprocal of TakeAction.\n\nRelated actions:\n\n* [[TakeAction]]: Reciprocal of GiveAction.\n* [[SendAction]]: Unlike SendAction, GiveAction implies that ownership is being transferred (e.g. I may send my laptop to you, but that doesn't mean I'm giving it to you).
+* @see schema:GiveAction
 * @package Sohophp\SchemaOrg\Thing\Action\TransferAction
-
-*
 */
 class GiveAction extends TransferAction
 {
+   /**
+        * A sub property of participant. The participant who is at the receiving end of the action.
+        */
+    protected $recipient = null;
+
 
     /**
-    * A sub property of participant. The participant who is at the receiving end of the action.
-    * @param Person|ContactPoint|Organization|Audience|array|string $value
-    * @return $this
-    * @deprecated use setRecipient
-    */
-    public function recipient($value)
-    {
-        $this->setProperty('recipient', $value);
-        return $this;
-    }
-   /**
-    * @param Person|ContactPoint|Organization|Audience|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setRecipient($value)
@@ -45,8 +25,9 @@ class GiveAction extends TransferAction
         $this->setProperty('recipient', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getRecipient()
     {

@@ -5,10 +5,8 @@ use Sohophp\SchemaOrg\Thing\Organization;
 
 /**
 * A governmental organization or agency.
-* @see http://schema.org/GovernmentOrganization
+* @see schema:GovernmentOrganization
 * @package Sohophp\SchemaOrg\Thing\Organization
-
-*
 */
 class GovernmentOrganization extends Organization
 {

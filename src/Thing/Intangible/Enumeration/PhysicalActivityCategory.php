@@ -5,10 +5,8 @@ use Sohophp\SchemaOrg\Thing\Intangible\Enumeration;
 
 /**
 * Categories of physical activity, organized by physiologic classification.
-* @see http://schema.org/PhysicalActivityCategory
+* @see schema:PhysicalActivityCategory
 * @package Sohophp\SchemaOrg\Thing\Intangible\Enumeration
-
-*
 */
 class PhysicalActivityCategory extends Enumeration
 {

@@ -5,27 +5,19 @@ use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalTest;
 
 /**
 * Any collection of tests commonly ordered together.
-* @see http://schema.org/MedicalTestPanel
+* @see schema:MedicalTestPanel
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalTest
-
-*
 */
 class MedicalTestPanel extends MedicalTest
 {
+   /**
+        * A component test of the panel.
+        */
+    protected $subTest = null;
+
 
     /**
-    * A component test of the panel.
-    * @param MedicalTest|array|string $value
-    * @return $this
-    * @deprecated use setSubTest
-    */
-    public function subTest($value)
-    {
-        $this->setProperty('subTest', $value);
-        return $this;
-    }
-   /**
-    * @param MedicalTest|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setSubTest($value)
@@ -33,8 +25,9 @@ class MedicalTestPanel extends MedicalTest
         $this->setProperty('subTest', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getSubTest()
     {

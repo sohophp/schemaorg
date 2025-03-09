@@ -5,10 +5,8 @@ use Sohophp\SchemaOrg\Thing\Action\CreateAction;
 
 /**
 * The act of capturing still images of objects using a camera.
-* @see http://schema.org/PhotographAction
+* @see schema:PhotographAction
 * @package Sohophp\SchemaOrg\Thing\Action\CreateAction
-
-*
 */
 class PhotographAction extends CreateAction
 {

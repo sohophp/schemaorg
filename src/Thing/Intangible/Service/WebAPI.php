@@ -2,31 +2,22 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible\Service;
 
 use Sohophp\SchemaOrg\Thing\Intangible\Service;
-use Sohophp\SchemaOrg\Thing\CreativeWork;
 
 /**
 * An application programming interface accessible over Web/Internet technologies.
-* @see http://schema.org/WebAPI
+* @see schema:WebAPI
 * @package Sohophp\SchemaOrg\Thing\Intangible\Service
-
-*
 */
 class WebAPI extends Service
 {
+   /**
+        * Further documentation describing the Web API in more detail.
+        */
+    protected $documentation = null;
+
 
     /**
-    * Further documentation describing the Web API in more detail.
-    * @param CreativeWork|string|array $value
-    * @return $this
-    * @deprecated use setDocumentation
-    */
-    public function documentation($value)
-    {
-        $this->setProperty('documentation', $value);
-        return $this;
-    }
-   /**
-    * @param CreativeWork|string|array $value
+    * @param array|string $value
     * @return $this
     */
     public function setDocumentation($value)
@@ -34,8 +25,9 @@ class WebAPI extends Service
         $this->setProperty('documentation', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getDocumentation()
     {

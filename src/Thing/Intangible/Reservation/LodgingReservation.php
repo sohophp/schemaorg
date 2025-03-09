@@ -2,90 +2,47 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible\Reservation;
 
 use Sohophp\SchemaOrg\Thing\Intangible\Reservation;
-use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\QuantitativeValue;
-use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\QualitativeValue;
 
 /**
-* A reservation for lodging at a hotel, motel, inn, etc.<br/><br/>
-
-Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.
-* @see http://schema.org/LodgingReservation
+* A reservation for lodging at a hotel, motel, inn, etc.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.
+* @see schema:LodgingReservation
 * @package Sohophp\SchemaOrg\Thing\Intangible\Reservation
-
-*
 */
 class LodgingReservation extends Reservation
 {
-
-    /**
-    * A full description of the lodging unit.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setLodgingUnitDescription
-    */
-    public function lodgingUnitDescription($value)
-    {
-        $this->setProperty('lodgingUnitDescription', $value);
-        return $this;
-    }
    /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setLodgingUnitDescription($value)
-    {
-        $this->setProperty('lodgingUnitDescription', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getLodgingUnitDescription()
-    {
-       return $this->getProperty('lodgingUnitDescription');
-    }
+        * The number of children staying in the unit.
+        */
+    protected $numChildren = null;
+
+   /**
+        * A full description of the lodging unit.
+        */
+    protected $lodgingUnitDescription = null;
+
+   /**
+        * The latest someone may check out of a lodging establishment.
+        */
+    protected $checkoutTime = null;
+
+   /**
+        * The number of adults staying in the unit.
+        */
+    protected $numAdults = null;
+
+   /**
+        * Textual description of the unit type (including suite vs. room, size of bed, etc.).
+        */
+    protected $lodgingUnitType = null;
+
+   /**
+        * The earliest someone may check into a lodging establishment.
+        */
+    protected $checkinTime = null;
+
 
     /**
-    * The earliest someone may check into a lodging establishment.
     * @param array|string $value
-    * @return $this
-    * @deprecated use setCheckinTime
-    */
-    public function checkinTime($value)
-    {
-        $this->setProperty('checkinTime', $value);
-        return $this;
-    }
-   /**
-    * @param array|string $value
-    * @return $this
-    */
-    public function setCheckinTime($value)
-    {
-        $this->setProperty('checkinTime', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getCheckinTime()
-    {
-       return $this->getProperty('checkinTime');
-    }
-
-    /**
-    * The number of children staying in the unit.
-    * @param QuantitativeValue|int|array|string $value
-    * @return $this
-    * @deprecated use setNumChildren
-    */
-    public function numChildren($value)
-    {
-        $this->setProperty('numChildren', $value);
-        return $this;
-    }
-   /**
-    * @param QuantitativeValue|int|array|string $value
     * @return $this
     */
     public function setNumChildren($value)
@@ -93,8 +50,9 @@ class LodgingReservation extends Reservation
         $this->setProperty('numChildren', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getNumChildren()
     {
@@ -102,17 +60,24 @@ class LodgingReservation extends Reservation
     }
 
     /**
-    * The latest someone may check out of a lodging establishment.
     * @param array|string $value
     * @return $this
-    * @deprecated use setCheckoutTime
     */
-    public function checkoutTime($value)
+    public function setLodgingUnitDescription($value)
     {
-        $this->setProperty('checkoutTime', $value);
+        $this->setProperty('lodgingUnitDescription', $value);
         return $this;
     }
-   /**
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getLodgingUnitDescription()
+    {
+       return $this->getProperty('lodgingUnitDescription');
+    }
+
+    /**
     * @param array|string $value
     * @return $this
     */
@@ -121,8 +86,9 @@ class LodgingReservation extends Reservation
         $this->setProperty('checkoutTime', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getCheckoutTime()
     {
@@ -130,46 +96,7 @@ class LodgingReservation extends Reservation
     }
 
     /**
-    * Textual description of the unit type (including suite vs. room, size of bed, etc.).
-    * @param QualitativeValue|string|array $value
-    * @return $this
-    * @deprecated use setLodgingUnitType
-    */
-    public function lodgingUnitType($value)
-    {
-        $this->setProperty('lodgingUnitType', $value);
-        return $this;
-    }
-   /**
-    * @param QualitativeValue|string|array $value
-    * @return $this
-    */
-    public function setLodgingUnitType($value)
-    {
-        $this->setProperty('lodgingUnitType', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getLodgingUnitType()
-    {
-       return $this->getProperty('lodgingUnitType');
-    }
-
-    /**
-    * The number of adults staying in the unit.
-    * @param QuantitativeValue|int|array|string $value
-    * @return $this
-    * @deprecated use setNumAdults
-    */
-    public function numAdults($value)
-    {
-        $this->setProperty('numAdults', $value);
-        return $this;
-    }
-   /**
-    * @param QuantitativeValue|int|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setNumAdults($value)
@@ -177,12 +104,49 @@ class LodgingReservation extends Reservation
         $this->setProperty('numAdults', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getNumAdults()
     {
        return $this->getProperty('numAdults');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setLodgingUnitType($value)
+    {
+        $this->setProperty('lodgingUnitType', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getLodgingUnitType()
+    {
+       return $this->getProperty('lodgingUnitType');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setCheckinTime($value)
+    {
+        $this->setProperty('checkinTime', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getCheckinTime()
+    {
+       return $this->getProperty('checkinTime');
     }
 
 

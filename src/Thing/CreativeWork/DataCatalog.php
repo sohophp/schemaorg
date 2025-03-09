@@ -2,66 +2,56 @@
 namespace Sohophp\SchemaOrg\Thing\CreativeWork;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork;
-use Sohophp\SchemaOrg\Thing\CreativeWork\Dataset;
 
 /**
 * A collection of datasets.
-* @see http://schema.org/DataCatalog
+* @see schema:DataCatalog
 * @package Sohophp\SchemaOrg\Thing\CreativeWork
-
-*
 */
 class DataCatalog extends CreativeWork
 {
-
-    /**
-    * A dataset contained in this catalog.
-    * @param Dataset|array|string $value
-    * @return $this
-    * @deprecated use setDataset
-    */
-    public function dataset($value)
-    {
-        $this->setProperty('dataset', $value);
-        return $this;
-    }
    /**
-    * @param Dataset|array|string $value
-    * @return $this
-    */
-    public function setDataset($value)
-    {
-        $this->setProperty('dataset', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getDataset()
-    {
-       return $this->getProperty('dataset');
-    }
+        * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
+        */
+    protected $measurementMethod = null;
 
-    /**
-    * A technique or technology used in a <a class="localLink" href="http://schema.org/Dataset">Dataset</a> (or <a class="localLink" href="http://schema.org/DataDownload">DataDownload</a>, <a class="localLink" href="http://schema.org/DataCatalog">DataCatalog</a>),
-corresponding to the method used for measuring the corresponding variable(s) (described using <a class="localLink" href="http://schema.org/variableMeasured">variableMeasured</a>). This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but rather as a high level summary for dataset discovery.<br/><br/>
-
-For example, if <a class="localLink" href="http://schema.org/variableMeasured">variableMeasured</a> is: molecule concentration, <a class="localLink" href="http://schema.org/measurementTechnique">measurementTechnique</a> could be: "mass spectrometry" or "nmr spectroscopy" or "colorimetry" or "immunofluorescence".<br/><br/>
-
-If the <a class="localLink" href="http://schema.org/variableMeasured">variableMeasured</a> is "depression rating", the <a class="localLink" href="http://schema.org/measurementTechnique">measurementTechnique</a> could be "Zung Scale" or "HAM-D" or "Beck Depression Inventory".<br/><br/>
-
-If there are several <a class="localLink" href="http://schema.org/variableMeasured">variableMeasured</a> properties recorded for some given data object, use a <a class="localLink" href="http://schema.org/PropertyValue">PropertyValue</a> for each <a class="localLink" href="http://schema.org/variableMeasured">variableMeasured</a> and attach the corresponding <a class="localLink" href="http://schema.org/measurementTechnique">measurementTechnique</a>.
-    * @param string|string|array $value
-    * @return $this
-    * @deprecated use setMeasurementTechnique
-    */
-    public function measurementTechnique($value)
-    {
-        $this->setProperty('measurementTechnique', $value);
-        return $this;
-    }
    /**
-    * @param string|string|array $value
+        * A technique, method or technology used in an [[Observation]], [[StatisticalVariable]] or [[Dataset]] (or [[DataDownload]], [[DataCatalog]]), corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using [[variableMeasured]]; for [[Observation]], a [[StatisticalVariable]]). Often but not necessarily each [[variableMeasured]] will have an explicit representation as (or mapping to) an property such as those defined in Schema.org, or other RDF vocabularies and "knowledge graphs". In that case the subproperty of [[variableMeasured]] called [[measuredProperty]] is applicable.
+    
+The [[measurementTechnique]] property helps when extra clarification is needed about how a [[measuredProperty]] was measured. This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but can often serve as a high level summary for dataset discovery. 
+
+For example, if [[variableMeasured]] is: molecule concentration, [[measurementTechnique]] could be: "mass spectrometry" or "nmr spectroscopy" or "colorimetry" or "immunofluorescence". If the [[variableMeasured]] is "depression rating", the [[measurementTechnique]] could be "Zung Scale" or "HAM-D" or "Beck Depression Inventory". 
+
+If there are several [[variableMeasured]] properties recorded for some given data object, use a [[PropertyValue]] for each [[variableMeasured]] and attach the corresponding [[measurementTechnique]]. The value can also be from an enumeration, organized as a [[MeasurementMetholdEnumeration]].
+        */
+    protected $measurementTechnique = null;
+
+   /**
+        * A dataset contained in this catalog.
+        */
+    protected $dataset = null;
+
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setMeasurementMethod($value)
+    {
+        $this->setProperty('measurementMethod', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getMeasurementMethod()
+    {
+       return $this->getProperty('measurementMethod');
+    }
+
+    /**
+    * @param array|string $value
     * @return $this
     */
     public function setMeasurementTechnique($value)
@@ -69,12 +59,31 @@ If there are several <a class="localLink" href="http://schema.org/variableMeasur
         $this->setProperty('measurementTechnique', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getMeasurementTechnique()
     {
        return $this->getProperty('measurementTechnique');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setDataset($value)
+    {
+        $this->setProperty('dataset', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getDataset()
+    {
+       return $this->getProperty('dataset');
     }
 
 

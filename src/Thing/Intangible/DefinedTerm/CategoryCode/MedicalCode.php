@@ -5,27 +5,24 @@ use Sohophp\SchemaOrg\Thing\Intangible\DefinedTerm\CategoryCode;
 
 /**
 * A code for a medical entity.
-* @see http://schema.org/MedicalCode
+* @see schema:MedicalCode
 * @package Sohophp\SchemaOrg\Thing\Intangible\DefinedTerm\CategoryCode
-
-*
 */
 class MedicalCode extends CategoryCode
 {
+   /**
+        * The coding system, e.g. 'ICD-10'.
+        */
+    protected $codingSystem = null;
+
+   /**
+        * A short textual code that uniquely identifies the value.
+        */
+    protected $codeValue = null;
+
 
     /**
-    * The coding system, e.g. 'ICD-10'.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setCodingSystem
-    */
-    public function codingSystem($value)
-    {
-        $this->setProperty('codingSystem', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
+    * @param array|string $value
     * @return $this
     */
     public function setCodingSystem($value)
@@ -33,8 +30,9 @@ class MedicalCode extends CategoryCode
         $this->setProperty('codingSystem', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getCodingSystem()
     {
@@ -42,18 +40,7 @@ class MedicalCode extends CategoryCode
     }
 
     /**
-    * A short textual code that uniquely identifies the value.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setCodeValue
-    */
-    public function codeValue($value)
-    {
-        $this->setProperty('codeValue', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
+    * @param array|string $value
     * @return $this
     */
     public function setCodeValue($value)
@@ -61,8 +48,9 @@ class MedicalCode extends CategoryCode
         $this->setProperty('codeValue', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getCodeValue()
     {

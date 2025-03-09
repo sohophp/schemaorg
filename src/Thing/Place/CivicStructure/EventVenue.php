@@ -5,10 +5,8 @@ use Sohophp\SchemaOrg\Thing\Place\CivicStructure;
 
 /**
 * An event venue.
-* @see http://schema.org/EventVenue
+* @see schema:EventVenue
 * @package Sohophp\SchemaOrg\Thing\Place\CivicStructure
-
-*
 */
 class EventVenue extends CivicStructure
 {

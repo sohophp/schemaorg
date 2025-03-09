@@ -2,76 +2,80 @@
 namespace Sohophp\SchemaOrg\Thing\CreativeWork;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork;
-use Sohophp\SchemaOrg\Thing\Intangible\SpeakableSpecification;
-use Sohophp\SchemaOrg\Thing\Intangible\ItemList\BreadcrumbList;
-use Sohophp\SchemaOrg\Thing\Person;
-use Sohophp\SchemaOrg\Thing\Organization;
-use Sohophp\SchemaOrg\Thing\CreativeWork\MediaObject\ImageObject;
-use Sohophp\SchemaOrg\Thing\CreativeWork\WebPageElement;
-use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\Specialty;
 
 /**
 * A web page. Every web page is implicitly assumed to be declared to be of type WebPage, so the various properties about that webpage, such as <code>breadcrumb</code> may be used. We recommend explicit declaration if these properties are specified, but if they are found outside of an itemscope, they will be assumed to be about the page.
-* @see http://schema.org/WebPage
+* @see schema:WebPage
 * @package Sohophp\SchemaOrg\Thing\CreativeWork
-
-*
 */
 class WebPage extends CreativeWork
 {
+   /**
+        * A set of links that can help a user understand and navigate a website hierarchy.
+        */
+    protected $breadcrumb = null;
 
-    /**
-    * Indicates sections of a Web page that are particularly 'speakable' in the sense of being highlighted as being especially appropriate for text-to-speech conversion. Other sections of a page may also be usefully spoken in particular circumstances; the 'speakable' property serves to indicate the parts most likely to be generally useful for speech.<br/><br/>
+   /**
+        * Indicates the main image on the page.
+        */
+    protected $primaryImageOfPage = null;
 
-The <em>speakable</em> property can be repeated an arbitrary number of times, with three kinds of possible 'content-locator' values:<br/><br/>
+   /**
+        * Indicates if this web page element is the main subject of the page.
+        */
+    protected $mainContentOfPage = null;
 
-1.) <em>id-value</em> URL references - uses <em>id-value</em> of an element in the page being annotated. The simplest use of <em>speakable</em> has (potentially relative) URL values, referencing identified sections of the document concerned.<br/><br/>
+   /**
+        * People or organizations that have reviewed the content on this web page for accuracy and/or completeness.
+        */
+    protected $reviewedBy = null;
 
-2.) CSS Selectors - addresses content in the annotated page, eg. via class attribute. Use the <a class="localLink" href="http://schema.org/cssSelector">cssSelector</a> property.<br/><br/>
+   /**
+        * The most significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
+        */
+    protected $significantLinks = null;
 
-3.)  XPaths - addresses content via XPaths (assuming an XML view of the content). Use the <a class="localLink" href="http://schema.org/xpath">xpath</a> property.<br/><br/>
+   /**
+        * A link related to this web page, for example to other related web pages.
+        */
+    protected $relatedLink = null;
+
+   /**
+        * Date on which the content on this web page was last reviewed for accuracy and/or completeness.
+        */
+    protected $lastReviewed = null;
+
+   /**
+        * One of the more significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
+        */
+    protected $significantLink = null;
+
+   /**
+        * Indicates sections of a Web page that are particularly 'speakable' in the sense of being highlighted as being especially appropriate for text-to-speech conversion. Other sections of a page may also be usefully spoken in particular circumstances; the 'speakable' property serves to indicate the parts most likely to be generally useful for speech.
+
+The *speakable* property can be repeated an arbitrary number of times, with three kinds of possible 'content-locator' values:
+
+1.) *id-value* URL references - uses *id-value* of an element in the page being annotated. The simplest use of *speakable* has (potentially relative) URL values, referencing identified sections of the document concerned.
+
+2.) CSS Selectors - addresses content in the annotated page, e.g. via class attribute. Use the [[cssSelector]] property.
+
+3.)  XPaths - addresses content via XPaths (assuming an XML view of the content). Use the [[xpath]] property.
+
 
 For more sophisticated markup of speakable sections beyond simple ID references, either CSS selectors or XPath expressions to pick out document section(s) as speakable. For this
-we define a supporting type, <a class="localLink" href="http://schema.org/SpeakableSpecification">SpeakableSpecification</a>  which is defined to be a possible value of the <em>speakable</em> property.
-    * @param SpeakableSpecification|string|array $value
-    * @return $this
-    * @deprecated use setSpeakable
-    */
-    public function speakable($value)
-    {
-        $this->setProperty('speakable', $value);
-        return $this;
-    }
+we define a supporting type, [[SpeakableSpecification]]  which is defined to be a possible value of the *speakable* property.
+         
+        */
+    protected $speakable = null;
+
    /**
-    * @param SpeakableSpecification|string|array $value
-    * @return $this
-    */
-    public function setSpeakable($value)
-    {
-        $this->setProperty('speakable', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getSpeakable()
-    {
-       return $this->getProperty('speakable');
-    }
+        * One of the domain specialities to which this web page's content applies.
+        */
+    protected $specialty = null;
+
 
     /**
-    * A set of links that can help a user understand and navigate a website hierarchy.
-    * @param string|BreadcrumbList|array $value
-    * @return $this
-    * @deprecated use setBreadcrumb
-    */
-    public function breadcrumb($value)
-    {
-        $this->setProperty('breadcrumb', $value);
-        return $this;
-    }
-   /**
-    * @param string|BreadcrumbList|array $value
+    * @param array|string $value
     * @return $this
     */
     public function setBreadcrumb($value)
@@ -79,8 +83,9 @@ we define a supporting type, <a class="localLink" href="http://schema.org/Speaka
         $this->setProperty('breadcrumb', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getBreadcrumb()
     {
@@ -88,46 +93,79 @@ we define a supporting type, <a class="localLink" href="http://schema.org/Speaka
     }
 
     /**
-    * One of the more significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setSignificantLink
-    */
-    public function significantLink($value)
-    {
-        $this->setProperty('significantLink', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
+    * @param array|string $value
     * @return $this
     */
-    public function setSignificantLink($value)
+    public function setPrimaryImageOfPage($value)
     {
-        $this->setProperty('significantLink', $value);
+        $this->setProperty('primaryImageOfPage', $value);
         return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getSignificantLink()
-    {
-       return $this->getProperty('significantLink');
     }
 
     /**
-    * A link related to this web page, for example to other related web pages.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setRelatedLink
+    * @return string|array|mixed
     */
-    public function relatedLink($value)
+    public function getPrimaryImageOfPage()
     {
-        $this->setProperty('relatedLink', $value);
+       return $this->getProperty('primaryImageOfPage');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setMainContentOfPage($value)
+    {
+        $this->setProperty('mainContentOfPage', $value);
         return $this;
     }
-   /**
-    * @param string|array $value
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getMainContentOfPage()
+    {
+       return $this->getProperty('mainContentOfPage');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setReviewedBy($value)
+    {
+        $this->setProperty('reviewedBy', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getReviewedBy()
+    {
+       return $this->getProperty('reviewedBy');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setSignificantLinks($value)
+    {
+        $this->setProperty('significantLinks', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getSignificantLinks()
+    {
+       return $this->getProperty('significantLinks');
+    }
+
+    /**
+    * @param array|string $value
     * @return $this
     */
     public function setRelatedLink($value)
@@ -135,8 +173,9 @@ we define a supporting type, <a class="localLink" href="http://schema.org/Speaka
         $this->setProperty('relatedLink', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getRelatedLink()
     {
@@ -144,17 +183,6 @@ we define a supporting type, <a class="localLink" href="http://schema.org/Speaka
     }
 
     /**
-    * Date on which the content on this web page was last reviewed for accuracy and/or completeness.
-    * @param array|string $value
-    * @return $this
-    * @deprecated use setLastReviewed
-    */
-    public function lastReviewed($value)
-    {
-        $this->setProperty('lastReviewed', $value);
-        return $this;
-    }
-   /**
     * @param array|string $value
     * @return $this
     */
@@ -163,8 +191,9 @@ we define a supporting type, <a class="localLink" href="http://schema.org/Speaka
         $this->setProperty('lastReviewed', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getLastReviewed()
     {
@@ -172,130 +201,43 @@ we define a supporting type, <a class="localLink" href="http://schema.org/Speaka
     }
 
     /**
-    * People or organizations that have reviewed the content on this web page for accuracy and/or completeness.
-    * @param Person|Organization|array|string $value
-    * @return $this
-    * @deprecated use setReviewedBy
-    */
-    public function reviewedBy($value)
-    {
-        $this->setProperty('reviewedBy', $value);
-        return $this;
-    }
-   /**
-    * @param Person|Organization|array|string $value
+    * @param array|string $value
     * @return $this
     */
-    public function setReviewedBy($value)
+    public function setSignificantLink($value)
     {
-        $this->setProperty('reviewedBy', $value);
+        $this->setProperty('significantLink', $value);
         return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getReviewedBy()
-    {
-       return $this->getProperty('reviewedBy');
     }
 
     /**
-    * Indicates the main image on the page.
-    * @param ImageObject|array|string $value
-    * @return $this
-    * @deprecated use setPrimaryImageOfPage
+    * @return string|array|mixed
     */
-    public function primaryImageOfPage($value)
+    public function getSignificantLink()
     {
-        $this->setProperty('primaryImageOfPage', $value);
-        return $this;
-    }
-   /**
-    * @param ImageObject|array|string $value
-    * @return $this
-    */
-    public function setPrimaryImageOfPage($value)
-    {
-        $this->setProperty('primaryImageOfPage', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getPrimaryImageOfPage()
-    {
-       return $this->getProperty('primaryImageOfPage');
+       return $this->getProperty('significantLink');
     }
 
     /**
-    * Indicates if this web page element is the main subject of the page.
-    * @param WebPageElement|array|string $value
-    * @return $this
-    * @deprecated use setMainContentOfPage
-    */
-    public function mainContentOfPage($value)
-    {
-        $this->setProperty('mainContentOfPage', $value);
-        return $this;
-    }
-   /**
-    * @param WebPageElement|array|string $value
+    * @param array|string $value
     * @return $this
     */
-    public function setMainContentOfPage($value)
+    public function setSpeakable($value)
     {
-        $this->setProperty('mainContentOfPage', $value);
+        $this->setProperty('speakable', $value);
         return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getMainContentOfPage()
-    {
-       return $this->getProperty('mainContentOfPage');
     }
 
     /**
-    * The most significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setSignificantLinks
+    * @return string|array|mixed
     */
-    public function significantLinks($value)
+    public function getSpeakable()
     {
-        $this->setProperty('significantLinks', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setSignificantLinks($value)
-    {
-        $this->setProperty('significantLinks', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getSignificantLinks()
-    {
-       return $this->getProperty('significantLinks');
+       return $this->getProperty('speakable');
     }
 
     /**
-    * One of the domain specialities to which this web page's content applies.
-    * @param Specialty|array|string $value
-    * @return $this
-    * @deprecated use setSpecialty
-    */
-    public function specialty($value)
-    {
-        $this->setProperty('specialty', $value);
-        return $this;
-    }
-   /**
-    * @param Specialty|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setSpecialty($value)
@@ -303,8 +245,9 @@ we define a supporting type, <a class="localLink" href="http://schema.org/Speaka
         $this->setProperty('specialty', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getSpecialty()
     {

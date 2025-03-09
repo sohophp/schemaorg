@@ -2,31 +2,32 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible\Service;
 
 use Sohophp\SchemaOrg\Thing\Intangible\Service;
-use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\QuantitativeValue;
 
 /**
 * A product provided to consumers and businesses by financial institutions such as banks, insurance companies, brokerage firms, consumer finance companies, and investment companies which comprise the financial services industry.
-* @see http://schema.org/FinancialProduct
+* @see schema:FinancialProduct
 * @package Sohophp\SchemaOrg\Thing\Intangible\Service
-
-*
 */
 class FinancialProduct extends Service
 {
+   /**
+        * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
+        */
+    protected $annualPercentageRate = null;
+
+   /**
+        * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
+        */
+    protected $interestRate = null;
+
+   /**
+        * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
+        */
+    protected $feesAndCommissionsSpecification = null;
+
 
     /**
-    * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
-    * @param QuantitativeValue|array|string $value
-    * @return $this
-    * @deprecated use setAnnualPercentageRate
-    */
-    public function annualPercentageRate($value)
-    {
-        $this->setProperty('annualPercentageRate', $value);
-        return $this;
-    }
-   /**
-    * @param QuantitativeValue|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setAnnualPercentageRate($value)
@@ -34,8 +35,9 @@ class FinancialProduct extends Service
         $this->setProperty('annualPercentageRate', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getAnnualPercentageRate()
     {
@@ -43,18 +45,7 @@ class FinancialProduct extends Service
     }
 
     /**
-    * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
-    * @param QuantitativeValue|array|string $value
-    * @return $this
-    * @deprecated use setInterestRate
-    */
-    public function interestRate($value)
-    {
-        $this->setProperty('interestRate', $value);
-        return $this;
-    }
-   /**
-    * @param QuantitativeValue|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setInterestRate($value)
@@ -62,8 +53,9 @@ class FinancialProduct extends Service
         $this->setProperty('interestRate', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getInterestRate()
     {
@@ -71,18 +63,7 @@ class FinancialProduct extends Service
     }
 
     /**
-    * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
-    * @param string|string|array $value
-    * @return $this
-    * @deprecated use setFeesAndCommissionsSpecification
-    */
-    public function feesAndCommissionsSpecification($value)
-    {
-        $this->setProperty('feesAndCommissionsSpecification', $value);
-        return $this;
-    }
-   /**
-    * @param string|string|array $value
+    * @param array|string $value
     * @return $this
     */
     public function setFeesAndCommissionsSpecification($value)
@@ -90,8 +71,9 @@ class FinancialProduct extends Service
         $this->setProperty('feesAndCommissionsSpecification', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getFeesAndCommissionsSpecification()
     {

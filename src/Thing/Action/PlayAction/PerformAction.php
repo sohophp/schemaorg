@@ -2,31 +2,22 @@
 namespace Sohophp\SchemaOrg\Thing\Action\PlayAction;
 
 use Sohophp\SchemaOrg\Thing\Action\PlayAction;
-use Sohophp\SchemaOrg\Thing\Organization\LocalBusiness\EntertainmentBusiness;
 
 /**
 * The act of participating in performance arts.
-* @see http://schema.org/PerformAction
+* @see schema:PerformAction
 * @package Sohophp\SchemaOrg\Thing\Action\PlayAction
-
-*
 */
 class PerformAction extends PlayAction
 {
+   /**
+        * A sub property of location. The entertainment business where the action occurred.
+        */
+    protected $entertainmentBusiness = null;
+
 
     /**
-    * A sub property of location. The entertainment business where the action occurred.
-    * @param EntertainmentBusiness|array|string $value
-    * @return $this
-    * @deprecated use setEntertainmentBusiness
-    */
-    public function entertainmentBusiness($value)
-    {
-        $this->setProperty('entertainmentBusiness', $value);
-        return $this;
-    }
-   /**
-    * @param EntertainmentBusiness|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setEntertainmentBusiness($value)
@@ -34,8 +25,9 @@ class PerformAction extends PlayAction
         $this->setProperty('entertainmentBusiness', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getEntertainmentBusiness()
     {

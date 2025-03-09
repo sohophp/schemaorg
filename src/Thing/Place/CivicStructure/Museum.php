@@ -5,10 +5,8 @@ use Sohophp\SchemaOrg\Thing\Place\CivicStructure;
 
 /**
 * A museum.
-* @see http://schema.org/Museum
+* @see schema:Museum
 * @package Sohophp\SchemaOrg\Thing\Place\CivicStructure
-
-*
 */
 class Museum extends CivicStructure
 {

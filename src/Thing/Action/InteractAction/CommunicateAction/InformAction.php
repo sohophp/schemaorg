@@ -2,31 +2,22 @@
 namespace Sohophp\SchemaOrg\Thing\Action\InteractAction\CommunicateAction;
 
 use Sohophp\SchemaOrg\Thing\Action\InteractAction\CommunicateAction;
-use Sohophp\SchemaOrg\Thing\Event;
 
 /**
 * The act of notifying someone of information pertinent to them, with no expectation of a response.
-* @see http://schema.org/InformAction
+* @see schema:InformAction
 * @package Sohophp\SchemaOrg\Thing\Action\InteractAction\CommunicateAction
-
-*
 */
 class InformAction extends CommunicateAction
 {
+   /**
+        * Upcoming or past event associated with this place, organization, or action.
+        */
+    protected $event = null;
+
 
     /**
-    * Upcoming or past event associated with this place, organization, or action.
-    * @param Event|array|string $value
-    * @return $this
-    * @deprecated use setEvent
-    */
-    public function event($value)
-    {
-        $this->setProperty('event', $value);
-        return $this;
-    }
-   /**
-    * @param Event|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setEvent($value)
@@ -34,8 +25,9 @@ class InformAction extends CommunicateAction
         $this->setProperty('event', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getEvent()
     {

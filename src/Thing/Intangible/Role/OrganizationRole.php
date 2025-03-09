@@ -5,26 +5,18 @@ use Sohophp\SchemaOrg\Thing\Intangible\Role;
 
 /**
 * A subclass of Role used to describe roles within organizations.
-* @see http://schema.org/OrganizationRole
+* @see schema:OrganizationRole
 * @package Sohophp\SchemaOrg\Thing\Intangible\Role
-
-*
 */
 class OrganizationRole extends Role
 {
+   /**
+        * A number associated with a role in an organization, for example, the number on an athlete's jersey.
+        */
+    protected $numberedPosition = null;
+
 
     /**
-    * A number associated with a role in an organization, for example, the number on an athlete's jersey.
-    * @param array|string $value
-    * @return $this
-    * @deprecated use setNumberedPosition
-    */
-    public function numberedPosition($value)
-    {
-        $this->setProperty('numberedPosition', $value);
-        return $this;
-    }
-   /**
     * @param array|string $value
     * @return $this
     */
@@ -33,8 +25,9 @@ class OrganizationRole extends Role
         $this->setProperty('numberedPosition', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getNumberedPosition()
     {

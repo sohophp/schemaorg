@@ -19,15 +19,15 @@ class TypesGenerator
     /**
      * @var Configure
      */
-    private $configure;
+    private Configure $configure;
     /**
      * @var Parser
      */
-    private $parser;
+    private Parser $parser;
     /**
-     * @var
+     * @var Environment
      */
-    private $twig;
+    private Environment $twig;
 
     /**
      * TypesGenerator constructor.
@@ -67,6 +67,7 @@ class TypesGenerator
          * @var ParserItem $graph
          */
         foreach ($this->parser->getClasses() as $i => $graph) {
+
             if ($this->configure->get('consoleMessage')) {
                 echo($i + 1), "\n";
                 echo $graph->getId(), "\n";
@@ -251,4 +252,5 @@ class TypesGenerator
         $runner = new Runner(new \ArrayIterator($fileInfos), $fixers, new NullDiffer(), null, new ErrorsManager(), new Linter(), false, new NullCacheManager());
         $runner->fix();
     }
+
 }

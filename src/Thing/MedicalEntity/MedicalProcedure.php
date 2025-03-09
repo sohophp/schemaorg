@@ -2,34 +2,47 @@
 namespace Sohophp\SchemaOrg\Thing\MedicalEntity;
 
 use Sohophp\SchemaOrg\Thing\MedicalEntity;
-use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\EventStatusType;
-use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MedicalEnumeration\MedicalStudyStatus;
-use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalIndication;
-use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MedicalEnumeration\MedicalProcedureType;
 
 /**
 * A process of care used in either a diagnostic, therapeutic, preventive or palliative capacity that relies on invasive (surgical), non-invasive, or other techniques.
-* @see http://schema.org/MedicalProcedure
+* @see schema:MedicalProcedure
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity
-
-*
 */
 class MedicalProcedure extends MedicalEntity
 {
+   /**
+        * Typical preparation that a patient must undergo before having the procedure performed.
+        */
+    protected $preparation = null;
+
+   /**
+        * How the procedure is performed.
+        */
+    protected $howPerformed = null;
+
+   /**
+        * Typical or recommended followup care after the procedure is performed.
+        */
+    protected $followup = null;
+
+   /**
+        * The status of the study (enumerated).
+        */
+    protected $status = null;
+
+   /**
+        * The type of procedure, for example Surgical, Noninvasive, or Percutaneous.
+        */
+    protected $procedureType = null;
+
+   /**
+        * Location in the body of the anatomical structure.
+        */
+    protected $bodyLocation = null;
+
 
     /**
-    * Typical preparation that a patient must undergo before having the procedure performed.
-    * @param MedicalEntity|string|array $value
-    * @return $this
-    * @deprecated use setPreparation
-    */
-    public function preparation($value)
-    {
-        $this->setProperty('preparation', $value);
-        return $this;
-    }
-   /**
-    * @param MedicalEntity|string|array $value
+    * @param array|string $value
     * @return $this
     */
     public function setPreparation($value)
@@ -37,8 +50,9 @@ class MedicalProcedure extends MedicalEntity
         $this->setProperty('preparation', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getPreparation()
     {
@@ -46,74 +60,7 @@ class MedicalProcedure extends MedicalEntity
     }
 
     /**
-    * Typical or recommended followup care after the procedure is performed.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setFollowup
-    */
-    public function followup($value)
-    {
-        $this->setProperty('followup', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setFollowup($value)
-    {
-        $this->setProperty('followup', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getFollowup()
-    {
-       return $this->getProperty('followup');
-    }
-
-    /**
-    * The status of the study (enumerated).
-    * @param EventStatusType|string|MedicalStudyStatus|array $value
-    * @return $this
-    * @deprecated use setStatus
-    */
-    public function status($value)
-    {
-        $this->setProperty('status', $value);
-        return $this;
-    }
-   /**
-    * @param EventStatusType|string|MedicalStudyStatus|array $value
-    * @return $this
-    */
-    public function setStatus($value)
-    {
-        $this->setProperty('status', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getStatus()
-    {
-       return $this->getProperty('status');
-    }
-
-    /**
-    * How the procedure is performed.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setHowPerformed
-    */
-    public function howPerformed($value)
-    {
-        $this->setProperty('howPerformed', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
+    * @param array|string $value
     * @return $this
     */
     public function setHowPerformed($value)
@@ -121,8 +68,9 @@ class MedicalProcedure extends MedicalEntity
         $this->setProperty('howPerformed', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getHowPerformed()
     {
@@ -130,102 +78,43 @@ class MedicalProcedure extends MedicalEntity
     }
 
     /**
-    * Expected or actual outcomes of the study.
-    * @param MedicalEntity|string|array $value
-    * @return $this
-    * @deprecated use setOutcome
-    */
-    public function outcome($value)
-    {
-        $this->setProperty('outcome', $value);
-        return $this;
-    }
-   /**
-    * @param MedicalEntity|string|array $value
+    * @param array|string $value
     * @return $this
     */
-    public function setOutcome($value)
+    public function setFollowup($value)
     {
-        $this->setProperty('outcome', $value);
+        $this->setProperty('followup', $value);
         return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getOutcome()
-    {
-       return $this->getProperty('outcome');
     }
 
     /**
-    * Location in the body of the anatomical structure.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setBodyLocation
+    * @return string|array|mixed
     */
-    public function bodyLocation($value)
+    public function getFollowup()
     {
-        $this->setProperty('bodyLocation', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
-    * @return $this
-    */
-    public function setBodyLocation($value)
-    {
-        $this->setProperty('bodyLocation', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getBodyLocation()
-    {
-       return $this->getProperty('bodyLocation');
+       return $this->getProperty('followup');
     }
 
     /**
-    * A factor that indicates use of this therapy for treatment and/or prevention of a condition, symptom, etc. For therapies such as drugs, indications can include both officially-approved indications as well as off-label uses. These can be distinguished by using the ApprovedIndication subtype of MedicalIndication.
-    * @param MedicalIndication|array|string $value
-    * @return $this
-    * @deprecated use setIndication
-    */
-    public function indication($value)
-    {
-        $this->setProperty('indication', $value);
-        return $this;
-    }
-   /**
-    * @param MedicalIndication|array|string $value
+    * @param array|string $value
     * @return $this
     */
-    public function setIndication($value)
+    public function setStatus($value)
     {
-        $this->setProperty('indication', $value);
+        $this->setProperty('status', $value);
         return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getIndication()
-    {
-       return $this->getProperty('indication');
     }
 
     /**
-    * The type of procedure, for example Surgical, Noninvasive, or Percutaneous.
-    * @param MedicalProcedureType|array|string $value
-    * @return $this
-    * @deprecated use setProcedureType
+    * @return string|array|mixed
     */
-    public function procedureType($value)
+    public function getStatus()
     {
-        $this->setProperty('procedureType', $value);
-        return $this;
+       return $this->getProperty('status');
     }
-   /**
-    * @param MedicalProcedureType|array|string $value
+
+    /**
+    * @param array|string $value
     * @return $this
     */
     public function setProcedureType($value)
@@ -233,12 +122,31 @@ class MedicalProcedure extends MedicalEntity
         $this->setProperty('procedureType', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getProcedureType()
     {
        return $this->getProperty('procedureType');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setBodyLocation($value)
+    {
+        $this->setProperty('bodyLocation', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getBodyLocation()
+    {
+       return $this->getProperty('bodyLocation');
     }
 
 

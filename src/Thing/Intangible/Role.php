@@ -4,29 +4,34 @@ namespace Sohophp\SchemaOrg\Thing\Intangible;
 use Sohophp\SchemaOrg\Thing\Intangible;
 
 /**
-* Represents additional information about a relationship or property. For example a Role can be used to say that a 'member' role linking some SportsTeam to a player occurred during a particular time period. Or that a Person's 'actor' role in a Movie was for some particular characterName. Such properties can be attached to a Role entity, which is then associated with the main entities using ordinary properties like 'member' or 'actor'.<br/><br/>
-
-See also <a href="http://blog.schema.org/2014/06/introducing-role.html">blog post</a>.
-* @see http://schema.org/Role
+* Represents additional information about a relationship or property. For example a Role can be used to say that a 'member' role linking some SportsTeam to a player occurred during a particular time period. Or that a Person's 'actor' role in a Movie was for some particular characterName. Such properties can be attached to a Role entity, which is then associated with the main entities using ordinary properties like 'member' or 'actor'.\n\nSee also [blog post](http://blog.schema.org/2014/06/introducing-role.html).
+* @see schema:Role
 * @package Sohophp\SchemaOrg\Thing\Intangible
-
-*
 */
 class Role extends Intangible
 {
+   /**
+        * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+        */
+    protected $endDate = null;
+
+   /**
+        * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+        */
+    protected $startDate = null;
+
+   /**
+        * A position played, performed or filled by a person or organization, as part of an organization. For example, an athlete in a SportsTeam might play in the position named 'Quarterback'.
+        */
+    protected $namedPosition = null;
+
+   /**
+        * A role played, performed or filled by a person or organization. For example, the team of creators for a comic book might fill the roles named 'inker', 'penciller', and 'letterer'; or an athlete in a SportsTeam might play in the position named 'Quarterback'.
+        */
+    protected $roleName = null;
+
 
     /**
-    * The end date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).
-    * @param array|string $value
-    * @return $this
-    * @deprecated use setEndDate
-    */
-    public function endDate($value)
-    {
-        $this->setProperty('endDate', $value);
-        return $this;
-    }
-   /**
     * @param array|string $value
     * @return $this
     */
@@ -35,8 +40,9 @@ class Role extends Intangible
         $this->setProperty('endDate', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getEndDate()
     {
@@ -44,17 +50,6 @@ class Role extends Intangible
     }
 
     /**
-    * The start date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).
-    * @param array|string $value
-    * @return $this
-    * @deprecated use setStartDate
-    */
-    public function startDate($value)
-    {
-        $this->setProperty('startDate', $value);
-        return $this;
-    }
-   /**
     * @param array|string $value
     * @return $this
     */
@@ -63,8 +58,9 @@ class Role extends Intangible
         $this->setProperty('startDate', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getStartDate()
     {
@@ -72,18 +68,7 @@ class Role extends Intangible
     }
 
     /**
-    * A position played, performed or filled by a person or organization, as part of an organization. For example, an athlete in a SportsTeam might play in the position named 'Quarterback'.
-    * @param string|string|array $value
-    * @return $this
-    * @deprecated use setNamedPosition
-    */
-    public function namedPosition($value)
-    {
-        $this->setProperty('namedPosition', $value);
-        return $this;
-    }
-   /**
-    * @param string|string|array $value
+    * @param array|string $value
     * @return $this
     */
     public function setNamedPosition($value)
@@ -91,8 +76,9 @@ class Role extends Intangible
         $this->setProperty('namedPosition', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getNamedPosition()
     {
@@ -100,18 +86,7 @@ class Role extends Intangible
     }
 
     /**
-    * A role played, performed or filled by a person or organization. For example, the team of creators for a comic book might fill the roles named 'inker', 'penciller', and 'letterer'; or an athlete in a SportsTeam might play in the position named 'Quarterback'.
-    * @param string|string|array $value
-    * @return $this
-    * @deprecated use setRoleName
-    */
-    public function roleName($value)
-    {
-        $this->setProperty('roleName', $value);
-        return $this;
-    }
-   /**
-    * @param string|string|array $value
+    * @param array|string $value
     * @return $this
     */
     public function setRoleName($value)
@@ -119,8 +94,9 @@ class Role extends Intangible
         $this->setProperty('roleName', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getRoleName()
     {

@@ -2,177 +2,81 @@
 namespace Sohophp\SchemaOrg\Thing\CreativeWork;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork;
-use Sohophp\SchemaOrg\Thing\Person;
-use Sohophp\SchemaOrg\Thing\CreativeWork\MediaObject\VideoObject;
-use Sohophp\SchemaOrg\Thing\Intangible\Language;
-use Sohophp\SchemaOrg\Thing\Place\AdministrativeArea\Country;
-use Sohophp\SchemaOrg\Thing\Organization\PerformingGroup\MusicGroup;
-use Sohophp\SchemaOrg\Thing\Organization;
-use Sohophp\SchemaOrg\Thing\Intangible\Quantity\Duration;
 
 /**
 * A movie.
-* @see http://schema.org/Movie
+* @see schema:Movie
 * @package Sohophp\SchemaOrg\Thing\CreativeWork
-
-*
 */
 class Movie extends CreativeWork
 {
+   /**
+        * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
+        */
+    protected $directors = null;
+
+   /**
+        * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+        */
+    protected $director = null;
+
+   /**
+        * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
+        */
+    protected $subtitleLanguage = null;
+
+   /**
+        * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
+        */
+    protected $duration = null;
+
+   /**
+        * The production company or studio responsible for the item, e.g. series, video game, episode etc.
+        */
+    protected $productionCompany = null;
+
+   /**
+        * The trailer of a movie or TV/radio series, season, episode, etc.
+        */
+    protected $trailer = null;
+
+   /**
+        * The country of origin of something, including products as well as creative  works such as movie and TV content.
+
+In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of [[CreativeWork]] it is difficult to provide fully general guidance, and properties such as [[contentLocation]] and [[locationCreated]] may be more applicable.
+
+In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
+        */
+    protected $countryOfOrigin = null;
+
+   /**
+        * The composer of the soundtrack.
+        */
+    protected $musicBy = null;
+
+   /**
+        * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing at the most general/abstract level, a work of film or television.
+
+For example, the motion picture known as "Ghostbusters" has a titleEIDR of  "10.5240/7EC7-228A-510A-053E-CBB8-J". This title (or work) may have several variants, which EIDR calls "edits". See [[editEIDR]].
+
+Since schema.org types like [[Movie]], [[TVEpisode]], [[TVSeason]], and [[TVSeries]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
+
+        */
+    protected $titleEIDR = null;
+
+   /**
+        * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+        */
+    protected $actor = null;
+
+   /**
+        * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
+        */
+    protected $actors = null;
+
 
     /**
-    * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
-    * @param Person|array|string $value
-    * @return $this
-    * @deprecated use setActor
-    */
-    public function actor($value)
-    {
-        $this->setProperty('actor', $value);
-        return $this;
-    }
-   /**
-    * @param Person|array|string $value
-    * @return $this
-    */
-    public function setActor($value)
-    {
-        $this->setProperty('actor', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getActor()
-    {
-       return $this->getProperty('actor');
-    }
-
-    /**
-    * The trailer of a movie or tv/radio series, season, episode, etc.
-    * @param VideoObject|array|string $value
-    * @return $this
-    * @deprecated use setTrailer
-    */
-    public function trailer($value)
-    {
-        $this->setProperty('trailer', $value);
-        return $this;
-    }
-   /**
-    * @param VideoObject|array|string $value
-    * @return $this
-    */
-    public function setTrailer($value)
-    {
-        $this->setProperty('trailer', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getTrailer()
-    {
-       return $this->getProperty('trailer');
-    }
-
-    /**
-    * Languages in which subtitles/captions are available, in <a href="http://tools.ietf.org/html/bcp47">IETF BCP 47 standard format</a>.
-    * @param Language|string|array $value
-    * @return $this
-    * @deprecated use setSubtitleLanguage
-    */
-    public function subtitleLanguage($value)
-    {
-        $this->setProperty('subtitleLanguage', $value);
-        return $this;
-    }
-   /**
-    * @param Language|string|array $value
-    * @return $this
-    */
-    public function setSubtitleLanguage($value)
-    {
-        $this->setProperty('subtitleLanguage', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getSubtitleLanguage()
-    {
-       return $this->getProperty('subtitleLanguage');
-    }
-
-    /**
-    * The country of the principal offices of the production company or individual responsible for the movie or program.
-    * @param Country|array|string $value
-    * @return $this
-    * @deprecated use setCountryOfOrigin
-    */
-    public function countryOfOrigin($value)
-    {
-        $this->setProperty('countryOfOrigin', $value);
-        return $this;
-    }
-   /**
-    * @param Country|array|string $value
-    * @return $this
-    */
-    public function setCountryOfOrigin($value)
-    {
-        $this->setProperty('countryOfOrigin', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getCountryOfOrigin()
-    {
-       return $this->getProperty('countryOfOrigin');
-    }
-
-    /**
-    * The composer of the soundtrack.
-    * @param Person|MusicGroup|array|string $value
-    * @return $this
-    * @deprecated use setMusicBy
-    */
-    public function musicBy($value)
-    {
-        $this->setProperty('musicBy', $value);
-        return $this;
-    }
-   /**
-    * @param Person|MusicGroup|array|string $value
-    * @return $this
-    */
-    public function setMusicBy($value)
-    {
-        $this->setProperty('musicBy', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getMusicBy()
-    {
-       return $this->getProperty('musicBy');
-    }
-
-    /**
-    * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
-    * @param Person|array|string $value
-    * @return $this
-    * @deprecated use setDirectors
-    */
-    public function directors($value)
-    {
-        $this->setProperty('directors', $value);
-        return $this;
-    }
-   /**
-    * @param Person|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setDirectors($value)
@@ -180,8 +84,9 @@ class Movie extends CreativeWork
         $this->setProperty('directors', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getDirectors()
     {
@@ -189,18 +94,7 @@ class Movie extends CreativeWork
     }
 
     /**
-    * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
-    * @param Person|array|string $value
-    * @return $this
-    * @deprecated use setDirector
-    */
-    public function director($value)
-    {
-        $this->setProperty('director', $value);
-        return $this;
-    }
-   /**
-    * @param Person|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setDirector($value)
@@ -208,8 +102,9 @@ class Movie extends CreativeWork
         $this->setProperty('director', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getDirector()
     {
@@ -217,46 +112,25 @@ class Movie extends CreativeWork
     }
 
     /**
-    * The production company or studio responsible for the item e.g. series, video game, episode etc.
-    * @param Organization|array|string $value
-    * @return $this
-    * @deprecated use setProductionCompany
-    */
-    public function productionCompany($value)
-    {
-        $this->setProperty('productionCompany', $value);
-        return $this;
-    }
-   /**
-    * @param Organization|array|string $value
+    * @param array|string $value
     * @return $this
     */
-    public function setProductionCompany($value)
+    public function setSubtitleLanguage($value)
     {
-        $this->setProperty('productionCompany', $value);
+        $this->setProperty('subtitleLanguage', $value);
         return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getProductionCompany()
-    {
-       return $this->getProperty('productionCompany');
     }
 
     /**
-    * The duration of the item (movie, audio recording, event, etc.) in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>.
-    * @param Duration|array|string $value
-    * @return $this
-    * @deprecated use setDuration
+    * @return string|array|mixed
     */
-    public function duration($value)
+    public function getSubtitleLanguage()
     {
-        $this->setProperty('duration', $value);
-        return $this;
+       return $this->getProperty('subtitleLanguage');
     }
-   /**
-    * @param Duration|array|string $value
+
+    /**
+    * @param array|string $value
     * @return $this
     */
     public function setDuration($value)
@@ -264,8 +138,9 @@ class Movie extends CreativeWork
         $this->setProperty('duration', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getDuration()
     {
@@ -273,18 +148,115 @@ class Movie extends CreativeWork
     }
 
     /**
-    * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
-    * @param Person|array|string $value
+    * @param array|string $value
     * @return $this
-    * @deprecated use setActors
     */
-    public function actors($value)
+    public function setProductionCompany($value)
     {
-        $this->setProperty('actors', $value);
+        $this->setProperty('productionCompany', $value);
         return $this;
     }
-   /**
-    * @param Person|array|string $value
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getProductionCompany()
+    {
+       return $this->getProperty('productionCompany');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setTrailer($value)
+    {
+        $this->setProperty('trailer', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getTrailer()
+    {
+       return $this->getProperty('trailer');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setCountryOfOrigin($value)
+    {
+        $this->setProperty('countryOfOrigin', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getCountryOfOrigin()
+    {
+       return $this->getProperty('countryOfOrigin');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setMusicBy($value)
+    {
+        $this->setProperty('musicBy', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getMusicBy()
+    {
+       return $this->getProperty('musicBy');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setTitleEIDR($value)
+    {
+        $this->setProperty('titleEIDR', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getTitleEIDR()
+    {
+       return $this->getProperty('titleEIDR');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setActor($value)
+    {
+        $this->setProperty('actor', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getActor()
+    {
+       return $this->getProperty('actor');
+    }
+
+    /**
+    * @param array|string $value
     * @return $this
     */
     public function setActors($value)
@@ -292,8 +264,9 @@ class Movie extends CreativeWork
         $this->setProperty('actors', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getActors()
     {

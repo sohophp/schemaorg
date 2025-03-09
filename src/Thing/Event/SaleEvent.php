@@ -5,10 +5,8 @@ use Sohophp\SchemaOrg\Thing\Event;
 
 /**
 * Event type: Sales event.
-* @see http://schema.org/SaleEvent
+* @see schema:SaleEvent
 * @package Sohophp\SchemaOrg\Thing\Event
-
-*
 */
 class SaleEvent extends Event
 {

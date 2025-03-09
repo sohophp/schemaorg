@@ -2,63 +2,44 @@
 namespace Sohophp\SchemaOrg\Thing\Organization\MedicalOrganization;
 
 use Sohophp\SchemaOrg\Thing\Organization\MedicalOrganization;
-use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalTest;
-use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalProcedure;
-use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalProcedure\TherapeuticProcedure\MedicalTherapy;
-use Sohophp\SchemaOrg\Thing\Organization\MedicalOrganization\Hospital;
-use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\Specialty\MedicalSpecialty;
 
 /**
-* A doctor's office.
-* @see http://schema.org/Physician
+* An individual physician or a physician's office considered as a [[MedicalOrganization]].
+* @see schema:Physician
 * @package Sohophp\SchemaOrg\Thing\Organization\MedicalOrganization
-
-*
 */
 class Physician extends MedicalOrganization
 {
+   /**
+        * A hospital with which the physician or office is affiliated.
+        */
+    protected $hospitalAffiliation = null;
+
+   /**
+        * A medical specialty of the provider.
+        */
+    protected $medicalSpecialty = null;
+
+   /**
+        * A medical service available from this provider.
+        */
+    protected $availableService = null;
+
+   /**
+        * A <a href="https://en.wikipedia.org/wiki/National_Provider_Identifier">National Provider Identifier</a> (NPI) 
+    is a unique 10-digit identification number issued to health care providers in the United States by the Centers for Medicare and Medicaid Services.
+        */
+    protected $usNPI = null;
+
+   /**
+        * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.\n
+Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+        */
+    protected $occupationalCategory = null;
+
 
     /**
-    * A medical service available from this provider.
-    * @param MedicalTest|MedicalProcedure|MedicalTherapy|array|string $value
-    * @return $this
-    * @deprecated use setAvailableService
-    */
-    public function availableService($value)
-    {
-        $this->setProperty('availableService', $value);
-        return $this;
-    }
-   /**
-    * @param MedicalTest|MedicalProcedure|MedicalTherapy|array|string $value
-    * @return $this
-    */
-    public function setAvailableService($value)
-    {
-        $this->setProperty('availableService', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getAvailableService()
-    {
-       return $this->getProperty('availableService');
-    }
-
-    /**
-    * A hospital with which the physician or office is affiliated.
-    * @param Hospital|array|string $value
-    * @return $this
-    * @deprecated use setHospitalAffiliation
-    */
-    public function hospitalAffiliation($value)
-    {
-        $this->setProperty('hospitalAffiliation', $value);
-        return $this;
-    }
-   /**
-    * @param Hospital|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setHospitalAffiliation($value)
@@ -66,8 +47,9 @@ class Physician extends MedicalOrganization
         $this->setProperty('hospitalAffiliation', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getHospitalAffiliation()
     {
@@ -75,18 +57,7 @@ class Physician extends MedicalOrganization
     }
 
     /**
-    * A medical specialty of the provider.
-    * @param MedicalSpecialty|array|string $value
-    * @return $this
-    * @deprecated use setMedicalSpecialty
-    */
-    public function medicalSpecialty($value)
-    {
-        $this->setProperty('medicalSpecialty', $value);
-        return $this;
-    }
-   /**
-    * @param MedicalSpecialty|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setMedicalSpecialty($value)
@@ -94,12 +65,67 @@ class Physician extends MedicalOrganization
         $this->setProperty('medicalSpecialty', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getMedicalSpecialty()
     {
        return $this->getProperty('medicalSpecialty');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setAvailableService($value)
+    {
+        $this->setProperty('availableService', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getAvailableService()
+    {
+       return $this->getProperty('availableService');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setUsNPI($value)
+    {
+        $this->setProperty('usNPI', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getUsNPI()
+    {
+       return $this->getProperty('usNPI');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setOccupationalCategory($value)
+    {
+        $this->setProperty('occupationalCategory', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getOccupationalCategory()
+    {
+       return $this->getProperty('occupationalCategory');
     }
 
 

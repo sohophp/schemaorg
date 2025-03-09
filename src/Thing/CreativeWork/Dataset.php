@@ -2,61 +2,73 @@
 namespace Sohophp\SchemaOrg\Thing\CreativeWork;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork;
-use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\PropertyValue;
-use Sohophp\SchemaOrg\Thing\CreativeWork\DataCatalog;
-use Sohophp\SchemaOrg\Thing\CreativeWork\MediaObject\DataDownload;
 
 /**
 * A body of structured information describing some topic(s) of interest.
-* @see http://schema.org/Dataset
+* @see schema:Dataset
 * @package Sohophp\SchemaOrg\Thing\CreativeWork
-
-*
 */
 class Dataset extends CreativeWork
 {
+   /**
+        * A data catalog which contains this dataset.
+        */
+    protected $includedInDataCatalog = null;
+
+   /**
+        * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
+        */
+    protected $measurementMethod = null;
+
+   /**
+        * The range of temporal applicability of a dataset, e.g. for a 2011 census dataset, the year 2011 (in ISO 8601 time interval format).
+        */
+    protected $datasetTimeInterval = null;
+
+   /**
+        * The variableMeasured property can indicate (repeated as necessary) the  variables that are measured in some dataset, either described as text or as pairs of identifier and description using PropertyValue, or more explicitly as a [[StatisticalVariable]].
+        */
+    protected $variableMeasured = null;
+
+   /**
+        * A downloadable form of this dataset, at a specific location, in a specific format. This property can be repeated if different variations are available. There is no expectation that different downloadable distributions must contain exactly equivalent information (see also [DCAT](https://www.w3.org/TR/vocab-dcat-3/#Class:Distribution) on this point). Different distributions might include or exclude different subsets of the entire dataset, for example.
+        */
+    protected $distribution = null;
+
+   /**
+        * Originally named [[variablesMeasured]], the [[variableMeasured]] property can indicate (repeated as necessary) the  variables that are measured in some dataset, either described as text or as pairs of identifier and description using PropertyValue.
+        */
+    protected $variablesMeasured = null;
+
+   /**
+        * A technique, method or technology used in an [[Observation]], [[StatisticalVariable]] or [[Dataset]] (or [[DataDownload]], [[DataCatalog]]), corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using [[variableMeasured]]; for [[Observation]], a [[StatisticalVariable]]). Often but not necessarily each [[variableMeasured]] will have an explicit representation as (or mapping to) an property such as those defined in Schema.org, or other RDF vocabularies and "knowledge graphs". In that case the subproperty of [[variableMeasured]] called [[measuredProperty]] is applicable.
+    
+The [[measurementTechnique]] property helps when extra clarification is needed about how a [[measuredProperty]] was measured. This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but can often serve as a high level summary for dataset discovery. 
+
+For example, if [[variableMeasured]] is: molecule concentration, [[measurementTechnique]] could be: "mass spectrometry" or "nmr spectroscopy" or "colorimetry" or "immunofluorescence". If the [[variableMeasured]] is "depression rating", the [[measurementTechnique]] could be "Zung Scale" or "HAM-D" or "Beck Depression Inventory". 
+
+If there are several [[variableMeasured]] properties recorded for some given data object, use a [[PropertyValue]] for each [[variableMeasured]] and attach the corresponding [[measurementTechnique]]. The value can also be from an enumeration, organized as a [[MeasurementMetholdEnumeration]].
+        */
+    protected $measurementTechnique = null;
+
+   /**
+        * A data catalog which contains this dataset (this property was previously 'catalog', preferred name is now 'includedInDataCatalog').
+        */
+    protected $includedDataCatalog = null;
+
+   /**
+        * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
+        */
+    protected $issn = null;
+
+   /**
+        * A data catalog which contains this dataset.
+        */
+    protected $catalog = null;
+
 
     /**
-    * The variableMeasured property can indicate (repeated as necessary) the  variables that are measured in some dataset, either described as text or as pairs of identifier and description using PropertyValue.
-    * @param string|PropertyValue|array $value
-    * @return $this
-    * @deprecated use setVariableMeasured
-    */
-    public function variableMeasured($value)
-    {
-        $this->setProperty('variableMeasured', $value);
-        return $this;
-    }
-   /**
-    * @param string|PropertyValue|array $value
-    * @return $this
-    */
-    public function setVariableMeasured($value)
-    {
-        $this->setProperty('variableMeasured', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getVariableMeasured()
-    {
-       return $this->getProperty('variableMeasured');
-    }
-
-    /**
-    * A data catalog which contains this dataset.
-    * @param DataCatalog|array|string $value
-    * @return $this
-    * @deprecated use setIncludedInDataCatalog
-    */
-    public function includedInDataCatalog($value)
-    {
-        $this->setProperty('includedInDataCatalog', $value);
-        return $this;
-    }
-   /**
-    * @param DataCatalog|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setIncludedInDataCatalog($value)
@@ -64,8 +76,9 @@ class Dataset extends CreativeWork
         $this->setProperty('includedInDataCatalog', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getIncludedInDataCatalog()
     {
@@ -73,17 +86,24 @@ class Dataset extends CreativeWork
     }
 
     /**
-    * The range of temporal applicability of a dataset, e.g. for a 2011 census dataset, the year 2011 (in ISO 8601 time interval format).
     * @param array|string $value
     * @return $this
-    * @deprecated use setDatasetTimeInterval
     */
-    public function datasetTimeInterval($value)
+    public function setMeasurementMethod($value)
     {
-        $this->setProperty('datasetTimeInterval', $value);
+        $this->setProperty('measurementMethod', $value);
         return $this;
     }
-   /**
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getMeasurementMethod()
+    {
+       return $this->getProperty('measurementMethod');
+    }
+
+    /**
     * @param array|string $value
     * @return $this
     */
@@ -92,8 +112,9 @@ class Dataset extends CreativeWork
         $this->setProperty('datasetTimeInterval', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getDatasetTimeInterval()
     {
@@ -101,165 +122,25 @@ class Dataset extends CreativeWork
     }
 
     /**
-    * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setIssn
-    */
-    public function issn($value)
-    {
-        $this->setProperty('issn', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
+    * @param array|string $value
     * @return $this
     */
-    public function setIssn($value)
+    public function setVariableMeasured($value)
     {
-        $this->setProperty('issn', $value);
+        $this->setProperty('variableMeasured', $value);
         return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getIssn()
-    {
-       return $this->getProperty('issn');
     }
 
     /**
-    * Originally named <a class="localLink" href="http://schema.org/variablesMeasured">variablesMeasured</a>, The <a class="localLink" href="http://schema.org/variableMeasured">variableMeasured</a> property can indicate (repeated as necessary) the  variables that are measured in some dataset, either described as text or as pairs of identifier and description using PropertyValue.
-    * @param PropertyValue|string|array $value
-    * @return $this
-    * @deprecated use setVariablesMeasured
+    * @return string|array|mixed
     */
-    public function variablesMeasured($value)
+    public function getVariableMeasured()
     {
-        $this->setProperty('variablesMeasured', $value);
-        return $this;
-    }
-   /**
-    * @param PropertyValue|string|array $value
-    * @return $this
-    */
-    public function setVariablesMeasured($value)
-    {
-        $this->setProperty('variablesMeasured', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getVariablesMeasured()
-    {
-       return $this->getProperty('variablesMeasured');
+       return $this->getProperty('variableMeasured');
     }
 
     /**
-    * A technique or technology used in a <a class="localLink" href="http://schema.org/Dataset">Dataset</a> (or <a class="localLink" href="http://schema.org/DataDownload">DataDownload</a>, <a class="localLink" href="http://schema.org/DataCatalog">DataCatalog</a>),
-corresponding to the method used for measuring the corresponding variable(s) (described using <a class="localLink" href="http://schema.org/variableMeasured">variableMeasured</a>). This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but rather as a high level summary for dataset discovery.<br/><br/>
-
-For example, if <a class="localLink" href="http://schema.org/variableMeasured">variableMeasured</a> is: molecule concentration, <a class="localLink" href="http://schema.org/measurementTechnique">measurementTechnique</a> could be: "mass spectrometry" or "nmr spectroscopy" or "colorimetry" or "immunofluorescence".<br/><br/>
-
-If the <a class="localLink" href="http://schema.org/variableMeasured">variableMeasured</a> is "depression rating", the <a class="localLink" href="http://schema.org/measurementTechnique">measurementTechnique</a> could be "Zung Scale" or "HAM-D" or "Beck Depression Inventory".<br/><br/>
-
-If there are several <a class="localLink" href="http://schema.org/variableMeasured">variableMeasured</a> properties recorded for some given data object, use a <a class="localLink" href="http://schema.org/PropertyValue">PropertyValue</a> for each <a class="localLink" href="http://schema.org/variableMeasured">variableMeasured</a> and attach the corresponding <a class="localLink" href="http://schema.org/measurementTechnique">measurementTechnique</a>.
-    * @param string|string|array $value
-    * @return $this
-    * @deprecated use setMeasurementTechnique
-    */
-    public function measurementTechnique($value)
-    {
-        $this->setProperty('measurementTechnique', $value);
-        return $this;
-    }
-   /**
-    * @param string|string|array $value
-    * @return $this
-    */
-    public function setMeasurementTechnique($value)
-    {
-        $this->setProperty('measurementTechnique', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getMeasurementTechnique()
-    {
-       return $this->getProperty('measurementTechnique');
-    }
-
-    /**
-    * A data catalog which contains this dataset.
-    * @param DataCatalog|array|string $value
-    * @return $this
-    * @deprecated use setCatalog
-    */
-    public function catalog($value)
-    {
-        $this->setProperty('catalog', $value);
-        return $this;
-    }
-   /**
-    * @param DataCatalog|array|string $value
-    * @return $this
-    */
-    public function setCatalog($value)
-    {
-        $this->setProperty('catalog', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getCatalog()
-    {
-       return $this->getProperty('catalog');
-    }
-
-    /**
-    * A data catalog which contains this dataset (this property was previously 'catalog', preferred name is now 'includedInDataCatalog').
-    * @param DataCatalog|array|string $value
-    * @return $this
-    * @deprecated use setIncludedDataCatalog
-    */
-    public function includedDataCatalog($value)
-    {
-        $this->setProperty('includedDataCatalog', $value);
-        return $this;
-    }
-   /**
-    * @param DataCatalog|array|string $value
-    * @return $this
-    */
-    public function setIncludedDataCatalog($value)
-    {
-        $this->setProperty('includedDataCatalog', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getIncludedDataCatalog()
-    {
-       return $this->getProperty('includedDataCatalog');
-    }
-
-    /**
-    * A downloadable form of this dataset, at a specific location, in a specific format.
-    * @param DataDownload|array|string $value
-    * @return $this
-    * @deprecated use setDistribution
-    */
-    public function distribution($value)
-    {
-        $this->setProperty('distribution', $value);
-        return $this;
-    }
-   /**
-    * @param DataDownload|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setDistribution($value)
@@ -267,12 +148,103 @@ If there are several <a class="localLink" href="http://schema.org/variableMeasur
         $this->setProperty('distribution', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getDistribution()
     {
        return $this->getProperty('distribution');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setVariablesMeasured($value)
+    {
+        $this->setProperty('variablesMeasured', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getVariablesMeasured()
+    {
+       return $this->getProperty('variablesMeasured');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setMeasurementTechnique($value)
+    {
+        $this->setProperty('measurementTechnique', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getMeasurementTechnique()
+    {
+       return $this->getProperty('measurementTechnique');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setIncludedDataCatalog($value)
+    {
+        $this->setProperty('includedDataCatalog', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getIncludedDataCatalog()
+    {
+       return $this->getProperty('includedDataCatalog');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setIssn($value)
+    {
+        $this->setProperty('issn', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getIssn()
+    {
+       return $this->getProperty('issn');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setCatalog($value)
+    {
+        $this->setProperty('catalog', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getCatalog()
+    {
+       return $this->getProperty('catalog');
     }
 
 

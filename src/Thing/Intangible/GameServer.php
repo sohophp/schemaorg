@@ -2,60 +2,32 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible;
 
 use Sohophp\SchemaOrg\Thing\Intangible;
-use Sohophp\SchemaOrg\Thing\CreativeWork\Game\VideoGame;
-use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\GameServerStatus;
 
 /**
 * Server that provides game interaction in a multiplayer game.
-* @see http://schema.org/GameServer
+* @see schema:GameServer
 * @package Sohophp\SchemaOrg\Thing\Intangible
-
-*
 */
 class GameServer extends Intangible
 {
+   /**
+        * Number of players on the server.
+        */
+    protected $playersOnline = null;
+
+   /**
+        * Status of a game server.
+        */
+    protected $serverStatus = null;
+
+   /**
+        * Video game which is played on this server.
+        */
+    protected $game = null;
+
 
     /**
-    * Video game which is played on this server.
-    * @param VideoGame|array|string $value
-    * @return $this
-    * @deprecated use setGame
-    */
-    public function game($value)
-    {
-        $this->setProperty('game', $value);
-        return $this;
-    }
-   /**
-    * @param VideoGame|array|string $value
-    * @return $this
-    */
-    public function setGame($value)
-    {
-        $this->setProperty('game', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getGame()
-    {
-       return $this->getProperty('game');
-    }
-
-    /**
-    * Number of players on the server.
-    * @param int|array|string $value
-    * @return $this
-    * @deprecated use setPlayersOnline
-    */
-    public function playersOnline($value)
-    {
-        $this->setProperty('playersOnline', $value);
-        return $this;
-    }
-   /**
-    * @param int|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setPlayersOnline($value)
@@ -63,8 +35,9 @@ class GameServer extends Intangible
         $this->setProperty('playersOnline', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getPlayersOnline()
     {
@@ -72,18 +45,7 @@ class GameServer extends Intangible
     }
 
     /**
-    * Status of a game server.
-    * @param GameServerStatus|array|string $value
-    * @return $this
-    * @deprecated use setServerStatus
-    */
-    public function serverStatus($value)
-    {
-        $this->setProperty('serverStatus', $value);
-        return $this;
-    }
-   /**
-    * @param GameServerStatus|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setServerStatus($value)
@@ -91,12 +53,31 @@ class GameServer extends Intangible
         $this->setProperty('serverStatus', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getServerStatus()
     {
        return $this->getProperty('serverStatus');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setGame($value)
+    {
+        $this->setProperty('game', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getGame()
+    {
+       return $this->getProperty('game');
     }
 
 

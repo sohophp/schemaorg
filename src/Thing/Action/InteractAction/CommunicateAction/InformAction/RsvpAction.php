@@ -2,31 +2,67 @@
 namespace Sohophp\SchemaOrg\Thing\Action\InteractAction\CommunicateAction\InformAction;
 
 use Sohophp\SchemaOrg\Thing\Action\InteractAction\CommunicateAction\InformAction;
-use Sohophp\SchemaOrg\Thing\CreativeWork\Comment;
-use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\RsvpResponseType;
 
 /**
 * The act of notifying an event organizer as to whether you expect to attend the event.
-* @see http://schema.org/RsvpAction
+* @see schema:RsvpAction
 * @package Sohophp\SchemaOrg\Thing\Action\InteractAction\CommunicateAction\InformAction
-
-*
 */
 class RsvpAction extends InformAction
 {
+   /**
+        * Comments, typically from users.
+        */
+    protected $comment = null;
+
+   /**
+        * The response (yes, no, maybe) to the RSVP.
+        */
+    protected $rsvpResponse = null;
+
+   /**
+        * If responding yes, the number of guests who will attend in addition to the invitee.
+        */
+    protected $additionalNumberOfGuests = null;
+
 
     /**
-    * If responding yes, the number of guests who will attend in addition to the invitee.
     * @param array|string $value
     * @return $this
-    * @deprecated use setAdditionalNumberOfGuests
     */
-    public function additionalNumberOfGuests($value)
+    public function setComment($value)
     {
-        $this->setProperty('additionalNumberOfGuests', $value);
+        $this->setProperty('comment', $value);
         return $this;
     }
-   /**
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getComment()
+    {
+       return $this->getProperty('comment');
+    }
+
+    /**
+    * @param array|string $value
+    * @return $this
+    */
+    public function setRsvpResponse($value)
+    {
+        $this->setProperty('rsvpResponse', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getRsvpResponse()
+    {
+       return $this->getProperty('rsvpResponse');
+    }
+
+    /**
     * @param array|string $value
     * @return $this
     */
@@ -35,68 +71,13 @@ class RsvpAction extends InformAction
         $this->setProperty('additionalNumberOfGuests', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getAdditionalNumberOfGuests()
     {
        return $this->getProperty('additionalNumberOfGuests');
-    }
-
-    /**
-    * Comments, typically from users.
-    * @param Comment|array|string $value
-    * @return $this
-    * @deprecated use setComment
-    */
-    public function comment($value)
-    {
-        $this->setProperty('comment', $value);
-        return $this;
-    }
-   /**
-    * @param Comment|array|string $value
-    * @return $this
-    */
-    public function setComment($value)
-    {
-        $this->setProperty('comment', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getComment()
-    {
-       return $this->getProperty('comment');
-    }
-
-    /**
-    * The response (yes, no, maybe) to the RSVP.
-    * @param RsvpResponseType|array|string $value
-    * @return $this
-    * @deprecated use setRsvpResponse
-    */
-    public function rsvpResponse($value)
-    {
-        $this->setProperty('rsvpResponse', $value);
-        return $this;
-    }
-   /**
-    * @param RsvpResponseType|array|string $value
-    * @return $this
-    */
-    public function setRsvpResponse($value)
-    {
-        $this->setProperty('rsvpResponse', $value);
-        return $this;
-    }
-    /**
-    * @return $this|string|array
-    */
-    public function getRsvpResponse()
-    {
-       return $this->getProperty('rsvpResponse');
     }
 
 

@@ -2,31 +2,37 @@
 namespace Sohophp\SchemaOrg\Thing\CreativeWork;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork;
-use Sohophp\SchemaOrg\Thing\CreativeWork\Question;
 
 /**
-* A comment on an item - for example, a comment on a blog post. The comment's content is expressed via the <a class="localLink" href="http://schema.org/text">text</a> property, and its topic via <a class="localLink" href="http://schema.org/about">about</a>, properties shared with all CreativeWorks.
-* @see http://schema.org/Comment
+* A comment on an item - for example, a comment on a blog post. The comment's content is expressed via the [[text]] property, and its topic via [[about]], properties shared with all CreativeWorks.
+* @see schema:Comment
 * @package Sohophp\SchemaOrg\Thing\CreativeWork
-
-*
 */
 class Comment extends CreativeWork
 {
+   /**
+        * The number of upvotes this question, answer or comment has received from the community.
+        */
+    protected $upvoteCount = null;
+
+   /**
+        * A CreativeWork such as an image, video, or audio clip shared as part of this posting.
+        */
+    protected $sharedContent = null;
+
+   /**
+        * The parent of a question, answer or item in general. Typically used for Q/A discussion threads e.g. a chain of comments with the first comment being an [[Article]] or other [[CreativeWork]]. See also [[comment]] which points from something to a comment about it.
+        */
+    protected $parentItem = null;
+
+   /**
+        * The number of downvotes this question, answer or comment has received from the community.
+        */
+    protected $downvoteCount = null;
+
 
     /**
-    * The number of upvotes this question, answer or comment has received from the community.
-    * @param int|array|string $value
-    * @return $this
-    * @deprecated use setUpvoteCount
-    */
-    public function upvoteCount($value)
-    {
-        $this->setProperty('upvoteCount', $value);
-        return $this;
-    }
-   /**
-    * @param int|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setUpvoteCount($value)
@@ -34,8 +40,9 @@ class Comment extends CreativeWork
         $this->setProperty('upvoteCount', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getUpvoteCount()
     {
@@ -43,18 +50,25 @@ class Comment extends CreativeWork
     }
 
     /**
-    * The parent of a question, answer or item in general.
-    * @param Question|array|string $value
+    * @param array|string $value
     * @return $this
-    * @deprecated use setParentItem
     */
-    public function parentItem($value)
+    public function setSharedContent($value)
     {
-        $this->setProperty('parentItem', $value);
+        $this->setProperty('sharedContent', $value);
         return $this;
     }
-   /**
-    * @param Question|array|string $value
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getSharedContent()
+    {
+       return $this->getProperty('sharedContent');
+    }
+
+    /**
+    * @param array|string $value
     * @return $this
     */
     public function setParentItem($value)
@@ -62,8 +76,9 @@ class Comment extends CreativeWork
         $this->setProperty('parentItem', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getParentItem()
     {
@@ -71,18 +86,7 @@ class Comment extends CreativeWork
     }
 
     /**
-    * The number of downvotes this question, answer or comment has received from the community.
-    * @param int|array|string $value
-    * @return $this
-    * @deprecated use setDownvoteCount
-    */
-    public function downvoteCount($value)
-    {
-        $this->setProperty('downvoteCount', $value);
-        return $this;
-    }
-   /**
-    * @param int|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setDownvoteCount($value)
@@ -90,8 +94,9 @@ class Comment extends CreativeWork
         $this->setProperty('downvoteCount', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getDownvoteCount()
     {

@@ -5,27 +5,29 @@ use Sohophp\SchemaOrg\Thing\Intangible;
 
 /**
 * A US-style health insurance plan network.
-* @see http://schema.org/HealthPlanNetwork
+* @see schema:HealthPlanNetwork
 * @package Sohophp\SchemaOrg\Thing\Intangible
-
-*
 */
 class HealthPlanNetwork extends Intangible
 {
+   /**
+        * The tier(s) for this network.
+        */
+    protected $healthPlanNetworkTier = null;
+
+   /**
+        * Name or unique ID of network. (Networks are often reused across different insurance plans.)
+        */
+    protected $healthPlanNetworkId = null;
+
+   /**
+        * The costs to the patient for services under this network or formulary.
+        */
+    protected $healthPlanCostSharing = null;
+
 
     /**
-    * The tier(s) for this network.
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setHealthPlanNetworkTier
-    */
-    public function healthPlanNetworkTier($value)
-    {
-        $this->setProperty('healthPlanNetworkTier', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
+    * @param array|string $value
     * @return $this
     */
     public function setHealthPlanNetworkTier($value)
@@ -33,8 +35,9 @@ class HealthPlanNetwork extends Intangible
         $this->setProperty('healthPlanNetworkTier', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getHealthPlanNetworkTier()
     {
@@ -42,18 +45,7 @@ class HealthPlanNetwork extends Intangible
     }
 
     /**
-    * Name or unique ID of network. (Networks are often reused across different insurance plans).
-    * @param string|array $value
-    * @return $this
-    * @deprecated use setHealthPlanNetworkId
-    */
-    public function healthPlanNetworkId($value)
-    {
-        $this->setProperty('healthPlanNetworkId', $value);
-        return $this;
-    }
-   /**
-    * @param string|array $value
+    * @param array|string $value
     * @return $this
     */
     public function setHealthPlanNetworkId($value)
@@ -61,8 +53,9 @@ class HealthPlanNetwork extends Intangible
         $this->setProperty('healthPlanNetworkId', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getHealthPlanNetworkId()
     {
@@ -70,18 +63,7 @@ class HealthPlanNetwork extends Intangible
     }
 
     /**
-    * Whether The costs to the patient for services under this network or formulary.
-    * @param bool|array|string $value
-    * @return $this
-    * @deprecated use setHealthPlanCostSharing
-    */
-    public function healthPlanCostSharing($value)
-    {
-        $this->setProperty('healthPlanCostSharing', $value);
-        return $this;
-    }
-   /**
-    * @param bool|array|string $value
+    * @param array|string $value
     * @return $this
     */
     public function setHealthPlanCostSharing($value)
@@ -89,8 +71,9 @@ class HealthPlanNetwork extends Intangible
         $this->setProperty('healthPlanCostSharing', $value);
         return $this;
     }
+
     /**
-    * @return $this|string|array
+    * @return string|array|mixed
     */
     public function getHealthPlanCostSharing()
     {

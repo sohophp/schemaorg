@@ -5,10 +5,8 @@ use Sohophp\SchemaOrg\Thing\CreativeWork;
 
 /**
 * A piece of sculpture.
-* @see http://schema.org/Sculpture
+* @see schema:Sculpture
 * @package Sohophp\SchemaOrg\Thing\CreativeWork
-
-*
 */
 class Sculpture extends CreativeWork
 {

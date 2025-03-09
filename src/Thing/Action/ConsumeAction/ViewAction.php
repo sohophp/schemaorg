@@ -5,10 +5,8 @@ use Sohophp\SchemaOrg\Thing\Action\ConsumeAction;
 
 /**
 * The act of consuming static visual content.
-* @see http://schema.org/ViewAction
+* @see schema:ViewAction
 * @package Sohophp\SchemaOrg\Thing\Action\ConsumeAction
-
-*
 */
 class ViewAction extends ConsumeAction
 {
