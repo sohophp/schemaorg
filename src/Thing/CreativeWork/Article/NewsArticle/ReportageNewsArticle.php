@@ -26,7 +26,7 @@ use Sohophp\SchemaOrg\Thing\CreativeWork\Article\NewsArticle;
  * 
  * A [[ReportageNewsArticle]] which goes deeper into analysis can also be marked
  * with an additional type of [[AnalysisNewsArticle]].
-* @see schema:ReportageNewsArticle
+* @see http://schema.org/ReportageNewsArticle
 * @package Sohophp\SchemaOrg\Thing\CreativeWork\Article\NewsArticle
 */
 class ReportageNewsArticle extends NewsArticle

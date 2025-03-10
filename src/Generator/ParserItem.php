@@ -276,6 +276,7 @@ class ParserItem
     {
 
         $ids = $this->itemIds($parents);
+
         return array_map([$this, 'getItemById'], $ids);
 
     }
@@ -323,6 +324,8 @@ class ParserItem
         $parents[] = $parent;
         return $this->deepParent($parent->getItem(), $parents);
     }
+
+
 
     /**
      * @return array 所在路径

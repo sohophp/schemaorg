@@ -2,11 +2,13 @@
 namespace Sohophp\SchemaOrg\Thing\Action\TransferAction;
 
 use Sohophp\SchemaOrg\Thing\Action\TransferAction;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\MonetaryAmount;
+use Sohophp\SchemaOrg\Thing\Organization\LocalBusiness\FinancialService\BankOrCreditUnion;
 
 /**
 * The act of transferring money from one place to another place. This may occur
  * electronically or physically.
-* @see schema:MoneyTransfer
+* @see http://schema.org/MoneyTransfer
 * @package Sohophp\SchemaOrg\Thing\Action\TransferAction
 */
 class MoneyTransfer extends TransferAction
@@ -15,7 +17,7 @@ class MoneyTransfer extends TransferAction
 
     /**
         * The amount of money.
-        * @param array|string|mixed $value
+        * @param MonetaryAmount|array|string|mixed $value
     * @return $this
     */
     public function amount($value)
@@ -25,7 +27,7 @@ class MoneyTransfer extends TransferAction
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param MonetaryAmount|array|string|mixed $value
     * @return $this
     */
     public function setAmount($value)
@@ -46,8 +48,8 @@ class MoneyTransfer extends TransferAction
     /**
         * A bank or bank’s branch, financial institution or international financial
  * institution operating the beneficiary’s bank account or releasing funds for
- * the beneficiary.
-        * @param array|string|mixed $value
+ * the beneficiary
+        * @param BankOrCreditUnion|string|array|mixed $value
     * @return $this
     */
     public function beneficiaryBank($value)
@@ -57,7 +59,7 @@ class MoneyTransfer extends TransferAction
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param BankOrCreditUnion|string|array|mixed $value
     * @return $this
     */
     public function setBeneficiaryBank($value)

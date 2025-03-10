@@ -2,10 +2,11 @@
 namespace Sohophp\SchemaOrg\Thing\Action\AchieveAction;
 
 use Sohophp\SchemaOrg\Thing\Action\AchieveAction;
+use Sohophp\SchemaOrg\Thing\Person;
 
 /**
 * The act of being defeated in a competitive activity.
-* @see schema:LoseAction
+* @see http://schema.org/LoseAction
 * @package Sohophp\SchemaOrg\Thing\Action\AchieveAction
 */
 class LoseAction extends AchieveAction
@@ -14,7 +15,7 @@ class LoseAction extends AchieveAction
 
     /**
         * A sub property of participant. The winner of the action.
-        * @param array|string|mixed $value
+        * @param Person|array|string|mixed $value
     * @return $this
     */
     public function winner($value)
@@ -24,7 +25,7 @@ class LoseAction extends AchieveAction
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Person|array|string|mixed $value
     * @return $this
     */
     public function setWinner($value)

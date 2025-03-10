@@ -2,11 +2,12 @@
 namespace Sohophp\SchemaOrg\Thing\Action\AssessAction;
 
 use Sohophp\SchemaOrg\Thing\Action\AssessAction;
+use Sohophp\SchemaOrg\Thing\CreativeWork\Review;
 
 /**
 * The act of producing a balanced opinion about the object for an audience. An
  * agent reviews an object with participants resulting in a review.
-* @see schema:ReviewAction
+* @see http://schema.org/ReviewAction
 * @package Sohophp\SchemaOrg\Thing\Action\AssessAction
 */
 class ReviewAction extends AssessAction
@@ -16,7 +17,7 @@ class ReviewAction extends AssessAction
     /**
         * A sub property of result. The review that resulted in the performing of the
  * action.
-        * @param array|string|mixed $value
+        * @param Review|array|string|mixed $value
     * @return $this
     */
     public function resultReview($value)
@@ -26,7 +27,7 @@ class ReviewAction extends AssessAction
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Review|array|string|mixed $value
     * @return $this
     */
     public function setResultReview($value)

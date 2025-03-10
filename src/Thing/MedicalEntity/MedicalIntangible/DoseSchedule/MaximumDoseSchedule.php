@@ -8,7 +8,7 @@ use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalIntangible\DoseSchedule;
  * recommended by an authority or by the drug/supplement's manufacturer. Capture
  * the recommending authority in the recognizingAuthority property of
  * MedicalEntity.
-* @see schema:MaximumDoseSchedule
+* @see http://schema.org/MaximumDoseSchedule
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalIntangible\DoseSchedule
 */
 class MaximumDoseSchedule extends DoseSchedule

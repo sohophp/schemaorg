@@ -2,11 +2,12 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible\Audience;
 
 use Sohophp\SchemaOrg\Thing\Intangible\Audience;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\QuantitativeValue;
 
 /**
 * A set of characteristics belonging to businesses, e.g. who compose an item's
  * target audience.
-* @see schema:BusinessAudience
+* @see http://schema.org/BusinessAudience
 * @package Sohophp\SchemaOrg\Thing\Intangible\Audience
 */
 class BusinessAudience extends Audience
@@ -14,38 +15,38 @@ class BusinessAudience extends Audience
 
 
     /**
-        * The number of employees in an organization, e.g. business.
-        * @param array|string|mixed $value
+        * The age of the business.
+        * @param QuantitativeValue|array|string|mixed $value
     * @return $this
     */
-    public function numberOfEmployees($value)
+    public function yearsInOperation($value)
     {
-        $this->setProperty('numberOfEmployees', $value);
+        $this->setProperty('yearsInOperation', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param QuantitativeValue|array|string|mixed $value
     * @return $this
     */
-    public function setNumberOfEmployees($value)
+    public function setYearsInOperation($value)
     {
-        $this->setProperty('numberOfEmployees', $value);
+        $this->setProperty('yearsInOperation', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getNumberOfEmployees()
+    public function getYearsInOperation()
     {
-       return $this->getProperty('numberOfEmployees');
+       return $this->getProperty('yearsInOperation');
     }
 
 
     /**
         * The size of the business in annual revenue.
-        * @param array|string|mixed $value
+        * @param QuantitativeValue|array|string|mixed $value
     * @return $this
     */
     public function yearlyRevenue($value)
@@ -55,7 +56,7 @@ class BusinessAudience extends Audience
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param QuantitativeValue|array|string|mixed $value
     * @return $this
     */
     public function setYearlyRevenue($value)
@@ -74,32 +75,32 @@ class BusinessAudience extends Audience
 
 
     /**
-        * The age of the business.
-        * @param array|string|mixed $value
+        * The number of employees in an organization e.g. business.
+        * @param QuantitativeValue|array|string|mixed $value
     * @return $this
     */
-    public function yearsInOperation($value)
+    public function numberOfEmployees($value)
     {
-        $this->setProperty('yearsInOperation', $value);
+        $this->setProperty('numberOfEmployees', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param QuantitativeValue|array|string|mixed $value
     * @return $this
     */
-    public function setYearsInOperation($value)
+    public function setNumberOfEmployees($value)
     {
-        $this->setProperty('yearsInOperation', $value);
+        $this->setProperty('numberOfEmployees', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getYearsInOperation()
+    public function getNumberOfEmployees()
     {
-       return $this->getProperty('yearsInOperation');
+       return $this->getProperty('numberOfEmployees');
     }
 
 

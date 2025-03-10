@@ -2,11 +2,12 @@
 namespace Sohophp\SchemaOrg\Thing\Action\AssessAction;
 
 use Sohophp\SchemaOrg\Thing\Action\AssessAction;
+use Sohophp\SchemaOrg\Thing;
 
 /**
 * The act of expressing a preference from a set of options or a large or
  * unbounded set of choices/options.
-* @see schema:ChooseAction
+* @see http://schema.org/ChooseAction
 * @package Sohophp\SchemaOrg\Thing\Action\AssessAction
 */
 class ChooseAction extends AssessAction
@@ -15,7 +16,7 @@ class ChooseAction extends AssessAction
 
     /**
         * A sub property of object. The options subject to this action.
-        * @param array|string|mixed $value
+        * @param Thing|string|array|mixed $value
     * @return $this
     */
     public function actionOption($value)
@@ -25,7 +26,7 @@ class ChooseAction extends AssessAction
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Thing|string|array|mixed $value
     * @return $this
     */
     public function setActionOption($value)
@@ -45,7 +46,7 @@ class ChooseAction extends AssessAction
 
     /**
         * A sub property of object. The options subject to this action.
-        * @param array|string|mixed $value
+        * @param string|Thing|array|mixed $value
     * @return $this
     */
     public function option($value)
@@ -55,7 +56,7 @@ class ChooseAction extends AssessAction
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|Thing|array|mixed $value
     * @return $this
     */
     public function setOption($value)

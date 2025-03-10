@@ -12,7 +12,7 @@ use Sohophp\SchemaOrg\Thing\Intangible;
  * the main entities using ordinary properties like 'member' or 'actor'.
  * 
  * See also [blog post](http://blog.schema.org/2014/06/introducing-role.html).
-* @see schema:Role
+* @see http://schema.org/Role
 * @package Sohophp\SchemaOrg\Thing\Intangible
 */
 class Role extends Intangible
@@ -85,7 +85,7 @@ class Role extends Intangible
         * A position played, performed or filled by a person or organization, as part
  * of an organization. For example, an athlete in a SportsTeam might play in the
  * position named 'Quarterback'.
-        * @param array|string|mixed $value
+        * @param string|string|array|mixed $value
     * @return $this
     */
     public function namedPosition($value)
@@ -95,7 +95,7 @@ class Role extends Intangible
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|string|array|mixed $value
     * @return $this
     */
     public function setNamedPosition($value)
@@ -118,7 +118,7 @@ class Role extends Intangible
  * the team of creators for a comic book might fill the roles named 'inker',
  * 'penciller', and 'letterer'; or an athlete in a SportsTeam might play in the
  * position named 'Quarterback'.
-        * @param array|string|mixed $value
+        * @param string|string|array|mixed $value
     * @return $this
     */
     public function roleName($value)
@@ -128,7 +128,7 @@ class Role extends Intangible
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|string|array|mixed $value
     * @return $this
     */
     public function setRoleName($value)

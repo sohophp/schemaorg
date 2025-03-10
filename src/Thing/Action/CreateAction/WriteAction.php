@@ -2,10 +2,11 @@
 namespace Sohophp\SchemaOrg\Thing\Action\CreateAction;
 
 use Sohophp\SchemaOrg\Thing\Action\CreateAction;
+use Sohophp\SchemaOrg\Thing\Intangible\Language;
 
 /**
 * The act of authoring written creative content.
-* @see schema:WriteAction
+* @see http://schema.org/WriteAction
 * @package Sohophp\SchemaOrg\Thing\Action\CreateAction
 */
 class WriteAction extends CreateAction
@@ -16,7 +17,7 @@ class WriteAction extends CreateAction
         * The language of the content or performance or used in an action. Please use
  * one of the language codes from the [IETF BCP 47
  * standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
-        * @param array|string|mixed $value
+        * @param Language|string|array|mixed $value
     * @return $this
     */
     public function inLanguage($value)
@@ -26,7 +27,7 @@ class WriteAction extends CreateAction
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Language|string|array|mixed $value
     * @return $this
     */
     public function setInLanguage($value)
@@ -46,7 +47,7 @@ class WriteAction extends CreateAction
 
     /**
         * A sub property of instrument. The language used on this action.
-        * @param array|string|mixed $value
+        * @param Language|array|string|mixed $value
     * @return $this
     */
     public function language($value)
@@ -56,7 +57,7 @@ class WriteAction extends CreateAction
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Language|array|string|mixed $value
     * @return $this
     */
     public function setLanguage($value)

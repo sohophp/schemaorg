@@ -2,11 +2,13 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible;
 
 use Sohophp\SchemaOrg\Thing\Intangible;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\QuantitativeValue;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\QualitativeValue;
 
 /**
 * The frequency in MHz and the modulation used for a particular
  * BroadcastService.
-* @see schema:BroadcastFrequencySpecification
+* @see http://schema.org/BroadcastFrequencySpecification
 * @package Sohophp\SchemaOrg\Thing\Intangible
 */
 class BroadcastFrequencySpecification extends Intangible
@@ -14,38 +16,8 @@ class BroadcastFrequencySpecification extends Intangible
 
 
     /**
-        * The modulation (e.g. FM, AM, etc) used by a particular broadcast service.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function broadcastSignalModulation($value)
-    {
-        $this->setProperty('broadcastSignalModulation', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setBroadcastSignalModulation($value)
-    {
-        $this->setProperty('broadcastSignalModulation', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getBroadcastSignalModulation()
-    {
-       return $this->getProperty('broadcastSignalModulation');
-    }
-
-
-    /**
         * The frequency in MHz for a particular broadcast.
-        * @param array|string|mixed $value
+        * @param QuantitativeValue|array|string|mixed $value
     * @return $this
     */
     public function broadcastFrequencyValue($value)
@@ -55,7 +27,7 @@ class BroadcastFrequencySpecification extends Intangible
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param QuantitativeValue|array|string|mixed $value
     * @return $this
     */
     public function setBroadcastFrequencyValue($value)
@@ -75,7 +47,7 @@ class BroadcastFrequencySpecification extends Intangible
 
     /**
         * The subchannel used for the broadcast.
-        * @param array|string|mixed $value
+        * @param string|array|mixed $value
     * @return $this
     */
     public function broadcastSubChannel($value)
@@ -85,7 +57,7 @@ class BroadcastFrequencySpecification extends Intangible
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setBroadcastSubChannel($value)
@@ -100,6 +72,36 @@ class BroadcastFrequencySpecification extends Intangible
     public function getBroadcastSubChannel()
     {
        return $this->getProperty('broadcastSubChannel');
+    }
+
+
+    /**
+        * The modulation (e.g. FM, AM, etc) used by a particular broadcast service
+        * @param QualitativeValue|string|array|mixed $value
+    * @return $this
+    */
+    public function broadcastSignalModulation($value)
+    {
+        $this->setProperty('broadcastSignalModulation', $value);
+        return $this;
+    }
+
+    /**
+    * @param QualitativeValue|string|array|mixed $value
+    * @return $this
+    */
+    public function setBroadcastSignalModulation($value)
+    {
+        $this->setProperty('broadcastSignalModulation', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getBroadcastSignalModulation()
+    {
+       return $this->getProperty('broadcastSignalModulation');
     }
 
 

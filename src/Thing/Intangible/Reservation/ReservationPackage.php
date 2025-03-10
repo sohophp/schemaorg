@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\Intangible\Reservation;
 
 /**
 * A group of multiple reservations with common values for all sub-reservations.
-* @see schema:ReservationPackage
+* @see http://schema.org/ReservationPackage
 * @package Sohophp\SchemaOrg\Thing\Intangible\Reservation
 */
 class ReservationPackage extends Reservation
@@ -15,7 +15,7 @@ class ReservationPackage extends Reservation
     /**
         * The individual reservations included in the package. Typically a repeated
  * property.
-        * @param array|string|mixed $value
+        * @param Reservation|array|string|mixed $value
     * @return $this
     */
     public function subReservation($value)
@@ -25,7 +25,7 @@ class ReservationPackage extends Reservation
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Reservation|array|string|mixed $value
     * @return $this
     */
     public function setSubReservation($value)

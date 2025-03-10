@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Text;
 
 /**
 * Text representing a CSS selector.
-* @see schema:CssSelectorType
+* @see http://schema.org/CssSelectorType
 * @package Sohophp\SchemaOrg\Text
 */
 class CssSelectorType extends Text

@@ -2,10 +2,12 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible\Role\OrganizationRole;
 
 use Sohophp\SchemaOrg\Thing\Intangible\Role\OrganizationRole;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\MonetaryAmount;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\PriceSpecification;
 
 /**
 * A subclass of OrganizationRole used to describe employee relationships.
-* @see schema:EmployeeRole
+* @see http://schema.org/EmployeeRole
 * @package Sohophp\SchemaOrg\Thing\Intangible\Role\OrganizationRole
 */
 class EmployeeRole extends OrganizationRole
@@ -13,10 +15,10 @@ class EmployeeRole extends OrganizationRole
 
 
     /**
-        * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217))
+        * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) )
  * used for the main salary information in this job posting or for this
  * employee.
-        * @param array|string|mixed $value
+        * @param string|array|mixed $value
     * @return $this
     */
     public function salaryCurrency($value)
@@ -26,7 +28,7 @@ class EmployeeRole extends OrganizationRole
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setSalaryCurrency($value)
@@ -46,7 +48,7 @@ class EmployeeRole extends OrganizationRole
 
     /**
         * The base salary of the job or of an employee in an EmployeeRole.
-        * @param array|string|mixed $value
+        * @param MonetaryAmount|PriceSpecification|array|string|mixed $value
     * @return $this
     */
     public function baseSalary($value)
@@ -56,7 +58,7 @@ class EmployeeRole extends OrganizationRole
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param MonetaryAmount|PriceSpecification|array|string|mixed $value
     * @return $this
     */
     public function setBaseSalary($value)

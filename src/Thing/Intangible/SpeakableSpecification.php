@@ -2,13 +2,15 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible;
 
 use Sohophp\SchemaOrg\Thing\Intangible;
+use Sohophp\SchemaOrg\Text\CssSelectorType;
+use Sohophp\SchemaOrg\Text\XPathType;
 
 /**
 * A SpeakableSpecification indicates (typically via [[xpath]] or
  * [[cssSelector]]) sections of a document that are highlighted as particularly
  * [[speakable]]. Instances of this type are expected to be used primarily as
  * values of the [[speakable]] property.
-* @see schema:SpeakableSpecification
+* @see http://schema.org/SpeakableSpecification
 * @package Sohophp\SchemaOrg\Thing\Intangible
 */
 class SpeakableSpecification extends Intangible
@@ -19,7 +21,7 @@ class SpeakableSpecification extends Intangible
         * A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]].
  * In the latter case, multiple matches within a page can constitute a single
  * conceptual "Web page element".
-        * @param array|string|mixed $value
+        * @param CssSelectorType|array|string|mixed $value
     * @return $this
     */
     public function cssSelector($value)
@@ -29,7 +31,7 @@ class SpeakableSpecification extends Intangible
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param CssSelectorType|array|string|mixed $value
     * @return $this
     */
     public function setCssSelector($value)
@@ -51,7 +53,7 @@ class SpeakableSpecification extends Intangible
         * An XPath, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the
  * latter case, multiple matches within a page can constitute a single
  * conceptual "Web page element".
-        * @param array|string|mixed $value
+        * @param XPathType|array|string|mixed $value
     * @return $this
     */
     public function xpath($value)
@@ -61,7 +63,7 @@ class SpeakableSpecification extends Intangible
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param XPathType|array|string|mixed $value
     * @return $this
     */
     public function setXpath($value)

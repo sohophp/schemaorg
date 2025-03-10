@@ -2,11 +2,13 @@
 namespace Sohophp\SchemaOrg\Thing\CreativeWork\Dataset;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork\Dataset;
+use Sohophp\SchemaOrg\Thing;
+use Sohophp\SchemaOrg\Thing\Intangible\DataFeedItem;
 
 /**
 * A single feed providing structured information about one or more entities or
  * topics.
-* @see schema:DataFeed
+* @see http://schema.org/DataFeed
 * @package Sohophp\SchemaOrg\Thing\CreativeWork\Dataset
 */
 class DataFeed extends Dataset
@@ -14,8 +16,8 @@ class DataFeed extends Dataset
 
 
     /**
-        * An item within a data feed. Data feeds may have many elements.
-        * @param array|string|mixed $value
+        * An item within in a data feed. Data feeds may have many elements.
+        * @param string|Thing|DataFeedItem|array|mixed $value
     * @return $this
     */
     public function dataFeedElement($value)
@@ -25,7 +27,7 @@ class DataFeed extends Dataset
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|Thing|DataFeedItem|array|mixed $value
     * @return $this
     */
     public function setDataFeedElement($value)

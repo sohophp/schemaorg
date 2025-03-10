@@ -2,12 +2,14 @@
 namespace Sohophp\SchemaOrg\Thing\Action\TradeAction;
 
 use Sohophp\SchemaOrg\Thing\Action\TradeAction;
+use Sohophp\SchemaOrg\Thing\Person;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\WarrantyPromise;
 
 /**
 * The act of taking money from a buyer in exchange for goods or services
  * rendered. An agent sells an object, product, or service to a buyer for a
  * price. Reciprocal of BuyAction.
-* @see schema:SellAction
+* @see http://schema.org/SellAction
 * @package Sohophp\SchemaOrg\Thing\Action\TradeAction
 */
 class SellAction extends TradeAction
@@ -17,7 +19,7 @@ class SellAction extends TradeAction
     /**
         * A sub property of participant. The participant/person/organization that
  * bought the object.
-        * @param array|string|mixed $value
+        * @param Person|array|string|mixed $value
     * @return $this
     */
     public function buyer($value)
@@ -27,7 +29,7 @@ class SellAction extends TradeAction
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Person|array|string|mixed $value
     * @return $this
     */
     public function setBuyer($value)
@@ -47,7 +49,7 @@ class SellAction extends TradeAction
 
     /**
         * The warranty promise(s) included in the offer.
-        * @param array|string|mixed $value
+        * @param WarrantyPromise|array|string|mixed $value
     * @return $this
     */
     public function warrantyPromise($value)
@@ -57,7 +59,7 @@ class SellAction extends TradeAction
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param WarrantyPromise|array|string|mixed $value
     * @return $this
     */
     public function setWarrantyPromise($value)

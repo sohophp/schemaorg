@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\Place\CivicStructure;
 
 /**
 * A park.
-* @see schema:Park
+* @see http://schema.org/Park
 * @package Sohophp\SchemaOrg\Thing\Place\CivicStructure
 */
 class Park extends CivicStructure

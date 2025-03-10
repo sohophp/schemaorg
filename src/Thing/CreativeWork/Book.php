@@ -2,10 +2,12 @@
 namespace Sohophp\SchemaOrg\Thing\CreativeWork;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\BookFormatType;
+use Sohophp\SchemaOrg\Thing\Person;
 
 /**
 * A book.
-* @see schema:Book
+* @see http://schema.org/Book
 * @package Sohophp\SchemaOrg\Thing\CreativeWork
 */
 class Book extends CreativeWork
@@ -13,38 +15,8 @@ class Book extends CreativeWork
 
 
     /**
-        * Indicates whether the book is an abridged edition.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function abridged($value)
-    {
-        $this->setProperty('abridged', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setAbridged($value)
-    {
-        $this->setProperty('abridged', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getAbridged()
-    {
-       return $this->getProperty('abridged');
-    }
-
-
-    /**
         * The ISBN of the book.
-        * @param array|string|mixed $value
+        * @param string|array|mixed $value
     * @return $this
     */
     public function isbn($value)
@@ -54,7 +26,7 @@ class Book extends CreativeWork
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setIsbn($value)
@@ -74,7 +46,7 @@ class Book extends CreativeWork
 
     /**
         * The edition of the book.
-        * @param array|string|mixed $value
+        * @param string|array|mixed $value
     * @return $this
     */
     public function bookEdition($value)
@@ -84,7 +56,7 @@ class Book extends CreativeWork
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setBookEdition($value)
@@ -103,8 +75,38 @@ class Book extends CreativeWork
 
 
     /**
+        * The format of the book.
+        * @param BookFormatType|array|string|mixed $value
+    * @return $this
+    */
+    public function bookFormat($value)
+    {
+        $this->setProperty('bookFormat', $value);
+        return $this;
+    }
+
+    /**
+    * @param BookFormatType|array|string|mixed $value
+    * @return $this
+    */
+    public function setBookFormat($value)
+    {
+        $this->setProperty('bookFormat', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getBookFormat()
+    {
+       return $this->getProperty('bookFormat');
+    }
+
+
+    /**
         * The number of pages in the book.
-        * @param array|string|mixed $value
+        * @param int|array|string|mixed $value
     * @return $this
     */
     public function numberOfPages($value)
@@ -114,7 +116,7 @@ class Book extends CreativeWork
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param int|array|string|mixed $value
     * @return $this
     */
     public function setNumberOfPages($value)
@@ -134,7 +136,7 @@ class Book extends CreativeWork
 
     /**
         * The illustrator of the book.
-        * @param array|string|mixed $value
+        * @param Person|array|string|mixed $value
     * @return $this
     */
     public function illustrator($value)
@@ -144,7 +146,7 @@ class Book extends CreativeWork
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Person|array|string|mixed $value
     * @return $this
     */
     public function setIllustrator($value)
@@ -163,32 +165,32 @@ class Book extends CreativeWork
 
 
     /**
-        * The format of the book.
-        * @param array|string|mixed $value
+        * Indicates whether the book is an abridged edition.
+        * @param bool|array|string|mixed $value
     * @return $this
     */
-    public function bookFormat($value)
+    public function abridged($value)
     {
-        $this->setProperty('bookFormat', $value);
+        $this->setProperty('abridged', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param bool|array|string|mixed $value
     * @return $this
     */
-    public function setBookFormat($value)
+    public function setAbridged($value)
     {
-        $this->setProperty('bookFormat', $value);
+        $this->setProperty('abridged', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getBookFormat()
+    public function getAbridged()
     {
-       return $this->getProperty('bookFormat');
+       return $this->getProperty('abridged');
     }
 
 

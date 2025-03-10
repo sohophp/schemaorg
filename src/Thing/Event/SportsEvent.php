@@ -2,10 +2,12 @@
 namespace Sohophp\SchemaOrg\Thing\Event;
 
 use Sohophp\SchemaOrg\Thing\Event;
+use Sohophp\SchemaOrg\Thing\Organization\SportsOrganization\SportsTeam;
+use Sohophp\SchemaOrg\Thing\Person;
 
 /**
 * Event type: Sports event.
-* @see schema:SportsEvent
+* @see http://schema.org/SportsEvent
 * @package Sohophp\SchemaOrg\Thing\Event
 */
 class SportsEvent extends Event
@@ -13,68 +15,8 @@ class SportsEvent extends Event
 
 
     /**
-        * A type of sport (e.g. Baseball).
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function sport($value)
-    {
-        $this->setProperty('sport', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setSport($value)
-    {
-        $this->setProperty('sport', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getSport()
-    {
-       return $this->getProperty('sport');
-    }
-
-
-    /**
-        * The home team in a sports event.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function homeTeam($value)
-    {
-        $this->setProperty('homeTeam', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setHomeTeam($value)
-    {
-        $this->setProperty('homeTeam', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getHomeTeam()
-    {
-       return $this->getProperty('homeTeam');
-    }
-
-
-    /**
         * The away team in a sports event.
-        * @param array|string|mixed $value
+        * @param SportsTeam|Person|array|string|mixed $value
     * @return $this
     */
     public function awayTeam($value)
@@ -84,7 +26,7 @@ class SportsEvent extends Event
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param SportsTeam|Person|array|string|mixed $value
     * @return $this
     */
     public function setAwayTeam($value)
@@ -103,8 +45,38 @@ class SportsEvent extends Event
 
 
     /**
+        * The home team in a sports event.
+        * @param Person|SportsTeam|array|string|mixed $value
+    * @return $this
+    */
+    public function homeTeam($value)
+    {
+        $this->setProperty('homeTeam', $value);
+        return $this;
+    }
+
+    /**
+    * @param Person|SportsTeam|array|string|mixed $value
+    * @return $this
+    */
+    public function setHomeTeam($value)
+    {
+        $this->setProperty('homeTeam', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getHomeTeam()
+    {
+       return $this->getProperty('homeTeam');
+    }
+
+
+    /**
         * A competitor in a sports event.
-        * @param array|string|mixed $value
+        * @param Person|SportsTeam|array|string|mixed $value
     * @return $this
     */
     public function competitor($value)
@@ -114,7 +86,7 @@ class SportsEvent extends Event
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Person|SportsTeam|array|string|mixed $value
     * @return $this
     */
     public function setCompetitor($value)

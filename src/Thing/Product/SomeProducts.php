@@ -2,10 +2,11 @@
 namespace Sohophp\SchemaOrg\Thing\Product;
 
 use Sohophp\SchemaOrg\Thing\Product;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\QuantitativeValue;
 
 /**
 * A placeholder for multiple similar products of the same kind.
-* @see schema:SomeProducts
+* @see http://schema.org/SomeProducts
 * @package Sohophp\SchemaOrg\Thing\Product
 */
 class SomeProducts extends Product
@@ -14,7 +15,7 @@ class SomeProducts extends Product
 
     /**
         * The current approximate inventory level for the item or items.
-        * @param array|string|mixed $value
+        * @param QuantitativeValue|array|string|mixed $value
     * @return $this
     */
     public function inventoryLevel($value)
@@ -24,7 +25,7 @@ class SomeProducts extends Product
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param QuantitativeValue|array|string|mixed $value
     * @return $this
     */
     public function setInventoryLevel($value)

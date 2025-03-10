@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\Action\ConsumeAction;
 
 /**
 * The act of swallowing solid objects.
-* @see schema:EatAction
+* @see http://schema.org/EatAction
 * @package Sohophp\SchemaOrg\Thing\Action\ConsumeAction
 */
 class EatAction extends ConsumeAction

@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\CreativeWork\WebPageElement;
 
 /**
 * A table on a Web page.
-* @see schema:Table
+* @see http://schema.org/Table
 * @package Sohophp\SchemaOrg\Thing\CreativeWork\WebPageElement
 */
 class Table extends WebPageElement

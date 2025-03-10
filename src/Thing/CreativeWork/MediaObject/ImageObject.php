@@ -2,10 +2,11 @@
 namespace Sohophp\SchemaOrg\Thing\CreativeWork\MediaObject;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork\MediaObject;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\PropertyValue;
 
 /**
 * An image file.
-* @see schema:ImageObject
+* @see http://schema.org/ImageObject
 * @package Sohophp\SchemaOrg\Thing\CreativeWork\MediaObject
 */
 class ImageObject extends MediaObject
@@ -13,39 +14,8 @@ class ImageObject extends MediaObject
 
 
     /**
-        * The caption for this object. For downloadable machine formats (closed
- * caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function caption($value)
-    {
-        $this->setProperty('caption', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setCaption($value)
-    {
-        $this->setProperty('caption', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getCaption()
-    {
-       return $this->getProperty('caption');
-    }
-
-
-    /**
         * exif data for this object.
-        * @param array|string|mixed $value
+        * @param string|PropertyValue|array|mixed $value
     * @return $this
     */
     public function exifData($value)
@@ -55,7 +25,7 @@ class ImageObject extends MediaObject
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|PropertyValue|array|mixed $value
     * @return $this
     */
     public function setExifData($value)
@@ -74,38 +44,38 @@ class ImageObject extends MediaObject
 
 
     /**
-        * Represents textual captioning from a [[MediaObject]], e.g. text of a 'meme'.
-        * @param array|string|mixed $value
+        * Thumbnail image for an image or video.
+        * @param ImageObject|array|string|mixed $value
     * @return $this
     */
-    public function embeddedTextCaption($value)
+    public function thumbnail($value)
     {
-        $this->setProperty('embeddedTextCaption', $value);
+        $this->setProperty('thumbnail', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param ImageObject|array|string|mixed $value
     * @return $this
     */
-    public function setEmbeddedTextCaption($value)
+    public function setThumbnail($value)
     {
-        $this->setProperty('embeddedTextCaption', $value);
+        $this->setProperty('thumbnail', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getEmbeddedTextCaption()
+    public function getThumbnail()
     {
-       return $this->getProperty('embeddedTextCaption');
+       return $this->getProperty('thumbnail');
     }
 
 
     /**
         * Indicates whether this image is representative of the content of the page.
-        * @param array|string|mixed $value
+        * @param bool|array|string|mixed $value
     * @return $this
     */
     public function representativeOfPage($value)
@@ -115,7 +85,7 @@ class ImageObject extends MediaObject
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param bool|array|string|mixed $value
     * @return $this
     */
     public function setRepresentativeOfPage($value)
@@ -130,6 +100,37 @@ class ImageObject extends MediaObject
     public function getRepresentativeOfPage()
     {
        return $this->getProperty('representativeOfPage');
+    }
+
+
+    /**
+        * The caption for this object. For downloadable machine formats (closed
+ * caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
+        * @param string|MediaObject|array|mixed $value
+    * @return $this
+    */
+    public function caption($value)
+    {
+        $this->setProperty('caption', $value);
+        return $this;
+    }
+
+    /**
+    * @param string|MediaObject|array|mixed $value
+    * @return $this
+    */
+    public function setCaption($value)
+    {
+        $this->setProperty('caption', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getCaption()
+    {
+       return $this->getProperty('caption');
     }
 
 

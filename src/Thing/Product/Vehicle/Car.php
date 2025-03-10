@@ -2,46 +2,15 @@
 namespace Sohophp\SchemaOrg\Thing\Product\Vehicle;
 
 use Sohophp\SchemaOrg\Thing\Product\Vehicle;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\QuantitativeValue;
 
 /**
 * A car is a wheeled, self-powered motor vehicle used for transportation.
-* @see schema:Car
+* @see http://schema.org/Car
 * @package Sohophp\SchemaOrg\Thing\Product\Vehicle
 */
 class Car extends Vehicle
 {
-
-
-    /**
-        * The ACRISS Car Classification Code is a code used by many car rental
- * companies, for classifying vehicles. ACRISS stands for Association of Car
- * Rental Industry Systems and Standards.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function acrissCode($value)
-    {
-        $this->setProperty('acrissCode', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setAcrissCode($value)
-    {
-        $this->setProperty('acrissCode', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getAcrissCode()
-    {
-       return $this->getProperty('acrissCode');
-    }
 
 
     /**
@@ -56,7 +25,7 @@ class Car extends Vehicle
  * additional information using [[valueReference]]
  * * Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate
  * ranges.
-        * @param array|string|mixed $value
+        * @param QuantitativeValue|array|string|mixed $value
     * @return $this
     */
     public function roofLoad($value)
@@ -66,7 +35,7 @@ class Car extends Vehicle
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param QuantitativeValue|array|string|mixed $value
     * @return $this
     */
     public function setRoofLoad($value)
@@ -81,6 +50,38 @@ class Car extends Vehicle
     public function getRoofLoad()
     {
        return $this->getProperty('roofLoad');
+    }
+
+
+    /**
+        * The ACRISS Car Classification Code is a code used by many car rental
+ * companies, for classifying vehicles. ACRISS stands for Association of Car
+ * Rental Industry Systems and Standards.
+        * @param string|array|mixed $value
+    * @return $this
+    */
+    public function acrissCode($value)
+    {
+        $this->setProperty('acrissCode', $value);
+        return $this;
+    }
+
+    /**
+    * @param string|array|mixed $value
+    * @return $this
+    */
+    public function setAcrissCode($value)
+    {
+        $this->setProperty('acrissCode', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getAcrissCode()
+    {
+       return $this->getProperty('acrissCode');
     }
 
 

@@ -2,14 +2,45 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
 
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\MonetaryAmount;
 
 /**
 * A structured value representing repayment.
-* @see schema:RepaymentSpecification
+* @see http://schema.org/RepaymentSpecification
 * @package Sohophp\SchemaOrg\Thing\Intangible\StructuredValue
 */
 class RepaymentSpecification extends StructuredValue
 {
+
+
+    /**
+        * The amount to be paid as a penalty in the event of early payment of the loan.
+        * @param MonetaryAmount|array|string|mixed $value
+    * @return $this
+    */
+    public function earlyPrepaymentPenalty($value)
+    {
+        $this->setProperty('earlyPrepaymentPenalty', $value);
+        return $this;
+    }
+
+    /**
+    * @param MonetaryAmount|array|string|mixed $value
+    * @return $this
+    */
+    public function setEarlyPrepaymentPenalty($value)
+    {
+        $this->setProperty('earlyPrepaymentPenalty', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getEarlyPrepaymentPenalty()
+    {
+       return $this->getProperty('earlyPrepaymentPenalty');
+    }
 
 
     /**
@@ -77,7 +108,7 @@ class RepaymentSpecification extends StructuredValue
 
     /**
         * The amount of money to pay in a single payment.
-        * @param array|string|mixed $value
+        * @param MonetaryAmount|array|string|mixed $value
     * @return $this
     */
     public function loanPaymentAmount($value)
@@ -87,7 +118,7 @@ class RepaymentSpecification extends StructuredValue
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param MonetaryAmount|array|string|mixed $value
     * @return $this
     */
     public function setLoanPaymentAmount($value)
@@ -109,7 +140,7 @@ class RepaymentSpecification extends StructuredValue
         * a type of payment made in cash during the onset of the purchase of an
  * expensive good/service. The payment typically represents only a percentage of
  * the full purchase price.
-        * @param array|string|mixed $value
+        * @param MonetaryAmount|array|string|mixed $value
     * @return $this
     */
     public function downPayment($value)
@@ -119,7 +150,7 @@ class RepaymentSpecification extends StructuredValue
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param MonetaryAmount|array|string|mixed $value
     * @return $this
     */
     public function setDownPayment($value)
@@ -134,36 +165,6 @@ class RepaymentSpecification extends StructuredValue
     public function getDownPayment()
     {
        return $this->getProperty('downPayment');
-    }
-
-
-    /**
-        * The amount to be paid as a penalty in the event of early payment of the loan.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function earlyPrepaymentPenalty($value)
-    {
-        $this->setProperty('earlyPrepaymentPenalty', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setEarlyPrepaymentPenalty($value)
-    {
-        $this->setProperty('earlyPrepaymentPenalty', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getEarlyPrepaymentPenalty()
-    {
-       return $this->getProperty('earlyPrepaymentPenalty');
     }
 
 

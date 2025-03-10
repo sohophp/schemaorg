@@ -2,10 +2,13 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible;
 
 use Sohophp\SchemaOrg\Thing\Intangible;
+use Sohophp\SchemaOrg\Thing\Intangible\BroadcastFrequencySpecification;
+use Sohophp\SchemaOrg\Thing\Intangible\Service\CableOrSatelliteService;
+use Sohophp\SchemaOrg\Thing\Intangible\Service\BroadcastService;
 
 /**
 * A unique instance of a BroadcastService on a CableOrSatelliteService lineup.
-* @see schema:BroadcastChannel
+* @see http://schema.org/BroadcastChannel
 * @package Sohophp\SchemaOrg\Thing\Intangible
 */
 class BroadcastChannel extends Intangible
@@ -13,40 +16,10 @@ class BroadcastChannel extends Intangible
 
 
     /**
-        * The CableOrSatelliteService offering the channel.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function inBroadcastLineup($value)
-    {
-        $this->setProperty('inBroadcastLineup', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setInBroadcastLineup($value)
-    {
-        $this->setProperty('inBroadcastLineup', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getInBroadcastLineup()
-    {
-       return $this->getProperty('inBroadcastLineup');
-    }
-
-
-    /**
         * The frequency used for over-the-air broadcasts. Numeric values or simple
- * ranges, e.g. 87-99. In addition a shortcut idiom is supported for frequencies
+ * ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences
  * of AM and FM radio channels, e.g. "87 FM".
-        * @param array|string|mixed $value
+        * @param string|BroadcastFrequencySpecification|array|mixed $value
     * @return $this
     */
     public function broadcastFrequency($value)
@@ -56,7 +29,7 @@ class BroadcastChannel extends Intangible
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|BroadcastFrequencySpecification|array|mixed $value
     * @return $this
     */
     public function setBroadcastFrequency($value)
@@ -77,7 +50,7 @@ class BroadcastChannel extends Intangible
     /**
         * The unique address by which the BroadcastService can be identified in a
  * provider lineup. In US, this is typically a number.
-        * @param array|string|mixed $value
+        * @param string|array|mixed $value
     * @return $this
     */
     public function broadcastChannelId($value)
@@ -87,7 +60,7 @@ class BroadcastChannel extends Intangible
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setBroadcastChannelId($value)
@@ -108,7 +81,7 @@ class BroadcastChannel extends Intangible
     /**
         * The type of service required to have access to the channel (e.g. Standard or
  * Premium).
-        * @param array|string|mixed $value
+        * @param string|array|mixed $value
     * @return $this
     */
     public function broadcastServiceTier($value)
@@ -118,7 +91,7 @@ class BroadcastChannel extends Intangible
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setBroadcastServiceTier($value)
@@ -137,8 +110,38 @@ class BroadcastChannel extends Intangible
 
 
     /**
+        * The CableOrSatelliteService offering the channel.
+        * @param CableOrSatelliteService|array|string|mixed $value
+    * @return $this
+    */
+    public function inBroadcastLineup($value)
+    {
+        $this->setProperty('inBroadcastLineup', $value);
+        return $this;
+    }
+
+    /**
+    * @param CableOrSatelliteService|array|string|mixed $value
+    * @return $this
+    */
+    public function setInBroadcastLineup($value)
+    {
+        $this->setProperty('inBroadcastLineup', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getInBroadcastLineup()
+    {
+       return $this->getProperty('inBroadcastLineup');
+    }
+
+
+    /**
         * The BroadcastService offered on this channel.
-        * @param array|string|mixed $value
+        * @param BroadcastService|array|string|mixed $value
     * @return $this
     */
     public function providesBroadcastService($value)
@@ -148,7 +151,7 @@ class BroadcastChannel extends Intangible
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param BroadcastService|array|string|mixed $value
     * @return $this
     */
     public function setProvidesBroadcastService($value)
@@ -168,7 +171,7 @@ class BroadcastChannel extends Intangible
 
     /**
         * Genre of the creative work, broadcast channel or group.
-        * @param array|string|mixed $value
+        * @param string|string|array|mixed $value
     * @return $this
     */
     public function genre($value)
@@ -178,7 +181,7 @@ class BroadcastChannel extends Intangible
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|string|array|mixed $value
     * @return $this
     */
     public function setGenre($value)

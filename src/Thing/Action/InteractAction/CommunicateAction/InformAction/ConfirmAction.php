@@ -10,7 +10,7 @@ use Sohophp\SchemaOrg\Thing\Action\InteractAction\CommunicateAction\InformAction
  * Related actions:
  * 
  * * [[CancelAction]]: The antonym of ConfirmAction.
-* @see schema:ConfirmAction
+* @see http://schema.org/ConfirmAction
 * @package Sohophp\SchemaOrg\Thing\Action\InteractAction\CommunicateAction\InformAction
 */
 class ConfirmAction extends InformAction

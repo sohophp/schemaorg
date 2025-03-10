@@ -14,7 +14,7 @@ use Sohophp\SchemaOrg\Thing\Intangible\Enumeration;
  * * http://purl.org/goodrelations/v1#Enduser
  * * http://purl.org/goodrelations/v1#PublicInstitution
  * * http://purl.org/goodrelations/v1#Reseller
-* @see schema:BusinessEntityType
+* @see http://schema.org/BusinessEntityType
 * @package Sohophp\SchemaOrg\Thing\Intangible\Enumeration
 */
 class BusinessEntityType extends Enumeration

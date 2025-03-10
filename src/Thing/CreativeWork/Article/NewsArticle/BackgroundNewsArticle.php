@@ -12,7 +12,7 @@ use Sohophp\SchemaOrg\Thing\CreativeWork\Article\NewsArticle;
  * non-news setting are often described using [[Book]] or [[Article]], in
  * particular [[ScholarlyArticle]]. See also [[NewsArticle]] for related
  * vocabulary from a learning/education perspective.
-* @see schema:BackgroundNewsArticle
+* @see http://schema.org/BackgroundNewsArticle
 * @package Sohophp\SchemaOrg\Thing\CreativeWork\Article\NewsArticle
 */
 class BackgroundNewsArticle extends NewsArticle

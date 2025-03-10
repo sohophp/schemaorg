@@ -2,11 +2,12 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible\ListItem;
 
 use Sohophp\SchemaOrg\Thing\Intangible\ListItem;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\QuantitativeValue;
 
 /**
 * An item used as either a tool or supply when performing the instructions for
- * how to achieve a result.
-* @see schema:HowToItem
+ * how to to achieve a result.
+* @see http://schema.org/HowToItem
 * @package Sohophp\SchemaOrg\Thing\Intangible\ListItem
 */
 class HowToItem extends ListItem
@@ -15,7 +16,7 @@ class HowToItem extends ListItem
 
     /**
         * The required quantity of the item(s).
-        * @param array|string|mixed $value
+        * @param string|QuantitativeValue|array|mixed $value
     * @return $this
     */
     public function requiredQuantity($value)
@@ -25,7 +26,7 @@ class HowToItem extends ListItem
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|QuantitativeValue|array|mixed $value
     * @return $this
     */
     public function setRequiredQuantity($value)

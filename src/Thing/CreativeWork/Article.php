@@ -2,6 +2,7 @@
 namespace Sohophp\SchemaOrg\Thing\CreativeWork;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork;
+use Sohophp\SchemaOrg\Thing\Intangible\SpeakableSpecification;
 
 /**
 * An article, such as a news article or piece of investigative report.
@@ -10,7 +11,7 @@ use Sohophp\SchemaOrg\Thing\CreativeWork;
  * 
  * See also [blog
  * post](http://blog.schema.org/2014/09/schemaorg-support-for-bibliographic_2.html).
-* @see schema:Article
+* @see http://schema.org/Article
 * @package Sohophp\SchemaOrg\Thing\CreativeWork
 */
 class Article extends CreativeWork
@@ -18,99 +19,9 @@ class Article extends CreativeWork
 
 
     /**
-        * The actual body of the article.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function articleBody($value)
-    {
-        $this->setProperty('articleBody', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setArticleBody($value)
-    {
-        $this->setProperty('articleBody', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getArticleBody()
-    {
-       return $this->getProperty('articleBody');
-    }
-
-
-    /**
-        * The page on which the work ends; for example "138" or "xvi".
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function pageEnd($value)
-    {
-        $this->setProperty('pageEnd', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setPageEnd($value)
-    {
-        $this->setProperty('pageEnd', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getPageEnd()
-    {
-       return $this->getProperty('pageEnd');
-    }
-
-
-    /**
-        * The number of words in the text of the Article.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function wordCount($value)
-    {
-        $this->setProperty('wordCount', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setWordCount($value)
-    {
-        $this->setProperty('wordCount', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getWordCount()
-    {
-       return $this->getProperty('wordCount');
-    }
-
-
-    /**
         * Any description of pages that is not separated into pageStart and pageEnd;
  * for example, "1-6, 9, 55" or "10-12, 46-49".
-        * @param array|string|mixed $value
+        * @param string|array|mixed $value
     * @return $this
     */
     public function pagination($value)
@@ -120,7 +31,7 @@ class Article extends CreativeWork
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setPagination($value)
@@ -139,6 +50,36 @@ class Article extends CreativeWork
 
 
     /**
+        * The number of words in the text of the Article.
+        * @param int|array|string|mixed $value
+    * @return $this
+    */
+    public function wordCount($value)
+    {
+        $this->setProperty('wordCount', $value);
+        return $this;
+    }
+
+    /**
+    * @param int|array|string|mixed $value
+    * @return $this
+    */
+    public function setWordCount($value)
+    {
+        $this->setProperty('wordCount', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getWordCount()
+    {
+       return $this->getProperty('wordCount');
+    }
+
+
+    /**
         * Indicates sections of a Web page that are particularly 'speakable' in the
  * sense of being highlighted as being especially appropriate for text-to-speech
  * conversion. Other sections of a page may also be usefully spoken in
@@ -152,19 +93,18 @@ class Article extends CreativeWork
  * being annotated. The simplest use of *speakable* has (potentially relative)
  * URL values, referencing identified sections of the document concerned.
  * 
- * 2.) CSS Selectors - addresses content in the annotated page, e.g. via class
+ * 2.) CSS Selectors - addresses content in the annotated page, eg. via class
  * attribute. Use the [[cssSelector]] property.
  * 
  * 3.)  XPaths - addresses content via XPaths (assuming an XML view of the
  * content). Use the [[xpath]] property.
- * 
  * 
  * For more sophisticated markup of speakable sections beyond simple ID
  * references, either CSS selectors or XPath expressions to pick out document
  * section(s) as speakable. For this
  * we define a supporting type, [[SpeakableSpecification]]  which is defined to
  * be a possible value of the *speakable* property.
-        * @param array|string|mixed $value
+        * @param SpeakableSpecification|string|array|mixed $value
     * @return $this
     */
     public function speakable($value)
@@ -174,7 +114,7 @@ class Article extends CreativeWork
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param SpeakableSpecification|string|array|mixed $value
     * @return $this
     */
     public function setSpeakable($value)
@@ -193,42 +133,39 @@ class Article extends CreativeWork
 
 
     /**
-        * For an [[Article]], typically a [[NewsArticle]], the backstory property
- * provides a textual summary giving a brief explanation of why and how an
- * article was created. In a journalistic setting this could include information
- * about reporting process, methods, interviews, data sources, etc.
-        * @param array|string|mixed $value
+        * The page on which the work ends; for example "138" or "xvi".
+        * @param string|int|array|mixed $value
     * @return $this
     */
-    public function backstory($value)
+    public function pageEnd($value)
     {
-        $this->setProperty('backstory', $value);
+        $this->setProperty('pageEnd', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|int|array|mixed $value
     * @return $this
     */
-    public function setBackstory($value)
+    public function setPageEnd($value)
     {
-        $this->setProperty('backstory', $value);
+        $this->setProperty('pageEnd', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getBackstory()
+    public function getPageEnd()
     {
-       return $this->getProperty('backstory');
+       return $this->getProperty('pageEnd');
     }
 
 
     /**
         * Articles may belong to one or more 'sections' in a magazine or newspaper,
  * such as Sports, Lifestyle, etc.
-        * @param array|string|mixed $value
+        * @param string|array|mixed $value
     * @return $this
     */
     public function articleSection($value)
@@ -238,7 +175,7 @@ class Article extends CreativeWork
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setArticleSection($value)
@@ -257,8 +194,41 @@ class Article extends CreativeWork
 
 
     /**
+        * For an [[Article]], typically a [[NewsArticle]], the backstory property
+ * provides a textual summary giving a brief explanation of why and how an
+ * article was created. In a journalistic setting this could include information
+ * about reporting process, methods, interviews, data sources, etc.
+        * @param CreativeWork|string|array|mixed $value
+    * @return $this
+    */
+    public function backstory($value)
+    {
+        $this->setProperty('backstory', $value);
+        return $this;
+    }
+
+    /**
+    * @param CreativeWork|string|array|mixed $value
+    * @return $this
+    */
+    public function setBackstory($value)
+    {
+        $this->setProperty('backstory', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getBackstory()
+    {
+       return $this->getProperty('backstory');
+    }
+
+
+    /**
         * The page on which the work starts; for example "135" or "xiii".
-        * @param array|string|mixed $value
+        * @param string|int|array|mixed $value
     * @return $this
     */
     public function pageStart($value)
@@ -268,7 +238,7 @@ class Article extends CreativeWork
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|int|array|mixed $value
     * @return $this
     */
     public function setPageStart($value)
@@ -283,6 +253,36 @@ class Article extends CreativeWork
     public function getPageStart()
     {
        return $this->getProperty('pageStart');
+    }
+
+
+    /**
+        * The actual body of the article.
+        * @param string|array|mixed $value
+    * @return $this
+    */
+    public function articleBody($value)
+    {
+        $this->setProperty('articleBody', $value);
+        return $this;
+    }
+
+    /**
+    * @param string|array|mixed $value
+    * @return $this
+    */
+    public function setArticleBody($value)
+    {
+        $this->setProperty('articleBody', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getArticleBody()
+    {
+       return $this->getProperty('articleBody');
     }
 
 

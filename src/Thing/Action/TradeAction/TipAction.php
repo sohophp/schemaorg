@@ -2,11 +2,15 @@
 namespace Sohophp\SchemaOrg\Thing\Action\TradeAction;
 
 use Sohophp\SchemaOrg\Thing\Action\TradeAction;
+use Sohophp\SchemaOrg\Thing\Person;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\ContactPoint;
+use Sohophp\SchemaOrg\Thing\Organization;
+use Sohophp\SchemaOrg\Thing\Intangible\Audience;
 
 /**
 * The act of giving money voluntarily to a beneficiary in recognition of
  * services rendered.
-* @see schema:TipAction
+* @see http://schema.org/TipAction
 * @package Sohophp\SchemaOrg\Thing\Action\TradeAction
 */
 class TipAction extends TradeAction
@@ -16,7 +20,7 @@ class TipAction extends TradeAction
     /**
         * A sub property of participant. The participant who is at the receiving end of
  * the action.
-        * @param array|string|mixed $value
+        * @param Person|ContactPoint|Organization|Audience|array|string|mixed $value
     * @return $this
     */
     public function recipient($value)
@@ -26,7 +30,7 @@ class TipAction extends TradeAction
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Person|ContactPoint|Organization|Audience|array|string|mixed $value
     * @return $this
     */
     public function setRecipient($value)

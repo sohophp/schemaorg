@@ -2,10 +2,12 @@
 namespace Sohophp\SchemaOrg\Thing\Event;
 
 use Sohophp\SchemaOrg\Thing\Event;
+use Sohophp\SchemaOrg\Thing\Intangible\Language;
+use Sohophp\SchemaOrg\Thing\CreativeWork\Movie;
 
 /**
 * A screening of a movie or other video.
-* @see schema:ScreeningEvent
+* @see http://schema.org/ScreeningEvent
 * @package Sohophp\SchemaOrg\Thing\Event
 */
 class ScreeningEvent extends Event
@@ -14,7 +16,7 @@ class ScreeningEvent extends Event
 
     /**
         * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
-        * @param array|string|mixed $value
+        * @param string|array|mixed $value
     * @return $this
     */
     public function videoFormat($value)
@@ -24,7 +26,7 @@ class ScreeningEvent extends Event
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setVideoFormat($value)
@@ -45,7 +47,7 @@ class ScreeningEvent extends Event
     /**
         * Languages in which subtitles/captions are available, in [IETF BCP 47 standard
  * format](http://tools.ietf.org/html/bcp47).
-        * @param array|string|mixed $value
+        * @param Language|string|array|mixed $value
     * @return $this
     */
     public function subtitleLanguage($value)
@@ -55,7 +57,7 @@ class ScreeningEvent extends Event
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Language|string|array|mixed $value
     * @return $this
     */
     public function setSubtitleLanguage($value)
@@ -75,7 +77,7 @@ class ScreeningEvent extends Event
 
     /**
         * The movie presented during this event.
-        * @param array|string|mixed $value
+        * @param Movie|array|string|mixed $value
     * @return $this
     */
     public function workPresented($value)
@@ -85,7 +87,7 @@ class ScreeningEvent extends Event
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Movie|array|string|mixed $value
     * @return $this
     */
     public function setWorkPresented($value)

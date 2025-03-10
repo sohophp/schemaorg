@@ -2,11 +2,13 @@
 namespace Sohophp\SchemaOrg\Thing\MedicalEntity\AnatomicalStructure\Vessel;
 
 use Sohophp\SchemaOrg\Thing\MedicalEntity\AnatomicalStructure\Vessel;
+use Sohophp\SchemaOrg\Thing\MedicalEntity\AnatomicalStructure;
+use Sohophp\SchemaOrg\Thing\MedicalEntity\AnatomicalSystem;
 
 /**
 * A type of blood vessel that specifically carries lymph fluid unidirectionally
  * toward the heart.
-* @see schema:LymphaticVessel
+* @see http://schema.org/LymphaticVessel
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity\AnatomicalStructure\Vessel
 */
 class LymphaticVessel extends Vessel
@@ -14,39 +16,9 @@ class LymphaticVessel extends Vessel
 
 
     /**
-        * The vasculature the lymphatic structure originates, or afferents, from.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function originatesFrom($value)
-    {
-        $this->setProperty('originatesFrom', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setOriginatesFrom($value)
-    {
-        $this->setProperty('originatesFrom', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getOriginatesFrom()
-    {
-       return $this->getProperty('originatesFrom');
-    }
-
-
-    /**
         * The anatomical or organ system drained by this vessel; generally refers to a
  * specific part of an organ.
-        * @param array|string|mixed $value
+        * @param AnatomicalStructure|AnatomicalSystem|array|string|mixed $value
     * @return $this
     */
     public function regionDrained($value)
@@ -56,7 +28,7 @@ class LymphaticVessel extends Vessel
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param AnatomicalStructure|AnatomicalSystem|array|string|mixed $value
     * @return $this
     */
     public function setRegionDrained($value)
@@ -76,7 +48,7 @@ class LymphaticVessel extends Vessel
 
     /**
         * The vasculature the lymphatic structure runs, or efferents, to.
-        * @param array|string|mixed $value
+        * @param Vessel|array|string|mixed $value
     * @return $this
     */
     public function runsTo($value)
@@ -86,7 +58,7 @@ class LymphaticVessel extends Vessel
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Vessel|array|string|mixed $value
     * @return $this
     */
     public function setRunsTo($value)
@@ -101,6 +73,36 @@ class LymphaticVessel extends Vessel
     public function getRunsTo()
     {
        return $this->getProperty('runsTo');
+    }
+
+
+    /**
+        * The vasculature the lymphatic structure originates, or afferents, from.
+        * @param Vessel|array|string|mixed $value
+    * @return $this
+    */
+    public function originatesFrom($value)
+    {
+        $this->setProperty('originatesFrom', $value);
+        return $this;
+    }
+
+    /**
+    * @param Vessel|array|string|mixed $value
+    * @return $this
+    */
+    public function setOriginatesFrom($value)
+    {
+        $this->setProperty('originatesFrom', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getOriginatesFrom()
+    {
+       return $this->getProperty('originatesFrom');
     }
 
 

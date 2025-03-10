@@ -2,10 +2,11 @@
 namespace Sohophp\SchemaOrg\Thing\Organization\SportsOrganization;
 
 use Sohophp\SchemaOrg\Thing\Organization\SportsOrganization;
+use Sohophp\SchemaOrg\Thing\Person;
 
 /**
 * Organization: Sports team.
-* @see schema:SportsTeam
+* @see http://schema.org/SportsTeam
 * @package Sohophp\SchemaOrg\Thing\Organization\SportsOrganization
 */
 class SportsTeam extends SportsOrganization
@@ -13,46 +14,9 @@ class SportsTeam extends SportsOrganization
 
 
     /**
-        * Gender of something, typically a [[Person]], but possibly also fictional
- * characters, animals, etc. While https://schema.org/Male and
- * https://schema.org/Female may be used, text strings are also acceptable for
- * people who do not identify as a binary gender. The [[gender]] property can
- * also be used in an extended sense to cover e.g. the gender of sports teams.
- * As with the gender of individuals, we do not try to enumerate all
- * possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text
- * value of "Mixed".
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function gender($value)
-    {
-        $this->setProperty('gender', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setGender($value)
-    {
-        $this->setProperty('gender', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getGender()
-    {
-       return $this->getProperty('gender');
-    }
-
-
-    /**
         * A person that acts as performing member of a sports team; a player as opposed
  * to a coach.
-        * @param array|string|mixed $value
+        * @param Person|array|string|mixed $value
     * @return $this
     */
     public function athlete($value)
@@ -62,7 +26,7 @@ class SportsTeam extends SportsOrganization
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Person|array|string|mixed $value
     * @return $this
     */
     public function setAthlete($value)
@@ -82,7 +46,7 @@ class SportsTeam extends SportsOrganization
 
     /**
         * A person that acts in a coaching role for a sports team.
-        * @param array|string|mixed $value
+        * @param Person|array|string|mixed $value
     * @return $this
     */
     public function coach($value)
@@ -92,7 +56,7 @@ class SportsTeam extends SportsOrganization
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Person|array|string|mixed $value
     * @return $this
     */
     public function setCoach($value)

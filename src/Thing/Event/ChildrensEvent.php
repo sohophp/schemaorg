@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\Event;
 
 /**
 * Event type: Children's event.
-* @see schema:ChildrensEvent
+* @see http://schema.org/ChildrensEvent
 * @package Sohophp\SchemaOrg\Thing\Event
 */
 class ChildrensEvent extends Event

@@ -9,7 +9,7 @@ use Sohophp\SchemaOrg\Thing\CreativeWork;
  * into some order, often chronological. Unlike [[ItemList]] which is a general
  * purpose data structure for lists of things, the emphasis with
  * CreativeWorkSeries is on published materials (written e.g. books and
- * periodicals, or media such as TV, radio and games).
+ * periodicals, or media such as tv, radio and games).
  * 
  * Specific subtypes are available for describing [[TVSeries]], [[RadioSeries]],
  * [[MovieSeries]], [[BookSeries]], [[Periodical]] and [[VideoGameSeries]]. In
@@ -21,7 +21,7 @@ use Sohophp\SchemaOrg\Thing\CreativeWork;
  * usefully applied to the containing group. Schema.org attempts to anticipate
  * some of these cases, but publishers should be free to apply properties of the
  * series parts to the series as a whole wherever they seem appropriate.
-* @see schema:CreativeWorkSeries
+* @see http://schema.org/CreativeWorkSeries
 * @package Sohophp\SchemaOrg\Thing\CreativeWork
 */
 class CreativeWorkSeries extends CreativeWork
@@ -60,6 +60,38 @@ class CreativeWorkSeries extends CreativeWork
 
 
     /**
+        * The International Standard Serial Number (ISSN) that identifies this serial
+ * publication. You can repeat this property to identify different formats of,
+ * or the linking ISSN (ISSN-L) for, this serial publication.
+        * @param string|array|mixed $value
+    * @return $this
+    */
+    public function issn($value)
+    {
+        $this->setProperty('issn', $value);
+        return $this;
+    }
+
+    /**
+    * @param string|array|mixed $value
+    * @return $this
+    */
+    public function setIssn($value)
+    {
+        $this->setProperty('issn', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getIssn()
+    {
+       return $this->getProperty('issn');
+    }
+
+
+    /**
         * The start date and time of the item (in [ISO 8601 date
  * format](http://en.wikipedia.org/wiki/ISO_8601)).
         * @param array|string|mixed $value
@@ -87,38 +119,6 @@ class CreativeWorkSeries extends CreativeWork
     public function getStartDate()
     {
        return $this->getProperty('startDate');
-    }
-
-
-    /**
-        * The International Standard Serial Number (ISSN) that identifies this serial
- * publication. You can repeat this property to identify different formats of,
- * or the linking ISSN (ISSN-L) for, this serial publication.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function issn($value)
-    {
-        $this->setProperty('issn', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setIssn($value)
-    {
-        $this->setProperty('issn', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getIssn()
-    {
-       return $this->getProperty('issn');
     }
 
 

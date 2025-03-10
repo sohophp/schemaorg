@@ -2,18 +2,22 @@
 namespace Sohophp\SchemaOrg\Thing\Action\TransferAction;
 
 use Sohophp\SchemaOrg\Thing\Action\TransferAction;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\DeliveryMethod;
+use Sohophp\SchemaOrg\Thing\Intangible\Audience;
+use Sohophp\SchemaOrg\Thing\Person;
+use Sohophp\SchemaOrg\Thing\Organization;
 
 /**
-* The act of physically/electronically taking delivery of an object that has
+* The act of physically/electronically taking delivery of an object thathas
  * been transferred from an origin to a destination. Reciprocal of SendAction.
  * 
  * Related actions:
  * 
  * * [[SendAction]]: The reciprocal of ReceiveAction.
  * * [[TakeAction]]: Unlike TakeAction, ReceiveAction does not imply that the
- * ownership has been transferred (e.g. I can receive a package, but it does not
+ * ownership has been transfered (e.g. I can receive a package, but it does not
  * mean the package is now mine).
-* @see schema:ReceiveAction
+* @see http://schema.org/ReceiveAction
 * @package Sohophp\SchemaOrg\Thing\Action\TransferAction
 */
 class ReceiveAction extends TransferAction
@@ -21,39 +25,8 @@ class ReceiveAction extends TransferAction
 
 
     /**
-        * A sub property of participant. The participant who is at the sending end of
- * the action.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function sender($value)
-    {
-        $this->setProperty('sender', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setSender($value)
-    {
-        $this->setProperty('sender', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getSender()
-    {
-       return $this->getProperty('sender');
-    }
-
-
-    /**
         * A sub property of instrument. The method of delivery.
-        * @param array|string|mixed $value
+        * @param DeliveryMethod|array|string|mixed $value
     * @return $this
     */
     public function deliveryMethod($value)
@@ -63,7 +36,7 @@ class ReceiveAction extends TransferAction
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param DeliveryMethod|array|string|mixed $value
     * @return $this
     */
     public function setDeliveryMethod($value)
@@ -78,6 +51,37 @@ class ReceiveAction extends TransferAction
     public function getDeliveryMethod()
     {
        return $this->getProperty('deliveryMethod');
+    }
+
+
+    /**
+        * A sub property of participant. The participant who is at the sending end of
+ * the action.
+        * @param Audience|Person|Organization|array|string|mixed $value
+    * @return $this
+    */
+    public function sender($value)
+    {
+        $this->setProperty('sender', $value);
+        return $this;
+    }
+
+    /**
+    * @param Audience|Person|Organization|array|string|mixed $value
+    * @return $this
+    */
+    public function setSender($value)
+    {
+        $this->setProperty('sender', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getSender()
+    {
+       return $this->getProperty('sender');
     }
 
 

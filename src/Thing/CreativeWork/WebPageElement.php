@@ -2,10 +2,12 @@
 namespace Sohophp\SchemaOrg\Thing\CreativeWork;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork;
+use Sohophp\SchemaOrg\Text\CssSelectorType;
+use Sohophp\SchemaOrg\Text\XPathType;
 
 /**
 * A web page element, like a table or an image.
-* @see schema:WebPageElement
+* @see http://schema.org/WebPageElement
 * @package Sohophp\SchemaOrg\Thing\CreativeWork
 */
 class WebPageElement extends CreativeWork
@@ -16,7 +18,7 @@ class WebPageElement extends CreativeWork
         * A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]].
  * In the latter case, multiple matches within a page can constitute a single
  * conceptual "Web page element".
-        * @param array|string|mixed $value
+        * @param CssSelectorType|array|string|mixed $value
     * @return $this
     */
     public function cssSelector($value)
@@ -26,7 +28,7 @@ class WebPageElement extends CreativeWork
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param CssSelectorType|array|string|mixed $value
     * @return $this
     */
     public function setCssSelector($value)
@@ -48,7 +50,7 @@ class WebPageElement extends CreativeWork
         * An XPath, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the
  * latter case, multiple matches within a page can constitute a single
  * conceptual "Web page element".
-        * @param array|string|mixed $value
+        * @param XPathType|array|string|mixed $value
     * @return $this
     */
     public function xpath($value)
@@ -58,7 +60,7 @@ class WebPageElement extends CreativeWork
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param XPathType|array|string|mixed $value
     * @return $this
     */
     public function setXpath($value)

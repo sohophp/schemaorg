@@ -8,7 +8,7 @@ use Sohophp\SchemaOrg\Thing\Intangible\Enumeration;
  * is used to attribute a quality to another concept, as a qualifier, a
  * collection of items or a listing of all of the elements of a set in medicine
  * practice.
-* @see schema:MedicalEnumeration
+* @see http://schema.org/MedicalEnumeration
 * @package Sohophp\SchemaOrg\Thing\Intangible\Enumeration
 */
 class MedicalEnumeration extends Enumeration

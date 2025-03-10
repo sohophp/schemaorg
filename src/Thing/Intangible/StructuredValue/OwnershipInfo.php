@@ -2,11 +2,15 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
 
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
+use Sohophp\SchemaOrg\Thing\Product;
+use Sohophp\SchemaOrg\Thing\Intangible\Service;
+use Sohophp\SchemaOrg\Thing\Organization;
+use Sohophp\SchemaOrg\Thing\Person;
 
 /**
 * A structured value providing information about when a certain organization or
  * person owned a certain product.
-* @see schema:OwnershipInfo
+* @see http://schema.org/OwnershipInfo
 * @package Sohophp\SchemaOrg\Thing\Intangible\StructuredValue
 */
 class OwnershipInfo extends StructuredValue
@@ -14,38 +18,8 @@ class OwnershipInfo extends StructuredValue
 
 
     /**
-        * The organization or person from which the product was acquired.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function acquiredFrom($value)
-    {
-        $this->setProperty('acquiredFrom', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setAcquiredFrom($value)
-    {
-        $this->setProperty('acquiredFrom', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getAcquiredFrom()
-    {
-       return $this->getProperty('acquiredFrom');
-    }
-
-
-    /**
         * The product that this structured value is referring to.
-        * @param array|string|mixed $value
+        * @param Product|Service|array|string|mixed $value
     * @return $this
     */
     public function typeOfGood($value)
@@ -55,7 +29,7 @@ class OwnershipInfo extends StructuredValue
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Product|Service|array|string|mixed $value
     * @return $this
     */
     public function setTypeOfGood($value)
@@ -100,6 +74,36 @@ class OwnershipInfo extends StructuredValue
     public function getOwnedThrough()
     {
        return $this->getProperty('ownedThrough');
+    }
+
+
+    /**
+        * The organization or person from which the product was acquired.
+        * @param Organization|Person|array|string|mixed $value
+    * @return $this
+    */
+    public function acquiredFrom($value)
+    {
+        $this->setProperty('acquiredFrom', $value);
+        return $this;
+    }
+
+    /**
+    * @param Organization|Person|array|string|mixed $value
+    * @return $this
+    */
+    public function setAcquiredFrom($value)
+    {
+        $this->setProperty('acquiredFrom', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getAcquiredFrom()
+    {
+       return $this->getProperty('acquiredFrom');
     }
 
 

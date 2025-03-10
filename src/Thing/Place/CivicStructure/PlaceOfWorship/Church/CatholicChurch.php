@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\Place\CivicStructure\PlaceOfWorship\Church;
 
 /**
 * A Catholic church.
-* @see schema:CatholicChurch
+* @see http://schema.org/CatholicChurch
 * @package Sohophp\SchemaOrg\Thing\Place\CivicStructure\PlaceOfWorship\Church
 */
 class CatholicChurch extends Church

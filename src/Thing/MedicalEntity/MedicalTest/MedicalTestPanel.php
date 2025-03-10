@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalTest;
 
 /**
 * Any collection of tests commonly ordered together.
-* @see schema:MedicalTestPanel
+* @see http://schema.org/MedicalTestPanel
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalTest
 */
 class MedicalTestPanel extends MedicalTest
@@ -14,7 +14,7 @@ class MedicalTestPanel extends MedicalTest
 
     /**
         * A component test of the panel.
-        * @param array|string|mixed $value
+        * @param MedicalTest|array|string|mixed $value
     * @return $this
     */
     public function subTest($value)
@@ -24,7 +24,7 @@ class MedicalTestPanel extends MedicalTest
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param MedicalTest|array|string|mixed $value
     * @return $this
     */
     public function setSubTest($value)

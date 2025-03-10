@@ -2,6 +2,8 @@
 namespace Sohophp\SchemaOrg\Thing\Action\TransferAction;
 
 use Sohophp\SchemaOrg\Thing\Action\TransferAction;
+use Sohophp\SchemaOrg\Thing\Person;
+use Sohophp\SchemaOrg\Thing\Organization;
 
 /**
 * The act of obtaining an object under an agreement to return it at a later
@@ -10,7 +12,7 @@ use Sohophp\SchemaOrg\Thing\Action\TransferAction;
  * Related actions:
  * 
  * * [[LendAction]]: Reciprocal of BorrowAction.
-* @see schema:BorrowAction
+* @see http://schema.org/BorrowAction
 * @package Sohophp\SchemaOrg\Thing\Action\TransferAction
 */
 class BorrowAction extends TransferAction
@@ -20,7 +22,7 @@ class BorrowAction extends TransferAction
     /**
         * A sub property of participant. The person that lends the object being
  * borrowed.
-        * @param array|string|mixed $value
+        * @param Person|Organization|array|string|mixed $value
     * @return $this
     */
     public function lender($value)
@@ -30,7 +32,7 @@ class BorrowAction extends TransferAction
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Person|Organization|array|string|mixed $value
     * @return $this
     */
     public function setLender($value)

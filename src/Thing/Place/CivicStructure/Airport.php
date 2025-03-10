@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\Place\CivicStructure;
 
 /**
 * An airport.
-* @see schema:Airport
+* @see http://schema.org/Airport
 * @package Sohophp\SchemaOrg\Thing\Place\CivicStructure
 */
 class Airport extends CivicStructure
@@ -14,7 +14,7 @@ class Airport extends CivicStructure
 
     /**
         * IATA identifier for an airline or airport.
-        * @param array|string|mixed $value
+        * @param string|array|mixed $value
     * @return $this
     */
     public function iataCode($value)
@@ -24,7 +24,7 @@ class Airport extends CivicStructure
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setIataCode($value)
@@ -44,7 +44,7 @@ class Airport extends CivicStructure
 
     /**
         * ICAO identifier for an airport.
-        * @param array|string|mixed $value
+        * @param string|array|mixed $value
     * @return $this
     */
     public function icaoCode($value)
@@ -54,7 +54,7 @@ class Airport extends CivicStructure
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setIcaoCode($value)

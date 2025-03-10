@@ -2,6 +2,7 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible\Trip;
 
 use Sohophp\SchemaOrg\Thing\Intangible\Trip;
+use Sohophp\SchemaOrg\Thing\Intangible\Audience;
 
 /**
 * A tourist trip. A created itinerary of visits to one or more places of
@@ -9,8 +10,8 @@ use Sohophp\SchemaOrg\Thing\Intangible\Trip;
  * similar theme, geographic area, or interest to a particular [[touristType]].
  * The [UNWTO](http://www2.unwto.org/) defines tourism trip as the Trip taken by
  * visitors.
- *   (See examples below.)
-* @see schema:TouristTrip
+ *   (See examples below).
+* @see http://schema.org/TouristTrip
 * @package Sohophp\SchemaOrg\Thing\Intangible\Trip
 */
 class TouristTrip extends Trip
@@ -18,9 +19,9 @@ class TouristTrip extends Trip
 
 
     /**
-        * Attraction suitable for type(s) of tourist. E.g. children, visitors from a
+        * Attraction suitable for type(s) of tourist. eg. Children, visitors from a
  * particular country, etc.
-        * @param array|string|mixed $value
+        * @param string|Audience|array|mixed $value
     * @return $this
     */
     public function touristType($value)
@@ -30,7 +31,7 @@ class TouristTrip extends Trip
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|Audience|array|mixed $value
     * @return $this
     */
     public function setTouristType($value)

@@ -4,9 +4,9 @@ namespace Sohophp\SchemaOrg\Thing\Action\MoveAction;
 use Sohophp\SchemaOrg\Thing\Action\MoveAction;
 
 /**
-* The act of  departing from a place. An agent departs from a fromLocation for
+* The act of  departing from a place. An agent departs from an fromLocation for
  * a destination, optionally with participants.
-* @see schema:DepartAction
+* @see http://schema.org/DepartAction
 * @package Sohophp\SchemaOrg\Thing\Action\MoveAction
 */
 class DepartAction extends MoveAction

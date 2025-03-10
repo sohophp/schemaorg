@@ -2,6 +2,7 @@
 namespace Sohophp\SchemaOrg\Thing\Action\InteractAction\CommunicateAction;
 
 use Sohophp\SchemaOrg\Thing\Action\InteractAction\CommunicateAction;
+use Sohophp\SchemaOrg\Thing\CreativeWork\Question;
 
 /**
 * The act of posing a question / favor to someone.
@@ -9,7 +10,7 @@ use Sohophp\SchemaOrg\Thing\Action\InteractAction\CommunicateAction;
  * Related actions:
  * 
  * * [[ReplyAction]]: Appears generally as a response to AskAction.
-* @see schema:AskAction
+* @see http://schema.org/AskAction
 * @package Sohophp\SchemaOrg\Thing\Action\InteractAction\CommunicateAction
 */
 class AskAction extends CommunicateAction
@@ -18,7 +19,7 @@ class AskAction extends CommunicateAction
 
     /**
         * A sub property of object. A question.
-        * @param array|string|mixed $value
+        * @param Question|array|string|mixed $value
     * @return $this
     */
     public function question($value)
@@ -28,7 +29,7 @@ class AskAction extends CommunicateAction
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Question|array|string|mixed $value
     * @return $this
     */
     public function setQuestion($value)

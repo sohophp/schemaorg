@@ -2,10 +2,14 @@
 namespace Sohophp\SchemaOrg\Thing\CreativeWork;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork;
+use Sohophp\SchemaOrg\Thing\Person;
+use Sohophp\SchemaOrg\Thing\CreativeWork\MusicRecording;
+use Sohophp\SchemaOrg\Thing\Event;
+use Sohophp\SchemaOrg\Thing\Organization;
 
 /**
 * A musical composition.
-* @see schema:MusicComposition
+* @see http://schema.org/MusicComposition
 * @package Sohophp\SchemaOrg\Thing\CreativeWork
 */
 class MusicComposition extends CreativeWork
@@ -14,7 +18,7 @@ class MusicComposition extends CreativeWork
 
     /**
         * The type of composition (e.g. overture, sonata, symphony, etc.).
-        * @param array|string|mixed $value
+        * @param string|array|mixed $value
     * @return $this
     */
     public function musicCompositionForm($value)
@@ -24,7 +28,7 @@ class MusicComposition extends CreativeWork
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setMusicCompositionForm($value)
@@ -43,38 +47,8 @@ class MusicComposition extends CreativeWork
 
 
     /**
-        * An audio recording of the work.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function recordedAs($value)
-    {
-        $this->setProperty('recordedAs', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setRecordedAs($value)
-    {
-        $this->setProperty('recordedAs', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getRecordedAs()
-    {
-       return $this->getProperty('recordedAs');
-    }
-
-
-    /**
         * The words in the song.
-        * @param array|string|mixed $value
+        * @param CreativeWork|array|string|mixed $value
     * @return $this
     */
     public function lyrics($value)
@@ -84,7 +58,7 @@ class MusicComposition extends CreativeWork
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param CreativeWork|array|string|mixed $value
     * @return $this
     */
     public function setLyrics($value)
@@ -103,99 +77,8 @@ class MusicComposition extends CreativeWork
 
 
     /**
-        * The person or organization who wrote a composition, or who is the composer of
- * a work performed at some event.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function composer($value)
-    {
-        $this->setProperty('composer', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setComposer($value)
-    {
-        $this->setProperty('composer', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getComposer()
-    {
-       return $this->getProperty('composer');
-    }
-
-
-    /**
-        * The person who wrote the words.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function lyricist($value)
-    {
-        $this->setProperty('lyricist', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setLyricist($value)
-    {
-        $this->setProperty('lyricist', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getLyricist()
-    {
-       return $this->getProperty('lyricist');
-    }
-
-
-    /**
-        * The date and place the work was first performed.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function firstPerformance($value)
-    {
-        $this->setProperty('firstPerformance', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setFirstPerformance($value)
-    {
-        $this->setProperty('firstPerformance', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getFirstPerformance()
-    {
-       return $this->getProperty('firstPerformance');
-    }
-
-
-    /**
         * Smaller compositions included in this work (e.g. a movement in a symphony).
-        * @param array|string|mixed $value
+        * @param MusicComposition|array|string|mixed $value
     * @return $this
     */
     public function includedComposition($value)
@@ -205,7 +88,7 @@ class MusicComposition extends CreativeWork
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param MusicComposition|array|string|mixed $value
     * @return $this
     */
     public function setIncludedComposition($value)
@@ -224,38 +107,68 @@ class MusicComposition extends CreativeWork
 
 
     /**
-        * The key, mode, or scale this composition uses.
-        * @param array|string|mixed $value
+        * The person who wrote the words.
+        * @param Person|array|string|mixed $value
     * @return $this
     */
-    public function musicalKey($value)
+    public function lyricist($value)
     {
-        $this->setProperty('musicalKey', $value);
+        $this->setProperty('lyricist', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Person|array|string|mixed $value
     * @return $this
     */
-    public function setMusicalKey($value)
+    public function setLyricist($value)
     {
-        $this->setProperty('musicalKey', $value);
+        $this->setProperty('lyricist', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getMusicalKey()
+    public function getLyricist()
     {
-       return $this->getProperty('musicalKey');
+       return $this->getProperty('lyricist');
+    }
+
+
+    /**
+        * An audio recording of the work.
+        * @param MusicRecording|array|string|mixed $value
+    * @return $this
+    */
+    public function recordedAs($value)
+    {
+        $this->setProperty('recordedAs', $value);
+        return $this;
+    }
+
+    /**
+    * @param MusicRecording|array|string|mixed $value
+    * @return $this
+    */
+    public function setRecordedAs($value)
+    {
+        $this->setProperty('recordedAs', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getRecordedAs()
+    {
+       return $this->getProperty('recordedAs');
     }
 
 
     /**
         * An arrangement derived from the composition.
-        * @param array|string|mixed $value
+        * @param MusicComposition|array|string|mixed $value
     * @return $this
     */
     public function musicArrangement($value)
@@ -265,7 +178,7 @@ class MusicComposition extends CreativeWork
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param MusicComposition|array|string|mixed $value
     * @return $this
     */
     public function setMusicArrangement($value)
@@ -284,8 +197,38 @@ class MusicComposition extends CreativeWork
 
 
     /**
+        * The date and place the work was first performed.
+        * @param Event|array|string|mixed $value
+    * @return $this
+    */
+    public function firstPerformance($value)
+    {
+        $this->setProperty('firstPerformance', $value);
+        return $this;
+    }
+
+    /**
+    * @param Event|array|string|mixed $value
+    * @return $this
+    */
+    public function setFirstPerformance($value)
+    {
+        $this->setProperty('firstPerformance', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getFirstPerformance()
+    {
+       return $this->getProperty('firstPerformance');
+    }
+
+
+    /**
         * The International Standard Musical Work Code for the composition.
-        * @param array|string|mixed $value
+        * @param string|array|mixed $value
     * @return $this
     */
     public function iswcCode($value)
@@ -295,7 +238,7 @@ class MusicComposition extends CreativeWork
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setIswcCode($value)
@@ -310,6 +253,67 @@ class MusicComposition extends CreativeWork
     public function getIswcCode()
     {
        return $this->getProperty('iswcCode');
+    }
+
+
+    /**
+        * The person or organization who wrote a composition, or who is the composer of
+ * a work performed at some event.
+        * @param Person|Organization|array|string|mixed $value
+    * @return $this
+    */
+    public function composer($value)
+    {
+        $this->setProperty('composer', $value);
+        return $this;
+    }
+
+    /**
+    * @param Person|Organization|array|string|mixed $value
+    * @return $this
+    */
+    public function setComposer($value)
+    {
+        $this->setProperty('composer', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getComposer()
+    {
+       return $this->getProperty('composer');
+    }
+
+
+    /**
+        * The key, mode, or scale this composition uses.
+        * @param string|array|mixed $value
+    * @return $this
+    */
+    public function musicalKey($value)
+    {
+        $this->setProperty('musicalKey', $value);
+        return $this;
+    }
+
+    /**
+    * @param string|array|mixed $value
+    * @return $this
+    */
+    public function setMusicalKey($value)
+    {
+        $this->setProperty('musicalKey', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getMusicalKey()
+    {
+       return $this->getProperty('musicalKey');
     }
 
 

@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\Place\Landform\BodyOfWater;
 
 /**
 * A river (for example, the broad majestic Shannon).
-* @see schema:RiverBodyOfWater
+* @see http://schema.org/RiverBodyOfWater
 * @package Sohophp\SchemaOrg\Thing\Place\Landform\BodyOfWater
 */
 class RiverBodyOfWater extends BodyOfWater

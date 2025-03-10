@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\CreativeWork\SoftwareApplication;
 
 /**
 * Web applications.
-* @see schema:WebApplication
+* @see http://schema.org/WebApplication
 * @package Sohophp\SchemaOrg\Thing\CreativeWork\SoftwareApplication
 */
 class WebApplication extends SoftwareApplication
@@ -15,7 +15,7 @@ class WebApplication extends SoftwareApplication
     /**
         * Specifies browser requirements in human-readable text. For example, 'requires
  * HTML5 support'.
-        * @param array|string|mixed $value
+        * @param string|array|mixed $value
     * @return $this
     */
     public function browserRequirements($value)
@@ -25,7 +25,7 @@ class WebApplication extends SoftwareApplication
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setBrowserRequirements($value)

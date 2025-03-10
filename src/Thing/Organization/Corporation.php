@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\Organization;
 
 /**
 * Organization: A business corporation.
-* @see schema:Corporation
+* @see http://schema.org/Corporation
 * @package Sohophp\SchemaOrg\Thing\Organization
 */
 class Corporation extends Organization
@@ -17,8 +17,8 @@ class Corporation extends Organization
  * tickerSymbol is expressed as an exchange and an instrument name separated by
  * a space character. For the exchange component of the tickerSymbol attribute,
  * we recommend using the controlled vocabulary of Market Identifier Codes (MIC)
- * specified in ISO 15022.
-        * @param array|string|mixed $value
+ * specified in ISO15022.
+        * @param string|array|mixed $value
     * @return $this
     */
     public function tickerSymbol($value)
@@ -28,7 +28,7 @@ class Corporation extends Organization
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setTickerSymbol($value)

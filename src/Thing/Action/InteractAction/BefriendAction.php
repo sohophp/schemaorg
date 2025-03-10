@@ -11,7 +11,7 @@ use Sohophp\SchemaOrg\Thing\Action\InteractAction;
  * 
  * * [[FollowAction]]: Unlike FollowAction, BefriendAction implies that the
  * connection is reciprocal.
-* @see schema:BefriendAction
+* @see http://schema.org/BefriendAction
 * @package Sohophp\SchemaOrg\Thing\Action\InteractAction
 */
 class BefriendAction extends InteractAction

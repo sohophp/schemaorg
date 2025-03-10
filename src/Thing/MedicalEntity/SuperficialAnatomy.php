@@ -2,6 +2,10 @@
 namespace Sohophp\SchemaOrg\Thing\MedicalEntity;
 
 use Sohophp\SchemaOrg\Thing\MedicalEntity;
+use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalCondition;
+use Sohophp\SchemaOrg\Thing\MedicalEntity\AnatomicalSystem;
+use Sohophp\SchemaOrg\Thing\MedicalEntity\AnatomicalStructure;
+use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalProcedure\TherapeuticProcedure\MedicalTherapy;
 
 /**
 * Anatomical features that can be observed by sight (without dissection),
@@ -22,7 +26,7 @@ use Sohophp\SchemaOrg\Thing\MedicalEntity;
  * scapula to be superficially visible. Here, the superficial anatomy is the
  * visible edges of the scapula, implying the underlying dislocation of the
  * joint (the related anatomical structure).
-* @see schema:SuperficialAnatomy
+* @see http://schema.org/SuperficialAnatomy
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity
 */
 class SuperficialAnatomy extends MedicalEntity
@@ -30,10 +34,40 @@ class SuperficialAnatomy extends MedicalEntity
 
 
     /**
+        * A medical condition associated with this anatomy.
+        * @param MedicalCondition|array|string|mixed $value
+    * @return $this
+    */
+    public function relatedCondition($value)
+    {
+        $this->setProperty('relatedCondition', $value);
+        return $this;
+    }
+
+    /**
+    * @param MedicalCondition|array|string|mixed $value
+    * @return $this
+    */
+    public function setRelatedCondition($value)
+    {
+        $this->setProperty('relatedCondition', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getRelatedCondition()
+    {
+       return $this->getProperty('relatedCondition');
+    }
+
+
+    /**
         * If applicable, a description of the pathophysiology associated with the
  * anatomical system, including potential abnormal changes in the mechanical,
  * physical, and biochemical functions of the system.
-        * @param array|string|mixed $value
+        * @param string|array|mixed $value
     * @return $this
     */
     public function associatedPathophysiology($value)
@@ -43,7 +77,7 @@ class SuperficialAnatomy extends MedicalEntity
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setAssociatedPathophysiology($value)
@@ -62,40 +96,10 @@ class SuperficialAnatomy extends MedicalEntity
 
 
     /**
-        * Anatomical systems or structures that relate to the superficial anatomy.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function relatedAnatomy($value)
-    {
-        $this->setProperty('relatedAnatomy', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setRelatedAnatomy($value)
-    {
-        $this->setProperty('relatedAnatomy', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getRelatedAnatomy()
-    {
-       return $this->getProperty('relatedAnatomy');
-    }
-
-
-    /**
         * The significance associated with the superficial anatomy; as an example, how
  * characteristics of the superficial anatomy can suggest underlying medical
  * conditions or courses of treatment.
-        * @param array|string|mixed $value
+        * @param string|array|mixed $value
     * @return $this
     */
     public function significance($value)
@@ -105,7 +109,7 @@ class SuperficialAnatomy extends MedicalEntity
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setSignificance($value)
@@ -124,8 +128,38 @@ class SuperficialAnatomy extends MedicalEntity
 
 
     /**
+        * Anatomical systems or structures that relate to the superficial anatomy.
+        * @param AnatomicalSystem|AnatomicalStructure|array|string|mixed $value
+    * @return $this
+    */
+    public function relatedAnatomy($value)
+    {
+        $this->setProperty('relatedAnatomy', $value);
+        return $this;
+    }
+
+    /**
+    * @param AnatomicalSystem|AnatomicalStructure|array|string|mixed $value
+    * @return $this
+    */
+    public function setRelatedAnatomy($value)
+    {
+        $this->setProperty('relatedAnatomy', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getRelatedAnatomy()
+    {
+       return $this->getProperty('relatedAnatomy');
+    }
+
+
+    /**
         * A medical therapy related to this anatomy.
-        * @param array|string|mixed $value
+        * @param MedicalTherapy|array|string|mixed $value
     * @return $this
     */
     public function relatedTherapy($value)
@@ -135,7 +169,7 @@ class SuperficialAnatomy extends MedicalEntity
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param MedicalTherapy|array|string|mixed $value
     * @return $this
     */
     public function setRelatedTherapy($value)
@@ -150,36 +184,6 @@ class SuperficialAnatomy extends MedicalEntity
     public function getRelatedTherapy()
     {
        return $this->getProperty('relatedTherapy');
-    }
-
-
-    /**
-        * A medical condition associated with this anatomy.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function relatedCondition($value)
-    {
-        $this->setProperty('relatedCondition', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setRelatedCondition($value)
-    {
-        $this->setProperty('relatedCondition', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getRelatedCondition()
-    {
-       return $this->getProperty('relatedCondition');
     }
 
 

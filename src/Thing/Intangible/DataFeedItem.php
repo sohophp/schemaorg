@@ -2,10 +2,11 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible;
 
 use Sohophp\SchemaOrg\Thing\Intangible;
+use Sohophp\SchemaOrg\Thing;
 
 /**
 * A single item within a larger data feed.
-* @see schema:DataFeedItem
+* @see http://schema.org/DataFeedItem
 * @package Sohophp\SchemaOrg\Thing\Intangible
 */
 class DataFeedItem extends Intangible
@@ -106,8 +107,8 @@ class DataFeedItem extends Intangible
 
     /**
         * An entity represented by an entry in a list or data feed (e.g. an 'artist' in
- * a list of 'artists').
-        * @param array|string|mixed $value
+ * a list of 'artists')’.
+        * @param Thing|array|string|mixed $value
     * @return $this
     */
     public function item($value)
@@ -117,7 +118,7 @@ class DataFeedItem extends Intangible
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Thing|array|string|mixed $value
     * @return $this
     */
     public function setItem($value)

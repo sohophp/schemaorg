@@ -2,10 +2,12 @@
 namespace Sohophp\SchemaOrg\Thing\Place;
 
 use Sohophp\SchemaOrg\Thing\Place;
+use Sohophp\SchemaOrg\Thing\Intangible\Audience;
+use Sohophp\SchemaOrg\Thing\Place\TouristAttraction;
 
 /**
 * A tourist destination. In principle any [[Place]] can be a
- * [[TouristDestination]] from a [[City]], Region or [[Country]] to an
+ * [[TouristDestination]] from a [[City]], [[Region]] or [[Country]] to an
  * [[AmusementPark]] or [[Hotel]]. This Type can be used on its own to describe
  * a general [[TouristDestination]], or be used as an [[additionalType]] to add
  * tourist relevant properties to any other [[Place]].  A [[TouristDestination]]
@@ -14,8 +16,8 @@ use Sohophp\SchemaOrg\Thing\Place;
  * particular [[touristType]]. The [UNWTO](http://www2.unwto.org/) defines
  * Destination (main destination of a tourism trip) as the place visited that is
  * central to the decision to take the trip.
- *   (See examples below.)
-* @see schema:TouristDestination
+ *   (See examples below).
+* @see http://schema.org/TouristDestination
 * @package Sohophp\SchemaOrg\Thing\Place
 */
 class TouristDestination extends Place
@@ -23,39 +25,9 @@ class TouristDestination extends Place
 
 
     /**
-        * Attraction located at destination.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function includesAttraction($value)
-    {
-        $this->setProperty('includesAttraction', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setIncludesAttraction($value)
-    {
-        $this->setProperty('includesAttraction', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getIncludesAttraction()
-    {
-       return $this->getProperty('includesAttraction');
-    }
-
-
-    /**
-        * Attraction suitable for type(s) of tourist. E.g. children, visitors from a
+        * Attraction suitable for type(s) of tourist. eg. Children, visitors from a
  * particular country, etc.
-        * @param array|string|mixed $value
+        * @param string|Audience|array|mixed $value
     * @return $this
     */
     public function touristType($value)
@@ -65,7 +37,7 @@ class TouristDestination extends Place
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|Audience|array|mixed $value
     * @return $this
     */
     public function setTouristType($value)
@@ -80,6 +52,36 @@ class TouristDestination extends Place
     public function getTouristType()
     {
        return $this->getProperty('touristType');
+    }
+
+
+    /**
+        * Attraction located at destination.
+        * @param TouristAttraction|array|string|mixed $value
+    * @return $this
+    */
+    public function includesAttraction($value)
+    {
+        $this->setProperty('includesAttraction', $value);
+        return $this;
+    }
+
+    /**
+    * @param TouristAttraction|array|string|mixed $value
+    * @return $this
+    */
+    public function setIncludesAttraction($value)
+    {
+        $this->setProperty('includesAttraction', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getIncludesAttraction()
+    {
+       return $this->getProperty('includesAttraction');
     }
 
 

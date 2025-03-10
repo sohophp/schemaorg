@@ -2,11 +2,12 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible\Service\FinancialProduct\LoanOrCredit;
 
 use Sohophp\SchemaOrg\Thing\Intangible\Service\FinancialProduct\LoanOrCredit;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\MonetaryAmount;
 
 /**
 * A loan in which property or real estate is used as collateral. (A loan
  * securitized against some real estate.)
-* @see schema:MortgageLoan
+* @see http://schema.org/MortgageLoan
 * @package Sohophp\SchemaOrg\Thing\Intangible\Service\FinancialProduct\LoanOrCredit
 */
 class MortgageLoan extends LoanOrCredit
@@ -16,7 +17,7 @@ class MortgageLoan extends LoanOrCredit
     /**
         * Amount of mortgage mandate that can be converted into a proper mortgage at a
  * later stage.
-        * @param array|string|mixed $value
+        * @param MonetaryAmount|array|string|mixed $value
     * @return $this
     */
     public function loanMortgageMandateAmount($value)
@@ -26,7 +27,7 @@ class MortgageLoan extends LoanOrCredit
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param MonetaryAmount|array|string|mixed $value
     * @return $this
     */
     public function setLoanMortgageMandateAmount($value)
@@ -47,7 +48,7 @@ class MortgageLoan extends LoanOrCredit
     /**
         * Whether borrower is a resident of the jurisdiction where the property is
  * located.
-        * @param array|string|mixed $value
+        * @param bool|array|string|mixed $value
     * @return $this
     */
     public function domiciledMortgage($value)
@@ -57,7 +58,7 @@ class MortgageLoan extends LoanOrCredit
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param bool|array|string|mixed $value
     * @return $this
     */
     public function setDomiciledMortgage($value)

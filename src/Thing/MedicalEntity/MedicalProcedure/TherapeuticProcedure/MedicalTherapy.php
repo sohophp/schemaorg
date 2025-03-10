@@ -2,6 +2,8 @@
 namespace Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalProcedure\TherapeuticProcedure;
 
 use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalProcedure\TherapeuticProcedure;
+use Sohophp\SchemaOrg\Thing\MedicalEntity;
+use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalContraindication;
 
 /**
 * Any medical intervention designed to prevent, treat, and cure human diseases
@@ -10,11 +12,41 @@ use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalProcedure\TherapeuticProcedure;
  * pharmacotherapy, behavioral therapy, supportive therapy (with fluid or
  * nutrition for example), or detoxification (e.g. hemodialysis) aimed at
  * improving or preventing a health condition.
-* @see schema:MedicalTherapy
+* @see http://schema.org/MedicalTherapy
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalProcedure\TherapeuticProcedure
 */
 class MedicalTherapy extends TherapeuticProcedure
 {
+
+
+    /**
+        * A therapy that duplicates or overlaps this one.
+        * @param MedicalTherapy|array|string|mixed $value
+    * @return $this
+    */
+    public function duplicateTherapy($value)
+    {
+        $this->setProperty('duplicateTherapy', $value);
+        return $this;
+    }
+
+    /**
+    * @param MedicalTherapy|array|string|mixed $value
+    * @return $this
+    */
+    public function setDuplicateTherapy($value)
+    {
+        $this->setProperty('duplicateTherapy', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getDuplicateTherapy()
+    {
+       return $this->getProperty('duplicateTherapy');
+    }
 
 
     /**
@@ -24,7 +56,7 @@ class MedicalTherapy extends TherapeuticProcedure
  * existing hospitalization; cause congenital anomalies or birth defects; or
  * jeopardize the patient and may require medical or surgical intervention to
  * prevent one of the outcomes in this definition.
-        * @param array|string|mixed $value
+        * @param MedicalEntity|array|string|mixed $value
     * @return $this
     */
     public function seriousAdverseOutcome($value)
@@ -34,7 +66,7 @@ class MedicalTherapy extends TherapeuticProcedure
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param MedicalEntity|array|string|mixed $value
     * @return $this
     */
     public function setSeriousAdverseOutcome($value)
@@ -54,7 +86,7 @@ class MedicalTherapy extends TherapeuticProcedure
 
     /**
         * A contraindication for this therapy.
-        * @param array|string|mixed $value
+        * @param MedicalContraindication|string|array|mixed $value
     * @return $this
     */
     public function contraindication($value)
@@ -64,7 +96,7 @@ class MedicalTherapy extends TherapeuticProcedure
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param MedicalContraindication|string|array|mixed $value
     * @return $this
     */
     public function setContraindication($value)
@@ -79,36 +111,6 @@ class MedicalTherapy extends TherapeuticProcedure
     public function getContraindication()
     {
        return $this->getProperty('contraindication');
-    }
-
-
-    /**
-        * A therapy that duplicates or overlaps this one.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function duplicateTherapy($value)
-    {
-        $this->setProperty('duplicateTherapy', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setDuplicateTherapy($value)
-    {
-        $this->setProperty('duplicateTherapy', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getDuplicateTherapy()
-    {
-       return $this->getProperty('duplicateTherapy');
     }
 
 

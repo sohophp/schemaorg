@@ -6,7 +6,7 @@ use Sohophp\SchemaOrg\Thing\MedicalEntity;
 /**
 * A risk factor is anything that increases a person's likelihood of developing
  * or contracting a disease, medical condition, or complication.
-* @see schema:MedicalRiskFactor
+* @see http://schema.org/MedicalRiskFactor
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity
 */
 class MedicalRiskFactor extends MedicalEntity
@@ -15,7 +15,7 @@ class MedicalRiskFactor extends MedicalEntity
 
     /**
         * The condition, complication, etc. influenced by this factor.
-        * @param array|string|mixed $value
+        * @param MedicalEntity|array|string|mixed $value
     * @return $this
     */
     public function increasesRiskOf($value)
@@ -25,7 +25,7 @@ class MedicalRiskFactor extends MedicalEntity
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param MedicalEntity|array|string|mixed $value
     * @return $this
     */
     public function setIncreasesRiskOf($value)

@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\Place\CivicStructure;
 
 /**
 * A music venue.
-* @see schema:MusicVenue
+* @see http://schema.org/MusicVenue
 * @package Sohophp\SchemaOrg\Thing\Place\CivicStructure
 */
 class MusicVenue extends CivicStructure

@@ -2,10 +2,11 @@
 namespace Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalIntangible;
 
 use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalIntangible;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\QualitativeValue;
 
 /**
 * A specific dosing schedule for a drug or supplement.
-* @see schema:DoseSchedule
+* @see http://schema.org/DoseSchedule
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalIntangible
 */
 class DoseSchedule extends MedicalIntangible
@@ -13,8 +14,38 @@ class DoseSchedule extends MedicalIntangible
 
 
     /**
+        * The unit of the dose, e.g. 'mg'.
+        * @param string|array|mixed $value
+    * @return $this
+    */
+    public function doseUnit($value)
+    {
+        $this->setProperty('doseUnit', $value);
+        return $this;
+    }
+
+    /**
+    * @param string|array|mixed $value
+    * @return $this
+    */
+    public function setDoseUnit($value)
+    {
+        $this->setProperty('doseUnit', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getDoseUnit()
+    {
+       return $this->getProperty('doseUnit');
+    }
+
+
+    /**
         * The value of the dose, e.g. 500.
-        * @param array|string|mixed $value
+        * @param QualitativeValue|array|string|mixed $value
     * @return $this
     */
     public function doseValue($value)
@@ -24,7 +55,7 @@ class DoseSchedule extends MedicalIntangible
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param QualitativeValue|array|string|mixed $value
     * @return $this
     */
     public function setDoseValue($value)
@@ -43,39 +74,9 @@ class DoseSchedule extends MedicalIntangible
 
 
     /**
-        * How often the dose is taken, e.g. 'daily'.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function frequency($value)
-    {
-        $this->setProperty('frequency', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setFrequency($value)
-    {
-        $this->setProperty('frequency', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getFrequency()
-    {
-       return $this->getProperty('frequency');
-    }
-
-
-    /**
         * Characteristics of the population for which this is intended, or which
  * typically uses it, e.g. 'adults'.
-        * @param array|string|mixed $value
+        * @param string|array|mixed $value
     * @return $this
     */
     public function targetPopulation($value)
@@ -85,7 +86,7 @@ class DoseSchedule extends MedicalIntangible
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setTargetPopulation($value)
@@ -104,32 +105,32 @@ class DoseSchedule extends MedicalIntangible
 
 
     /**
-        * The unit of the dose, e.g. 'mg'.
-        * @param array|string|mixed $value
+        * How often the dose is taken, e.g. 'daily'.
+        * @param string|array|mixed $value
     * @return $this
     */
-    public function doseUnit($value)
+    public function frequency($value)
     {
-        $this->setProperty('doseUnit', $value);
+        $this->setProperty('frequency', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
-    public function setDoseUnit($value)
+    public function setFrequency($value)
     {
-        $this->setProperty('doseUnit', $value);
+        $this->setProperty('frequency', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getDoseUnit()
+    public function getFrequency()
     {
-       return $this->getProperty('doseUnit');
+       return $this->getProperty('frequency');
     }
 
 

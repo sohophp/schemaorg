@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\Intangible\Permit;
 
 /**
 * A permit issued by a government agency.
-* @see schema:GovernmentPermit
+* @see http://schema.org/GovernmentPermit
 * @package Sohophp\SchemaOrg\Thing\Intangible\Permit
 */
 class GovernmentPermit extends Permit

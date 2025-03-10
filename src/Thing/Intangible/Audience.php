@@ -2,10 +2,11 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible;
 
 use Sohophp\SchemaOrg\Thing\Intangible;
+use Sohophp\SchemaOrg\Thing\Place\AdministrativeArea;
 
 /**
 * Intended audience for an item, i.e. the group for whom the item was created.
-* @see schema:Audience
+* @see http://schema.org/Audience
 * @package Sohophp\SchemaOrg\Thing\Intangible
 */
 class Audience extends Intangible
@@ -15,7 +16,7 @@ class Audience extends Intangible
     /**
         * The target group associated with a given audience (e.g. veterans, car owners,
  * musicians, etc.).
-        * @param array|string|mixed $value
+        * @param string|array|mixed $value
     * @return $this
     */
     public function audienceType($value)
@@ -25,7 +26,7 @@ class Audience extends Intangible
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setAudienceType($value)
@@ -45,7 +46,7 @@ class Audience extends Intangible
 
     /**
         * The geographic area associated with the audience.
-        * @param array|string|mixed $value
+        * @param AdministrativeArea|array|string|mixed $value
     * @return $this
     */
     public function geographicArea($value)
@@ -55,7 +56,7 @@ class Audience extends Intangible
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param AdministrativeArea|array|string|mixed $value
     * @return $this
     */
     public function setGeographicArea($value)

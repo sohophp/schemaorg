@@ -6,7 +6,7 @@ use Sohophp\SchemaOrg\Thing\Intangible\Service\FinancialProduct\InvestmentOrDepo
 /**
 * An account that allows an investor to deposit funds and place investment
  * orders with a licensed broker or brokerage firm.
-* @see schema:BrokerageAccount
+* @see http://schema.org/BrokerageAccount
 * @package Sohophp\SchemaOrg\Thing\Intangible\Service\FinancialProduct\InvestmentOrDeposit
 */
 class BrokerageAccount extends InvestmentOrDeposit

@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MedicalEnumeration;
 
 /**
 * Systems of medical practice.
-* @see schema:MedicineSystem
+* @see http://schema.org/MedicineSystem
 * @package Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MedicalEnumeration
 */
 class MedicineSystem extends MedicalEnumeration

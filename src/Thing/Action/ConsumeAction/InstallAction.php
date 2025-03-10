@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\Action\ConsumeAction;
 
 /**
 * The act of installing an application.
-* @see schema:InstallAction
+* @see http://schema.org/InstallAction
 * @package Sohophp\SchemaOrg\Thing\Action\ConsumeAction
 */
 class InstallAction extends ConsumeAction

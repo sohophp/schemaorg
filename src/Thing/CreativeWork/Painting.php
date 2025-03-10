@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\CreativeWork;
 
 /**
 * A painting.
-* @see schema:Painting
+* @see http://schema.org/Painting
 * @package Sohophp\SchemaOrg\Thing\CreativeWork
 */
 class Painting extends CreativeWork

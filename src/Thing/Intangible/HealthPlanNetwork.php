@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\Intangible;
 
 /**
 * A US-style health insurance plan network.
-* @see schema:HealthPlanNetwork
+* @see http://schema.org/HealthPlanNetwork
 * @package Sohophp\SchemaOrg\Thing\Intangible
 */
 class HealthPlanNetwork extends Intangible
@@ -14,7 +14,7 @@ class HealthPlanNetwork extends Intangible
 
     /**
         * The tier(s) for this network.
-        * @param array|string|mixed $value
+        * @param string|array|mixed $value
     * @return $this
     */
     public function healthPlanNetworkTier($value)
@@ -24,7 +24,7 @@ class HealthPlanNetwork extends Intangible
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setHealthPlanNetworkTier($value)
@@ -44,8 +44,8 @@ class HealthPlanNetwork extends Intangible
 
     /**
         * Name or unique ID of network. (Networks are often reused across different
- * insurance plans.)
-        * @param array|string|mixed $value
+ * insurance plans).
+        * @param string|array|mixed $value
     * @return $this
     */
     public function healthPlanNetworkId($value)
@@ -55,7 +55,7 @@ class HealthPlanNetwork extends Intangible
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setHealthPlanNetworkId($value)
@@ -74,8 +74,9 @@ class HealthPlanNetwork extends Intangible
 
 
     /**
-        * The costs to the patient for services under this network or formulary.
-        * @param array|string|mixed $value
+        * Whether The costs to the patient for services under this network or
+ * formulary.
+        * @param bool|array|string|mixed $value
     * @return $this
     */
     public function healthPlanCostSharing($value)
@@ -85,7 +86,7 @@ class HealthPlanNetwork extends Intangible
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param bool|array|string|mixed $value
     * @return $this
     */
     public function setHealthPlanCostSharing($value)

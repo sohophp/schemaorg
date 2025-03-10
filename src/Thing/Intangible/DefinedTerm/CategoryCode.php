@@ -2,10 +2,11 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible\DefinedTerm;
 
 use Sohophp\SchemaOrg\Thing\Intangible\DefinedTerm;
+use Sohophp\SchemaOrg\Thing\CreativeWork\DefinedTermSet\CategoryCodeSet;
 
 /**
 * A Category Code.
-* @see schema:CategoryCode
+* @see http://schema.org/CategoryCode
 * @package Sohophp\SchemaOrg\Thing\Intangible\DefinedTerm
 */
 class CategoryCode extends DefinedTerm
@@ -13,38 +14,8 @@ class CategoryCode extends DefinedTerm
 
 
     /**
-        * A short textual code that uniquely identifies the value.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function codeValue($value)
-    {
-        $this->setProperty('codeValue', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setCodeValue($value)
-    {
-        $this->setProperty('codeValue', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getCodeValue()
-    {
-       return $this->getProperty('codeValue');
-    }
-
-
-    /**
         * A [[CategoryCodeSet]] that contains this category code.
-        * @param array|string|mixed $value
+        * @param string|CategoryCodeSet|array|mixed $value
     * @return $this
     */
     public function inCodeSet($value)
@@ -54,7 +25,7 @@ class CategoryCode extends DefinedTerm
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|CategoryCodeSet|array|mixed $value
     * @return $this
     */
     public function setInCodeSet($value)
@@ -69,6 +40,36 @@ class CategoryCode extends DefinedTerm
     public function getInCodeSet()
     {
        return $this->getProperty('inCodeSet');
+    }
+
+
+    /**
+        * A short textual code that uniquely identifies the value.
+        * @param string|array|mixed $value
+    * @return $this
+    */
+    public function codeValue($value)
+    {
+        $this->setProperty('codeValue', $value);
+        return $this;
+    }
+
+    /**
+    * @param string|array|mixed $value
+    * @return $this
+    */
+    public function setCodeValue($value)
+    {
+        $this->setProperty('codeValue', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getCodeValue()
+    {
+       return $this->getProperty('codeValue');
     }
 
 

@@ -6,7 +6,7 @@ use Sohophp\SchemaOrg\Thing\Organization;
 /**
 * Represents the collection of all sports organizations, including sports
  * teams, governing bodies, and sports associations.
-* @see schema:SportsOrganization
+* @see http://schema.org/SportsOrganization
 * @package Sohophp\SchemaOrg\Thing\Organization
 */
 class SportsOrganization extends Organization
@@ -15,7 +15,7 @@ class SportsOrganization extends Organization
 
     /**
         * A type of sport (e.g. Baseball).
-        * @param array|string|mixed $value
+        * @param string|string|array|mixed $value
     * @return $this
     */
     public function sport($value)
@@ -25,7 +25,7 @@ class SportsOrganization extends Organization
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|string|array|mixed $value
     * @return $this
     */
     public function setSport($value)

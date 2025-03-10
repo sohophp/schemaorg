@@ -2,11 +2,17 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible;
 
 use Sohophp\SchemaOrg\Thing\Intangible;
+use Sohophp\SchemaOrg\Thing\Intangible\Service;
+use Sohophp\SchemaOrg\Thing\Place;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\ContactPoint\PostalAddress;
+use Sohophp\SchemaOrg\Thing\Intangible\Language;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\ContactPoint;
+use Sohophp\SchemaOrg\Thing\Intangible\Quantity\Duration;
 
 /**
 * A means for accessing a service, e.g. a government office location, web site,
  * or phone number.
-* @see schema:ServiceChannel
+* @see http://schema.org/ServiceChannel
 * @package Sohophp\SchemaOrg\Thing\Intangible
 */
 class ServiceChannel extends Intangible
@@ -15,7 +21,7 @@ class ServiceChannel extends Intangible
 
     /**
         * The service provided by this channel.
-        * @param array|string|mixed $value
+        * @param Service|array|string|mixed $value
     * @return $this
     */
     public function providesService($value)
@@ -25,7 +31,7 @@ class ServiceChannel extends Intangible
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Service|array|string|mixed $value
     * @return $this
     */
     public function setProvidesService($value)
@@ -44,71 +50,9 @@ class ServiceChannel extends Intangible
 
 
     /**
-        * The website to access the service.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function serviceUrl($value)
-    {
-        $this->setProperty('serviceUrl', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setServiceUrl($value)
-    {
-        $this->setProperty('serviceUrl', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getServiceUrl()
-    {
-       return $this->getProperty('serviceUrl');
-    }
-
-
-    /**
-        * A language someone may use with or at the item, service or place. Please use
- * one of the language codes from the [IETF BCP 47
- * standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function availableLanguage($value)
-    {
-        $this->setProperty('availableLanguage', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setAvailableLanguage($value)
-    {
-        $this->setProperty('availableLanguage', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getAvailableLanguage()
-    {
-       return $this->getProperty('availableLanguage');
-    }
-
-
-    /**
         * The location (e.g. civic structure, local business, etc.) where a person can
  * go to access the service.
-        * @param array|string|mixed $value
+        * @param Place|array|string|mixed $value
     * @return $this
     */
     public function serviceLocation($value)
@@ -118,7 +62,7 @@ class ServiceChannel extends Intangible
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Place|array|string|mixed $value
     * @return $this
     */
     public function setServiceLocation($value)
@@ -138,7 +82,7 @@ class ServiceChannel extends Intangible
 
     /**
         * The address for accessing the service by mail.
-        * @param array|string|mixed $value
+        * @param PostalAddress|array|string|mixed $value
     * @return $this
     */
     public function servicePostalAddress($value)
@@ -148,7 +92,7 @@ class ServiceChannel extends Intangible
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param PostalAddress|array|string|mixed $value
     * @return $this
     */
     public function setServicePostalAddress($value)
@@ -167,8 +111,70 @@ class ServiceChannel extends Intangible
 
 
     /**
+        * A language someone may use with or at the item, service or place. Please use
+ * one of the language codes from the [IETF BCP 47
+ * standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+        * @param string|Language|array|mixed $value
+    * @return $this
+    */
+    public function availableLanguage($value)
+    {
+        $this->setProperty('availableLanguage', $value);
+        return $this;
+    }
+
+    /**
+    * @param string|Language|array|mixed $value
+    * @return $this
+    */
+    public function setAvailableLanguage($value)
+    {
+        $this->setProperty('availableLanguage', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getAvailableLanguage()
+    {
+       return $this->getProperty('availableLanguage');
+    }
+
+
+    /**
+        * The website to access the service.
+        * @param string|array|mixed $value
+    * @return $this
+    */
+    public function serviceUrl($value)
+    {
+        $this->setProperty('serviceUrl', $value);
+        return $this;
+    }
+
+    /**
+    * @param string|array|mixed $value
+    * @return $this
+    */
+    public function setServiceUrl($value)
+    {
+        $this->setProperty('serviceUrl', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getServiceUrl()
+    {
+       return $this->getProperty('serviceUrl');
+    }
+
+
+    /**
         * The phone number to use to access the service.
-        * @param array|string|mixed $value
+        * @param ContactPoint|array|string|mixed $value
     * @return $this
     */
     public function servicePhone($value)
@@ -178,7 +184,7 @@ class ServiceChannel extends Intangible
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param ContactPoint|array|string|mixed $value
     * @return $this
     */
     public function setServicePhone($value)
@@ -197,38 +203,8 @@ class ServiceChannel extends Intangible
 
 
     /**
-        * Estimated processing time for the service using this channel.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function processingTime($value)
-    {
-        $this->setProperty('processingTime', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setProcessingTime($value)
-    {
-        $this->setProperty('processingTime', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getProcessingTime()
-    {
-       return $this->getProperty('processingTime');
-    }
-
-
-    /**
         * The number to access the service by text message.
-        * @param array|string|mixed $value
+        * @param ContactPoint|array|string|mixed $value
     * @return $this
     */
     public function serviceSmsNumber($value)
@@ -238,7 +214,7 @@ class ServiceChannel extends Intangible
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param ContactPoint|array|string|mixed $value
     * @return $this
     */
     public function setServiceSmsNumber($value)
@@ -253,6 +229,36 @@ class ServiceChannel extends Intangible
     public function getServiceSmsNumber()
     {
        return $this->getProperty('serviceSmsNumber');
+    }
+
+
+    /**
+        * Estimated processing time for the service using this channel.
+        * @param Duration|array|string|mixed $value
+    * @return $this
+    */
+    public function processingTime($value)
+    {
+        $this->setProperty('processingTime', $value);
+        return $this;
+    }
+
+    /**
+    * @param Duration|array|string|mixed $value
+    * @return $this
+    */
+    public function setProcessingTime($value)
+    {
+        $this->setProperty('processingTime', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getProcessingTime()
+    {
+       return $this->getProperty('processingTime');
     }
 
 

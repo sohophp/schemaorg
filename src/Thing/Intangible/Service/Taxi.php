@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\Intangible\Service;
 
 /**
 * A taxi.
-* @see schema:Taxi
+* @see http://schema.org/Taxi
 * @package Sohophp\SchemaOrg\Thing\Intangible\Service
 */
 class Taxi extends Service

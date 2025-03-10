@@ -9,7 +9,7 @@ use Sohophp\SchemaOrg\Thing\Intangible\Reservation;
  * Note: This type is for information about actual reservations, e.g. in
  * confirmation emails or HTML pages with individual confirmations of
  * reservations. For offers of tickets, use [[Offer]].
-* @see schema:EventReservation
+* @see http://schema.org/EventReservation
 * @package Sohophp\SchemaOrg\Thing\Intangible\Reservation
 */
 class EventReservation extends Reservation

@@ -2,12 +2,15 @@
 namespace Sohophp\SchemaOrg\Thing\Action\TradeAction;
 
 use Sohophp\SchemaOrg\Thing\Action\TradeAction;
+use Sohophp\SchemaOrg\Thing\Organization;
+use Sohophp\SchemaOrg\Thing\Person;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\WarrantyPromise;
 
 /**
 * The act of giving money to a seller in exchange for goods or services
  * rendered. An agent buys an object, product, or service from a seller for a
  * price. Reciprocal of SellAction.
-* @see schema:BuyAction
+* @see http://schema.org/BuyAction
 * @package Sohophp\SchemaOrg\Thing\Action\TradeAction
 */
 class BuyAction extends TradeAction
@@ -16,7 +19,7 @@ class BuyAction extends TradeAction
 
     /**
         * 'vendor' is an earlier term for 'seller'.
-        * @param array|string|mixed $value
+        * @param Organization|Person|array|string|mixed $value
     * @return $this
     */
     public function vendor($value)
@@ -26,7 +29,7 @@ class BuyAction extends TradeAction
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Organization|Person|array|string|mixed $value
     * @return $this
     */
     public function setVendor($value)
@@ -45,39 +48,9 @@ class BuyAction extends TradeAction
 
 
     /**
-        * The warranty promise(s) included in the offer.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function warrantyPromise($value)
-    {
-        $this->setProperty('warrantyPromise', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setWarrantyPromise($value)
-    {
-        $this->setProperty('warrantyPromise', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getWarrantyPromise()
-    {
-       return $this->getProperty('warrantyPromise');
-    }
-
-
-    /**
         * An entity which offers (sells / leases / lends / loans) the services / goods.
  *  A seller may also be a provider.
-        * @param array|string|mixed $value
+        * @param Person|Organization|array|string|mixed $value
     * @return $this
     */
     public function seller($value)
@@ -87,7 +60,7 @@ class BuyAction extends TradeAction
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Person|Organization|array|string|mixed $value
     * @return $this
     */
     public function setSeller($value)
@@ -102,6 +75,36 @@ class BuyAction extends TradeAction
     public function getSeller()
     {
        return $this->getProperty('seller');
+    }
+
+
+    /**
+        * The warranty promise(s) included in the offer.
+        * @param WarrantyPromise|array|string|mixed $value
+    * @return $this
+    */
+    public function warrantyPromise($value)
+    {
+        $this->setProperty('warrantyPromise', $value);
+        return $this;
+    }
+
+    /**
+    * @param WarrantyPromise|array|string|mixed $value
+    * @return $this
+    */
+    public function setWarrantyPromise($value)
+    {
+        $this->setProperty('warrantyPromise', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getWarrantyPromise()
+    {
+       return $this->getProperty('warrantyPromise');
     }
 
 

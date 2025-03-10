@@ -6,7 +6,7 @@ use Sohophp\SchemaOrg\Thing\Intangible;
 /**
 * Structured values are used when the value of a property has a more complex
  * structure than simply being a textual value or a reference to another thing.
-* @see schema:StructuredValue
+* @see http://schema.org/StructuredValue
 * @package Sohophp\SchemaOrg\Thing\Intangible
 */
 class StructuredValue extends Intangible

@@ -10,7 +10,7 @@ use Sohophp\SchemaOrg\Thing\Action;
  * 
  * * [[FindAction]]: SearchAction generally leads to a FindAction, but not
  * necessarily.
-* @see schema:SearchAction
+* @see http://schema.org/SearchAction
 * @package Sohophp\SchemaOrg\Thing\Action
 */
 class SearchAction extends Action
@@ -19,7 +19,7 @@ class SearchAction extends Action
 
     /**
         * A sub property of instrument. The query used on this action.
-        * @param array|string|mixed $value
+        * @param string|array|mixed $value
     * @return $this
     */
     public function query($value)
@@ -29,7 +29,7 @@ class SearchAction extends Action
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setQuery($value)

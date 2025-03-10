@@ -2,10 +2,11 @@
 namespace Sohophp\SchemaOrg\Thing\Action\AchieveAction;
 
 use Sohophp\SchemaOrg\Thing\Action\AchieveAction;
+use Sohophp\SchemaOrg\Thing\Person;
 
 /**
 * The act of achieving victory in a competitive activity.
-* @see schema:WinAction
+* @see http://schema.org/WinAction
 * @package Sohophp\SchemaOrg\Thing\Action\AchieveAction
 */
 class WinAction extends AchieveAction
@@ -14,7 +15,7 @@ class WinAction extends AchieveAction
 
     /**
         * A sub property of participant. The loser of the action.
-        * @param array|string|mixed $value
+        * @param Person|array|string|mixed $value
     * @return $this
     */
     public function loser($value)
@@ -24,7 +25,7 @@ class WinAction extends AchieveAction
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Person|array|string|mixed $value
     * @return $this
     */
     public function setLoser($value)

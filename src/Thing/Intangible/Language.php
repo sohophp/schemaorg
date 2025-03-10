@@ -10,7 +10,7 @@ use Sohophp\SchemaOrg\Thing\Intangible;
  * [[alternateName]] property. The Language type previously also covered
  * programming languages such as Scheme and Lisp, which are now best represented
  * using [[ComputerLanguage]].
-* @see schema:Language
+* @see http://schema.org/Language
 * @package Sohophp\SchemaOrg\Thing\Intangible
 */
 class Language extends Intangible

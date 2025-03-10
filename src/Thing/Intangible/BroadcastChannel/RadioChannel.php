@@ -6,7 +6,7 @@ use Sohophp\SchemaOrg\Thing\Intangible\BroadcastChannel;
 /**
 * A unique instance of a radio BroadcastService on a CableOrSatelliteService
  * lineup.
-* @see schema:RadioChannel
+* @see http://schema.org/RadioChannel
 * @package Sohophp\SchemaOrg\Thing\Intangible\BroadcastChannel
 */
 class RadioChannel extends BroadcastChannel

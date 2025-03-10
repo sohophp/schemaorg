@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\Intangible\Role;
 
 /**
 * A subclass of Role used to describe roles within organizations.
-* @see schema:OrganizationRole
+* @see http://schema.org/OrganizationRole
 * @package Sohophp\SchemaOrg\Thing\Intangible\Role
 */
 class OrganizationRole extends Role

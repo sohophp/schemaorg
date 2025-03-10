@@ -2,13 +2,14 @@
 namespace Sohophp\SchemaOrg\Thing\Place\Accommodation;
 
 use Sohophp\SchemaOrg\Thing\Place\Accommodation;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\QuantitativeValue;
 
 /**
 * A house is a building or structure that has the ability to be occupied for
- * habitation by humans or other creatures (source: Wikipedia, the free
+ * habitation by humans or other creatures (Source: Wikipedia, the free
  * encyclopedia, see <a
  * href="http://en.wikipedia.org/wiki/House">http://en.wikipedia.org/wiki/House</a>).
-* @see schema:House
+* @see http://schema.org/House
 * @package Sohophp\SchemaOrg\Thing\Place\Accommodation
 */
 class House extends Accommodation
@@ -20,7 +21,7 @@ class House extends Accommodation
  * lodging business.
  * Typical unit code(s): ROM for room or C62 for no unit. The type of room can
  * be put in the unitText property of the QuantitativeValue.
-        * @param array|string|mixed $value
+        * @param QuantitativeValue|array|string|mixed $value
     * @return $this
     */
     public function numberOfRooms($value)
@@ -30,7 +31,7 @@ class House extends Accommodation
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param QuantitativeValue|array|string|mixed $value
     * @return $this
     */
     public function setNumberOfRooms($value)

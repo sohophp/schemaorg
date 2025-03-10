@@ -2,12 +2,24 @@
 namespace Sohophp\SchemaOrg\Thing;
 
 use Sohophp\SchemaOrg\Thing;
+use Sohophp\SchemaOrg\Thing\Organization;
+use Sohophp\SchemaOrg\Thing\Person;
+use Sohophp\SchemaOrg\Thing\Intangible\Audience;
+use Sohophp\SchemaOrg\Thing\Intangible\Rating\AggregateRating;
+use Sohophp\SchemaOrg\Thing\Intangible\Offer;
+use Sohophp\SchemaOrg\Thing\Intangible\Language;
+use Sohophp\SchemaOrg\Thing\CreativeWork;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\EventStatusType;
+use Sohophp\SchemaOrg\Thing\Intangible\Quantity\Duration;
+use Sohophp\SchemaOrg\Thing\CreativeWork\Review;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\ContactPoint\PostalAddress;
+use Sohophp\SchemaOrg\Thing\Place;
 
 /**
 * An event happening at a certain time and location, such as a concert,
  * lecture, or festival. Ticketing information may be added via the [[offers]]
  * property. Repeated events may be structured as separate Event objects.
-* @see schema:Event
+* @see http://schema.org/Event
 * @package Sohophp\SchemaOrg\Thing
 */
 class Event extends Thing
@@ -15,241 +27,185 @@ class Event extends Thing
 
 
     /**
-        * A person or organization that supports a thing through a pledge, promise, or
- * financial contribution. E.g. a sponsor of a Medical Study or a corporate
- * sponsor of an event.
-        * @param array|string|mixed $value
+        * The subject matter of the content.
+        * @param Thing|array|string|mixed $value
     * @return $this
     */
-    public function sponsor($value)
+    public function about($value)
     {
-        $this->setProperty('sponsor', $value);
+        $this->setProperty('about', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Thing|array|string|mixed $value
     * @return $this
     */
-    public function setSponsor($value)
+    public function setAbout($value)
     {
-        $this->setProperty('sponsor', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getSponsor()
-    {
-       return $this->getProperty('sponsor');
-    }
-
-
-    /**
-        * The language of the content or performance or used in an action. Please use
- * one of the language codes from the [IETF BCP 47
- * standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function inLanguage($value)
-    {
-        $this->setProperty('inLanguage', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setInLanguage($value)
-    {
-        $this->setProperty('inLanguage', $value);
+        $this->setProperty('about', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getInLanguage()
+    public function getAbout()
     {
-       return $this->getProperty('inLanguage');
+       return $this->getProperty('about');
     }
 
 
     /**
-        * An offer to provide this item&#x2014;for example, an offer to sell a product,
- * rent the DVD of a movie, perform a service, or give away tickets to an event.
- * Use [[businessFunction]] to indicate the kind of transaction offered, i.e.
- * sell, lease, etc. This property can also be used to describe a [[Demand]].
- * While this property is listed as expected on a number of common types, it can
- * be used in others. In that case, using a second type, such as Product or a
- * subtype of Product, can clarify the nature of the offer.
-        * @param array|string|mixed $value
+        * A person or organization that supports (sponsors) something through some kind
+ * of financial contribution.
+        * @param Organization|Person|array|string|mixed $value
     * @return $this
     */
-    public function offers($value)
+    public function funder($value)
     {
-        $this->setProperty('offers', $value);
+        $this->setProperty('funder', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Organization|Person|array|string|mixed $value
     * @return $this
     */
-    public function setOffers($value)
+    public function setFunder($value)
     {
-        $this->setProperty('offers', $value);
+        $this->setProperty('funder', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getOffers()
+    public function getFunder()
     {
-       return $this->getProperty('offers');
+       return $this->getProperty('funder');
     }
 
 
     /**
-        * Associates an [[Event]] with a [[Schedule]]. There are circumstances where it
- * is preferable to share a schedule for a series of
- *       repeating events rather than data on the individual events themselves.
- * For example, a website or application might prefer to publish a schedule for
- * a weekly
- *       gym class rather than provide data on every event. A schedule could be
- * processed by applications to add forthcoming events to a calendar. An
- * [[Event]] that
- *       is associated with a [[Schedule]] using this property should not have
- * [[startDate]] or [[endDate]] properties. These are instead defined within the
- * associated
- *       [[Schedule]], this avoids any ambiguity for clients using the data. The
- * property might have repeated values to specify different schedules, e.g. for
- * different months
- *       or seasons.
-        * @param array|string|mixed $value
+        * An intended audience, i.e. a group for whom something was created.
+        * @param Audience|array|string|mixed $value
     * @return $this
     */
-    public function eventSchedule($value)
+    public function audience($value)
     {
-        $this->setProperty('eventSchedule', $value);
+        $this->setProperty('audience', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Audience|array|string|mixed $value
     * @return $this
     */
-    public function setEventSchedule($value)
+    public function setAudience($value)
     {
-        $this->setProperty('eventSchedule', $value);
+        $this->setProperty('audience', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getEventSchedule()
+    public function getAudience()
     {
-       return $this->getProperty('eventSchedule');
+       return $this->getProperty('audience');
     }
 
 
     /**
-        * Keywords or tags used to describe some item. Multiple textual entries in a
- * keywords list are typically delimited by commas, or by repeating the
- * property.
-        * @param array|string|mixed $value
+        * The number of attendee places for an event that remain unallocated.
+        * @param int|array|string|mixed $value
     * @return $this
     */
-    public function keywords($value)
+    public function remainingAttendeeCapacity($value)
     {
-        $this->setProperty('keywords', $value);
+        $this->setProperty('remainingAttendeeCapacity', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param int|array|string|mixed $value
     * @return $this
     */
-    public function setKeywords($value)
+    public function setRemainingAttendeeCapacity($value)
     {
-        $this->setProperty('keywords', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getKeywords()
-    {
-       return $this->getProperty('keywords');
-    }
-
-
-    /**
-        * An Event that is part of this event. For example, a conference event includes
- * many presentations, each of which is a subEvent of the conference.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function subEvent($value)
-    {
-        $this->setProperty('subEvent', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setSubEvent($value)
-    {
-        $this->setProperty('subEvent', $value);
+        $this->setProperty('remainingAttendeeCapacity', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getSubEvent()
+    public function getRemainingAttendeeCapacity()
     {
-       return $this->getProperty('subEvent');
+       return $this->getProperty('remainingAttendeeCapacity');
     }
 
 
     /**
-        * An event that this event is a part of. For example, a collection of
- * individual music performances might each have a music festival as their
- * superEvent.
-        * @param array|string|mixed $value
+        * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors
+ * can be associated with individual items or with a series, episode, clip.
+        * @param Person|array|string|mixed $value
     * @return $this
     */
-    public function superEvent($value)
+    public function actor($value)
     {
-        $this->setProperty('superEvent', $value);
+        $this->setProperty('actor', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Person|array|string|mixed $value
     * @return $this
     */
-    public function setSuperEvent($value)
+    public function setActor($value)
     {
-        $this->setProperty('superEvent', $value);
+        $this->setProperty('actor', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getSuperEvent()
+    public function getActor()
     {
-       return $this->getProperty('superEvent');
+       return $this->getProperty('actor');
+    }
+
+
+    /**
+        * The main performer or performers of the event&#x2014;for example, a
+ * presenter, musician, or actor.
+        * @param Organization|Person|array|string|mixed $value
+    * @return $this
+    */
+    public function performers($value)
+    {
+        $this->setProperty('performers', $value);
+        return $this;
+    }
+
+    /**
+    * @param Organization|Person|array|string|mixed $value
+    * @return $this
+    */
+    public function setPerformers($value)
+    {
+        $this->setProperty('performers', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getPerformers()
+    {
+       return $this->getProperty('performers');
     }
 
 
@@ -285,285 +241,6 @@ class Event extends Thing
 
 
     /**
-        * The total number of individuals that may attend an event or venue.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function maximumAttendeeCapacity($value)
-    {
-        $this->setProperty('maximumAttendeeCapacity', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setMaximumAttendeeCapacity($value)
-    {
-        $this->setProperty('maximumAttendeeCapacity', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getMaximumAttendeeCapacity()
-    {
-       return $this->getProperty('maximumAttendeeCapacity');
-    }
-
-
-    /**
-        * A director of e.g. TV, radio, movie, video gaming etc. content, or of an
- * event. Directors can be associated with individual items or with a series,
- * episode, clip.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function director($value)
-    {
-        $this->setProperty('director', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setDirector($value)
-    {
-        $this->setProperty('director', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getDirector()
-    {
-       return $this->getProperty('director');
-    }
-
-
-    /**
-        * The person or organization who wrote a composition, or who is the composer of
- * a work performed at some event.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function composer($value)
-    {
-        $this->setProperty('composer', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setComposer($value)
-    {
-        $this->setProperty('composer', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getComposer()
-    {
-       return $this->getProperty('composer');
-    }
-
-
-    /**
-        * The main performer or performers of the event&#x2014;for example, a
- * presenter, musician, or actor.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function performers($value)
-    {
-        $this->setProperty('performers', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setPerformers($value)
-    {
-        $this->setProperty('performers', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getPerformers()
-    {
-       return $this->getProperty('performers');
-    }
-
-
-    /**
-        * The eventAttendanceMode of an event indicates whether it occurs online,
- * offline, or a mix.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function eventAttendanceMode($value)
-    {
-        $this->setProperty('eventAttendanceMode', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setEventAttendanceMode($value)
-    {
-        $this->setProperty('eventAttendanceMode', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getEventAttendanceMode()
-    {
-       return $this->getProperty('eventAttendanceMode');
-    }
-
-
-    /**
-        * A [[Grant]] that directly or indirectly provide funding or sponsorship for
- * this item. See also [[ownershipFundingInfo]].
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function funding($value)
-    {
-        $this->setProperty('funding', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setFunding($value)
-    {
-        $this->setProperty('funding', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getFunding()
-    {
-       return $this->getProperty('funding');
-    }
-
-
-    /**
-        * A person or organization that supports (sponsors) something through some kind
- * of financial contribution.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function funder($value)
-    {
-        $this->setProperty('funder', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setFunder($value)
-    {
-        $this->setProperty('funder', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getFunder()
-    {
-       return $this->getProperty('funder');
-    }
-
-
-    /**
-        * The subject matter of the content.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function about($value)
-    {
-        $this->setProperty('about', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setAbout($value)
-    {
-        $this->setProperty('about', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getAbout()
-    {
-       return $this->getProperty('about');
-    }
-
-
-    /**
-        * The maximum virtual attendee capacity of an [[Event]] whose
- * [[eventAttendanceMode]] is [[OnlineEventAttendanceMode]] (or the online
- * aspects, in the case of a [[MixedEventAttendanceMode]]).
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function maximumVirtualAttendeeCapacity($value)
-    {
-        $this->setProperty('maximumVirtualAttendeeCapacity', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setMaximumVirtualAttendeeCapacity($value)
-    {
-        $this->setProperty('maximumVirtualAttendeeCapacity', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getMaximumVirtualAttendeeCapacity()
-    {
-       return $this->getProperty('maximumVirtualAttendeeCapacity');
-    }
-
-
-    /**
         * The time admission will commence.
         * @param array|string|mixed $value
     * @return $this
@@ -590,6 +267,373 @@ class Event extends Thing
     public function getDoorTime()
     {
        return $this->getProperty('doorTime');
+    }
+
+
+    /**
+        * A secondary contributor to the CreativeWork or Event.
+        * @param Person|Organization|array|string|mixed $value
+    * @return $this
+    */
+    public function contributor($value)
+    {
+        $this->setProperty('contributor', $value);
+        return $this;
+    }
+
+    /**
+    * @param Person|Organization|array|string|mixed $value
+    * @return $this
+    */
+    public function setContributor($value)
+    {
+        $this->setProperty('contributor', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getContributor()
+    {
+       return $this->getProperty('contributor');
+    }
+
+
+    /**
+        * The typical expected age range, e.g. '7-9', '11-'.
+        * @param string|array|mixed $value
+    * @return $this
+    */
+    public function typicalAgeRange($value)
+    {
+        $this->setProperty('typicalAgeRange', $value);
+        return $this;
+    }
+
+    /**
+    * @param string|array|mixed $value
+    * @return $this
+    */
+    public function setTypicalAgeRange($value)
+    {
+        $this->setProperty('typicalAgeRange', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getTypicalAgeRange()
+    {
+       return $this->getProperty('typicalAgeRange');
+    }
+
+
+    /**
+        * An organizer of an Event.
+        * @param Organization|Person|array|string|mixed $value
+    * @return $this
+    */
+    public function organizer($value)
+    {
+        $this->setProperty('organizer', $value);
+        return $this;
+    }
+
+    /**
+    * @param Organization|Person|array|string|mixed $value
+    * @return $this
+    */
+    public function setOrganizer($value)
+    {
+        $this->setProperty('organizer', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getOrganizer()
+    {
+       return $this->getProperty('organizer');
+    }
+
+
+    /**
+        * A person attending the event.
+        * @param Organization|Person|array|string|mixed $value
+    * @return $this
+    */
+    public function attendees($value)
+    {
+        $this->setProperty('attendees', $value);
+        return $this;
+    }
+
+    /**
+    * @param Organization|Person|array|string|mixed $value
+    * @return $this
+    */
+    public function setAttendees($value)
+    {
+        $this->setProperty('attendees', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getAttendees()
+    {
+       return $this->getProperty('attendees');
+    }
+
+
+    /**
+        * The overall rating, based on a collection of reviews or ratings, of the item.
+        * @param AggregateRating|array|string|mixed $value
+    * @return $this
+    */
+    public function aggregateRating($value)
+    {
+        $this->setProperty('aggregateRating', $value);
+        return $this;
+    }
+
+    /**
+    * @param AggregateRating|array|string|mixed $value
+    * @return $this
+    */
+    public function setAggregateRating($value)
+    {
+        $this->setProperty('aggregateRating', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getAggregateRating()
+    {
+       return $this->getProperty('aggregateRating');
+    }
+
+
+    /**
+        * An Event that is part of this event. For example, a conference event includes
+ * many presentations, each of which is a subEvent of the conference.
+        * @param Event|array|string|mixed $value
+    * @return $this
+    */
+    public function subEvent($value)
+    {
+        $this->setProperty('subEvent', $value);
+        return $this;
+    }
+
+    /**
+    * @param Event|array|string|mixed $value
+    * @return $this
+    */
+    public function setSubEvent($value)
+    {
+        $this->setProperty('subEvent', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getSubEvent()
+    {
+       return $this->getProperty('subEvent');
+    }
+
+
+    /**
+        * Events that are a part of this event. For example, a conference event
+ * includes many presentations, each subEvents of the conference.
+        * @param Event|array|string|mixed $value
+    * @return $this
+    */
+    public function subEvents($value)
+    {
+        $this->setProperty('subEvents', $value);
+        return $this;
+    }
+
+    /**
+    * @param Event|array|string|mixed $value
+    * @return $this
+    */
+    public function setSubEvents($value)
+    {
+        $this->setProperty('subEvents', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getSubEvents()
+    {
+       return $this->getProperty('subEvents');
+    }
+
+
+    /**
+        * An offer to provide this item&#x2014;for example, an offer to sell a product,
+ * rent the DVD of a movie, perform a service, or give away tickets to an event.
+        * @param Offer|array|string|mixed $value
+    * @return $this
+    */
+    public function offers($value)
+    {
+        $this->setProperty('offers', $value);
+        return $this;
+    }
+
+    /**
+    * @param Offer|array|string|mixed $value
+    * @return $this
+    */
+    public function setOffers($value)
+    {
+        $this->setProperty('offers', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getOffers()
+    {
+       return $this->getProperty('offers');
+    }
+
+
+    /**
+        * The language of the content or performance or used in an action. Please use
+ * one of the language codes from the [IETF BCP 47
+ * standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+        * @param Language|string|array|mixed $value
+    * @return $this
+    */
+    public function inLanguage($value)
+    {
+        $this->setProperty('inLanguage', $value);
+        return $this;
+    }
+
+    /**
+    * @param Language|string|array|mixed $value
+    * @return $this
+    */
+    public function setInLanguage($value)
+    {
+        $this->setProperty('inLanguage', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getInLanguage()
+    {
+       return $this->getProperty('inLanguage');
+    }
+
+
+    /**
+        * A person or organization attending the event.
+        * @param Organization|Person|array|string|mixed $value
+    * @return $this
+    */
+    public function attendee($value)
+    {
+        $this->setProperty('attendee', $value);
+        return $this;
+    }
+
+    /**
+    * @param Organization|Person|array|string|mixed $value
+    * @return $this
+    */
+    public function setAttendee($value)
+    {
+        $this->setProperty('attendee', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getAttendee()
+    {
+       return $this->getProperty('attendee');
+    }
+
+
+    /**
+        * A work performed in some event, for example a play performed in a
+ * TheaterEvent.
+        * @param CreativeWork|array|string|mixed $value
+    * @return $this
+    */
+    public function workPerformed($value)
+    {
+        $this->setProperty('workPerformed', $value);
+        return $this;
+    }
+
+    /**
+    * @param CreativeWork|array|string|mixed $value
+    * @return $this
+    */
+    public function setWorkPerformed($value)
+    {
+        $this->setProperty('workPerformed', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getWorkPerformed()
+    {
+       return $this->getProperty('workPerformed');
+    }
+
+
+    /**
+        * An eventStatus of an event represents its status; particularly useful when an
+ * event is cancelled or rescheduled.
+        * @param EventStatusType|array|string|mixed $value
+    * @return $this
+    */
+    public function eventStatus($value)
+    {
+        $this->setProperty('eventStatus', $value);
+        return $this;
+    }
+
+    /**
+    * @param EventStatusType|array|string|mixed $value
+    * @return $this
+    */
+    public function setEventStatus($value)
+    {
+        $this->setProperty('eventStatus', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getEventStatus()
+    {
+       return $this->getProperty('eventStatus');
     }
 
 
@@ -625,217 +669,66 @@ class Event extends Thing
 
 
     /**
-        * An intended audience, i.e. a group for whom something was created.
-        * @param array|string|mixed $value
+        * A director of e.g. tv, radio, movie, video gaming etc. content, or of an
+ * event. Directors can be associated with individual items or with a series,
+ * episode, clip.
+        * @param Person|array|string|mixed $value
     * @return $this
     */
-    public function audience($value)
+    public function director($value)
     {
-        $this->setProperty('audience', $value);
+        $this->setProperty('director', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Person|array|string|mixed $value
     * @return $this
     */
-    public function setAudience($value)
+    public function setDirector($value)
     {
-        $this->setProperty('audience', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getAudience()
-    {
-       return $this->getProperty('audience');
-    }
-
-
-    /**
-        * A review of the item.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function review($value)
-    {
-        $this->setProperty('review', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setReview($value)
-    {
-        $this->setProperty('review', $value);
+        $this->setProperty('director', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getReview()
+    public function getDirector()
     {
-       return $this->getProperty('review');
+       return $this->getProperty('director');
     }
 
 
     /**
-        * The maximum physical attendee capacity of an [[Event]] whose
- * [[eventAttendanceMode]] is [[OfflineEventAttendanceMode]] (or the offline
- * aspects, in the case of a [[MixedEventAttendanceMode]]).
-        * @param array|string|mixed $value
+        * An event that this event is a part of. For example, a collection of
+ * individual music performances might each have a music festival as their
+ * superEvent.
+        * @param Event|array|string|mixed $value
     * @return $this
     */
-    public function maximumPhysicalAttendeeCapacity($value)
+    public function superEvent($value)
     {
-        $this->setProperty('maximumPhysicalAttendeeCapacity', $value);
+        $this->setProperty('superEvent', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Event|array|string|mixed $value
     * @return $this
     */
-    public function setMaximumPhysicalAttendeeCapacity($value)
+    public function setSuperEvent($value)
     {
-        $this->setProperty('maximumPhysicalAttendeeCapacity', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getMaximumPhysicalAttendeeCapacity()
-    {
-       return $this->getProperty('maximumPhysicalAttendeeCapacity');
-    }
-
-
-    /**
-        * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601
- * duration format](http://en.wikipedia.org/wiki/ISO_8601).
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function duration($value)
-    {
-        $this->setProperty('duration', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setDuration($value)
-    {
-        $this->setProperty('duration', $value);
+        $this->setProperty('superEvent', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getDuration()
+    public function getSuperEvent()
     {
-       return $this->getProperty('duration');
-    }
-
-
-    /**
-        * A person or organization attending the event.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function attendee($value)
-    {
-        $this->setProperty('attendee', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setAttendee($value)
-    {
-        $this->setProperty('attendee', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getAttendee()
-    {
-       return $this->getProperty('attendee');
-    }
-
-
-    /**
-        * The CreativeWork that captured all or part of this Event.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function recordedIn($value)
-    {
-        $this->setProperty('recordedIn', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setRecordedIn($value)
-    {
-        $this->setProperty('recordedIn', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getRecordedIn()
-    {
-       return $this->getProperty('recordedIn');
-    }
-
-
-    /**
-        * Organization or person who adapts a creative work to different languages,
- * regional differences and technical requirements of a target market, or that
- * translates during some event.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function translator($value)
-    {
-        $this->setProperty('translator', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setTranslator($value)
-    {
-        $this->setProperty('translator', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getTranslator()
-    {
-       return $this->getProperty('translator');
+       return $this->getProperty('superEvent');
     }
 
 
@@ -843,7 +736,7 @@ class Event extends Thing
         * A work featured in some event, e.g. exhibited in an ExhibitionEvent.
  *        Specific subproperties are available for workPerformed (e.g. a play),
  * or a workPresented (a Movie at a ScreeningEvent).
-        * @param array|string|mixed $value
+        * @param CreativeWork|array|string|mixed $value
     * @return $this
     */
     public function workFeatured($value)
@@ -853,7 +746,7 @@ class Event extends Thing
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param CreativeWork|array|string|mixed $value
     * @return $this
     */
     public function setWorkFeatured($value)
@@ -872,94 +765,65 @@ class Event extends Thing
 
 
     /**
-        * A flag to signal that the item, event, or place is accessible for free.
-        * @param array|string|mixed $value
+        * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601
+ * date format](http://en.wikipedia.org/wiki/ISO_8601).
+        * @param Duration|array|string|mixed $value
     * @return $this
     */
-    public function isAccessibleForFree($value)
+    public function duration($value)
     {
-        $this->setProperty('isAccessibleForFree', $value);
+        $this->setProperty('duration', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Duration|array|string|mixed $value
     * @return $this
     */
-    public function setIsAccessibleForFree($value)
+    public function setDuration($value)
     {
-        $this->setProperty('isAccessibleForFree', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getIsAccessibleForFree()
-    {
-       return $this->getProperty('isAccessibleForFree');
-    }
-
-
-    /**
-        * An eventStatus of an event represents its status; particularly useful when an
- * event is cancelled or rescheduled.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function eventStatus($value)
-    {
-        $this->setProperty('eventStatus', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setEventStatus($value)
-    {
-        $this->setProperty('eventStatus', $value);
+        $this->setProperty('duration', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getEventStatus()
+    public function getDuration()
     {
-       return $this->getProperty('eventStatus');
+       return $this->getProperty('duration');
     }
 
 
     /**
-        * A performer at the event&#x2014;for example, a presenter, musician, musical
- * group or actor.
-        * @param array|string|mixed $value
+        * Organization or person who adapts a creative work to different languages,
+ * regional differences and technical requirements of a target market, or that
+ * translates during some event.
+        * @param Person|Organization|array|string|mixed $value
     * @return $this
     */
-    public function performer($value)
+    public function translator($value)
     {
-        $this->setProperty('performer', $value);
+        $this->setProperty('translator', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Person|Organization|array|string|mixed $value
     * @return $this
     */
-    public function setPerformer($value)
+    public function setTranslator($value)
     {
-        $this->setProperty('performer', $value);
+        $this->setProperty('translator', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getPerformer()
+    public function getTranslator()
     {
-       return $this->getProperty('performer');
+       return $this->getProperty('translator');
     }
 
 
@@ -998,283 +862,71 @@ class Event extends Thing
 
 
     /**
-        * Events that are a part of this event. For example, a conference event
- * includes many presentations, each subEvents of the conference.
-        * @param array|string|mixed $value
+        * A review of the item.
+        * @param Review|array|string|mixed $value
     * @return $this
     */
-    public function subEvents($value)
+    public function review($value)
     {
-        $this->setProperty('subEvents', $value);
+        $this->setProperty('review', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Review|array|string|mixed $value
     * @return $this
     */
-    public function setSubEvents($value)
+    public function setReview($value)
     {
-        $this->setProperty('subEvents', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getSubEvents()
-    {
-       return $this->getProperty('subEvents');
-    }
-
-
-    /**
-        * A secondary contributor to the CreativeWork or Event.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function contributor($value)
-    {
-        $this->setProperty('contributor', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setContributor($value)
-    {
-        $this->setProperty('contributor', $value);
+        $this->setProperty('review', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getContributor()
+    public function getReview()
     {
-       return $this->getProperty('contributor');
+       return $this->getProperty('review');
     }
 
 
     /**
-        * The overall rating, based on a collection of reviews or ratings, of the item.
-        * @param array|string|mixed $value
+        * A person or organization that supports a thing through a pledge, promise, or
+ * financial contribution. e.g. a sponsor of a Medical Study or a corporate
+ * sponsor of an event.
+        * @param Person|Organization|array|string|mixed $value
     * @return $this
     */
-    public function aggregateRating($value)
+    public function sponsor($value)
     {
-        $this->setProperty('aggregateRating', $value);
+        $this->setProperty('sponsor', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Person|Organization|array|string|mixed $value
     * @return $this
     */
-    public function setAggregateRating($value)
+    public function setSponsor($value)
     {
-        $this->setProperty('aggregateRating', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getAggregateRating()
-    {
-       return $this->getProperty('aggregateRating');
-    }
-
-
-    /**
-        * The number of attendee places for an event that remain unallocated.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function remainingAttendeeCapacity($value)
-    {
-        $this->setProperty('remainingAttendeeCapacity', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setRemainingAttendeeCapacity($value)
-    {
-        $this->setProperty('remainingAttendeeCapacity', $value);
+        $this->setProperty('sponsor', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getRemainingAttendeeCapacity()
+    public function getSponsor()
     {
-       return $this->getProperty('remainingAttendeeCapacity');
+       return $this->getProperty('sponsor');
     }
 
 
     /**
-        * A person attending the event.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function attendees($value)
-    {
-        $this->setProperty('attendees', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setAttendees($value)
-    {
-        $this->setProperty('attendees', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getAttendees()
-    {
-       return $this->getProperty('attendees');
-    }
-
-
-    /**
-        * A work performed in some event, for example a play performed in a
- * TheaterEvent.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function workPerformed($value)
-    {
-        $this->setProperty('workPerformed', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setWorkPerformed($value)
-    {
-        $this->setProperty('workPerformed', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getWorkPerformed()
-    {
-       return $this->getProperty('workPerformed');
-    }
-
-
-    /**
-        * An actor (individual or a group), e.g. in TV, radio, movie, video games etc.,
- * or in an event. Actors can be associated with individual items or with a
- * series, episode, clip.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function actor($value)
-    {
-        $this->setProperty('actor', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setActor($value)
-    {
-        $this->setProperty('actor', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getActor()
-    {
-       return $this->getProperty('actor');
-    }
-
-
-    /**
-        * An organizer of an Event.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function organizer($value)
-    {
-        $this->setProperty('organizer', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setOrganizer($value)
-    {
-        $this->setProperty('organizer', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getOrganizer()
-    {
-       return $this->getProperty('organizer');
-    }
-
-
-    /**
-        * The typical expected age range, e.g. '7-9', '11-'.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function typicalAgeRange($value)
-    {
-        $this->setProperty('typicalAgeRange', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setTypicalAgeRange($value)
-    {
-        $this->setProperty('typicalAgeRange', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getTypicalAgeRange()
-    {
-       return $this->getProperty('typicalAgeRange');
-    }
-
-
-    /**
-        * The location of, for example, where an event is happening, where an
- * organization is located, or where an action takes place.
-        * @param array|string|mixed $value
+        * The location of for example where the event is happening, an organization is
+ * located, or where an action takes place.
+        * @param PostalAddress|string|Place|array|mixed $value
     * @return $this
     */
     public function location($value)
@@ -1284,7 +936,7 @@ class Event extends Thing
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param PostalAddress|string|Place|array|mixed $value
     * @return $this
     */
     public function setLocation($value)
@@ -1299,6 +951,158 @@ class Event extends Thing
     public function getLocation()
     {
        return $this->getProperty('location');
+    }
+
+
+    /**
+        * The CreativeWork that captured all or part of this Event.
+        * @param CreativeWork|array|string|mixed $value
+    * @return $this
+    */
+    public function recordedIn($value)
+    {
+        $this->setProperty('recordedIn', $value);
+        return $this;
+    }
+
+    /**
+    * @param CreativeWork|array|string|mixed $value
+    * @return $this
+    */
+    public function setRecordedIn($value)
+    {
+        $this->setProperty('recordedIn', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getRecordedIn()
+    {
+       return $this->getProperty('recordedIn');
+    }
+
+
+    /**
+        * The person or organization who wrote a composition, or who is the composer of
+ * a work performed at some event.
+        * @param Person|Organization|array|string|mixed $value
+    * @return $this
+    */
+    public function composer($value)
+    {
+        $this->setProperty('composer', $value);
+        return $this;
+    }
+
+    /**
+    * @param Person|Organization|array|string|mixed $value
+    * @return $this
+    */
+    public function setComposer($value)
+    {
+        $this->setProperty('composer', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getComposer()
+    {
+       return $this->getProperty('composer');
+    }
+
+
+    /**
+        * A flag to signal that the item, event, or place is accessible for free.
+        * @param bool|array|string|mixed $value
+    * @return $this
+    */
+    public function isAccessibleForFree($value)
+    {
+        $this->setProperty('isAccessibleForFree', $value);
+        return $this;
+    }
+
+    /**
+    * @param bool|array|string|mixed $value
+    * @return $this
+    */
+    public function setIsAccessibleForFree($value)
+    {
+        $this->setProperty('isAccessibleForFree', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getIsAccessibleForFree()
+    {
+       return $this->getProperty('isAccessibleForFree');
+    }
+
+
+    /**
+        * The total number of individuals that may attend an event or venue.
+        * @param int|array|string|mixed $value
+    * @return $this
+    */
+    public function maximumAttendeeCapacity($value)
+    {
+        $this->setProperty('maximumAttendeeCapacity', $value);
+        return $this;
+    }
+
+    /**
+    * @param int|array|string|mixed $value
+    * @return $this
+    */
+    public function setMaximumAttendeeCapacity($value)
+    {
+        $this->setProperty('maximumAttendeeCapacity', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getMaximumAttendeeCapacity()
+    {
+       return $this->getProperty('maximumAttendeeCapacity');
+    }
+
+
+    /**
+        * A performer at the event&#x2014;for example, a presenter, musician, musical
+ * group or actor.
+        * @param Organization|Person|array|string|mixed $value
+    * @return $this
+    */
+    public function performer($value)
+    {
+        $this->setProperty('performer', $value);
+        return $this;
+    }
+
+    /**
+    * @param Organization|Person|array|string|mixed $value
+    * @return $this
+    */
+    public function setPerformer($value)
+    {
+        $this->setProperty('performer', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getPerformer()
+    {
+       return $this->getProperty('performer');
     }
 
 

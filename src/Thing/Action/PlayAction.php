@@ -2,10 +2,12 @@
 namespace Sohophp\SchemaOrg\Thing\Action;
 
 use Sohophp\SchemaOrg\Thing\Action;
+use Sohophp\SchemaOrg\Thing\Intangible\Audience;
+use Sohophp\SchemaOrg\Thing\Event;
 
 /**
 * The act of playing/exercising/training/performing for enjoyment, leisure,
- * recreation, competition or exercise.
+ * recreation, Competition or exercise.
  * 
  * Related actions:
  * 
@@ -15,7 +17,7 @@ use Sohophp\SchemaOrg\Thing\Action;
  * * [[WatchAction]]: Unlike WatchAction (which is under ConsumeAction),
  * PlayAction refers to showing/displaying for an audience or at an event,
  * rather than consuming visual content.
-* @see schema:PlayAction
+* @see http://schema.org/PlayAction
 * @package Sohophp\SchemaOrg\Thing\Action
 */
 class PlayAction extends Action
@@ -24,7 +26,7 @@ class PlayAction extends Action
 
     /**
         * An intended audience, i.e. a group for whom something was created.
-        * @param array|string|mixed $value
+        * @param Audience|array|string|mixed $value
     * @return $this
     */
     public function audience($value)
@@ -34,7 +36,7 @@ class PlayAction extends Action
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Audience|array|string|mixed $value
     * @return $this
     */
     public function setAudience($value)
@@ -54,7 +56,7 @@ class PlayAction extends Action
 
     /**
         * Upcoming or past event associated with this place, organization, or action.
-        * @param array|string|mixed $value
+        * @param Event|array|string|mixed $value
     * @return $this
     */
     public function event($value)
@@ -64,7 +66,7 @@ class PlayAction extends Action
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Event|array|string|mixed $value
     * @return $this
     */
     public function setEvent($value)

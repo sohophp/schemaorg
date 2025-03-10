@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\CreativeWork\Episode;
 
 /**
 * A radio episode which can be part of a series or season.
-* @see schema:RadioEpisode
+* @see http://schema.org/RadioEpisode
 * @package Sohophp\SchemaOrg\Thing\CreativeWork\Episode
 */
 class RadioEpisode extends Episode

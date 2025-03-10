@@ -2,10 +2,12 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
 
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\PriceSpecification\UnitPriceSpecification;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\MonetaryAmount;
 
 /**
 * A structured value representing exchange rate.
-* @see schema:ExchangeRateSpecification
+* @see http://schema.org/ExchangeRateSpecification
 * @package Sohophp\SchemaOrg\Thing\Intangible\StructuredValue
 */
 class ExchangeRateSpecification extends StructuredValue
@@ -13,46 +15,39 @@ class ExchangeRateSpecification extends StructuredValue
 
 
     /**
-        * The currency in which the monetary amount is expressed.
- * 
- * Use standard formats: [ISO 4217 currency
- * format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker
- * symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for
- * cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading
- * Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS)
- * and other currency types, e.g. "Ithaca HOUR".
-        * @param array|string|mixed $value
+        * The current price of a currency.
+        * @param UnitPriceSpecification|array|string|mixed $value
     * @return $this
     */
-    public function currency($value)
+    public function currentExchangeRate($value)
     {
-        $this->setProperty('currency', $value);
+        $this->setProperty('currentExchangeRate', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param UnitPriceSpecification|array|string|mixed $value
     * @return $this
     */
-    public function setCurrency($value)
+    public function setCurrentExchangeRate($value)
     {
-        $this->setProperty('currency', $value);
+        $this->setProperty('currentExchangeRate', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getCurrency()
+    public function getCurrentExchangeRate()
     {
-       return $this->getProperty('currency');
+       return $this->getProperty('currentExchangeRate');
     }
 
 
     /**
         * The difference between the price at which a broker or other intermediary buys
  * and sells foreign currency.
-        * @param array|string|mixed $value
+        * @param MonetaryAmount|array|string|mixed $value
     * @return $this
     */
     public function exchangeRateSpread($value)
@@ -62,7 +57,7 @@ class ExchangeRateSpecification extends StructuredValue
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param MonetaryAmount|array|string|mixed $value
     * @return $this
     */
     public function setExchangeRateSpread($value)
@@ -81,32 +76,39 @@ class ExchangeRateSpecification extends StructuredValue
 
 
     /**
-        * The current price of a currency.
-        * @param array|string|mixed $value
+        * The currency in which the monetary amount is expressed.
+ * 
+ * Use standard formats: [ISO 4217 currency
+ * format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker
+ * symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for
+ * cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings
+ * Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS)
+ * and other currency types e.g. "Ithaca HOUR".
+        * @param string|array|mixed $value
     * @return $this
     */
-    public function currentExchangeRate($value)
+    public function currency($value)
     {
-        $this->setProperty('currentExchangeRate', $value);
+        $this->setProperty('currency', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
-    public function setCurrentExchangeRate($value)
+    public function setCurrency($value)
     {
-        $this->setProperty('currentExchangeRate', $value);
+        $this->setProperty('currency', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getCurrentExchangeRate()
+    public function getCurrency()
     {
-       return $this->getProperty('currentExchangeRate');
+       return $this->getProperty('currency');
     }
 
 

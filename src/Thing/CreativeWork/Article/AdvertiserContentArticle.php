@@ -8,7 +8,7 @@ use Sohophp\SchemaOrg\Thing\CreativeWork\Article;
  * specifications. Includes
  * [advertorials](https://en.wikipedia.org/wiki/Advertorial), sponsored content,
  * native advertising and other paid content.
-* @see schema:AdvertiserContentArticle
+* @see http://schema.org/AdvertiserContentArticle
 * @package Sohophp\SchemaOrg\Thing\CreativeWork\Article
 */
 class AdvertiserContentArticle extends Article

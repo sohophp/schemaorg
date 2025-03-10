@@ -2,12 +2,13 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible\Service;
 
 use Sohophp\SchemaOrg\Thing\Intangible\Service;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\QuantitativeValue;
 
 /**
 * A product provided to consumers and businesses by financial institutions such
  * as banks, insurance companies, brokerage firms, consumer finance companies,
  * and investment companies which comprise the financial services industry.
-* @see schema:FinancialProduct
+* @see http://schema.org/FinancialProduct
 * @package Sohophp\SchemaOrg\Thing\Intangible\Service
 */
 class FinancialProduct extends Service
@@ -19,7 +20,7 @@ class FinancialProduct extends Service
  * expressed as a single percentage number that represents the actual yearly
  * cost of funds over the term of a loan. This includes any fees or additional
  * costs associated with the transaction.
-        * @param array|string|mixed $value
+        * @param QuantitativeValue|array|string|mixed $value
     * @return $this
     */
     public function annualPercentageRate($value)
@@ -29,7 +30,7 @@ class FinancialProduct extends Service
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param QuantitativeValue|array|string|mixed $value
     * @return $this
     */
     public function setAnnualPercentageRate($value)
@@ -50,7 +51,7 @@ class FinancialProduct extends Service
     /**
         * The interest rate, charged or paid, applicable to the financial product.
  * Note: This is different from the calculated annualPercentageRate.
-        * @param array|string|mixed $value
+        * @param QuantitativeValue|array|string|mixed $value
     * @return $this
     */
     public function interestRate($value)
@@ -60,7 +61,7 @@ class FinancialProduct extends Service
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param QuantitativeValue|array|string|mixed $value
     * @return $this
     */
     public function setInterestRate($value)
@@ -81,7 +82,7 @@ class FinancialProduct extends Service
     /**
         * Description of fees, commissions, and other terms applied either to a class
  * of financial product, or by a financial service organization.
-        * @param array|string|mixed $value
+        * @param string|string|array|mixed $value
     * @return $this
     */
     public function feesAndCommissionsSpecification($value)
@@ -91,7 +92,7 @@ class FinancialProduct extends Service
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|string|array|mixed $value
     * @return $this
     */
     public function setFeesAndCommissionsSpecification($value)

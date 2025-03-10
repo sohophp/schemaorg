@@ -2,6 +2,7 @@
 namespace Sohophp\SchemaOrg\Thing\Action\InteractAction;
 
 use Sohophp\SchemaOrg\Thing\Action\InteractAction;
+use Sohophp\SchemaOrg\Thing\Event;
 
 /**
 * An agent joins an event/group with participants/friends at a location.
@@ -14,7 +15,7 @@ use Sohophp\SchemaOrg\Thing\Action\InteractAction;
  * you'll be receiving updates.
  * * [[FollowAction]]: Unlike FollowAction, JoinAction does not imply that
  * you'll be polling for updates.
-* @see schema:JoinAction
+* @see http://schema.org/JoinAction
 * @package Sohophp\SchemaOrg\Thing\Action\InteractAction
 */
 class JoinAction extends InteractAction
@@ -23,7 +24,7 @@ class JoinAction extends InteractAction
 
     /**
         * Upcoming or past event associated with this place, organization, or action.
-        * @param array|string|mixed $value
+        * @param Event|array|string|mixed $value
     * @return $this
     */
     public function event($value)
@@ -33,7 +34,7 @@ class JoinAction extends InteractAction
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Event|array|string|mixed $value
     * @return $this
     */
     public function setEvent($value)

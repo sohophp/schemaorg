@@ -2,10 +2,11 @@
 namespace Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalTest;
 
 use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalTest;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MedicalEnumeration\MedicalImagingTechnique;
 
 /**
 * Any medical imaging modality typically used for diagnostic purposes.
-* @see schema:ImagingTest
+* @see http://schema.org/ImagingTest
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalTest
 */
 class ImagingTest extends MedicalTest
@@ -14,7 +15,7 @@ class ImagingTest extends MedicalTest
 
     /**
         * Imaging technique used.
-        * @param array|string|mixed $value
+        * @param MedicalImagingTechnique|array|string|mixed $value
     * @return $this
     */
     public function imagingTechnique($value)
@@ -24,7 +25,7 @@ class ImagingTest extends MedicalTest
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param MedicalImagingTechnique|array|string|mixed $value
     * @return $this
     */
     public function setImagingTechnique($value)

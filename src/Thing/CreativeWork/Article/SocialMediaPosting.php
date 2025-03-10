@@ -2,11 +2,12 @@
 namespace Sohophp\SchemaOrg\Thing\CreativeWork\Article;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork\Article;
+use Sohophp\SchemaOrg\Thing\CreativeWork;
 
 /**
 * A post to a social media platform, including blog posts, tweets, Facebook
  * posts, etc.
-* @see schema:SocialMediaPosting
+* @see http://schema.org/SocialMediaPosting
 * @package Sohophp\SchemaOrg\Thing\CreativeWork\Article
 */
 class SocialMediaPosting extends Article
@@ -16,7 +17,7 @@ class SocialMediaPosting extends Article
     /**
         * A CreativeWork such as an image, video, or audio clip shared as part of this
  * posting.
-        * @param array|string|mixed $value
+        * @param CreativeWork|array|string|mixed $value
     * @return $this
     */
     public function sharedContent($value)
@@ -26,7 +27,7 @@ class SocialMediaPosting extends Article
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param CreativeWork|array|string|mixed $value
     * @return $this
     */
     public function setSharedContent($value)

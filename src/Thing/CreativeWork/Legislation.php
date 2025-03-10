@@ -2,11 +2,16 @@
 namespace Sohophp\SchemaOrg\Thing\CreativeWork;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork;
+use Sohophp\SchemaOrg\Thing\Organization;
+use Sohophp\SchemaOrg\Thing\Person;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\LegalForceStatus;
+use Sohophp\SchemaOrg\Thing\Place\AdministrativeArea;
+use Sohophp\SchemaOrg\Thing\Intangible\DefinedTerm\CategoryCode;
 
 /**
 * A legal document such as an act, decree, bill, etc. (enforceable or not) or a
  * component of a legal act (like an article).
-* @see schema:Legislation
+* @see http://schema.org/Legislation
 * @package Sohophp\SchemaOrg\Thing\CreativeWork
 */
 class Legislation extends CreativeWork
@@ -14,32 +19,35 @@ class Legislation extends CreativeWork
 
 
     /**
-        * The jurisdiction from which the legislation originates.
-        * @param array|string|mixed $value
+        * An identifier for the legislation. This can be either a string-based
+ * identifier, like the CELEX at EU level or the NOR in France, or a web-based,
+ * URL/URI identifier, like an ELI (European Legislation Identifier) or an
+ * URN-Lex.
+        * @param string|string|array|mixed $value
     * @return $this
     */
-    public function legislationJurisdiction($value)
+    public function legislationIdentifier($value)
     {
-        $this->setProperty('legislationJurisdiction', $value);
+        $this->setProperty('legislationIdentifier', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|string|array|mixed $value
     * @return $this
     */
-    public function setLegislationJurisdiction($value)
+    public function setLegislationIdentifier($value)
     {
-        $this->setProperty('legislationJurisdiction', $value);
+        $this->setProperty('legislationIdentifier', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getLegislationJurisdiction()
+    public function getLegislationIdentifier()
     {
-       return $this->getProperty('legislationJurisdiction');
+       return $this->getProperty('legislationIdentifier');
     }
 
 
@@ -49,7 +57,7 @@ class Legislation extends CreativeWork
  * measures. Typically, some legislations of European Union's member states or
  * regions transpose European Directives. This indicates a legally binding link
  * between the 2 legislations.
-        * @param array|string|mixed $value
+        * @param Legislation|array|string|mixed $value
     * @return $this
     */
     public function legislationTransposes($value)
@@ -59,7 +67,7 @@ class Legislation extends CreativeWork
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Legislation|array|string|mixed $value
     * @return $this
     */
     public function setLegislationTransposes($value)
@@ -78,73 +86,144 @@ class Legislation extends CreativeWork
 
 
     /**
-        * The type of the legislation. Examples of values are "law", "act",
- * "directive", "decree", "regulation", "statutory instrument", "loi organique",
- * "règlement grand-ducal", etc., depending on the country.
-        * @param array|string|mixed $value
+        * Indicates another legislation taken into account in this consolidated
+ * legislation (which is usually the product of an editorial process that
+ * revises the legislation). This property should be used multiple times to
+ * refer to both the original version or the previous consolidated version, and
+ * to the legislations making the change.
+        * @param Legislation|array|string|mixed $value
     * @return $this
     */
-    public function legislationType($value)
+    public function legislationConsolidates($value)
     {
-        $this->setProperty('legislationType', $value);
+        $this->setProperty('legislationConsolidates', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Legislation|array|string|mixed $value
     * @return $this
     */
-    public function setLegislationType($value)
+    public function setLegislationConsolidates($value)
     {
-        $this->setProperty('legislationType', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getLegislationType()
-    {
-       return $this->getProperty('legislationType');
-    }
-
-
-    /**
-        * Indicates a legal jurisdiction, e.g. of some legislation, or where some
- * government service is based.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function jurisdiction($value)
-    {
-        $this->setProperty('jurisdiction', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setJurisdiction($value)
-    {
-        $this->setProperty('jurisdiction', $value);
+        $this->setProperty('legislationConsolidates', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getJurisdiction()
+    public function getLegislationConsolidates()
     {
-       return $this->getProperty('jurisdiction');
+       return $this->getProperty('legislationConsolidates');
+    }
+
+
+    /**
+        * Indicates that this legislation (or part of a legislation) somehow transfers
+ * another legislation in a different legislative context. This is an
+ * informative link, and it has no legal value. For legally-binding links of
+ * transposition, use the [legislationTransposes](/legislationTransposes)
+ * property. For example an informative consolidated law of a European Union's
+ * member state "applies" the consolidated version of the European Directive
+ * implemented in it.
+        * @param Legislation|array|string|mixed $value
+    * @return $this
+    */
+    public function legislationApplies($value)
+    {
+        $this->setProperty('legislationApplies', $value);
+        return $this;
+    }
+
+    /**
+    * @param Legislation|array|string|mixed $value
+    * @return $this
+    */
+    public function setLegislationApplies($value)
+    {
+        $this->setProperty('legislationApplies', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getLegislationApplies()
+    {
+       return $this->getProperty('legislationApplies');
+    }
+
+
+    /**
+        * An individual or organization that has some kind of responsibility for the
+ * legislation. Typically the ministry who is/was in charge of elaborating the
+ * legislation, or the adressee for potential questions about the legislation
+ * once it is published.
+        * @param Organization|Person|array|string|mixed $value
+    * @return $this
+    */
+    public function legislationResponsible($value)
+    {
+        $this->setProperty('legislationResponsible', $value);
+        return $this;
+    }
+
+    /**
+    * @param Organization|Person|array|string|mixed $value
+    * @return $this
+    */
+    public function setLegislationResponsible($value)
+    {
+        $this->setProperty('legislationResponsible', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getLegislationResponsible()
+    {
+       return $this->getProperty('legislationResponsible');
+    }
+
+
+    /**
+        * Whether the legislation is currently in force, not in force, or partially in
+ * force.
+        * @param LegalForceStatus|array|string|mixed $value
+    * @return $this
+    */
+    public function legislationLegalForce($value)
+    {
+        $this->setProperty('legislationLegalForce', $value);
+        return $this;
+    }
+
+    /**
+    * @param LegalForceStatus|array|string|mixed $value
+    * @return $this
+    */
+    public function setLegislationLegalForce($value)
+    {
+        $this->setProperty('legislationLegalForce', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getLegislationLegalForce()
+    {
+       return $this->getProperty('legislationLegalForce');
     }
 
 
     /**
         * The point-in-time at which the provided description of the legislation is
- * valid (e.g.: when looking at the law on the 2016-04-07 (= dateVersion), I get
- * the consolidation of 2015-04-12 of the "National Insurance Contributions Act
- * 2015")
+ * valid (e.g. : when looking at the law on the 2016-04-07 (= dateVersion), I
+ * get the consolidation of 2015-04-12 of the "National Insurance Contributions
+ * Act 2015")
         * @param array|string|mixed $value
     * @return $this
     */
@@ -170,73 +249,6 @@ class Legislation extends CreativeWork
     public function getLegislationDateVersion()
     {
        return $this->getProperty('legislationDateVersion');
-    }
-
-
-    /**
-        * Indicates that this legislation (or part of a legislation) somehow transfers
- * another legislation in a different legislative context. This is an
- * informative link, and it has no legal value. For legally-binding links of
- * transposition, use the [legislationTransposes](/legislationTransposes)
- * property. For example an informative consolidated law of a European Union's
- * member state "applies" the consolidated version of the European Directive
- * implemented in it.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function legislationApplies($value)
-    {
-        $this->setProperty('legislationApplies', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setLegislationApplies($value)
-    {
-        $this->setProperty('legislationApplies', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getLegislationApplies()
-    {
-       return $this->getProperty('legislationApplies');
-    }
-
-
-    /**
-        * Whether the legislation is currently in force, not in force, or partially in
- * force.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function legislationLegalForce($value)
-    {
-        $this->setProperty('legislationLegalForce', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setLegislationLegalForce($value)
-    {
-        $this->setProperty('legislationLegalForce', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getLegislationLegalForce()
-    {
-       return $this->getProperty('legislationLegalForce');
     }
 
 
@@ -273,135 +285,64 @@ class Legislation extends CreativeWork
 
 
     /**
-        * An identifier for the legislation. This can be either a string-based
- * identifier, like the CELEX at EU level or the NOR in France, or a web-based,
- * URL/URI identifier, like an ELI (European Legislation Identifier) or an
- * URN-Lex.
-        * @param array|string|mixed $value
+        * The jurisdiction from which the legislation originates.
+        * @param string|AdministrativeArea|array|mixed $value
     * @return $this
     */
-    public function legislationIdentifier($value)
+    public function legislationJurisdiction($value)
     {
-        $this->setProperty('legislationIdentifier', $value);
+        $this->setProperty('legislationJurisdiction', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|AdministrativeArea|array|mixed $value
     * @return $this
     */
-    public function setLegislationIdentifier($value)
+    public function setLegislationJurisdiction($value)
     {
-        $this->setProperty('legislationIdentifier', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getLegislationIdentifier()
-    {
-       return $this->getProperty('legislationIdentifier');
-    }
-
-
-    /**
-        * The person or organization that originally passed or made the law: typically
- * parliament (for primary legislation) or government (for secondary
- * legislation). This indicates the "legal author" of the law, as opposed to its
- * physical author.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function legislationPassedBy($value)
-    {
-        $this->setProperty('legislationPassedBy', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setLegislationPassedBy($value)
-    {
-        $this->setProperty('legislationPassedBy', $value);
+        $this->setProperty('legislationJurisdiction', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getLegislationPassedBy()
+    public function getLegislationJurisdiction()
     {
-       return $this->getProperty('legislationPassedBy');
+       return $this->getProperty('legislationJurisdiction');
     }
 
 
     /**
-        * An individual or organization that has some kind of responsibility for the
- * legislation. Typically the ministry who is/was in charge of elaborating the
- * legislation, or the adressee for potential questions about the legislation
- * once it is published.
-        * @param array|string|mixed $value
+        * The type of the legislation. Examples of values are "law", "act",
+ * "directive", "decree", "regulation", "statutory instrument", "loi organique",
+ * "règlement grand-ducal", etc., depending on the country.
+        * @param string|CategoryCode|array|mixed $value
     * @return $this
     */
-    public function legislationResponsible($value)
+    public function legislationType($value)
     {
-        $this->setProperty('legislationResponsible', $value);
+        $this->setProperty('legislationType', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|CategoryCode|array|mixed $value
     * @return $this
     */
-    public function setLegislationResponsible($value)
+    public function setLegislationType($value)
     {
-        $this->setProperty('legislationResponsible', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getLegislationResponsible()
-    {
-       return $this->getProperty('legislationResponsible');
-    }
-
-
-    /**
-        * Indicates another legislation taken into account in this consolidated
- * legislation (which is usually the product of an editorial process that
- * revises the legislation). This property should be used multiple times to
- * refer to both the original version or the previous consolidated version, and
- * to the legislations making the change.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function legislationConsolidates($value)
-    {
-        $this->setProperty('legislationConsolidates', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setLegislationConsolidates($value)
-    {
-        $this->setProperty('legislationConsolidates', $value);
+        $this->setProperty('legislationType', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getLegislationConsolidates()
+    public function getLegislationType()
     {
-       return $this->getProperty('legislationConsolidates');
+       return $this->getProperty('legislationType');
     }
 
 
@@ -414,7 +355,7 @@ class Legislation extends CreativeWork
  * of a consolidated version of the text that shows the result of the change.
  * For consolidation relationships, use the
  * [legislationConsolidates](/legislationConsolidates) property.
-        * @param array|string|mixed $value
+        * @param Legislation|array|string|mixed $value
     * @return $this
     */
     public function legislationChanges($value)
@@ -424,7 +365,7 @@ class Legislation extends CreativeWork
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Legislation|array|string|mixed $value
     * @return $this
     */
     public function setLegislationChanges($value)
@@ -439,6 +380,39 @@ class Legislation extends CreativeWork
     public function getLegislationChanges()
     {
        return $this->getProperty('legislationChanges');
+    }
+
+
+    /**
+        * The person or organization that originally passed or made the law : typically
+ * parliament (for primary legislation) or government (for secondary
+ * legislation). This indicates the "legal author" of the law, as opposed to its
+ * physical author.
+        * @param Person|Organization|array|string|mixed $value
+    * @return $this
+    */
+    public function legislationPassedBy($value)
+    {
+        $this->setProperty('legislationPassedBy', $value);
+        return $this;
+    }
+
+    /**
+    * @param Person|Organization|array|string|mixed $value
+    * @return $this
+    */
+    public function setLegislationPassedBy($value)
+    {
+        $this->setProperty('legislationPassedBy', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getLegislationPassedBy()
+    {
+       return $this->getProperty('legislationPassedBy');
     }
 
 

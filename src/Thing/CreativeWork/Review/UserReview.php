@@ -6,7 +6,7 @@ use Sohophp\SchemaOrg\Thing\CreativeWork\Review;
 /**
 * A review created by an end-user (e.g. consumer, purchaser, attendee etc.), in
  * contrast with [[CriticReview]].
-* @see schema:UserReview
+* @see http://schema.org/UserReview
 * @package Sohophp\SchemaOrg\Thing\CreativeWork\Review
 */
 class UserReview extends Review

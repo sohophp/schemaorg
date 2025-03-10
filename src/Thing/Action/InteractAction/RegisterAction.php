@@ -10,11 +10,11 @@ use Sohophp\SchemaOrg\Thing\Action\InteractAction;
  * 
  * * [[JoinAction]]: Unlike JoinAction, RegisterAction implies you are
  * registering to be a user of a service, *not* a group/team of people.
- * * [[FollowAction]]: Unlike FollowAction, RegisterAction doesn't imply that
- * the agent is expecting to poll for updates from the object.
+ * * [FollowAction]]: Unlike FollowAction, RegisterAction doesn't imply that the
+ * agent is expecting to poll for updates from the object.
  * * [[SubscribeAction]]: Unlike SubscribeAction, RegisterAction doesn't imply
  * that the agent is expecting updates from the object.
-* @see schema:RegisterAction
+* @see http://schema.org/RegisterAction
 * @package Sohophp\SchemaOrg\Thing\Action\InteractAction
 */
 class RegisterAction extends InteractAction

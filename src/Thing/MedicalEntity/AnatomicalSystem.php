@@ -2,14 +2,17 @@
 namespace Sohophp\SchemaOrg\Thing\MedicalEntity;
 
 use Sohophp\SchemaOrg\Thing\MedicalEntity;
+use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalCondition;
+use Sohophp\SchemaOrg\Thing\MedicalEntity\AnatomicalStructure;
+use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalProcedure\TherapeuticProcedure\MedicalTherapy;
 
 /**
 * An anatomical system is a group of anatomical structures that work together
  * to perform a certain task. Anatomical systems, such as organ systems, are one
- * organizing principle of anatomy, and can include circulatory, digestive,
+ * organizing principle of anatomy, and can includes circulatory, digestive,
  * endocrine, integumentary, immune, lymphatic, muscular, nervous, reproductive,
  * respiratory, skeletal, urinary, vestibular, and other systems.
-* @see schema:AnatomicalSystem
+* @see http://schema.org/AnatomicalSystem
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity
 */
 class AnatomicalSystem extends MedicalEntity
@@ -17,70 +20,8 @@ class AnatomicalSystem extends MedicalEntity
 
 
     /**
-        * If applicable, a description of the pathophysiology associated with the
- * anatomical system, including potential abnormal changes in the mechanical,
- * physical, and biochemical functions of the system.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function associatedPathophysiology($value)
-    {
-        $this->setProperty('associatedPathophysiology', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setAssociatedPathophysiology($value)
-    {
-        $this->setProperty('associatedPathophysiology', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getAssociatedPathophysiology()
-    {
-       return $this->getProperty('associatedPathophysiology');
-    }
-
-
-    /**
-        * A medical therapy related to this anatomy.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function relatedTherapy($value)
-    {
-        $this->setProperty('relatedTherapy', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setRelatedTherapy($value)
-    {
-        $this->setProperty('relatedTherapy', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getRelatedTherapy()
-    {
-       return $this->getProperty('relatedTherapy');
-    }
-
-
-    /**
         * A medical condition associated with this anatomy.
-        * @param array|string|mixed $value
+        * @param MedicalCondition|array|string|mixed $value
     * @return $this
     */
     public function relatedCondition($value)
@@ -90,7 +31,7 @@ class AnatomicalSystem extends MedicalEntity
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param MedicalCondition|array|string|mixed $value
     * @return $this
     */
     public function setRelatedCondition($value)
@@ -109,9 +50,73 @@ class AnatomicalSystem extends MedicalEntity
 
 
     /**
+        * Specifying something physically contained by something else. Typically used
+ * here for the underlying anatomical structures, such as organs, that comprise
+ * the anatomical system.
+        * @param AnatomicalSystem|AnatomicalStructure|array|string|mixed $value
+    * @return $this
+    */
+    public function comprisedOf($value)
+    {
+        $this->setProperty('comprisedOf', $value);
+        return $this;
+    }
+
+    /**
+    * @param AnatomicalSystem|AnatomicalStructure|array|string|mixed $value
+    * @return $this
+    */
+    public function setComprisedOf($value)
+    {
+        $this->setProperty('comprisedOf', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getComprisedOf()
+    {
+       return $this->getProperty('comprisedOf');
+    }
+
+
+    /**
+        * If applicable, a description of the pathophysiology associated with the
+ * anatomical system, including potential abnormal changes in the mechanical,
+ * physical, and biochemical functions of the system.
+        * @param string|array|mixed $value
+    * @return $this
+    */
+    public function associatedPathophysiology($value)
+    {
+        $this->setProperty('associatedPathophysiology', $value);
+        return $this;
+    }
+
+    /**
+    * @param string|array|mixed $value
+    * @return $this
+    */
+    public function setAssociatedPathophysiology($value)
+    {
+        $this->setProperty('associatedPathophysiology', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getAssociatedPathophysiology()
+    {
+       return $this->getProperty('associatedPathophysiology');
+    }
+
+
+    /**
         * Related anatomical structure(s) that are not part of the system but relate or
  * connect to it, such as vascular bundles associated with an organ system.
-        * @param array|string|mixed $value
+        * @param AnatomicalStructure|array|string|mixed $value
     * @return $this
     */
     public function relatedStructure($value)
@@ -121,7 +126,7 @@ class AnatomicalSystem extends MedicalEntity
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param AnatomicalStructure|array|string|mixed $value
     * @return $this
     */
     public function setRelatedStructure($value)
@@ -140,34 +145,32 @@ class AnatomicalSystem extends MedicalEntity
 
 
     /**
-        * Specifying something physically contained by something else. Typically used
- * here for the underlying anatomical structures, such as organs, that comprise
- * the anatomical system.
-        * @param array|string|mixed $value
+        * A medical therapy related to this anatomy.
+        * @param MedicalTherapy|array|string|mixed $value
     * @return $this
     */
-    public function comprisedOf($value)
+    public function relatedTherapy($value)
     {
-        $this->setProperty('comprisedOf', $value);
+        $this->setProperty('relatedTherapy', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param MedicalTherapy|array|string|mixed $value
     * @return $this
     */
-    public function setComprisedOf($value)
+    public function setRelatedTherapy($value)
     {
-        $this->setProperty('comprisedOf', $value);
+        $this->setProperty('relatedTherapy', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getComprisedOf()
+    public function getRelatedTherapy()
     {
-       return $this->getProperty('comprisedOf');
+       return $this->getProperty('relatedTherapy');
     }
 
 

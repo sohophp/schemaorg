@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\CreativeWork\MediaObject;
 
 /**
 * A music video file.
-* @see schema:MusicVideoObject
+* @see http://schema.org/MusicVideoObject
 * @package Sohophp\SchemaOrg\Thing\CreativeWork\MediaObject
 */
 class MusicVideoObject extends MediaObject

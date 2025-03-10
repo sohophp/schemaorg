@@ -2,10 +2,12 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
 
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\ContactPoint\PostalAddress;
+use Sohophp\SchemaOrg\Thing\Place\AdministrativeArea\Country;
 
 /**
 * The geographic coordinates of a place or event.
-* @see schema:GeoCoordinates
+* @see http://schema.org/GeoCoordinates
 * @package Sohophp\SchemaOrg\Thing\Intangible\StructuredValue
 */
 class GeoCoordinates extends StructuredValue
@@ -13,39 +15,9 @@ class GeoCoordinates extends StructuredValue
 
 
     /**
-        * The postal code. For example, 94043.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function postalCode($value)
-    {
-        $this->setProperty('postalCode', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setPostalCode($value)
-    {
-        $this->setProperty('postalCode', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getPostalCode()
-    {
-       return $this->getProperty('postalCode');
-    }
-
-
-    /**
         * The latitude of a location. For example ```37.42242``` ([WGS
  * 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
-        * @param array|string|mixed $value
+        * @param string|array|mixed $value
     * @return $this
     */
     public function latitude($value)
@@ -55,7 +27,7 @@ class GeoCoordinates extends StructuredValue
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setLatitude($value)
@@ -74,8 +46,39 @@ class GeoCoordinates extends StructuredValue
 
 
     /**
+        * The longitude of a location. For example ```-122.08585``` ([WGS
+ * 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+        * @param string|array|mixed $value
+    * @return $this
+    */
+    public function longitude($value)
+    {
+        $this->setProperty('longitude', $value);
+        return $this;
+    }
+
+    /**
+    * @param string|array|mixed $value
+    * @return $this
+    */
+    public function setLongitude($value)
+    {
+        $this->setProperty('longitude', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getLongitude()
+    {
+       return $this->getProperty('longitude');
+    }
+
+
+    /**
         * Physical address of the item.
-        * @param array|string|mixed $value
+        * @param string|PostalAddress|array|mixed $value
     * @return $this
     */
     public function address($value)
@@ -85,7 +88,7 @@ class GeoCoordinates extends StructuredValue
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|PostalAddress|array|mixed $value
     * @return $this
     */
     public function setAddress($value)
@@ -104,45 +107,9 @@ class GeoCoordinates extends StructuredValue
 
 
     /**
-        * The elevation of a location ([WGS
- * 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of
- * the form 'NUMBER UNIT\_OF\_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while
- * numbers alone should be assumed to be a value in meters.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function elevation($value)
-    {
-        $this->setProperty('elevation', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setElevation($value)
-    {
-        $this->setProperty('elevation', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getElevation()
-    {
-       return $this->getProperty('elevation');
-    }
-
-
-    /**
-        * The country. Recommended to be in 2-letter [ISO 3166-1
- * alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1) format, for example "US".
- * For backward compatibility, a 3-letter [ISO 3166-1
- * alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code such
- * as "SGP" or a full country name such as "Singapore" can also be used.
-        * @param array|string|mixed $value
+        * The country. For example, USA. You can also provide the two-letter [ISO
+ * 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
+        * @param Country|string|array|mixed $value
     * @return $this
     */
     public function addressCountry($value)
@@ -152,7 +119,7 @@ class GeoCoordinates extends StructuredValue
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Country|string|array|mixed $value
     * @return $this
     */
     public function setAddressCountry($value)
@@ -171,33 +138,65 @@ class GeoCoordinates extends StructuredValue
 
 
     /**
-        * The longitude of a location. For example ```-122.08585``` ([WGS
- * 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
-        * @param array|string|mixed $value
+        * The postal code. For example, 94043.
+        * @param string|array|mixed $value
     * @return $this
     */
-    public function longitude($value)
+    public function postalCode($value)
     {
-        $this->setProperty('longitude', $value);
+        $this->setProperty('postalCode', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
-    public function setLongitude($value)
+    public function setPostalCode($value)
     {
-        $this->setProperty('longitude', $value);
+        $this->setProperty('postalCode', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getLongitude()
+    public function getPostalCode()
     {
-       return $this->getProperty('longitude');
+       return $this->getProperty('postalCode');
+    }
+
+
+    /**
+        * The elevation of a location ([WGS
+ * 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of
+ * the form 'NUMBER UNIT*OF*MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while
+ * numbers alone should be assumed to be a value in meters.
+        * @param string|array|mixed $value
+    * @return $this
+    */
+    public function elevation($value)
+    {
+        $this->setProperty('elevation', $value);
+        return $this;
+    }
+
+    /**
+    * @param string|array|mixed $value
+    * @return $this
+    */
+    public function setElevation($value)
+    {
+        $this->setProperty('elevation', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getElevation()
+    {
+       return $this->getProperty('elevation');
     }
 
 

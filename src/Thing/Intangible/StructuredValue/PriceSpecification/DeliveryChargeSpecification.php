@@ -2,10 +2,14 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\PriceSpecification;
 
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\PriceSpecification;
+use Sohophp\SchemaOrg\Thing\Place;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\GeoShape;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\DeliveryMethod;
+use Sohophp\SchemaOrg\Thing\Place\AdministrativeArea;
 
 /**
 * The price for the delivery of an offer using a particular delivery method.
-* @see schema:DeliveryChargeSpecification
+* @see http://schema.org/DeliveryChargeSpecification
 * @package Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\PriceSpecification
 */
 class DeliveryChargeSpecification extends PriceSpecification
@@ -13,9 +17,44 @@ class DeliveryChargeSpecification extends PriceSpecification
 
 
     /**
+        * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the
+ * GeoShape for the geo-political region(s) for which the offer or delivery
+ * charge specification is not valid, e.g. a region where the transaction is not
+ * allowed.
+ * 
+ * See also [[eligibleRegion]].
+        * @param Place|string|GeoShape|array|mixed $value
+    * @return $this
+    */
+    public function ineligibleRegion($value)
+    {
+        $this->setProperty('ineligibleRegion', $value);
+        return $this;
+    }
+
+    /**
+    * @param Place|string|GeoShape|array|mixed $value
+    * @return $this
+    */
+    public function setIneligibleRegion($value)
+    {
+        $this->setProperty('ineligibleRegion', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getIneligibleRegion()
+    {
+       return $this->getProperty('ineligibleRegion');
+    }
+
+
+    /**
         * The delivery method(s) to which the delivery charge or payment charge
  * specification applies.
-        * @param array|string|mixed $value
+        * @param DeliveryMethod|array|string|mixed $value
     * @return $this
     */
     public function appliesToDeliveryMethod($value)
@@ -25,7 +64,7 @@ class DeliveryChargeSpecification extends PriceSpecification
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param DeliveryMethod|array|string|mixed $value
     * @return $this
     */
     public function setAppliesToDeliveryMethod($value)
@@ -45,7 +84,7 @@ class DeliveryChargeSpecification extends PriceSpecification
 
     /**
         * The geographic area where a service or offered item is provided.
-        * @param array|string|mixed $value
+        * @param string|GeoShape|Place|AdministrativeArea|array|mixed $value
     * @return $this
     */
     public function areaServed($value)
@@ -55,7 +94,7 @@ class DeliveryChargeSpecification extends PriceSpecification
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|GeoShape|Place|AdministrativeArea|array|mixed $value
     * @return $this
     */
     public function setAreaServed($value)
@@ -79,7 +118,7 @@ class DeliveryChargeSpecification extends PriceSpecification
  * charge specification is valid.
  * 
  * See also [[ineligibleRegion]].
-        * @param array|string|mixed $value
+        * @param Place|string|GeoShape|array|mixed $value
     * @return $this
     */
     public function eligibleRegion($value)
@@ -89,7 +128,7 @@ class DeliveryChargeSpecification extends PriceSpecification
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Place|string|GeoShape|array|mixed $value
     * @return $this
     */
     public function setEligibleRegion($value)
@@ -104,41 +143,6 @@ class DeliveryChargeSpecification extends PriceSpecification
     public function getEligibleRegion()
     {
        return $this->getProperty('eligibleRegion');
-    }
-
-
-    /**
-        * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the
- * GeoShape for the geo-political region(s) for which the offer or delivery
- * charge specification is not valid, e.g. a region where the transaction is not
- * allowed.
- * 
- * See also [[eligibleRegion]].
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function ineligibleRegion($value)
-    {
-        $this->setProperty('ineligibleRegion', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setIneligibleRegion($value)
-    {
-        $this->setProperty('ineligibleRegion', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getIneligibleRegion()
-    {
-       return $this->getProperty('ineligibleRegion');
     }
 
 

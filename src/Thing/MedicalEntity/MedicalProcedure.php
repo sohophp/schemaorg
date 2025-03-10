@@ -2,12 +2,16 @@
 namespace Sohophp\SchemaOrg\Thing\MedicalEntity;
 
 use Sohophp\SchemaOrg\Thing\MedicalEntity;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\EventStatusType;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MedicalEnumeration\MedicalStudyStatus;
+use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalIndication;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MedicalEnumeration\MedicalProcedureType;
 
 /**
 * A process of care used in either a diagnostic, therapeutic, preventive or
  * palliative capacity that relies on invasive (surgical), non-invasive, or
  * other techniques.
-* @see schema:MedicalProcedure
+* @see http://schema.org/MedicalProcedure
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity
 */
 class MedicalProcedure extends MedicalEntity
@@ -17,7 +21,7 @@ class MedicalProcedure extends MedicalEntity
     /**
         * Typical preparation that a patient must undergo before having the procedure
  * performed.
-        * @param array|string|mixed $value
+        * @param MedicalEntity|string|array|mixed $value
     * @return $this
     */
     public function preparation($value)
@@ -27,7 +31,7 @@ class MedicalProcedure extends MedicalEntity
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param MedicalEntity|string|array|mixed $value
     * @return $this
     */
     public function setPreparation($value)
@@ -46,38 +50,8 @@ class MedicalProcedure extends MedicalEntity
 
 
     /**
-        * How the procedure is performed.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function howPerformed($value)
-    {
-        $this->setProperty('howPerformed', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setHowPerformed($value)
-    {
-        $this->setProperty('howPerformed', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getHowPerformed()
-    {
-       return $this->getProperty('howPerformed');
-    }
-
-
-    /**
         * Typical or recommended followup care after the procedure is performed.
-        * @param array|string|mixed $value
+        * @param string|array|mixed $value
     * @return $this
     */
     public function followup($value)
@@ -87,7 +61,7 @@ class MedicalProcedure extends MedicalEntity
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setFollowup($value)
@@ -107,7 +81,7 @@ class MedicalProcedure extends MedicalEntity
 
     /**
         * The status of the study (enumerated).
-        * @param array|string|mixed $value
+        * @param EventStatusType|string|MedicalStudyStatus|array|mixed $value
     * @return $this
     */
     public function status($value)
@@ -117,7 +91,7 @@ class MedicalProcedure extends MedicalEntity
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param EventStatusType|string|MedicalStudyStatus|array|mixed $value
     * @return $this
     */
     public function setStatus($value)
@@ -136,38 +110,68 @@ class MedicalProcedure extends MedicalEntity
 
 
     /**
-        * The type of procedure, for example Surgical, Noninvasive, or Percutaneous.
-        * @param array|string|mixed $value
+        * How the procedure is performed.
+        * @param string|array|mixed $value
     * @return $this
     */
-    public function procedureType($value)
+    public function howPerformed($value)
     {
-        $this->setProperty('procedureType', $value);
+        $this->setProperty('howPerformed', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
-    public function setProcedureType($value)
+    public function setHowPerformed($value)
     {
-        $this->setProperty('procedureType', $value);
+        $this->setProperty('howPerformed', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getProcedureType()
+    public function getHowPerformed()
     {
-       return $this->getProperty('procedureType');
+       return $this->getProperty('howPerformed');
+    }
+
+
+    /**
+        * Expected or actual outcomes of the study.
+        * @param MedicalEntity|string|array|mixed $value
+    * @return $this
+    */
+    public function outcome($value)
+    {
+        $this->setProperty('outcome', $value);
+        return $this;
+    }
+
+    /**
+    * @param MedicalEntity|string|array|mixed $value
+    * @return $this
+    */
+    public function setOutcome($value)
+    {
+        $this->setProperty('outcome', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getOutcome()
+    {
+       return $this->getProperty('outcome');
     }
 
 
     /**
         * Location in the body of the anatomical structure.
-        * @param array|string|mixed $value
+        * @param string|array|mixed $value
     * @return $this
     */
     public function bodyLocation($value)
@@ -177,7 +181,7 @@ class MedicalProcedure extends MedicalEntity
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setBodyLocation($value)
@@ -192,6 +196,70 @@ class MedicalProcedure extends MedicalEntity
     public function getBodyLocation()
     {
        return $this->getProperty('bodyLocation');
+    }
+
+
+    /**
+        * A factor that indicates use of this therapy for treatment and/or prevention
+ * of a condition, symptom, etc. For therapies such as drugs, indications can
+ * include both officially-approved indications as well as off-label uses. These
+ * can be distinguished by using the ApprovedIndication subtype of
+ * MedicalIndication.
+        * @param MedicalIndication|array|string|mixed $value
+    * @return $this
+    */
+    public function indication($value)
+    {
+        $this->setProperty('indication', $value);
+        return $this;
+    }
+
+    /**
+    * @param MedicalIndication|array|string|mixed $value
+    * @return $this
+    */
+    public function setIndication($value)
+    {
+        $this->setProperty('indication', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getIndication()
+    {
+       return $this->getProperty('indication');
+    }
+
+
+    /**
+        * The type of procedure, for example Surgical, Noninvasive, or Percutaneous.
+        * @param MedicalProcedureType|array|string|mixed $value
+    * @return $this
+    */
+    public function procedureType($value)
+    {
+        $this->setProperty('procedureType', $value);
+        return $this;
+    }
+
+    /**
+    * @param MedicalProcedureType|array|string|mixed $value
+    * @return $this
+    */
+    public function setProcedureType($value)
+    {
+        $this->setProperty('procedureType', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getProcedureType()
+    {
+       return $this->getProperty('procedureType');
     }
 
 

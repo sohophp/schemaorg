@@ -2,10 +2,12 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\PriceSpecification;
 
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\PriceSpecification;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\PaymentMethod;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\DeliveryMethod;
 
 /**
 * The costs of settling the payment using a particular payment method.
-* @see schema:PaymentChargeSpecification
+* @see http://schema.org/PaymentChargeSpecification
 * @package Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\PriceSpecification
 */
 class PaymentChargeSpecification extends PriceSpecification
@@ -14,7 +16,7 @@ class PaymentChargeSpecification extends PriceSpecification
 
     /**
         * The payment method(s) to which the payment charge specification applies.
-        * @param array|string|mixed $value
+        * @param PaymentMethod|array|string|mixed $value
     * @return $this
     */
     public function appliesToPaymentMethod($value)
@@ -24,7 +26,7 @@ class PaymentChargeSpecification extends PriceSpecification
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param PaymentMethod|array|string|mixed $value
     * @return $this
     */
     public function setAppliesToPaymentMethod($value)
@@ -45,7 +47,7 @@ class PaymentChargeSpecification extends PriceSpecification
     /**
         * The delivery method(s) to which the delivery charge or payment charge
  * specification applies.
-        * @param array|string|mixed $value
+        * @param DeliveryMethod|array|string|mixed $value
     * @return $this
     */
     public function appliesToDeliveryMethod($value)
@@ -55,7 +57,7 @@ class PaymentChargeSpecification extends PriceSpecification
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param DeliveryMethod|array|string|mixed $value
     * @return $this
     */
     public function setAppliesToDeliveryMethod($value)

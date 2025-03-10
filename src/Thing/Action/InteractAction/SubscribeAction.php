@@ -16,7 +16,7 @@ use Sohophp\SchemaOrg\Thing\Action\InteractAction;
  * agent is interested in continuing receiving updates from the object.
  * * [[JoinAction]]: Unlike JoinAction, SubscribeAction implies that the agent
  * is interested in continuing receiving updates from the object.
-* @see schema:SubscribeAction
+* @see http://schema.org/SubscribeAction
 * @package Sohophp\SchemaOrg\Thing\Action\InteractAction
 */
 class SubscribeAction extends InteractAction

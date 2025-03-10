@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\Place\CivicStructure;
 
 /**
 * A taxi stand.
-* @see schema:TaxiStand
+* @see http://schema.org/TaxiStand
 * @package Sohophp\SchemaOrg\Thing\Place\CivicStructure
 */
 class TaxiStand extends CivicStructure

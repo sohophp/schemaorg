@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\Place\CivicStructure;
 
 /**
 * A subway station.
-* @see schema:SubwayStation
+* @see http://schema.org/SubwayStation
 * @package Sohophp\SchemaOrg\Thing\Place\CivicStructure
 */
 class SubwayStation extends CivicStructure

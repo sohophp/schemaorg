@@ -2,11 +2,12 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible\Service;
 
 use Sohophp\SchemaOrg\Thing\Intangible\Service;
+use Sohophp\SchemaOrg\Thing\Organization;
 
 /**
 * A service provided by a government organization, e.g. food stamps, veterans
  * benefits, etc.
-* @see schema:GovernmentService
+* @see http://schema.org/GovernmentService
 * @package Sohophp\SchemaOrg\Thing\Intangible\Service
 */
 class GovernmentService extends Service
@@ -17,7 +18,7 @@ class GovernmentService extends Service
         * The operating organization, if different from the provider.  This enables the
  * representation of services that are provided by an organization, but operated
  * by another organization like a subcontractor.
-        * @param array|string|mixed $value
+        * @param Organization|array|string|mixed $value
     * @return $this
     */
     public function serviceOperator($value)
@@ -27,7 +28,7 @@ class GovernmentService extends Service
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Organization|array|string|mixed $value
     * @return $this
     */
     public function setServiceOperator($value)
@@ -42,37 +43,6 @@ class GovernmentService extends Service
     public function getServiceOperator()
     {
        return $this->getProperty('serviceOperator');
-    }
-
-
-    /**
-        * Indicates a legal jurisdiction, e.g. of some legislation, or where some
- * government service is based.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function jurisdiction($value)
-    {
-        $this->setProperty('jurisdiction', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setJurisdiction($value)
-    {
-        $this->setProperty('jurisdiction', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getJurisdiction()
-    {
-       return $this->getProperty('jurisdiction');
     }
 
 

@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\Organization;
 
 /**
 * Organization: Non-governmental Organization.
-* @see schema:NGO
+* @see http://schema.org/NGO
 * @package Sohophp\SchemaOrg\Thing\Organization
 */
 class NGO extends Organization

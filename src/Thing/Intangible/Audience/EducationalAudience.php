@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\Intangible\Audience;
 
 /**
 * An EducationalAudience.
-* @see schema:EducationalAudience
+* @see http://schema.org/EducationalAudience
 * @package Sohophp\SchemaOrg\Thing\Intangible\Audience
 */
 class EducationalAudience extends Audience
@@ -14,7 +14,7 @@ class EducationalAudience extends Audience
 
     /**
         * An educationalRole of an EducationalAudience.
-        * @param array|string|mixed $value
+        * @param string|array|mixed $value
     * @return $this
     */
     public function educationalRole($value)
@@ -24,7 +24,7 @@ class EducationalAudience extends Audience
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setEducationalRole($value)

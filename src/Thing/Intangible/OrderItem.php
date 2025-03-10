@@ -2,11 +2,15 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible;
 
 use Sohophp\SchemaOrg\Thing\Intangible;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\OrderStatus;
+use Sohophp\SchemaOrg\Thing\Intangible\ParcelDelivery;
+use Sohophp\SchemaOrg\Thing\Intangible\Service;
+use Sohophp\SchemaOrg\Thing\Product;
 
 /**
 * An order item is a line of an order. It includes the quantity and shipping
  * details of a bought offer.
-* @see schema:OrderItem
+* @see http://schema.org/OrderItem
 * @package Sohophp\SchemaOrg\Thing\Intangible
 */
 class OrderItem extends Intangible
@@ -15,7 +19,7 @@ class OrderItem extends Intangible
 
     /**
         * The current status of the order item.
-        * @param array|string|mixed $value
+        * @param OrderStatus|array|string|mixed $value
     * @return $this
     */
     public function orderItemStatus($value)
@@ -25,7 +29,7 @@ class OrderItem extends Intangible
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param OrderStatus|array|string|mixed $value
     * @return $this
     */
     public function setOrderItemStatus($value)
@@ -40,36 +44,6 @@ class OrderItem extends Intangible
     public function getOrderItemStatus()
     {
        return $this->getProperty('orderItemStatus');
-    }
-
-
-    /**
-        * The delivery of the parcel related to this order or order item.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function orderDelivery($value)
-    {
-        $this->setProperty('orderDelivery', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setOrderDelivery($value)
-    {
-        $this->setProperty('orderDelivery', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getOrderDelivery()
-    {
-       return $this->getProperty('orderDelivery');
     }
 
 
@@ -105,8 +79,38 @@ class OrderItem extends Intangible
 
 
     /**
+        * The delivery of the parcel related to this order or order item.
+        * @param ParcelDelivery|array|string|mixed $value
+    * @return $this
+    */
+    public function orderDelivery($value)
+    {
+        $this->setProperty('orderDelivery', $value);
+        return $this;
+    }
+
+    /**
+    * @param ParcelDelivery|array|string|mixed $value
+    * @return $this
+    */
+    public function setOrderDelivery($value)
+    {
+        $this->setProperty('orderDelivery', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getOrderDelivery()
+    {
+       return $this->getProperty('orderDelivery');
+    }
+
+
+    /**
         * The item ordered.
-        * @param array|string|mixed $value
+        * @param Service|OrderItem|Product|array|string|mixed $value
     * @return $this
     */
     public function orderedItem($value)
@@ -116,7 +120,7 @@ class OrderItem extends Intangible
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Service|OrderItem|Product|array|string|mixed $value
     * @return $this
     */
     public function setOrderedItem($value)
@@ -136,7 +140,7 @@ class OrderItem extends Intangible
 
     /**
         * The identifier of the order item.
-        * @param array|string|mixed $value
+        * @param string|array|mixed $value
     * @return $this
     */
     public function orderItemNumber($value)
@@ -146,7 +150,7 @@ class OrderItem extends Intangible
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setOrderItemNumber($value)

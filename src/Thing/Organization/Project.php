@@ -9,7 +9,7 @@ use Sohophp\SchemaOrg\Thing\Organization;
  * Use properties from [[Organization]],
  * [[subOrganization]]/[[parentOrganization]] to indicate project
  * sub-structures.
-* @see schema:Project
+* @see http://schema.org/Project
 * @package Sohophp\SchemaOrg\Thing\Organization
 */
 class Project extends Organization

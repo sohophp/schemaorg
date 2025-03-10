@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\Action\FindAction;
 
 /**
 * The act of discovering/finding an object.
-* @see schema:DiscoverAction
+* @see http://schema.org/DiscoverAction
 * @package Sohophp\SchemaOrg\Thing\Action\FindAction
 */
 class DiscoverAction extends FindAction

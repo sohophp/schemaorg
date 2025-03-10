@@ -2,11 +2,13 @@
 namespace Sohophp\SchemaOrg\Thing\CreativeWork;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork;
+use Sohophp\SchemaOrg\Thing\Intangible\MenuItem;
+use Sohophp\SchemaOrg\Thing\CreativeWork\MenuSection;
 
 /**
 * A structured representation of food or drink items available from a
  * FoodEstablishment.
-* @see schema:Menu
+* @see http://schema.org/Menu
 * @package Sohophp\SchemaOrg\Thing\CreativeWork
 */
 class Menu extends CreativeWork
@@ -15,7 +17,7 @@ class Menu extends CreativeWork
 
     /**
         * A food or drink item contained in a menu or menu section.
-        * @param array|string|mixed $value
+        * @param MenuItem|array|string|mixed $value
     * @return $this
     */
     public function hasMenuItem($value)
@@ -25,7 +27,7 @@ class Menu extends CreativeWork
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param MenuItem|array|string|mixed $value
     * @return $this
     */
     public function setHasMenuItem($value)
@@ -45,7 +47,7 @@ class Menu extends CreativeWork
 
     /**
         * A subgrouping of the menu (by dishes, course, serving time period, etc.).
-        * @param array|string|mixed $value
+        * @param MenuSection|array|string|mixed $value
     * @return $this
     */
     public function hasMenuSection($value)
@@ -55,7 +57,7 @@ class Menu extends CreativeWork
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param MenuSection|array|string|mixed $value
     * @return $this
     */
     public function setHasMenuSection($value)

@@ -2,6 +2,8 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\GeoShape;
 
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\GeoShape;
+use Sohophp\SchemaOrg\Thing\Intangible\Quantity\Distance;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\GeoCoordinates;
 
 /**
 * A GeoCircle is a GeoShape representing a circular geographic area. As it is a
@@ -10,7 +12,7 @@ use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\GeoShape;
  * the combination of postalCode alongside geoRadius.
  *           The center of the circle can be indicated via the 'geoMidpoint'
  * property, or more approximately using 'address', 'postalCode'.
-* @see schema:GeoCircle
+* @see http://schema.org/GeoCircle
 * @package Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\GeoShape
 */
 class GeoCircle extends GeoShape
@@ -20,7 +22,7 @@ class GeoCircle extends GeoShape
     /**
         * Indicates the approximate radius of a GeoCircle (metres unless indicated
  * otherwise via Distance notation).
-        * @param array|string|mixed $value
+        * @param string|Distance|array|mixed $value
     * @return $this
     */
     public function geoRadius($value)
@@ -30,7 +32,7 @@ class GeoCircle extends GeoShape
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|Distance|array|mixed $value
     * @return $this
     */
     public function setGeoRadius($value)
@@ -49,8 +51,8 @@ class GeoCircle extends GeoShape
 
 
     /**
-        * Indicates the GeoCoordinates at the centre of a GeoShape, e.g. GeoCircle.
-        * @param array|string|mixed $value
+        * Indicates the GeoCoordinates at the centre of a GeoShape e.g. GeoCircle.
+        * @param GeoCoordinates|array|string|mixed $value
     * @return $this
     */
     public function geoMidpoint($value)
@@ -60,7 +62,7 @@ class GeoCircle extends GeoShape
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param GeoCoordinates|array|string|mixed $value
     * @return $this
     */
     public function setGeoMidpoint($value)

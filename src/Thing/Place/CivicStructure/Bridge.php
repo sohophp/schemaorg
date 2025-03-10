@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\Place\CivicStructure;
 
 /**
 * A bridge.
-* @see schema:Bridge
+* @see http://schema.org/Bridge
 * @package Sohophp\SchemaOrg\Thing\Place\CivicStructure
 */
 class Bridge extends CivicStructure

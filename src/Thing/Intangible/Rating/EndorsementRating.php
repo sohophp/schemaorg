@@ -17,7 +17,7 @@ use Sohophp\SchemaOrg\Thing\Intangible\Rating;
  * but this is not required: having an explicit type for indicating a positive,
  * endorsement rating is particularly useful in the absence of numeric scales as
  * it helps consumers understand that the rating is broadly positive.
-* @see schema:EndorsementRating
+* @see http://schema.org/EndorsementRating
 * @package Sohophp\SchemaOrg\Thing\Intangible\Rating
 */
 class EndorsementRating extends Rating

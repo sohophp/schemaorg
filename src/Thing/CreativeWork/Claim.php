@@ -13,13 +13,13 @@ use Sohophp\SchemaOrg\Thing\CreativeWork;
  * practice, many claims are better understood in the context in which they
  * appear or the interpretations provided by claim reviews.
  * 
- *   Beyond [[ClaimReview]], the Claim type can be associated with related
- * creative works - for example a [[ScholarlyArticle]] or [[Question]] might be
+ * Beyond [[ClaimReview]], the Claim type can be associated with related
+ * creative works - for example a [[ScholaryArticle]] or [[Question]] might be
  * [[about]] some [[Claim]].
  * 
- *   At this time, Schema.org does not define any types of relationship between
+ * At this time, Schema.org does not define any types of relationship between
  * claims. This is a natural area for future exploration.
-* @see schema:Claim
+* @see http://schema.org/Claim
 * @package Sohophp\SchemaOrg\Thing\CreativeWork
 */
 class Claim extends CreativeWork
@@ -27,40 +27,8 @@ class Claim extends CreativeWork
 
 
     /**
-        * For a [[Claim]] interpreted from [[MediaObject]] content, the
- * [[interpretedAsClaim]] property can be used to indicate a claim contained,
- * implied or refined from the content of a [[MediaObject]].
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function claimInterpreter($value)
-    {
-        $this->setProperty('claimInterpreter', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setClaimInterpreter($value)
-    {
-        $this->setProperty('claimInterpreter', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getClaimInterpreter()
-    {
-       return $this->getProperty('claimInterpreter');
-    }
-
-
-    /**
-        * Indicates the first known occurrence of a [[Claim]] in some [[CreativeWork]].
-        * @param array|string|mixed $value
+        * Indicates the first known occurence of a [[Claim]] in some [[CreativeWork]].
+        * @param CreativeWork|array|string|mixed $value
     * @return $this
     */
     public function firstAppearance($value)
@@ -70,7 +38,7 @@ class Claim extends CreativeWork
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param CreativeWork|array|string|mixed $value
     * @return $this
     */
     public function setFirstAppearance($value)
@@ -89,8 +57,8 @@ class Claim extends CreativeWork
 
 
     /**
-        * Indicates an occurrence of a [[Claim]] in some [[CreativeWork]].
-        * @param array|string|mixed $value
+        * Indicates an occurence of a [[Claim]] in some [[CreativeWork]].
+        * @param CreativeWork|array|string|mixed $value
     * @return $this
     */
     public function appearance($value)
@@ -100,7 +68,7 @@ class Claim extends CreativeWork
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param CreativeWork|array|string|mixed $value
     * @return $this
     */
     public function setAppearance($value)

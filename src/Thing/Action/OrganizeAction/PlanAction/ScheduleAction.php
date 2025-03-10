@@ -11,7 +11,7 @@ use Sohophp\SchemaOrg\Thing\Action\OrganizeAction\PlanAction;
  * * [[ReserveAction]]: Unlike ReserveAction, ScheduleAction allocates future
  * actions (e.g. an event, a task, etc) towards a time slot / spatial
  * allocation.
-* @see schema:ScheduleAction
+* @see http://schema.org/ScheduleAction
 * @package Sohophp\SchemaOrg\Thing\Action\OrganizeAction\PlanAction
 */
 class ScheduleAction extends PlanAction

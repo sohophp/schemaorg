@@ -10,7 +10,7 @@ use Sohophp\SchemaOrg\Thing\Action;
  * 
  * * [[SearchAction]]: FindAction is generally lead by a SearchAction, but not
  * necessarily.
-* @see schema:FindAction
+* @see http://schema.org/FindAction
 * @package Sohophp\SchemaOrg\Thing\Action
 */
 class FindAction extends Action

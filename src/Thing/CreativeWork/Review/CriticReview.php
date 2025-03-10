@@ -13,7 +13,7 @@ use Sohophp\SchemaOrg\Thing\CreativeWork\Review;
  * [[UserReview]] type. Review aggregator sites such as Metacritic already
  * separate out the site's user reviews from selected critic reviews that
  * originate from third-party sources.
-* @see schema:CriticReview
+* @see http://schema.org/CriticReview
 * @package Sohophp\SchemaOrg\Thing\CreativeWork\Review
 */
 class CriticReview extends Review

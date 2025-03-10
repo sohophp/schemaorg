@@ -6,7 +6,7 @@ use Sohophp\SchemaOrg\Thing\Action\OrganizeAction;
 /**
 * The act of planning the execution of an event/task/action/reservation/plan to
  * a future date.
-* @see schema:PlanAction
+* @see http://schema.org/PlanAction
 * @package Sohophp\SchemaOrg\Thing\Action\OrganizeAction
 */
 class PlanAction extends OrganizeAction

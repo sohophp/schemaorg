@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\Action\UpdateAction\AddAction\InsertAction;
 
 /**
 * The act of inserting at the end if an ordered collection.
-* @see schema:AppendAction
+* @see http://schema.org/AppendAction
 * @package Sohophp\SchemaOrg\Thing\Action\UpdateAction\AddAction\InsertAction
 */
 class AppendAction extends InsertAction

@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\Place;
 
 /**
 * An historical landmark or building.
-* @see schema:LandmarksOrHistoricalBuildings
+* @see http://schema.org/LandmarksOrHistoricalBuildings
 * @package Sohophp\SchemaOrg\Thing\Place
 */
 class LandmarksOrHistoricalBuildings extends Place

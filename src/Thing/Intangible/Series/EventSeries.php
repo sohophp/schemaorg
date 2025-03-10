@@ -27,7 +27,7 @@ use Sohophp\SchemaOrg\Thing\Intangible\Series;
  * such as location are fixed, but
  * it may also sometimes prove useful to describe a longer-term series as an
  * Event.
-* @see schema:EventSeries
+* @see http://schema.org/EventSeries
 * @package Sohophp\SchemaOrg\Thing\Intangible\Series
 */
 class EventSeries extends Series

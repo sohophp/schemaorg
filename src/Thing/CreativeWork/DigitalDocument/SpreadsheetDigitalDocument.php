@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\CreativeWork\DigitalDocument;
 
 /**
 * A spreadsheet file.
-* @see schema:SpreadsheetDigitalDocument
+* @see http://schema.org/SpreadsheetDigitalDocument
 * @package Sohophp\SchemaOrg\Thing\CreativeWork\DigitalDocument
 */
 class SpreadsheetDigitalDocument extends DigitalDocument

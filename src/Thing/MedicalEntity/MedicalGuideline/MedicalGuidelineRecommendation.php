@@ -6,7 +6,7 @@ use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalGuideline;
 /**
 * A guideline recommendation that is regarded as efficacious and where quality
  * of the data supporting the recommendation is sound.
-* @see schema:MedicalGuidelineRecommendation
+* @see http://schema.org/MedicalGuidelineRecommendation
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalGuideline
 */
 class MedicalGuidelineRecommendation extends MedicalGuideline
@@ -15,7 +15,7 @@ class MedicalGuidelineRecommendation extends MedicalGuideline
 
     /**
         * Strength of the guideline's recommendation (e.g. 'class I').
-        * @param array|string|mixed $value
+        * @param string|array|mixed $value
     * @return $this
     */
     public function recommendationStrength($value)
@@ -25,7 +25,7 @@ class MedicalGuidelineRecommendation extends MedicalGuideline
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setRecommendationStrength($value)

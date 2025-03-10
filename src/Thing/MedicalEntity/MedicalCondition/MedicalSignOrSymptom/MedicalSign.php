@@ -2,11 +2,13 @@
 namespace Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalCondition\MedicalSignOrSymptom;
 
 use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalCondition\MedicalSignOrSymptom;
+use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalProcedure\PhysicalExam;
+use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalTest;
 
 /**
 * Any physical manifestation of a person's medical condition discoverable by
  * objective diagnostic tests or physical examination.
-* @see schema:MedicalSign
+* @see http://schema.org/MedicalSign
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalCondition\MedicalSignOrSymptom
 */
 class MedicalSign extends MedicalSignOrSymptom
@@ -15,7 +17,7 @@ class MedicalSign extends MedicalSignOrSymptom
 
     /**
         * A physical examination that can identify this sign.
-        * @param array|string|mixed $value
+        * @param PhysicalExam|array|string|mixed $value
     * @return $this
     */
     public function identifyingExam($value)
@@ -25,7 +27,7 @@ class MedicalSign extends MedicalSignOrSymptom
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param PhysicalExam|array|string|mixed $value
     * @return $this
     */
     public function setIdentifyingExam($value)
@@ -45,7 +47,7 @@ class MedicalSign extends MedicalSignOrSymptom
 
     /**
         * A diagnostic test that can identify this sign.
-        * @param array|string|mixed $value
+        * @param MedicalTest|array|string|mixed $value
     * @return $this
     */
     public function identifyingTest($value)
@@ -55,7 +57,7 @@ class MedicalSign extends MedicalSignOrSymptom
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param MedicalTest|array|string|mixed $value
     * @return $this
     */
     public function setIdentifyingTest($value)

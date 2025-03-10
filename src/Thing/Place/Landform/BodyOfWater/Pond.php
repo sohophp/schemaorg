@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\Place\Landform\BodyOfWater;
 
 /**
 * A pond.
-* @see schema:Pond
+* @see http://schema.org/Pond
 * @package Sohophp\SchemaOrg\Thing\Place\Landform\BodyOfWater
 */
 class Pond extends BodyOfWater

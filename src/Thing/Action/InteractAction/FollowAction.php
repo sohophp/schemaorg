@@ -2,6 +2,8 @@
 namespace Sohophp\SchemaOrg\Thing\Action\InteractAction;
 
 use Sohophp\SchemaOrg\Thing\Action\InteractAction;
+use Sohophp\SchemaOrg\Thing\Organization;
+use Sohophp\SchemaOrg\Thing\Person;
 
 /**
 * The act of forming a personal connection with someone/something (object)
@@ -20,7 +22,7 @@ use Sohophp\SchemaOrg\Thing\Action\InteractAction;
  * * [[TrackAction]]: Unlike TrackAction, FollowAction refers to the polling of
  * updates of all aspects of animate objects rather than the location of
  * inanimate objects (e.g. you track a package, but you don't follow it).
-* @see schema:FollowAction
+* @see http://schema.org/FollowAction
 * @package Sohophp\SchemaOrg\Thing\Action\InteractAction
 */
 class FollowAction extends InteractAction
@@ -29,7 +31,7 @@ class FollowAction extends InteractAction
 
     /**
         * A sub property of object. The person or organization being followed.
-        * @param array|string|mixed $value
+        * @param Organization|Person|array|string|mixed $value
     * @return $this
     */
     public function followee($value)
@@ -39,7 +41,7 @@ class FollowAction extends InteractAction
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Organization|Person|array|string|mixed $value
     * @return $this
     */
     public function setFollowee($value)

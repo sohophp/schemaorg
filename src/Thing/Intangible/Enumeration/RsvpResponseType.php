@@ -6,7 +6,7 @@ use Sohophp\SchemaOrg\Thing\Intangible\Enumeration;
 /**
 * RsvpResponseType is an enumeration type whose instances represent responding
  * to an RSVP request.
-* @see schema:RsvpResponseType
+* @see http://schema.org/RsvpResponseType
 * @package Sohophp\SchemaOrg\Thing\Intangible\Enumeration
 */
 class RsvpResponseType extends Enumeration

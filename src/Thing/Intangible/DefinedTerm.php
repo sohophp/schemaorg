@@ -2,6 +2,7 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible;
 
 use Sohophp\SchemaOrg\Thing\Intangible;
+use Sohophp\SchemaOrg\Thing\CreativeWork\DefinedTermSet;
 
 /**
 * A word, name, acronym, phrase, etc. with a formal definition. Often used in
@@ -9,7 +10,7 @@ use Sohophp\SchemaOrg\Thing\Intangible;
  * dictionaries, product or creative work types, etc. Use the name property for
  * the term being defined, use termCode if the term has an alpha-numeric code
  * allocated, use description to provide the definition of the term.
-* @see schema:DefinedTerm
+* @see http://schema.org/DefinedTerm
 * @package Sohophp\SchemaOrg\Thing\Intangible
 */
 class DefinedTerm extends Intangible
@@ -17,8 +18,8 @@ class DefinedTerm extends Intangible
 
 
     /**
-        * A code that identifies this [[DefinedTerm]] within a [[DefinedTermSet]].
-        * @param array|string|mixed $value
+        * A code that identifies this [[DefinedTerm]] within a [[DefinedTermSet]]
+        * @param string|array|mixed $value
     * @return $this
     */
     public function termCode($value)
@@ -28,7 +29,7 @@ class DefinedTerm extends Intangible
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setTermCode($value)
@@ -48,7 +49,7 @@ class DefinedTerm extends Intangible
 
     /**
         * A [[DefinedTermSet]] that contains this term.
-        * @param array|string|mixed $value
+        * @param DefinedTermSet|string|array|mixed $value
     * @return $this
     */
     public function inDefinedTermSet($value)
@@ -58,7 +59,7 @@ class DefinedTerm extends Intangible
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param DefinedTermSet|string|array|mixed $value
     * @return $this
     */
     public function setInDefinedTermSet($value)

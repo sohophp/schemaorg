@@ -2,10 +2,11 @@
 namespace Sohophp\SchemaOrg\Thing\MedicalEntity\AnatomicalStructure;
 
 use Sohophp\SchemaOrg\Thing\MedicalEntity\AnatomicalStructure;
+use Sohophp\SchemaOrg\Thing\MedicalEntity;
 
 /**
 * The anatomical location at which two or more bones make contact.
-* @see schema:Joint
+* @see http://schema.org/Joint
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity\AnatomicalStructure
 */
 class Joint extends AnatomicalStructure
@@ -14,7 +15,7 @@ class Joint extends AnatomicalStructure
 
     /**
         * The biomechanical properties of the bone.
-        * @param array|string|mixed $value
+        * @param string|array|mixed $value
     * @return $this
     */
     public function biomechnicalClass($value)
@@ -24,7 +25,7 @@ class Joint extends AnatomicalStructure
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setBiomechnicalClass($value)
@@ -44,7 +45,7 @@ class Joint extends AnatomicalStructure
 
     /**
         * The name given to how bone physically connects to each other.
-        * @param array|string|mixed $value
+        * @param string|array|mixed $value
     * @return $this
     */
     public function structuralClass($value)
@@ -54,7 +55,7 @@ class Joint extends AnatomicalStructure
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setStructuralClass($value)
@@ -74,7 +75,7 @@ class Joint extends AnatomicalStructure
 
     /**
         * The degree of mobility the joint allows.
-        * @param array|string|mixed $value
+        * @param MedicalEntity|string|array|mixed $value
     * @return $this
     */
     public function functionalClass($value)
@@ -84,7 +85,7 @@ class Joint extends AnatomicalStructure
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param MedicalEntity|string|array|mixed $value
     * @return $this
     */
     public function setFunctionalClass($value)

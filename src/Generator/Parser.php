@@ -60,6 +60,7 @@ class Parser
          * @var ParserItem $item
          */
         foreach ($this->graphs as $item) {
+
             if ($item->isDataType()) {
                 $this->dataTypes[] = $item;
             } elseif ($item->isProperty()) {

@@ -2,10 +2,11 @@
 namespace Sohophp\SchemaOrg\Thing\Action\InteractAction\CommunicateAction;
 
 use Sohophp\SchemaOrg\Thing\Action\InteractAction\CommunicateAction;
+use Sohophp\SchemaOrg\Thing\CreativeWork\Comment;
 
 /**
 * The act of generating a comment about a subject.
-* @see schema:CommentAction
+* @see http://schema.org/CommentAction
 * @package Sohophp\SchemaOrg\Thing\Action\InteractAction\CommunicateAction
 */
 class CommentAction extends CommunicateAction
@@ -15,7 +16,7 @@ class CommentAction extends CommunicateAction
     /**
         * A sub property of result. The Comment created or sent as a result of this
  * action.
-        * @param array|string|mixed $value
+        * @param Comment|array|string|mixed $value
     * @return $this
     */
     public function resultComment($value)
@@ -25,7 +26,7 @@ class CommentAction extends CommunicateAction
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Comment|array|string|mixed $value
     * @return $this
     */
     public function setResultComment($value)

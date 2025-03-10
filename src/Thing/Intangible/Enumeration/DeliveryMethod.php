@@ -20,7 +20,7 @@ use Sohophp\SchemaOrg\Thing\Intangible\Enumeration;
  * * http://purl.org/goodrelations/v1#DHL
  * * http://purl.org/goodrelations/v1#FederalExpress
  * * http://purl.org/goodrelations/v1#UPS
-* @see schema:DeliveryMethod
+* @see http://schema.org/DeliveryMethod
 * @package Sohophp\SchemaOrg\Thing\Intangible\Enumeration
 */
 class DeliveryMethod extends Enumeration

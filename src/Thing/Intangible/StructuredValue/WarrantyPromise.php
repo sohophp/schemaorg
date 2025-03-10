@@ -2,12 +2,14 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
 
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\QuantitativeValue;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\WarrantyScope;
 
 /**
 * A structured value representing the duration and scope of services that will
  * be provided to a customer free of charge in case of a defect or malfunction
  * of a product.
-* @see schema:WarrantyPromise
+* @see http://schema.org/WarrantyPromise
 * @package Sohophp\SchemaOrg\Thing\Intangible\StructuredValue
 */
 class WarrantyPromise extends StructuredValue
@@ -17,7 +19,7 @@ class WarrantyPromise extends StructuredValue
     /**
         * The duration of the warranty promise. Common unitCode values are ANN for
  * year, MON for months, or DAY for days.
-        * @param array|string|mixed $value
+        * @param QuantitativeValue|array|string|mixed $value
     * @return $this
     */
     public function durationOfWarranty($value)
@@ -27,7 +29,7 @@ class WarrantyPromise extends StructuredValue
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param QuantitativeValue|array|string|mixed $value
     * @return $this
     */
     public function setDurationOfWarranty($value)
@@ -47,7 +49,7 @@ class WarrantyPromise extends StructuredValue
 
     /**
         * The scope of the warranty promise.
-        * @param array|string|mixed $value
+        * @param WarrantyScope|array|string|mixed $value
     * @return $this
     */
     public function warrantyScope($value)
@@ -57,7 +59,7 @@ class WarrantyPromise extends StructuredValue
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param WarrantyScope|array|string|mixed $value
     * @return $this
     */
     public function setWarrantyScope($value)

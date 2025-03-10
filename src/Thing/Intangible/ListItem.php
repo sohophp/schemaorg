@@ -2,10 +2,11 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible;
 
 use Sohophp\SchemaOrg\Thing\Intangible;
+use Sohophp\SchemaOrg\Thing;
 
 /**
 * An list item, e.g. a step in a checklist or how-to description.
-* @see schema:ListItem
+* @see http://schema.org/ListItem
 * @package Sohophp\SchemaOrg\Thing\Intangible
 */
 class ListItem extends Intangible
@@ -14,7 +15,7 @@ class ListItem extends Intangible
 
     /**
         * A link to the ListItem that follows the current one.
-        * @param array|string|mixed $value
+        * @param ListItem|array|string|mixed $value
     * @return $this
     */
     public function nextItem($value)
@@ -24,7 +25,7 @@ class ListItem extends Intangible
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param ListItem|array|string|mixed $value
     * @return $this
     */
     public function setNextItem($value)
@@ -44,7 +45,7 @@ class ListItem extends Intangible
 
     /**
         * The position of an item in a series or sequence of items.
-        * @param array|string|mixed $value
+        * @param string|int|array|mixed $value
     * @return $this
     */
     public function position($value)
@@ -54,7 +55,7 @@ class ListItem extends Intangible
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|int|array|mixed $value
     * @return $this
     */
     public function setPosition($value)
@@ -73,8 +74,8 @@ class ListItem extends Intangible
 
 
     /**
-        * A link to the ListItem that precedes the current one.
-        * @param array|string|mixed $value
+        * A link to the ListItem that preceeds the current one.
+        * @param ListItem|array|string|mixed $value
     * @return $this
     */
     public function previousItem($value)
@@ -84,7 +85,7 @@ class ListItem extends Intangible
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param ListItem|array|string|mixed $value
     * @return $this
     */
     public function setPreviousItem($value)
@@ -104,8 +105,8 @@ class ListItem extends Intangible
 
     /**
         * An entity represented by an entry in a list or data feed (e.g. an 'artist' in
- * a list of 'artists').
-        * @param array|string|mixed $value
+ * a list of 'artists')’.
+        * @param Thing|array|string|mixed $value
     * @return $this
     */
     public function item($value)
@@ -115,7 +116,7 @@ class ListItem extends Intangible
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Thing|array|string|mixed $value
     * @return $this
     */
     public function setItem($value)

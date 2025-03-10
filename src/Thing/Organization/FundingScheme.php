@@ -14,7 +14,7 @@ use Sohophp\SchemaOrg\Thing\Organization;
  * fund. For large scale public sector funding, the management and
  * administration of grant awards is often handled by other, dedicated,
  * organizations - [[FundingAgency]]s such as ERC, REA, ...
-* @see schema:FundingScheme
+* @see http://schema.org/FundingScheme
 * @package Sohophp\SchemaOrg\Thing\Organization
 */
 class FundingScheme extends Organization

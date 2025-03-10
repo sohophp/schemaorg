@@ -2,6 +2,7 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible\Reservation;
 
 use Sohophp\SchemaOrg\Thing\Intangible\Reservation;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\QuantitativeValue;
 
 /**
 * A reservation to dine at a food-related business.
@@ -9,7 +10,7 @@ use Sohophp\SchemaOrg\Thing\Intangible\Reservation;
  * Note: This type is for information about actual reservations, e.g. in
  * confirmation emails or HTML pages with individual confirmations of
  * reservations.
-* @see schema:FoodEstablishmentReservation
+* @see http://schema.org/FoodEstablishmentReservation
 * @package Sohophp\SchemaOrg\Thing\Intangible\Reservation
 */
 class FoodEstablishmentReservation extends Reservation
@@ -19,7 +20,7 @@ class FoodEstablishmentReservation extends Reservation
     /**
         * The startTime of something. For a reserved event or service (e.g.
  * FoodEstablishmentReservation), the time that it is expected to start. For
- * actions that span a period of time, when the action was performed. E.g. John
+ * actions that span a period of time, when the action was performed. e.g. John
  * wrote a book from *January* to December. For media, including audio and
  * video, it's the time offset of the start of a clip within a larger file.
  * 
@@ -56,7 +57,7 @@ class FoodEstablishmentReservation extends Reservation
 
     /**
         * Number of people the reservation should accommodate.
-        * @param array|string|mixed $value
+        * @param QuantitativeValue|int|array|string|mixed $value
     * @return $this
     */
     public function partySize($value)
@@ -66,7 +67,7 @@ class FoodEstablishmentReservation extends Reservation
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param QuantitativeValue|int|array|string|mixed $value
     * @return $this
     */
     public function setPartySize($value)
@@ -87,7 +88,7 @@ class FoodEstablishmentReservation extends Reservation
     /**
         * The endTime of something. For a reserved event or service (e.g.
  * FoodEstablishmentReservation), the time that it is expected to end. For
- * actions that span a period of time, when the action was performed. E.g. John
+ * actions that span a period of time, when the action was performed. e.g. John
  * wrote a book from January to *December*. For media, including audio and
  * video, it's the time offset of the end of a clip within a larger file.
  * 

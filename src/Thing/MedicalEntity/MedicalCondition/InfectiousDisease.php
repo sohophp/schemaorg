@@ -2,6 +2,7 @@
 namespace Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalCondition;
 
 use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalCondition;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MedicalEnumeration\InfectiousAgentClass;
 
 /**
 * An infectious disease is a clinically evident human disease resulting from
@@ -9,7 +10,7 @@ use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalCondition;
  * pathogenic bacteria, fungi, protozoa, multicellular parasites, and prions. To
  * be considered an infectious disease, such pathogens are known to be able to
  * cause this disease.
-* @see schema:InfectiousDisease
+* @see http://schema.org/InfectiousDisease
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalCondition
 */
 class InfectiousDisease extends MedicalCondition
@@ -17,39 +18,8 @@ class InfectiousDisease extends MedicalCondition
 
 
     /**
-        * How the disease spreads, either as a route or vector, for example 'direct
- * contact', 'Aedes aegypti', etc.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function transmissionMethod($value)
-    {
-        $this->setProperty('transmissionMethod', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setTransmissionMethod($value)
-    {
-        $this->setProperty('transmissionMethod', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getTransmissionMethod()
-    {
-       return $this->getProperty('transmissionMethod');
-    }
-
-
-    /**
         * The actual infectious agent, such as a specific bacterium.
-        * @param array|string|mixed $value
+        * @param string|array|mixed $value
     * @return $this
     */
     public function infectiousAgent($value)
@@ -59,7 +29,7 @@ class InfectiousDisease extends MedicalCondition
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setInfectiousAgent($value)
@@ -78,9 +48,40 @@ class InfectiousDisease extends MedicalCondition
 
 
     /**
+        * How the disease spreads, either as a route or vector, for example 'direct
+ * contact', 'Aedes aegypti', etc.
+        * @param string|array|mixed $value
+    * @return $this
+    */
+    public function transmissionMethod($value)
+    {
+        $this->setProperty('transmissionMethod', $value);
+        return $this;
+    }
+
+    /**
+    * @param string|array|mixed $value
+    * @return $this
+    */
+    public function setTransmissionMethod($value)
+    {
+        $this->setProperty('transmissionMethod', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getTransmissionMethod()
+    {
+       return $this->getProperty('transmissionMethod');
+    }
+
+
+    /**
         * The class of infectious agent (bacteria, prion, etc.) that causes the
  * disease.
-        * @param array|string|mixed $value
+        * @param InfectiousAgentClass|array|string|mixed $value
     * @return $this
     */
     public function infectiousAgentClass($value)
@@ -90,7 +91,7 @@ class InfectiousDisease extends MedicalCondition
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param InfectiousAgentClass|array|string|mixed $value
     * @return $this
     */
     public function setInfectiousAgentClass($value)

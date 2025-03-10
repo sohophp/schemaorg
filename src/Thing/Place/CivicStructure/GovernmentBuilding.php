@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\Place\CivicStructure;
 
 /**
 * A government building.
-* @see schema:GovernmentBuilding
+* @see http://schema.org/GovernmentBuilding
 * @package Sohophp\SchemaOrg\Thing\Place\CivicStructure
 */
 class GovernmentBuilding extends CivicStructure

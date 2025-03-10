@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\Place\CivicStructure;
 
 /**
 * Aquarium.
-* @see schema:Aquarium
+* @see http://schema.org/Aquarium
 * @package Sohophp\SchemaOrg\Thing\Place\CivicStructure
 */
 class Aquarium extends CivicStructure

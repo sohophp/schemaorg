@@ -2,6 +2,12 @@
 namespace Sohophp\SchemaOrg\Thing\MedicalEntity;
 
 use Sohophp\SchemaOrg\Thing\MedicalEntity;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\EventStatusType;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MedicalEnumeration\MedicalStudyStatus;
+use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalCondition;
+use Sohophp\SchemaOrg\Thing\Place\AdministrativeArea;
+use Sohophp\SchemaOrg\Thing\Person;
+use Sohophp\SchemaOrg\Thing\Organization;
 
 /**
 * A medical study is an umbrella type covering all kinds of research studies
@@ -13,7 +19,7 @@ use Sohophp\SchemaOrg\Thing\MedicalEntity;
  * article that publishes the results of a study, use MedicalScholarlyArticle.
  * Note: use the code property of MedicalEntity to store study IDs, e.g.
  * clinicaltrials.gov ID.
-* @see schema:MedicalStudy
+* @see http://schema.org/MedicalStudy
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity
 */
 class MedicalStudy extends MedicalEntity
@@ -21,72 +27,9 @@ class MedicalStudy extends MedicalEntity
 
 
     /**
-        * Specifying the health condition(s) of a patient, medical study, or other
- * target audience.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function healthCondition($value)
-    {
-        $this->setProperty('healthCondition', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setHealthCondition($value)
-    {
-        $this->setProperty('healthCondition', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getHealthCondition()
-    {
-       return $this->getProperty('healthCondition');
-    }
-
-
-    /**
-        * A person or organization that supports a thing through a pledge, promise, or
- * financial contribution. E.g. a sponsor of a Medical Study or a corporate
- * sponsor of an event.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function sponsor($value)
-    {
-        $this->setProperty('sponsor', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setSponsor($value)
-    {
-        $this->setProperty('sponsor', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getSponsor()
-    {
-       return $this->getProperty('sponsor');
-    }
-
-
-    /**
         * A subject of the study, i.e. one of the medical conditions, therapies,
  * devices, drugs, etc. investigated by the study.
-        * @param array|string|mixed $value
+        * @param MedicalEntity|array|string|mixed $value
     * @return $this
     */
     public function studySubject($value)
@@ -96,7 +39,7 @@ class MedicalStudy extends MedicalEntity
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param MedicalEntity|array|string|mixed $value
     * @return $this
     */
     public function setStudySubject($value)
@@ -115,8 +58,39 @@ class MedicalStudy extends MedicalEntity
 
 
     /**
+        * Any characteristics of the population used in the study, e.g. 'males under
+ * 65'.
+        * @param string|array|mixed $value
+    * @return $this
+    */
+    public function population($value)
+    {
+        $this->setProperty('population', $value);
+        return $this;
+    }
+
+    /**
+    * @param string|array|mixed $value
+    * @return $this
+    */
+    public function setPopulation($value)
+    {
+        $this->setProperty('population', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getPopulation()
+    {
+       return $this->getProperty('population');
+    }
+
+
+    /**
         * The status of the study (enumerated).
-        * @param array|string|mixed $value
+        * @param EventStatusType|string|MedicalStudyStatus|array|mixed $value
     * @return $this
     */
     public function status($value)
@@ -126,7 +100,7 @@ class MedicalStudy extends MedicalEntity
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param EventStatusType|string|MedicalStudyStatus|array|mixed $value
     * @return $this
     */
     public function setStatus($value)
@@ -145,8 +119,69 @@ class MedicalStudy extends MedicalEntity
 
 
     /**
+        * Expected or actual outcomes of the study.
+        * @param MedicalEntity|string|array|mixed $value
+    * @return $this
+    */
+    public function outcome($value)
+    {
+        $this->setProperty('outcome', $value);
+        return $this;
+    }
+
+    /**
+    * @param MedicalEntity|string|array|mixed $value
+    * @return $this
+    */
+    public function setOutcome($value)
+    {
+        $this->setProperty('outcome', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getOutcome()
+    {
+       return $this->getProperty('outcome');
+    }
+
+
+    /**
+        * Specifying the health condition(s) of a patient, medical study, or other
+ * target audience.
+        * @param MedicalCondition|array|string|mixed $value
+    * @return $this
+    */
+    public function healthCondition($value)
+    {
+        $this->setProperty('healthCondition', $value);
+        return $this;
+    }
+
+    /**
+    * @param MedicalCondition|array|string|mixed $value
+    * @return $this
+    */
+    public function setHealthCondition($value)
+    {
+        $this->setProperty('healthCondition', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getHealthCondition()
+    {
+       return $this->getProperty('healthCondition');
+    }
+
+
+    /**
         * The location in which the study is taking/took place.
-        * @param array|string|mixed $value
+        * @param AdministrativeArea|array|string|mixed $value
     * @return $this
     */
     public function studyLocation($value)
@@ -156,7 +191,7 @@ class MedicalStudy extends MedicalEntity
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param AdministrativeArea|array|string|mixed $value
     * @return $this
     */
     public function setStudyLocation($value)
@@ -171,6 +206,38 @@ class MedicalStudy extends MedicalEntity
     public function getStudyLocation()
     {
        return $this->getProperty('studyLocation');
+    }
+
+
+    /**
+        * A person or organization that supports a thing through a pledge, promise, or
+ * financial contribution. e.g. a sponsor of a Medical Study or a corporate
+ * sponsor of an event.
+        * @param Person|Organization|array|string|mixed $value
+    * @return $this
+    */
+    public function sponsor($value)
+    {
+        $this->setProperty('sponsor', $value);
+        return $this;
+    }
+
+    /**
+    * @param Person|Organization|array|string|mixed $value
+    * @return $this
+    */
+    public function setSponsor($value)
+    {
+        $this->setProperty('sponsor', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getSponsor()
+    {
+       return $this->getProperty('sponsor');
     }
 
 

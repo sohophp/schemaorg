@@ -2,10 +2,14 @@
 namespace Sohophp\SchemaOrg\Thing\Action\CreateAction;
 
 use Sohophp\SchemaOrg\Thing\Action\CreateAction;
+use Sohophp\SchemaOrg\Thing\Organization\LocalBusiness\FoodEstablishment;
+use Sohophp\SchemaOrg\Thing\Place;
+use Sohophp\SchemaOrg\Thing\CreativeWork\HowTo\Recipe;
+use Sohophp\SchemaOrg\Thing\Event\FoodEvent;
 
 /**
 * The act of producing/preparing food.
-* @see schema:CookAction
+* @see http://schema.org/CookAction
 * @package Sohophp\SchemaOrg\Thing\Action\CreateAction
 */
 class CookAction extends CreateAction
@@ -15,7 +19,7 @@ class CookAction extends CreateAction
     /**
         * A sub property of location. The specific food establishment where the action
  * occurred.
-        * @param array|string|mixed $value
+        * @param FoodEstablishment|Place|array|string|mixed $value
     * @return $this
     */
     public function foodEstablishment($value)
@@ -25,7 +29,7 @@ class CookAction extends CreateAction
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param FoodEstablishment|Place|array|string|mixed $value
     * @return $this
     */
     public function setFoodEstablishment($value)
@@ -44,40 +48,9 @@ class CookAction extends CreateAction
 
 
     /**
-        * A sub property of location. The specific food event where the action
- * occurred.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function foodEvent($value)
-    {
-        $this->setProperty('foodEvent', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setFoodEvent($value)
-    {
-        $this->setProperty('foodEvent', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getFoodEvent()
-    {
-       return $this->getProperty('foodEvent');
-    }
-
-
-    /**
         * A sub property of instrument. The recipe/instructions used to perform the
  * action.
-        * @param array|string|mixed $value
+        * @param Recipe|array|string|mixed $value
     * @return $this
     */
     public function recipe($value)
@@ -87,7 +60,7 @@ class CookAction extends CreateAction
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Recipe|array|string|mixed $value
     * @return $this
     */
     public function setRecipe($value)
@@ -102,6 +75,37 @@ class CookAction extends CreateAction
     public function getRecipe()
     {
        return $this->getProperty('recipe');
+    }
+
+
+    /**
+        * A sub property of location. The specific food event where the action
+ * occurred.
+        * @param FoodEvent|array|string|mixed $value
+    * @return $this
+    */
+    public function foodEvent($value)
+    {
+        $this->setProperty('foodEvent', $value);
+        return $this;
+    }
+
+    /**
+    * @param FoodEvent|array|string|mixed $value
+    * @return $this
+    */
+    public function setFoodEvent($value)
+    {
+        $this->setProperty('foodEvent', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getFoodEvent()
+    {
+       return $this->getProperty('foodEvent');
     }
 
 

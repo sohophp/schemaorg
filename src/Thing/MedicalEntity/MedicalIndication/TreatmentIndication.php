@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalIndication;
 
 /**
 * An indication for treating an underlying condition, symptom, etc.
-* @see schema:TreatmentIndication
+* @see http://schema.org/TreatmentIndication
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalIndication
 */
 class TreatmentIndication extends MedicalIndication

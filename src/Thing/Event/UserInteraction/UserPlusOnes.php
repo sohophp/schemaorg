@@ -7,7 +7,7 @@ use Sohophp\SchemaOrg\Thing\Event\UserInteraction;
 * UserInteraction and its subtypes is an old way of talking about users
  * interacting with pages. It is generally better to use [[Action]]-based
  * vocabulary, alongside types such as [[Comment]].
-* @see schema:UserPlusOnes
+* @see http://schema.org/UserPlusOnes
 * @package Sohophp\SchemaOrg\Thing\Event\UserInteraction
 */
 class UserPlusOnes extends UserInteraction

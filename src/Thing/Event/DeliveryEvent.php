@@ -2,10 +2,11 @@
 namespace Sohophp\SchemaOrg\Thing\Event;
 
 use Sohophp\SchemaOrg\Thing\Event;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\DeliveryMethod;
 
 /**
 * An event involving the delivery of an item.
-* @see schema:DeliveryEvent
+* @see http://schema.org/DeliveryEvent
 * @package Sohophp\SchemaOrg\Thing\Event
 */
 class DeliveryEvent extends Event
@@ -13,32 +14,32 @@ class DeliveryEvent extends Event
 
 
     /**
-        * Password, PIN, or access code needed for delivery (e.g. from a locker).
-        * @param array|string|mixed $value
+        * Method used for delivery or shipping.
+        * @param DeliveryMethod|array|string|mixed $value
     * @return $this
     */
-    public function accessCode($value)
+    public function hasDeliveryMethod($value)
     {
-        $this->setProperty('accessCode', $value);
+        $this->setProperty('hasDeliveryMethod', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param DeliveryMethod|array|string|mixed $value
     * @return $this
     */
-    public function setAccessCode($value)
+    public function setHasDeliveryMethod($value)
     {
-        $this->setProperty('accessCode', $value);
+        $this->setProperty('hasDeliveryMethod', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getAccessCode()
+    public function getHasDeliveryMethod()
     {
-       return $this->getProperty('accessCode');
+       return $this->getProperty('hasDeliveryMethod');
     }
 
 
@@ -73,36 +74,6 @@ class DeliveryEvent extends Event
 
 
     /**
-        * Method used for delivery or shipping.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function hasDeliveryMethod($value)
-    {
-        $this->setProperty('hasDeliveryMethod', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setHasDeliveryMethod($value)
-    {
-        $this->setProperty('hasDeliveryMethod', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getHasDeliveryMethod()
-    {
-       return $this->getProperty('hasDeliveryMethod');
-    }
-
-
-    /**
         * When the item is available for pickup from the store, locker, etc.
         * @param array|string|mixed $value
     * @return $this
@@ -129,6 +100,36 @@ class DeliveryEvent extends Event
     public function getAvailableFrom()
     {
        return $this->getProperty('availableFrom');
+    }
+
+
+    /**
+        * Password, PIN, or access code needed for delivery (e.g. from a locker).
+        * @param string|array|mixed $value
+    * @return $this
+    */
+    public function accessCode($value)
+    {
+        $this->setProperty('accessCode', $value);
+        return $this;
+    }
+
+    /**
+    * @param string|array|mixed $value
+    * @return $this
+    */
+    public function setAccessCode($value)
+    {
+        $this->setProperty('accessCode', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getAccessCode()
+    {
+       return $this->getProperty('accessCode');
     }
 
 

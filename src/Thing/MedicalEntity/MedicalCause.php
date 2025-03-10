@@ -20,7 +20,7 @@ use Sohophp\SchemaOrg\Thing\MedicalEntity;
  * otolaryngologic, pharmacologic, psychiatric, pulmonary, renal, rheumatologic,
  * toxic, traumatic, or urologic causes; medical conditions can be causes as
  * well.
-* @see schema:MedicalCause
+* @see http://schema.org/MedicalCause
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity
 */
 class MedicalCause extends MedicalEntity
@@ -29,7 +29,7 @@ class MedicalCause extends MedicalEntity
 
     /**
         * The condition, complication, symptom, sign, etc. caused.
-        * @param array|string|mixed $value
+        * @param MedicalEntity|array|string|mixed $value
     * @return $this
     */
     public function causeOf($value)
@@ -39,7 +39,7 @@ class MedicalCause extends MedicalEntity
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param MedicalEntity|array|string|mixed $value
     * @return $this
     */
     public function setCauseOf($value)

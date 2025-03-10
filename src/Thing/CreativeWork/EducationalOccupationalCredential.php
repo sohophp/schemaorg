@@ -2,12 +2,16 @@
 namespace Sohophp\SchemaOrg\Thing\CreativeWork;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork;
+use Sohophp\SchemaOrg\Thing\Intangible\Quantity\Duration;
+use Sohophp\SchemaOrg\Thing\Intangible\DefinedTerm;
+use Sohophp\SchemaOrg\Thing\Organization;
+use Sohophp\SchemaOrg\Thing\Place\AdministrativeArea;
 
 /**
 * An educational or occupational credential. A diploma, academic degree,
  * certification, qualification, badge, etc., that may be awarded to a person or
  * other entity that meets the requirements defined by the credentialer.
-* @see schema:EducationalOccupationalCredential
+* @see http://schema.org/EducationalOccupationalCredential
 * @package Sohophp\SchemaOrg\Thing\CreativeWork
 */
 class EducationalOccupationalCredential extends CreativeWork
@@ -16,7 +20,7 @@ class EducationalOccupationalCredential extends CreativeWork
 
     /**
         * The duration of validity of a permit or similar thing.
-        * @param array|string|mixed $value
+        * @param Duration|array|string|mixed $value
     * @return $this
     */
     public function validFor($value)
@@ -26,7 +30,7 @@ class EducationalOccupationalCredential extends CreativeWork
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Duration|array|string|mixed $value
     * @return $this
     */
     public function setValidFor($value)
@@ -45,34 +49,34 @@ class EducationalOccupationalCredential extends CreativeWork
 
 
     /**
-        * Knowledge, skill, ability or personal attribute that must be demonstrated by
- * a person or other entity in order to do something such as earn an Educational
- * Occupational Credential or understand a LearningResource.
-        * @param array|string|mixed $value
+        * The level in terms of progression through an educational or training context.
+ * Examples of educational levels include 'beginner', 'intermediate' or
+ * 'advanced', and formal sets of level indicators.
+        * @param string|DefinedTerm|string|array|mixed $value
     * @return $this
     */
-    public function competencyRequired($value)
+    public function educationalLevel($value)
     {
-        $this->setProperty('competencyRequired', $value);
+        $this->setProperty('educationalLevel', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|DefinedTerm|string|array|mixed $value
     * @return $this
     */
-    public function setCompetencyRequired($value)
+    public function setEducationalLevel($value)
     {
-        $this->setProperty('competencyRequired', $value);
+        $this->setProperty('educationalLevel', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getCompetencyRequired()
+    public function getEducationalLevel()
     {
-       return $this->getProperty('competencyRequired');
+       return $this->getProperty('educationalLevel');
     }
 
 
@@ -80,7 +84,7 @@ class EducationalOccupationalCredential extends CreativeWork
         * An organization that acknowledges the validity, value or utility of a
  * credential. Note: recognition may include a process of quality assurance or
  * accreditation.
-        * @param array|string|mixed $value
+        * @param Organization|array|string|mixed $value
     * @return $this
     */
     public function recognizedBy($value)
@@ -90,7 +94,7 @@ class EducationalOccupationalCredential extends CreativeWork
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Organization|array|string|mixed $value
     * @return $this
     */
     public function setRecognizedBy($value)
@@ -109,9 +113,40 @@ class EducationalOccupationalCredential extends CreativeWork
 
 
     /**
+        * Knowledge, skill, ability or personal attribute that must be demonstrated by
+ * a person or other entity.
+        * @param string|string|DefinedTerm|array|mixed $value
+    * @return $this
+    */
+    public function competencyRequired($value)
+    {
+        $this->setProperty('competencyRequired', $value);
+        return $this;
+    }
+
+    /**
+    * @param string|string|DefinedTerm|array|mixed $value
+    * @return $this
+    */
+    public function setCompetencyRequired($value)
+    {
+        $this->setProperty('competencyRequired', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getCompetencyRequired()
+    {
+       return $this->getProperty('competencyRequired');
+    }
+
+
+    /**
         * The category or type of credential being described, for example "degree”,
  * “certificate”, “badge”, or more specific term.
-        * @param array|string|mixed $value
+        * @param DefinedTerm|string|string|array|mixed $value
     * @return $this
     */
     public function credentialCategory($value)
@@ -121,7 +156,7 @@ class EducationalOccupationalCredential extends CreativeWork
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param DefinedTerm|string|string|array|mixed $value
     * @return $this
     */
     public function setCredentialCategory($value)
@@ -140,9 +175,8 @@ class EducationalOccupationalCredential extends CreativeWork
 
 
     /**
-        * The geographic area where the item is valid. Applies for example to a
- * [[Permit]], a [[Certification]], or an [[EducationalOccupationalCredential]].
-        * @param array|string|mixed $value
+        * The geographic area where a permit or similar thing is valid.
+        * @param AdministrativeArea|array|string|mixed $value
     * @return $this
     */
     public function validIn($value)
@@ -152,7 +186,7 @@ class EducationalOccupationalCredential extends CreativeWork
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param AdministrativeArea|array|string|mixed $value
     * @return $this
     */
     public function setValidIn($value)
@@ -167,38 +201,6 @@ class EducationalOccupationalCredential extends CreativeWork
     public function getValidIn()
     {
        return $this->getProperty('validIn');
-    }
-
-
-    /**
-        * The level in terms of progression through an educational or training context.
- * Examples of educational levels include 'beginner', 'intermediate' or
- * 'advanced', and formal sets of level indicators.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function educationalLevel($value)
-    {
-        $this->setProperty('educationalLevel', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setEducationalLevel($value)
-    {
-        $this->setProperty('educationalLevel', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getEducationalLevel()
-    {
-       return $this->getProperty('educationalLevel');
     }
 
 

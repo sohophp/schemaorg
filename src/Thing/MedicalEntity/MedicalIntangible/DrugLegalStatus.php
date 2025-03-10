@@ -2,10 +2,11 @@
 namespace Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalIntangible;
 
 use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalIntangible;
+use Sohophp\SchemaOrg\Thing\Place\AdministrativeArea;
 
 /**
 * The legal availability status of a medical drug.
-* @see schema:DrugLegalStatus
+* @see http://schema.org/DrugLegalStatus
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalIntangible
 */
 class DrugLegalStatus extends MedicalIntangible
@@ -14,7 +15,7 @@ class DrugLegalStatus extends MedicalIntangible
 
     /**
         * The location in which the status applies.
-        * @param array|string|mixed $value
+        * @param AdministrativeArea|array|string|mixed $value
     * @return $this
     */
     public function applicableLocation($value)
@@ -24,7 +25,7 @@ class DrugLegalStatus extends MedicalIntangible
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param AdministrativeArea|array|string|mixed $value
     * @return $this
     */
     public function setApplicableLocation($value)

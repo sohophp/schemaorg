@@ -2,6 +2,8 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible\EducationalOccupationalProgram;
 
 use Sohophp\SchemaOrg\Thing\Intangible\EducationalOccupationalProgram;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\QuantitativeValueDistribution\MonetaryAmountDistribution;
+use Sohophp\SchemaOrg\Thing\Intangible\DefinedTerm\CategoryCode;
 
 /**
 * A program with both an educational and employment component. Typically based
@@ -9,7 +11,7 @@ use Sohophp\SchemaOrg\Thing\Intangible\EducationalOccupationalProgram;
  * instilling competencies related to an occupation. WorkBasedProgram is used to
  * distinguish programs such as apprenticeships from school, college or other
  * classroom based educational programs.
-* @see schema:WorkBasedProgram
+* @see http://schema.org/WorkBasedProgram
 * @package Sohophp\SchemaOrg\Thing\Intangible\EducationalOccupationalProgram
 */
 class WorkBasedProgram extends EducationalOccupationalProgram
@@ -18,7 +20,7 @@ class WorkBasedProgram extends EducationalOccupationalProgram
 
     /**
         * The estimated salary earned while in the program.
-        * @param array|string|mixed $value
+        * @param MonetaryAmountDistribution|array|string|mixed $value
     * @return $this
     */
     public function trainingSalary($value)
@@ -28,7 +30,7 @@ class WorkBasedProgram extends EducationalOccupationalProgram
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param MonetaryAmountDistribution|array|string|mixed $value
     * @return $this
     */
     public function setTrainingSalary($value)
@@ -48,7 +50,7 @@ class WorkBasedProgram extends EducationalOccupationalProgram
 
     /**
         * A category describing the job, preferably using a term from a taxonomy such
- * as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html),
+ * as <a href="http://www.onetcenter.org/taxonomy.html">BLS O*NET-SOC</a>,
  * [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or
  * similar, with the property repeated for each applicable value. Ideally the
  * taxonomy should be identified, and both the textual label and formal code for
@@ -56,7 +58,7 @@ class WorkBasedProgram extends EducationalOccupationalProgram
  * 
  * Note: for historical reasons, any textual label and formal code provided as a
  * literal may be assumed to be from O*NET-SOC.
-        * @param array|string|mixed $value
+        * @param string|CategoryCode|array|mixed $value
     * @return $this
     */
     public function occupationalCategory($value)
@@ -66,7 +68,7 @@ class WorkBasedProgram extends EducationalOccupationalProgram
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|CategoryCode|array|mixed $value
     * @return $this
     */
     public function setOccupationalCategory($value)

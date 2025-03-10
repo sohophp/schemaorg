@@ -2,11 +2,15 @@
 namespace Sohophp\SchemaOrg\Thing\Action\TransferAction;
 
 use Sohophp\SchemaOrg\Thing\Action\TransferAction;
+use Sohophp\SchemaOrg\Thing\Person;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\ContactPoint;
+use Sohophp\SchemaOrg\Thing\Organization;
+use Sohophp\SchemaOrg\Thing\Intangible\Audience;
 
 /**
 * The act of returning to the origin that which was previously received
  * (concrete objects) or taken (ownership).
-* @see schema:ReturnAction
+* @see http://schema.org/ReturnAction
 * @package Sohophp\SchemaOrg\Thing\Action\TransferAction
 */
 class ReturnAction extends TransferAction
@@ -16,7 +20,7 @@ class ReturnAction extends TransferAction
     /**
         * A sub property of participant. The participant who is at the receiving end of
  * the action.
-        * @param array|string|mixed $value
+        * @param Person|ContactPoint|Organization|Audience|array|string|mixed $value
     * @return $this
     */
     public function recipient($value)
@@ -26,7 +30,7 @@ class ReturnAction extends TransferAction
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Person|ContactPoint|Organization|Audience|array|string|mixed $value
     * @return $this
     */
     public function setRecipient($value)

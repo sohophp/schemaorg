@@ -2,10 +2,13 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible\Grant;
 
 use Sohophp\SchemaOrg\Thing\Intangible\Grant;
+use Sohophp\SchemaOrg\Thing\Organization;
+use Sohophp\SchemaOrg\Thing\Person;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\MonetaryAmount;
 
 /**
 * A monetary grant.
-* @see schema:MonetaryGrant
+* @see http://schema.org/MonetaryGrant
 * @package Sohophp\SchemaOrg\Thing\Intangible\Grant
 */
 class MonetaryGrant extends Grant
@@ -15,7 +18,7 @@ class MonetaryGrant extends Grant
     /**
         * A person or organization that supports (sponsors) something through some kind
  * of financial contribution.
-        * @param array|string|mixed $value
+        * @param Organization|Person|array|string|mixed $value
     * @return $this
     */
     public function funder($value)
@@ -25,7 +28,7 @@ class MonetaryGrant extends Grant
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Organization|Person|array|string|mixed $value
     * @return $this
     */
     public function setFunder($value)
@@ -45,7 +48,7 @@ class MonetaryGrant extends Grant
 
     /**
         * The amount of money.
-        * @param array|string|mixed $value
+        * @param MonetaryAmount|array|string|mixed $value
     * @return $this
     */
     public function amount($value)
@@ -55,7 +58,7 @@ class MonetaryGrant extends Grant
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param MonetaryAmount|array|string|mixed $value
     * @return $this
     */
     public function setAmount($value)

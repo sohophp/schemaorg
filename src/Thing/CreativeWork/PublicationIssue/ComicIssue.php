@@ -2,17 +2,18 @@
 namespace Sohophp\SchemaOrg\Thing\CreativeWork\PublicationIssue;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork\PublicationIssue;
+use Sohophp\SchemaOrg\Thing\Person;
 
 /**
 * Individual comic issues are serially published as
- *     	part of a larger series. For the sake of consistency, even one-shot
+ *     part of a larger series. For the sake of consistency, even one-shot
  * issues
- *     	belong to a series comprised of a single issue. All comic issues can be
- *     	uniquely identified by: the combination of the name and volume number of
+ *     belong to a series comprised of a single issue. All comic issues can be
+ *     uniquely identified by: the combination of the name and volume number of
  * the
- *     	series to which the issue belongs; the issue number; and the variant
- *     	description of the issue (if any).
-* @see schema:ComicIssue
+ *     series to which the issue belongs; the issue number; and the variant
+ *     description of the issue (if any).
+* @see http://schema.org/ComicIssue
 * @package Sohophp\SchemaOrg\Thing\CreativeWork\PublicationIssue
 */
 class ComicIssue extends PublicationIssue
@@ -22,7 +23,7 @@ class ComicIssue extends PublicationIssue
     /**
         * The individual who traces over the pencil drawings in ink after pencils are
  * complete.
-        * @param array|string|mixed $value
+        * @param Person|array|string|mixed $value
     * @return $this
     */
     public function inker($value)
@@ -32,7 +33,7 @@ class ComicIssue extends PublicationIssue
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Person|array|string|mixed $value
     * @return $this
     */
     public function setInker($value)
@@ -51,11 +52,43 @@ class ComicIssue extends PublicationIssue
 
 
     /**
+        * The primary artist for a work
+ *     in a medium other than pencils or digital line art--for example, if the
+ *     primary artwork is done in watercolors or digital paints.
+        * @param Person|array|string|mixed $value
+    * @return $this
+    */
+    public function artist($value)
+    {
+        $this->setProperty('artist', $value);
+        return $this;
+    }
+
+    /**
+    * @param Person|array|string|mixed $value
+    * @return $this
+    */
+    public function setArtist($value)
+    {
+        $this->setProperty('artist', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getArtist()
+    {
+       return $this->getProperty('artist');
+    }
+
+
+    /**
         * A description of the variant cover
- *     	for the issue, if the issue is a variant printing. For example, "Bryan
+ *     for the issue, if the issue is a variant printing. For example, "Bryan
  * Hitch
- *     	Variant Cover" or "2nd Printing Variant".
-        * @param array|string|mixed $value
+ *     Variant Cover" or "2nd Printing Variant".
+        * @param string|array|mixed $value
     * @return $this
     */
     public function variantCover($value)
@@ -65,7 +98,7 @@ class ComicIssue extends PublicationIssue
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setVariantCover($value)
@@ -84,69 +117,8 @@ class ComicIssue extends PublicationIssue
 
 
     /**
-        * The individual who adds lettering, including speech balloons and sound
- * effects, to artwork.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function letterer($value)
-    {
-        $this->setProperty('letterer', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setLetterer($value)
-    {
-        $this->setProperty('letterer', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getLetterer()
-    {
-       return $this->getProperty('letterer');
-    }
-
-
-    /**
-        * The individual who adds color to inked drawings.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function colorist($value)
-    {
-        $this->setProperty('colorist', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setColorist($value)
-    {
-        $this->setProperty('colorist', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getColorist()
-    {
-       return $this->getProperty('colorist');
-    }
-
-
-    /**
         * The individual who draws the primary narrative artwork.
-        * @param array|string|mixed $value
+        * @param Person|array|string|mixed $value
     * @return $this
     */
     public function penciler($value)
@@ -156,7 +128,7 @@ class ComicIssue extends PublicationIssue
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Person|array|string|mixed $value
     * @return $this
     */
     public function setPenciler($value)
@@ -175,34 +147,63 @@ class ComicIssue extends PublicationIssue
 
 
     /**
-        * The primary artist for a work
- *     	in a medium other than pencils or digital line art--for example, if the
- *     	primary artwork is done in watercolors or digital paints.
-        * @param array|string|mixed $value
+        * The individual who adds color to inked drawings.
+        * @param Person|array|string|mixed $value
     * @return $this
     */
-    public function artist($value)
+    public function colorist($value)
     {
-        $this->setProperty('artist', $value);
+        $this->setProperty('colorist', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Person|array|string|mixed $value
     * @return $this
     */
-    public function setArtist($value)
+    public function setColorist($value)
     {
-        $this->setProperty('artist', $value);
+        $this->setProperty('colorist', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getArtist()
+    public function getColorist()
     {
-       return $this->getProperty('artist');
+       return $this->getProperty('colorist');
+    }
+
+
+    /**
+        * The individual who adds lettering, including speech balloons and sound
+ * effects, to artwork.
+        * @param Person|array|string|mixed $value
+    * @return $this
+    */
+    public function letterer($value)
+    {
+        $this->setProperty('letterer', $value);
+        return $this;
+    }
+
+    /**
+    * @param Person|array|string|mixed $value
+    * @return $this
+    */
+    public function setLetterer($value)
+    {
+        $this->setProperty('letterer', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getLetterer()
+    {
+       return $this->getProperty('letterer');
     }
 
 

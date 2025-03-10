@@ -11,7 +11,7 @@ use Sohophp\SchemaOrg\Thing\Action\OrganizeAction;
  * 
  * * [[RegisterAction]]: Unlike RegisterAction, ApplyAction has no guarantees
  * that the application will be accepted.
-* @see schema:ApplyAction
+* @see http://schema.org/ApplyAction
 * @package Sohophp\SchemaOrg\Thing\Action\OrganizeAction
 */
 class ApplyAction extends OrganizeAction

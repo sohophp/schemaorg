@@ -2,12 +2,15 @@
 namespace Sohophp\SchemaOrg\Thing\Action\TradeAction;
 
 use Sohophp\SchemaOrg\Thing\Action\TradeAction;
+use Sohophp\SchemaOrg\Thing\Person;
+use Sohophp\SchemaOrg\Thing\Organization;
+use Sohophp\SchemaOrg\Thing\Organization\LocalBusiness\RealEstateAgent;
 
 /**
 * The act of giving money in return for temporary use, but not ownership, of an
  * object such as a vehicle or property. For example, an agent rents a property
  * from a landlord in exchange for a periodic payment.
-* @see schema:RentAction
+* @see http://schema.org/RentAction
 * @package Sohophp\SchemaOrg\Thing\Action\TradeAction
 */
 class RentAction extends TradeAction
@@ -16,7 +19,7 @@ class RentAction extends TradeAction
 
     /**
         * A sub property of participant. The owner of the real estate property.
-        * @param array|string|mixed $value
+        * @param Person|Organization|array|string|mixed $value
     * @return $this
     */
     public function landlord($value)
@@ -26,7 +29,7 @@ class RentAction extends TradeAction
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Person|Organization|array|string|mixed $value
     * @return $this
     */
     public function setLandlord($value)
@@ -46,7 +49,7 @@ class RentAction extends TradeAction
 
     /**
         * A sub property of participant. The real estate agent involved in the action.
-        * @param array|string|mixed $value
+        * @param RealEstateAgent|array|string|mixed $value
     * @return $this
     */
     public function realEstateAgent($value)
@@ -56,7 +59,7 @@ class RentAction extends TradeAction
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param RealEstateAgent|array|string|mixed $value
     * @return $this
     */
     public function setRealEstateAgent($value)

@@ -67,11 +67,17 @@ class TypesGenerator
          * @var ParserItem $graph
          */
         foreach ($this->parser->getClasses() as $i => $graph) {
+//            if($graph->getId()=='schema:LocalBusiness') {
+//
+//            }else{
+//                continue;
+//            }
 
             if ($this->configure->get('consoleMessage')) {
                 echo($i + 1), "\n";
                 echo $graph->getId(), "\n";
             }
+
 
             /**
              * 有个3dmodel是数字开头 和class
@@ -148,6 +154,7 @@ class TypesGenerator
             $class['uses'] = array_unique($uses);
             $dir = $this->itemToDir($graph);
             $filename = $dir . DIRECTORY_SEPARATOR . $graph->getName() . '.php';
+
             if ($this->configure->get('consoleMessage')) {
                 echo $filename . "\n";
             }

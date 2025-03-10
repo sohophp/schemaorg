@@ -9,7 +9,7 @@ use Sohophp\SchemaOrg\Thing\Action\OrganizeAction\PlanAction;
  * Related actions:
  * 
  * * [[ConfirmAction]]: The antonym of CancelAction.
-* @see schema:CancelAction
+* @see http://schema.org/CancelAction
 * @package Sohophp\SchemaOrg\Thing\Action\OrganizeAction\PlanAction
 */
 class CancelAction extends PlanAction

@@ -8,7 +8,7 @@ use Sohophp\SchemaOrg\Thing\CreativeWork;
  * supplementary information about a technique, supply, author's preference,
  * etc. It can explain what could be done, or what should not be done, but
  * doesn't specify what should be done (see HowToDirection).
-* @see schema:HowToTip
+* @see http://schema.org/HowToTip
 * @package Sohophp\SchemaOrg\Thing\CreativeWork
 */
 class HowToTip extends CreativeWork

@@ -6,7 +6,7 @@ use Sohophp\SchemaOrg\Thing\Intangible\Audience\PeopleAudience;
 /**
 * A set of characteristics describing parents, who can be interested in viewing
  * some content.
-* @see schema:ParentAudience
+* @see http://schema.org/ParentAudience
 * @package Sohophp\SchemaOrg\Thing\Intangible\Audience\PeopleAudience
 */
 class ParentAudience extends PeopleAudience

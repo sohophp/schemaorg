@@ -2,11 +2,14 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
 
 use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
+use Sohophp\SchemaOrg\Thing\Product;
+use Sohophp\SchemaOrg\Thing\Intangible\Service;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\BusinessFunction;
 
 /**
 * A structured value indicating the quantity, unit of measurement, and business
  * function of goods included in a bundle offer.
-* @see schema:TypeAndQuantityNode
+* @see http://schema.org/TypeAndQuantityNode
 * @package Sohophp\SchemaOrg\Thing\Intangible\StructuredValue
 */
 class TypeAndQuantityNode extends StructuredValue
@@ -14,8 +17,40 @@ class TypeAndQuantityNode extends StructuredValue
 
 
     /**
+        * The unit of measurement given using the UN/CEFACT Common Code (3 characters)
+ * or a URL. Other codes than the UN/CEFACT Common Code may be used with a
+ * prefix followed by a colon.
+        * @param string|string|array|mixed $value
+    * @return $this
+    */
+    public function unitCode($value)
+    {
+        $this->setProperty('unitCode', $value);
+        return $this;
+    }
+
+    /**
+    * @param string|string|array|mixed $value
+    * @return $this
+    */
+    public function setUnitCode($value)
+    {
+        $this->setProperty('unitCode', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getUnitCode()
+    {
+       return $this->getProperty('unitCode');
+    }
+
+
+    /**
         * The product that this structured value is referring to.
-        * @param array|string|mixed $value
+        * @param Product|Service|array|string|mixed $value
     * @return $this
     */
     public function typeOfGood($value)
@@ -25,7 +60,7 @@ class TypeAndQuantityNode extends StructuredValue
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Product|Service|array|string|mixed $value
     * @return $this
     */
     public function setTypeOfGood($value)
@@ -77,7 +112,7 @@ class TypeAndQuantityNode extends StructuredValue
         * A string or text indicating the unit of measurement. Useful if you cannot
  * provide a standard unit code for
  * <a href='unitCode'>unitCode</a>.
-        * @param array|string|mixed $value
+        * @param string|array|mixed $value
     * @return $this
     */
     public function unitText($value)
@@ -87,7 +122,7 @@ class TypeAndQuantityNode extends StructuredValue
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setUnitText($value)
@@ -109,7 +144,7 @@ class TypeAndQuantityNode extends StructuredValue
         * The business function (e.g. sell, lease, repair, dispose) of the offer or
  * component of a bundle (TypeAndQuantityNode). The default is
  * http://purl.org/goodrelations/v1#Sell.
-        * @param array|string|mixed $value
+        * @param BusinessFunction|array|string|mixed $value
     * @return $this
     */
     public function businessFunction($value)
@@ -119,7 +154,7 @@ class TypeAndQuantityNode extends StructuredValue
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param BusinessFunction|array|string|mixed $value
     * @return $this
     */
     public function setBusinessFunction($value)
@@ -134,38 +169,6 @@ class TypeAndQuantityNode extends StructuredValue
     public function getBusinessFunction()
     {
        return $this->getProperty('businessFunction');
-    }
-
-
-    /**
-        * The unit of measurement given using the UN/CEFACT Common Code (3 characters)
- * or a URL. Other codes than the UN/CEFACT Common Code may be used with a
- * prefix followed by a colon.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function unitCode($value)
-    {
-        $this->setProperty('unitCode', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setUnitCode($value)
-    {
-        $this->setProperty('unitCode', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getUnitCode()
-    {
-       return $this->getProperty('unitCode');
     }
 
 

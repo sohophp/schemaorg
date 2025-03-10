@@ -2,11 +2,13 @@
 namespace Sohophp\SchemaOrg\Thing\CreativeWork;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork;
+use Sohophp\SchemaOrg\Thing\CreativeWork\SoftwareApplication;
+use Sohophp\SchemaOrg\Thing\Intangible\ComputerLanguage;
 
 /**
 * Computer programming source code. Example: Full (compile ready) solutions,
  * code snippet samples, scripts, templates.
-* @see schema:SoftwareSourceCode
+* @see http://schema.org/SoftwareSourceCode
 * @package Sohophp\SchemaOrg\Thing\CreativeWork
 */
 class SoftwareSourceCode extends CreativeWork
@@ -14,9 +16,40 @@ class SoftwareSourceCode extends CreativeWork
 
 
     /**
+        * Target Operating System / Product to which the code applies.  If applies to
+ * several versions, just the product name can be used.
+        * @param SoftwareApplication|array|string|mixed $value
+    * @return $this
+    */
+    public function targetProduct($value)
+    {
+        $this->setProperty('targetProduct', $value);
+        return $this;
+    }
+
+    /**
+    * @param SoftwareApplication|array|string|mixed $value
+    * @return $this
+    */
+    public function setTargetProduct($value)
+    {
+        $this->setProperty('targetProduct', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getTargetProduct()
+    {
+       return $this->getProperty('targetProduct');
+    }
+
+
+    /**
         * Link to the repository where the un-compiled, human readable code and related
- * code is located (SVN, GitHub, CodePlex).
-        * @param array|string|mixed $value
+ * code is located (SVN, github, CodePlex).
+        * @param string|array|mixed $value
     * @return $this
     */
     public function codeRepository($value)
@@ -26,7 +59,7 @@ class SoftwareSourceCode extends CreativeWork
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setCodeRepository($value)
@@ -46,7 +79,7 @@ class SoftwareSourceCode extends CreativeWork
 
     /**
         * The computer programming language.
-        * @param array|string|mixed $value
+        * @param ComputerLanguage|string|array|mixed $value
     * @return $this
     */
     public function programmingLanguage($value)
@@ -56,7 +89,7 @@ class SoftwareSourceCode extends CreativeWork
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param ComputerLanguage|string|array|mixed $value
     * @return $this
     */
     public function setProgrammingLanguage($value)
@@ -77,69 +110,38 @@ class SoftwareSourceCode extends CreativeWork
     /**
         * What type of code sample: full (compile ready) solution, code snippet, inline
  * code, scripts, template.
-        * @param array|string|mixed $value
+        * @param string|array|mixed $value
     * @return $this
     */
-    public function sampleType($value)
+    public function codeSampleType($value)
     {
-        $this->setProperty('sampleType', $value);
+        $this->setProperty('codeSampleType', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
-    public function setSampleType($value)
+    public function setCodeSampleType($value)
     {
-        $this->setProperty('sampleType', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getSampleType()
-    {
-       return $this->getProperty('sampleType');
-    }
-
-
-    /**
-        * Target Operating System / Product to which the code applies.  If applies to
- * several versions, just the product name can be used.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function targetProduct($value)
-    {
-        $this->setProperty('targetProduct', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setTargetProduct($value)
-    {
-        $this->setProperty('targetProduct', $value);
+        $this->setProperty('codeSampleType', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getTargetProduct()
+    public function getCodeSampleType()
     {
-       return $this->getProperty('targetProduct');
+       return $this->getProperty('codeSampleType');
     }
 
 
     /**
-        * Runtime platform or script interpreter dependencies (example: Java v1, Python
- * 2.3, .NET Framework 3.0).
-        * @param array|string|mixed $value
+        * Runtime platform or script interpreter dependencies (Example - Java v1,
+ * Python2.3, .Net Framework 3.0).
+        * @param string|array|mixed $value
     * @return $this
     */
     public function runtimePlatform($value)
@@ -149,7 +151,7 @@ class SoftwareSourceCode extends CreativeWork
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setRuntimePlatform($value)
@@ -170,38 +172,38 @@ class SoftwareSourceCode extends CreativeWork
     /**
         * What type of code sample: full (compile ready) solution, code snippet, inline
  * code, scripts, template.
-        * @param array|string|mixed $value
+        * @param string|array|mixed $value
     * @return $this
     */
-    public function codeSampleType($value)
+    public function sampleType($value)
     {
-        $this->setProperty('codeSampleType', $value);
+        $this->setProperty('sampleType', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
-    public function setCodeSampleType($value)
+    public function setSampleType($value)
     {
-        $this->setProperty('codeSampleType', $value);
+        $this->setProperty('sampleType', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getCodeSampleType()
+    public function getSampleType()
     {
-       return $this->getProperty('codeSampleType');
+       return $this->getProperty('sampleType');
     }
 
 
     /**
-        * Runtime platform or script interpreter dependencies (example: Java v1, Python
- * 2.3, .NET Framework 3.0).
-        * @param array|string|mixed $value
+        * Runtime platform or script interpreter dependencies (Example - Java v1,
+ * Python2.3, .Net Framework 3.0).
+        * @param string|array|mixed $value
     * @return $this
     */
     public function runtime($value)
@@ -211,7 +213,7 @@ class SoftwareSourceCode extends CreativeWork
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setRuntime($value)

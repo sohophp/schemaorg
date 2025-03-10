@@ -2,11 +2,17 @@
 namespace Sohophp\SchemaOrg\Thing\Action\InteractAction;
 
 use Sohophp\SchemaOrg\Thing\Action\InteractAction;
+use Sohophp\SchemaOrg\Thing;
+use Sohophp\SchemaOrg\Thing\Intangible\Language;
+use Sohophp\SchemaOrg\Thing\Person;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\ContactPoint;
+use Sohophp\SchemaOrg\Thing\Organization;
+use Sohophp\SchemaOrg\Thing\Intangible\Audience;
 
 /**
 * The act of conveying information to another person via a communication medium
  * (instrument) such as speech, email, or telephone conversation.
-* @see schema:CommunicateAction
+* @see http://schema.org/CommunicateAction
 * @package Sohophp\SchemaOrg\Thing\Action\InteractAction
 */
 class CommunicateAction extends InteractAction
@@ -14,40 +20,8 @@ class CommunicateAction extends InteractAction
 
 
     /**
-        * The language of the content or performance or used in an action. Please use
- * one of the language codes from the [IETF BCP 47
- * standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function inLanguage($value)
-    {
-        $this->setProperty('inLanguage', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setInLanguage($value)
-    {
-        $this->setProperty('inLanguage', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getInLanguage()
-    {
-       return $this->getProperty('inLanguage');
-    }
-
-
-    /**
         * The subject matter of the content.
-        * @param array|string|mixed $value
+        * @param Thing|array|string|mixed $value
     * @return $this
     */
     public function about($value)
@@ -57,7 +31,7 @@ class CommunicateAction extends InteractAction
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Thing|array|string|mixed $value
     * @return $this
     */
     public function setAbout($value)
@@ -76,39 +50,41 @@ class CommunicateAction extends InteractAction
 
 
     /**
-        * A sub property of instrument. The language used on this action.
-        * @param array|string|mixed $value
+        * The language of the content or performance or used in an action. Please use
+ * one of the language codes from the [IETF BCP 47
+ * standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+        * @param Language|string|array|mixed $value
     * @return $this
     */
-    public function language($value)
+    public function inLanguage($value)
     {
-        $this->setProperty('language', $value);
+        $this->setProperty('inLanguage', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Language|string|array|mixed $value
     * @return $this
     */
-    public function setLanguage($value)
+    public function setInLanguage($value)
     {
-        $this->setProperty('language', $value);
+        $this->setProperty('inLanguage', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getLanguage()
+    public function getInLanguage()
     {
-       return $this->getProperty('language');
+       return $this->getProperty('inLanguage');
     }
 
 
     /**
         * A sub property of participant. The participant who is at the receiving end of
  * the action.
-        * @param array|string|mixed $value
+        * @param Person|ContactPoint|Organization|Audience|array|string|mixed $value
     * @return $this
     */
     public function recipient($value)
@@ -118,7 +94,7 @@ class CommunicateAction extends InteractAction
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Person|ContactPoint|Organization|Audience|array|string|mixed $value
     * @return $this
     */
     public function setRecipient($value)
@@ -133,6 +109,36 @@ class CommunicateAction extends InteractAction
     public function getRecipient()
     {
        return $this->getProperty('recipient');
+    }
+
+
+    /**
+        * A sub property of instrument. The language used on this action.
+        * @param Language|array|string|mixed $value
+    * @return $this
+    */
+    public function language($value)
+    {
+        $this->setProperty('language', $value);
+        return $this;
+    }
+
+    /**
+    * @param Language|array|string|mixed $value
+    * @return $this
+    */
+    public function setLanguage($value)
+    {
+        $this->setProperty('language', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getLanguage()
+    {
+       return $this->getProperty('language');
     }
 
 

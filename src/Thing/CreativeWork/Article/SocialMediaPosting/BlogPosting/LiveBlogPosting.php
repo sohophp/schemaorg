@@ -4,9 +4,9 @@ namespace Sohophp\SchemaOrg\Thing\CreativeWork\Article\SocialMediaPosting\BlogPo
 use Sohophp\SchemaOrg\Thing\CreativeWork\Article\SocialMediaPosting\BlogPosting;
 
 /**
-* A [[LiveBlogPosting]] is a [[BlogPosting]] intended to provide a rolling
- * textual coverage of an ongoing event through continuous updates.
-* @see schema:LiveBlogPosting
+* A blog post intended to provide a rolling textual coverage of an ongoing
+ * event through continuous updates.
+* @see http://schema.org/LiveBlogPosting
 * @package Sohophp\SchemaOrg\Thing\CreativeWork\Article\SocialMediaPosting\BlogPosting
 */
 class LiveBlogPosting extends BlogPosting
@@ -78,7 +78,7 @@ class LiveBlogPosting extends BlogPosting
 
     /**
         * An update to the LiveBlog.
-        * @param array|string|mixed $value
+        * @param BlogPosting|array|string|mixed $value
     * @return $this
     */
     public function liveBlogUpdate($value)
@@ -88,7 +88,7 @@ class LiveBlogPosting extends BlogPosting
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param BlogPosting|array|string|mixed $value
     * @return $this
     */
     public function setLiveBlogUpdate($value)

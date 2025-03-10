@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\Place\CivicStructure\GovernmentBuilding;
 
 /**
 * An embassy.
-* @see schema:Embassy
+* @see http://schema.org/Embassy
 * @package Sohophp\SchemaOrg\Thing\Place\CivicStructure\GovernmentBuilding
 */
 class Embassy extends GovernmentBuilding

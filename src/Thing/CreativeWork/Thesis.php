@@ -6,7 +6,7 @@ use Sohophp\SchemaOrg\Thing\CreativeWork;
 /**
 * A thesis or dissertation document submitted in support of candidature for an
  * academic degree or professional qualification.
-* @see schema:Thesis
+* @see http://schema.org/Thesis
 * @package Sohophp\SchemaOrg\Thing\CreativeWork
 */
 class Thesis extends CreativeWork
@@ -15,7 +15,7 @@ class Thesis extends CreativeWork
 
     /**
         * Qualification, candidature, degree, application that Thesis supports.
-        * @param array|string|mixed $value
+        * @param string|array|mixed $value
     * @return $this
     */
     public function inSupportOf($value)
@@ -25,7 +25,7 @@ class Thesis extends CreativeWork
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setInSupportOf($value)

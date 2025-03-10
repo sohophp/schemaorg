@@ -8,9 +8,10 @@ use Sohophp\SchemaOrg\Thing\Action\OrganizeAction\PlanAction;
  * 
  * Related actions:
  * 
- * * [[ScheduleAction]]: Unlike ScheduleAction, ReserveAction reserves concrete
- * objects (e.g. a table, a hotel) towards a time slot / spatial allocation.
-* @see schema:ReserveAction
+ * * [[ScheduleAction]]</a>: Unlike ScheduleAction, ReserveAction reserves
+ * concrete objects (e.g. a table, a hotel) towards a time slot / spatial
+ * allocation.
+* @see http://schema.org/ReserveAction
 * @package Sohophp\SchemaOrg\Thing\Action\OrganizeAction\PlanAction
 */
 class ReserveAction extends PlanAction

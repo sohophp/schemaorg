@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\Intangible\Enumeration;
 
 /**
 * A list of possible conditions for the item.
-* @see schema:OfferItemCondition
+* @see http://schema.org/OfferItemCondition
 * @package Sohophp\SchemaOrg\Thing\Intangible\Enumeration
 */
 class OfferItemCondition extends Enumeration

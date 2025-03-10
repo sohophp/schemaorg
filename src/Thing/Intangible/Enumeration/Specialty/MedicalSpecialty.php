@@ -8,7 +8,7 @@ use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\Specialty;
  * include clinical specialties that pertain to particular organ systems and
  * their respective disease states, as well as allied health specialties.
  * Enumerated type.
-* @see schema:MedicalSpecialty
+* @see http://schema.org/MedicalSpecialty
 * @package Sohophp\SchemaOrg\Thing\Intangible\Enumeration\Specialty
 */
 class MedicalSpecialty extends Specialty

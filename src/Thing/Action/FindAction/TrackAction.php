@@ -2,6 +2,7 @@
 namespace Sohophp\SchemaOrg\Thing\Action\FindAction;
 
 use Sohophp\SchemaOrg\Thing\Action\FindAction;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\DeliveryMethod;
 
 /**
 * An agent tracks an object for updates.
@@ -12,7 +13,7 @@ use Sohophp\SchemaOrg\Thing\Action\FindAction;
  * on the location of innanimates objects.
  * * [[SubscribeAction]]: Unlike SubscribeAction, TrackAction refers to  the
  * interest on the location of innanimate objects.
-* @see schema:TrackAction
+* @see http://schema.org/TrackAction
 * @package Sohophp\SchemaOrg\Thing\Action\FindAction
 */
 class TrackAction extends FindAction
@@ -21,7 +22,7 @@ class TrackAction extends FindAction
 
     /**
         * A sub property of instrument. The method of delivery.
-        * @param array|string|mixed $value
+        * @param DeliveryMethod|array|string|mixed $value
     * @return $this
     */
     public function deliveryMethod($value)
@@ -31,7 +32,7 @@ class TrackAction extends FindAction
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param DeliveryMethod|array|string|mixed $value
     * @return $this
     */
     public function setDeliveryMethod($value)

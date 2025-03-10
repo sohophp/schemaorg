@@ -2,10 +2,12 @@
 namespace Sohophp\SchemaOrg\Thing\CreativeWork;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork;
+use Sohophp\SchemaOrg\Thing\Intangible\ItemList;
+use Sohophp\SchemaOrg\Thing\CreativeWork\MusicRecording;
 
 /**
 * A collection of music tracks in playlist form.
-* @see schema:MusicPlaylist
+* @see http://schema.org/MusicPlaylist
 * @package Sohophp\SchemaOrg\Thing\CreativeWork
 */
 class MusicPlaylist extends CreativeWork
@@ -13,39 +15,9 @@ class MusicPlaylist extends CreativeWork
 
 
     /**
-        * A music recording (track)&#x2014;usually a single song.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function tracks($value)
-    {
-        $this->setProperty('tracks', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setTracks($value)
-    {
-        $this->setProperty('tracks', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getTracks()
-    {
-       return $this->getProperty('tracks');
-    }
-
-
-    /**
         * A music recording (track)&#x2014;usually a single song. If an ItemList is
  * given, the list should contain items of type MusicRecording.
-        * @param array|string|mixed $value
+        * @param ItemList|MusicRecording|array|string|mixed $value
     * @return $this
     */
     public function track($value)
@@ -55,7 +27,7 @@ class MusicPlaylist extends CreativeWork
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param ItemList|MusicRecording|array|string|mixed $value
     * @return $this
     */
     public function setTrack($value)
@@ -75,7 +47,7 @@ class MusicPlaylist extends CreativeWork
 
     /**
         * The number of tracks in this album or playlist.
-        * @param array|string|mixed $value
+        * @param int|array|string|mixed $value
     * @return $this
     */
     public function numTracks($value)
@@ -85,7 +57,7 @@ class MusicPlaylist extends CreativeWork
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param int|array|string|mixed $value
     * @return $this
     */
     public function setNumTracks($value)
@@ -100,6 +72,36 @@ class MusicPlaylist extends CreativeWork
     public function getNumTracks()
     {
        return $this->getProperty('numTracks');
+    }
+
+
+    /**
+        * A music recording (track)&#x2014;usually a single song.
+        * @param MusicRecording|array|string|mixed $value
+    * @return $this
+    */
+    public function tracks($value)
+    {
+        $this->setProperty('tracks', $value);
+        return $this;
+    }
+
+    /**
+    * @param MusicRecording|array|string|mixed $value
+    * @return $this
+    */
+    public function setTracks($value)
+    {
+        $this->setProperty('tracks', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getTracks()
+    {
+       return $this->getProperty('tracks');
     }
 
 

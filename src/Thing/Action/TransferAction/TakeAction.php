@@ -11,8 +11,8 @@ use Sohophp\SchemaOrg\Thing\Action\TransferAction;
  * 
  * * [[GiveAction]]: The reciprocal of TakeAction.
  * * [[ReceiveAction]]: Unlike ReceiveAction, TakeAction implies that ownership
- * has been transferred.
-* @see schema:TakeAction
+ * has been transfered.
+* @see http://schema.org/TakeAction
 * @package Sohophp\SchemaOrg\Thing\Action\TransferAction
 */
 class TakeAction extends TransferAction

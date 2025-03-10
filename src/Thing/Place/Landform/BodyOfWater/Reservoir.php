@@ -6,7 +6,7 @@ use Sohophp\SchemaOrg\Thing\Place\Landform\BodyOfWater;
 /**
 * A reservoir of water, typically an artificially created lake, like the Lake
  * Kariba reservoir.
-* @see schema:Reservoir
+* @see http://schema.org/Reservoir
 * @package Sohophp\SchemaOrg\Thing\Place\Landform\BodyOfWater
 */
 class Reservoir extends BodyOfWater

@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\Action\ConsumeAction;
 
 /**
 * The act of swallowing liquids.
-* @see schema:DrinkAction
+* @see http://schema.org/DrinkAction
 * @package Sohophp\SchemaOrg\Thing\Action\ConsumeAction
 */
 class DrinkAction extends ConsumeAction

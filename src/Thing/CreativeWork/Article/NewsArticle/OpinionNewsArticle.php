@@ -8,7 +8,7 @@ use Sohophp\SchemaOrg\Thing\CreativeWork\Article\NewsArticle;
  * opinions rather than journalistic reporting of news and events. For example,
  * a [[NewsArticle]] consisting of a column or [[Blog]]/[[BlogPosting]] entry in
  * the Opinions section of a news publication.
-* @see schema:OpinionNewsArticle
+* @see http://schema.org/OpinionNewsArticle
 * @package Sohophp\SchemaOrg\Thing\CreativeWork\Article\NewsArticle
 */
 class OpinionNewsArticle extends NewsArticle

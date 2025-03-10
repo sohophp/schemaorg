@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\CreativeWork\DigitalDocument;
 
 /**
 * A file containing a note, primarily for the author.
-* @see schema:NoteDigitalDocument
+* @see http://schema.org/NoteDigitalDocument
 * @package Sohophp\SchemaOrg\Thing\CreativeWork\DigitalDocument
 */
 class NoteDigitalDocument extends DigitalDocument

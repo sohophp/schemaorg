@@ -2,11 +2,13 @@
 namespace Sohophp\SchemaOrg\Thing\MedicalEntity\AnatomicalStructure;
 
 use Sohophp\SchemaOrg\Thing\MedicalEntity\AnatomicalStructure;
+use Sohophp\SchemaOrg\Thing\MedicalEntity\AnatomicalStructure\Nerve;
+use Sohophp\SchemaOrg\Thing\MedicalEntity\AnatomicalStructure\Vessel;
 
 /**
 * A muscle is an anatomical structure consisting of a contractile form of
  * tissue that animals use to effect movement.
-* @see schema:Muscle
+* @see http://schema.org/Muscle
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity\AnatomicalStructure
 */
 class Muscle extends AnatomicalStructure
@@ -14,8 +16,38 @@ class Muscle extends AnatomicalStructure
 
 
     /**
+        * The underlying innervation associated with the muscle.
+        * @param Nerve|array|string|mixed $value
+    * @return $this
+    */
+    public function nerve($value)
+    {
+        $this->setProperty('nerve', $value);
+        return $this;
+    }
+
+    /**
+    * @param Nerve|array|string|mixed $value
+    * @return $this
+    */
+    public function setNerve($value)
+    {
+        $this->setProperty('nerve', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getNerve()
+    {
+       return $this->getProperty('nerve');
+    }
+
+
+    /**
         * The blood vessel that carries blood from the heart to the muscle.
-        * @param array|string|mixed $value
+        * @param Vessel|array|string|mixed $value
     * @return $this
     */
     public function bloodSupply($value)
@@ -25,7 +57,7 @@ class Muscle extends AnatomicalStructure
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Vessel|array|string|mixed $value
     * @return $this
     */
     public function setBloodSupply($value)
@@ -45,7 +77,7 @@ class Muscle extends AnatomicalStructure
 
     /**
         * The movement the muscle generates.
-        * @param array|string|mixed $value
+        * @param string|array|mixed $value
     * @return $this
     */
     public function muscleAction($value)
@@ -55,7 +87,7 @@ class Muscle extends AnatomicalStructure
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setMuscleAction($value)
@@ -74,38 +106,39 @@ class Muscle extends AnatomicalStructure
 
 
     /**
-        * The underlying innervation associated with the muscle.
-        * @param array|string|mixed $value
+        * Obsolete term for [[muscleAction]]. Not to be confused with
+ * [[potentialAction]].
+        * @param string|array|mixed $value
     * @return $this
     */
-    public function nerve($value)
+    public function action($value)
     {
-        $this->setProperty('nerve', $value);
+        $this->setProperty('action', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
-    public function setNerve($value)
+    public function setAction($value)
     {
-        $this->setProperty('nerve', $value);
+        $this->setProperty('action', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getNerve()
+    public function getAction()
     {
-       return $this->getProperty('nerve');
+       return $this->getProperty('action');
     }
 
 
     /**
         * The muscle whose action counteracts the specified muscle.
-        * @param array|string|mixed $value
+        * @param Muscle|array|string|mixed $value
     * @return $this
     */
     public function antagonist($value)
@@ -115,7 +148,7 @@ class Muscle extends AnatomicalStructure
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Muscle|array|string|mixed $value
     * @return $this
     */
     public function setAntagonist($value)
@@ -134,8 +167,38 @@ class Muscle extends AnatomicalStructure
 
 
     /**
+        * The place or point where a muscle arises.
+        * @param AnatomicalStructure|array|string|mixed $value
+    * @return $this
+    */
+    public function origin($value)
+    {
+        $this->setProperty('origin', $value);
+        return $this;
+    }
+
+    /**
+    * @param AnatomicalStructure|array|string|mixed $value
+    * @return $this
+    */
+    public function setOrigin($value)
+    {
+        $this->setProperty('origin', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getOrigin()
+    {
+       return $this->getProperty('origin');
+    }
+
+
+    /**
         * The place of attachment of a muscle, or what the muscle moves.
-        * @param array|string|mixed $value
+        * @param AnatomicalStructure|array|string|mixed $value
     * @return $this
     */
     public function insertion($value)
@@ -145,7 +208,7 @@ class Muscle extends AnatomicalStructure
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param AnatomicalStructure|array|string|mixed $value
     * @return $this
     */
     public function setInsertion($value)

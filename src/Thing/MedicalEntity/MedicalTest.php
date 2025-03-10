@@ -2,10 +2,15 @@
 namespace Sohophp\SchemaOrg\Thing\MedicalEntity;
 
 use Sohophp\SchemaOrg\Thing\MedicalEntity;
+use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalCondition\MedicalSignOrSymptom\MedicalSign;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MedicalEnumeration;
+use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalDevice;
+use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalCondition;
+use Sohophp\SchemaOrg\Thing\MedicalEntity\Substance\Drug;
 
 /**
 * Any medical test, typically performed for diagnostic purposes.
-* @see schema:MedicalTest
+* @see http://schema.org/MedicalTest
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity
 */
 class MedicalTest extends MedicalEntity
@@ -13,68 +18,8 @@ class MedicalTest extends MedicalEntity
 
 
     /**
-        * Drugs that affect the test's results.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function affectedBy($value)
-    {
-        $this->setProperty('affectedBy', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setAffectedBy($value)
-    {
-        $this->setProperty('affectedBy', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getAffectedBy()
-    {
-       return $this->getProperty('affectedBy');
-    }
-
-
-    /**
-        * A condition the test is used to diagnose.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function usedToDiagnose($value)
-    {
-        $this->setProperty('usedToDiagnose', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setUsedToDiagnose($value)
-    {
-        $this->setProperty('usedToDiagnose', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getUsedToDiagnose()
-    {
-       return $this->getProperty('usedToDiagnose');
-    }
-
-
-    /**
         * A sign detected by the test.
-        * @param array|string|mixed $value
+        * @param MedicalSign|array|string|mixed $value
     * @return $this
     */
     public function signDetected($value)
@@ -84,7 +29,7 @@ class MedicalTest extends MedicalEntity
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param MedicalSign|array|string|mixed $value
     * @return $this
     */
     public function setSignDetected($value)
@@ -104,7 +49,7 @@ class MedicalTest extends MedicalEntity
 
     /**
         * Range of acceptable values for a typical patient, when applicable.
-        * @param array|string|mixed $value
+        * @param string|MedicalEnumeration|array|mixed $value
     * @return $this
     */
     public function normalRange($value)
@@ -114,7 +59,7 @@ class MedicalTest extends MedicalEntity
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|MedicalEnumeration|array|mixed $value
     * @return $this
     */
     public function setNormalRange($value)
@@ -134,7 +79,7 @@ class MedicalTest extends MedicalEntity
 
     /**
         * Device used to perform the test.
-        * @param array|string|mixed $value
+        * @param MedicalDevice|array|string|mixed $value
     * @return $this
     */
     public function usesDevice($value)
@@ -144,7 +89,7 @@ class MedicalTest extends MedicalEntity
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param MedicalDevice|array|string|mixed $value
     * @return $this
     */
     public function setUsesDevice($value)
@@ -159,6 +104,66 @@ class MedicalTest extends MedicalEntity
     public function getUsesDevice()
     {
        return $this->getProperty('usesDevice');
+    }
+
+
+    /**
+        * A condition the test is used to diagnose.
+        * @param MedicalCondition|array|string|mixed $value
+    * @return $this
+    */
+    public function usedToDiagnose($value)
+    {
+        $this->setProperty('usedToDiagnose', $value);
+        return $this;
+    }
+
+    /**
+    * @param MedicalCondition|array|string|mixed $value
+    * @return $this
+    */
+    public function setUsedToDiagnose($value)
+    {
+        $this->setProperty('usedToDiagnose', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getUsedToDiagnose()
+    {
+       return $this->getProperty('usedToDiagnose');
+    }
+
+
+    /**
+        * Drugs that affect the test's results.
+        * @param Drug|array|string|mixed $value
+    * @return $this
+    */
+    public function affectedBy($value)
+    {
+        $this->setProperty('affectedBy', $value);
+        return $this;
+    }
+
+    /**
+    * @param Drug|array|string|mixed $value
+    * @return $this
+    */
+    public function setAffectedBy($value)
+    {
+        $this->setProperty('affectedBy', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getAffectedBy()
+    {
+       return $this->getProperty('affectedBy');
     }
 
 

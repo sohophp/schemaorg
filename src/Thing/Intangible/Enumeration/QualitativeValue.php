@@ -2,11 +2,14 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible\Enumeration;
 
 use Sohophp\SchemaOrg\Thing\Intangible\Enumeration;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\PropertyValue;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\QuantitativeValue;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
 
 /**
 * A predefined value for a product characteristic, e.g. the power cord plug
  * type 'US' or the garment sizes 'S', 'M', 'L', and 'XL'.
-* @see schema:QualitativeValue
+* @see http://schema.org/QualitativeValue
 * @package Sohophp\SchemaOrg\Thing\Intangible\Enumeration
 */
 class QualitativeValue extends Enumeration
@@ -15,39 +18,139 @@ class QualitativeValue extends Enumeration
 
     /**
         * This ordering relation for qualitative values indicates that the subject is
- * lesser than or equal to the object.
-        * @param array|string|mixed $value
+ * lesser than the object.
+        * @param QualitativeValue|array|string|mixed $value
     * @return $this
     */
-    public function lesserOrEqual($value)
+    public function lesser($value)
     {
-        $this->setProperty('lesserOrEqual', $value);
+        $this->setProperty('lesser', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param QualitativeValue|array|string|mixed $value
     * @return $this
     */
-    public function setLesserOrEqual($value)
+    public function setLesser($value)
     {
-        $this->setProperty('lesserOrEqual', $value);
+        $this->setProperty('lesser', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getLesserOrEqual()
+    public function getLesser()
     {
-       return $this->getProperty('lesserOrEqual');
+       return $this->getProperty('lesser');
     }
 
 
     /**
-        * A secondary value that provides additional information on the original value,
- * e.g. a reference temperature or a type of measurement.
-        * @param array|string|mixed $value
+        * This ordering relation for qualitative values indicates that the subject is
+ * greater than the object.
+        * @param QualitativeValue|array|string|mixed $value
+    * @return $this
+    */
+    public function greater($value)
+    {
+        $this->setProperty('greater', $value);
+        return $this;
+    }
+
+    /**
+    * @param QualitativeValue|array|string|mixed $value
+    * @return $this
+    */
+    public function setGreater($value)
+    {
+        $this->setProperty('greater', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getGreater()
+    {
+       return $this->getProperty('greater');
+    }
+
+
+    /**
+        * This ordering relation for qualitative values indicates that the subject is
+ * equal to the object.
+        * @param QualitativeValue|array|string|mixed $value
+    * @return $this
+    */
+    public function equal($value)
+    {
+        $this->setProperty('equal', $value);
+        return $this;
+    }
+
+    /**
+    * @param QualitativeValue|array|string|mixed $value
+    * @return $this
+    */
+    public function setEqual($value)
+    {
+        $this->setProperty('equal', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getEqual()
+    {
+       return $this->getProperty('equal');
+    }
+
+
+    /**
+        * A property-value pair representing an additional characteristics of the
+ * entitity, e.g. a product feature or another characteristic for which there is
+ * no matching property in schema.org.
+ * 
+ * Note: Publishers should be aware that applications designed to use specific
+ * schema.org properties (e.g. http://schema.org/width, http://schema.org/color,
+ * http://schema.org/gtin13, ...) will typically expect such data to be provided
+ * using those properties, rather than using the generic property/value
+ * mechanism.
+        * @param PropertyValue|array|string|mixed $value
+    * @return $this
+    */
+    public function additionalProperty($value)
+    {
+        $this->setProperty('additionalProperty', $value);
+        return $this;
+    }
+
+    /**
+    * @param PropertyValue|array|string|mixed $value
+    * @return $this
+    */
+    public function setAdditionalProperty($value)
+    {
+        $this->setProperty('additionalProperty', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getAdditionalProperty()
+    {
+       return $this->getProperty('additionalProperty');
+    }
+
+
+    /**
+        * A pointer to a secondary value that provides additional information on the
+ * original value, e.g. a reference temperature.
+        * @param QuantitativeValue|QualitativeValue|StructuredValue|Enumeration|PropertyValue|array|string|mixed $value
     * @return $this
     */
     public function valueReference($value)
@@ -57,7 +160,7 @@ class QualitativeValue extends Enumeration
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param QuantitativeValue|QualitativeValue|StructuredValue|Enumeration|PropertyValue|array|string|mixed $value
     * @return $this
     */
     public function setValueReference($value)
@@ -78,7 +181,7 @@ class QualitativeValue extends Enumeration
     /**
         * This ordering relation for qualitative values indicates that the subject is
  * not equal to the object.
-        * @param array|string|mixed $value
+        * @param QualitativeValue|array|string|mixed $value
     * @return $this
     */
     public function nonEqual($value)
@@ -88,7 +191,7 @@ class QualitativeValue extends Enumeration
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param QualitativeValue|array|string|mixed $value
     * @return $this
     */
     public function setNonEqual($value)
@@ -108,39 +211,39 @@ class QualitativeValue extends Enumeration
 
     /**
         * This ordering relation for qualitative values indicates that the subject is
- * greater than the object.
-        * @param array|string|mixed $value
+ * lesser than or equal to the object.
+        * @param QualitativeValue|array|string|mixed $value
     * @return $this
     */
-    public function greater($value)
+    public function lesserOrEqual($value)
     {
-        $this->setProperty('greater', $value);
+        $this->setProperty('lesserOrEqual', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param QualitativeValue|array|string|mixed $value
     * @return $this
     */
-    public function setGreater($value)
+    public function setLesserOrEqual($value)
     {
-        $this->setProperty('greater', $value);
+        $this->setProperty('lesserOrEqual', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getGreater()
+    public function getLesserOrEqual()
     {
-       return $this->getProperty('greater');
+       return $this->getProperty('lesserOrEqual');
     }
 
 
     /**
         * This ordering relation for qualitative values indicates that the subject is
  * greater than or equal to the object.
-        * @param array|string|mixed $value
+        * @param QualitativeValue|array|string|mixed $value
     * @return $this
     */
     public function greaterOrEqual($value)
@@ -150,7 +253,7 @@ class QualitativeValue extends Enumeration
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param QualitativeValue|array|string|mixed $value
     * @return $this
     */
     public function setGreaterOrEqual($value)
@@ -165,106 +268,6 @@ class QualitativeValue extends Enumeration
     public function getGreaterOrEqual()
     {
        return $this->getProperty('greaterOrEqual');
-    }
-
-
-    /**
-        * A property-value pair representing an additional characteristic of the
- * entity, e.g. a product feature or another characteristic for which there is
- * no matching property in schema.org.
- * 
- * Note: Publishers should be aware that applications designed to use specific
- * schema.org properties (e.g. https://schema.org/width,
- * https://schema.org/color, https://schema.org/gtin13, ...) will typically
- * expect such data to be provided using those properties, rather than using the
- * generic property/value mechanism.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function additionalProperty($value)
-    {
-        $this->setProperty('additionalProperty', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setAdditionalProperty($value)
-    {
-        $this->setProperty('additionalProperty', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getAdditionalProperty()
-    {
-       return $this->getProperty('additionalProperty');
-    }
-
-
-    /**
-        * This ordering relation for qualitative values indicates that the subject is
- * equal to the object.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function equal($value)
-    {
-        $this->setProperty('equal', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setEqual($value)
-    {
-        $this->setProperty('equal', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getEqual()
-    {
-       return $this->getProperty('equal');
-    }
-
-
-    /**
-        * This ordering relation for qualitative values indicates that the subject is
- * lesser than the object.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function lesser($value)
-    {
-        $this->setProperty('lesser', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setLesser($value)
-    {
-        $this->setProperty('lesser', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getLesser()
-    {
-       return $this->getProperty('lesser');
     }
 
 

@@ -2,6 +2,7 @@
 namespace Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalStudy;
 
 use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalStudy;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MedicalEnumeration\MedicalObservationalStudyDesign;
 
 /**
 * An observational study is a type of medical study that attempts to infer the
@@ -12,7 +13,7 @@ use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalStudy;
  * randomized controlled trials represented by MedicalTrial, where each subject
  * is randomly assigned to a treatment group or a control group before the start
  * of the treatment.
-* @see schema:MedicalObservationalStudy
+* @see http://schema.org/MedicalObservationalStudy
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalStudy
 */
 class MedicalObservationalStudy extends MedicalStudy
@@ -21,7 +22,7 @@ class MedicalObservationalStudy extends MedicalStudy
 
     /**
         * Specifics about the observational study design (enumerated).
-        * @param array|string|mixed $value
+        * @param MedicalObservationalStudyDesign|array|string|mixed $value
     * @return $this
     */
     public function studyDesign($value)
@@ -31,7 +32,7 @@ class MedicalObservationalStudy extends MedicalStudy
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param MedicalObservationalStudyDesign|array|string|mixed $value
     * @return $this
     */
     public function setStudyDesign($value)

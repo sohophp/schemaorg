@@ -20,7 +20,7 @@ use Sohophp\SchemaOrg\Thing\Intangible\Enumeration;
  * * http://purl.org/goodrelations/v1#Repair
  * * http://purl.org/goodrelations/v1#Sell
  * * http://purl.org/goodrelations/v1#Buy
-* @see schema:BusinessFunction
+* @see http://schema.org/BusinessFunction
 * @package Sohophp\SchemaOrg\Thing\Intangible\Enumeration
 */
 class BusinessFunction extends Enumeration

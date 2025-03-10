@@ -2,10 +2,11 @@
 namespace Sohophp\SchemaOrg\Thing\Action\InteractAction\CommunicateAction;
 
 use Sohophp\SchemaOrg\Thing\Action\InteractAction\CommunicateAction;
+use Sohophp\SchemaOrg\Thing\Event;
 
 /**
 * The act of asking someone to attend an event. Reciprocal of RsvpAction.
-* @see schema:InviteAction
+* @see http://schema.org/InviteAction
 * @package Sohophp\SchemaOrg\Thing\Action\InteractAction\CommunicateAction
 */
 class InviteAction extends CommunicateAction
@@ -14,7 +15,7 @@ class InviteAction extends CommunicateAction
 
     /**
         * Upcoming or past event associated with this place, organization, or action.
-        * @param array|string|mixed $value
+        * @param Event|array|string|mixed $value
     * @return $this
     */
     public function event($value)
@@ -24,7 +25,7 @@ class InviteAction extends CommunicateAction
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Event|array|string|mixed $value
     * @return $this
     */
     public function setEvent($value)

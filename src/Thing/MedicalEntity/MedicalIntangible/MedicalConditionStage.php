@@ -5,11 +5,41 @@ use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalIntangible;
 
 /**
 * A stage of a medical condition, such as 'Stage IIIa'.
-* @see schema:MedicalConditionStage
+* @see http://schema.org/MedicalConditionStage
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalIntangible
 */
 class MedicalConditionStage extends MedicalIntangible
 {
+
+
+    /**
+        * The substage, e.g. 'a' for Stage IIIa.
+        * @param string|array|mixed $value
+    * @return $this
+    */
+    public function subStageSuffix($value)
+    {
+        $this->setProperty('subStageSuffix', $value);
+        return $this;
+    }
+
+    /**
+    * @param string|array|mixed $value
+    * @return $this
+    */
+    public function setSubStageSuffix($value)
+    {
+        $this->setProperty('subStageSuffix', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getSubStageSuffix()
+    {
+       return $this->getProperty('subStageSuffix');
+    }
 
 
     /**
@@ -39,36 +69,6 @@ class MedicalConditionStage extends MedicalIntangible
     public function getStageAsNumber()
     {
        return $this->getProperty('stageAsNumber');
-    }
-
-
-    /**
-        * The substage, e.g. 'a' for Stage IIIa.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function subStageSuffix($value)
-    {
-        $this->setProperty('subStageSuffix', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setSubStageSuffix($value)
-    {
-        $this->setProperty('subStageSuffix', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getSubStageSuffix()
-    {
-       return $this->getProperty('subStageSuffix');
     }
 
 

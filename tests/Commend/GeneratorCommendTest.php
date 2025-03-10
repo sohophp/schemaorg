@@ -23,7 +23,7 @@ class GeneratorCommendTest extends TestCase
             'baseDir' => $baseDir,
             'fixCs' => true,
             'namespace' => 'Sohophp\\SchemaOrg\\Tests\\Entity',
-            'fullpath' => false
+            'fullpath' => true
         ]);
 
         $Parser = new Parser();
@@ -62,6 +62,8 @@ class GeneratorCommendTest extends TestCase
             $Logger->warning($exception->getMessage(), $exception->getTrace());
         }
 
-        $this->assertCount(800, $classFiles, "classFiles:" . count($classFiles));
+        $count=800;
+        $count=901;
+        $this->assertCount($count, $classFiles, "classFiles:" . count($classFiles));
     }
 }

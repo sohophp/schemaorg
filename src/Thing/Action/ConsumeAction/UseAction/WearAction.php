@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\Action\ConsumeAction\UseAction;
 
 /**
 * The act of dressing oneself in clothing.
-* @see schema:WearAction
+* @see http://schema.org/WearAction
 * @package Sohophp\SchemaOrg\Thing\Action\ConsumeAction\UseAction
 */
 class WearAction extends UseAction

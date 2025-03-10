@@ -2,11 +2,13 @@
 namespace Sohophp\SchemaOrg\Thing\MedicalEntity\LifestyleModification;
 
 use Sohophp\SchemaOrg\Thing\MedicalEntity\LifestyleModification;
+use Sohophp\SchemaOrg\Thing\Person;
+use Sohophp\SchemaOrg\Thing\Organization;
 
 /**
 * A strategy of regulating the intake of food to achieve or maintain a specific
  * health-related goal.
-* @see schema:Diet
+* @see http://schema.org/Diet
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity\LifestyleModification
 */
 class Diet extends LifestyleModification
@@ -14,71 +16,70 @@ class Diet extends LifestyleModification
 
 
     /**
-        * Medical expert advice related to the plan.
-        * @param array|string|mixed $value
+        * Specific physiologic risks associated to the diet plan.
+        * @param string|array|mixed $value
     * @return $this
     */
-    public function expertConsiderations($value)
+    public function risks($value)
     {
-        $this->setProperty('expertConsiderations', $value);
+        $this->setProperty('risks', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
-    public function setExpertConsiderations($value)
+    public function setRisks($value)
     {
-        $this->setProperty('expertConsiderations', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getExpertConsiderations()
-    {
-       return $this->getProperty('expertConsiderations');
-    }
-
-
-    /**
-        * Nutritional information specific to the dietary plan. May include dietary
- * recommendations on what foods to avoid, what foods to consume, and specific
- * alterations/deviations from the USDA or other regulatory body's approved
- * dietary guidelines.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function dietFeatures($value)
-    {
-        $this->setProperty('dietFeatures', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setDietFeatures($value)
-    {
-        $this->setProperty('dietFeatures', $value);
+        $this->setProperty('risks', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getDietFeatures()
+    public function getRisks()
     {
-       return $this->getProperty('dietFeatures');
+       return $this->getProperty('risks');
+    }
+
+
+    /**
+        * Descriptive information establishing the overarching theory/philosophy of the
+ * plan. May include the rationale for the name, the population where the plan
+ * first came to prominence, etc.
+        * @param string|array|mixed $value
+    * @return $this
+    */
+    public function overview($value)
+    {
+        $this->setProperty('overview', $value);
+        return $this;
+    }
+
+    /**
+    * @param string|array|mixed $value
+    * @return $this
+    */
+    public function setOverview($value)
+    {
+        $this->setProperty('overview', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getOverview()
+    {
+       return $this->getProperty('overview');
     }
 
 
     /**
         * Specific physiologic benefits associated to the plan.
-        * @param array|string|mixed $value
+        * @param string|array|mixed $value
     * @return $this
     */
     public function physiologicalBenefits($value)
@@ -88,7 +89,7 @@ class Diet extends LifestyleModification
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setPhysiologicalBenefits($value)
@@ -107,8 +108,38 @@ class Diet extends LifestyleModification
 
 
     /**
+        * Medical expert advice related to the plan.
+        * @param string|array|mixed $value
+    * @return $this
+    */
+    public function expertConsiderations($value)
+    {
+        $this->setProperty('expertConsiderations', $value);
+        return $this;
+    }
+
+    /**
+    * @param string|array|mixed $value
+    * @return $this
+    */
+    public function setExpertConsiderations($value)
+    {
+        $this->setProperty('expertConsiderations', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getExpertConsiderations()
+    {
+       return $this->getProperty('expertConsiderations');
+    }
+
+
+    /**
         * People or organizations that endorse the plan.
-        * @param array|string|mixed $value
+        * @param Person|Organization|array|string|mixed $value
     * @return $this
     */
     public function endorsers($value)
@@ -118,7 +149,7 @@ class Diet extends LifestyleModification
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Person|Organization|array|string|mixed $value
     * @return $this
     */
     public function setEndorsers($value)
@@ -137,32 +168,35 @@ class Diet extends LifestyleModification
 
 
     /**
-        * Specific physiologic risks associated to the diet plan.
-        * @param array|string|mixed $value
+        * Nutritional information specific to the dietary plan. May include dietary
+ * recommendations on what foods to avoid, what foods to consume, and specific
+ * alterations/deviations from the USDA or other regulatory body's approved
+ * dietary guidelines.
+        * @param string|array|mixed $value
     * @return $this
     */
-    public function risks($value)
+    public function dietFeatures($value)
     {
-        $this->setProperty('risks', $value);
+        $this->setProperty('dietFeatures', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
-    public function setRisks($value)
+    public function setDietFeatures($value)
     {
-        $this->setProperty('risks', $value);
+        $this->setProperty('dietFeatures', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getRisks()
+    public function getDietFeatures()
     {
-       return $this->getProperty('risks');
+       return $this->getProperty('dietFeatures');
     }
 
 

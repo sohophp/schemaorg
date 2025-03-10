@@ -2,11 +2,14 @@
 namespace Sohophp\SchemaOrg\Thing\Intangible;
 
 use Sohophp\SchemaOrg\Thing\Intangible;
+use Sohophp\SchemaOrg\Thing\Intangible\Rating\AggregateRating;
+use Sohophp\SchemaOrg\Thing\CreativeWork\MediaObject\ImageObject;
+use Sohophp\SchemaOrg\Thing\CreativeWork\Review;
 
 /**
 * A brand is a name used by an organization or business person for labeling a
  * product, product group, or similar.
-* @see schema:Brand
+* @see http://schema.org/Brand
 * @package Sohophp\SchemaOrg\Thing\Intangible
 */
 class Brand extends Intangible
@@ -14,68 +17,38 @@ class Brand extends Intangible
 
 
     /**
-        * A slogan or motto associated with the item.
-        * @param array|string|mixed $value
+        * The overall rating, based on a collection of reviews or ratings, of the item.
+        * @param AggregateRating|array|string|mixed $value
     * @return $this
     */
-    public function slogan($value)
+    public function aggregateRating($value)
     {
-        $this->setProperty('slogan', $value);
+        $this->setProperty('aggregateRating', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param AggregateRating|array|string|mixed $value
     * @return $this
     */
-    public function setSlogan($value)
+    public function setAggregateRating($value)
     {
-        $this->setProperty('slogan', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getSlogan()
-    {
-       return $this->getProperty('slogan');
-    }
-
-
-    /**
-        * A review of the item.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function review($value)
-    {
-        $this->setProperty('review', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setReview($value)
-    {
-        $this->setProperty('review', $value);
+        $this->setProperty('aggregateRating', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getReview()
+    public function getAggregateRating()
     {
-       return $this->getProperty('review');
+       return $this->getProperty('aggregateRating');
     }
 
 
     /**
         * An associated logo.
-        * @param array|string|mixed $value
+        * @param ImageObject|string|array|mixed $value
     * @return $this
     */
     public function logo($value)
@@ -85,7 +58,7 @@ class Brand extends Intangible
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param ImageObject|string|array|mixed $value
     * @return $this
     */
     public function setLogo($value)
@@ -104,32 +77,62 @@ class Brand extends Intangible
 
 
     /**
-        * The overall rating, based on a collection of reviews or ratings, of the item.
-        * @param array|string|mixed $value
+        * A review of the item.
+        * @param Review|array|string|mixed $value
     * @return $this
     */
-    public function aggregateRating($value)
+    public function review($value)
     {
-        $this->setProperty('aggregateRating', $value);
+        $this->setProperty('review', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Review|array|string|mixed $value
     * @return $this
     */
-    public function setAggregateRating($value)
+    public function setReview($value)
     {
-        $this->setProperty('aggregateRating', $value);
+        $this->setProperty('review', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getAggregateRating()
+    public function getReview()
     {
-       return $this->getProperty('aggregateRating');
+       return $this->getProperty('review');
+    }
+
+
+    /**
+        * A slogan or motto associated with the item.
+        * @param string|array|mixed $value
+    * @return $this
+    */
+    public function slogan($value)
+    {
+        $this->setProperty('slogan', $value);
+        return $this;
+    }
+
+    /**
+    * @param string|array|mixed $value
+    * @return $this
+    */
+    public function setSlogan($value)
+    {
+        $this->setProperty('slogan', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getSlogan()
+    {
+       return $this->getProperty('slogan');
     }
 
 

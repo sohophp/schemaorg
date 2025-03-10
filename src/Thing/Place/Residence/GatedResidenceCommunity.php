@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\Place\Residence;
 
 /**
 * Residence type: Gated community.
-* @see schema:GatedResidenceCommunity
+* @see http://schema.org/GatedResidenceCommunity
 * @package Sohophp\SchemaOrg\Thing\Place\Residence
 */
 class GatedResidenceCommunity extends Residence

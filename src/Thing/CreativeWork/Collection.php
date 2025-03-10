@@ -4,8 +4,8 @@ namespace Sohophp\SchemaOrg\Thing\CreativeWork;
 use Sohophp\SchemaOrg\Thing\CreativeWork;
 
 /**
-* A collection of items, e.g. creative works or products.
-* @see schema:Collection
+* A created collection of Creative Works or other artefacts.
+* @see http://schema.org/Collection
 * @package Sohophp\SchemaOrg\Thing\CreativeWork
 */
 class Collection extends CreativeWork
@@ -14,7 +14,7 @@ class Collection extends CreativeWork
 
     /**
         * The number of items in the [[Collection]].
-        * @param array|string|mixed $value
+        * @param int|array|string|mixed $value
     * @return $this
     */
     public function collectionSize($value)
@@ -24,7 +24,7 @@ class Collection extends CreativeWork
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param int|array|string|mixed $value
     * @return $this
     */
     public function setCollectionSize($value)

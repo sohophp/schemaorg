@@ -14,7 +14,7 @@ class Configure
             'classBase' => 'BaseType',
             'baseDir' => dirname(__DIR__),
             'tiwgDebug' => true,
-            'schemaJsonldFilePath' => realpath(__DIR__ . '/../../data/v28.1/schemaorg-all-https.jsonld'),//all-layers.jsonld
+            'schemaJsonldFilePath' => realpath(__DIR__ . '/../../data/all-layers.jsonld'),//v28.1/schemaorg-all-https.jsonld
             'consoleMessage' => true,
             'namespace' => $this->getNamespace(),
             'fixCs' => true,

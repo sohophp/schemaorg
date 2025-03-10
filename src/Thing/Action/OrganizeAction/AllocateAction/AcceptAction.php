@@ -9,7 +9,7 @@ use Sohophp\SchemaOrg\Thing\Action\OrganizeAction\AllocateAction;
  * Related actions:
  * 
  * * [[RejectAction]]: The antonym of AcceptAction.
-* @see schema:AcceptAction
+* @see http://schema.org/AcceptAction
 * @package Sohophp\SchemaOrg\Thing\Action\OrganizeAction\AllocateAction
 */
 class AcceptAction extends AllocateAction

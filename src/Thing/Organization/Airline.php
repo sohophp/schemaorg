@@ -2,10 +2,11 @@
 namespace Sohophp\SchemaOrg\Thing\Organization;
 
 use Sohophp\SchemaOrg\Thing\Organization;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\BoardingPolicyType;
 
 /**
 * An organization that provides flights for passengers.
-* @see schema:Airline
+* @see http://schema.org/Airline
 * @package Sohophp\SchemaOrg\Thing\Organization
 */
 class Airline extends Organization
@@ -14,7 +15,7 @@ class Airline extends Organization
 
     /**
         * IATA identifier for an airline or airport.
-        * @param array|string|mixed $value
+        * @param string|array|mixed $value
     * @return $this
     */
     public function iataCode($value)
@@ -24,7 +25,7 @@ class Airline extends Organization
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setIataCode($value)
@@ -45,7 +46,7 @@ class Airline extends Organization
     /**
         * The type of boarding policy used by the airline (e.g. zone-based or
  * group-based).
-        * @param array|string|mixed $value
+        * @param BoardingPolicyType|array|string|mixed $value
     * @return $this
     */
     public function boardingPolicy($value)
@@ -55,7 +56,7 @@ class Airline extends Organization
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param BoardingPolicyType|array|string|mixed $value
     * @return $this
     */
     public function setBoardingPolicy($value)

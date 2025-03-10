@@ -5,7 +5,7 @@ use Sohophp\SchemaOrg\Thing\Intangible\DefinedTerm\CategoryCode;
 
 /**
 * A code for a medical entity.
-* @see schema:MedicalCode
+* @see http://schema.org/MedicalCode
 * @package Sohophp\SchemaOrg\Thing\Intangible\DefinedTerm\CategoryCode
 */
 class MedicalCode extends CategoryCode
@@ -14,7 +14,7 @@ class MedicalCode extends CategoryCode
 
     /**
         * The coding system, e.g. 'ICD-10'.
-        * @param array|string|mixed $value
+        * @param string|array|mixed $value
     * @return $this
     */
     public function codingSystem($value)
@@ -24,7 +24,7 @@ class MedicalCode extends CategoryCode
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setCodingSystem($value)
@@ -44,7 +44,7 @@ class MedicalCode extends CategoryCode
 
     /**
         * A short textual code that uniquely identifies the value.
-        * @param array|string|mixed $value
+        * @param string|array|mixed $value
     * @return $this
     */
     public function codeValue($value)
@@ -54,7 +54,7 @@ class MedicalCode extends CategoryCode
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param string|array|mixed $value
     * @return $this
     */
     public function setCodeValue($value)

@@ -2,12 +2,15 @@
 namespace Sohophp\SchemaOrg\Thing\Event;
 
 use Sohophp\SchemaOrg\Thing\Event;
+use Sohophp\SchemaOrg\Thing\Intangible\Service\BroadcastService;
+use Sohophp\SchemaOrg\Thing\Person;
+use Sohophp\SchemaOrg\Thing\Organization;
 
 /**
 * A PublicationEvent corresponds indifferently to the event of publication for
- * a CreativeWork of any type, e.g. a broadcast event, an on-demand event, a
+ * a CreativeWork of any type e.g. a broadcast event, an on-demand event, a
  * book/journal publication via a variety of delivery media.
-* @see schema:PublicationEvent
+* @see http://schema.org/PublicationEvent
 * @package Sohophp\SchemaOrg\Thing\Event
 */
 class PublicationEvent extends Event
@@ -15,8 +18,38 @@ class PublicationEvent extends Event
 
 
     /**
+        * A broadcast service associated with the publication event.
+        * @param BroadcastService|array|string|mixed $value
+    * @return $this
+    */
+    public function publishedOn($value)
+    {
+        $this->setProperty('publishedOn', $value);
+        return $this;
+    }
+
+    /**
+    * @param BroadcastService|array|string|mixed $value
+    * @return $this
+    */
+    public function setPublishedOn($value)
+    {
+        $this->setProperty('publishedOn', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getPublishedOn()
+    {
+       return $this->getProperty('publishedOn');
+    }
+
+
+    /**
         * A flag to signal that the item, event, or place is accessible for free.
-        * @param array|string|mixed $value
+        * @param bool|array|string|mixed $value
     * @return $this
     */
     public function free($value)
@@ -26,7 +59,7 @@ class PublicationEvent extends Event
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param bool|array|string|mixed $value
     * @return $this
     */
     public function setFree($value)
@@ -46,7 +79,7 @@ class PublicationEvent extends Event
 
     /**
         * An agent associated with the publication event.
-        * @param array|string|mixed $value
+        * @param Person|Organization|array|string|mixed $value
     * @return $this
     */
     public function publishedBy($value)
@@ -56,7 +89,7 @@ class PublicationEvent extends Event
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Person|Organization|array|string|mixed $value
     * @return $this
     */
     public function setPublishedBy($value)
@@ -75,32 +108,32 @@ class PublicationEvent extends Event
 
 
     /**
-        * A broadcast service associated with the publication event.
-        * @param array|string|mixed $value
+        * A flag to signal that the item, event, or place is accessible for free.
+        * @param bool|array|string|mixed $value
     * @return $this
     */
-    public function publishedOn($value)
+    public function isAccessibleForFree($value)
     {
-        $this->setProperty('publishedOn', $value);
+        $this->setProperty('isAccessibleForFree', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param bool|array|string|mixed $value
     * @return $this
     */
-    public function setPublishedOn($value)
+    public function setIsAccessibleForFree($value)
     {
-        $this->setProperty('publishedOn', $value);
+        $this->setProperty('isAccessibleForFree', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getPublishedOn()
+    public function getIsAccessibleForFree()
     {
-       return $this->getProperty('publishedOn');
+       return $this->getProperty('isAccessibleForFree');
     }
 
 

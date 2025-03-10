@@ -2,10 +2,11 @@
 namespace Sohophp\SchemaOrg\Thing\CreativeWork\DefinedTermSet;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork\DefinedTermSet;
+use Sohophp\SchemaOrg\Thing\Intangible\DefinedTerm\CategoryCode;
 
 /**
 * A set of Category Code values.
-* @see schema:CategoryCodeSet
+* @see http://schema.org/CategoryCodeSet
 * @package Sohophp\SchemaOrg\Thing\CreativeWork\DefinedTermSet
 */
 class CategoryCodeSet extends DefinedTermSet
@@ -14,7 +15,7 @@ class CategoryCodeSet extends DefinedTermSet
 
     /**
         * A Category code contained in this code set.
-        * @param array|string|mixed $value
+        * @param CategoryCode|array|string|mixed $value
     * @return $this
     */
     public function hasCategoryCode($value)
@@ -24,7 +25,7 @@ class CategoryCodeSet extends DefinedTermSet
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param CategoryCode|array|string|mixed $value
     * @return $this
     */
     public function setHasCategoryCode($value)

@@ -2,11 +2,15 @@
 namespace Sohophp\SchemaOrg\Thing\CreativeWork\CreativeWorkSeries;
 
 use Sohophp\SchemaOrg\Thing\CreativeWork\CreativeWorkSeries;
+use Sohophp\SchemaOrg\Thing\Person;
+use Sohophp\SchemaOrg\Thing\CreativeWork\MediaObject\VideoObject;
+use Sohophp\SchemaOrg\Thing\Organization\PerformingGroup\MusicGroup;
+use Sohophp\SchemaOrg\Thing\Organization;
 
 /**
 * A series of movies. Included movies can be indicated with the hasPart
  * property.
-* @see schema:MovieSeries
+* @see http://schema.org/MovieSeries
 * @package Sohophp\SchemaOrg\Thing\CreativeWork\CreativeWorkSeries
 */
 class MovieSeries extends CreativeWorkSeries
@@ -14,102 +18,39 @@ class MovieSeries extends CreativeWorkSeries
 
 
     /**
-        * A director of e.g. TV, radio, movie, video games etc. content. Directors can
- * be associated with individual items or with a series, episode, clip.
-        * @param array|string|mixed $value
+        * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors
+ * can be associated with individual items or with a series, episode, clip.
+        * @param Person|array|string|mixed $value
     * @return $this
     */
-    public function directors($value)
+    public function actor($value)
     {
-        $this->setProperty('directors', $value);
+        $this->setProperty('actor', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Person|array|string|mixed $value
     * @return $this
     */
-    public function setDirectors($value)
+    public function setActor($value)
     {
-        $this->setProperty('directors', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getDirectors()
-    {
-       return $this->getProperty('directors');
-    }
-
-
-    /**
-        * A director of e.g. TV, radio, movie, video gaming etc. content, or of an
- * event. Directors can be associated with individual items or with a series,
- * episode, clip.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function director($value)
-    {
-        $this->setProperty('director', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setDirector($value)
-    {
-        $this->setProperty('director', $value);
+        $this->setProperty('actor', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getDirector()
+    public function getActor()
     {
-       return $this->getProperty('director');
+       return $this->getProperty('actor');
     }
 
 
     /**
-        * The production company or studio responsible for the item, e.g. series, video
- * game, episode etc.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function productionCompany($value)
-    {
-        $this->setProperty('productionCompany', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setProductionCompany($value)
-    {
-        $this->setProperty('productionCompany', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getProductionCompany()
-    {
-       return $this->getProperty('productionCompany');
-    }
-
-
-    /**
-        * The trailer of a movie or TV/radio series, season, episode, etc.
-        * @param array|string|mixed $value
+        * The trailer of a movie or tv/radio series, season, episode, etc.
+        * @param VideoObject|array|string|mixed $value
     * @return $this
     */
     public function trailer($value)
@@ -119,7 +60,7 @@ class MovieSeries extends CreativeWorkSeries
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param VideoObject|array|string|mixed $value
     * @return $this
     */
     public function setTrailer($value)
@@ -139,7 +80,7 @@ class MovieSeries extends CreativeWorkSeries
 
     /**
         * The composer of the soundtrack.
-        * @param array|string|mixed $value
+        * @param Person|MusicGroup|array|string|mixed $value
     * @return $this
     */
     public function musicBy($value)
@@ -149,7 +90,7 @@ class MovieSeries extends CreativeWorkSeries
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Person|MusicGroup|array|string|mixed $value
     * @return $this
     */
     public function setMusicBy($value)
@@ -168,41 +109,103 @@ class MovieSeries extends CreativeWorkSeries
 
 
     /**
-        * An actor (individual or a group), e.g. in TV, radio, movie, video games etc.,
- * or in an event. Actors can be associated with individual items or with a
- * series, episode, clip.
-        * @param array|string|mixed $value
+        * A director of e.g. tv, radio, movie, video games etc. content. Directors can
+ * be associated with individual items or with a series, episode, clip.
+        * @param Person|array|string|mixed $value
     * @return $this
     */
-    public function actor($value)
+    public function directors($value)
     {
-        $this->setProperty('actor', $value);
+        $this->setProperty('directors', $value);
         return $this;
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Person|array|string|mixed $value
     * @return $this
     */
-    public function setActor($value)
+    public function setDirectors($value)
     {
-        $this->setProperty('actor', $value);
+        $this->setProperty('directors', $value);
         return $this;
     }
 
     /**
     * @return string|array|mixed
     */
-    public function getActor()
+    public function getDirectors()
     {
-       return $this->getProperty('actor');
+       return $this->getProperty('directors');
     }
 
 
     /**
-        * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated
+        * A director of e.g. tv, radio, movie, video gaming etc. content, or of an
+ * event. Directors can be associated with individual items or with a series,
+ * episode, clip.
+        * @param Person|array|string|mixed $value
+    * @return $this
+    */
+    public function director($value)
+    {
+        $this->setProperty('director', $value);
+        return $this;
+    }
+
+    /**
+    * @param Person|array|string|mixed $value
+    * @return $this
+    */
+    public function setDirector($value)
+    {
+        $this->setProperty('director', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getDirector()
+    {
+       return $this->getProperty('director');
+    }
+
+
+    /**
+        * The production company or studio responsible for the item e.g. series, video
+ * game, episode etc.
+        * @param Organization|array|string|mixed $value
+    * @return $this
+    */
+    public function productionCompany($value)
+    {
+        $this->setProperty('productionCompany', $value);
+        return $this;
+    }
+
+    /**
+    * @param Organization|array|string|mixed $value
+    * @return $this
+    */
+    public function setProductionCompany($value)
+    {
+        $this->setProperty('productionCompany', $value);
+        return $this;
+    }
+
+    /**
+    * @return string|array|mixed
+    */
+    public function getProductionCompany()
+    {
+       return $this->getProperty('productionCompany');
+    }
+
+
+    /**
+        * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated
  * with individual items or with a series, episode, clip.
-        * @param array|string|mixed $value
+        * @param Person|array|string|mixed $value
     * @return $this
     */
     public function actors($value)
@@ -212,7 +215,7 @@ class MovieSeries extends CreativeWorkSeries
     }
 
     /**
-    * @param array|string|mixed $value
+    * @param Person|array|string|mixed $value
     * @return $this
     */
     public function setActors($value)
