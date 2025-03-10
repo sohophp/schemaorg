@@ -70,13 +70,13 @@ class BaseType implements \ArrayAccess, \JsonSerializable
     public function __call($name, $arguments)
     {
         if (str_starts_with($name, 'get')) {
-            $name = substr($name, 4);
+            $name = substr($name, 3);
             $name[0] = strtolower($name[0]);
             return $this->getProperty($name);
         }
 
         if (str_starts_with($name, 'set')) {
-            $name = substr($name, 4);
+            $name = substr($name, 3);
             $name[0] = strtolower($name[0]);
         }
         $this->setProperty($name, ...$arguments);
