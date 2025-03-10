@@ -13,19 +13,24 @@ use {{ use }};
 */
 class {{ class.name }} extends {{ class.parent }}
 {
+
 {% for property in class.properties %}
-   /**
+
+    /**
     {% for annotation in property.annotations %}
     * {{ annotation }}
     {% endfor %}
+    * @param {{ property.range }}|mixed $value
+    * @return $this
     */
-    protected ${{ property.name }} = null;
+    public function {{ property.name}}({{ property.range_default?property.range_default~' $value':'$value' }})
+    {
+        $this->setProperty('{{ property.name }}', $value);
+        return $this;
+    }
 
-{% endfor %}
-
-{% for property in class.properties %}
     /**
-    * @param {{ property.range }} $value
+    * @param {{ property.range }}|mixed $value
     * @return $this
     */
     public function set{{ property.name|ucfirst }}({{ property.range_default?property.range_default~' $value':'$value' }})

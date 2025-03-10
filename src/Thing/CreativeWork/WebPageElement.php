@@ -10,19 +10,23 @@ use Sohophp\SchemaOrg\Thing\CreativeWork;
 */
 class WebPageElement extends CreativeWork
 {
-   /**
-        * A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
-        */
-    protected $cssSelector = null;
-
-   /**
-        * An XPath, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
-        */
-    protected $xpath = null;
 
 
     /**
-    * @param array|string $value
+        * A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]].
+ * In the latter case, multiple matches within a page can constitute a single
+ * conceptual "Web page element".
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function cssSelector($value)
+    {
+        $this->setProperty('cssSelector', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setCssSelector($value)
@@ -39,8 +43,22 @@ class WebPageElement extends CreativeWork
        return $this->getProperty('cssSelector');
     }
 
+
     /**
-    * @param array|string $value
+        * An XPath, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the
+ * latter case, multiple matches within a page can constitute a single
+ * conceptual "Web page element".
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function xpath($value)
+    {
+        $this->setProperty('xpath', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setXpath($value)

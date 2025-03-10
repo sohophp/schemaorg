@@ -10,24 +10,21 @@ use Sohophp\SchemaOrg\Thing\Intangible;
 */
 class HealthPlanNetwork extends Intangible
 {
-   /**
-        * The tier(s) for this network.
-        */
-    protected $healthPlanNetworkTier = null;
-
-   /**
-        * Name or unique ID of network. (Networks are often reused across different insurance plans.)
-        */
-    protected $healthPlanNetworkId = null;
-
-   /**
-        * The costs to the patient for services under this network or formulary.
-        */
-    protected $healthPlanCostSharing = null;
 
 
     /**
-    * @param array|string $value
+        * The tier(s) for this network.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function healthPlanNetworkTier($value)
+    {
+        $this->setProperty('healthPlanNetworkTier', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setHealthPlanNetworkTier($value)
@@ -44,8 +41,21 @@ class HealthPlanNetwork extends Intangible
        return $this->getProperty('healthPlanNetworkTier');
     }
 
+
     /**
-    * @param array|string $value
+        * Name or unique ID of network. (Networks are often reused across different
+ * insurance plans.)
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function healthPlanNetworkId($value)
+    {
+        $this->setProperty('healthPlanNetworkId', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setHealthPlanNetworkId($value)
@@ -62,8 +72,20 @@ class HealthPlanNetwork extends Intangible
        return $this->getProperty('healthPlanNetworkId');
     }
 
+
     /**
-    * @param array|string $value
+        * The costs to the patient for services under this network or formulary.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function healthPlanCostSharing($value)
+    {
+        $this->setProperty('healthPlanCostSharing', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setHealthPlanCostSharing($value)

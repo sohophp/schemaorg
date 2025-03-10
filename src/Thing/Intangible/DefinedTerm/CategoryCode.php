@@ -10,19 +10,21 @@ use Sohophp\SchemaOrg\Thing\Intangible\DefinedTerm;
 */
 class CategoryCode extends DefinedTerm
 {
-   /**
-        * A short textual code that uniquely identifies the value.
-        */
-    protected $codeValue = null;
-
-   /**
-        * A [[CategoryCodeSet]] that contains this category code.
-        */
-    protected $inCodeSet = null;
 
 
     /**
-    * @param array|string $value
+        * A short textual code that uniquely identifies the value.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function codeValue($value)
+    {
+        $this->setProperty('codeValue', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setCodeValue($value)
@@ -39,8 +41,20 @@ class CategoryCode extends DefinedTerm
        return $this->getProperty('codeValue');
     }
 
+
     /**
-    * @param array|string $value
+        * A [[CategoryCodeSet]] that contains this category code.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function inCodeSet($value)
+    {
+        $this->setProperty('inCodeSet', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setInCodeSet($value)

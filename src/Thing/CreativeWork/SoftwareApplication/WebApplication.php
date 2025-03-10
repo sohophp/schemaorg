@@ -10,14 +10,22 @@ use Sohophp\SchemaOrg\Thing\CreativeWork\SoftwareApplication;
 */
 class WebApplication extends SoftwareApplication
 {
-   /**
-        * Specifies browser requirements in human-readable text. For example, 'requires HTML5 support'.
-        */
-    protected $browserRequirements = null;
 
 
     /**
-    * @param array|string $value
+        * Specifies browser requirements in human-readable text. For example, 'requires
+ * HTML5 support'.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function browserRequirements($value)
+    {
+        $this->setProperty('browserRequirements', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setBrowserRequirements($value)

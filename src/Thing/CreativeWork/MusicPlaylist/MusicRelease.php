@@ -10,39 +10,22 @@ use Sohophp\SchemaOrg\Thing\CreativeWork\MusicPlaylist;
 */
 class MusicRelease extends MusicPlaylist
 {
-   /**
-        * Format of this release (the type of recording media used, i.e. compact disc, digital media, LP, etc.).
-        */
-    protected $musicReleaseFormat = null;
-
-   /**
-        * The album this is a release of.
-        */
-    protected $releaseOf = null;
-
-   /**
-        * The label that issued the release.
-        */
-    protected $recordLabel = null;
-
-   /**
-        * The catalog number for the release.
-        */
-    protected $catalogNumber = null;
-
-   /**
-        * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
-        */
-    protected $duration = null;
-
-   /**
-        * The group the release is credited to if different than the byArtist. For example, Red and Blue is credited to "Stefani Germanotta Band", but by Lady Gaga.
-        */
-    protected $creditedTo = null;
 
 
     /**
-    * @param array|string $value
+        * Format of this release (the type of recording media used, i.e. compact disc,
+ * digital media, LP, etc.).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function musicReleaseFormat($value)
+    {
+        $this->setProperty('musicReleaseFormat', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setMusicReleaseFormat($value)
@@ -59,8 +42,20 @@ class MusicRelease extends MusicPlaylist
        return $this->getProperty('musicReleaseFormat');
     }
 
+
     /**
-    * @param array|string $value
+        * The album this is a release of.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function releaseOf($value)
+    {
+        $this->setProperty('releaseOf', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setReleaseOf($value)
@@ -77,8 +72,20 @@ class MusicRelease extends MusicPlaylist
        return $this->getProperty('releaseOf');
     }
 
+
     /**
-    * @param array|string $value
+        * The label that issued the release.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function recordLabel($value)
+    {
+        $this->setProperty('recordLabel', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setRecordLabel($value)
@@ -95,8 +102,20 @@ class MusicRelease extends MusicPlaylist
        return $this->getProperty('recordLabel');
     }
 
+
     /**
-    * @param array|string $value
+        * The catalog number for the release.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function catalogNumber($value)
+    {
+        $this->setProperty('catalogNumber', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setCatalogNumber($value)
@@ -113,8 +132,21 @@ class MusicRelease extends MusicPlaylist
        return $this->getProperty('catalogNumber');
     }
 
+
     /**
-    * @param array|string $value
+        * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601
+ * duration format](http://en.wikipedia.org/wiki/ISO_8601).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function duration($value)
+    {
+        $this->setProperty('duration', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDuration($value)
@@ -131,8 +163,22 @@ class MusicRelease extends MusicPlaylist
        return $this->getProperty('duration');
     }
 
+
     /**
-    * @param array|string $value
+        * The group the release is credited to if different than the byArtist. For
+ * example, Red and Blue is credited to "Stefani Germanotta Band", but by Lady
+ * Gaga.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function creditedTo($value)
+    {
+        $this->setProperty('creditedTo', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setCreditedTo($value)

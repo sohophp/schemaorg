@@ -10,14 +10,21 @@ use Sohophp\SchemaOrg\Thing\Action\TradeAction;
 */
 class OrderAction extends TradeAction
 {
-   /**
-        * A sub property of instrument. The method of delivery.
-        */
-    protected $deliveryMethod = null;
 
 
     /**
-    * @param array|string $value
+        * A sub property of instrument. The method of delivery.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function deliveryMethod($value)
+    {
+        $this->setProperty('deliveryMethod', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDeliveryMethod($value)

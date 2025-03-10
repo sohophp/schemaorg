@@ -10,19 +10,21 @@ use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\PriceSpecification;
 */
 class PaymentChargeSpecification extends PriceSpecification
 {
-   /**
-        * The payment method(s) to which the payment charge specification applies.
-        */
-    protected $appliesToPaymentMethod = null;
-
-   /**
-        * The delivery method(s) to which the delivery charge or payment charge specification applies.
-        */
-    protected $appliesToDeliveryMethod = null;
 
 
     /**
-    * @param array|string $value
+        * The payment method(s) to which the payment charge specification applies.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function appliesToPaymentMethod($value)
+    {
+        $this->setProperty('appliesToPaymentMethod', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAppliesToPaymentMethod($value)
@@ -39,8 +41,21 @@ class PaymentChargeSpecification extends PriceSpecification
        return $this->getProperty('appliesToPaymentMethod');
     }
 
+
     /**
-    * @param array|string $value
+        * The delivery method(s) to which the delivery charge or payment charge
+ * specification applies.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function appliesToDeliveryMethod($value)
+    {
+        $this->setProperty('appliesToDeliveryMethod', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAppliesToDeliveryMethod($value)

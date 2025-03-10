@@ -10,24 +10,22 @@ use Sohophp\SchemaOrg\Thing\Person;
 */
 class Patient extends Person
 {
-   /**
-        * Specifying the health condition(s) of a patient, medical study, or other target audience.
-        */
-    protected $healthCondition = null;
-
-   /**
-        * One or more alternative conditions considered in the differential diagnosis process as output of a diagnosis process.
-        */
-    protected $diagnosis = null;
-
-   /**
-        * Specifying a drug or medicine used in a medication procedure.
-        */
-    protected $drug = null;
 
 
     /**
-    * @param array|string $value
+        * Specifying the health condition(s) of a patient, medical study, or other
+ * target audience.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function healthCondition($value)
+    {
+        $this->setProperty('healthCondition', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setHealthCondition($value)
@@ -44,8 +42,21 @@ class Patient extends Person
        return $this->getProperty('healthCondition');
     }
 
+
     /**
-    * @param array|string $value
+        * One or more alternative conditions considered in the differential diagnosis
+ * process as output of a diagnosis process.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function diagnosis($value)
+    {
+        $this->setProperty('diagnosis', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDiagnosis($value)
@@ -62,8 +73,20 @@ class Patient extends Person
        return $this->getProperty('diagnosis');
     }
 
+
     /**
-    * @param array|string $value
+        * Specifying a drug or medicine used in a medication procedure.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function drug($value)
+    {
+        $this->setProperty('drug', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDrug($value)

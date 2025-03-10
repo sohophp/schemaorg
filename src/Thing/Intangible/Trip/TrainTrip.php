@@ -10,39 +10,21 @@ use Sohophp\SchemaOrg\Thing\Intangible\Trip;
 */
 class TrainTrip extends Trip
 {
-   /**
-        * The station from which the train departs.
-        */
-    protected $departureStation = null;
-
-   /**
-        * The name of the train (e.g. The Orient Express).
-        */
-    protected $trainName = null;
-
-   /**
-        * The platform where the train arrives.
-        */
-    protected $arrivalPlatform = null;
-
-   /**
-        * The station where the train trip ends.
-        */
-    protected $arrivalStation = null;
-
-   /**
-        * The platform from which the train departs.
-        */
-    protected $departurePlatform = null;
-
-   /**
-        * The unique identifier for the train.
-        */
-    protected $trainNumber = null;
 
 
     /**
-    * @param array|string $value
+        * The station from which the train departs.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function departureStation($value)
+    {
+        $this->setProperty('departureStation', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDepartureStation($value)
@@ -59,8 +41,20 @@ class TrainTrip extends Trip
        return $this->getProperty('departureStation');
     }
 
+
     /**
-    * @param array|string $value
+        * The name of the train (e.g. The Orient Express).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function trainName($value)
+    {
+        $this->setProperty('trainName', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setTrainName($value)
@@ -77,8 +71,20 @@ class TrainTrip extends Trip
        return $this->getProperty('trainName');
     }
 
+
     /**
-    * @param array|string $value
+        * The platform where the train arrives.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function arrivalPlatform($value)
+    {
+        $this->setProperty('arrivalPlatform', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setArrivalPlatform($value)
@@ -95,8 +101,20 @@ class TrainTrip extends Trip
        return $this->getProperty('arrivalPlatform');
     }
 
+
     /**
-    * @param array|string $value
+        * The station where the train trip ends.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function arrivalStation($value)
+    {
+        $this->setProperty('arrivalStation', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setArrivalStation($value)
@@ -113,8 +131,20 @@ class TrainTrip extends Trip
        return $this->getProperty('arrivalStation');
     }
 
+
     /**
-    * @param array|string $value
+        * The platform from which the train departs.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function departurePlatform($value)
+    {
+        $this->setProperty('departurePlatform', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDeparturePlatform($value)
@@ -131,8 +161,20 @@ class TrainTrip extends Trip
        return $this->getProperty('departurePlatform');
     }
 
+
     /**
-    * @param array|string $value
+        * The unique identifier for the train.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function trainNumber($value)
+    {
+        $this->setProperty('trainNumber', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setTrainNumber($value)

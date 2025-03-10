@@ -10,24 +10,22 @@ use Sohophp\SchemaOrg\Thing\CreativeWork\MediaObject;
 */
 class AudioObject extends MediaObject
 {
-   /**
-        * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
-        */
-    protected $caption = null;
-
-   /**
-        * Represents textual captioning from a [[MediaObject]], e.g. text of a 'meme'.
-        */
-    protected $embeddedTextCaption = null;
-
-   /**
-        * If this MediaObject is an AudioObject or VideoObject, the transcript of that object.
-        */
-    protected $transcript = null;
 
 
     /**
-    * @param array|string $value
+        * The caption for this object. For downloadable machine formats (closed
+ * caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function caption($value)
+    {
+        $this->setProperty('caption', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setCaption($value)
@@ -44,8 +42,20 @@ class AudioObject extends MediaObject
        return $this->getProperty('caption');
     }
 
+
     /**
-    * @param array|string $value
+        * Represents textual captioning from a [[MediaObject]], e.g. text of a 'meme'.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function embeddedTextCaption($value)
+    {
+        $this->setProperty('embeddedTextCaption', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setEmbeddedTextCaption($value)
@@ -62,8 +72,21 @@ class AudioObject extends MediaObject
        return $this->getProperty('embeddedTextCaption');
     }
 
+
     /**
-    * @param array|string $value
+        * If this MediaObject is an AudioObject or VideoObject, the transcript of that
+ * object.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function transcript($value)
+    {
+        $this->setProperty('transcript', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setTranscript($value)

@@ -10,50 +10,24 @@ use Sohophp\SchemaOrg\Thing\Intangible;
 */
 class Occupation extends Intangible
 {
-   /**
-        * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
-        */
-    protected $estimatedSalary = null;
-
-   /**
-        * Specific qualifications required for this role or Occupation.
-        */
-    protected $qualifications = null;
-
-   /**
-        * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
-        */
-    protected $skills = null;
-
-   /**
-        *  The region/country for which this occupational description is appropriate. Note that educational requirements and qualifications can vary between jurisdictions.
-        */
-    protected $occupationLocation = null;
-
-   /**
-        * Responsibilities associated with this role or Occupation.
-        */
-    protected $responsibilities = null;
-
-   /**
-        * Educational background needed for the position or Occupation.
-        */
-    protected $educationRequirements = null;
-
-   /**
-        * Description of skills and experience needed for the position or Occupation.
-        */
-    protected $experienceRequirements = null;
-
-   /**
-        * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.\n
-Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
-        */
-    protected $occupationalCategory = null;
 
 
     /**
-    * @param array|string $value
+        * An estimated salary for a job posting or occupation, based on a variety of
+ * variables including, but not limited to industry, job title, and location.
+ * Estimated salaries  are often computed by outside organizations rather than
+ * the hiring organization, who may not have committed to the estimated value.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function estimatedSalary($value)
+    {
+        $this->setProperty('estimatedSalary', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setEstimatedSalary($value)
@@ -70,8 +44,20 @@ Note: for historical reasons, any textual label and formal code provided as a li
        return $this->getProperty('estimatedSalary');
     }
 
+
     /**
-    * @param array|string $value
+        * Specific qualifications required for this role or Occupation.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function qualifications($value)
+    {
+        $this->setProperty('qualifications', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setQualifications($value)
@@ -88,8 +74,22 @@ Note: for historical reasons, any textual label and formal code provided as a li
        return $this->getProperty('qualifications');
     }
 
+
     /**
-    * @param array|string $value
+        * A statement of knowledge, skill, ability, task or any other assertion
+ * expressing a competency that is either claimed by a person, an organization
+ * or desired or required to fulfill a role or to work in an occupation.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function skills($value)
+    {
+        $this->setProperty('skills', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSkills($value)
@@ -106,8 +106,22 @@ Note: for historical reasons, any textual label and formal code provided as a li
        return $this->getProperty('skills');
     }
 
+
     /**
-    * @param array|string $value
+        *  The region/country for which this occupational description is appropriate.
+ * Note that educational requirements and qualifications can vary between
+ * jurisdictions.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function occupationLocation($value)
+    {
+        $this->setProperty('occupationLocation', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setOccupationLocation($value)
@@ -124,8 +138,20 @@ Note: for historical reasons, any textual label and formal code provided as a li
        return $this->getProperty('occupationLocation');
     }
 
+
     /**
-    * @param array|string $value
+        * Responsibilities associated with this role or Occupation.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function responsibilities($value)
+    {
+        $this->setProperty('responsibilities', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setResponsibilities($value)
@@ -142,8 +168,20 @@ Note: for historical reasons, any textual label and formal code provided as a li
        return $this->getProperty('responsibilities');
     }
 
+
     /**
-    * @param array|string $value
+        * Educational background needed for the position or Occupation.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function educationRequirements($value)
+    {
+        $this->setProperty('educationRequirements', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setEducationRequirements($value)
@@ -160,8 +198,20 @@ Note: for historical reasons, any textual label and formal code provided as a li
        return $this->getProperty('educationRequirements');
     }
 
+
     /**
-    * @param array|string $value
+        * Description of skills and experience needed for the position or Occupation.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function experienceRequirements($value)
+    {
+        $this->setProperty('experienceRequirements', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setExperienceRequirements($value)
@@ -178,8 +228,28 @@ Note: for historical reasons, any textual label and formal code provided as a li
        return $this->getProperty('experienceRequirements');
     }
 
+
     /**
-    * @param array|string $value
+        * A category describing the job, preferably using a term from a taxonomy such
+ * as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html),
+ * [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or
+ * similar, with the property repeated for each applicable value. Ideally the
+ * taxonomy should be identified, and both the textual label and formal code for
+ * the category should be provided.
+ * 
+ * Note: for historical reasons, any textual label and formal code provided as a
+ * literal may be assumed to be from O*NET-SOC.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function occupationalCategory($value)
+    {
+        $this->setProperty('occupationalCategory', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setOccupationalCategory($value)

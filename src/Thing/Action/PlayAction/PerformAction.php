@@ -10,14 +10,22 @@ use Sohophp\SchemaOrg\Thing\Action\PlayAction;
 */
 class PerformAction extends PlayAction
 {
-   /**
-        * A sub property of location. The entertainment business where the action occurred.
-        */
-    protected $entertainmentBusiness = null;
 
 
     /**
-    * @param array|string $value
+        * A sub property of location. The entertainment business where the action
+ * occurred.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function entertainmentBusiness($value)
+    {
+        $this->setProperty('entertainmentBusiness', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setEntertainmentBusiness($value)

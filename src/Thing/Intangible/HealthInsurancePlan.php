@@ -10,54 +10,21 @@ use Sohophp\SchemaOrg\Thing\Intangible;
 */
 class HealthInsurancePlan extends Intangible
 {
-   /**
-        * The tier(s) of drugs offered by this formulary or insurance plan.
-        */
-    protected $healthPlanDrugTier = null;
-
-   /**
-        * The 14-character, HIOS-generated Plan ID number. (Plan IDs must be unique, even across different markets.)
-        */
-    protected $healthPlanId = null;
-
-   /**
-        * Formularies covered by this plan.
-        */
-    protected $includesHealthPlanFormulary = null;
-
-   /**
-        * A contact point for a person or organization.
-        */
-    protected $contactPoint = null;
-
-   /**
-        * The standard for interpreting the Plan ID. The preferred is "HIOS". See the Centers for Medicare & Medicaid Services for more details.
-        */
-    protected $usesHealthPlanIdStandard = null;
-
-   /**
-        * The URL that goes directly to the summary of benefits and coverage for the specific standard plan or plan variation.
-        */
-    protected $benefitsSummaryUrl = null;
-
-   /**
-        * Networks covered by this plan.
-        */
-    protected $includesHealthPlanNetwork = null;
-
-   /**
-        * TODO.
-        */
-    protected $healthPlanDrugOption = null;
-
-   /**
-        * The URL that goes directly to the plan brochure for the specific standard plan or plan variation.
-        */
-    protected $healthPlanMarketingUrl = null;
 
 
     /**
-    * @param array|string $value
+        * The tier(s) of drugs offered by this formulary or insurance plan.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function healthPlanDrugTier($value)
+    {
+        $this->setProperty('healthPlanDrugTier', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setHealthPlanDrugTier($value)
@@ -74,8 +41,21 @@ class HealthInsurancePlan extends Intangible
        return $this->getProperty('healthPlanDrugTier');
     }
 
+
     /**
-    * @param array|string $value
+        * The 14-character, HIOS-generated Plan ID number. (Plan IDs must be unique,
+ * even across different markets.)
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function healthPlanId($value)
+    {
+        $this->setProperty('healthPlanId', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setHealthPlanId($value)
@@ -92,8 +72,20 @@ class HealthInsurancePlan extends Intangible
        return $this->getProperty('healthPlanId');
     }
 
+
     /**
-    * @param array|string $value
+        * Formularies covered by this plan.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function includesHealthPlanFormulary($value)
+    {
+        $this->setProperty('includesHealthPlanFormulary', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setIncludesHealthPlanFormulary($value)
@@ -110,8 +102,20 @@ class HealthInsurancePlan extends Intangible
        return $this->getProperty('includesHealthPlanFormulary');
     }
 
+
     /**
-    * @param array|string $value
+        * A contact point for a person or organization.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function contactPoint($value)
+    {
+        $this->setProperty('contactPoint', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setContactPoint($value)
@@ -128,8 +132,21 @@ class HealthInsurancePlan extends Intangible
        return $this->getProperty('contactPoint');
     }
 
+
     /**
-    * @param array|string $value
+        * The standard for interpreting the Plan ID. The preferred is "HIOS". See the
+ * Centers for Medicare & Medicaid Services for more details.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function usesHealthPlanIdStandard($value)
+    {
+        $this->setProperty('usesHealthPlanIdStandard', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setUsesHealthPlanIdStandard($value)
@@ -146,8 +163,21 @@ class HealthInsurancePlan extends Intangible
        return $this->getProperty('usesHealthPlanIdStandard');
     }
 
+
     /**
-    * @param array|string $value
+        * The URL that goes directly to the summary of benefits and coverage for the
+ * specific standard plan or plan variation.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function benefitsSummaryUrl($value)
+    {
+        $this->setProperty('benefitsSummaryUrl', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setBenefitsSummaryUrl($value)
@@ -164,8 +194,20 @@ class HealthInsurancePlan extends Intangible
        return $this->getProperty('benefitsSummaryUrl');
     }
 
+
     /**
-    * @param array|string $value
+        * Networks covered by this plan.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function includesHealthPlanNetwork($value)
+    {
+        $this->setProperty('includesHealthPlanNetwork', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setIncludesHealthPlanNetwork($value)
@@ -182,8 +224,20 @@ class HealthInsurancePlan extends Intangible
        return $this->getProperty('includesHealthPlanNetwork');
     }
 
+
     /**
-    * @param array|string $value
+        * TODO.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function healthPlanDrugOption($value)
+    {
+        $this->setProperty('healthPlanDrugOption', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setHealthPlanDrugOption($value)
@@ -200,8 +254,21 @@ class HealthInsurancePlan extends Intangible
        return $this->getProperty('healthPlanDrugOption');
     }
 
+
     /**
-    * @param array|string $value
+        * The URL that goes directly to the plan brochure for the specific standard
+ * plan or plan variation.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function healthPlanMarketingUrl($value)
+    {
+        $this->setProperty('healthPlanMarketingUrl', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setHealthPlanMarketingUrl($value)

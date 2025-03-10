@@ -4,7 +4,8 @@ namespace Sohophp\SchemaOrg\Thing\Intangible\Quantity;
 use Sohophp\SchemaOrg\Thing\Intangible\Quantity;
 
 /**
-* Properties that take Energy as values are of the form '&lt;Number&gt; &lt;Energy unit of measure&gt;'.
+* Properties that take Energy as values are of the form '<Number> <Energy unit
+ * of measure>'.
 * @see schema:Energy
 * @package Sohophp\SchemaOrg\Thing\Intangible\Quantity
 */

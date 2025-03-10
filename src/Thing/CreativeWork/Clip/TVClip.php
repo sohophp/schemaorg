@@ -10,14 +10,21 @@ use Sohophp\SchemaOrg\Thing\CreativeWork\Clip;
 */
 class TVClip extends Clip
 {
-   /**
-        * The TV series to which this episode or season belongs.
-        */
-    protected $partOfTVSeries = null;
 
 
     /**
-    * @param array|string $value
+        * The TV series to which this episode or season belongs.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function partOfTVSeries($value)
+    {
+        $this->setProperty('partOfTVSeries', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPartOfTVSeries($value)

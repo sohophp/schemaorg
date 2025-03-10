@@ -10,34 +10,21 @@ use Sohophp\SchemaOrg\Thing\MedicalEntity;
 */
 class MedicalTest extends MedicalEntity
 {
-   /**
-        * Drugs that affect the test's results.
-        */
-    protected $affectedBy = null;
-
-   /**
-        * A condition the test is used to diagnose.
-        */
-    protected $usedToDiagnose = null;
-
-   /**
-        * A sign detected by the test.
-        */
-    protected $signDetected = null;
-
-   /**
-        * Range of acceptable values for a typical patient, when applicable.
-        */
-    protected $normalRange = null;
-
-   /**
-        * Device used to perform the test.
-        */
-    protected $usesDevice = null;
 
 
     /**
-    * @param array|string $value
+        * Drugs that affect the test's results.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function affectedBy($value)
+    {
+        $this->setProperty('affectedBy', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAffectedBy($value)
@@ -54,8 +41,20 @@ class MedicalTest extends MedicalEntity
        return $this->getProperty('affectedBy');
     }
 
+
     /**
-    * @param array|string $value
+        * A condition the test is used to diagnose.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function usedToDiagnose($value)
+    {
+        $this->setProperty('usedToDiagnose', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setUsedToDiagnose($value)
@@ -72,8 +71,20 @@ class MedicalTest extends MedicalEntity
        return $this->getProperty('usedToDiagnose');
     }
 
+
     /**
-    * @param array|string $value
+        * A sign detected by the test.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function signDetected($value)
+    {
+        $this->setProperty('signDetected', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSignDetected($value)
@@ -90,8 +101,20 @@ class MedicalTest extends MedicalEntity
        return $this->getProperty('signDetected');
     }
 
+
     /**
-    * @param array|string $value
+        * Range of acceptable values for a typical patient, when applicable.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function normalRange($value)
+    {
+        $this->setProperty('normalRange', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setNormalRange($value)
@@ -108,8 +131,20 @@ class MedicalTest extends MedicalEntity
        return $this->getProperty('normalRange');
     }
 
+
     /**
-    * @param array|string $value
+        * Device used to perform the test.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function usesDevice($value)
+    {
+        $this->setProperty('usesDevice', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setUsesDevice($value)

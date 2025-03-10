@@ -10,39 +10,21 @@ use Sohophp\SchemaOrg\Thing\CreativeWork;
 */
 class Book extends CreativeWork
 {
-   /**
-        * Indicates whether the book is an abridged edition.
-        */
-    protected $abridged = null;
-
-   /**
-        * The ISBN of the book.
-        */
-    protected $isbn = null;
-
-   /**
-        * The edition of the book.
-        */
-    protected $bookEdition = null;
-
-   /**
-        * The number of pages in the book.
-        */
-    protected $numberOfPages = null;
-
-   /**
-        * The illustrator of the book.
-        */
-    protected $illustrator = null;
-
-   /**
-        * The format of the book.
-        */
-    protected $bookFormat = null;
 
 
     /**
-    * @param array|string $value
+        * Indicates whether the book is an abridged edition.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function abridged($value)
+    {
+        $this->setProperty('abridged', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAbridged($value)
@@ -59,8 +41,20 @@ class Book extends CreativeWork
        return $this->getProperty('abridged');
     }
 
+
     /**
-    * @param array|string $value
+        * The ISBN of the book.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function isbn($value)
+    {
+        $this->setProperty('isbn', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setIsbn($value)
@@ -77,8 +71,20 @@ class Book extends CreativeWork
        return $this->getProperty('isbn');
     }
 
+
     /**
-    * @param array|string $value
+        * The edition of the book.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function bookEdition($value)
+    {
+        $this->setProperty('bookEdition', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setBookEdition($value)
@@ -95,8 +101,20 @@ class Book extends CreativeWork
        return $this->getProperty('bookEdition');
     }
 
+
     /**
-    * @param array|string $value
+        * The number of pages in the book.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function numberOfPages($value)
+    {
+        $this->setProperty('numberOfPages', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setNumberOfPages($value)
@@ -113,8 +131,20 @@ class Book extends CreativeWork
        return $this->getProperty('numberOfPages');
     }
 
+
     /**
-    * @param array|string $value
+        * The illustrator of the book.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function illustrator($value)
+    {
+        $this->setProperty('illustrator', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setIllustrator($value)
@@ -131,8 +161,20 @@ class Book extends CreativeWork
        return $this->getProperty('illustrator');
     }
 
+
     /**
-    * @param array|string $value
+        * The format of the book.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function bookFormat($value)
+    {
+        $this->setProperty('bookFormat', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setBookFormat($value)

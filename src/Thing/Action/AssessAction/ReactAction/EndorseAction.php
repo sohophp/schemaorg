@@ -10,14 +10,21 @@ use Sohophp\SchemaOrg\Thing\Action\AssessAction\ReactAction;
 */
 class EndorseAction extends ReactAction
 {
-   /**
-        * A sub property of participant. The person/organization being supported.
-        */
-    protected $endorsee = null;
 
 
     /**
-    * @param array|string $value
+        * A sub property of participant. The person/organization being supported.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function endorsee($value)
+    {
+        $this->setProperty('endorsee', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setEndorsee($value)

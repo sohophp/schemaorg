@@ -10,34 +10,21 @@ use Sohophp\SchemaOrg\Thing\Intangible;
 */
 class HealthPlanCostSharingSpecification extends Intangible
 {
-   /**
-        * The copay amount.
-        */
-    protected $healthPlanCopay = null;
-
-   /**
-        * The category or type of pharmacy associated with this cost sharing.
-        */
-    protected $healthPlanPharmacyCategory = null;
-
-   /**
-        * The rate of coinsurance expressed as a number between 0.0 and 1.0.
-        */
-    protected $healthPlanCoinsuranceRate = null;
-
-   /**
-        * Whether the copay is before or after deductible, etc. TODO: Is this a closed set?
-        */
-    protected $healthPlanCopayOption = null;
-
-   /**
-        * Whether the coinsurance applies before or after deductible, etc. TODO: Is this a closed set?
-        */
-    protected $healthPlanCoinsuranceOption = null;
 
 
     /**
-    * @param array|string $value
+        * The copay amount.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function healthPlanCopay($value)
+    {
+        $this->setProperty('healthPlanCopay', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setHealthPlanCopay($value)
@@ -54,8 +41,20 @@ class HealthPlanCostSharingSpecification extends Intangible
        return $this->getProperty('healthPlanCopay');
     }
 
+
     /**
-    * @param array|string $value
+        * The category or type of pharmacy associated with this cost sharing.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function healthPlanPharmacyCategory($value)
+    {
+        $this->setProperty('healthPlanPharmacyCategory', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setHealthPlanPharmacyCategory($value)
@@ -72,8 +71,20 @@ class HealthPlanCostSharingSpecification extends Intangible
        return $this->getProperty('healthPlanPharmacyCategory');
     }
 
+
     /**
-    * @param array|string $value
+        * The rate of coinsurance expressed as a number between 0.0 and 1.0.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function healthPlanCoinsuranceRate($value)
+    {
+        $this->setProperty('healthPlanCoinsuranceRate', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setHealthPlanCoinsuranceRate($value)
@@ -90,8 +101,21 @@ class HealthPlanCostSharingSpecification extends Intangible
        return $this->getProperty('healthPlanCoinsuranceRate');
     }
 
+
     /**
-    * @param array|string $value
+        * Whether the copay is before or after deductible, etc. TODO: Is this a closed
+ * set?
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function healthPlanCopayOption($value)
+    {
+        $this->setProperty('healthPlanCopayOption', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setHealthPlanCopayOption($value)
@@ -108,8 +132,21 @@ class HealthPlanCostSharingSpecification extends Intangible
        return $this->getProperty('healthPlanCopayOption');
     }
 
+
     /**
-    * @param array|string $value
+        * Whether the coinsurance applies before or after deductible, etc. TODO: Is
+ * this a closed set?
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function healthPlanCoinsuranceOption($value)
+    {
+        $this->setProperty('healthPlanCoinsuranceOption', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setHealthPlanCoinsuranceOption($value)

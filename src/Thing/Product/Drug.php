@@ -4,165 +4,30 @@ namespace Sohophp\SchemaOrg\Thing\Product;
 use Sohophp\SchemaOrg\Thing\Product;
 
 /**
-* A chemical or biologic substance, used as a medical therapy, that has a physiological effect on an organism. Here the term drug is used interchangeably with the term medicine although clinical knowledge makes a clear difference between them.
+* A chemical or biologic substance, used as a medical therapy, that has a
+ * physiological effect on an organism. Here the term drug is used
+ * interchangeably with the term medicine although clinical knowledge makes a
+ * clear difference between them.
 * @see schema:Drug
 * @package Sohophp\SchemaOrg\Thing\Product
 */
 class Drug extends Product
 {
-   /**
-        * The insurance plans that cover this drug.
-        */
-    protected $includedInHealthInsurancePlan = null;
-
-   /**
-        * Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).
-        */
-    protected $clincalPharmacology = null;
-
-   /**
-        * A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.
-        */
-    protected $doseSchedule = null;
-
-   /**
-        * An available dosage strength for the drug.
-        */
-    protected $availableStrength = null;
-
-   /**
-        * Indicates the status of drug prescription, e.g. local catalogs classifications or whether the drug is available by prescription or over-the-counter, etc.
-        */
-    protected $prescriptionStatus = null;
-
-   /**
-        * The RxCUI drug identifier from RXNORM.
-        */
-    protected $rxcui = null;
-
-   /**
-        * Any precaution, guidance, contraindication, etc. related to consumption of alcohol while taking this drug.
-        */
-    protected $alcoholWarning = null;
-
-   /**
-        * The generic name of this drug or supplement.
-        */
-    protected $nonProprietaryName = null;
-
-   /**
-        * Proprietary name given to the diet plan, typically by its originator or creator.
-        */
-    protected $proprietaryName = null;
-
-   /**
-        * Any other drug related to this one, for example commonly-prescribed alternatives.
-        */
-    protected $relatedDrug = null;
-
-   /**
-        * Any precaution, guidance, contraindication, etc. related to consumption of specific foods while taking this drug.
-        */
-    protected $foodWarning = null;
-
-   /**
-        * The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
-        */
-    protected $mechanismOfAction = null;
-
-   /**
-        * The drug or supplement's legal status, including any controlled substance schedules that apply.
-        */
-    protected $legalStatus = null;
-
-   /**
-        * The class of drug this belongs to (e.g., statins).
-        */
-    protected $drugClass = null;
-
-   /**
-        * Link to the drug's label details.
-        */
-    protected $labelDetails = null;
-
-   /**
-        * A dosage form in which this drug/supplement is available, e.g. 'tablet', 'suspension', 'injection'.
-        */
-    protected $dosageForm = null;
-
-   /**
-        * True if this item's name is a proprietary/brand name (vs. generic name).
-        */
-    protected $isProprietary = null;
-
-   /**
-        * Any precaution, guidance, contraindication, etc. related to this drug's use during pregnancy.
-        */
-    protected $pregnancyWarning = null;
-
-   /**
-        * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
-        */
-    protected $maximumIntake = null;
-
-   /**
-        * Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).
-        */
-    protected $clinicalPharmacology = null;
-
-   /**
-        * True if the drug is available in a generic form (regardless of name).
-        */
-    protected $isAvailableGenerically = null;
-
-   /**
-        * Any information related to overdose on a drug, including signs or symptoms, treatments, contact information for emergency response.
-        */
-    protected $overdosage = null;
-
-   /**
-        * Any FDA or other warnings about the drug (text or URL).
-        */
-    protected $warning = null;
-
-   /**
-        * The unit in which the drug is measured, e.g. '5 mg tablet'.
-        */
-    protected $drugUnit = null;
-
-   /**
-        * Link to prescribing information for the drug.
-        */
-    protected $prescribingInfo = null;
-
-   /**
-        * Any precaution, guidance, contraindication, etc. related to this drug's use by breastfeeding mothers.
-        */
-    protected $breastfeedingWarning = null;
-
-   /**
-        * A route by which this drug may be administered, e.g. 'oral'.
-        */
-    protected $administrationRoute = null;
-
-   /**
-        * An active ingredient, typically chemical compounds and/or biologic substances.
-        */
-    protected $activeIngredient = null;
-
-   /**
-        * Another drug that is known to interact with this drug in a way that impacts the effect of this drug or causes a risk to the patient. Note: disease interactions are typically captured as contraindications.
-        */
-    protected $interactingDrug = null;
-
-   /**
-        * Pregnancy category of this drug.
-        */
-    protected $pregnancyCategory = null;
 
 
     /**
-    * @param array|string $value
+        * The insurance plans that cover this drug.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function includedInHealthInsurancePlan($value)
+    {
+        $this->setProperty('includedInHealthInsurancePlan', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setIncludedInHealthInsurancePlan($value)
@@ -179,8 +44,22 @@ class Drug extends Product
        return $this->getProperty('includedInHealthInsurancePlan');
     }
 
+
     /**
-    * @param array|string $value
+        * Description of the absorption and elimination of drugs, including their
+ * concentration (pharmacokinetics, pK) and biological effects
+ * (pharmacodynamics, pD).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function clincalPharmacology($value)
+    {
+        $this->setProperty('clincalPharmacology', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setClincalPharmacology($value)
@@ -197,8 +76,21 @@ class Drug extends Product
        return $this->getProperty('clincalPharmacology');
     }
 
+
     /**
-    * @param array|string $value
+        * A dosing schedule for the drug for a given population, either observed,
+ * recommended, or maximum dose based on the type used.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function doseSchedule($value)
+    {
+        $this->setProperty('doseSchedule', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDoseSchedule($value)
@@ -215,8 +107,20 @@ class Drug extends Product
        return $this->getProperty('doseSchedule');
     }
 
+
     /**
-    * @param array|string $value
+        * An available dosage strength for the drug.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function availableStrength($value)
+    {
+        $this->setProperty('availableStrength', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAvailableStrength($value)
@@ -233,8 +137,22 @@ class Drug extends Product
        return $this->getProperty('availableStrength');
     }
 
+
     /**
-    * @param array|string $value
+        * Indicates the status of drug prescription, e.g. local catalogs
+ * classifications or whether the drug is available by prescription or
+ * over-the-counter, etc.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function prescriptionStatus($value)
+    {
+        $this->setProperty('prescriptionStatus', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPrescriptionStatus($value)
@@ -251,8 +169,20 @@ class Drug extends Product
        return $this->getProperty('prescriptionStatus');
     }
 
+
     /**
-    * @param array|string $value
+        * The RxCUI drug identifier from RXNORM.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function rxcui($value)
+    {
+        $this->setProperty('rxcui', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setRxcui($value)
@@ -269,8 +199,21 @@ class Drug extends Product
        return $this->getProperty('rxcui');
     }
 
+
     /**
-    * @param array|string $value
+        * Any precaution, guidance, contraindication, etc. related to consumption of
+ * alcohol while taking this drug.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function alcoholWarning($value)
+    {
+        $this->setProperty('alcoholWarning', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAlcoholWarning($value)
@@ -287,8 +230,20 @@ class Drug extends Product
        return $this->getProperty('alcoholWarning');
     }
 
+
     /**
-    * @param array|string $value
+        * The generic name of this drug or supplement.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function nonProprietaryName($value)
+    {
+        $this->setProperty('nonProprietaryName', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setNonProprietaryName($value)
@@ -305,8 +260,21 @@ class Drug extends Product
        return $this->getProperty('nonProprietaryName');
     }
 
+
     /**
-    * @param array|string $value
+        * Proprietary name given to the diet plan, typically by its originator or
+ * creator.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function proprietaryName($value)
+    {
+        $this->setProperty('proprietaryName', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setProprietaryName($value)
@@ -323,8 +291,21 @@ class Drug extends Product
        return $this->getProperty('proprietaryName');
     }
 
+
     /**
-    * @param array|string $value
+        * Any other drug related to this one, for example commonly-prescribed
+ * alternatives.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function relatedDrug($value)
+    {
+        $this->setProperty('relatedDrug', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setRelatedDrug($value)
@@ -341,8 +322,21 @@ class Drug extends Product
        return $this->getProperty('relatedDrug');
     }
 
+
     /**
-    * @param array|string $value
+        * Any precaution, guidance, contraindication, etc. related to consumption of
+ * specific foods while taking this drug.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function foodWarning($value)
+    {
+        $this->setProperty('foodWarning', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setFoodWarning($value)
@@ -359,8 +353,21 @@ class Drug extends Product
        return $this->getProperty('foodWarning');
     }
 
+
     /**
-    * @param array|string $value
+        * The specific biochemical interaction through which this drug or supplement
+ * produces its pharmacological effect.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function mechanismOfAction($value)
+    {
+        $this->setProperty('mechanismOfAction', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setMechanismOfAction($value)
@@ -377,8 +384,21 @@ class Drug extends Product
        return $this->getProperty('mechanismOfAction');
     }
 
+
     /**
-    * @param array|string $value
+        * The drug or supplement's legal status, including any controlled substance
+ * schedules that apply.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function legalStatus($value)
+    {
+        $this->setProperty('legalStatus', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setLegalStatus($value)
@@ -395,8 +415,20 @@ class Drug extends Product
        return $this->getProperty('legalStatus');
     }
 
+
     /**
-    * @param array|string $value
+        * The class of drug this belongs to (e.g., statins).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function drugClass($value)
+    {
+        $this->setProperty('drugClass', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDrugClass($value)
@@ -413,8 +445,20 @@ class Drug extends Product
        return $this->getProperty('drugClass');
     }
 
+
     /**
-    * @param array|string $value
+        * Link to the drug's label details.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function labelDetails($value)
+    {
+        $this->setProperty('labelDetails', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setLabelDetails($value)
@@ -431,8 +475,21 @@ class Drug extends Product
        return $this->getProperty('labelDetails');
     }
 
+
     /**
-    * @param array|string $value
+        * A dosage form in which this drug/supplement is available, e.g. 'tablet',
+ * 'suspension', 'injection'.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function dosageForm($value)
+    {
+        $this->setProperty('dosageForm', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDosageForm($value)
@@ -449,8 +506,20 @@ class Drug extends Product
        return $this->getProperty('dosageForm');
     }
 
+
     /**
-    * @param array|string $value
+        * True if this item's name is a proprietary/brand name (vs. generic name).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function isProprietary($value)
+    {
+        $this->setProperty('isProprietary', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setIsProprietary($value)
@@ -467,8 +536,21 @@ class Drug extends Product
        return $this->getProperty('isProprietary');
     }
 
+
     /**
-    * @param array|string $value
+        * Any precaution, guidance, contraindication, etc. related to this drug's use
+ * during pregnancy.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function pregnancyWarning($value)
+    {
+        $this->setProperty('pregnancyWarning', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPregnancyWarning($value)
@@ -485,8 +567,21 @@ class Drug extends Product
        return $this->getProperty('pregnancyWarning');
     }
 
+
     /**
-    * @param array|string $value
+        * Recommended intake of this supplement for a given population as defined by a
+ * specific recommending authority.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function maximumIntake($value)
+    {
+        $this->setProperty('maximumIntake', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setMaximumIntake($value)
@@ -503,8 +598,22 @@ class Drug extends Product
        return $this->getProperty('maximumIntake');
     }
 
+
     /**
-    * @param array|string $value
+        * Description of the absorption and elimination of drugs, including their
+ * concentration (pharmacokinetics, pK) and biological effects
+ * (pharmacodynamics, pD).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function clinicalPharmacology($value)
+    {
+        $this->setProperty('clinicalPharmacology', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setClinicalPharmacology($value)
@@ -521,8 +630,20 @@ class Drug extends Product
        return $this->getProperty('clinicalPharmacology');
     }
 
+
     /**
-    * @param array|string $value
+        * True if the drug is available in a generic form (regardless of name).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function isAvailableGenerically($value)
+    {
+        $this->setProperty('isAvailableGenerically', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setIsAvailableGenerically($value)
@@ -539,8 +660,21 @@ class Drug extends Product
        return $this->getProperty('isAvailableGenerically');
     }
 
+
     /**
-    * @param array|string $value
+        * Any information related to overdose on a drug, including signs or symptoms,
+ * treatments, contact information for emergency response.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function overdosage($value)
+    {
+        $this->setProperty('overdosage', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setOverdosage($value)
@@ -557,8 +691,20 @@ class Drug extends Product
        return $this->getProperty('overdosage');
     }
 
+
     /**
-    * @param array|string $value
+        * Any FDA or other warnings about the drug (text or URL).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function warning($value)
+    {
+        $this->setProperty('warning', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setWarning($value)
@@ -575,8 +721,20 @@ class Drug extends Product
        return $this->getProperty('warning');
     }
 
+
     /**
-    * @param array|string $value
+        * The unit in which the drug is measured, e.g. '5 mg tablet'.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function drugUnit($value)
+    {
+        $this->setProperty('drugUnit', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDrugUnit($value)
@@ -593,8 +751,20 @@ class Drug extends Product
        return $this->getProperty('drugUnit');
     }
 
+
     /**
-    * @param array|string $value
+        * Link to prescribing information for the drug.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function prescribingInfo($value)
+    {
+        $this->setProperty('prescribingInfo', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPrescribingInfo($value)
@@ -611,8 +781,21 @@ class Drug extends Product
        return $this->getProperty('prescribingInfo');
     }
 
+
     /**
-    * @param array|string $value
+        * Any precaution, guidance, contraindication, etc. related to this drug's use
+ * by breastfeeding mothers.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function breastfeedingWarning($value)
+    {
+        $this->setProperty('breastfeedingWarning', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setBreastfeedingWarning($value)
@@ -629,8 +812,20 @@ class Drug extends Product
        return $this->getProperty('breastfeedingWarning');
     }
 
+
     /**
-    * @param array|string $value
+        * A route by which this drug may be administered, e.g. 'oral'.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function administrationRoute($value)
+    {
+        $this->setProperty('administrationRoute', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAdministrationRoute($value)
@@ -647,8 +842,21 @@ class Drug extends Product
        return $this->getProperty('administrationRoute');
     }
 
+
     /**
-    * @param array|string $value
+        * An active ingredient, typically chemical compounds and/or biologic
+ * substances.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function activeIngredient($value)
+    {
+        $this->setProperty('activeIngredient', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setActiveIngredient($value)
@@ -665,8 +873,22 @@ class Drug extends Product
        return $this->getProperty('activeIngredient');
     }
 
+
     /**
-    * @param array|string $value
+        * Another drug that is known to interact with this drug in a way that impacts
+ * the effect of this drug or causes a risk to the patient. Note: disease
+ * interactions are typically captured as contraindications.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function interactingDrug($value)
+    {
+        $this->setProperty('interactingDrug', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setInteractingDrug($value)
@@ -683,8 +905,20 @@ class Drug extends Product
        return $this->getProperty('interactingDrug');
     }
 
+
     /**
-    * @param array|string $value
+        * Pregnancy category of this drug.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function pregnancyCategory($value)
+    {
+        $this->setProperty('pregnancyCategory', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPregnancyCategory($value)

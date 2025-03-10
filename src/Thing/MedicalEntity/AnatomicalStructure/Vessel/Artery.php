@@ -10,19 +10,21 @@ use Sohophp\SchemaOrg\Thing\MedicalEntity\AnatomicalStructure\Vessel;
 */
 class Artery extends Vessel
 {
-   /**
-        * The branches that comprise the arterial structure.
-        */
-    protected $arterialBranch = null;
-
-   /**
-        * The area to which the artery supplies blood.
-        */
-    protected $supplyTo = null;
 
 
     /**
-    * @param array|string $value
+        * The branches that comprise the arterial structure.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function arterialBranch($value)
+    {
+        $this->setProperty('arterialBranch', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setArterialBranch($value)
@@ -39,8 +41,20 @@ class Artery extends Vessel
        return $this->getProperty('arterialBranch');
     }
 
+
     /**
-    * @param array|string $value
+        * The area to which the artery supplies blood.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function supplyTo($value)
+    {
+        $this->setProperty('supplyTo', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSupplyTo($value)

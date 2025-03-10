@@ -10,29 +10,21 @@ use Sohophp\SchemaOrg\Thing\Intangible;
 */
 class ListItem extends Intangible
 {
-   /**
-        * A link to the ListItem that follows the current one.
-        */
-    protected $nextItem = null;
-
-   /**
-        * The position of an item in a series or sequence of items.
-        */
-    protected $position = null;
-
-   /**
-        * A link to the ListItem that precedes the current one.
-        */
-    protected $previousItem = null;
-
-   /**
-        * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists').
-        */
-    protected $item = null;
 
 
     /**
-    * @param array|string $value
+        * A link to the ListItem that follows the current one.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function nextItem($value)
+    {
+        $this->setProperty('nextItem', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setNextItem($value)
@@ -49,8 +41,20 @@ class ListItem extends Intangible
        return $this->getProperty('nextItem');
     }
 
+
     /**
-    * @param array|string $value
+        * The position of an item in a series or sequence of items.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function position($value)
+    {
+        $this->setProperty('position', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPosition($value)
@@ -67,8 +71,20 @@ class ListItem extends Intangible
        return $this->getProperty('position');
     }
 
+
     /**
-    * @param array|string $value
+        * A link to the ListItem that precedes the current one.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function previousItem($value)
+    {
+        $this->setProperty('previousItem', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPreviousItem($value)
@@ -85,8 +101,21 @@ class ListItem extends Intangible
        return $this->getProperty('previousItem');
     }
 
+
     /**
-    * @param array|string $value
+        * An entity represented by an entry in a list or data feed (e.g. an 'artist' in
+ * a list of 'artists').
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function item($value)
+    {
+        $this->setProperty('item', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setItem($value)

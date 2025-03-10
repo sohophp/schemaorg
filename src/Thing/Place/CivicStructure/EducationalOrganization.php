@@ -10,14 +10,21 @@ use Sohophp\SchemaOrg\Thing\Place\CivicStructure;
 */
 class EducationalOrganization extends CivicStructure
 {
-   /**
-        * Alumni of an organization.
-        */
-    protected $alumni = null;
 
 
     /**
-    * @param array|string $value
+        * Alumni of an organization.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function alumni($value)
+    {
+        $this->setProperty('alumni', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAlumni($value)

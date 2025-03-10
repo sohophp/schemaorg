@@ -10,24 +10,21 @@ use Sohophp\SchemaOrg\Thing\Intangible\Rating;
 */
 class AggregateRating extends Rating
 {
-   /**
-        * The count of total number of ratings.
-        */
-    protected $ratingCount = null;
-
-   /**
-        * The count of total number of reviews.
-        */
-    protected $reviewCount = null;
-
-   /**
-        * The item that is being reviewed/rated.
-        */
-    protected $itemReviewed = null;
 
 
     /**
-    * @param array|string $value
+        * The count of total number of ratings.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function ratingCount($value)
+    {
+        $this->setProperty('ratingCount', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setRatingCount($value)
@@ -44,8 +41,20 @@ class AggregateRating extends Rating
        return $this->getProperty('ratingCount');
     }
 
+
     /**
-    * @param array|string $value
+        * The count of total number of reviews.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function reviewCount($value)
+    {
+        $this->setProperty('reviewCount', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setReviewCount($value)
@@ -62,8 +71,20 @@ class AggregateRating extends Rating
        return $this->getProperty('reviewCount');
     }
 
+
     /**
-    * @param array|string $value
+        * The item that is being reviewed/rated.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function itemReviewed($value)
+    {
+        $this->setProperty('itemReviewed', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setItemReviewed($value)

@@ -4,35 +4,28 @@ namespace Sohophp\SchemaOrg\Thing\Intangible;
 use Sohophp\SchemaOrg\Thing\Intangible;
 
 /**
-* A brand is a name used by an organization or business person for labeling a product, product group, or similar.
+* A brand is a name used by an organization or business person for labeling a
+ * product, product group, or similar.
 * @see schema:Brand
 * @package Sohophp\SchemaOrg\Thing\Intangible
 */
 class Brand extends Intangible
 {
-   /**
-        * A slogan or motto associated with the item.
-        */
-    protected $slogan = null;
-
-   /**
-        * A review of the item.
-        */
-    protected $review = null;
-
-   /**
-        * An associated logo.
-        */
-    protected $logo = null;
-
-   /**
-        * The overall rating, based on a collection of reviews or ratings, of the item.
-        */
-    protected $aggregateRating = null;
 
 
     /**
-    * @param array|string $value
+        * A slogan or motto associated with the item.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function slogan($value)
+    {
+        $this->setProperty('slogan', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSlogan($value)
@@ -49,8 +42,20 @@ class Brand extends Intangible
        return $this->getProperty('slogan');
     }
 
+
     /**
-    * @param array|string $value
+        * A review of the item.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function review($value)
+    {
+        $this->setProperty('review', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setReview($value)
@@ -67,8 +72,20 @@ class Brand extends Intangible
        return $this->getProperty('review');
     }
 
+
     /**
-    * @param array|string $value
+        * An associated logo.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function logo($value)
+    {
+        $this->setProperty('logo', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setLogo($value)
@@ -85,8 +102,20 @@ class Brand extends Intangible
        return $this->getProperty('logo');
     }
 
+
     /**
-    * @param array|string $value
+        * The overall rating, based on a collection of reviews or ratings, of the item.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function aggregateRating($value)
+    {
+        $this->setProperty('aggregateRating', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAggregateRating($value)

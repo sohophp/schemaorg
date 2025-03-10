@@ -4,95 +4,30 @@ namespace Sohophp\SchemaOrg\Thing\MedicalEntity;
 use Sohophp\SchemaOrg\Thing\MedicalEntity;
 
 /**
-* Any condition of the human body that affects the normal functioning of a person, whether physically or mentally. Includes diseases, injuries, disabilities, disorders, syndromes, etc.
+* Any condition of the human body that affects the normal functioning of a
+ * person, whether physically or mentally. Includes diseases, injuries,
+ * disabilities, disorders, syndromes, etc.
 * @see schema:MedicalCondition
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity
 */
 class MedicalCondition extends MedicalEntity
 {
-   /**
-        * The likely outcome in either the short term or long term of the medical condition.
-        */
-    protected $expectedPrognosis = null;
-
-   /**
-        * A medical test typically performed given this condition.
-        */
-    protected $typicalTest = null;
-
-   /**
-        * The status of the study (enumerated).
-        */
-    protected $status = null;
-
-   /**
-        * The characteristics of associated patients, such as age, gender, race etc.
-        */
-    protected $epidemiology = null;
-
-   /**
-        * A modifiable or non-modifiable factor that increases the risk of a patient contracting this condition, e.g. age,  coexisting condition.
-        */
-    protected $riskFactor = null;
-
-   /**
-        * A possible unexpected and unfavorable evolution of a medical condition. Complications may include worsening of the signs or symptoms of the disease, extension of the condition to other organ systems, etc.
-        */
-    protected $possibleComplication = null;
-
-   /**
-        * A possible treatment to address this condition, sign or symptom.
-        */
-    protected $possibleTreatment = null;
-
-   /**
-        * The expected progression of the condition if it is not treated and allowed to progress naturally.
-        */
-    protected $naturalProgression = null;
-
-   /**
-        * A preventative therapy used to prevent an initial occurrence of the medical condition, such as vaccination.
-        */
-    protected $primaryPrevention = null;
-
-   /**
-        * Changes in the normal mechanical, physical, and biochemical functions that are associated with this activity or condition.
-        */
-    protected $pathophysiology = null;
-
-   /**
-        * A preventative therapy used to prevent reoccurrence of the medical condition after an initial episode of the condition.
-        */
-    protected $secondaryPrevention = null;
-
-   /**
-        * Specifying a drug or medicine used in a medication procedure.
-        */
-    protected $drug = null;
-
-   /**
-        * The stage of the condition, if applicable.
-        */
-    protected $stage = null;
-
-   /**
-        * The anatomy of the underlying organ system or structures associated with this entity.
-        */
-    protected $associatedAnatomy = null;
-
-   /**
-        * One of a set of differential diagnoses for the condition. Specifically, a closely-related or competing diagnosis typically considered later in the cognitive process whereby this medical condition is distinguished from others most likely responsible for a similar collection of signs and symptoms to reach the most parsimonious diagnosis or diagnoses in a patient.
-        */
-    protected $differentialDiagnosis = null;
-
-   /**
-        * A sign or symptom of this condition. Signs are objective or physically observable manifestations of the medical condition while symptoms are the subjective experience of the medical condition.
-        */
-    protected $signOrSymptom = null;
 
 
     /**
-    * @param array|string $value
+        * The likely outcome in either the short term or long term of the medical
+ * condition.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function expectedPrognosis($value)
+    {
+        $this->setProperty('expectedPrognosis', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setExpectedPrognosis($value)
@@ -109,8 +44,20 @@ class MedicalCondition extends MedicalEntity
        return $this->getProperty('expectedPrognosis');
     }
 
+
     /**
-    * @param array|string $value
+        * A medical test typically performed given this condition.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function typicalTest($value)
+    {
+        $this->setProperty('typicalTest', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setTypicalTest($value)
@@ -127,8 +74,20 @@ class MedicalCondition extends MedicalEntity
        return $this->getProperty('typicalTest');
     }
 
+
     /**
-    * @param array|string $value
+        * The status of the study (enumerated).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function status($value)
+    {
+        $this->setProperty('status', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setStatus($value)
@@ -145,8 +104,20 @@ class MedicalCondition extends MedicalEntity
        return $this->getProperty('status');
     }
 
+
     /**
-    * @param array|string $value
+        * The characteristics of associated patients, such as age, gender, race etc.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function epidemiology($value)
+    {
+        $this->setProperty('epidemiology', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setEpidemiology($value)
@@ -163,8 +134,21 @@ class MedicalCondition extends MedicalEntity
        return $this->getProperty('epidemiology');
     }
 
+
     /**
-    * @param array|string $value
+        * A modifiable or non-modifiable factor that increases the risk of a patient
+ * contracting this condition, e.g. age,  coexisting condition.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function riskFactor($value)
+    {
+        $this->setProperty('riskFactor', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setRiskFactor($value)
@@ -181,8 +165,22 @@ class MedicalCondition extends MedicalEntity
        return $this->getProperty('riskFactor');
     }
 
+
     /**
-    * @param array|string $value
+        * A possible unexpected and unfavorable evolution of a medical condition.
+ * Complications may include worsening of the signs or symptoms of the disease,
+ * extension of the condition to other organ systems, etc.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function possibleComplication($value)
+    {
+        $this->setProperty('possibleComplication', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPossibleComplication($value)
@@ -199,8 +197,20 @@ class MedicalCondition extends MedicalEntity
        return $this->getProperty('possibleComplication');
     }
 
+
     /**
-    * @param array|string $value
+        * A possible treatment to address this condition, sign or symptom.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function possibleTreatment($value)
+    {
+        $this->setProperty('possibleTreatment', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPossibleTreatment($value)
@@ -217,8 +227,21 @@ class MedicalCondition extends MedicalEntity
        return $this->getProperty('possibleTreatment');
     }
 
+
     /**
-    * @param array|string $value
+        * The expected progression of the condition if it is not treated and allowed to
+ * progress naturally.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function naturalProgression($value)
+    {
+        $this->setProperty('naturalProgression', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setNaturalProgression($value)
@@ -235,8 +258,21 @@ class MedicalCondition extends MedicalEntity
        return $this->getProperty('naturalProgression');
     }
 
+
     /**
-    * @param array|string $value
+        * A preventative therapy used to prevent an initial occurrence of the medical
+ * condition, such as vaccination.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function primaryPrevention($value)
+    {
+        $this->setProperty('primaryPrevention', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPrimaryPrevention($value)
@@ -253,8 +289,21 @@ class MedicalCondition extends MedicalEntity
        return $this->getProperty('primaryPrevention');
     }
 
+
     /**
-    * @param array|string $value
+        * Changes in the normal mechanical, physical, and biochemical functions that
+ * are associated with this activity or condition.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function pathophysiology($value)
+    {
+        $this->setProperty('pathophysiology', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPathophysiology($value)
@@ -271,8 +320,21 @@ class MedicalCondition extends MedicalEntity
        return $this->getProperty('pathophysiology');
     }
 
+
     /**
-    * @param array|string $value
+        * A preventative therapy used to prevent reoccurrence of the medical condition
+ * after an initial episode of the condition.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function secondaryPrevention($value)
+    {
+        $this->setProperty('secondaryPrevention', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSecondaryPrevention($value)
@@ -289,8 +351,20 @@ class MedicalCondition extends MedicalEntity
        return $this->getProperty('secondaryPrevention');
     }
 
+
     /**
-    * @param array|string $value
+        * Specifying a drug or medicine used in a medication procedure.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function drug($value)
+    {
+        $this->setProperty('drug', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDrug($value)
@@ -307,8 +381,20 @@ class MedicalCondition extends MedicalEntity
        return $this->getProperty('drug');
     }
 
+
     /**
-    * @param array|string $value
+        * The stage of the condition, if applicable.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function stage($value)
+    {
+        $this->setProperty('stage', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setStage($value)
@@ -325,8 +411,21 @@ class MedicalCondition extends MedicalEntity
        return $this->getProperty('stage');
     }
 
+
     /**
-    * @param array|string $value
+        * The anatomy of the underlying organ system or structures associated with this
+ * entity.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function associatedAnatomy($value)
+    {
+        $this->setProperty('associatedAnatomy', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAssociatedAnatomy($value)
@@ -343,8 +442,24 @@ class MedicalCondition extends MedicalEntity
        return $this->getProperty('associatedAnatomy');
     }
 
+
     /**
-    * @param array|string $value
+        * One of a set of differential diagnoses for the condition. Specifically, a
+ * closely-related or competing diagnosis typically considered later in the
+ * cognitive process whereby this medical condition is distinguished from others
+ * most likely responsible for a similar collection of signs and symptoms to
+ * reach the most parsimonious diagnosis or diagnoses in a patient.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function differentialDiagnosis($value)
+    {
+        $this->setProperty('differentialDiagnosis', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDifferentialDiagnosis($value)
@@ -361,8 +476,22 @@ class MedicalCondition extends MedicalEntity
        return $this->getProperty('differentialDiagnosis');
     }
 
+
     /**
-    * @param array|string $value
+        * A sign or symptom of this condition. Signs are objective or physically
+ * observable manifestations of the medical condition while symptoms are the
+ * subjective experience of the medical condition.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function signOrSymptom($value)
+    {
+        $this->setProperty('signOrSymptom', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSignOrSymptom($value)

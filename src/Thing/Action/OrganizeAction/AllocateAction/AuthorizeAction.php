@@ -10,14 +10,22 @@ use Sohophp\SchemaOrg\Thing\Action\OrganizeAction\AllocateAction;
 */
 class AuthorizeAction extends AllocateAction
 {
-   /**
-        * A sub property of participant. The participant who is at the receiving end of the action.
-        */
-    protected $recipient = null;
 
 
     /**
-    * @param array|string $value
+        * A sub property of participant. The participant who is at the receiving end of
+ * the action.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function recipient($value)
+    {
+        $this->setProperty('recipient', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setRecipient($value)

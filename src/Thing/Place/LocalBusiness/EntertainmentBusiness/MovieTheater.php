@@ -10,14 +10,21 @@ use Sohophp\SchemaOrg\Thing\Place\LocalBusiness\EntertainmentBusiness;
 */
 class MovieTheater extends EntertainmentBusiness
 {
-   /**
-        * The number of screens in the movie theater.
-        */
-    protected $screenCount = null;
 
 
     /**
-    * @param array|string $value
+        * The number of screens in the movie theater.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function screenCount($value)
+    {
+        $this->setProperty('screenCount', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setScreenCount($value)

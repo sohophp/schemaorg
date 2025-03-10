@@ -10,14 +10,22 @@ use Sohophp\SchemaOrg\Thing\Action\InteractAction\CommunicateAction;
 */
 class CommentAction extends CommunicateAction
 {
-   /**
-        * A sub property of result. The Comment created or sent as a result of this action.
-        */
-    protected $resultComment = null;
 
 
     /**
-    * @param array|string $value
+        * A sub property of result. The Comment created or sent as a result of this
+ * action.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function resultComment($value)
+    {
+        $this->setProperty('resultComment', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setResultComment($value)

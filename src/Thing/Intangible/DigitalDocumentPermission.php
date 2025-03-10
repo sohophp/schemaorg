@@ -10,19 +10,21 @@ use Sohophp\SchemaOrg\Thing\Intangible;
 */
 class DigitalDocumentPermission extends Intangible
 {
-   /**
-        * The type of permission granted the person, organization, or audience.
-        */
-    protected $permissionType = null;
-
-   /**
-        * The person, organization, contact point, or audience that has been granted this permission.
-        */
-    protected $grantee = null;
 
 
     /**
-    * @param array|string $value
+        * The type of permission granted the person, organization, or audience.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function permissionType($value)
+    {
+        $this->setProperty('permissionType', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPermissionType($value)
@@ -39,8 +41,21 @@ class DigitalDocumentPermission extends Intangible
        return $this->getProperty('permissionType');
     }
 
+
     /**
-    * @param array|string $value
+        * The person, organization, contact point, or audience that has been granted
+ * this permission.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function grantee($value)
+    {
+        $this->setProperty('grantee', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setGrantee($value)

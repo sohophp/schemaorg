@@ -10,29 +10,21 @@ use Sohophp\SchemaOrg\Thing\Intangible;
 */
 class Seat extends Intangible
 {
-   /**
-        * The section location of the reserved seat (e.g. Orchestra).
-        */
-    protected $seatSection = null;
-
-   /**
-        * The type/class of the seat.
-        */
-    protected $seatingType = null;
-
-   /**
-        * The row location of the reserved seat (e.g., B).
-        */
-    protected $seatRow = null;
-
-   /**
-        * The location of the reserved seat (e.g., 27).
-        */
-    protected $seatNumber = null;
 
 
     /**
-    * @param array|string $value
+        * The section location of the reserved seat (e.g. Orchestra).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function seatSection($value)
+    {
+        $this->setProperty('seatSection', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSeatSection($value)
@@ -49,8 +41,20 @@ class Seat extends Intangible
        return $this->getProperty('seatSection');
     }
 
+
     /**
-    * @param array|string $value
+        * The type/class of the seat.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function seatingType($value)
+    {
+        $this->setProperty('seatingType', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSeatingType($value)
@@ -67,8 +71,20 @@ class Seat extends Intangible
        return $this->getProperty('seatingType');
     }
 
+
     /**
-    * @param array|string $value
+        * The row location of the reserved seat (e.g., B).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function seatRow($value)
+    {
+        $this->setProperty('seatRow', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSeatRow($value)
@@ -85,8 +101,20 @@ class Seat extends Intangible
        return $this->getProperty('seatRow');
     }
 
+
     /**
-    * @param array|string $value
+        * The location of the reserved seat (e.g., 27).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function seatNumber($value)
+    {
+        $this->setProperty('seatNumber', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSeatNumber($value)

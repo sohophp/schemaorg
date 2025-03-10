@@ -10,39 +10,21 @@ use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
 */
 class QuantitativeValueDistribution extends StructuredValue
 {
-   /**
-        * The median value.
-        */
-    protected $median = null;
-
-   /**
-        * The 90th percentile value.
-        */
-    protected $percentile90 = null;
-
-   /**
-        * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
-        */
-    protected $duration = null;
-
-   /**
-        * The 25th percentile value.
-        */
-    protected $percentile25 = null;
-
-   /**
-        * The 10th percentile value.
-        */
-    protected $percentile10 = null;
-
-   /**
-        * The 75th percentile value.
-        */
-    protected $percentile75 = null;
 
 
     /**
-    * @param array|string $value
+        * The median value.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function median($value)
+    {
+        $this->setProperty('median', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setMedian($value)
@@ -59,8 +41,20 @@ class QuantitativeValueDistribution extends StructuredValue
        return $this->getProperty('median');
     }
 
+
     /**
-    * @param array|string $value
+        * The 90th percentile value.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function percentile90($value)
+    {
+        $this->setProperty('percentile90', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPercentile90($value)
@@ -77,8 +71,21 @@ class QuantitativeValueDistribution extends StructuredValue
        return $this->getProperty('percentile90');
     }
 
+
     /**
-    * @param array|string $value
+        * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601
+ * duration format](http://en.wikipedia.org/wiki/ISO_8601).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function duration($value)
+    {
+        $this->setProperty('duration', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDuration($value)
@@ -95,8 +102,20 @@ class QuantitativeValueDistribution extends StructuredValue
        return $this->getProperty('duration');
     }
 
+
     /**
-    * @param array|string $value
+        * The 25th percentile value.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function percentile25($value)
+    {
+        $this->setProperty('percentile25', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPercentile25($value)
@@ -113,8 +132,20 @@ class QuantitativeValueDistribution extends StructuredValue
        return $this->getProperty('percentile25');
     }
 
+
     /**
-    * @param array|string $value
+        * The 10th percentile value.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function percentile10($value)
+    {
+        $this->setProperty('percentile10', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPercentile10($value)
@@ -131,8 +162,20 @@ class QuantitativeValueDistribution extends StructuredValue
        return $this->getProperty('percentile10');
     }
 
+
     /**
-    * @param array|string $value
+        * The 75th percentile value.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function percentile75($value)
+    {
+        $this->setProperty('percentile75', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPercentile75($value)

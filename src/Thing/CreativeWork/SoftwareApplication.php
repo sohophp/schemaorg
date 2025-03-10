@@ -10,129 +10,21 @@ use Sohophp\SchemaOrg\Thing\CreativeWork;
 */
 class SoftwareApplication extends CreativeWork
 {
-   /**
-        * Minimum memory requirements.
-        */
-    protected $memoryRequirements = null;
-
-   /**
-        * URL at which the app may be installed, if different from the URL of the item.
-        */
-    protected $installUrl = null;
-
-   /**
-        * Countries for which the application is supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
-        */
-    protected $countriesSupported = null;
-
-   /**
-        * Description of what changed in this version.
-        */
-    protected $releaseNotes = null;
-
-   /**
-        * Subcategory of the application, e.g. 'Arcade Game'.
-        */
-    protected $applicationSubCategory = null;
-
-   /**
-        * Permission(s) required to run the app (for example, a mobile app may require full internet access or may run only on wifi).
-        */
-    protected $permissions = null;
-
-   /**
-        * Type of software application, e.g. 'Game, Multimedia'.
-        */
-    protected $applicationCategory = null;
-
-   /**
-        * Device required to run the application. Used in cases where a specific make/model is required to run the application.
-        */
-    protected $device = null;
-
-   /**
-        * Supporting data for a SoftwareApplication.
-        */
-    protected $supportingData = null;
-
-   /**
-        * Operating systems supported (Windows 7, OS X 10.6, Android 1.6).
-        */
-    protected $operatingSystem = null;
-
-   /**
-        * Device required to run the application. Used in cases where a specific make/model is required to run the application.
-        */
-    protected $availableOnDevice = null;
-
-   /**
-        * Countries for which the application is not supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
-        */
-    protected $countriesNotSupported = null;
-
-   /**
-        * Storage requirements (free space required).
-        */
-    protected $storageRequirements = null;
-
-   /**
-        * If the file can be downloaded, URL to download the binary.
-        */
-    protected $downloadUrl = null;
-
-   /**
-        * A link to a screenshot image of the app.
-        */
-    protected $screenshot = null;
-
-   /**
-        * Software application help.
-        */
-    protected $softwareHelp = null;
-
-   /**
-        * Features or modules provided by this application (and possibly required by other applications).
-        */
-    protected $featureList = null;
-
-   /**
-        * The name of the application suite to which the application belongs (e.g. Excel belongs to Office).
-        */
-    protected $applicationSuite = null;
-
-   /**
-        * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (examples: DirectX, Java or .NET runtime).
-        */
-    protected $requirements = null;
-
-   /**
-        * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (examples: DirectX, Java or .NET runtime).
-        */
-    protected $softwareRequirements = null;
-
-   /**
-        * Version of the software instance.
-        */
-    protected $softwareVersion = null;
-
-   /**
-        * Processor architecture required to run the application (e.g. IA64).
-        */
-    protected $processorRequirements = null;
-
-   /**
-        * Size of the application / package (e.g. 18MB). In the absence of a unit (MB, KB etc.), KB will be assumed.
-        */
-    protected $fileSize = null;
-
-   /**
-        * Additional content for a software application.
-        */
-    protected $softwareAddOn = null;
 
 
     /**
-    * @param array|string $value
+        * Minimum memory requirements.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function memoryRequirements($value)
+    {
+        $this->setProperty('memoryRequirements', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setMemoryRequirements($value)
@@ -149,8 +41,20 @@ class SoftwareApplication extends CreativeWork
        return $this->getProperty('memoryRequirements');
     }
 
+
     /**
-    * @param array|string $value
+        * URL at which the app may be installed, if different from the URL of the item.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function installUrl($value)
+    {
+        $this->setProperty('installUrl', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setInstallUrl($value)
@@ -167,8 +71,21 @@ class SoftwareApplication extends CreativeWork
        return $this->getProperty('installUrl');
     }
 
+
     /**
-    * @param array|string $value
+        * Countries for which the application is supported. You can also provide the
+ * two-letter ISO 3166-1 alpha-2 country code.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function countriesSupported($value)
+    {
+        $this->setProperty('countriesSupported', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setCountriesSupported($value)
@@ -185,8 +102,20 @@ class SoftwareApplication extends CreativeWork
        return $this->getProperty('countriesSupported');
     }
 
+
     /**
-    * @param array|string $value
+        * Description of what changed in this version.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function releaseNotes($value)
+    {
+        $this->setProperty('releaseNotes', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setReleaseNotes($value)
@@ -203,8 +132,20 @@ class SoftwareApplication extends CreativeWork
        return $this->getProperty('releaseNotes');
     }
 
+
     /**
-    * @param array|string $value
+        * Subcategory of the application, e.g. 'Arcade Game'.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function applicationSubCategory($value)
+    {
+        $this->setProperty('applicationSubCategory', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setApplicationSubCategory($value)
@@ -221,8 +162,21 @@ class SoftwareApplication extends CreativeWork
        return $this->getProperty('applicationSubCategory');
     }
 
+
     /**
-    * @param array|string $value
+        * Permission(s) required to run the app (for example, a mobile app may require
+ * full internet access or may run only on wifi).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function permissions($value)
+    {
+        $this->setProperty('permissions', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPermissions($value)
@@ -239,8 +193,20 @@ class SoftwareApplication extends CreativeWork
        return $this->getProperty('permissions');
     }
 
+
     /**
-    * @param array|string $value
+        * Type of software application, e.g. 'Game, Multimedia'.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function applicationCategory($value)
+    {
+        $this->setProperty('applicationCategory', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setApplicationCategory($value)
@@ -257,8 +223,21 @@ class SoftwareApplication extends CreativeWork
        return $this->getProperty('applicationCategory');
     }
 
+
     /**
-    * @param array|string $value
+        * Device required to run the application. Used in cases where a specific
+ * make/model is required to run the application.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function device($value)
+    {
+        $this->setProperty('device', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDevice($value)
@@ -275,8 +254,20 @@ class SoftwareApplication extends CreativeWork
        return $this->getProperty('device');
     }
 
+
     /**
-    * @param array|string $value
+        * Supporting data for a SoftwareApplication.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function supportingData($value)
+    {
+        $this->setProperty('supportingData', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSupportingData($value)
@@ -293,8 +284,20 @@ class SoftwareApplication extends CreativeWork
        return $this->getProperty('supportingData');
     }
 
+
     /**
-    * @param array|string $value
+        * Operating systems supported (Windows 7, OS X 10.6, Android 1.6).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function operatingSystem($value)
+    {
+        $this->setProperty('operatingSystem', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setOperatingSystem($value)
@@ -311,8 +314,21 @@ class SoftwareApplication extends CreativeWork
        return $this->getProperty('operatingSystem');
     }
 
+
     /**
-    * @param array|string $value
+        * Device required to run the application. Used in cases where a specific
+ * make/model is required to run the application.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function availableOnDevice($value)
+    {
+        $this->setProperty('availableOnDevice', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAvailableOnDevice($value)
@@ -329,8 +345,21 @@ class SoftwareApplication extends CreativeWork
        return $this->getProperty('availableOnDevice');
     }
 
+
     /**
-    * @param array|string $value
+        * Countries for which the application is not supported. You can also provide
+ * the two-letter ISO 3166-1 alpha-2 country code.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function countriesNotSupported($value)
+    {
+        $this->setProperty('countriesNotSupported', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setCountriesNotSupported($value)
@@ -347,8 +376,20 @@ class SoftwareApplication extends CreativeWork
        return $this->getProperty('countriesNotSupported');
     }
 
+
     /**
-    * @param array|string $value
+        * Storage requirements (free space required).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function storageRequirements($value)
+    {
+        $this->setProperty('storageRequirements', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setStorageRequirements($value)
@@ -365,8 +406,20 @@ class SoftwareApplication extends CreativeWork
        return $this->getProperty('storageRequirements');
     }
 
+
     /**
-    * @param array|string $value
+        * If the file can be downloaded, URL to download the binary.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function downloadUrl($value)
+    {
+        $this->setProperty('downloadUrl', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDownloadUrl($value)
@@ -383,8 +436,20 @@ class SoftwareApplication extends CreativeWork
        return $this->getProperty('downloadUrl');
     }
 
+
     /**
-    * @param array|string $value
+        * A link to a screenshot image of the app.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function screenshot($value)
+    {
+        $this->setProperty('screenshot', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setScreenshot($value)
@@ -401,8 +466,20 @@ class SoftwareApplication extends CreativeWork
        return $this->getProperty('screenshot');
     }
 
+
     /**
-    * @param array|string $value
+        * Software application help.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function softwareHelp($value)
+    {
+        $this->setProperty('softwareHelp', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSoftwareHelp($value)
@@ -419,8 +496,21 @@ class SoftwareApplication extends CreativeWork
        return $this->getProperty('softwareHelp');
     }
 
+
     /**
-    * @param array|string $value
+        * Features or modules provided by this application (and possibly required by
+ * other applications).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function featureList($value)
+    {
+        $this->setProperty('featureList', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setFeatureList($value)
@@ -437,8 +527,21 @@ class SoftwareApplication extends CreativeWork
        return $this->getProperty('featureList');
     }
 
+
     /**
-    * @param array|string $value
+        * The name of the application suite to which the application belongs (e.g.
+ * Excel belongs to Office).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function applicationSuite($value)
+    {
+        $this->setProperty('applicationSuite', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setApplicationSuite($value)
@@ -455,8 +558,23 @@ class SoftwareApplication extends CreativeWork
        return $this->getProperty('applicationSuite');
     }
 
+
     /**
-    * @param array|string $value
+        * Component dependency requirements for application. This includes runtime
+ * environments and shared libraries that are not included in the application
+ * distribution package, but required to run the application (examples: DirectX,
+ * Java or .NET runtime).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function requirements($value)
+    {
+        $this->setProperty('requirements', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setRequirements($value)
@@ -473,8 +591,23 @@ class SoftwareApplication extends CreativeWork
        return $this->getProperty('requirements');
     }
 
+
     /**
-    * @param array|string $value
+        * Component dependency requirements for application. This includes runtime
+ * environments and shared libraries that are not included in the application
+ * distribution package, but required to run the application (examples: DirectX,
+ * Java or .NET runtime).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function softwareRequirements($value)
+    {
+        $this->setProperty('softwareRequirements', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSoftwareRequirements($value)
@@ -491,8 +624,20 @@ class SoftwareApplication extends CreativeWork
        return $this->getProperty('softwareRequirements');
     }
 
+
     /**
-    * @param array|string $value
+        * Version of the software instance.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function softwareVersion($value)
+    {
+        $this->setProperty('softwareVersion', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSoftwareVersion($value)
@@ -509,8 +654,20 @@ class SoftwareApplication extends CreativeWork
        return $this->getProperty('softwareVersion');
     }
 
+
     /**
-    * @param array|string $value
+        * Processor architecture required to run the application (e.g. IA64).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function processorRequirements($value)
+    {
+        $this->setProperty('processorRequirements', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setProcessorRequirements($value)
@@ -527,8 +684,21 @@ class SoftwareApplication extends CreativeWork
        return $this->getProperty('processorRequirements');
     }
 
+
     /**
-    * @param array|string $value
+        * Size of the application / package (e.g. 18MB). In the absence of a unit (MB,
+ * KB etc.), KB will be assumed.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function fileSize($value)
+    {
+        $this->setProperty('fileSize', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setFileSize($value)
@@ -545,8 +715,20 @@ class SoftwareApplication extends CreativeWork
        return $this->getProperty('fileSize');
     }
 
+
     /**
-    * @param array|string $value
+        * Additional content for a software application.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function softwareAddOn($value)
+    {
+        $this->setProperty('softwareAddOn', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSoftwareAddOn($value)

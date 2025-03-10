@@ -10,14 +10,21 @@ use Sohophp\SchemaOrg\Thing\CreativeWork;
 */
 class Map extends CreativeWork
 {
-   /**
-        * Indicates the kind of Map, from the MapCategoryType Enumeration.
-        */
-    protected $mapType = null;
 
 
     /**
-    * @param array|string $value
+        * Indicates the kind of Map, from the MapCategoryType Enumeration.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function mapType($value)
+    {
+        $this->setProperty('mapType', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setMapType($value)

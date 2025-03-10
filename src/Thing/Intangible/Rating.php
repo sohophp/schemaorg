@@ -10,39 +10,28 @@ use Sohophp\SchemaOrg\Thing\Intangible;
 */
 class Rating extends Intangible
 {
-   /**
-        * The rating for the content.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-        */
-    protected $ratingValue = null;
-
-   /**
-        * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
-        */
-    protected $author = null;
-
-   /**
-        * This Review or Rating is relevant to this part or facet of the itemReviewed.
-        */
-    protected $reviewAspect = null;
-
-   /**
-        * The highest value allowed in this rating system.
-        */
-    protected $bestRating = null;
-
-   /**
-        * The lowest value allowed in this rating system.
-        */
-    protected $worstRating = null;
-
-   /**
-        * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with "fact check" markup using [[ClaimReview]].
-        */
-    protected $ratingExplanation = null;
 
 
     /**
-    * @param array|string $value
+        * The rating for the content.
+ * 
+ * Usage guidelines:
+ * 
+ * * Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE'
+ * (U+0039)) rather than superficially similar Unicode symbols.
+ * * Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a
+ * decimal point. Avoid using these symbols as a readability separator.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function ratingValue($value)
+    {
+        $this->setProperty('ratingValue', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setRatingValue($value)
@@ -59,8 +48,22 @@ class Rating extends Intangible
        return $this->getProperty('ratingValue');
     }
 
+
     /**
-    * @param array|string $value
+        * The author of this content or rating. Please note that author is special in
+ * that HTML 5 provides a special mechanism for indicating authorship via the
+ * rel tag. That is equivalent to this and may be used interchangeably.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function author($value)
+    {
+        $this->setProperty('author', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAuthor($value)
@@ -77,8 +80,20 @@ class Rating extends Intangible
        return $this->getProperty('author');
     }
 
+
     /**
-    * @param array|string $value
+        * This Review or Rating is relevant to this part or facet of the itemReviewed.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function reviewAspect($value)
+    {
+        $this->setProperty('reviewAspect', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setReviewAspect($value)
@@ -95,8 +110,20 @@ class Rating extends Intangible
        return $this->getProperty('reviewAspect');
     }
 
+
     /**
-    * @param array|string $value
+        * The highest value allowed in this rating system.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function bestRating($value)
+    {
+        $this->setProperty('bestRating', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setBestRating($value)
@@ -113,8 +140,20 @@ class Rating extends Intangible
        return $this->getProperty('bestRating');
     }
 
+
     /**
-    * @param array|string $value
+        * The lowest value allowed in this rating system.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function worstRating($value)
+    {
+        $this->setProperty('worstRating', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setWorstRating($value)
@@ -131,8 +170,23 @@ class Rating extends Intangible
        return $this->getProperty('worstRating');
     }
 
+
     /**
-    * @param array|string $value
+        * A short explanation (e.g. one to two sentences) providing background context
+ * and other information that led to the conclusion expressed in the rating.
+ * This is particularly applicable to ratings associated with "fact check"
+ * markup using [[ClaimReview]].
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function ratingExplanation($value)
+    {
+        $this->setProperty('ratingExplanation', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setRatingExplanation($value)

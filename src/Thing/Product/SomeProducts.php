@@ -10,14 +10,21 @@ use Sohophp\SchemaOrg\Thing\Product;
 */
 class SomeProducts extends Product
 {
-   /**
-        * The current approximate inventory level for the item or items.
-        */
-    protected $inventoryLevel = null;
 
 
     /**
-    * @param array|string $value
+        * The current approximate inventory level for the item or items.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function inventoryLevel($value)
+    {
+        $this->setProperty('inventoryLevel', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setInventoryLevel($value)

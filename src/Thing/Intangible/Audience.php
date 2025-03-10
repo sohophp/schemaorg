@@ -10,19 +10,22 @@ use Sohophp\SchemaOrg\Thing\Intangible;
 */
 class Audience extends Intangible
 {
-   /**
-        * The target group associated with a given audience (e.g. veterans, car owners, musicians, etc.).
-        */
-    protected $audienceType = null;
-
-   /**
-        * The geographic area associated with the audience.
-        */
-    protected $geographicArea = null;
 
 
     /**
-    * @param array|string $value
+        * The target group associated with a given audience (e.g. veterans, car owners,
+ * musicians, etc.).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function audienceType($value)
+    {
+        $this->setProperty('audienceType', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAudienceType($value)
@@ -39,8 +42,20 @@ class Audience extends Intangible
        return $this->getProperty('audienceType');
     }
 
+
     /**
-    * @param array|string $value
+        * The geographic area associated with the audience.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function geographicArea($value)
+    {
+        $this->setProperty('geographicArea', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setGeographicArea($value)

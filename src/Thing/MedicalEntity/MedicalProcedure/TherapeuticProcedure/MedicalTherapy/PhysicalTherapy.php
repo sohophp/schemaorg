@@ -4,7 +4,8 @@ namespace Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalProcedure\TherapeuticProc
 use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalProcedure\TherapeuticProcedure\MedicalTherapy;
 
 /**
-* A process of progressive physical care and rehabilitation aimed at improving a health condition.
+* A process of progressive physical care and rehabilitation aimed at improving
+ * a health condition.
 * @see schema:PhysicalTherapy
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalProcedure\TherapeuticProcedure\MedicalTherapy
 */

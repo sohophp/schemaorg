@@ -10,19 +10,21 @@ use Sohophp\SchemaOrg\Thing\Intangible\DefinedTerm\CategoryCode;
 */
 class MedicalCode extends CategoryCode
 {
-   /**
-        * The coding system, e.g. 'ICD-10'.
-        */
-    protected $codingSystem = null;
-
-   /**
-        * A short textual code that uniquely identifies the value.
-        */
-    protected $codeValue = null;
 
 
     /**
-    * @param array|string $value
+        * The coding system, e.g. 'ICD-10'.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function codingSystem($value)
+    {
+        $this->setProperty('codingSystem', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setCodingSystem($value)
@@ -39,8 +41,20 @@ class MedicalCode extends CategoryCode
        return $this->getProperty('codingSystem');
     }
 
+
     /**
-    * @param array|string $value
+        * A short textual code that uniquely identifies the value.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function codeValue($value)
+    {
+        $this->setProperty('codeValue', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setCodeValue($value)

@@ -4,42 +4,28 @@ namespace Sohophp\SchemaOrg\Thing\Organization\MedicalOrganization;
 use Sohophp\SchemaOrg\Thing\Organization\MedicalOrganization;
 
 /**
-* An individual physician or a physician's office considered as a [[MedicalOrganization]].
+* An individual physician or a physician's office considered as a
+ * [[MedicalOrganization]].
 * @see schema:Physician
 * @package Sohophp\SchemaOrg\Thing\Organization\MedicalOrganization
 */
 class Physician extends MedicalOrganization
 {
-   /**
-        * A hospital with which the physician or office is affiliated.
-        */
-    protected $hospitalAffiliation = null;
-
-   /**
-        * A medical specialty of the provider.
-        */
-    protected $medicalSpecialty = null;
-
-   /**
-        * A medical service available from this provider.
-        */
-    protected $availableService = null;
-
-   /**
-        * A <a href="https://en.wikipedia.org/wiki/National_Provider_Identifier">National Provider Identifier</a> (NPI) 
-    is a unique 10-digit identification number issued to health care providers in the United States by the Centers for Medicare and Medicaid Services.
-        */
-    protected $usNPI = null;
-
-   /**
-        * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.\n
-Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
-        */
-    protected $occupationalCategory = null;
 
 
     /**
-    * @param array|string $value
+        * A hospital with which the physician or office is affiliated.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function hospitalAffiliation($value)
+    {
+        $this->setProperty('hospitalAffiliation', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setHospitalAffiliation($value)
@@ -56,8 +42,20 @@ Note: for historical reasons, any textual label and formal code provided as a li
        return $this->getProperty('hospitalAffiliation');
     }
 
+
     /**
-    * @param array|string $value
+        * A medical specialty of the provider.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function medicalSpecialty($value)
+    {
+        $this->setProperty('medicalSpecialty', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setMedicalSpecialty($value)
@@ -74,8 +72,20 @@ Note: for historical reasons, any textual label and formal code provided as a li
        return $this->getProperty('medicalSpecialty');
     }
 
+
     /**
-    * @param array|string $value
+        * A medical service available from this provider.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function availableService($value)
+    {
+        $this->setProperty('availableService', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAvailableService($value)
@@ -92,8 +102,25 @@ Note: for historical reasons, any textual label and formal code provided as a li
        return $this->getProperty('availableService');
     }
 
+
     /**
-    * @param array|string $value
+        * A [National Provider
+ * Identifier](https://en.wikipedia.org/wiki/National_Provider_Identifier) (NPI)
+ * 
+ *     is a unique 10-digit identification number issued to health care
+ * providers in the United States by the Centers for Medicare and Medicaid
+ * Services.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function usNPI($value)
+    {
+        $this->setProperty('usNPI', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setUsNPI($value)
@@ -110,8 +137,28 @@ Note: for historical reasons, any textual label and formal code provided as a li
        return $this->getProperty('usNPI');
     }
 
+
     /**
-    * @param array|string $value
+        * A category describing the job, preferably using a term from a taxonomy such
+ * as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html),
+ * [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or
+ * similar, with the property repeated for each applicable value. Ideally the
+ * taxonomy should be identified, and both the textual label and formal code for
+ * the category should be provided.
+ * 
+ * Note: for historical reasons, any textual label and formal code provided as a
+ * literal may be assumed to be from O*NET-SOC.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function occupationalCategory($value)
+    {
+        $this->setProperty('occupationalCategory', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setOccupationalCategory($value)

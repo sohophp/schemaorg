@@ -10,29 +10,23 @@ use Sohophp\SchemaOrg\Text;
 */
 class PronounceableText extends Text
 {
-   /**
-        * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
-        */
-    protected $inLanguage = null;
-
-   /**
-        * Form of markup used. eg. [SSML](https://www.w3.org/TR/speech-synthesis11) or [IPA](https://www.wikidata.org/wiki/Property:P898).
-        */
-    protected $speechToTextMarkup = null;
-
-   /**
-        * Text value being annotated.
-        */
-    protected $textValue = null;
-
-   /**
-        * Representation of a text [[textValue]] using the specified [[speechToTextMarkup]]. For example the city name of Houston in IPA: /ˈhjuːstən/.
-        */
-    protected $phoneticText = null;
 
 
     /**
-    * @param array|string $value
+        * The language of the content or performance or used in an action. Please use
+ * one of the language codes from the [IETF BCP 47
+ * standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function inLanguage($value)
+    {
+        $this->setProperty('inLanguage', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setInLanguage($value)
@@ -49,8 +43,21 @@ class PronounceableText extends Text
        return $this->getProperty('inLanguage');
     }
 
+
     /**
-    * @param array|string $value
+        * Form of markup used. eg. [SSML](https://www.w3.org/TR/speech-synthesis11) or
+ * [IPA](https://www.wikidata.org/wiki/Property:P898).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function speechToTextMarkup($value)
+    {
+        $this->setProperty('speechToTextMarkup', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSpeechToTextMarkup($value)
@@ -67,8 +74,20 @@ class PronounceableText extends Text
        return $this->getProperty('speechToTextMarkup');
     }
 
+
     /**
-    * @param array|string $value
+        * Text value being annotated.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function textValue($value)
+    {
+        $this->setProperty('textValue', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setTextValue($value)
@@ -85,8 +104,22 @@ class PronounceableText extends Text
        return $this->getProperty('textValue');
     }
 
+
     /**
-    * @param array|string $value
+        * Representation of a text [[textValue]] using the specified
+ * [[speechToTextMarkup]]. For example the city name of Houston in IPA:
+ * /ˈhjuːstən/.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function phoneticText($value)
+    {
+        $this->setProperty('phoneticText', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPhoneticText($value)

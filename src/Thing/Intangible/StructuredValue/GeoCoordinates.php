@@ -10,39 +10,21 @@ use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
 */
 class GeoCoordinates extends StructuredValue
 {
-   /**
-        * The postal code. For example, 94043.
-        */
-    protected $postalCode = null;
-
-   /**
-        * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
-        */
-    protected $latitude = null;
-
-   /**
-        * Physical address of the item.
-        */
-    protected $address = null;
-
-   /**
-        * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT\_OF\_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
-        */
-    protected $elevation = null;
-
-   /**
-        * The country. Recommended to be in 2-letter [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1) format, for example "US". For backward compatibility, a 3-letter [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code such as "SGP" or a full country name such as "Singapore" can also be used.
-        */
-    protected $addressCountry = null;
-
-   /**
-        * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
-        */
-    protected $longitude = null;
 
 
     /**
-    * @param array|string $value
+        * The postal code. For example, 94043.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function postalCode($value)
+    {
+        $this->setProperty('postalCode', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPostalCode($value)
@@ -59,8 +41,21 @@ class GeoCoordinates extends StructuredValue
        return $this->getProperty('postalCode');
     }
 
+
     /**
-    * @param array|string $value
+        * The latitude of a location. For example ```37.42242``` ([WGS
+ * 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function latitude($value)
+    {
+        $this->setProperty('latitude', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setLatitude($value)
@@ -77,8 +72,20 @@ class GeoCoordinates extends StructuredValue
        return $this->getProperty('latitude');
     }
 
+
     /**
-    * @param array|string $value
+        * Physical address of the item.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function address($value)
+    {
+        $this->setProperty('address', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAddress($value)
@@ -95,8 +102,23 @@ class GeoCoordinates extends StructuredValue
        return $this->getProperty('address');
     }
 
+
     /**
-    * @param array|string $value
+        * The elevation of a location ([WGS
+ * 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of
+ * the form 'NUMBER UNIT\_OF\_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while
+ * numbers alone should be assumed to be a value in meters.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function elevation($value)
+    {
+        $this->setProperty('elevation', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setElevation($value)
@@ -113,8 +135,24 @@ class GeoCoordinates extends StructuredValue
        return $this->getProperty('elevation');
     }
 
+
     /**
-    * @param array|string $value
+        * The country. Recommended to be in 2-letter [ISO 3166-1
+ * alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1) format, for example "US".
+ * For backward compatibility, a 3-letter [ISO 3166-1
+ * alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code such
+ * as "SGP" or a full country name such as "Singapore" can also be used.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function addressCountry($value)
+    {
+        $this->setProperty('addressCountry', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAddressCountry($value)
@@ -131,8 +169,21 @@ class GeoCoordinates extends StructuredValue
        return $this->getProperty('addressCountry');
     }
 
+
     /**
-    * @param array|string $value
+        * The longitude of a location. For example ```-122.08585``` ([WGS
+ * 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function longitude($value)
+    {
+        $this->setProperty('longitude', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setLongitude($value)

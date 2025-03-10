@@ -10,19 +10,21 @@ use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalIntangible;
 */
 class MedicalConditionStage extends MedicalIntangible
 {
-   /**
-        * The stage represented as a number, e.g. 3.
-        */
-    protected $stageAsNumber = null;
-
-   /**
-        * The substage, e.g. 'a' for Stage IIIa.
-        */
-    protected $subStageSuffix = null;
 
 
     /**
-    * @param array|string $value
+        * The stage represented as a number, e.g. 3.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function stageAsNumber($value)
+    {
+        $this->setProperty('stageAsNumber', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setStageAsNumber($value)
@@ -39,8 +41,20 @@ class MedicalConditionStage extends MedicalIntangible
        return $this->getProperty('stageAsNumber');
     }
 
+
     /**
-    * @param array|string $value
+        * The substage, e.g. 'a' for Stage IIIa.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function subStageSuffix($value)
+    {
+        $this->setProperty('subStageSuffix', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSubStageSuffix($value)

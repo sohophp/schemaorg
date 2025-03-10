@@ -10,14 +10,21 @@ use Sohophp\SchemaOrg\Thing\Action\AchieveAction;
 */
 class LoseAction extends AchieveAction
 {
-   /**
-        * A sub property of participant. The winner of the action.
-        */
-    protected $winner = null;
 
 
     /**
-    * @param array|string $value
+        * A sub property of participant. The winner of the action.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function winner($value)
+    {
+        $this->setProperty('winner', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setWinner($value)

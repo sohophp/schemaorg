@@ -10,19 +10,21 @@ use Sohophp\SchemaOrg\Thing\Action;
 */
 class UpdateAction extends Action
 {
-   /**
-        * A sub property of object. The collection target of the action.
-        */
-    protected $targetCollection = null;
-
-   /**
-        * A sub property of object. The collection target of the action.
-        */
-    protected $collection = null;
 
 
     /**
-    * @param array|string $value
+        * A sub property of object. The collection target of the action.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function targetCollection($value)
+    {
+        $this->setProperty('targetCollection', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setTargetCollection($value)
@@ -39,8 +41,20 @@ class UpdateAction extends Action
        return $this->getProperty('targetCollection');
     }
 
+
     /**
-    * @param array|string $value
+        * A sub property of object. The collection target of the action.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function collection($value)
+    {
+        $this->setProperty('collection', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setCollection($value)

@@ -10,64 +10,21 @@ use Sohophp\SchemaOrg\Thing\CreativeWork;
 */
 class Clip extends CreativeWork
 {
-   /**
-        * The series to which this episode or season belongs.
-        */
-    protected $partOfSeries = null;
-
-   /**
-        * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
-        */
-    protected $directors = null;
-
-   /**
-        * The episode to which this clip belongs.
-        */
-    protected $partOfEpisode = null;
-
-   /**
-        * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
-        */
-    protected $director = null;
-
-   /**
-        * The season to which this episode belongs.
-        */
-    protected $partOfSeason = null;
-
-   /**
-        * The end time of the clip expressed as the number of seconds from the beginning of the work.
-        */
-    protected $endOffset = null;
-
-   /**
-        * The start time of the clip expressed as the number of seconds from the beginning of the work.
-        */
-    protected $startOffset = null;
-
-   /**
-        * Position of the clip within an ordered group of clips.
-        */
-    protected $clipNumber = null;
-
-   /**
-        * The composer of the soundtrack.
-        */
-    protected $musicBy = null;
-
-   /**
-        * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
-        */
-    protected $actor = null;
-
-   /**
-        * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
-        */
-    protected $actors = null;
 
 
     /**
-    * @param array|string $value
+        * The series to which this episode or season belongs.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function partOfSeries($value)
+    {
+        $this->setProperty('partOfSeries', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPartOfSeries($value)
@@ -84,8 +41,21 @@ class Clip extends CreativeWork
        return $this->getProperty('partOfSeries');
     }
 
+
     /**
-    * @param array|string $value
+        * A director of e.g. TV, radio, movie, video games etc. content. Directors can
+ * be associated with individual items or with a series, episode, clip.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function directors($value)
+    {
+        $this->setProperty('directors', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDirectors($value)
@@ -102,8 +72,20 @@ class Clip extends CreativeWork
        return $this->getProperty('directors');
     }
 
+
     /**
-    * @param array|string $value
+        * The episode to which this clip belongs.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function partOfEpisode($value)
+    {
+        $this->setProperty('partOfEpisode', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPartOfEpisode($value)
@@ -120,8 +102,22 @@ class Clip extends CreativeWork
        return $this->getProperty('partOfEpisode');
     }
 
+
     /**
-    * @param array|string $value
+        * A director of e.g. TV, radio, movie, video gaming etc. content, or of an
+ * event. Directors can be associated with individual items or with a series,
+ * episode, clip.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function director($value)
+    {
+        $this->setProperty('director', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDirector($value)
@@ -138,8 +134,20 @@ class Clip extends CreativeWork
        return $this->getProperty('director');
     }
 
+
     /**
-    * @param array|string $value
+        * The season to which this episode belongs.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function partOfSeason($value)
+    {
+        $this->setProperty('partOfSeason', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPartOfSeason($value)
@@ -156,8 +164,21 @@ class Clip extends CreativeWork
        return $this->getProperty('partOfSeason');
     }
 
+
     /**
-    * @param array|string $value
+        * The end time of the clip expressed as the number of seconds from the
+ * beginning of the work.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function endOffset($value)
+    {
+        $this->setProperty('endOffset', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setEndOffset($value)
@@ -174,8 +195,21 @@ class Clip extends CreativeWork
        return $this->getProperty('endOffset');
     }
 
+
     /**
-    * @param array|string $value
+        * The start time of the clip expressed as the number of seconds from the
+ * beginning of the work.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function startOffset($value)
+    {
+        $this->setProperty('startOffset', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setStartOffset($value)
@@ -192,8 +226,20 @@ class Clip extends CreativeWork
        return $this->getProperty('startOffset');
     }
 
+
     /**
-    * @param array|string $value
+        * Position of the clip within an ordered group of clips.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function clipNumber($value)
+    {
+        $this->setProperty('clipNumber', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setClipNumber($value)
@@ -210,8 +256,20 @@ class Clip extends CreativeWork
        return $this->getProperty('clipNumber');
     }
 
+
     /**
-    * @param array|string $value
+        * The composer of the soundtrack.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function musicBy($value)
+    {
+        $this->setProperty('musicBy', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setMusicBy($value)
@@ -228,8 +286,22 @@ class Clip extends CreativeWork
        return $this->getProperty('musicBy');
     }
 
+
     /**
-    * @param array|string $value
+        * An actor (individual or a group), e.g. in TV, radio, movie, video games etc.,
+ * or in an event. Actors can be associated with individual items or with a
+ * series, episode, clip.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function actor($value)
+    {
+        $this->setProperty('actor', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setActor($value)
@@ -246,8 +318,21 @@ class Clip extends CreativeWork
        return $this->getProperty('actor');
     }
 
+
     /**
-    * @param array|string $value
+        * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated
+ * with individual items or with a series, episode, clip.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function actors($value)
+    {
+        $this->setProperty('actors', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setActors($value)

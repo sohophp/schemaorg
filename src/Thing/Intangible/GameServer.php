@@ -10,24 +10,21 @@ use Sohophp\SchemaOrg\Thing\Intangible;
 */
 class GameServer extends Intangible
 {
-   /**
-        * Number of players on the server.
-        */
-    protected $playersOnline = null;
-
-   /**
-        * Status of a game server.
-        */
-    protected $serverStatus = null;
-
-   /**
-        * Video game which is played on this server.
-        */
-    protected $game = null;
 
 
     /**
-    * @param array|string $value
+        * Number of players on the server.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function playersOnline($value)
+    {
+        $this->setProperty('playersOnline', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPlayersOnline($value)
@@ -44,8 +41,20 @@ class GameServer extends Intangible
        return $this->getProperty('playersOnline');
     }
 
+
     /**
-    * @param array|string $value
+        * Status of a game server.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function serverStatus($value)
+    {
+        $this->setProperty('serverStatus', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setServerStatus($value)
@@ -62,8 +71,20 @@ class GameServer extends Intangible
        return $this->getProperty('serverStatus');
     }
 
+
     /**
-    * @param array|string $value
+        * Video game which is played on this server.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function game($value)
+    {
+        $this->setProperty('game', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setGame($value)

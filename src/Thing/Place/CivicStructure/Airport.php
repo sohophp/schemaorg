@@ -10,19 +10,21 @@ use Sohophp\SchemaOrg\Thing\Place\CivicStructure;
 */
 class Airport extends CivicStructure
 {
-   /**
-        * IATA identifier for an airline or airport.
-        */
-    protected $iataCode = null;
-
-   /**
-        * ICAO identifier for an airport.
-        */
-    protected $icaoCode = null;
 
 
     /**
-    * @param array|string $value
+        * IATA identifier for an airline or airport.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function iataCode($value)
+    {
+        $this->setProperty('iataCode', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setIataCode($value)
@@ -39,8 +41,20 @@ class Airport extends CivicStructure
        return $this->getProperty('iataCode');
     }
 
+
     /**
-    * @param array|string $value
+        * ICAO identifier for an airport.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function icaoCode($value)
+    {
+        $this->setProperty('icaoCode', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setIcaoCode($value)

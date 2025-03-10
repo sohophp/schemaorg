@@ -4,25 +4,37 @@ namespace Sohophp\SchemaOrg\Thing\Action;
 use Sohophp\SchemaOrg\Thing\Action;
 
 /**
-* The act of playing/exercising/training/performing for enjoyment, leisure, recreation, competition or exercise.\n\nRelated actions:\n\n* [[ListenAction]]: Unlike ListenAction (which is under ConsumeAction), PlayAction refers to performing for an audience or at an event, rather than consuming music.\n* [[WatchAction]]: Unlike WatchAction (which is under ConsumeAction), PlayAction refers to showing/displaying for an audience or at an event, rather than consuming visual content.
+* The act of playing/exercising/training/performing for enjoyment, leisure,
+ * recreation, competition or exercise.
+ * 
+ * Related actions:
+ * 
+ * * [[ListenAction]]: Unlike ListenAction (which is under ConsumeAction),
+ * PlayAction refers to performing for an audience or at an event, rather than
+ * consuming music.
+ * * [[WatchAction]]: Unlike WatchAction (which is under ConsumeAction),
+ * PlayAction refers to showing/displaying for an audience or at an event,
+ * rather than consuming visual content.
 * @see schema:PlayAction
 * @package Sohophp\SchemaOrg\Thing\Action
 */
 class PlayAction extends Action
 {
-   /**
-        * An intended audience, i.e. a group for whom something was created.
-        */
-    protected $audience = null;
-
-   /**
-        * Upcoming or past event associated with this place, organization, or action.
-        */
-    protected $event = null;
 
 
     /**
-    * @param array|string $value
+        * An intended audience, i.e. a group for whom something was created.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function audience($value)
+    {
+        $this->setProperty('audience', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAudience($value)
@@ -39,8 +51,20 @@ class PlayAction extends Action
        return $this->getProperty('audience');
     }
 
+
     /**
-    * @param array|string $value
+        * Upcoming or past event associated with this place, organization, or action.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function event($value)
+    {
+        $this->setProperty('event', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setEvent($value)

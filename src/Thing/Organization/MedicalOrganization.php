@@ -4,30 +4,28 @@ namespace Sohophp\SchemaOrg\Thing\Organization;
 use Sohophp\SchemaOrg\Thing\Organization;
 
 /**
-* A medical organization (physical or not), such as hospital, institution or clinic.
+* A medical organization (physical or not), such as hospital, institution or
+ * clinic.
 * @see schema:MedicalOrganization
 * @package Sohophp\SchemaOrg\Thing\Organization
 */
 class MedicalOrganization extends Organization
 {
-   /**
-        * A medical specialty of the provider.
-        */
-    protected $medicalSpecialty = null;
-
-   /**
-        * Name or unique ID of network. (Networks are often reused across different insurance plans.)
-        */
-    protected $healthPlanNetworkId = null;
-
-   /**
-        * Whether the provider is accepting new patients.
-        */
-    protected $isAcceptingNewPatients = null;
 
 
     /**
-    * @param array|string $value
+        * A medical specialty of the provider.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function medicalSpecialty($value)
+    {
+        $this->setProperty('medicalSpecialty', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setMedicalSpecialty($value)
@@ -44,8 +42,21 @@ class MedicalOrganization extends Organization
        return $this->getProperty('medicalSpecialty');
     }
 
+
     /**
-    * @param array|string $value
+        * Name or unique ID of network. (Networks are often reused across different
+ * insurance plans.)
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function healthPlanNetworkId($value)
+    {
+        $this->setProperty('healthPlanNetworkId', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setHealthPlanNetworkId($value)
@@ -62,8 +73,20 @@ class MedicalOrganization extends Organization
        return $this->getProperty('healthPlanNetworkId');
     }
 
+
     /**
-    * @param array|string $value
+        * Whether the provider is accepting new patients.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function isAcceptingNewPatients($value)
+    {
+        $this->setProperty('isAcceptingNewPatients', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setIsAcceptingNewPatients($value)

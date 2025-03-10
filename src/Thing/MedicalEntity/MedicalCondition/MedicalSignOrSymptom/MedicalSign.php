@@ -4,25 +4,28 @@ namespace Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalCondition\MedicalSignOrSy
 use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalCondition\MedicalSignOrSymptom;
 
 /**
-* Any physical manifestation of a person's medical condition discoverable by objective diagnostic tests or physical examination.
+* Any physical manifestation of a person's medical condition discoverable by
+ * objective diagnostic tests or physical examination.
 * @see schema:MedicalSign
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalCondition\MedicalSignOrSymptom
 */
 class MedicalSign extends MedicalSignOrSymptom
 {
-   /**
-        * A physical examination that can identify this sign.
-        */
-    protected $identifyingExam = null;
-
-   /**
-        * A diagnostic test that can identify this sign.
-        */
-    protected $identifyingTest = null;
 
 
     /**
-    * @param array|string $value
+        * A physical examination that can identify this sign.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function identifyingExam($value)
+    {
+        $this->setProperty('identifyingExam', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setIdentifyingExam($value)
@@ -39,8 +42,20 @@ class MedicalSign extends MedicalSignOrSymptom
        return $this->getProperty('identifyingExam');
     }
 
+
     /**
-    * @param array|string $value
+        * A diagnostic test that can identify this sign.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function identifyingTest($value)
+    {
+        $this->setProperty('identifyingTest', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setIdentifyingTest($value)

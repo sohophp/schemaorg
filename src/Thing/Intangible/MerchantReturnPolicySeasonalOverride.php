@@ -10,54 +10,21 @@ use Sohophp\SchemaOrg\Thing\Intangible;
 */
 class MerchantReturnPolicySeasonalOverride extends Intangible
 {
-   /**
-        * Specifies an applicable return policy (from an enumeration).
-        */
-    protected $returnPolicyCategory = null;
-
-   /**
-        * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-        */
-    protected $endDate = null;
-
-   /**
-        * Use [[MonetaryAmount]] to specify a fixed restocking fee for product returns, or use [[Number]] to specify a percentage of the product price paid by the customer.
-        */
-    protected $restockingFee = null;
-
-   /**
-        * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
-        */
-    protected $merchantReturnDays = null;
-
-   /**
-        * The type of return fees for purchased products (for any return reason).
-        */
-    protected $returnFees = null;
-
-   /**
-        * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-        */
-    protected $startDate = null;
-
-   /**
-        * The type of return method offered, specified from an enumeration.
-        */
-    protected $returnMethod = null;
-
-   /**
-        * A refund type, from an enumerated list.
-        */
-    protected $refundType = null;
-
-   /**
-        * Amount of shipping costs for product returns (for any reason). Applicable when property [[returnFees]] equals [[ReturnShippingFees]].
-        */
-    protected $returnShippingFeesAmount = null;
 
 
     /**
-    * @param array|string $value
+        * Specifies an applicable return policy (from an enumeration).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function returnPolicyCategory($value)
+    {
+        $this->setProperty('returnPolicyCategory', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setReturnPolicyCategory($value)
@@ -74,8 +41,21 @@ class MerchantReturnPolicySeasonalOverride extends Intangible
        return $this->getProperty('returnPolicyCategory');
     }
 
+
     /**
-    * @param array|string $value
+        * The end date and time of the item (in [ISO 8601 date
+ * format](http://en.wikipedia.org/wiki/ISO_8601)).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function endDate($value)
+    {
+        $this->setProperty('endDate', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setEndDate($value)
@@ -92,8 +72,22 @@ class MerchantReturnPolicySeasonalOverride extends Intangible
        return $this->getProperty('endDate');
     }
 
+
     /**
-    * @param array|string $value
+        * Use [[MonetaryAmount]] to specify a fixed restocking fee for product returns,
+ * or use [[Number]] to specify a percentage of the product price paid by the
+ * customer.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function restockingFee($value)
+    {
+        $this->setProperty('restockingFee', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setRestockingFee($value)
@@ -110,8 +104,22 @@ class MerchantReturnPolicySeasonalOverride extends Intangible
        return $this->getProperty('restockingFee');
     }
 
+
     /**
-    * @param array|string $value
+        * Specifies either a fixed return date or the number of days (from the delivery
+ * date) that a product can be returned. Used when the [[returnPolicyCategory]]
+ * property is specified as [[MerchantReturnFiniteReturnWindow]].
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function merchantReturnDays($value)
+    {
+        $this->setProperty('merchantReturnDays', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setMerchantReturnDays($value)
@@ -128,8 +136,20 @@ class MerchantReturnPolicySeasonalOverride extends Intangible
        return $this->getProperty('merchantReturnDays');
     }
 
+
     /**
-    * @param array|string $value
+        * The type of return fees for purchased products (for any return reason).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function returnFees($value)
+    {
+        $this->setProperty('returnFees', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setReturnFees($value)
@@ -146,8 +166,21 @@ class MerchantReturnPolicySeasonalOverride extends Intangible
        return $this->getProperty('returnFees');
     }
 
+
     /**
-    * @param array|string $value
+        * The start date and time of the item (in [ISO 8601 date
+ * format](http://en.wikipedia.org/wiki/ISO_8601)).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function startDate($value)
+    {
+        $this->setProperty('startDate', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setStartDate($value)
@@ -164,8 +197,20 @@ class MerchantReturnPolicySeasonalOverride extends Intangible
        return $this->getProperty('startDate');
     }
 
+
     /**
-    * @param array|string $value
+        * The type of return method offered, specified from an enumeration.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function returnMethod($value)
+    {
+        $this->setProperty('returnMethod', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setReturnMethod($value)
@@ -182,8 +227,20 @@ class MerchantReturnPolicySeasonalOverride extends Intangible
        return $this->getProperty('returnMethod');
     }
 
+
     /**
-    * @param array|string $value
+        * A refund type, from an enumerated list.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function refundType($value)
+    {
+        $this->setProperty('refundType', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setRefundType($value)
@@ -200,8 +257,21 @@ class MerchantReturnPolicySeasonalOverride extends Intangible
        return $this->getProperty('refundType');
     }
 
+
     /**
-    * @param array|string $value
+        * Amount of shipping costs for product returns (for any reason). Applicable
+ * when property [[returnFees]] equals [[ReturnShippingFees]].
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function returnShippingFeesAmount($value)
+    {
+        $this->setProperty('returnShippingFeesAmount', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setReturnShippingFeesAmount($value)

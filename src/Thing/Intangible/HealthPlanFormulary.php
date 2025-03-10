@@ -4,30 +4,28 @@ namespace Sohophp\SchemaOrg\Thing\Intangible;
 use Sohophp\SchemaOrg\Thing\Intangible;
 
 /**
-* For a given health insurance plan, the specification for costs and coverage of prescription drugs.
+* For a given health insurance plan, the specification for costs and coverage
+ * of prescription drugs.
 * @see schema:HealthPlanFormulary
 * @package Sohophp\SchemaOrg\Thing\Intangible
 */
 class HealthPlanFormulary extends Intangible
 {
-   /**
-        * The tier(s) of drugs offered by this formulary or insurance plan.
-        */
-    protected $healthPlanDrugTier = null;
-
-   /**
-        * Whether prescriptions can be delivered by mail.
-        */
-    protected $offersPrescriptionByMail = null;
-
-   /**
-        * The costs to the patient for services under this network or formulary.
-        */
-    protected $healthPlanCostSharing = null;
 
 
     /**
-    * @param array|string $value
+        * The tier(s) of drugs offered by this formulary or insurance plan.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function healthPlanDrugTier($value)
+    {
+        $this->setProperty('healthPlanDrugTier', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setHealthPlanDrugTier($value)
@@ -44,8 +42,20 @@ class HealthPlanFormulary extends Intangible
        return $this->getProperty('healthPlanDrugTier');
     }
 
+
     /**
-    * @param array|string $value
+        * Whether prescriptions can be delivered by mail.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function offersPrescriptionByMail($value)
+    {
+        $this->setProperty('offersPrescriptionByMail', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setOffersPrescriptionByMail($value)
@@ -62,8 +72,20 @@ class HealthPlanFormulary extends Intangible
        return $this->getProperty('offersPrescriptionByMail');
     }
 
+
     /**
-    * @param array|string $value
+        * The costs to the patient for services under this network or formulary.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function healthPlanCostSharing($value)
+    {
+        $this->setProperty('healthPlanCostSharing', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setHealthPlanCostSharing($value)

@@ -10,29 +10,21 @@ use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalIntangible;
 */
 class DoseSchedule extends MedicalIntangible
 {
-   /**
-        * The value of the dose, e.g. 500.
-        */
-    protected $doseValue = null;
-
-   /**
-        * How often the dose is taken, e.g. 'daily'.
-        */
-    protected $frequency = null;
-
-   /**
-        * Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.
-        */
-    protected $targetPopulation = null;
-
-   /**
-        * The unit of the dose, e.g. 'mg'.
-        */
-    protected $doseUnit = null;
 
 
     /**
-    * @param array|string $value
+        * The value of the dose, e.g. 500.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function doseValue($value)
+    {
+        $this->setProperty('doseValue', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDoseValue($value)
@@ -49,8 +41,20 @@ class DoseSchedule extends MedicalIntangible
        return $this->getProperty('doseValue');
     }
 
+
     /**
-    * @param array|string $value
+        * How often the dose is taken, e.g. 'daily'.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function frequency($value)
+    {
+        $this->setProperty('frequency', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setFrequency($value)
@@ -67,8 +71,21 @@ class DoseSchedule extends MedicalIntangible
        return $this->getProperty('frequency');
     }
 
+
     /**
-    * @param array|string $value
+        * Characteristics of the population for which this is intended, or which
+ * typically uses it, e.g. 'adults'.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function targetPopulation($value)
+    {
+        $this->setProperty('targetPopulation', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setTargetPopulation($value)
@@ -85,8 +102,20 @@ class DoseSchedule extends MedicalIntangible
        return $this->getProperty('targetPopulation');
     }
 
+
     /**
-    * @param array|string $value
+        * The unit of the dose, e.g. 'mg'.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function doseUnit($value)
+    {
+        $this->setProperty('doseUnit', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDoseUnit($value)

@@ -4,77 +4,37 @@ namespace Sohophp\SchemaOrg\Thing\Intangible;
 use Sohophp\SchemaOrg\Thing\Intangible;
 
 /**
-* A FloorPlan is an explicit representation of a collection of similar accommodations, allowing the provision of common information (room counts, sizes, layout diagrams) and offers for rental or sale. In typical use, some [[ApartmentComplex]] has an [[accommodationFloorPlan]] which is a [[FloorPlan]].  A FloorPlan is always in the context of a particular place, either a larger [[ApartmentComplex]] or a single [[Apartment]]. The visual/spatial aspects of a floor plan (i.e. room layout, [see wikipedia](https://en.wikipedia.org/wiki/Floor_plan)) can be indicated using [[image]]. 
+* A FloorPlan is an explicit representation of a collection of similar
+ * accommodations, allowing the provision of common information (room counts,
+ * sizes, layout diagrams) and offers for rental or sale. In typical use, some
+ * [[ApartmentComplex]] has an [[accommodationFloorPlan]] which is a
+ * [[FloorPlan]].  A FloorPlan is always in the context of a particular place,
+ * either a larger [[ApartmentComplex]] or a single [[Apartment]]. The
+ * visual/spatial aspects of a floor plan (i.e. room layout, [see
+ * wikipedia](https://en.wikipedia.org/wiki/Floor_plan)) can be indicated using
+ * [[image]].
 * @see schema:FloorPlan
 * @package Sohophp\SchemaOrg\Thing\Intangible
 */
 class FloorPlan extends Intangible
 {
-   /**
-        * Number of full bathrooms - The total number of full and ¾ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsFull field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsFull+Field).
-        */
-    protected $numberOfFullBathrooms = null;
-
-   /**
-        * The size of the accommodation, e.g. in square meter or squarefoot.
-Typical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard.
-        */
-    protected $floorSize = null;
-
-   /**
-        * Indicates the number of available accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAccommodationUnits]].
-        */
-    protected $numberOfAvailableAccommodationUnits = null;
-
-   /**
-        * Indicates the total (available plus unavailable) number of accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAvailableAccommodationUnits]].
-        */
-    protected $numberOfAccommodationUnits = null;
-
-   /**
-        * The total integer number of bathrooms in some [[Accommodation]], following real estate conventions as [documented in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsTotalInteger+Field): "The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.". See also [[numberOfRooms]].
-        */
-    protected $numberOfBathroomsTotal = null;
-
-   /**
-        * A schematic image showing the floorplan layout.
-        */
-    protected $layoutImage = null;
-
-   /**
-        * Indicates some accommodation that this floor plan describes.
-        */
-    protected $isPlanForApartment = null;
-
-   /**
-        * Number of partial bathrooms - The total number of half and ¼ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsPartial+Field). 
-        */
-    protected $numberOfPartialBathrooms = null;
-
-   /**
-        * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
-        */
-    protected $petsAllowed = null;
-
-   /**
-        * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
-        */
-    protected $amenityFeature = null;
-
-   /**
-        * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
-Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
-        */
-    protected $numberOfRooms = null;
-
-   /**
-        * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
-        */
-    protected $numberOfBedrooms = null;
 
 
     /**
-    * @param array|string $value
+        * Number of full bathrooms - The total number of full and ¾ bathrooms in an
+ * [[Accommodation]]. This corresponds to the [BathroomsFull field in
+ * RESO](https://ddwiki.reso.org/display/DDW17/BathroomsFull+Field).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function numberOfFullBathrooms($value)
+    {
+        $this->setProperty('numberOfFullBathrooms', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setNumberOfFullBathrooms($value)
@@ -91,8 +51,22 @@ Typical unit code(s): ROM for room or C62 for no unit. The type of room can be p
        return $this->getProperty('numberOfFullBathrooms');
     }
 
+
     /**
-    * @param array|string $value
+        * The size of the accommodation, e.g. in square meter or squarefoot.
+ * Typical unit code(s): MTK for square meter, FTK for square foot, or YDK for
+ * square yard.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function floorSize($value)
+    {
+        $this->setProperty('floorSize', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setFloorSize($value)
@@ -109,8 +83,23 @@ Typical unit code(s): ROM for room or C62 for no unit. The type of room can be p
        return $this->getProperty('floorSize');
     }
 
+
     /**
-    * @param array|string $value
+        * Indicates the number of available accommodation units in an
+ * [[ApartmentComplex]], or the number of accommodation units for a specific
+ * [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also
+ * [[numberOfAccommodationUnits]].
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function numberOfAvailableAccommodationUnits($value)
+    {
+        $this->setProperty('numberOfAvailableAccommodationUnits', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setNumberOfAvailableAccommodationUnits($value)
@@ -127,8 +116,23 @@ Typical unit code(s): ROM for room or C62 for no unit. The type of room can be p
        return $this->getProperty('numberOfAvailableAccommodationUnits');
     }
 
+
     /**
-    * @param array|string $value
+        * Indicates the total (available plus unavailable) number of accommodation
+ * units in an [[ApartmentComplex]], or the number of accommodation units for a
+ * specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also
+ * [[numberOfAvailableAccommodationUnits]].
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function numberOfAccommodationUnits($value)
+    {
+        $this->setProperty('numberOfAccommodationUnits', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setNumberOfAccommodationUnits($value)
@@ -145,8 +149,25 @@ Typical unit code(s): ROM for room or C62 for no unit. The type of room can be p
        return $this->getProperty('numberOfAccommodationUnits');
     }
 
+
     /**
-    * @param array|string $value
+        * The total integer number of bathrooms in some [[Accommodation]], following
+ * real estate conventions as [documented in
+ * RESO](https://ddwiki.reso.org/display/DDW17/BathroomsTotalInteger+Field):
+ * "The simple sum of the number of bathrooms. For example for a property with
+ * two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be
+ * 3.". See also [[numberOfRooms]].
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function numberOfBathroomsTotal($value)
+    {
+        $this->setProperty('numberOfBathroomsTotal', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setNumberOfBathroomsTotal($value)
@@ -163,8 +184,20 @@ Typical unit code(s): ROM for room or C62 for no unit. The type of room can be p
        return $this->getProperty('numberOfBathroomsTotal');
     }
 
+
     /**
-    * @param array|string $value
+        * A schematic image showing the floorplan layout.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function layoutImage($value)
+    {
+        $this->setProperty('layoutImage', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setLayoutImage($value)
@@ -181,8 +214,20 @@ Typical unit code(s): ROM for room or C62 for no unit. The type of room can be p
        return $this->getProperty('layoutImage');
     }
 
+
     /**
-    * @param array|string $value
+        * Indicates some accommodation that this floor plan describes.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function isPlanForApartment($value)
+    {
+        $this->setProperty('isPlanForApartment', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setIsPlanForApartment($value)
@@ -199,8 +244,22 @@ Typical unit code(s): ROM for room or C62 for no unit. The type of room can be p
        return $this->getProperty('isPlanForApartment');
     }
 
+
     /**
-    * @param array|string $value
+        * Number of partial bathrooms - The total number of half and ¼ bathrooms in an
+ * [[Accommodation]]. This corresponds to the [BathroomsPartial field in
+ * RESO](https://ddwiki.reso.org/display/DDW17/BathroomsPartial+Field).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function numberOfPartialBathrooms($value)
+    {
+        $this->setProperty('numberOfPartialBathrooms', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setNumberOfPartialBathrooms($value)
@@ -217,8 +276,21 @@ Typical unit code(s): ROM for room or C62 for no unit. The type of room can be p
        return $this->getProperty('numberOfPartialBathrooms');
     }
 
+
     /**
-    * @param array|string $value
+        * Indicates whether pets are allowed to enter the accommodation or lodging
+ * business. More detailed information can be put in a text value.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function petsAllowed($value)
+    {
+        $this->setProperty('petsAllowed', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPetsAllowed($value)
@@ -235,8 +307,22 @@ Typical unit code(s): ROM for room or C62 for no unit. The type of room can be p
        return $this->getProperty('petsAllowed');
     }
 
+
     /**
-    * @param array|string $value
+        * An amenity feature (e.g. a characteristic or service) of the Accommodation.
+ * This generic property does not make a statement about whether the feature is
+ * included in an offer for the main accommodation or available at extra costs.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function amenityFeature($value)
+    {
+        $this->setProperty('amenityFeature', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAmenityFeature($value)
@@ -253,8 +339,23 @@ Typical unit code(s): ROM for room or C62 for no unit. The type of room can be p
        return $this->getProperty('amenityFeature');
     }
 
+
     /**
-    * @param array|string $value
+        * The number of rooms (excluding bathrooms and closets) of the accommodation or
+ * lodging business.
+ * Typical unit code(s): ROM for room or C62 for no unit. The type of room can
+ * be put in the unitText property of the QuantitativeValue.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function numberOfRooms($value)
+    {
+        $this->setProperty('numberOfRooms', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setNumberOfRooms($value)
@@ -271,8 +372,21 @@ Typical unit code(s): ROM for room or C62 for no unit. The type of room can be p
        return $this->getProperty('numberOfRooms');
     }
 
+
     /**
-    * @param array|string $value
+        * The total integer number of bedrooms in a some [[Accommodation]],
+ * [[ApartmentComplex]] or [[FloorPlan]].
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function numberOfBedrooms($value)
+    {
+        $this->setProperty('numberOfBedrooms', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setNumberOfBedrooms($value)

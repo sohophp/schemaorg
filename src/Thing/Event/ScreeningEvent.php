@@ -10,24 +10,21 @@ use Sohophp\SchemaOrg\Thing\Event;
 */
 class ScreeningEvent extends Event
 {
-   /**
-        * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
-        */
-    protected $videoFormat = null;
-
-   /**
-        * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
-        */
-    protected $subtitleLanguage = null;
-
-   /**
-        * The movie presented during this event.
-        */
-    protected $workPresented = null;
 
 
     /**
-    * @param array|string $value
+        * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function videoFormat($value)
+    {
+        $this->setProperty('videoFormat', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setVideoFormat($value)
@@ -44,8 +41,21 @@ class ScreeningEvent extends Event
        return $this->getProperty('videoFormat');
     }
 
+
     /**
-    * @param array|string $value
+        * Languages in which subtitles/captions are available, in [IETF BCP 47 standard
+ * format](http://tools.ietf.org/html/bcp47).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function subtitleLanguage($value)
+    {
+        $this->setProperty('subtitleLanguage', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSubtitleLanguage($value)
@@ -62,8 +72,20 @@ class ScreeningEvent extends Event
        return $this->getProperty('subtitleLanguage');
     }
 
+
     /**
-    * @param array|string $value
+        * The movie presented during this event.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function workPresented($value)
+    {
+        $this->setProperty('workPresented', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setWorkPresented($value)

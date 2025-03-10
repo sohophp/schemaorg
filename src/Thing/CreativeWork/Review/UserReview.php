@@ -4,7 +4,8 @@ namespace Sohophp\SchemaOrg\Thing\CreativeWork\Review;
 use Sohophp\SchemaOrg\Thing\CreativeWork\Review;
 
 /**
-* A review created by an end-user (e.g. consumer, purchaser, attendee etc.), in contrast with [[CriticReview]].
+* A review created by an end-user (e.g. consumer, purchaser, attendee etc.), in
+ * contrast with [[CriticReview]].
 * @see schema:UserReview
 * @package Sohophp\SchemaOrg\Thing\CreativeWork\Review
 */

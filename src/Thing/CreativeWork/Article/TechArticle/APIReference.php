@@ -10,34 +10,21 @@ use Sohophp\SchemaOrg\Thing\CreativeWork\Article\TechArticle;
 */
 class APIReference extends TechArticle
 {
-   /**
-        * Associated product/technology version. E.g., .NET Framework 4.5.
-        */
-    protected $assemblyVersion = null;
-
-   /**
-        * Type of app development: phone, Metro style, desktop, XBox, etc.
-        */
-    protected $targetPlatform = null;
-
-   /**
-        * Library file name, e.g., mscorlib.dll, system.web.dll.
-        */
-    protected $executableLibraryName = null;
-
-   /**
-        * Library file name, e.g., mscorlib.dll, system.web.dll.
-        */
-    protected $assembly = null;
-
-   /**
-        * Indicates whether API is managed or unmanaged.
-        */
-    protected $programmingModel = null;
 
 
     /**
-    * @param array|string $value
+        * Associated product/technology version. E.g., .NET Framework 4.5.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function assemblyVersion($value)
+    {
+        $this->setProperty('assemblyVersion', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAssemblyVersion($value)
@@ -54,8 +41,20 @@ class APIReference extends TechArticle
        return $this->getProperty('assemblyVersion');
     }
 
+
     /**
-    * @param array|string $value
+        * Type of app development: phone, Metro style, desktop, XBox, etc.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function targetPlatform($value)
+    {
+        $this->setProperty('targetPlatform', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setTargetPlatform($value)
@@ -72,8 +71,20 @@ class APIReference extends TechArticle
        return $this->getProperty('targetPlatform');
     }
 
+
     /**
-    * @param array|string $value
+        * Library file name, e.g., mscorlib.dll, system.web.dll.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function executableLibraryName($value)
+    {
+        $this->setProperty('executableLibraryName', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setExecutableLibraryName($value)
@@ -90,8 +101,20 @@ class APIReference extends TechArticle
        return $this->getProperty('executableLibraryName');
     }
 
+
     /**
-    * @param array|string $value
+        * Library file name, e.g., mscorlib.dll, system.web.dll.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function assembly($value)
+    {
+        $this->setProperty('assembly', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAssembly($value)
@@ -108,8 +131,20 @@ class APIReference extends TechArticle
        return $this->getProperty('assembly');
     }
 
+
     /**
-    * @param array|string $value
+        * Indicates whether API is managed or unmanaged.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function programmingModel($value)
+    {
+        $this->setProperty('programmingModel', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setProgrammingModel($value)

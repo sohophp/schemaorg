@@ -10,119 +10,21 @@ use Sohophp\SchemaOrg\Thing\CreativeWork\CreativeWorkSeries;
 */
 class VideoGameSeries extends CreativeWorkSeries
 {
-   /**
-        * The number of seasons in this series.
-        */
-    protected $numberOfSeasons = null;
-
-   /**
-        * An episode of a TV, radio or game media within a series or season.
-        */
-    protected $episode = null;
-
-   /**
-        * Indicate how many people can play this game (minimum, maximum, or range).
-        */
-    protected $numberOfPlayers = null;
-
-   /**
-        * A season in a media series.
-        */
-    protected $seasons = null;
-
-   /**
-        * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
-        */
-    protected $directors = null;
-
-   /**
-        * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
-        */
-    protected $director = null;
-
-   /**
-        * A season that is part of the media series.
-        */
-    protected $containsSeason = null;
-
-   /**
-        * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
-        */
-    protected $gamePlatform = null;
-
-   /**
-        * The task that a player-controlled character, or group of characters may complete in order to gain a reward.
-        */
-    protected $quest = null;
-
-   /**
-        * Cheat codes to the game.
-        */
-    protected $cheatCode = null;
-
-   /**
-        * Real or fictional location of the game (or part of game).
-        */
-    protected $gameLocation = null;
-
-   /**
-        * A season in a media series.
-        */
-    protected $season = null;
-
-   /**
-        * The number of episodes in this season or series.
-        */
-    protected $numberOfEpisodes = null;
-
-   /**
-        * An episode of a TV/radio series or season.
-        */
-    protected $episodes = null;
-
-   /**
-        * Indicates whether this game is multi-player, co-op or single-player.  The game can be marked as multi-player, co-op and single-player at the same time.
-        */
-    protected $playMode = null;
-
-   /**
-        * The production company or studio responsible for the item, e.g. series, video game, episode etc.
-        */
-    protected $productionCompany = null;
-
-   /**
-        * The trailer of a movie or TV/radio series, season, episode, etc.
-        */
-    protected $trailer = null;
-
-   /**
-        * The composer of the soundtrack.
-        */
-    protected $musicBy = null;
-
-   /**
-        * An item is an object within the game world that can be collected by a player or, occasionally, a non-player character.
-        */
-    protected $gameItem = null;
-
-   /**
-        * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
-        */
-    protected $actor = null;
-
-   /**
-        * A piece of data that represents a particular aspect of a fictional character (skill, power, character points, advantage, disadvantage).
-        */
-    protected $characterAttribute = null;
-
-   /**
-        * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
-        */
-    protected $actors = null;
 
 
     /**
-    * @param array|string $value
+        * The number of seasons in this series.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function numberOfSeasons($value)
+    {
+        $this->setProperty('numberOfSeasons', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setNumberOfSeasons($value)
@@ -139,8 +41,20 @@ class VideoGameSeries extends CreativeWorkSeries
        return $this->getProperty('numberOfSeasons');
     }
 
+
     /**
-    * @param array|string $value
+        * An episode of a TV, radio or game media within a series or season.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function episode($value)
+    {
+        $this->setProperty('episode', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setEpisode($value)
@@ -157,8 +71,20 @@ class VideoGameSeries extends CreativeWorkSeries
        return $this->getProperty('episode');
     }
 
+
     /**
-    * @param array|string $value
+        * Indicate how many people can play this game (minimum, maximum, or range).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function numberOfPlayers($value)
+    {
+        $this->setProperty('numberOfPlayers', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setNumberOfPlayers($value)
@@ -175,8 +101,20 @@ class VideoGameSeries extends CreativeWorkSeries
        return $this->getProperty('numberOfPlayers');
     }
 
+
     /**
-    * @param array|string $value
+        * A season in a media series.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function seasons($value)
+    {
+        $this->setProperty('seasons', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSeasons($value)
@@ -193,8 +131,21 @@ class VideoGameSeries extends CreativeWorkSeries
        return $this->getProperty('seasons');
     }
 
+
     /**
-    * @param array|string $value
+        * A director of e.g. TV, radio, movie, video games etc. content. Directors can
+ * be associated with individual items or with a series, episode, clip.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function directors($value)
+    {
+        $this->setProperty('directors', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDirectors($value)
@@ -211,8 +162,22 @@ class VideoGameSeries extends CreativeWorkSeries
        return $this->getProperty('directors');
     }
 
+
     /**
-    * @param array|string $value
+        * A director of e.g. TV, radio, movie, video gaming etc. content, or of an
+ * event. Directors can be associated with individual items or with a series,
+ * episode, clip.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function director($value)
+    {
+        $this->setProperty('director', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDirector($value)
@@ -229,8 +194,20 @@ class VideoGameSeries extends CreativeWorkSeries
        return $this->getProperty('director');
     }
 
+
     /**
-    * @param array|string $value
+        * A season that is part of the media series.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function containsSeason($value)
+    {
+        $this->setProperty('containsSeason', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setContainsSeason($value)
@@ -247,8 +224,21 @@ class VideoGameSeries extends CreativeWorkSeries
        return $this->getProperty('containsSeason');
     }
 
+
     /**
-    * @param array|string $value
+        * The electronic systems used to play [video
+ * games](http://en.wikipedia.org/wiki/Category:Video_game_platforms).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function gamePlatform($value)
+    {
+        $this->setProperty('gamePlatform', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setGamePlatform($value)
@@ -265,8 +255,21 @@ class VideoGameSeries extends CreativeWorkSeries
        return $this->getProperty('gamePlatform');
     }
 
+
     /**
-    * @param array|string $value
+        * The task that a player-controlled character, or group of characters may
+ * complete in order to gain a reward.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function quest($value)
+    {
+        $this->setProperty('quest', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setQuest($value)
@@ -283,8 +286,20 @@ class VideoGameSeries extends CreativeWorkSeries
        return $this->getProperty('quest');
     }
 
+
     /**
-    * @param array|string $value
+        * Cheat codes to the game.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function cheatCode($value)
+    {
+        $this->setProperty('cheatCode', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setCheatCode($value)
@@ -301,8 +316,20 @@ class VideoGameSeries extends CreativeWorkSeries
        return $this->getProperty('cheatCode');
     }
 
+
     /**
-    * @param array|string $value
+        * Real or fictional location of the game (or part of game).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function gameLocation($value)
+    {
+        $this->setProperty('gameLocation', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setGameLocation($value)
@@ -319,8 +346,20 @@ class VideoGameSeries extends CreativeWorkSeries
        return $this->getProperty('gameLocation');
     }
 
+
     /**
-    * @param array|string $value
+        * A season in a media series.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function season($value)
+    {
+        $this->setProperty('season', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSeason($value)
@@ -337,8 +376,20 @@ class VideoGameSeries extends CreativeWorkSeries
        return $this->getProperty('season');
     }
 
+
     /**
-    * @param array|string $value
+        * The number of episodes in this season or series.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function numberOfEpisodes($value)
+    {
+        $this->setProperty('numberOfEpisodes', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setNumberOfEpisodes($value)
@@ -355,8 +406,20 @@ class VideoGameSeries extends CreativeWorkSeries
        return $this->getProperty('numberOfEpisodes');
     }
 
+
     /**
-    * @param array|string $value
+        * An episode of a TV/radio series or season.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function episodes($value)
+    {
+        $this->setProperty('episodes', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setEpisodes($value)
@@ -373,8 +436,21 @@ class VideoGameSeries extends CreativeWorkSeries
        return $this->getProperty('episodes');
     }
 
+
     /**
-    * @param array|string $value
+        * Indicates whether this game is multi-player, co-op or single-player.  The
+ * game can be marked as multi-player, co-op and single-player at the same time.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function playMode($value)
+    {
+        $this->setProperty('playMode', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPlayMode($value)
@@ -391,8 +467,21 @@ class VideoGameSeries extends CreativeWorkSeries
        return $this->getProperty('playMode');
     }
 
+
     /**
-    * @param array|string $value
+        * The production company or studio responsible for the item, e.g. series, video
+ * game, episode etc.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function productionCompany($value)
+    {
+        $this->setProperty('productionCompany', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setProductionCompany($value)
@@ -409,8 +498,20 @@ class VideoGameSeries extends CreativeWorkSeries
        return $this->getProperty('productionCompany');
     }
 
+
     /**
-    * @param array|string $value
+        * The trailer of a movie or TV/radio series, season, episode, etc.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function trailer($value)
+    {
+        $this->setProperty('trailer', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setTrailer($value)
@@ -427,8 +528,20 @@ class VideoGameSeries extends CreativeWorkSeries
        return $this->getProperty('trailer');
     }
 
+
     /**
-    * @param array|string $value
+        * The composer of the soundtrack.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function musicBy($value)
+    {
+        $this->setProperty('musicBy', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setMusicBy($value)
@@ -445,8 +558,21 @@ class VideoGameSeries extends CreativeWorkSeries
        return $this->getProperty('musicBy');
     }
 
+
     /**
-    * @param array|string $value
+        * An item is an object within the game world that can be collected by a player
+ * or, occasionally, a non-player character.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function gameItem($value)
+    {
+        $this->setProperty('gameItem', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setGameItem($value)
@@ -463,8 +589,22 @@ class VideoGameSeries extends CreativeWorkSeries
        return $this->getProperty('gameItem');
     }
 
+
     /**
-    * @param array|string $value
+        * An actor (individual or a group), e.g. in TV, radio, movie, video games etc.,
+ * or in an event. Actors can be associated with individual items or with a
+ * series, episode, clip.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function actor($value)
+    {
+        $this->setProperty('actor', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setActor($value)
@@ -481,8 +621,21 @@ class VideoGameSeries extends CreativeWorkSeries
        return $this->getProperty('actor');
     }
 
+
     /**
-    * @param array|string $value
+        * A piece of data that represents a particular aspect of a fictional character
+ * (skill, power, character points, advantage, disadvantage).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function characterAttribute($value)
+    {
+        $this->setProperty('characterAttribute', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setCharacterAttribute($value)
@@ -499,8 +652,21 @@ class VideoGameSeries extends CreativeWorkSeries
        return $this->getProperty('characterAttribute');
     }
 
+
     /**
-    * @param array|string $value
+        * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated
+ * with individual items or with a series, episode, clip.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function actors($value)
+    {
+        $this->setProperty('actors', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setActors($value)

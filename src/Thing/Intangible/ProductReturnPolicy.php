@@ -4,25 +4,28 @@ namespace Sohophp\SchemaOrg\Thing\Intangible;
 use Sohophp\SchemaOrg\Thing\Intangible;
 
 /**
-* A ProductReturnPolicy provides information about product return policies associated with an [[Organization]] or [[Product]].
+* A ProductReturnPolicy provides information about product return policies
+ * associated with an [[Organization]] or [[Product]].
 * @see schema:ProductReturnPolicy
 * @package Sohophp\SchemaOrg\Thing\Intangible
 */
 class ProductReturnPolicy extends Intangible
 {
-   /**
-        * Indicates a Web page or service by URL, for product return.
-        */
-    protected $productReturnLink = null;
-
-   /**
-        * The productReturnDays property indicates the number of days (from purchase) within which relevant product return policy is applicable.
-        */
-    protected $productReturnDays = null;
 
 
     /**
-    * @param array|string $value
+        * Indicates a Web page or service by URL, for product return.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function productReturnLink($value)
+    {
+        $this->setProperty('productReturnLink', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setProductReturnLink($value)
@@ -39,8 +42,21 @@ class ProductReturnPolicy extends Intangible
        return $this->getProperty('productReturnLink');
     }
 
+
     /**
-    * @param array|string $value
+        * The productReturnDays property indicates the number of days (from purchase)
+ * within which relevant product return policy is applicable.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function productReturnDays($value)
+    {
+        $this->setProperty('productReturnDays', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setProductReturnDays($value)

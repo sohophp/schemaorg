@@ -10,14 +10,22 @@ use Sohophp\SchemaOrg\Thing\Intangible\Role;
 */
 class OrganizationRole extends Role
 {
-   /**
-        * A number associated with a role in an organization, for example, the number on an athlete's jersey.
-        */
-    protected $numberedPosition = null;
 
 
     /**
-    * @param array|string $value
+        * A number associated with a role in an organization, for example, the number
+ * on an athlete's jersey.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function numberedPosition($value)
+    {
+        $this->setProperty('numberedPosition', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setNumberedPosition($value)

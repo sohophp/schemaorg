@@ -4,30 +4,29 @@ namespace Sohophp\SchemaOrg\Thing\Event;
 use Sohophp\SchemaOrg\Thing\Event;
 
 /**
-* A PublicationEvent corresponds indifferently to the event of publication for a CreativeWork of any type, e.g. a broadcast event, an on-demand event, a book/journal publication via a variety of delivery media.
+* A PublicationEvent corresponds indifferently to the event of publication for
+ * a CreativeWork of any type, e.g. a broadcast event, an on-demand event, a
+ * book/journal publication via a variety of delivery media.
 * @see schema:PublicationEvent
 * @package Sohophp\SchemaOrg\Thing\Event
 */
 class PublicationEvent extends Event
 {
-   /**
-        * A flag to signal that the item, event, or place is accessible for free.
-        */
-    protected $free = null;
-
-   /**
-        * An agent associated with the publication event.
-        */
-    protected $publishedBy = null;
-
-   /**
-        * A broadcast service associated with the publication event.
-        */
-    protected $publishedOn = null;
 
 
     /**
-    * @param array|string $value
+        * A flag to signal that the item, event, or place is accessible for free.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function free($value)
+    {
+        $this->setProperty('free', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setFree($value)
@@ -44,8 +43,20 @@ class PublicationEvent extends Event
        return $this->getProperty('free');
     }
 
+
     /**
-    * @param array|string $value
+        * An agent associated with the publication event.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function publishedBy($value)
+    {
+        $this->setProperty('publishedBy', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPublishedBy($value)
@@ -62,8 +73,20 @@ class PublicationEvent extends Event
        return $this->getProperty('publishedBy');
     }
 
+
     /**
-    * @param array|string $value
+        * A broadcast service associated with the publication event.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function publishedOn($value)
+    {
+        $this->setProperty('publishedOn', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPublishedOn($value)

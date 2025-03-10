@@ -10,14 +10,22 @@ use Sohophp\SchemaOrg\Thing\Intangible\Reservation;
 */
 class ReservationPackage extends Reservation
 {
-   /**
-        * The individual reservations included in the package. Typically a repeated property.
-        */
-    protected $subReservation = null;
 
 
     /**
-    * @param array|string $value
+        * The individual reservations included in the package. Typically a repeated
+ * property.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function subReservation($value)
+    {
+        $this->setProperty('subReservation', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSubReservation($value)

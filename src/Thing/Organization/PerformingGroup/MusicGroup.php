@@ -4,45 +4,28 @@ namespace Sohophp\SchemaOrg\Thing\Organization\PerformingGroup;
 use Sohophp\SchemaOrg\Thing\Organization\PerformingGroup;
 
 /**
-* A musical group, such as a band, an orchestra, or a choir. Can also be a solo musician.
+* A musical group, such as a band, an orchestra, or a choir. Can also be a solo
+ * musician.
 * @see schema:MusicGroup
 * @package Sohophp\SchemaOrg\Thing\Organization\PerformingGroup
 */
 class MusicGroup extends PerformingGroup
 {
-   /**
-        * A music album.
-        */
-    protected $album = null;
-
-   /**
-        * A member of a music group&#x2014;for example, John, Paul, George, or Ringo.
-        */
-    protected $musicGroupMember = null;
-
-   /**
-        * A music recording (track)&#x2014;usually a single song.
-        */
-    protected $tracks = null;
-
-   /**
-        * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
-        */
-    protected $track = null;
-
-   /**
-        * A collection of music albums.
-        */
-    protected $albums = null;
-
-   /**
-        * Genre of the creative work, broadcast channel or group.
-        */
-    protected $genre = null;
 
 
     /**
-    * @param array|string $value
+        * A music album.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function album($value)
+    {
+        $this->setProperty('album', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAlbum($value)
@@ -59,8 +42,20 @@ class MusicGroup extends PerformingGroup
        return $this->getProperty('album');
     }
 
+
     /**
-    * @param array|string $value
+        * A member of a music group&#x2014;for example, John, Paul, George, or Ringo.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function musicGroupMember($value)
+    {
+        $this->setProperty('musicGroupMember', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setMusicGroupMember($value)
@@ -77,8 +72,20 @@ class MusicGroup extends PerformingGroup
        return $this->getProperty('musicGroupMember');
     }
 
+
     /**
-    * @param array|string $value
+        * A music recording (track)&#x2014;usually a single song.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function tracks($value)
+    {
+        $this->setProperty('tracks', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setTracks($value)
@@ -95,8 +102,21 @@ class MusicGroup extends PerformingGroup
        return $this->getProperty('tracks');
     }
 
+
     /**
-    * @param array|string $value
+        * A music recording (track)&#x2014;usually a single song. If an ItemList is
+ * given, the list should contain items of type MusicRecording.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function track($value)
+    {
+        $this->setProperty('track', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setTrack($value)
@@ -113,8 +133,20 @@ class MusicGroup extends PerformingGroup
        return $this->getProperty('track');
     }
 
+
     /**
-    * @param array|string $value
+        * A collection of music albums.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function albums($value)
+    {
+        $this->setProperty('albums', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAlbums($value)
@@ -131,8 +163,20 @@ class MusicGroup extends PerformingGroup
        return $this->getProperty('albums');
     }
 
+
     /**
-    * @param array|string $value
+        * Genre of the creative work, broadcast channel or group.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function genre($value)
+    {
+        $this->setProperty('genre', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setGenre($value)

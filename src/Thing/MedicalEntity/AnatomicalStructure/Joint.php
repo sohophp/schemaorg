@@ -10,24 +10,21 @@ use Sohophp\SchemaOrg\Thing\MedicalEntity\AnatomicalStructure;
 */
 class Joint extends AnatomicalStructure
 {
-   /**
-        * The biomechanical properties of the bone.
-        */
-    protected $biomechnicalClass = null;
-
-   /**
-        * The name given to how bone physically connects to each other.
-        */
-    protected $structuralClass = null;
-
-   /**
-        * The degree of mobility the joint allows.
-        */
-    protected $functionalClass = null;
 
 
     /**
-    * @param array|string $value
+        * The biomechanical properties of the bone.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function biomechnicalClass($value)
+    {
+        $this->setProperty('biomechnicalClass', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setBiomechnicalClass($value)
@@ -44,8 +41,20 @@ class Joint extends AnatomicalStructure
        return $this->getProperty('biomechnicalClass');
     }
 
+
     /**
-    * @param array|string $value
+        * The name given to how bone physically connects to each other.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function structuralClass($value)
+    {
+        $this->setProperty('structuralClass', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setStructuralClass($value)
@@ -62,8 +71,20 @@ class Joint extends AnatomicalStructure
        return $this->getProperty('structuralClass');
     }
 
+
     /**
-    * @param array|string $value
+        * The degree of mobility the joint allows.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function functionalClass($value)
+    {
+        $this->setProperty('functionalClass', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setFunctionalClass($value)

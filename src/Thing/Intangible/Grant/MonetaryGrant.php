@@ -10,19 +10,22 @@ use Sohophp\SchemaOrg\Thing\Intangible\Grant;
 */
 class MonetaryGrant extends Grant
 {
-   /**
-        * A person or organization that supports (sponsors) something through some kind of financial contribution.
-        */
-    protected $funder = null;
-
-   /**
-        * The amount of money.
-        */
-    protected $amount = null;
 
 
     /**
-    * @param array|string $value
+        * A person or organization that supports (sponsors) something through some kind
+ * of financial contribution.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function funder($value)
+    {
+        $this->setProperty('funder', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setFunder($value)
@@ -39,8 +42,20 @@ class MonetaryGrant extends Grant
        return $this->getProperty('funder');
     }
 
+
     /**
-    * @param array|string $value
+        * The amount of money.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function amount($value)
+    {
+        $this->setProperty('amount', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAmount($value)

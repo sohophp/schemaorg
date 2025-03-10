@@ -4,617 +4,28 @@ namespace Sohophp\SchemaOrg\Thing;
 use Sohophp\SchemaOrg\Thing;
 
 /**
-* The most generic kind of creative work, including books, movies, photographs, software programs, etc.
+* The most generic kind of creative work, including books, movies, photographs,
+ * software programs, etc.
 * @see schema:CreativeWork
 * @package Sohophp\SchemaOrg\Thing
 */
 class CreativeWork extends Thing
 {
-   /**
-        * The publishing division which published the comic.
-        */
-    protected $publisherImprint = null;
-
-   /**
-        * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
-        */
-    protected $sponsor = null;
-
-   /**
-        * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
-        */
-    protected $inLanguage = null;
-
-   /**
-        * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-      
-        */
-    protected $offers = null;
-
-   /**
-        * A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessModeSufficient-vocabulary).
-        */
-    protected $accessModeSufficient = null;
-
-   /**
-        * The "spatial" property can be used in cases when more specific properties
-(e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
-        */
-    protected $spatial = null;
-
-   /**
-        * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
-        */
-    protected $pattern = null;
-
-   /**
-        * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-        */
-    protected $keywords = null;
-
-   /**
-        * A secondary title of the CreativeWork.
-        */
-    protected $alternativeHeadline = null;
-
-   /**
-        * Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an [[ArchiveComponent]] held by an [[ArchiveOrganization]]. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.\n\nFor example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ". 
-        */
-    protected $conditionsOfAccess = null;
-
-   /**
-        * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
-        */
-    protected $creator = null;
-
-   /**
-        * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
-
-While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
-
-        */
-    protected $publishingPrinciples = null;
-
-   /**
-        * The Organization on whose behalf the creator was working.
-        */
-    protected $sourceOrganization = null;
-
-   /**
-        * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
-        */
-    protected $citation = null;
-
-   /**
-        * Comments, typically from users.
-        */
-    protected $comment = null;
-
-   /**
-        * A thumbnail image relevant to the Thing.
-        */
-    protected $thumbnailUrl = null;
-
-   /**
-        * Indicates whether this content is family friendly.
-        */
-    protected $isFamilyFriendly = null;
-
-   /**
-        * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
-        */
-    protected $educationalUse = null;
-
-   /**
-        * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
-        */
-    protected $size = null;
-
-   /**
-        * An abstract is a short description that summarizes a [[CreativeWork]].
-        */
-    protected $abstract = null;
-
-   /**
-        * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
-        */
-    protected $dateModified = null;
-
-   /**
-        * The year during which the claimed copyright for the CreativeWork was first asserted.
-        */
-    protected $copyrightYear = null;
-
-   /**
-        * A creative work that this work is an example/instance/realization/derivation of.
-        */
-    protected $exampleOfWork = null;
-
-   /**
-        * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
-        */
-    protected $teaches = null;
-
-   /**
-        * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing a specific edit / edition for a work of film or television.
-
-For example, the motion picture known as "Ghostbusters" whose [[titleEIDR]] is "10.5240/7EC7-228A-510A-053E-CBB8-J" has several edits, e.g. "10.5240/1F2A-E1C5-680A-14C6-E76B-I" and "10.5240/8A35-3BEE-6497-5D12-9E4F-3".
-
-Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
-
-        */
-    protected $editEIDR = null;
-
-   /**
-        * A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).
-        */
-    protected $accessibilityHazard = null;
-
-   /**
-        * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
-        */
-    protected $isBasedOnUrl = null;
-
-   /**
-        * Indicates the date on which the current structured data was generated / published. Typically used alongside [[sdPublisher]].
-        */
-    protected $sdDatePublished = null;
-
-   /**
-        * The location depicted or described in the content. For example, the location in a photograph or painting.
-        */
-    protected $contentLocation = null;
-
-   /**
-        * A license document that applies to this content, typically indicated by URL.
-        */
-    protected $license = null;
-
-   /**
-        * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-        */
-    protected $funding = null;
-
-   /**
-        * Specifies the Person who edited the CreativeWork.
-        */
-    protected $editor = null;
-
-   /**
-        * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
-        */
-    protected $interactionStatistic = null;
-
-   /**
-        * A media object that encodes this CreativeWork. This property is a synonym for associatedMedia.
-        */
-    protected $encoding = null;
-
-   /**
-        * A person or organization that supports (sponsors) something through some kind of financial contribution.
-        */
-    protected $funder = null;
-
-   /**
-        * Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.
-        */
-    protected $workExample = null;
-
-   /**
-        * The subject matter of the content.
-        */
-    protected $about = null;
-
-   /**
-        * A maintainer of a [[Dataset]], software package ([[SoftwareApplication]]), or other [[Project]]. A maintainer is a [[Person]] or [[Organization]] that manages contributions to, and/or publication of, some (typically complex) artifact. It is common for distributions of software and data to be based on "upstream" sources. When [[maintainer]] is applied to a specific version of something e.g. a particular version or packaging of a [[Dataset]], it is always  possible that the upstream source has a different maintainer. The [[isBasedOn]] property can be used to indicate such relationships between datasets to make the different maintenance roles clear. Similarly in the case of software, a package may have dedicated maintainers working on integration into software distributions such as Ubuntu, as well as upstream maintainers of the underlying work.
-      
-        */
-    protected $maintainer = null;
-
-   /**
-        * The place and time the release was issued, expressed as a PublicationEvent.
-        */
-    protected $releasedEvent = null;
-
-   /**
-        * An embedded video object.
-        */
-    protected $video = null;
-
-   /**
-        * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
-        */
-    protected $mentions = null;
-
-   /**
-        * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
-        */
-    protected $creativeWorkStatus = null;
-
-   /**
-        * The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.
-        */
-    protected $contentReferenceTime = null;
-
-   /**
-        * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
-        */
-    protected $author = null;
-
-   /**
-        * A media object that encodes this CreativeWork. This property is a synonym for encoding.
-        */
-    protected $associatedMedia = null;
-
-   /**
-        * The "temporal" property can be used in cases where more specific properties
-(e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
-        */
-    protected $temporal = null;
-
-   /**
-        * A publication event associated with the item.
-        */
-    protected $publication = null;
-
-   /**
-        * Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).
-        */
-    protected $accessibilityAPI = null;
-
-   /**
-        * An intended audience, i.e. a group for whom something was created.
-        */
-    protected $audience = null;
-
-   /**
-        * A work that is a translation of the content of this work. E.g. 西遊記 has an English workTranslation “Journey to the West”, a German workTranslation “Monkeys Pilgerfahrt” and a Vietnamese  translation Tây du ký bình khảo.
-        */
-    protected $workTranslation = null;
-
-   /**
-        * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed".
-        */
-    protected $accessibilitySummary = null;
-
-   /**
-        * A review of the item.
-        */
-    protected $review = null;
-
-   /**
-        * The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.
-        */
-    protected $locationCreated = null;
-
-   /**
-        * Review of the item.
-        */
-    protected $reviews = null;
-
-   /**
-        * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-        */
-    protected $acquireLicensePage = null;
-
-   /**
-        * The position of an item in a series or sequence of items.
-        */
-    protected $position = null;
-
-   /**
-        * The predominant mode of learning supported by the learning resource. Acceptable values are 'active', 'expositive', or 'mixed'.
-        */
-    protected $interactivityType = null;
-
-   /**
-        * An embedded audio object.
-        */
-    protected $audio = null;
-
-   /**
-        * The version of the CreativeWork embodied by a specified resource.
-        */
-    protected $version = null;
-
-   /**
-        * Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).
-        */
-    protected $accessibilityFeature = null;
-
-   /**
-        * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)), e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.
-
-In cases where a [[CreativeWork]] has several media type representations, [[encoding]] can be used to indicate each [[MediaObject]] alongside particular [[encodingFormat]] information.
-
-Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
-        */
-    protected $encodingFormat = null;
-
-   /**
-        * A link to the page containing the comments of the CreativeWork.
-        */
-    protected $discussionUrl = null;
-
-   /**
-        * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
-      contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
-      areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
-        */
-    protected $spatialCoverage = null;
-
-   /**
-        * An award won by or for this item.
-        */
-    protected $award = null;
-
-   /**
-        * Headline of the article.
-        */
-    protected $headline = null;
-
-   /**
-        * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-        */
-    protected $provider = null;
-
-   /**
-        * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
-        */
-    protected $learningResourceType = null;
-
-   /**
-        * The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.
-        */
-    protected $recordedAt = null;
-
-   /**
-        * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
-        */
-    protected $correction = null;
-
-   /**
-        * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
-        */
-    protected $archivedAt = null;
-
-   /**
-        * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
-        */
-    protected $translator = null;
-
-   /**
-        * Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.
-        */
-    protected $copyrightNotice = null;
-
-   /**
-        * A flag to signal that the item, event, or place is accessible for free.
-        */
-    protected $isAccessibleForFree = null;
-
-   /**
-        * The work that this work has been translated from. E.g. 物种起源 is a translationOf “On the Origin of Species”.
-        */
-    protected $translationOfWork = null;
-
-   /**
-        * The publisher of the creative work.
-        */
-    protected $publisher = null;
-
-   /**
-        * Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The
-[[sdPublisher]] property helps make such practices more explicit.
-        */
-    protected $sdPublisher = null;
-
-   /**
-        * A material that something is made from, e.g. leather, wool, cotton, paper.
-        */
-    protected $material = null;
-
-   /**
-        * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
-        */
-    protected $isPartOf = null;
-
-   /**
-        * Awards won by or for this item.
-        */
-    protected $awards = null;
-
-   /**
-        * The party holding the legal copyright to the CreativeWork.
-        */
-    protected $copyrightHolder = null;
-
-   /**
-        * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content, e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
-        */
-    protected $fileFormat = null;
-
-   /**
-        * An alignment to an established educational framework.
-
-This property should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.
-        */
-    protected $educationalAlignment = null;
-
-   /**
-        * A media object that encodes this CreativeWork.
-        */
-    protected $encodings = null;
-
-   /**
-        * A secondary contributor to the CreativeWork or Event.
-        */
-    protected $contributor = null;
-
-   /**
-        * Official rating of a piece of content&#x2014;for example, 'MPAA PG-13'.
-        */
-    protected $contentRating = null;
-
-   /**
-        * The overall rating, based on a collection of reviews or ratings, of the item.
-        */
-    protected $aggregateRating = null;
-
-   /**
-        * Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.
-        */
-    protected $creditText = null;
-
-   /**
-        * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
-        */
-    protected $hasPart = null;
-
-   /**
-        * The textual content of this CreativeWork.
-        */
-    protected $text = null;
-
-   /**
-        * The schema.org [[usageInfo]] property indicates further information about a [[CreativeWork]]. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information, e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options.
-
-This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.
-        */
-    protected $usageInfo = null;
-
-   /**
-        * The country of origin of something, including products as well as creative  works such as movie and TV content.
-
-In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of [[CreativeWork]] it is difficult to provide fully general guidance, and properties such as [[contentLocation]] and [[locationCreated]] may be more applicable.
-
-In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
-        */
-    protected $countryOfOrigin = null;
-
-   /**
-        * A resource from which this work is derived or from which it is a modification or adaptation.
-        */
-    protected $isBasedOn = null;
-
-   /**
-        * Indicates an IPTCDigitalSourceEnumeration code indicating the nature of the digital source(s) for some [[CreativeWork]].
-        */
-    protected $digitalSourceType = null;
-
-   /**
-        * Identifies input methods that are sufficient to fully control the described resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityControl-vocabulary).
-        */
-    protected $accessibilityControl = null;
-
-   /**
-        * Approximate or typical time it usually takes to work with or through the content of this work for the typical or target audience.
-        */
-    protected $timeRequired = null;
-
-   /**
-        * Specifies the Person that is legally accountable for the CreativeWork.
-        */
-    protected $accountablePerson = null;
-
-   /**
-        * The quantity of the materials being described or an expression of the physical space they occupy.
-        */
-    protected $materialExtent = null;
-
-   /**
-        * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
-      the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content, e.g. ScholarlyArticle, Book, TVSeries or TVEpisode, may indicate their temporalCoverage in broader terms - textually or via well-known URL.
-      Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
-
-Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
-        */
-    protected $temporalCoverage = null;
-
-   /**
-        * The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.
-        */
-    protected $commentCount = null;
-
-   /**
-        * The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).
-        */
-    protected $accessMode = null;
-
-   /**
-        * The person or organization who produced the work (e.g. music album, movie, TV/radio series etc.).
-        */
-    protected $producer = null;
-
-   /**
-        * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
-        */
-    protected $educationalLevel = null;
-
-   /**
-        * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
-        */
-    protected $interpretedAsClaim = null;
-
-   /**
-        * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date, or a [[Certification]] the validity has expired.
-        */
-    protected $expires = null;
-
-   /**
-        * Thumbnail image for an image or video.
-        */
-    protected $thumbnail = null;
-
-   /**
-        * A license document that applies to this structured data, typically indicated by URL.
-        */
-    protected $sdLicense = null;
-
-   /**
-        * Indicates the primary entity described in some page or other CreativeWork.
-        */
-    protected $mainEntity = null;
-
-   /**
-        * The date on which the CreativeWork was created or the item was added to a DataFeed.
-        */
-    protected $dateCreated = null;
-
-   /**
-        * Date of first publication or broadcast. For example the date a [[CreativeWork]] was broadcast or a [[Certification]] was issued.
-        */
-    protected $datePublished = null;
-
-   /**
-        * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
-    indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.
-        */
-    protected $schemaVersion = null;
-
-   /**
-        * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
-        */
-    protected $assesses = null;
-
-   /**
-        * Fictional person connected with a creative work.
-        */
-    protected $character = null;
-
-   /**
-        * The typical expected age range, e.g. '7-9', '11-'.
-        */
-    protected $typicalAgeRange = null;
-
-   /**
-        * Genre of the creative work, broadcast channel or group.
-        */
-    protected $genre = null;
 
 
     /**
-    * @param array|string $value
+        * The publishing division which published the comic.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function publisherImprint($value)
+    {
+        $this->setProperty('publisherImprint', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPublisherImprint($value)
@@ -631,8 +42,22 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('publisherImprint');
     }
 
+
     /**
-    * @param array|string $value
+        * A person or organization that supports a thing through a pledge, promise, or
+ * financial contribution. E.g. a sponsor of a Medical Study or a corporate
+ * sponsor of an event.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function sponsor($value)
+    {
+        $this->setProperty('sponsor', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSponsor($value)
@@ -649,8 +74,22 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('sponsor');
     }
 
+
     /**
-    * @param array|string $value
+        * The language of the content or performance or used in an action. Please use
+ * one of the language codes from the [IETF BCP 47
+ * standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function inLanguage($value)
+    {
+        $this->setProperty('inLanguage', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setInLanguage($value)
@@ -667,8 +106,26 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('inLanguage');
     }
 
+
     /**
-    * @param array|string $value
+        * An offer to provide this item&#x2014;for example, an offer to sell a product,
+ * rent the DVD of a movie, perform a service, or give away tickets to an event.
+ * Use [[businessFunction]] to indicate the kind of transaction offered, i.e.
+ * sell, lease, etc. This property can also be used to describe a [[Demand]].
+ * While this property is listed as expected on a number of common types, it can
+ * be used in others. In that case, using a second type, such as Product or a
+ * subtype of Product, can clarify the nature of the offer.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function offers($value)
+    {
+        $this->setProperty('offers', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setOffers($value)
@@ -685,8 +142,23 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('offers');
     }
 
+
     /**
-    * @param array|string $value
+        * A list of single or combined accessModes that are sufficient to understand
+ * all the intellectual content of a resource. Values should be drawn from the
+ * [approved
+ * vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessModeSufficient-vocabulary).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function accessModeSufficient($value)
+    {
+        $this->setProperty('accessModeSufficient', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAccessModeSufficient($value)
@@ -703,8 +175,22 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('accessModeSufficient');
     }
 
+
     /**
-    * @param array|string $value
+        * The "spatial" property can be used in cases when more specific properties
+ * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not
+ * known to be appropriate.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function spatial($value)
+    {
+        $this->setProperty('spatial', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSpatial($value)
@@ -721,8 +207,22 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('spatial');
     }
 
+
     /**
-    * @param array|string $value
+        * A pattern that something has, for example 'polka dot', 'striped', 'Canadian
+ * flag'. Values are typically expressed as text, although links to controlled
+ * value schemes are also supported.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function pattern($value)
+    {
+        $this->setProperty('pattern', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPattern($value)
@@ -739,8 +239,22 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('pattern');
     }
 
+
     /**
-    * @param array|string $value
+        * Keywords or tags used to describe some item. Multiple textual entries in a
+ * keywords list are typically delimited by commas, or by repeating the
+ * property.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function keywords($value)
+    {
+        $this->setProperty('keywords', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setKeywords($value)
@@ -757,8 +271,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('keywords');
     }
 
+
     /**
-    * @param array|string $value
+        * A secondary title of the CreativeWork.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function alternativeHeadline($value)
+    {
+        $this->setProperty('alternativeHeadline', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAlternativeHeadline($value)
@@ -775,8 +301,27 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('alternativeHeadline');
     }
 
+
     /**
-    * @param array|string $value
+        * Conditions that affect the availability of, or method(s) of access to, an
+ * item. Typically used for real world items such as an [[ArchiveComponent]]
+ * held by an [[ArchiveOrganization]]. This property is not suitable for use as
+ * a general Web access control mechanism. It is expressed only in natural
+ * language.
+ * 
+ * For example "Available by appointment from the Reading Room" or "Accessible
+ * only from logged-in accounts ".
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function conditionsOfAccess($value)
+    {
+        $this->setProperty('conditionsOfAccess', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setConditionsOfAccess($value)
@@ -793,8 +338,21 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('conditionsOfAccess');
     }
 
+
     /**
-    * @param array|string $value
+        * The creator/author of this CreativeWork. This is the same as the Author
+ * property for CreativeWork.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function creator($value)
+    {
+        $this->setProperty('creator', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setCreator($value)
@@ -811,8 +369,29 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('creator');
     }
 
+
     /**
-    * @param array|string $value
+        * The publishingPrinciples property indicates (typically via [[URL]]) a
+ * document describing the editorial principles of an [[Organization]] (or
+ * individual, e.g. a [[Person]] writing a blog) that relate to their activities
+ * as a publisher, e.g. ethics or diversity policies. When applied to a
+ * [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party
+ * primarily responsible for the creation of the [[CreativeWork]].
+ * 
+ * While such policies are most typically expressed in natural language,
+ * sometimes related information (e.g. indicating a [[funder]]) can be expressed
+ * using schema.org terminology.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function publishingPrinciples($value)
+    {
+        $this->setProperty('publishingPrinciples', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPublishingPrinciples($value)
@@ -829,8 +408,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('publishingPrinciples');
     }
 
+
     /**
-    * @param array|string $value
+        * The Organization on whose behalf the creator was working.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function sourceOrganization($value)
+    {
+        $this->setProperty('sourceOrganization', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSourceOrganization($value)
@@ -847,8 +438,21 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('sourceOrganization');
     }
 
+
     /**
-    * @param array|string $value
+        * A citation or reference to another creative work, such as another
+ * publication, web page, scholarly article, etc.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function citation($value)
+    {
+        $this->setProperty('citation', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setCitation($value)
@@ -865,8 +469,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('citation');
     }
 
+
     /**
-    * @param array|string $value
+        * Comments, typically from users.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function comment($value)
+    {
+        $this->setProperty('comment', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setComment($value)
@@ -883,8 +499,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('comment');
     }
 
+
     /**
-    * @param array|string $value
+        * A thumbnail image relevant to the Thing.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function thumbnailUrl($value)
+    {
+        $this->setProperty('thumbnailUrl', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setThumbnailUrl($value)
@@ -901,8 +529,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('thumbnailUrl');
     }
 
+
     /**
-    * @param array|string $value
+        * Indicates whether this content is family friendly.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function isFamilyFriendly($value)
+    {
+        $this->setProperty('isFamilyFriendly', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setIsFamilyFriendly($value)
@@ -919,8 +559,21 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('isFamilyFriendly');
     }
 
+
     /**
-    * @param array|string $value
+        * The purpose of a work in the context of education; for example, 'assignment',
+ * 'group work'.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function educationalUse($value)
+    {
+        $this->setProperty('educationalUse', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setEducationalUse($value)
@@ -937,8 +590,24 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('educationalUse');
     }
 
+
     /**
-    * @param array|string $value
+        * A standardized size of a product or creative work, specified either through a
+ * simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue
+ * with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in
+ * other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties
+ * may be more applicable.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function size($value)
+    {
+        $this->setProperty('size', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSize($value)
@@ -955,8 +624,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('size');
     }
 
+
     /**
-    * @param array|string $value
+        * An abstract is a short description that summarizes a [[CreativeWork]].
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function abstract($value)
+    {
+        $this->setProperty('abstract', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAbstract($value)
@@ -973,8 +654,21 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('abstract');
     }
 
+
     /**
-    * @param array|string $value
+        * The date on which the CreativeWork was most recently modified or when the
+ * item's entry was modified within a DataFeed.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function dateModified($value)
+    {
+        $this->setProperty('dateModified', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDateModified($value)
@@ -991,8 +685,21 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('dateModified');
     }
 
+
     /**
-    * @param array|string $value
+        * The year during which the claimed copyright for the CreativeWork was first
+ * asserted.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function copyrightYear($value)
+    {
+        $this->setProperty('copyrightYear', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setCopyrightYear($value)
@@ -1009,8 +716,21 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('copyrightYear');
     }
 
+
     /**
-    * @param array|string $value
+        * A creative work that this work is an example/instance/realization/derivation
+ * of.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function exampleOfWork($value)
+    {
+        $this->setProperty('exampleOfWork', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setExampleOfWork($value)
@@ -1027,8 +747,21 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('exampleOfWork');
     }
 
+
     /**
-    * @param array|string $value
+        * The item being described is intended to help a person learn the competency or
+ * learning outcome defined by the referenced term.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function teaches($value)
+    {
+        $this->setProperty('teaches', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setTeaches($value)
@@ -1045,8 +778,32 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('teaches');
     }
 
+
     /**
-    * @param array|string $value
+        * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry)
+ * [[identifier]] representing a specific edit / edition for a work of film or
+ * television.
+ * 
+ * For example, the motion picture known as "Ghostbusters" whose [[titleEIDR]]
+ * is "10.5240/7EC7-228A-510A-053E-CBB8-J" has several edits, e.g.
+ * "10.5240/1F2A-E1C5-680A-14C6-E76B-I" and
+ * "10.5240/8A35-3BEE-6497-5D12-9E4F-3".
+ * 
+ * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both
+ * works and their multiple expressions, it is possible to use [[titleEIDR]]
+ * alone (for a general description), or alongside [[editEIDR]] for a more
+ * edit-specific description.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function editEIDR($value)
+    {
+        $this->setProperty('editEIDR', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setEditEIDR($value)
@@ -1063,8 +820,23 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('editEIDR');
     }
 
+
     /**
-    * @param array|string $value
+        * A characteristic of the described resource that is physiologically dangerous
+ * to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from
+ * the [approved
+ * vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function accessibilityHazard($value)
+    {
+        $this->setProperty('accessibilityHazard', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAccessibilityHazard($value)
@@ -1081,8 +853,22 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('accessibilityHazard');
     }
 
+
     /**
-    * @param array|string $value
+        * A resource that was used in the creation of this resource. This term can be
+ * repeated for multiple sources. For example,
+ * http://example.com/great-multiplication-intro.html.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function isBasedOnUrl($value)
+    {
+        $this->setProperty('isBasedOnUrl', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setIsBasedOnUrl($value)
@@ -1099,8 +885,21 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('isBasedOnUrl');
     }
 
+
     /**
-    * @param array|string $value
+        * Indicates the date on which the current structured data was generated /
+ * published. Typically used alongside [[sdPublisher]].
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function sdDatePublished($value)
+    {
+        $this->setProperty('sdDatePublished', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSdDatePublished($value)
@@ -1117,8 +916,21 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('sdDatePublished');
     }
 
+
     /**
-    * @param array|string $value
+        * The location depicted or described in the content. For example, the location
+ * in a photograph or painting.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function contentLocation($value)
+    {
+        $this->setProperty('contentLocation', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setContentLocation($value)
@@ -1135,8 +947,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('contentLocation');
     }
 
+
     /**
-    * @param array|string $value
+        * A license document that applies to this content, typically indicated by URL.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function license($value)
+    {
+        $this->setProperty('license', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setLicense($value)
@@ -1153,8 +977,21 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('license');
     }
 
+
     /**
-    * @param array|string $value
+        * A [[Grant]] that directly or indirectly provide funding or sponsorship for
+ * this item. See also [[ownershipFundingInfo]].
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function funding($value)
+    {
+        $this->setProperty('funding', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setFunding($value)
@@ -1171,8 +1008,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('funding');
     }
 
+
     /**
-    * @param array|string $value
+        * Specifies the Person who edited the CreativeWork.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function editor($value)
+    {
+        $this->setProperty('editor', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setEditor($value)
@@ -1189,8 +1038,22 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('editor');
     }
 
+
     /**
-    * @param array|string $value
+        * The number of interactions for the CreativeWork using the WebSite or
+ * SoftwareApplication. The most specific child type of InteractionCounter
+ * should be used.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function interactionStatistic($value)
+    {
+        $this->setProperty('interactionStatistic', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setInteractionStatistic($value)
@@ -1207,8 +1070,21 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('interactionStatistic');
     }
 
+
     /**
-    * @param array|string $value
+        * A media object that encodes this CreativeWork. This property is a synonym for
+ * associatedMedia.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function encoding($value)
+    {
+        $this->setProperty('encoding', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setEncoding($value)
@@ -1225,8 +1101,21 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('encoding');
     }
 
+
     /**
-    * @param array|string $value
+        * A person or organization that supports (sponsors) something through some kind
+ * of financial contribution.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function funder($value)
+    {
+        $this->setProperty('funder', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setFunder($value)
@@ -1243,8 +1132,21 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('funder');
     }
 
+
     /**
-    * @param array|string $value
+        * Example/instance/realization/derivation of the concept of this creative work.
+ * E.g. the paperback edition, first edition, or e-book.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function workExample($value)
+    {
+        $this->setProperty('workExample', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setWorkExample($value)
@@ -1261,8 +1163,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('workExample');
     }
 
+
     /**
-    * @param array|string $value
+        * The subject matter of the content.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function about($value)
+    {
+        $this->setProperty('about', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAbout($value)
@@ -1279,8 +1193,31 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('about');
     }
 
+
     /**
-    * @param array|string $value
+        * A maintainer of a [[Dataset]], software package ([[SoftwareApplication]]), or
+ * other [[Project]]. A maintainer is a [[Person]] or [[Organization]] that
+ * manages contributions to, and/or publication of, some (typically complex)
+ * artifact. It is common for distributions of software and data to be based on
+ * "upstream" sources. When [[maintainer]] is applied to a specific version of
+ * something e.g. a particular version or packaging of a [[Dataset]], it is
+ * always  possible that the upstream source has a different maintainer. The
+ * [[isBasedOn]] property can be used to indicate such relationships between
+ * datasets to make the different maintenance roles clear. Similarly in the case
+ * of software, a package may have dedicated maintainers working on integration
+ * into software distributions such as Ubuntu, as well as upstream maintainers
+ * of the underlying work.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function maintainer($value)
+    {
+        $this->setProperty('maintainer', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setMaintainer($value)
@@ -1297,8 +1234,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('maintainer');
     }
 
+
     /**
-    * @param array|string $value
+        * The place and time the release was issued, expressed as a PublicationEvent.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function releasedEvent($value)
+    {
+        $this->setProperty('releasedEvent', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setReleasedEvent($value)
@@ -1315,8 +1264,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('releasedEvent');
     }
 
+
     /**
-    * @param array|string $value
+        * An embedded video object.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function video($value)
+    {
+        $this->setProperty('video', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setVideo($value)
@@ -1333,8 +1294,21 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('video');
     }
 
+
     /**
-    * @param array|string $value
+        * Indicates that the CreativeWork contains a reference to, but is not
+ * necessarily about a concept.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function mentions($value)
+    {
+        $this->setProperty('mentions', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setMentions($value)
@@ -1351,8 +1325,22 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('mentions');
     }
 
+
     /**
-    * @param array|string $value
+        * The status of a creative work in terms of its stage in a lifecycle. Example
+ * terms include Incomplete, Draft, Published, Obsolete. Some organizations
+ * define a set of terms for the stages of their publication lifecycle.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function creativeWorkStatus($value)
+    {
+        $this->setProperty('creativeWorkStatus', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setCreativeWorkStatus($value)
@@ -1369,8 +1357,21 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('creativeWorkStatus');
     }
 
+
     /**
-    * @param array|string $value
+        * The specific time described by a creative work, for works (e.g. articles,
+ * video objects etc.) that emphasise a particular moment within an Event.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function contentReferenceTime($value)
+    {
+        $this->setProperty('contentReferenceTime', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setContentReferenceTime($value)
@@ -1387,8 +1388,22 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('contentReferenceTime');
     }
 
+
     /**
-    * @param array|string $value
+        * The author of this content or rating. Please note that author is special in
+ * that HTML 5 provides a special mechanism for indicating authorship via the
+ * rel tag. That is equivalent to this and may be used interchangeably.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function author($value)
+    {
+        $this->setProperty('author', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAuthor($value)
@@ -1405,8 +1420,21 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('author');
     }
 
+
     /**
-    * @param array|string $value
+        * A media object that encodes this CreativeWork. This property is a synonym for
+ * encoding.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function associatedMedia($value)
+    {
+        $this->setProperty('associatedMedia', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAssociatedMedia($value)
@@ -1423,8 +1451,22 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('associatedMedia');
     }
 
+
     /**
-    * @param array|string $value
+        * The "temporal" property can be used in cases where more specific properties
+ * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]],
+ * [[datePublished]]) are not known to be appropriate.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function temporal($value)
+    {
+        $this->setProperty('temporal', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setTemporal($value)
@@ -1441,8 +1483,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('temporal');
     }
 
+
     /**
-    * @param array|string $value
+        * A publication event associated with the item.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function publication($value)
+    {
+        $this->setProperty('publication', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPublication($value)
@@ -1459,8 +1513,22 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('publication');
     }
 
+
     /**
-    * @param array|string $value
+        * Indicates that the resource is compatible with the referenced accessibility
+ * API. Values should be drawn from the [approved
+ * vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function accessibilityAPI($value)
+    {
+        $this->setProperty('accessibilityAPI', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAccessibilityAPI($value)
@@ -1477,8 +1545,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('accessibilityAPI');
     }
 
+
     /**
-    * @param array|string $value
+        * An intended audience, i.e. a group for whom something was created.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function audience($value)
+    {
+        $this->setProperty('audience', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAudience($value)
@@ -1495,8 +1575,23 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('audience');
     }
 
+
     /**
-    * @param array|string $value
+        * A work that is a translation of the content of this work. E.g. 西遊記 has
+ * an English workTranslation “Journey to the West”, a German
+ * workTranslation “Monkeys Pilgerfahrt” and a Vietnamese  translation Tây
+ * du ký bình khảo.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function workTranslation($value)
+    {
+        $this->setProperty('workTranslation', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setWorkTranslation($value)
@@ -1513,8 +1608,24 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('workTranslation');
     }
 
+
     /**
-    * @param array|string $value
+        * A human-readable summary of specific accessibility features or deficiencies,
+ * consistent with the other accessibility metadata but expressing subtleties
+ * such as "short descriptions are present but long descriptions will be needed
+ * for non-visual users" or "short descriptions are present and no long
+ * descriptions are needed".
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function accessibilitySummary($value)
+    {
+        $this->setProperty('accessibilitySummary', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAccessibilitySummary($value)
@@ -1531,8 +1642,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('accessibilitySummary');
     }
 
+
     /**
-    * @param array|string $value
+        * A review of the item.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function review($value)
+    {
+        $this->setProperty('review', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setReview($value)
@@ -1549,8 +1672,21 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('review');
     }
 
+
     /**
-    * @param array|string $value
+        * The location where the CreativeWork was created, which may not be the same as
+ * the location depicted in the CreativeWork.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function locationCreated($value)
+    {
+        $this->setProperty('locationCreated', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setLocationCreated($value)
@@ -1567,8 +1703,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('locationCreated');
     }
 
+
     /**
-    * @param array|string $value
+        * Review of the item.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function reviews($value)
+    {
+        $this->setProperty('reviews', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setReviews($value)
@@ -1585,8 +1733,21 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('reviews');
     }
 
+
     /**
-    * @param array|string $value
+        * Indicates a page documenting how licenses can be purchased or otherwise
+ * acquired, for the current item.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function acquireLicensePage($value)
+    {
+        $this->setProperty('acquireLicensePage', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAcquireLicensePage($value)
@@ -1603,8 +1764,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('acquireLicensePage');
     }
 
+
     /**
-    * @param array|string $value
+        * The position of an item in a series or sequence of items.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function position($value)
+    {
+        $this->setProperty('position', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPosition($value)
@@ -1621,8 +1794,21 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('position');
     }
 
+
     /**
-    * @param array|string $value
+        * The predominant mode of learning supported by the learning resource.
+ * Acceptable values are 'active', 'expositive', or 'mixed'.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function interactivityType($value)
+    {
+        $this->setProperty('interactivityType', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setInteractivityType($value)
@@ -1639,8 +1825,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('interactivityType');
     }
 
+
     /**
-    * @param array|string $value
+        * An embedded audio object.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function audio($value)
+    {
+        $this->setProperty('audio', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAudio($value)
@@ -1657,8 +1855,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('audio');
     }
 
+
     /**
-    * @param array|string $value
+        * The version of the CreativeWork embodied by a specified resource.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function version($value)
+    {
+        $this->setProperty('version', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setVersion($value)
@@ -1675,8 +1885,23 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('version');
     }
 
+
     /**
-    * @param array|string $value
+        * Content features of the resource, such as accessible media, alternatives and
+ * supported enhancements for accessibility. Values should be drawn from the
+ * [approved
+ * vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function accessibilityFeature($value)
+    {
+        $this->setProperty('accessibilityFeature', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAccessibilityFeature($value)
@@ -1693,8 +1918,32 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('accessibilityFeature');
     }
 
+
     /**
-    * @param array|string $value
+        * Media type typically expressed using a MIME format (see [IANA
+ * site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN
+ * reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)),
+ * e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3
+ * etc.
+ * 
+ * In cases where a [[CreativeWork]] has several media type representations,
+ * [[encoding]] can be used to indicate each [[MediaObject]] alongside
+ * particular [[encodingFormat]] information.
+ * 
+ * Unregistered or niche encoding and file formats can be indicated instead via
+ * the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata
+ * entry.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function encodingFormat($value)
+    {
+        $this->setProperty('encodingFormat', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setEncodingFormat($value)
@@ -1711,8 +1960,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('encodingFormat');
     }
 
+
     /**
-    * @param array|string $value
+        * A link to the page containing the comments of the CreativeWork.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function discussionUrl($value)
+    {
+        $this->setProperty('discussionUrl', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDiscussionUrl($value)
@@ -1729,8 +1990,25 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('discussionUrl');
     }
 
+
     /**
-    * @param array|string $value
+        * The spatialCoverage of a CreativeWork indicates the place(s) which are the
+ * focus of the content. It is a subproperty of
+ *       contentLocation intended primarily for more technical and detailed
+ * materials. For example with a Dataset, it indicates
+ *       areas that the dataset describes: a dataset of New York weather would
+ * have spatialCoverage which was the place: the state of New York.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function spatialCoverage($value)
+    {
+        $this->setProperty('spatialCoverage', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSpatialCoverage($value)
@@ -1747,8 +2025,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('spatialCoverage');
     }
 
+
     /**
-    * @param array|string $value
+        * An award won by or for this item.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function award($value)
+    {
+        $this->setProperty('award', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAward($value)
@@ -1765,8 +2055,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('award');
     }
 
+
     /**
-    * @param array|string $value
+        * Headline of the article.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function headline($value)
+    {
+        $this->setProperty('headline', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setHeadline($value)
@@ -1783,8 +2085,22 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('headline');
     }
 
+
     /**
-    * @param array|string $value
+        * The service provider, service operator, or service performer; the goods
+ * producer. Another party (a seller) may offer those services or goods on
+ * behalf of the provider. A provider may also serve as the seller.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function provider($value)
+    {
+        $this->setProperty('provider', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setProvider($value)
@@ -1801,8 +2117,21 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('provider');
     }
 
+
     /**
-    * @param array|string $value
+        * The predominant type or kind characterizing the learning resource. For
+ * example, 'presentation', 'handout'.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function learningResourceType($value)
+    {
+        $this->setProperty('learningResourceType', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setLearningResourceType($value)
@@ -1819,8 +2148,21 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('learningResourceType');
     }
 
+
     /**
-    * @param array|string $value
+        * The Event where the CreativeWork was recorded. The CreativeWork may capture
+ * all or part of the event.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function recordedAt($value)
+    {
+        $this->setProperty('recordedAt', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setRecordedAt($value)
@@ -1837,8 +2179,21 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('recordedAt');
     }
 
+
     /**
-    * @param array|string $value
+        * Indicates a correction to a [[CreativeWork]], either via a
+ * [[CorrectionComment]], textually or in another document.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function correction($value)
+    {
+        $this->setProperty('correction', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setCorrection($value)
@@ -1855,8 +2210,24 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('correction');
     }
 
+
     /**
-    * @param array|string $value
+        * Indicates a page or other link involved in archival of a [[CreativeWork]]. In
+ * the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often
+ * become inaccessible, but be archived by archival, journalistic, activist, or
+ * law enforcement organizations. In such cases, the referenced page may not
+ * directly publish the content.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function archivedAt($value)
+    {
+        $this->setProperty('archivedAt', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setArchivedAt($value)
@@ -1873,8 +2244,22 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('archivedAt');
     }
 
+
     /**
-    * @param array|string $value
+        * Organization or person who adapts a creative work to different languages,
+ * regional differences and technical requirements of a target market, or that
+ * translates during some event.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function translator($value)
+    {
+        $this->setProperty('translator', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setTranslator($value)
@@ -1891,8 +2276,21 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('translator');
     }
 
+
     /**
-    * @param array|string $value
+        * Text of a notice appropriate for describing the copyright aspects of this
+ * Creative Work, ideally indicating the owner of the copyright for the Work.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function copyrightNotice($value)
+    {
+        $this->setProperty('copyrightNotice', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setCopyrightNotice($value)
@@ -1909,8 +2307,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('copyrightNotice');
     }
 
+
     /**
-    * @param array|string $value
+        * A flag to signal that the item, event, or place is accessible for free.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function isAccessibleForFree($value)
+    {
+        $this->setProperty('isAccessibleForFree', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setIsAccessibleForFree($value)
@@ -1927,8 +2337,21 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('isAccessibleForFree');
     }
 
+
     /**
-    * @param array|string $value
+        * The work that this work has been translated from. E.g. 物种起源 is a
+ * translationOf “On the Origin of Species”.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function translationOfWork($value)
+    {
+        $this->setProperty('translationOfWork', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setTranslationOfWork($value)
@@ -1945,8 +2368,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('translationOfWork');
     }
 
+
     /**
-    * @param array|string $value
+        * The publisher of the creative work.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function publisher($value)
+    {
+        $this->setProperty('publisher', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPublisher($value)
@@ -1963,8 +2398,25 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('publisher');
     }
 
+
     /**
-    * @param array|string $value
+        * Indicates the party responsible for generating and publishing the current
+ * structured data markup, typically in cases where the structured data is
+ * derived automatically from existing published content but published on a
+ * different site. For example, student projects and open data initiatives often
+ * re-publish existing content with more explicitly structured metadata. The
+ * [[sdPublisher]] property helps make such practices more explicit.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function sdPublisher($value)
+    {
+        $this->setProperty('sdPublisher', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSdPublisher($value)
@@ -1981,8 +2433,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('sdPublisher');
     }
 
+
     /**
-    * @param array|string $value
+        * A material that something is made from, e.g. leather, wool, cotton, paper.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function material($value)
+    {
+        $this->setProperty('material', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setMaterial($value)
@@ -1999,8 +2463,21 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('material');
     }
 
+
     /**
-    * @param array|string $value
+        * Indicates an item or CreativeWork that this item, or CreativeWork (in some
+ * sense), is part of.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function isPartOf($value)
+    {
+        $this->setProperty('isPartOf', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setIsPartOf($value)
@@ -2017,8 +2494,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('isPartOf');
     }
 
+
     /**
-    * @param array|string $value
+        * Awards won by or for this item.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function awards($value)
+    {
+        $this->setProperty('awards', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAwards($value)
@@ -2035,8 +2524,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('awards');
     }
 
+
     /**
-    * @param array|string $value
+        * The party holding the legal copyright to the CreativeWork.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function copyrightHolder($value)
+    {
+        $this->setProperty('copyrightHolder', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setCopyrightHolder($value)
@@ -2053,8 +2554,26 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('copyrightHolder');
     }
 
+
     /**
-    * @param array|string $value
+        * Media type, typically MIME format (see [IANA
+ * site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the
+ * content, e.g. application/zip of a SoftwareApplication binary. In cases where
+ * a CreativeWork has several media type representations, 'encoding' can be used
+ * to indicate each MediaObject alongside particular fileFormat information.
+ * Unregistered or niche file formats can be indicated instead via the most
+ * appropriate URL, e.g. defining Web page or a Wikipedia entry.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function fileFormat($value)
+    {
+        $this->setProperty('fileFormat', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setFileFormat($value)
@@ -2071,8 +2590,24 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('fileFormat');
     }
 
+
     /**
-    * @param array|string $value
+        * An alignment to an established educational framework.
+ * 
+ * This property should not be used where the nature of the alignment can be
+ * described using a simple property, for example to express that a resource
+ * [[teaches]] or [[assesses]] a competency.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function educationalAlignment($value)
+    {
+        $this->setProperty('educationalAlignment', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setEducationalAlignment($value)
@@ -2089,8 +2624,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('educationalAlignment');
     }
 
+
     /**
-    * @param array|string $value
+        * A media object that encodes this CreativeWork.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function encodings($value)
+    {
+        $this->setProperty('encodings', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setEncodings($value)
@@ -2107,8 +2654,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('encodings');
     }
 
+
     /**
-    * @param array|string $value
+        * A secondary contributor to the CreativeWork or Event.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function contributor($value)
+    {
+        $this->setProperty('contributor', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setContributor($value)
@@ -2125,8 +2684,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('contributor');
     }
 
+
     /**
-    * @param array|string $value
+        * Official rating of a piece of content&#x2014;for example, 'MPAA PG-13'.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function contentRating($value)
+    {
+        $this->setProperty('contentRating', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setContentRating($value)
@@ -2143,8 +2714,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('contentRating');
     }
 
+
     /**
-    * @param array|string $value
+        * The overall rating, based on a collection of reviews or ratings, of the item.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function aggregateRating($value)
+    {
+        $this->setProperty('aggregateRating', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAggregateRating($value)
@@ -2161,8 +2744,21 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('aggregateRating');
     }
 
+
     /**
-    * @param array|string $value
+        * Text that can be used to credit person(s) and/or organization(s) associated
+ * with a published Creative Work.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function creditText($value)
+    {
+        $this->setProperty('creditText', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setCreditText($value)
@@ -2179,8 +2775,21 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('creditText');
     }
 
+
     /**
-    * @param array|string $value
+        * Indicates an item or CreativeWork that is part of this item, or CreativeWork
+ * (in some sense).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function hasPart($value)
+    {
+        $this->setProperty('hasPart', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setHasPart($value)
@@ -2197,8 +2806,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('hasPart');
     }
 
+
     /**
-    * @param array|string $value
+        * The textual content of this CreativeWork.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function text($value)
+    {
+        $this->setProperty('text', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setText($value)
@@ -2215,8 +2836,32 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('text');
     }
 
+
     /**
-    * @param array|string $value
+        * The schema.org [[usageInfo]] property indicates further information about a
+ * [[CreativeWork]]. This property is applicable both to works that are freely
+ * available and to those that require payment or other transactions. It can
+ * reference additional information, e.g. community expectations on preferred
+ * linking and citation conventions, as well as purchasing details. For
+ * something that can be commercially licensed, usageInfo can provide detailed,
+ * resource-specific information about licensing options.
+ * 
+ * This property can be used alongside the license property which indicates
+ * license(s) applicable to some piece of content. The usageInfo property can
+ * provide information about other licensing options, e.g. acquiring commercial
+ * usage rights for an image that is also available under non-commercial
+ * creative commons licenses.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function usageInfo($value)
+    {
+        $this->setProperty('usageInfo', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setUsageInfo($value)
@@ -2233,8 +2878,31 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('usageInfo');
     }
 
+
     /**
-    * @param array|string $value
+        * The country of origin of something, including products as well as creative 
+ * works such as movie and TV content.
+ * 
+ * In the case of TV and movie, this would be the country of the principle
+ * offices of the production company or individual responsible for the movie.
+ * For other kinds of [[CreativeWork]] it is difficult to provide fully general
+ * guidance, and properties such as [[contentLocation]] and [[locationCreated]]
+ * may be more applicable.
+ * 
+ * In the case of products, the country of origin of the product. The exact
+ * interpretation of this may vary by context and product type, and cannot be
+ * fully enumerated here.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function countryOfOrigin($value)
+    {
+        $this->setProperty('countryOfOrigin', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setCountryOfOrigin($value)
@@ -2251,8 +2919,21 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('countryOfOrigin');
     }
 
+
     /**
-    * @param array|string $value
+        * A resource from which this work is derived or from which it is a modification
+ * or adaptation.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function isBasedOn($value)
+    {
+        $this->setProperty('isBasedOn', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setIsBasedOn($value)
@@ -2269,8 +2950,21 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('isBasedOn');
     }
 
+
     /**
-    * @param array|string $value
+        * Indicates an IPTCDigitalSourceEnumeration code indicating the nature of the
+ * digital source(s) for some [[CreativeWork]].
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function digitalSourceType($value)
+    {
+        $this->setProperty('digitalSourceType', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDigitalSourceType($value)
@@ -2287,8 +2981,22 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('digitalSourceType');
     }
 
+
     /**
-    * @param array|string $value
+        * Identifies input methods that are sufficient to fully control the described
+ * resource. Values should be drawn from the [approved
+ * vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityControl-vocabulary).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function accessibilityControl($value)
+    {
+        $this->setProperty('accessibilityControl', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAccessibilityControl($value)
@@ -2305,8 +3013,21 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('accessibilityControl');
     }
 
+
     /**
-    * @param array|string $value
+        * Approximate or typical time it usually takes to work with or through the
+ * content of this work for the typical or target audience.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function timeRequired($value)
+    {
+        $this->setProperty('timeRequired', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setTimeRequired($value)
@@ -2323,8 +3044,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('timeRequired');
     }
 
+
     /**
-    * @param array|string $value
+        * Specifies the Person that is legally accountable for the CreativeWork.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function accountablePerson($value)
+    {
+        $this->setProperty('accountablePerson', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAccountablePerson($value)
@@ -2341,8 +3074,21 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('accountablePerson');
     }
 
+
     /**
-    * @param array|string $value
+        * The quantity of the materials being described or an expression of the
+ * physical space they occupy.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function materialExtent($value)
+    {
+        $this->setProperty('materialExtent', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setMaterialExtent($value)
@@ -2359,8 +3105,36 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('materialExtent');
     }
 
+
     /**
-    * @param array|string $value
+        * The temporalCoverage of a CreativeWork indicates the period that the content
+ * applies to, i.e. that it describes, either as a DateTime or as a textual
+ * string indicating a time period in [ISO 8601 time interval
+ * format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
+ *       the case of a Dataset it will typically indicate the relevant time
+ * period in a precise notation (e.g. for a 2011 census dataset, the year 2011
+ * would be written "2011/2012"). Other forms of content, e.g. ScholarlyArticle,
+ * Book, TVSeries or TVEpisode, may indicate their temporalCoverage in broader
+ * terms - textually or via well-known URL.
+ *       Written works such as books may sometimes have precise temporal
+ * coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601
+ * interval format format via "1939/1945".
+ * 
+ * Open-ended date ranges can be written with ".." in place of the end date. For
+ * example, "2015-11/.." indicates a range beginning in November 2015 and with
+ * no specified final date. This is tentative and might be updated in future
+ * when ISO 8601 is officially updated.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function temporalCoverage($value)
+    {
+        $this->setProperty('temporalCoverage', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setTemporalCoverage($value)
@@ -2377,8 +3151,22 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('temporalCoverage');
     }
 
+
     /**
-    * @param array|string $value
+        * The number of comments this CreativeWork (e.g. Article, Question or Answer)
+ * has received. This is most applicable to works published in Web sites with
+ * commenting system; additional comments may exist elsewhere.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function commentCount($value)
+    {
+        $this->setProperty('commentCount', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setCommentCount($value)
@@ -2395,8 +3183,23 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('commentCount');
     }
 
+
     /**
-    * @param array|string $value
+        * The human sensory perceptual system or cognitive faculty through which a
+ * person may process or perceive information. Values should be drawn from the
+ * [approved
+ * vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function accessMode($value)
+    {
+        $this->setProperty('accessMode', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAccessMode($value)
@@ -2413,8 +3216,21 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('accessMode');
     }
 
+
     /**
-    * @param array|string $value
+        * The person or organization who produced the work (e.g. music album, movie,
+ * TV/radio series etc.).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function producer($value)
+    {
+        $this->setProperty('producer', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setProducer($value)
@@ -2431,8 +3247,22 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('producer');
     }
 
+
     /**
-    * @param array|string $value
+        * The level in terms of progression through an educational or training context.
+ * Examples of educational levels include 'beginner', 'intermediate' or
+ * 'advanced', and formal sets of level indicators.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function educationalLevel($value)
+    {
+        $this->setProperty('educationalLevel', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setEducationalLevel($value)
@@ -2449,8 +3279,22 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('educationalLevel');
     }
 
+
     /**
-    * @param array|string $value
+        * Used to indicate a specific claim contained, implied, translated or refined
+ * from the content of a [[MediaObject]] or other [[CreativeWork]]. The
+ * interpreting party can be indicated using [[claimInterpreter]].
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function interpretedAsClaim($value)
+    {
+        $this->setProperty('interpretedAsClaim', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setInterpretedAsClaim($value)
@@ -2467,8 +3311,24 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('interpretedAsClaim');
     }
 
+
     /**
-    * @param array|string $value
+        * Date the content expires and is no longer useful or available. For example a
+ * [[VideoObject]] or [[NewsArticle]] whose availability or relevance is
+ * time-limited, a [[ClaimReview]] fact check whose publisher wants to indicate
+ * that it may no longer be relevant (or helpful to highlight) after some date,
+ * or a [[Certification]] the validity has expired.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function expires($value)
+    {
+        $this->setProperty('expires', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setExpires($value)
@@ -2485,8 +3345,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('expires');
     }
 
+
     /**
-    * @param array|string $value
+        * Thumbnail image for an image or video.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function thumbnail($value)
+    {
+        $this->setProperty('thumbnail', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setThumbnail($value)
@@ -2503,8 +3375,21 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('thumbnail');
     }
 
+
     /**
-    * @param array|string $value
+        * A license document that applies to this structured data, typically indicated
+ * by URL.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function sdLicense($value)
+    {
+        $this->setProperty('sdLicense', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSdLicense($value)
@@ -2521,8 +3406,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('sdLicense');
     }
 
+
     /**
-    * @param array|string $value
+        * Indicates the primary entity described in some page or other CreativeWork.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function mainEntity($value)
+    {
+        $this->setProperty('mainEntity', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setMainEntity($value)
@@ -2539,8 +3436,21 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('mainEntity');
     }
 
+
     /**
-    * @param array|string $value
+        * The date on which the CreativeWork was created or the item was added to a
+ * DataFeed.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function dateCreated($value)
+    {
+        $this->setProperty('dateCreated', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDateCreated($value)
@@ -2557,8 +3467,21 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('dateCreated');
     }
 
+
     /**
-    * @param array|string $value
+        * Date of first publication or broadcast. For example the date a
+ * [[CreativeWork]] was broadcast or a [[Certification]] was issued.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function datePublished($value)
+    {
+        $this->setProperty('datePublished', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDatePublished($value)
@@ -2575,8 +3498,27 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('datePublished');
     }
 
+
     /**
-    * @param array|string $value
+        * Indicates (by URL or string) a particular version of a schema used in some
+ * CreativeWork. This property was created primarily to
+ *     indicate the use of a specific schema.org release, e.g. ```10.0``` as a
+ * simple string, or more explicitly via URL,
+ * ```https://schema.org/docs/releases.html#v10.0```. There may be situations in
+ * which other schemas might usefully be referenced this way, e.g.
+ * ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but
+ * this has not been carefully explored in the community.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function schemaVersion($value)
+    {
+        $this->setProperty('schemaVersion', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSchemaVersion($value)
@@ -2593,8 +3535,21 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('schemaVersion');
     }
 
+
     /**
-    * @param array|string $value
+        * The item being described is intended to assess the competency or learning
+ * outcome defined by the referenced term.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function assesses($value)
+    {
+        $this->setProperty('assesses', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAssesses($value)
@@ -2611,8 +3566,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('assesses');
     }
 
+
     /**
-    * @param array|string $value
+        * Fictional person connected with a creative work.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function character($value)
+    {
+        $this->setProperty('character', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setCharacter($value)
@@ -2629,8 +3596,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('character');
     }
 
+
     /**
-    * @param array|string $value
+        * The typical expected age range, e.g. '7-9', '11-'.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function typicalAgeRange($value)
+    {
+        $this->setProperty('typicalAgeRange', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setTypicalAgeRange($value)
@@ -2647,8 +3626,20 @@ Open-ended date ranges can be written with ".." in place of the end date. For ex
        return $this->getProperty('typicalAgeRange');
     }
 
+
     /**
-    * @param array|string $value
+        * Genre of the creative work, broadcast channel or group.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function genre($value)
+    {
+        $this->setProperty('genre', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setGenre($value)

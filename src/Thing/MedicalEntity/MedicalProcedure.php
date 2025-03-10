@@ -4,45 +4,30 @@ namespace Sohophp\SchemaOrg\Thing\MedicalEntity;
 use Sohophp\SchemaOrg\Thing\MedicalEntity;
 
 /**
-* A process of care used in either a diagnostic, therapeutic, preventive or palliative capacity that relies on invasive (surgical), non-invasive, or other techniques.
+* A process of care used in either a diagnostic, therapeutic, preventive or
+ * palliative capacity that relies on invasive (surgical), non-invasive, or
+ * other techniques.
 * @see schema:MedicalProcedure
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity
 */
 class MedicalProcedure extends MedicalEntity
 {
-   /**
-        * Typical preparation that a patient must undergo before having the procedure performed.
-        */
-    protected $preparation = null;
-
-   /**
-        * How the procedure is performed.
-        */
-    protected $howPerformed = null;
-
-   /**
-        * Typical or recommended followup care after the procedure is performed.
-        */
-    protected $followup = null;
-
-   /**
-        * The status of the study (enumerated).
-        */
-    protected $status = null;
-
-   /**
-        * The type of procedure, for example Surgical, Noninvasive, or Percutaneous.
-        */
-    protected $procedureType = null;
-
-   /**
-        * Location in the body of the anatomical structure.
-        */
-    protected $bodyLocation = null;
 
 
     /**
-    * @param array|string $value
+        * Typical preparation that a patient must undergo before having the procedure
+ * performed.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function preparation($value)
+    {
+        $this->setProperty('preparation', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPreparation($value)
@@ -59,8 +44,20 @@ class MedicalProcedure extends MedicalEntity
        return $this->getProperty('preparation');
     }
 
+
     /**
-    * @param array|string $value
+        * How the procedure is performed.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function howPerformed($value)
+    {
+        $this->setProperty('howPerformed', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setHowPerformed($value)
@@ -77,8 +74,20 @@ class MedicalProcedure extends MedicalEntity
        return $this->getProperty('howPerformed');
     }
 
+
     /**
-    * @param array|string $value
+        * Typical or recommended followup care after the procedure is performed.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function followup($value)
+    {
+        $this->setProperty('followup', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setFollowup($value)
@@ -95,8 +104,20 @@ class MedicalProcedure extends MedicalEntity
        return $this->getProperty('followup');
     }
 
+
     /**
-    * @param array|string $value
+        * The status of the study (enumerated).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function status($value)
+    {
+        $this->setProperty('status', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setStatus($value)
@@ -113,8 +134,20 @@ class MedicalProcedure extends MedicalEntity
        return $this->getProperty('status');
     }
 
+
     /**
-    * @param array|string $value
+        * The type of procedure, for example Surgical, Noninvasive, or Percutaneous.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function procedureType($value)
+    {
+        $this->setProperty('procedureType', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setProcedureType($value)
@@ -131,8 +164,20 @@ class MedicalProcedure extends MedicalEntity
        return $this->getProperty('procedureType');
     }
 
+
     /**
-    * @param array|string $value
+        * Location in the body of the anatomical structure.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function bodyLocation($value)
+    {
+        $this->setProperty('bodyLocation', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setBodyLocation($value)

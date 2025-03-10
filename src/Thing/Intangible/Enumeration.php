@@ -10,14 +10,22 @@ use Sohophp\SchemaOrg\Thing\Intangible;
 */
 class Enumeration extends Intangible
 {
-   /**
-        * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
-        */
-    protected $supersededBy = null;
 
 
     /**
-    * @param array|string $value
+        * Relates a term (i.e. a property, class or enumeration) to one that supersedes
+ * it.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function supersededBy($value)
+    {
+        $this->setProperty('supersededBy', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSupersededBy($value)

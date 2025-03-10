@@ -10,81 +10,22 @@ use Sohophp\SchemaOrg\Thing\CreativeWork;
 */
 class VisualArtwork extends CreativeWork
 {
-   /**
-        * The individual who traces over the pencil drawings in ink after pencils are complete.
-        */
-    protected $inker = null;
-
-   /**
-        * The height of the item.
-        */
-    protected $height = null;
-
-   /**
-        * The width of the item.
-        */
-    protected $width = null;
-
-   /**
-        * The depth of the item.
-        */
-    protected $depth = null;
-
-   /**
-        * The individual who adds lettering, including speech balloons and sound effects, to artwork.
-        */
-    protected $letterer = null;
-
-   /**
-        * The number of copies when multiple copies of a piece of artwork are produced - e.g. for a limited edition of 20 prints, 'artEdition' refers to the total number of copies (in this example "20").
-        */
-    protected $artEdition = null;
-
-   /**
-        * The material used. (E.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)
-        */
-    protected $artMedium = null;
-
-   /**
-        * The weight of the product or person.
-        */
-    protected $weight = null;
-
-   /**
-        * The individual who adds color to inked drawings.
-        */
-    protected $colorist = null;
-
-   /**
-        * The individual who draws the primary narrative artwork.
-        */
-    protected $penciler = null;
-
-   /**
-        * A material used as a surface in some artwork, e.g. Canvas, Paper, Wood, Board, etc.
-        */
-    protected $surface = null;
-
-   /**
-        * The supporting materials for the artwork, e.g. Canvas, Paper, Wood, Board, etc.
-        */
-    protected $artworkSurface = null;
-
-   /**
-        * e.g. Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc.
-        */
-    protected $artform = null;
-
-   /**
-        * The primary artist for a work
-    	in a medium other than pencils or digital line art--for example, if the
-    	primary artwork is done in watercolors or digital paints.
-        */
-    protected $artist = null;
 
 
     /**
-    * @param array|string $value
+        * The individual who traces over the pencil drawings in ink after pencils are
+ * complete.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function inker($value)
+    {
+        $this->setProperty('inker', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setInker($value)
@@ -101,8 +42,20 @@ class VisualArtwork extends CreativeWork
        return $this->getProperty('inker');
     }
 
+
     /**
-    * @param array|string $value
+        * The height of the item.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function height($value)
+    {
+        $this->setProperty('height', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setHeight($value)
@@ -119,8 +72,20 @@ class VisualArtwork extends CreativeWork
        return $this->getProperty('height');
     }
 
+
     /**
-    * @param array|string $value
+        * The width of the item.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function width($value)
+    {
+        $this->setProperty('width', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setWidth($value)
@@ -137,8 +102,20 @@ class VisualArtwork extends CreativeWork
        return $this->getProperty('width');
     }
 
+
     /**
-    * @param array|string $value
+        * The depth of the item.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function depth($value)
+    {
+        $this->setProperty('depth', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDepth($value)
@@ -155,8 +132,21 @@ class VisualArtwork extends CreativeWork
        return $this->getProperty('depth');
     }
 
+
     /**
-    * @param array|string $value
+        * The individual who adds lettering, including speech balloons and sound
+ * effects, to artwork.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function letterer($value)
+    {
+        $this->setProperty('letterer', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setLetterer($value)
@@ -173,8 +163,22 @@ class VisualArtwork extends CreativeWork
        return $this->getProperty('letterer');
     }
 
+
     /**
-    * @param array|string $value
+        * The number of copies when multiple copies of a piece of artwork are produced
+ * - e.g. for a limited edition of 20 prints, 'artEdition' refers to the total
+ * number of copies (in this example "20").
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function artEdition($value)
+    {
+        $this->setProperty('artEdition', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setArtEdition($value)
@@ -191,8 +195,22 @@ class VisualArtwork extends CreativeWork
        return $this->getProperty('artEdition');
     }
 
+
     /**
-    * @param array|string $value
+        * The material used. (E.g. Oil, Watercolour, Acrylic, Linoprint, Marble,
+ * Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil,
+ * Mixed Media, etc.)
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function artMedium($value)
+    {
+        $this->setProperty('artMedium', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setArtMedium($value)
@@ -209,8 +227,20 @@ class VisualArtwork extends CreativeWork
        return $this->getProperty('artMedium');
     }
 
+
     /**
-    * @param array|string $value
+        * The weight of the product or person.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function weight($value)
+    {
+        $this->setProperty('weight', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setWeight($value)
@@ -227,8 +257,20 @@ class VisualArtwork extends CreativeWork
        return $this->getProperty('weight');
     }
 
+
     /**
-    * @param array|string $value
+        * The individual who adds color to inked drawings.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function colorist($value)
+    {
+        $this->setProperty('colorist', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setColorist($value)
@@ -245,8 +287,20 @@ class VisualArtwork extends CreativeWork
        return $this->getProperty('colorist');
     }
 
+
     /**
-    * @param array|string $value
+        * The individual who draws the primary narrative artwork.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function penciler($value)
+    {
+        $this->setProperty('penciler', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPenciler($value)
@@ -263,8 +317,21 @@ class VisualArtwork extends CreativeWork
        return $this->getProperty('penciler');
     }
 
+
     /**
-    * @param array|string $value
+        * A material used as a surface in some artwork, e.g. Canvas, Paper, Wood,
+ * Board, etc.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function surface($value)
+    {
+        $this->setProperty('surface', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSurface($value)
@@ -281,8 +348,21 @@ class VisualArtwork extends CreativeWork
        return $this->getProperty('surface');
     }
 
+
     /**
-    * @param array|string $value
+        * The supporting materials for the artwork, e.g. Canvas, Paper, Wood, Board,
+ * etc.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function artworkSurface($value)
+    {
+        $this->setProperty('artworkSurface', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setArtworkSurface($value)
@@ -299,8 +379,21 @@ class VisualArtwork extends CreativeWork
        return $this->getProperty('artworkSurface');
     }
 
+
     /**
-    * @param array|string $value
+        * e.g. Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage,
+ * etc.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function artform($value)
+    {
+        $this->setProperty('artform', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setArtform($value)
@@ -317,8 +410,22 @@ class VisualArtwork extends CreativeWork
        return $this->getProperty('artform');
     }
 
+
     /**
-    * @param array|string $value
+        * The primary artist for a work
+ *     	in a medium other than pencils or digital line art--for example, if the
+ *     	primary artwork is done in watercolors or digital paints.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function artist($value)
+    {
+        $this->setProperty('artist', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setArtist($value)

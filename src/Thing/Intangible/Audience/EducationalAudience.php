@@ -10,14 +10,21 @@ use Sohophp\SchemaOrg\Thing\Intangible\Audience;
 */
 class EducationalAudience extends Audience
 {
-   /**
-        * An educationalRole of an EducationalAudience.
-        */
-    protected $educationalRole = null;
 
 
     /**
-    * @param array|string $value
+        * An educationalRole of an EducationalAudience.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function educationalRole($value)
+    {
+        $this->setProperty('educationalRole', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setEducationalRole($value)

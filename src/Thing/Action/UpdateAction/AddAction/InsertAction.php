@@ -10,14 +10,22 @@ use Sohophp\SchemaOrg\Thing\Action\UpdateAction\AddAction;
 */
 class InsertAction extends AddAction
 {
-   /**
-        * A sub property of location. The final location of the object or the agent after the action.
-        */
-    protected $toLocation = null;
 
 
     /**
-    * @param array|string $value
+        * A sub property of location. The final location of the object or the agent
+ * after the action.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function toLocation($value)
+    {
+        $this->setProperty('toLocation', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setToLocation($value)

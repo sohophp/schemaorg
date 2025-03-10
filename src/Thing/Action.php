@@ -4,80 +4,35 @@ namespace Sohophp\SchemaOrg\Thing;
 use Sohophp\SchemaOrg\Thing;
 
 /**
-* An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument/role.\n\nSee also [blog post](http://blog.schema.org/2014/04/announcing-schemaorg-actions.html) and [Actions overview document](https://schema.org/docs/actions.html).
+* An action performed by a direct agent and indirect participants upon a direct
+ * object. Optionally happens at a location with the help of an inanimate
+ * instrument. The execution of the action may produce a result. Specific action
+ * sub-type documentation specifies the exact expectation of each argument/role.
+ * 
+ * See also [blog
+ * post](http://blog.schema.org/2014/04/announcing-schemaorg-actions.html) and
+ * [Actions overview document](https://schema.org/docs/actions.html).
 * @see schema:Action
 * @package Sohophp\SchemaOrg\Thing
 */
 class Action extends Thing
 {
-   /**
-        * The direct performer or driver of the action (animate or inanimate). E.g. *John* wrote a book.
-        */
-    protected $agent = null;
-
-   /**
-        * Indicates a target EntryPoint, or url, for an Action.
-        */
-    protected $target = null;
-
-   /**
-        * Indicates the current disposition of the Action.
-        */
-    protected $actionStatus = null;
-
-   /**
-        * For failed actions, more information on the cause of the failure.
-        */
-    protected $error = null;
-
-   /**
-        * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). E.g. John read *a book*.
-        */
-    protected $object = null;
-
-   /**
-        * The object that helped the agent perform the action. E.g. John wrote a book with *a pen*.
-        */
-    protected $instrument = null;
-
-   /**
-        * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-        */
-    protected $provider = null;
-
-   /**
-        * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-        */
-    protected $startTime = null;
-
-   /**
-        * Description of the process by which the action was performed.
-        */
-    protected $actionProcess = null;
-
-   /**
-        * Other co-agents that participated in the action indirectly. E.g. John wrote a book with *Steve*.
-        */
-    protected $participant = null;
-
-   /**
-        * The result produced in the action. E.g. John wrote *a book*.
-        */
-    protected $result = null;
-
-   /**
-        * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-        */
-    protected $endTime = null;
-
-   /**
-        * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-        */
-    protected $location = null;
 
 
     /**
-    * @param array|string $value
+        * The direct performer or driver of the action (animate or inanimate). E.g.
+ * *John* wrote a book.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function agent($value)
+    {
+        $this->setProperty('agent', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAgent($value)
@@ -94,8 +49,20 @@ class Action extends Thing
        return $this->getProperty('agent');
     }
 
+
     /**
-    * @param array|string $value
+        * Indicates a target EntryPoint, or url, for an Action.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function target($value)
+    {
+        $this->setProperty('target', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setTarget($value)
@@ -112,8 +79,20 @@ class Action extends Thing
        return $this->getProperty('target');
     }
 
+
     /**
-    * @param array|string $value
+        * Indicates the current disposition of the Action.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function actionStatus($value)
+    {
+        $this->setProperty('actionStatus', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setActionStatus($value)
@@ -130,8 +109,20 @@ class Action extends Thing
        return $this->getProperty('actionStatus');
     }
 
+
     /**
-    * @param array|string $value
+        * For failed actions, more information on the cause of the failure.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function error($value)
+    {
+        $this->setProperty('error', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setError($value)
@@ -148,8 +139,22 @@ class Action extends Thing
        return $this->getProperty('error');
     }
 
+
     /**
-    * @param array|string $value
+        * The object upon which the action is carried out, whose state is kept intact
+ * or changed. Also known as the semantic roles patient, affected or undergoer
+ * (which change their state) or theme (which doesn't). E.g. John read *a book*.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function object($value)
+    {
+        $this->setProperty('object', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setObject($value)
@@ -166,8 +171,21 @@ class Action extends Thing
        return $this->getProperty('object');
     }
 
+
     /**
-    * @param array|string $value
+        * The object that helped the agent perform the action. E.g. John wrote a book
+ * with *a pen*.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function instrument($value)
+    {
+        $this->setProperty('instrument', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setInstrument($value)
@@ -184,8 +202,22 @@ class Action extends Thing
        return $this->getProperty('instrument');
     }
 
+
     /**
-    * @param array|string $value
+        * The service provider, service operator, or service performer; the goods
+ * producer. Another party (a seller) may offer those services or goods on
+ * behalf of the provider. A provider may also serve as the seller.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function provider($value)
+    {
+        $this->setProperty('provider', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setProvider($value)
@@ -202,8 +234,28 @@ class Action extends Thing
        return $this->getProperty('provider');
     }
 
+
     /**
-    * @param array|string $value
+        * The startTime of something. For a reserved event or service (e.g.
+ * FoodEstablishmentReservation), the time that it is expected to start. For
+ * actions that span a period of time, when the action was performed. E.g. John
+ * wrote a book from *January* to December. For media, including audio and
+ * video, it's the time offset of the start of a clip within a larger file.
+ * 
+ * Note that Event uses startDate/endDate instead of startTime/endTime, even
+ * when describing dates with times. This situation may be clarified in future
+ * revisions.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function startTime($value)
+    {
+        $this->setProperty('startTime', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setStartTime($value)
@@ -220,8 +272,20 @@ class Action extends Thing
        return $this->getProperty('startTime');
     }
 
+
     /**
-    * @param array|string $value
+        * Description of the process by which the action was performed.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function actionProcess($value)
+    {
+        $this->setProperty('actionProcess', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setActionProcess($value)
@@ -238,8 +302,21 @@ class Action extends Thing
        return $this->getProperty('actionProcess');
     }
 
+
     /**
-    * @param array|string $value
+        * Other co-agents that participated in the action indirectly. E.g. John wrote a
+ * book with *Steve*.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function participant($value)
+    {
+        $this->setProperty('participant', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setParticipant($value)
@@ -256,8 +333,20 @@ class Action extends Thing
        return $this->getProperty('participant');
     }
 
+
     /**
-    * @param array|string $value
+        * The result produced in the action. E.g. John wrote *a book*.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function result($value)
+    {
+        $this->setProperty('result', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setResult($value)
@@ -274,8 +363,28 @@ class Action extends Thing
        return $this->getProperty('result');
     }
 
+
     /**
-    * @param array|string $value
+        * The endTime of something. For a reserved event or service (e.g.
+ * FoodEstablishmentReservation), the time that it is expected to end. For
+ * actions that span a period of time, when the action was performed. E.g. John
+ * wrote a book from January to *December*. For media, including audio and
+ * video, it's the time offset of the end of a clip within a larger file.
+ * 
+ * Note that Event uses startDate/endDate instead of startTime/endTime, even
+ * when describing dates with times. This situation may be clarified in future
+ * revisions.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function endTime($value)
+    {
+        $this->setProperty('endTime', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setEndTime($value)
@@ -292,8 +401,21 @@ class Action extends Thing
        return $this->getProperty('endTime');
     }
 
+
     /**
-    * @param array|string $value
+        * The location of, for example, where an event is happening, where an
+ * organization is located, or where an action takes place.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function location($value)
+    {
+        $this->setProperty('location', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setLocation($value)

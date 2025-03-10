@@ -10,19 +10,21 @@ use Sohophp\SchemaOrg\Thing\Action\UpdateAction;
 */
 class ReplaceAction extends UpdateAction
 {
-   /**
-        * A sub property of object. The object that replaces.
-        */
-    protected $replacer = null;
-
-   /**
-        * A sub property of object. The object that is being replaced.
-        */
-    protected $replacee = null;
 
 
     /**
-    * @param array|string $value
+        * A sub property of object. The object that replaces.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function replacer($value)
+    {
+        $this->setProperty('replacer', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setReplacer($value)
@@ -39,8 +41,20 @@ class ReplaceAction extends UpdateAction
        return $this->getProperty('replacer');
     }
 
+
     /**
-    * @param array|string $value
+        * A sub property of object. The object that is being replaced.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function replacee($value)
+    {
+        $this->setProperty('replacee', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setReplacee($value)

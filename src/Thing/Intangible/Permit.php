@@ -10,44 +10,22 @@ use Sohophp\SchemaOrg\Thing\Intangible;
 */
 class Permit extends Intangible
 {
-   /**
-        * The organization issuing the item, for example a [[Permit]], [[Ticket]], or [[Certification]].
-        */
-    protected $issuedBy = null;
-
-   /**
-        * The target audience for this permit.
-        */
-    protected $permitAudience = null;
-
-   /**
-        * The date when the item becomes valid.
-        */
-    protected $validFrom = null;
-
-   /**
-        * The duration of validity of a permit or similar thing.
-        */
-    protected $validFor = null;
-
-   /**
-        * The geographic area where the item is valid. Applies for example to a [[Permit]], a [[Certification]], or an [[EducationalOccupationalCredential]]. 
-        */
-    protected $validIn = null;
-
-   /**
-        * The date when the item is no longer valid.
-        */
-    protected $validUntil = null;
-
-   /**
-        * The service through which the permit was granted.
-        */
-    protected $issuedThrough = null;
 
 
     /**
-    * @param array|string $value
+        * The organization issuing the item, for example a [[Permit]], [[Ticket]], or
+ * [[Certification]].
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function issuedBy($value)
+    {
+        $this->setProperty('issuedBy', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setIssuedBy($value)
@@ -64,8 +42,20 @@ class Permit extends Intangible
        return $this->getProperty('issuedBy');
     }
 
+
     /**
-    * @param array|string $value
+        * The target audience for this permit.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function permitAudience($value)
+    {
+        $this->setProperty('permitAudience', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPermitAudience($value)
@@ -82,8 +72,20 @@ class Permit extends Intangible
        return $this->getProperty('permitAudience');
     }
 
+
     /**
-    * @param array|string $value
+        * The date when the item becomes valid.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function validFrom($value)
+    {
+        $this->setProperty('validFrom', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setValidFrom($value)
@@ -100,8 +102,20 @@ class Permit extends Intangible
        return $this->getProperty('validFrom');
     }
 
+
     /**
-    * @param array|string $value
+        * The duration of validity of a permit or similar thing.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function validFor($value)
+    {
+        $this->setProperty('validFor', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setValidFor($value)
@@ -118,8 +132,21 @@ class Permit extends Intangible
        return $this->getProperty('validFor');
     }
 
+
     /**
-    * @param array|string $value
+        * The geographic area where the item is valid. Applies for example to a
+ * [[Permit]], a [[Certification]], or an [[EducationalOccupationalCredential]].
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function validIn($value)
+    {
+        $this->setProperty('validIn', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setValidIn($value)
@@ -136,8 +163,20 @@ class Permit extends Intangible
        return $this->getProperty('validIn');
     }
 
+
     /**
-    * @param array|string $value
+        * The date when the item is no longer valid.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function validUntil($value)
+    {
+        $this->setProperty('validUntil', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setValidUntil($value)
@@ -154,8 +193,20 @@ class Permit extends Intangible
        return $this->getProperty('validUntil');
     }
 
+
     /**
-    * @param array|string $value
+        * The service through which the permit was granted.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function issuedThrough($value)
+    {
+        $this->setProperty('issuedThrough', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setIssuedThrough($value)

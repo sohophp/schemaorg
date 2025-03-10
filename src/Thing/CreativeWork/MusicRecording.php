@@ -10,39 +10,21 @@ use Sohophp\SchemaOrg\Thing\CreativeWork;
 */
 class MusicRecording extends CreativeWork
 {
-   /**
-        * The artist that performed this album or recording.
-        */
-    protected $byArtist = null;
-
-   /**
-        * The playlist to which this recording belongs.
-        */
-    protected $inPlaylist = null;
-
-   /**
-        * The International Standard Recording Code for the recording.
-        */
-    protected $isrcCode = null;
-
-   /**
-        * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
-        */
-    protected $duration = null;
-
-   /**
-        * The album to which this recording belongs.
-        */
-    protected $inAlbum = null;
-
-   /**
-        * The composition this track is a recording of.
-        */
-    protected $recordingOf = null;
 
 
     /**
-    * @param array|string $value
+        * The artist that performed this album or recording.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function byArtist($value)
+    {
+        $this->setProperty('byArtist', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setByArtist($value)
@@ -59,8 +41,20 @@ class MusicRecording extends CreativeWork
        return $this->getProperty('byArtist');
     }
 
+
     /**
-    * @param array|string $value
+        * The playlist to which this recording belongs.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function inPlaylist($value)
+    {
+        $this->setProperty('inPlaylist', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setInPlaylist($value)
@@ -77,8 +71,20 @@ class MusicRecording extends CreativeWork
        return $this->getProperty('inPlaylist');
     }
 
+
     /**
-    * @param array|string $value
+        * The International Standard Recording Code for the recording.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function isrcCode($value)
+    {
+        $this->setProperty('isrcCode', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setIsrcCode($value)
@@ -95,8 +101,21 @@ class MusicRecording extends CreativeWork
        return $this->getProperty('isrcCode');
     }
 
+
     /**
-    * @param array|string $value
+        * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601
+ * duration format](http://en.wikipedia.org/wiki/ISO_8601).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function duration($value)
+    {
+        $this->setProperty('duration', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDuration($value)
@@ -113,8 +132,20 @@ class MusicRecording extends CreativeWork
        return $this->getProperty('duration');
     }
 
+
     /**
-    * @param array|string $value
+        * The album to which this recording belongs.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function inAlbum($value)
+    {
+        $this->setProperty('inAlbum', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setInAlbum($value)
@@ -131,8 +162,20 @@ class MusicRecording extends CreativeWork
        return $this->getProperty('inAlbum');
     }
 
+
     /**
-    * @param array|string $value
+        * The composition this track is a recording of.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function recordingOf($value)
+    {
+        $this->setProperty('recordingOf', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setRecordingOf($value)

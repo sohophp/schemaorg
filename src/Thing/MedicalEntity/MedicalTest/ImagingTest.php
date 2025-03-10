@@ -10,14 +10,21 @@ use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalTest;
 */
 class ImagingTest extends MedicalTest
 {
-   /**
-        * Imaging technique used.
-        */
-    protected $imagingTechnique = null;
 
 
     /**
-    * @param array|string $value
+        * Imaging technique used.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function imagingTechnique($value)
+    {
+        $this->setProperty('imagingTechnique', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setImagingTechnique($value)

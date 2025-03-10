@@ -10,19 +10,21 @@ use Sohophp\SchemaOrg\Thing\CreativeWork\WebPage;
 */
 class MedicalWebPage extends WebPage
 {
-   /**
-        * Medical audience for page.
-        */
-    protected $medicalAudience = null;
-
-   /**
-        * An aspect of medical practice that is considered on the page, such as 'diagnosis', 'treatment', 'causes', 'prognosis', 'etiology', 'epidemiology', etc.
-        */
-    protected $aspect = null;
 
 
     /**
-    * @param array|string $value
+        * Medical audience for page.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function medicalAudience($value)
+    {
+        $this->setProperty('medicalAudience', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setMedicalAudience($value)
@@ -39,8 +41,22 @@ class MedicalWebPage extends WebPage
        return $this->getProperty('medicalAudience');
     }
 
+
     /**
-    * @param array|string $value
+        * An aspect of medical practice that is considered on the page, such as
+ * 'diagnosis', 'treatment', 'causes', 'prognosis', 'etiology', 'epidemiology',
+ * etc.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function aspect($value)
+    {
+        $this->setProperty('aspect', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAspect($value)

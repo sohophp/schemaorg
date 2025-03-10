@@ -4,80 +4,34 @@ namespace Sohophp\SchemaOrg\Thing\Intangible;
 use Sohophp\SchemaOrg\Thing\Intangible;
 
 /**
-* Describes a reservation for travel, dining or an event. Some reservations require tickets. \n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, restaurant reservations, flights, or rental cars, use [[Offer]].
+* Describes a reservation for travel, dining or an event. Some reservations
+ * require tickets. 
+ * 
+ * Note: This type is for information about actual reservations, e.g. in
+ * confirmation emails or HTML pages with individual confirmations of
+ * reservations. For offers of tickets, restaurant reservations, flights, or
+ * rental cars, use [[Offer]].
 * @see schema:Reservation
 * @package Sohophp\SchemaOrg\Thing\Intangible
 */
 class Reservation extends Intangible
 {
-   /**
-        * 'bookingAgent' is an out-dated term indicating a 'broker' that serves as a booking agent.
-        */
-    protected $bookingAgent = null;
-
-   /**
-        * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-        */
-    protected $totalPrice = null;
-
-   /**
-        * The person or organization the reservation or ticket is for.
-        */
-    protected $underName = null;
-
-   /**
-        * The date and time the reservation was modified.
-        */
-    protected $modifiedTime = null;
-
-   /**
-        * The date and time the reservation was booked.
-        */
-    protected $bookingTime = null;
-
-   /**
-        * The current status of the reservation.
-        */
-    protected $reservationStatus = null;
-
-   /**
-        * A unique identifier for the reservation.
-        */
-    protected $reservationId = null;
-
-   /**
-        * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-        */
-    protected $provider = null;
-
-   /**
-        * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
-        */
-    protected $priceCurrency = null;
-
-   /**
-        * A ticket associated with the reservation.
-        */
-    protected $reservedTicket = null;
-
-   /**
-        * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
-        */
-    protected $broker = null;
-
-   /**
-        * The thing -- flight, event, restaurant, etc. being reserved.
-        */
-    protected $reservationFor = null;
-
-   /**
-        * Any membership in a frequent flyer, hotel loyalty program, etc. being applied to the reservation.
-        */
-    protected $programMembershipUsed = null;
 
 
     /**
-    * @param array|string $value
+        * 'bookingAgent' is an out-dated term indicating a 'broker' that serves as a
+ * booking agent.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function bookingAgent($value)
+    {
+        $this->setProperty('bookingAgent', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setBookingAgent($value)
@@ -94,8 +48,28 @@ class Reservation extends Intangible
        return $this->getProperty('bookingAgent');
     }
 
+
     /**
-    * @param array|string $value
+        * The total price for the reservation or ticket, including applicable taxes,
+ * shipping, etc.
+ * 
+ * Usage guidelines:
+ * 
+ * * Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE'
+ * (U+0039)) rather than superficially similar Unicode symbols.
+ * * Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a
+ * decimal point. Avoid using these symbols as a readability separator.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function totalPrice($value)
+    {
+        $this->setProperty('totalPrice', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setTotalPrice($value)
@@ -112,8 +86,20 @@ class Reservation extends Intangible
        return $this->getProperty('totalPrice');
     }
 
+
     /**
-    * @param array|string $value
+        * The person or organization the reservation or ticket is for.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function underName($value)
+    {
+        $this->setProperty('underName', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setUnderName($value)
@@ -130,8 +116,20 @@ class Reservation extends Intangible
        return $this->getProperty('underName');
     }
 
+
     /**
-    * @param array|string $value
+        * The date and time the reservation was modified.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function modifiedTime($value)
+    {
+        $this->setProperty('modifiedTime', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setModifiedTime($value)
@@ -148,8 +146,20 @@ class Reservation extends Intangible
        return $this->getProperty('modifiedTime');
     }
 
+
     /**
-    * @param array|string $value
+        * The date and time the reservation was booked.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function bookingTime($value)
+    {
+        $this->setProperty('bookingTime', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setBookingTime($value)
@@ -166,8 +176,20 @@ class Reservation extends Intangible
        return $this->getProperty('bookingTime');
     }
 
+
     /**
-    * @param array|string $value
+        * The current status of the reservation.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function reservationStatus($value)
+    {
+        $this->setProperty('reservationStatus', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setReservationStatus($value)
@@ -184,8 +206,20 @@ class Reservation extends Intangible
        return $this->getProperty('reservationStatus');
     }
 
+
     /**
-    * @param array|string $value
+        * A unique identifier for the reservation.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function reservationId($value)
+    {
+        $this->setProperty('reservationId', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setReservationId($value)
@@ -202,8 +236,22 @@ class Reservation extends Intangible
        return $this->getProperty('reservationId');
     }
 
+
     /**
-    * @param array|string $value
+        * The service provider, service operator, or service performer; the goods
+ * producer. Another party (a seller) may offer those services or goods on
+ * behalf of the provider. A provider may also serve as the seller.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function provider($value)
+    {
+        $this->setProperty('provider', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setProvider($value)
@@ -220,8 +268,28 @@ class Reservation extends Intangible
        return $this->getProperty('provider');
     }
 
+
     /**
-    * @param array|string $value
+        * The currency of the price, or a price component when attached to
+ * [[PriceSpecification]] and its subtypes.
+ * 
+ * Use standard formats: [ISO 4217 currency
+ * format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker
+ * symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for
+ * cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading
+ * Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS)
+ * and other currency types, e.g. "Ithaca HOUR".
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function priceCurrency($value)
+    {
+        $this->setProperty('priceCurrency', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPriceCurrency($value)
@@ -238,8 +306,20 @@ class Reservation extends Intangible
        return $this->getProperty('priceCurrency');
     }
 
+
     /**
-    * @param array|string $value
+        * A ticket associated with the reservation.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function reservedTicket($value)
+    {
+        $this->setProperty('reservedTicket', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setReservedTicket($value)
@@ -256,8 +336,23 @@ class Reservation extends Intangible
        return $this->getProperty('reservedTicket');
     }
 
+
     /**
-    * @param array|string $value
+        * An entity that arranges for an exchange between a buyer and a seller.  In
+ * most cases a broker never acquires or releases ownership of a product or
+ * service involved in an exchange.  If it is not clear whether an entity is a
+ * broker, seller, or buyer, the latter two terms are preferred.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function broker($value)
+    {
+        $this->setProperty('broker', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setBroker($value)
@@ -274,8 +369,20 @@ class Reservation extends Intangible
        return $this->getProperty('broker');
     }
 
+
     /**
-    * @param array|string $value
+        * The thing -- flight, event, restaurant, etc. being reserved.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function reservationFor($value)
+    {
+        $this->setProperty('reservationFor', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setReservationFor($value)
@@ -292,8 +399,21 @@ class Reservation extends Intangible
        return $this->getProperty('reservationFor');
     }
 
+
     /**
-    * @param array|string $value
+        * Any membership in a frequent flyer, hotel loyalty program, etc. being applied
+ * to the reservation.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function programMembershipUsed($value)
+    {
+        $this->setProperty('programMembershipUsed', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setProgramMembershipUsed($value)

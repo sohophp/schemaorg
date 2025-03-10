@@ -4,30 +4,32 @@ namespace Sohophp\SchemaOrg\Thing\Intangible\Service;
 use Sohophp\SchemaOrg\Thing\Intangible\Service;
 
 /**
-* A product provided to consumers and businesses by financial institutions such as banks, insurance companies, brokerage firms, consumer finance companies, and investment companies which comprise the financial services industry.
+* A product provided to consumers and businesses by financial institutions such
+ * as banks, insurance companies, brokerage firms, consumer finance companies,
+ * and investment companies which comprise the financial services industry.
 * @see schema:FinancialProduct
 * @package Sohophp\SchemaOrg\Thing\Intangible\Service
 */
 class FinancialProduct extends Service
 {
-   /**
-        * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
-        */
-    protected $annualPercentageRate = null;
-
-   /**
-        * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
-        */
-    protected $interestRate = null;
-
-   /**
-        * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
-        */
-    protected $feesAndCommissionsSpecification = null;
 
 
     /**
-    * @param array|string $value
+        * The annual rate that is charged for borrowing (or made by investing),
+ * expressed as a single percentage number that represents the actual yearly
+ * cost of funds over the term of a loan. This includes any fees or additional
+ * costs associated with the transaction.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function annualPercentageRate($value)
+    {
+        $this->setProperty('annualPercentageRate', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAnnualPercentageRate($value)
@@ -44,8 +46,21 @@ class FinancialProduct extends Service
        return $this->getProperty('annualPercentageRate');
     }
 
+
     /**
-    * @param array|string $value
+        * The interest rate, charged or paid, applicable to the financial product.
+ * Note: This is different from the calculated annualPercentageRate.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function interestRate($value)
+    {
+        $this->setProperty('interestRate', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setInterestRate($value)
@@ -62,8 +77,21 @@ class FinancialProduct extends Service
        return $this->getProperty('interestRate');
     }
 
+
     /**
-    * @param array|string $value
+        * Description of fees, commissions, and other terms applied either to a class
+ * of financial product, or by a financial service organization.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function feesAndCommissionsSpecification($value)
+    {
+        $this->setProperty('feesAndCommissionsSpecification', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setFeesAndCommissionsSpecification($value)

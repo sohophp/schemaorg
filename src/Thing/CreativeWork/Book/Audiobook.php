@@ -10,19 +10,21 @@ use Sohophp\SchemaOrg\Thing\CreativeWork\Book;
 */
 class Audiobook extends Book
 {
-   /**
-        * A person who reads (performs) the audiobook.
-        */
-    protected $readBy = null;
-
-   /**
-        * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
-        */
-    protected $duration = null;
 
 
     /**
-    * @param array|string $value
+        * A person who reads (performs) the audiobook.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function readBy($value)
+    {
+        $this->setProperty('readBy', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setReadBy($value)
@@ -39,8 +41,21 @@ class Audiobook extends Book
        return $this->getProperty('readBy');
     }
 
+
     /**
-    * @param array|string $value
+        * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601
+ * duration format](http://en.wikipedia.org/wiki/ISO_8601).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function duration($value)
+    {
+        $this->setProperty('duration', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDuration($value)

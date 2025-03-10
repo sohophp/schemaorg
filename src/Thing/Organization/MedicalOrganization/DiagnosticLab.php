@@ -10,14 +10,21 @@ use Sohophp\SchemaOrg\Thing\Organization\MedicalOrganization;
 */
 class DiagnosticLab extends MedicalOrganization
 {
-   /**
-        * A diagnostic test or procedure offered by this lab.
-        */
-    protected $availableTest = null;
 
 
     /**
-    * @param array|string $value
+        * A diagnostic test or procedure offered by this lab.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function availableTest($value)
+    {
+        $this->setProperty('availableTest', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAvailableTest($value)

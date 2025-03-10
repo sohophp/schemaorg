@@ -10,24 +10,22 @@ use Sohophp\SchemaOrg\Thing\Place\CivicStructure;
 */
 class Hospital extends CivicStructure
 {
-   /**
-        * Indicates data describing a hospital, e.g. a CDC [[CDCPMDRecord]] or as some kind of [[Dataset]].
-        */
-    protected $healthcareReportingData = null;
-
-   /**
-        * A medical specialty of the provider.
-        */
-    protected $medicalSpecialty = null;
-
-   /**
-        * A medical service available from this provider.
-        */
-    protected $availableService = null;
 
 
     /**
-    * @param array|string $value
+        * Indicates data describing a hospital, e.g. a CDC [[CDCPMDRecord]] or as some
+ * kind of [[Dataset]].
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function healthcareReportingData($value)
+    {
+        $this->setProperty('healthcareReportingData', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setHealthcareReportingData($value)
@@ -44,8 +42,20 @@ class Hospital extends CivicStructure
        return $this->getProperty('healthcareReportingData');
     }
 
+
     /**
-    * @param array|string $value
+        * A medical specialty of the provider.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function medicalSpecialty($value)
+    {
+        $this->setProperty('medicalSpecialty', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setMedicalSpecialty($value)
@@ -62,8 +72,20 @@ class Hospital extends CivicStructure
        return $this->getProperty('medicalSpecialty');
     }
 
+
     /**
-    * @param array|string $value
+        * A medical service available from this provider.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function availableService($value)
+    {
+        $this->setProperty('availableService', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAvailableService($value)

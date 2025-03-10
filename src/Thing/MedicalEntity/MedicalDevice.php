@@ -4,45 +4,32 @@ namespace Sohophp\SchemaOrg\Thing\MedicalEntity;
 use Sohophp\SchemaOrg\Thing\MedicalEntity;
 
 /**
-* Any object used in a medical capacity, such as to diagnose or treat a patient.
+* Any object used in a medical capacity, such as to diagnose or treat a
+ * patient.
 * @see schema:MedicalDevice
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity
 */
 class MedicalDevice extends MedicalEntity
 {
-   /**
-        * A possible complication and/or side effect of this therapy. If it is known that an adverse outcome is serious (resulting in death, disability, or permanent damage; requiring hospitalization; or otherwise life-threatening or requiring immediate medical attention), tag it as a seriousAdverseOutcome instead.
-        */
-    protected $adverseOutcome = null;
-
-   /**
-        * A description of the workup, testing, and other preparations required before implanting this device.
-        */
-    protected $preOp = null;
-
-   /**
-        * A possible serious complication and/or serious side effect of this therapy. Serious adverse outcomes include those that are life-threatening; result in death, disability, or permanent damage; require hospitalization or prolong existing hospitalization; cause congenital anomalies or birth defects; or jeopardize the patient and may require medical or surgical intervention to prevent one of the outcomes in this definition.
-        */
-    protected $seriousAdverseOutcome = null;
-
-   /**
-        * A description of the procedure involved in setting up, using, and/or installing the device.
-        */
-    protected $procedure = null;
-
-   /**
-        * A contraindication for this therapy.
-        */
-    protected $contraindication = null;
-
-   /**
-        * A description of the postoperative procedures, care, and/or followups for this device.
-        */
-    protected $postOp = null;
 
 
     /**
-    * @param array|string $value
+        * A possible complication and/or side effect of this therapy. If it is known
+ * that an adverse outcome is serious (resulting in death, disability, or
+ * permanent damage; requiring hospitalization; or otherwise life-threatening or
+ * requiring immediate medical attention), tag it as a seriousAdverseOutcome
+ * instead.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function adverseOutcome($value)
+    {
+        $this->setProperty('adverseOutcome', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAdverseOutcome($value)
@@ -59,8 +46,21 @@ class MedicalDevice extends MedicalEntity
        return $this->getProperty('adverseOutcome');
     }
 
+
     /**
-    * @param array|string $value
+        * A description of the workup, testing, and other preparations required before
+ * implanting this device.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function preOp($value)
+    {
+        $this->setProperty('preOp', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPreOp($value)
@@ -77,8 +77,25 @@ class MedicalDevice extends MedicalEntity
        return $this->getProperty('preOp');
     }
 
+
     /**
-    * @param array|string $value
+        * A possible serious complication and/or serious side effect of this therapy.
+ * Serious adverse outcomes include those that are life-threatening; result in
+ * death, disability, or permanent damage; require hospitalization or prolong
+ * existing hospitalization; cause congenital anomalies or birth defects; or
+ * jeopardize the patient and may require medical or surgical intervention to
+ * prevent one of the outcomes in this definition.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function seriousAdverseOutcome($value)
+    {
+        $this->setProperty('seriousAdverseOutcome', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSeriousAdverseOutcome($value)
@@ -95,8 +112,21 @@ class MedicalDevice extends MedicalEntity
        return $this->getProperty('seriousAdverseOutcome');
     }
 
+
     /**
-    * @param array|string $value
+        * A description of the procedure involved in setting up, using, and/or
+ * installing the device.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function procedure($value)
+    {
+        $this->setProperty('procedure', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setProcedure($value)
@@ -113,8 +143,20 @@ class MedicalDevice extends MedicalEntity
        return $this->getProperty('procedure');
     }
 
+
     /**
-    * @param array|string $value
+        * A contraindication for this therapy.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function contraindication($value)
+    {
+        $this->setProperty('contraindication', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setContraindication($value)
@@ -131,8 +173,21 @@ class MedicalDevice extends MedicalEntity
        return $this->getProperty('contraindication');
     }
 
+
     /**
-    * @param array|string $value
+        * A description of the postoperative procedures, care, and/or followups for
+ * this device.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function postOp($value)
+    {
+        $this->setProperty('postOp', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPostOp($value)

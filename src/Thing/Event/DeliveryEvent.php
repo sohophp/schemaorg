@@ -10,29 +10,21 @@ use Sohophp\SchemaOrg\Thing\Event;
 */
 class DeliveryEvent extends Event
 {
-   /**
-        * Password, PIN, or access code needed for delivery (e.g. from a locker).
-        */
-    protected $accessCode = null;
-
-   /**
-        * After this date, the item will no longer be available for pickup.
-        */
-    protected $availableThrough = null;
-
-   /**
-        * Method used for delivery or shipping.
-        */
-    protected $hasDeliveryMethod = null;
-
-   /**
-        * When the item is available for pickup from the store, locker, etc.
-        */
-    protected $availableFrom = null;
 
 
     /**
-    * @param array|string $value
+        * Password, PIN, or access code needed for delivery (e.g. from a locker).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function accessCode($value)
+    {
+        $this->setProperty('accessCode', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAccessCode($value)
@@ -49,8 +41,20 @@ class DeliveryEvent extends Event
        return $this->getProperty('accessCode');
     }
 
+
     /**
-    * @param array|string $value
+        * After this date, the item will no longer be available for pickup.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function availableThrough($value)
+    {
+        $this->setProperty('availableThrough', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAvailableThrough($value)
@@ -67,8 +71,20 @@ class DeliveryEvent extends Event
        return $this->getProperty('availableThrough');
     }
 
+
     /**
-    * @param array|string $value
+        * Method used for delivery or shipping.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function hasDeliveryMethod($value)
+    {
+        $this->setProperty('hasDeliveryMethod', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setHasDeliveryMethod($value)
@@ -85,8 +101,20 @@ class DeliveryEvent extends Event
        return $this->getProperty('hasDeliveryMethod');
     }
 
+
     /**
-    * @param array|string $value
+        * When the item is available for pickup from the store, locker, etc.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function availableFrom($value)
+    {
+        $this->setProperty('availableFrom', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAvailableFrom($value)

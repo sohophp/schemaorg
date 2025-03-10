@@ -102,7 +102,7 @@ class ParserItem
     public function isDataType(): bool
     {
         $types = $this->getTypes();
-        $names = ['Boolean', 'Float', 'Integer', 'Text', 'URL', 'Date', 'DateTime', 'Time', 'DataType', 'Number','schema:DataType'];
+        $names = ['Boolean', 'Float', 'Integer', 'Text', 'URL', 'Date', 'DateTime', 'Time', 'DataType', 'Number', 'schema:DataType'];
         return in_array($this->getName(), $names) || in_array('http://schema.org/DataType', $types);
     }
 
@@ -116,16 +116,18 @@ class ParserItem
     }
 
     /**
-     * @return string|null
+     * @return string
      */
-    public function getComment(): ?string
+    public function getComment(): string
     {
         $comment = $this->getProperty('rdfs:comment');
         if (is_object($comment)) {
-            return $comment->{'@value'} ?? null;
+            $comment = $comment->{'@value'} ?? '';
         }
-        return $this->getProperty('rdfs:comment');
+        return Filters::doc((string)$comment);
+
     }
+
 
     /**
      * @return string|null

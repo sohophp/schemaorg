@@ -5,90 +5,40 @@ use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
 
 /**
 * OfferShippingDetails represents information about shipping destinations.
-
-Multiple of these entities can be used to represent different shipping rates for different destinations:
-
-One entity for Alaska/Hawaii. A different one for continental US. A different one for all France.
-
-Multiple of these entities can be used to represent different shipping costs and delivery times.
-
-Two entities that are identical but differ in rate and time:
-
-E.g. Cheaper and slower: $5 in 5-7 days
-or Fast and expensive: $15 in 1-2 days.
+ * 
+ * Multiple of these entities can be used to represent different shipping rates
+ * for different destinations:
+ * 
+ * One entity for Alaska/Hawaii. A different one for continental US. A different
+ * one for all France.
+ * 
+ * Multiple of these entities can be used to represent different shipping costs
+ * and delivery times.
+ * 
+ * Two entities that are identical but differ in rate and time:
+ * 
+ * E.g. Cheaper and slower: $5 in 5-7 days
+ * or Fast and expensive: $15 in 1-2 days.
 * @see schema:OfferShippingDetails
 * @package Sohophp\SchemaOrg\Thing\Intangible\StructuredValue
 */
 class OfferShippingDetails extends StructuredValue
 {
-   /**
-        * The height of the item.
-        */
-    protected $height = null;
-
-   /**
-        * The width of the item.
-        */
-    protected $width = null;
-
-   /**
-        * The depth of the item.
-        */
-    protected $depth = null;
-
-   /**
-        * Indicates when shipping to a particular [[shippingDestination]] is not available.
-        */
-    protected $doesNotShip = null;
-
-   /**
-        * Label to match an [[OfferShippingDetails]] with a [[DeliveryTimeSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
-        */
-    protected $transitTimeLabel = null;
-
-   /**
-        * indicates (possibly multiple) shipping destinations. These can be defined in several ways, e.g. postalCode ranges.
-        */
-    protected $shippingDestination = null;
-
-   /**
-        * Label to match an [[OfferShippingDetails]] with a [[ShippingRateSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
-        */
-    protected $shippingLabel = null;
-
-   /**
-        * The shipping rate is the cost of shipping to the specified destination. Typically, the maxValue and currency values (of the [[MonetaryAmount]]) are most appropriate.
-        */
-    protected $shippingRate = null;
-
-   /**
-        * The weight of the product or person.
-        */
-    protected $weight = null;
-
-   /**
-        * The total delay between the receipt of the order and the goods reaching the final customer.
-        */
-    protected $deliveryTime = null;
-
-   /**
-        * Indicates the origin of a shipment, i.e. where it should be coming from.
-        */
-    protected $shippingOrigin = null;
-
-   /**
-        * The membership program tier an Offer (or a PriceSpecification, OfferShippingDetails, or MerchantReturnPolicy under an Offer) is valid for.
-        */
-    protected $validForMemberTier = null;
-
-   /**
-        * Link to a page containing [[ShippingRateSettings]] and [[DeliveryTimeSettings]] details.
-        */
-    protected $shippingSettingsLink = null;
 
 
     /**
-    * @param array|string $value
+        * The height of the item.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function height($value)
+    {
+        $this->setProperty('height', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setHeight($value)
@@ -105,8 +55,20 @@ class OfferShippingDetails extends StructuredValue
        return $this->getProperty('height');
     }
 
+
     /**
-    * @param array|string $value
+        * The width of the item.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function width($value)
+    {
+        $this->setProperty('width', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setWidth($value)
@@ -123,8 +85,20 @@ class OfferShippingDetails extends StructuredValue
        return $this->getProperty('width');
     }
 
+
     /**
-    * @param array|string $value
+        * The depth of the item.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function depth($value)
+    {
+        $this->setProperty('depth', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDepth($value)
@@ -141,8 +115,21 @@ class OfferShippingDetails extends StructuredValue
        return $this->getProperty('depth');
     }
 
+
     /**
-    * @param array|string $value
+        * Indicates when shipping to a particular [[shippingDestination]] is not
+ * available.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function doesNotShip($value)
+    {
+        $this->setProperty('doesNotShip', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDoesNotShip($value)
@@ -159,8 +146,21 @@ class OfferShippingDetails extends StructuredValue
        return $this->getProperty('doesNotShip');
     }
 
+
     /**
-    * @param array|string $value
+        * Label to match an [[OfferShippingDetails]] with a [[DeliveryTimeSettings]]
+ * (within the context of a [[shippingSettingsLink]] cross-reference).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function transitTimeLabel($value)
+    {
+        $this->setProperty('transitTimeLabel', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setTransitTimeLabel($value)
@@ -177,8 +177,21 @@ class OfferShippingDetails extends StructuredValue
        return $this->getProperty('transitTimeLabel');
     }
 
+
     /**
-    * @param array|string $value
+        * indicates (possibly multiple) shipping destinations. These can be defined in
+ * several ways, e.g. postalCode ranges.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function shippingDestination($value)
+    {
+        $this->setProperty('shippingDestination', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setShippingDestination($value)
@@ -195,8 +208,21 @@ class OfferShippingDetails extends StructuredValue
        return $this->getProperty('shippingDestination');
     }
 
+
     /**
-    * @param array|string $value
+        * Label to match an [[OfferShippingDetails]] with a [[ShippingRateSettings]]
+ * (within the context of a [[shippingSettingsLink]] cross-reference).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function shippingLabel($value)
+    {
+        $this->setProperty('shippingLabel', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setShippingLabel($value)
@@ -213,8 +239,22 @@ class OfferShippingDetails extends StructuredValue
        return $this->getProperty('shippingLabel');
     }
 
+
     /**
-    * @param array|string $value
+        * The shipping rate is the cost of shipping to the specified destination.
+ * Typically, the maxValue and currency values (of the [[MonetaryAmount]]) are
+ * most appropriate.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function shippingRate($value)
+    {
+        $this->setProperty('shippingRate', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setShippingRate($value)
@@ -231,8 +271,20 @@ class OfferShippingDetails extends StructuredValue
        return $this->getProperty('shippingRate');
     }
 
+
     /**
-    * @param array|string $value
+        * The weight of the product or person.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function weight($value)
+    {
+        $this->setProperty('weight', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setWeight($value)
@@ -249,8 +301,21 @@ class OfferShippingDetails extends StructuredValue
        return $this->getProperty('weight');
     }
 
+
     /**
-    * @param array|string $value
+        * The total delay between the receipt of the order and the goods reaching the
+ * final customer.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function deliveryTime($value)
+    {
+        $this->setProperty('deliveryTime', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDeliveryTime($value)
@@ -267,8 +332,20 @@ class OfferShippingDetails extends StructuredValue
        return $this->getProperty('deliveryTime');
     }
 
+
     /**
-    * @param array|string $value
+        * Indicates the origin of a shipment, i.e. where it should be coming from.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function shippingOrigin($value)
+    {
+        $this->setProperty('shippingOrigin', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setShippingOrigin($value)
@@ -285,8 +362,21 @@ class OfferShippingDetails extends StructuredValue
        return $this->getProperty('shippingOrigin');
     }
 
+
     /**
-    * @param array|string $value
+        * The membership program tier an Offer (or a PriceSpecification,
+ * OfferShippingDetails, or MerchantReturnPolicy under an Offer) is valid for.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function validForMemberTier($value)
+    {
+        $this->setProperty('validForMemberTier', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setValidForMemberTier($value)
@@ -303,8 +393,21 @@ class OfferShippingDetails extends StructuredValue
        return $this->getProperty('validForMemberTier');
     }
 
+
     /**
-    * @param array|string $value
+        * Link to a page containing [[ShippingRateSettings]] and
+ * [[DeliveryTimeSettings]] details.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function shippingSettingsLink($value)
+    {
+        $this->setProperty('shippingSettingsLink', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setShippingSettingsLink($value)

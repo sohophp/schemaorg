@@ -4,40 +4,28 @@ namespace Sohophp\SchemaOrg\Thing\CreativeWork\Comment;
 use Sohophp\SchemaOrg\Thing\CreativeWork\Comment;
 
 /**
-* A specific question - e.g. from a user seeking answers online, or collected in a Frequently Asked Questions (FAQ) document.
+* A specific question - e.g. from a user seeking answers online, or collected
+ * in a Frequently Asked Questions (FAQ) document.
 * @see schema:Question
 * @package Sohophp\SchemaOrg\Thing\CreativeWork\Comment
 */
 class Question extends Comment
 {
-   /**
-        * The number of answers this question has received.
-        */
-    protected $answerCount = null;
-
-   /**
-        * An answer (possibly one of several, possibly incorrect) to a Question, e.g. on a Question/Answer site.
-        */
-    protected $suggestedAnswer = null;
-
-   /**
-        * The parent of a question, answer or item in general. Typically used for Q/A discussion threads e.g. a chain of comments with the first comment being an [[Article]] or other [[CreativeWork]]. See also [[comment]] which points from something to a comment about it.
-        */
-    protected $parentItem = null;
-
-   /**
-        * The answer(s) that has been accepted as best, typically on a Question/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and/or the view of the Question author.
-        */
-    protected $acceptedAnswer = null;
-
-   /**
-        * For questions that are part of learning resources (e.g. Quiz), eduQuestionType indicates the format of question being given. Example: "Multiple choice", "Open ended", "Flashcard".
-        */
-    protected $eduQuestionType = null;
 
 
     /**
-    * @param array|string $value
+        * The number of answers this question has received.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function answerCount($value)
+    {
+        $this->setProperty('answerCount', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAnswerCount($value)
@@ -54,8 +42,21 @@ class Question extends Comment
        return $this->getProperty('answerCount');
     }
 
+
     /**
-    * @param array|string $value
+        * An answer (possibly one of several, possibly incorrect) to a Question, e.g.
+ * on a Question/Answer site.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function suggestedAnswer($value)
+    {
+        $this->setProperty('suggestedAnswer', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSuggestedAnswer($value)
@@ -72,8 +73,23 @@ class Question extends Comment
        return $this->getProperty('suggestedAnswer');
     }
 
+
     /**
-    * @param array|string $value
+        * The parent of a question, answer or item in general. Typically used for Q/A
+ * discussion threads e.g. a chain of comments with the first comment being an
+ * [[Article]] or other [[CreativeWork]]. See also [[comment]] which points from
+ * something to a comment about it.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function parentItem($value)
+    {
+        $this->setProperty('parentItem', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setParentItem($value)
@@ -90,8 +106,22 @@ class Question extends Comment
        return $this->getProperty('parentItem');
     }
 
+
     /**
-    * @param array|string $value
+        * The answer(s) that has been accepted as best, typically on a Question/Answer
+ * site. Sites vary in their selection mechanisms, e.g. drawing on community
+ * opinion and/or the view of the Question author.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function acceptedAnswer($value)
+    {
+        $this->setProperty('acceptedAnswer', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAcceptedAnswer($value)
@@ -108,8 +138,22 @@ class Question extends Comment
        return $this->getProperty('acceptedAnswer');
     }
 
+
     /**
-    * @param array|string $value
+        * For questions that are part of learning resources (e.g. Quiz),
+ * eduQuestionType indicates the format of question being given. Example:
+ * "Multiple choice", "Open ended", "Flashcard".
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function eduQuestionType($value)
+    {
+        $this->setProperty('eduQuestionType', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setEduQuestionType($value)

@@ -10,31 +10,22 @@ use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\PriceSpecification;
 */
 class DeliveryChargeSpecification extends PriceSpecification
 {
-   /**
-        * The delivery method(s) to which the delivery charge or payment charge specification applies.
-        */
-    protected $appliesToDeliveryMethod = null;
-
-   /**
-        * The geographic area where a service or offered item is provided.
-        */
-    protected $areaServed = null;
-
-   /**
-        * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
-    
-        */
-    protected $eligibleRegion = null;
-
-   /**
-        * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.\n\nSee also [[eligibleRegion]].
-      
-        */
-    protected $ineligibleRegion = null;
 
 
     /**
-    * @param array|string $value
+        * The delivery method(s) to which the delivery charge or payment charge
+ * specification applies.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function appliesToDeliveryMethod($value)
+    {
+        $this->setProperty('appliesToDeliveryMethod', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAppliesToDeliveryMethod($value)
@@ -51,8 +42,20 @@ class DeliveryChargeSpecification extends PriceSpecification
        return $this->getProperty('appliesToDeliveryMethod');
     }
 
+
     /**
-    * @param array|string $value
+        * The geographic area where a service or offered item is provided.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function areaServed($value)
+    {
+        $this->setProperty('areaServed', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAreaServed($value)
@@ -69,8 +72,24 @@ class DeliveryChargeSpecification extends PriceSpecification
        return $this->getProperty('areaServed');
     }
 
+
     /**
-    * @param array|string $value
+        * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the
+ * GeoShape for the geo-political region(s) for which the offer or delivery
+ * charge specification is valid.
+ * 
+ * See also [[ineligibleRegion]].
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function eligibleRegion($value)
+    {
+        $this->setProperty('eligibleRegion', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setEligibleRegion($value)
@@ -87,8 +106,25 @@ class DeliveryChargeSpecification extends PriceSpecification
        return $this->getProperty('eligibleRegion');
     }
 
+
     /**
-    * @param array|string $value
+        * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the
+ * GeoShape for the geo-political region(s) for which the offer or delivery
+ * charge specification is not valid, e.g. a region where the transaction is not
+ * allowed.
+ * 
+ * See also [[eligibleRegion]].
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function ineligibleRegion($value)
+    {
+        $this->setProperty('ineligibleRegion', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setIneligibleRegion($value)

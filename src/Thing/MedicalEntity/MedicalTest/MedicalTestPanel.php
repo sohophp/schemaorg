@@ -10,14 +10,21 @@ use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalTest;
 */
 class MedicalTestPanel extends MedicalTest
 {
-   /**
-        * A component test of the panel.
-        */
-    protected $subTest = null;
 
 
     /**
-    * @param array|string $value
+        * A component test of the panel.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function subTest($value)
+    {
+        $this->setProperty('subTest', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSubTest($value)

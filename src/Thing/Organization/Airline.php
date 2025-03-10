@@ -10,19 +10,21 @@ use Sohophp\SchemaOrg\Thing\Organization;
 */
 class Airline extends Organization
 {
-   /**
-        * IATA identifier for an airline or airport.
-        */
-    protected $iataCode = null;
-
-   /**
-        * The type of boarding policy used by the airline (e.g. zone-based or group-based).
-        */
-    protected $boardingPolicy = null;
 
 
     /**
-    * @param array|string $value
+        * IATA identifier for an airline or airport.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function iataCode($value)
+    {
+        $this->setProperty('iataCode', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setIataCode($value)
@@ -39,8 +41,21 @@ class Airline extends Organization
        return $this->getProperty('iataCode');
     }
 
+
     /**
-    * @param array|string $value
+        * The type of boarding policy used by the airline (e.g. zone-based or
+ * group-based).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function boardingPolicy($value)
+    {
+        $this->setProperty('boardingPolicy', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setBoardingPolicy($value)

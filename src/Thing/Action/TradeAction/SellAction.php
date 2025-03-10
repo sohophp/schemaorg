@@ -4,25 +4,30 @@ namespace Sohophp\SchemaOrg\Thing\Action\TradeAction;
 use Sohophp\SchemaOrg\Thing\Action\TradeAction;
 
 /**
-* The act of taking money from a buyer in exchange for goods or services rendered. An agent sells an object, product, or service to a buyer for a price. Reciprocal of BuyAction.
+* The act of taking money from a buyer in exchange for goods or services
+ * rendered. An agent sells an object, product, or service to a buyer for a
+ * price. Reciprocal of BuyAction.
 * @see schema:SellAction
 * @package Sohophp\SchemaOrg\Thing\Action\TradeAction
 */
 class SellAction extends TradeAction
 {
-   /**
-        * A sub property of participant. The participant/person/organization that bought the object.
-        */
-    protected $buyer = null;
-
-   /**
-        * The warranty promise(s) included in the offer.
-        */
-    protected $warrantyPromise = null;
 
 
     /**
-    * @param array|string $value
+        * A sub property of participant. The participant/person/organization that
+ * bought the object.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function buyer($value)
+    {
+        $this->setProperty('buyer', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setBuyer($value)
@@ -39,8 +44,20 @@ class SellAction extends TradeAction
        return $this->getProperty('buyer');
     }
 
+
     /**
-    * @param array|string $value
+        * The warranty promise(s) included in the offer.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function warrantyPromise($value)
+    {
+        $this->setProperty('warrantyPromise', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setWarrantyPromise($value)

@@ -10,19 +10,23 @@ use Sohophp\SchemaOrg\Thing\Action\CreateAction;
 */
 class WriteAction extends CreateAction
 {
-   /**
-        * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
-        */
-    protected $inLanguage = null;
-
-   /**
-        * A sub property of instrument. The language used on this action.
-        */
-    protected $language = null;
 
 
     /**
-    * @param array|string $value
+        * The language of the content or performance or used in an action. Please use
+ * one of the language codes from the [IETF BCP 47
+ * standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function inLanguage($value)
+    {
+        $this->setProperty('inLanguage', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setInLanguage($value)
@@ -39,8 +43,20 @@ class WriteAction extends CreateAction
        return $this->getProperty('inLanguage');
     }
 
+
     /**
-    * @param array|string $value
+        * A sub property of instrument. The language used on this action.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function language($value)
+    {
+        $this->setProperty('language', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setLanguage($value)

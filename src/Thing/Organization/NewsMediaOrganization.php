@@ -10,64 +10,24 @@ use Sohophp\SchemaOrg\Thing\Organization;
 */
 class NewsMediaOrganization extends Organization
 {
-   /**
-        * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
-        */
-    protected $diversityPolicy = null;
-
-   /**
-        * For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.
-        */
-    protected $correctionsPolicy = null;
-
-   /**
-        * For a [[NewsMediaOrganization]], a link to the masthead page or a page listing top editorial management.
-        */
-    protected $masthead = null;
-
-   /**
-        * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
-        */
-    protected $diversityStaffingReport = null;
-
-   /**
-        * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
-        */
-    protected $ownershipFundingInfo = null;
-
-   /**
-        * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement explaining when authors of articles are not named in bylines.
-        */
-    protected $noBylinesPolicy = null;
-
-   /**
-        * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
-        */
-    protected $unnamedSourcesPolicy = null;
-
-   /**
-        * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
-        */
-    protected $actionableFeedbackPolicy = null;
-
-   /**
-        * Disclosure about verification and fact-checking processes for a [[NewsMediaOrganization]] or other fact-checking [[Organization]].
-        */
-    protected $verificationFactCheckingPolicy = null;
-
-   /**
-        * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
-        */
-    protected $ethicsPolicy = null;
-
-   /**
-        * For a [[NewsMediaOrganization]], a statement on coverage priorities, including any public agenda or stance on issues.
-        */
-    protected $missionCoveragePrioritiesPolicy = null;
 
 
     /**
-    * @param array|string $value
+        * Statement on diversity policy by an [[Organization]] e.g. a
+ * [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement
+ * describing the newsroom’s diversity policy on both staffing and sources,
+ * typically providing staffing data.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function diversityPolicy($value)
+    {
+        $this->setProperty('diversityPolicy', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDiversityPolicy($value)
@@ -84,8 +44,22 @@ class NewsMediaOrganization extends Organization
        return $this->getProperty('diversityPolicy');
     }
 
+
     /**
-    * @param array|string $value
+        * For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement
+ * describing (in news media, the newsroom’s) disclosure and correction policy
+ * for errors.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function correctionsPolicy($value)
+    {
+        $this->setProperty('correctionsPolicy', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setCorrectionsPolicy($value)
@@ -102,8 +76,21 @@ class NewsMediaOrganization extends Organization
        return $this->getProperty('correctionsPolicy');
     }
 
+
     /**
-    * @param array|string $value
+        * For a [[NewsMediaOrganization]], a link to the masthead page or a page
+ * listing top editorial management.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function masthead($value)
+    {
+        $this->setProperty('masthead', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setMasthead($value)
@@ -120,8 +107,23 @@ class NewsMediaOrganization extends Organization
        return $this->getProperty('masthead');
     }
 
+
     /**
-    * @param array|string $value
+        * For an [[Organization]] (often but not necessarily a
+ * [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news
+ * context this might be for example ASNE or RTDNA (US) reports, or
+ * self-reported.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function diversityStaffingReport($value)
+    {
+        $this->setProperty('diversityStaffingReport', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDiversityStaffingReport($value)
@@ -138,8 +140,25 @@ class NewsMediaOrganization extends Organization
        return $this->getProperty('diversityStaffingReport');
     }
 
+
     /**
-    * @param array|string $value
+        * For an [[Organization]] (often but not necessarily a
+ * [[NewsMediaOrganization]]), a description of organizational ownership
+ * structure; funding and grants. In a news/media setting, this is with
+ * particular reference to editorial independence.   Note that the [[funder]] is
+ * also available and can be used to make basic funder information
+ * machine-readable.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function ownershipFundingInfo($value)
+    {
+        $this->setProperty('ownershipFundingInfo', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setOwnershipFundingInfo($value)
@@ -156,8 +175,21 @@ class NewsMediaOrganization extends Organization
        return $this->getProperty('ownershipFundingInfo');
     }
 
+
     /**
-    * @param array|string $value
+        * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a
+ * statement explaining when authors of articles are not named in bylines.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function noBylinesPolicy($value)
+    {
+        $this->setProperty('noBylinesPolicy', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setNoBylinesPolicy($value)
@@ -174,8 +206,21 @@ class NewsMediaOrganization extends Organization
        return $this->getProperty('noBylinesPolicy');
     }
 
+
     /**
-    * @param array|string $value
+        * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement
+ * about policy on use of unnamed sources and the decision process required.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function unnamedSourcesPolicy($value)
+    {
+        $this->setProperty('unnamedSourcesPolicy', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setUnnamedSourcesPolicy($value)
@@ -192,8 +237,23 @@ class NewsMediaOrganization extends Organization
        return $this->getProperty('unnamedSourcesPolicy');
     }
 
+
     /**
-    * @param array|string $value
+        * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a
+ * statement about public engagement activities (for news media, the
+ * newsroom’s), including involving the public - digitally or otherwise -- in
+ * coverage decisions, reporting and activities after publication.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function actionableFeedbackPolicy($value)
+    {
+        $this->setProperty('actionableFeedbackPolicy', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setActionableFeedbackPolicy($value)
@@ -210,8 +270,21 @@ class NewsMediaOrganization extends Organization
        return $this->getProperty('actionableFeedbackPolicy');
     }
 
+
     /**
-    * @param array|string $value
+        * Disclosure about verification and fact-checking processes for a
+ * [[NewsMediaOrganization]] or other fact-checking [[Organization]].
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function verificationFactCheckingPolicy($value)
+    {
+        $this->setProperty('verificationFactCheckingPolicy', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setVerificationFactCheckingPolicy($value)
@@ -228,8 +301,25 @@ class NewsMediaOrganization extends Organization
        return $this->getProperty('verificationFactCheckingPolicy');
     }
 
+
     /**
-    * @param array|string $value
+        * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding
+ * journalistic and publishing practices, or of a [[Restaurant]], a page
+ * describing food source policies. In the case of a [[NewsMediaOrganization]],
+ * an ethicsPolicy is typically a statement describing the personal,
+ * organizational, and corporate standards of behavior expected by the
+ * organization.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function ethicsPolicy($value)
+    {
+        $this->setProperty('ethicsPolicy', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setEthicsPolicy($value)
@@ -246,8 +336,21 @@ class NewsMediaOrganization extends Organization
        return $this->getProperty('ethicsPolicy');
     }
 
+
     /**
-    * @param array|string $value
+        * For a [[NewsMediaOrganization]], a statement on coverage priorities,
+ * including any public agenda or stance on issues.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function missionCoveragePrioritiesPolicy($value)
+    {
+        $this->setProperty('missionCoveragePrioritiesPolicy', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setMissionCoveragePrioritiesPolicy($value)

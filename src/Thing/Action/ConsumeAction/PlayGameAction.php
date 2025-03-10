@@ -10,14 +10,22 @@ use Sohophp\SchemaOrg\Thing\Action\ConsumeAction;
 */
 class PlayGameAction extends ConsumeAction
 {
-   /**
-        * Indicates the availability type of the game content associated with this action, such as whether it is a full version or a demo.
-        */
-    protected $gameAvailabilityType = null;
 
 
     /**
-    * @param array|string $value
+        * Indicates the availability type of the game content associated with this
+ * action, such as whether it is a full version or a demo.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function gameAvailabilityType($value)
+    {
+        $this->setProperty('gameAvailabilityType', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setGameAvailabilityType($value)

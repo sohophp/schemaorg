@@ -4,126 +4,29 @@ namespace Sohophp\SchemaOrg\Thing\Intangible;
 use Sohophp\SchemaOrg\Thing\Intangible;
 
 /**
-* A MerchantReturnPolicy provides information about product return policies associated with an [[Organization]], [[Product]], or [[Offer]].
+* A MerchantReturnPolicy provides information about product return policies
+ * associated with an [[Organization]], [[Product]], or [[Offer]].
 * @see schema:MerchantReturnPolicy
 * @package Sohophp\SchemaOrg\Thing\Intangible
 */
 class MerchantReturnPolicy extends Intangible
 {
-   /**
-        * Are in-store returns offered? (For more advanced return methods use the [[returnMethod]] property.)
-        */
-    protected $inStoreReturnsOffered = null;
-
-   /**
-        * Amount of shipping costs for defect product returns. Applicable when property [[itemDefectReturnFees]] equals [[ReturnShippingFees]].
-        */
-    protected $itemDefectReturnShippingFeesAmount = null;
-
-   /**
-        * Specifies an applicable return policy (from an enumeration).
-        */
-    protected $returnPolicyCategory = null;
-
-   /**
-        * The amount of shipping costs if a product is returned due to customer remorse. Applicable when property [[customerRemorseReturnFees]] equals [[ReturnShippingFees]].
-        */
-    protected $customerRemorseReturnShippingFeesAmount = null;
-
-   /**
-        * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
-        */
-    protected $itemCondition = null;
-
-   /**
-        * Use [[MonetaryAmount]] to specify a fixed restocking fee for product returns, or use [[Number]] to specify a percentage of the product price paid by the customer.
-        */
-    protected $restockingFee = null;
-
-   /**
-        * The type of return fees if the product is returned due to customer remorse.
-        */
-    protected $customerRemorseReturnFees = null;
-
-   /**
-        * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
-        */
-    protected $merchantReturnDays = null;
-
-   /**
-        * A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\n\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
-
-        */
-    protected $additionalProperty = null;
-
-   /**
-        * The type of return fees for purchased products (for any return reason).
-        */
-    protected $returnFees = null;
-
-   /**
-        * The type of return method offered, specified from an enumeration.
-        */
-    protected $returnMethod = null;
-
-   /**
-        * A country where a particular merchant return policy applies to, for example the two-letter ISO 3166-1 alpha-2 country code.
-        */
-    protected $applicableCountry = null;
-
-   /**
-        * The method (from an enumeration) by which the customer obtains a return shipping label for a product returned for any reason.
-        */
-    protected $returnLabelSource = null;
-
-   /**
-        * A refund type, from an enumerated list.
-        */
-    protected $refundType = null;
-
-   /**
-        * Seasonal override of a return policy.
-        */
-    protected $returnPolicySeasonalOverride = null;
-
-   /**
-        * The method (from an enumeration) by which the customer obtains a return shipping label for a product returned due to customer remorse.
-        */
-    protected $customerRemorseReturnLabelSource = null;
-
-   /**
-        * The type of return fees for returns of defect products.
-        */
-    protected $itemDefectReturnFees = null;
-
-   /**
-        * The country where the product has to be sent to for returns, for example "Ireland" using the [[name]] property of [[Country]]. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1). Note that this can be different from the country where the product was originally shipped from or sent to.
-        */
-    protected $returnPolicyCountry = null;
-
-   /**
-        * The membership program tier an Offer (or a PriceSpecification, OfferShippingDetails, or MerchantReturnPolicy under an Offer) is valid for.
-        */
-    protected $validForMemberTier = null;
-
-   /**
-        * Specifies a Web page or service by URL, for product returns.
-        */
-    protected $merchantReturnLink = null;
-
-   /**
-        * The method (from an enumeration) by which the customer obtains a return shipping label for a defect product.
-        */
-    protected $itemDefectReturnLabelSource = null;
-
-   /**
-        * Amount of shipping costs for product returns (for any reason). Applicable when property [[returnFees]] equals [[ReturnShippingFees]].
-        */
-    protected $returnShippingFeesAmount = null;
 
 
     /**
-    * @param array|string $value
+        * Are in-store returns offered? (For more advanced return methods use the
+ * [[returnMethod]] property.)
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function inStoreReturnsOffered($value)
+    {
+        $this->setProperty('inStoreReturnsOffered', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setInStoreReturnsOffered($value)
@@ -140,8 +43,21 @@ class MerchantReturnPolicy extends Intangible
        return $this->getProperty('inStoreReturnsOffered');
     }
 
+
     /**
-    * @param array|string $value
+        * Amount of shipping costs for defect product returns. Applicable when property
+ * [[itemDefectReturnFees]] equals [[ReturnShippingFees]].
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function itemDefectReturnShippingFeesAmount($value)
+    {
+        $this->setProperty('itemDefectReturnShippingFeesAmount', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setItemDefectReturnShippingFeesAmount($value)
@@ -158,8 +74,20 @@ class MerchantReturnPolicy extends Intangible
        return $this->getProperty('itemDefectReturnShippingFeesAmount');
     }
 
+
     /**
-    * @param array|string $value
+        * Specifies an applicable return policy (from an enumeration).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function returnPolicyCategory($value)
+    {
+        $this->setProperty('returnPolicyCategory', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setReturnPolicyCategory($value)
@@ -176,8 +104,22 @@ class MerchantReturnPolicy extends Intangible
        return $this->getProperty('returnPolicyCategory');
     }
 
+
     /**
-    * @param array|string $value
+        * The amount of shipping costs if a product is returned due to customer
+ * remorse. Applicable when property [[customerRemorseReturnFees]] equals
+ * [[ReturnShippingFees]].
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function customerRemorseReturnShippingFeesAmount($value)
+    {
+        $this->setProperty('customerRemorseReturnShippingFeesAmount', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setCustomerRemorseReturnShippingFeesAmount($value)
@@ -194,8 +136,23 @@ class MerchantReturnPolicy extends Intangible
        return $this->getProperty('customerRemorseReturnShippingFeesAmount');
     }
 
+
     /**
-    * @param array|string $value
+        * A predefined value from OfferItemCondition specifying the condition of the
+ * product or service, or the products or services included in the offer. Also
+ * used for product return policies to specify the condition of products
+ * accepted for returns.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function itemCondition($value)
+    {
+        $this->setProperty('itemCondition', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setItemCondition($value)
@@ -212,8 +169,22 @@ class MerchantReturnPolicy extends Intangible
        return $this->getProperty('itemCondition');
     }
 
+
     /**
-    * @param array|string $value
+        * Use [[MonetaryAmount]] to specify a fixed restocking fee for product returns,
+ * or use [[Number]] to specify a percentage of the product price paid by the
+ * customer.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function restockingFee($value)
+    {
+        $this->setProperty('restockingFee', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setRestockingFee($value)
@@ -230,8 +201,20 @@ class MerchantReturnPolicy extends Intangible
        return $this->getProperty('restockingFee');
     }
 
+
     /**
-    * @param array|string $value
+        * The type of return fees if the product is returned due to customer remorse.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function customerRemorseReturnFees($value)
+    {
+        $this->setProperty('customerRemorseReturnFees', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setCustomerRemorseReturnFees($value)
@@ -248,8 +231,22 @@ class MerchantReturnPolicy extends Intangible
        return $this->getProperty('customerRemorseReturnFees');
     }
 
+
     /**
-    * @param array|string $value
+        * Specifies either a fixed return date or the number of days (from the delivery
+ * date) that a product can be returned. Used when the [[returnPolicyCategory]]
+ * property is specified as [[MerchantReturnFiniteReturnWindow]].
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function merchantReturnDays($value)
+    {
+        $this->setProperty('merchantReturnDays', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setMerchantReturnDays($value)
@@ -266,8 +263,28 @@ class MerchantReturnPolicy extends Intangible
        return $this->getProperty('merchantReturnDays');
     }
 
+
     /**
-    * @param array|string $value
+        * A property-value pair representing an additional characteristic of the
+ * entity, e.g. a product feature or another characteristic for which there is
+ * no matching property in schema.org.
+ * 
+ * Note: Publishers should be aware that applications designed to use specific
+ * schema.org properties (e.g. https://schema.org/width,
+ * https://schema.org/color, https://schema.org/gtin13, ...) will typically
+ * expect such data to be provided using those properties, rather than using the
+ * generic property/value mechanism.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function additionalProperty($value)
+    {
+        $this->setProperty('additionalProperty', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAdditionalProperty($value)
@@ -284,8 +301,20 @@ class MerchantReturnPolicy extends Intangible
        return $this->getProperty('additionalProperty');
     }
 
+
     /**
-    * @param array|string $value
+        * The type of return fees for purchased products (for any return reason).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function returnFees($value)
+    {
+        $this->setProperty('returnFees', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setReturnFees($value)
@@ -302,8 +331,20 @@ class MerchantReturnPolicy extends Intangible
        return $this->getProperty('returnFees');
     }
 
+
     /**
-    * @param array|string $value
+        * The type of return method offered, specified from an enumeration.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function returnMethod($value)
+    {
+        $this->setProperty('returnMethod', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setReturnMethod($value)
@@ -320,8 +361,21 @@ class MerchantReturnPolicy extends Intangible
        return $this->getProperty('returnMethod');
     }
 
+
     /**
-    * @param array|string $value
+        * A country where a particular merchant return policy applies to, for example
+ * the two-letter ISO 3166-1 alpha-2 country code.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function applicableCountry($value)
+    {
+        $this->setProperty('applicableCountry', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setApplicableCountry($value)
@@ -338,8 +392,21 @@ class MerchantReturnPolicy extends Intangible
        return $this->getProperty('applicableCountry');
     }
 
+
     /**
-    * @param array|string $value
+        * The method (from an enumeration) by which the customer obtains a return
+ * shipping label for a product returned for any reason.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function returnLabelSource($value)
+    {
+        $this->setProperty('returnLabelSource', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setReturnLabelSource($value)
@@ -356,8 +423,20 @@ class MerchantReturnPolicy extends Intangible
        return $this->getProperty('returnLabelSource');
     }
 
+
     /**
-    * @param array|string $value
+        * A refund type, from an enumerated list.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function refundType($value)
+    {
+        $this->setProperty('refundType', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setRefundType($value)
@@ -374,8 +453,20 @@ class MerchantReturnPolicy extends Intangible
        return $this->getProperty('refundType');
     }
 
+
     /**
-    * @param array|string $value
+        * Seasonal override of a return policy.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function returnPolicySeasonalOverride($value)
+    {
+        $this->setProperty('returnPolicySeasonalOverride', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setReturnPolicySeasonalOverride($value)
@@ -392,8 +483,21 @@ class MerchantReturnPolicy extends Intangible
        return $this->getProperty('returnPolicySeasonalOverride');
     }
 
+
     /**
-    * @param array|string $value
+        * The method (from an enumeration) by which the customer obtains a return
+ * shipping label for a product returned due to customer remorse.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function customerRemorseReturnLabelSource($value)
+    {
+        $this->setProperty('customerRemorseReturnLabelSource', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setCustomerRemorseReturnLabelSource($value)
@@ -410,8 +514,20 @@ class MerchantReturnPolicy extends Intangible
        return $this->getProperty('customerRemorseReturnLabelSource');
     }
 
+
     /**
-    * @param array|string $value
+        * The type of return fees for returns of defect products.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function itemDefectReturnFees($value)
+    {
+        $this->setProperty('itemDefectReturnFees', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setItemDefectReturnFees($value)
@@ -428,8 +544,25 @@ class MerchantReturnPolicy extends Intangible
        return $this->getProperty('itemDefectReturnFees');
     }
 
+
     /**
-    * @param array|string $value
+        * The country where the product has to be sent to for returns, for example
+ * "Ireland" using the [[name]] property of [[Country]]. You can also provide
+ * the two-letter [ISO 3166-1 alpha-2 country
+ * code](http://en.wikipedia.org/wiki/ISO_3166-1). Note that this can be
+ * different from the country where the product was originally shipped from or
+ * sent to.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function returnPolicyCountry($value)
+    {
+        $this->setProperty('returnPolicyCountry', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setReturnPolicyCountry($value)
@@ -446,8 +579,21 @@ class MerchantReturnPolicy extends Intangible
        return $this->getProperty('returnPolicyCountry');
     }
 
+
     /**
-    * @param array|string $value
+        * The membership program tier an Offer (or a PriceSpecification,
+ * OfferShippingDetails, or MerchantReturnPolicy under an Offer) is valid for.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function validForMemberTier($value)
+    {
+        $this->setProperty('validForMemberTier', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setValidForMemberTier($value)
@@ -464,8 +610,20 @@ class MerchantReturnPolicy extends Intangible
        return $this->getProperty('validForMemberTier');
     }
 
+
     /**
-    * @param array|string $value
+        * Specifies a Web page or service by URL, for product returns.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function merchantReturnLink($value)
+    {
+        $this->setProperty('merchantReturnLink', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setMerchantReturnLink($value)
@@ -482,8 +640,21 @@ class MerchantReturnPolicy extends Intangible
        return $this->getProperty('merchantReturnLink');
     }
 
+
     /**
-    * @param array|string $value
+        * The method (from an enumeration) by which the customer obtains a return
+ * shipping label for a defect product.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function itemDefectReturnLabelSource($value)
+    {
+        $this->setProperty('itemDefectReturnLabelSource', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setItemDefectReturnLabelSource($value)
@@ -500,8 +671,21 @@ class MerchantReturnPolicy extends Intangible
        return $this->getProperty('itemDefectReturnLabelSource');
     }
 
+
     /**
-    * @param array|string $value
+        * Amount of shipping costs for product returns (for any reason). Applicable
+ * when property [[returnFees]] equals [[ReturnShippingFees]].
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function returnShippingFeesAmount($value)
+    {
+        $this->setProperty('returnShippingFeesAmount', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setReturnShippingFeesAmount($value)

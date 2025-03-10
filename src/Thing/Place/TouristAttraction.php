@@ -4,25 +4,33 @@ namespace Sohophp\SchemaOrg\Thing\Place;
 use Sohophp\SchemaOrg\Thing\Place;
 
 /**
-* A tourist attraction.  In principle any Thing can be a [[TouristAttraction]], from a [[Mountain]] and [[LandmarksOrHistoricalBuildings]] to a [[LocalBusiness]].  This Type can be used on its own to describe a general [[TouristAttraction]], or be used as an [[additionalType]] to add tourist attraction properties to any other type.  (See examples below)
+* A tourist attraction.  In principle any Thing can be a [[TouristAttraction]],
+ * from a [[Mountain]] and [[LandmarksOrHistoricalBuildings]] to a
+ * [[LocalBusiness]].  This Type can be used on its own to describe a general
+ * [[TouristAttraction]], or be used as an [[additionalType]] to add tourist
+ * attraction properties to any other type.  (See examples below)
 * @see schema:TouristAttraction
 * @package Sohophp\SchemaOrg\Thing\Place
 */
 class TouristAttraction extends Place
 {
-   /**
-        * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
-        */
-    protected $availableLanguage = null;
-
-   /**
-        * Attraction suitable for type(s) of tourist. E.g. children, visitors from a particular country, etc. 
-        */
-    protected $touristType = null;
 
 
     /**
-    * @param array|string $value
+        * A language someone may use with or at the item, service or place. Please use
+ * one of the language codes from the [IETF BCP 47
+ * standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function availableLanguage($value)
+    {
+        $this->setProperty('availableLanguage', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAvailableLanguage($value)
@@ -39,8 +47,21 @@ class TouristAttraction extends Place
        return $this->getProperty('availableLanguage');
     }
 
+
     /**
-    * @param array|string $value
+        * Attraction suitable for type(s) of tourist. E.g. children, visitors from a
+ * particular country, etc.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function touristType($value)
+    {
+        $this->setProperty('touristType', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setTouristType($value)

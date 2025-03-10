@@ -4,25 +4,28 @@ namespace Sohophp\SchemaOrg\Thing\CreativeWork\Article;
 use Sohophp\SchemaOrg\Thing\CreativeWork\Article;
 
 /**
-* A technical article - Example: How-to (task) topics, step-by-step, procedural troubleshooting, specifications, etc.
+* A technical article - Example: How-to (task) topics, step-by-step, procedural
+ * troubleshooting, specifications, etc.
 * @see schema:TechArticle
 * @package Sohophp\SchemaOrg\Thing\CreativeWork\Article
 */
 class TechArticle extends Article
 {
-   /**
-        * Proficiency needed for this content; expected values: 'Beginner', 'Expert'.
-        */
-    protected $proficiencyLevel = null;
-
-   /**
-        * Prerequisites needed to fulfill steps in article.
-        */
-    protected $dependencies = null;
 
 
     /**
-    * @param array|string $value
+        * Proficiency needed for this content; expected values: 'Beginner', 'Expert'.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function proficiencyLevel($value)
+    {
+        $this->setProperty('proficiencyLevel', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setProficiencyLevel($value)
@@ -39,8 +42,20 @@ class TechArticle extends Article
        return $this->getProperty('proficiencyLevel');
     }
 
+
     /**
-    * @param array|string $value
+        * Prerequisites needed to fulfill steps in article.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function dependencies($value)
+    {
+        $this->setProperty('dependencies', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDependencies($value)

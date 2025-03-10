@@ -10,64 +10,22 @@ use Sohophp\SchemaOrg\Thing\Intangible;
 */
 class PropertyValueSpecification extends Intangible
 {
-   /**
-        * The stepValue attribute indicates the granularity that is expected (and required) of the value in a PropertyValueSpecification.
-        */
-    protected $stepValue = null;
-
-   /**
-        * The upper value of some characteristic or property.
-        */
-    protected $maxValue = null;
-
-   /**
-        * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
-        */
-    protected $defaultValue = null;
-
-   /**
-        * Specifies a regular expression for testing literal values according to the HTML spec.
-        */
-    protected $valuePattern = null;
-
-   /**
-        * Specifies the minimum allowed range for number of characters in a literal value.
-        */
-    protected $valueMinLength = null;
-
-   /**
-        * Indicates the name of the PropertyValueSpecification to be used in URL templates and form encoding in a manner analogous to HTML's input@name.
-        */
-    protected $valueName = null;
-
-   /**
-        * Whether or not a property is mutable.  Default is false. Specifying this for a property that also has a value makes it act similar to a "hidden" input in an HTML form.
-        */
-    protected $readonlyValue = null;
-
-   /**
-        * Whether multiple values are allowed for the property.  Default is false.
-        */
-    protected $multipleValues = null;
-
-   /**
-        * Specifies the allowed range for number of characters in a literal value.
-        */
-    protected $valueMaxLength = null;
-
-   /**
-        * Whether the property must be filled in to complete the action.  Default is false.
-        */
-    protected $valueRequired = null;
-
-   /**
-        * The lower value of some characteristic or property.
-        */
-    protected $minValue = null;
 
 
     /**
-    * @param array|string $value
+        * The stepValue attribute indicates the granularity that is expected (and
+ * required) of the value in a PropertyValueSpecification.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function stepValue($value)
+    {
+        $this->setProperty('stepValue', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setStepValue($value)
@@ -84,8 +42,20 @@ class PropertyValueSpecification extends Intangible
        return $this->getProperty('stepValue');
     }
 
+
     /**
-    * @param array|string $value
+        * The upper value of some characteristic or property.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function maxValue($value)
+    {
+        $this->setProperty('maxValue', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setMaxValue($value)
@@ -102,8 +72,22 @@ class PropertyValueSpecification extends Intangible
        return $this->getProperty('maxValue');
     }
 
+
     /**
-    * @param array|string $value
+        * The default value of the input.  For properties that expect a literal, the
+ * default is a literal value, for properties that expect an object, it's an ID
+ * reference to one of the current values.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function defaultValue($value)
+    {
+        $this->setProperty('defaultValue', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDefaultValue($value)
@@ -120,8 +104,21 @@ class PropertyValueSpecification extends Intangible
        return $this->getProperty('defaultValue');
     }
 
+
     /**
-    * @param array|string $value
+        * Specifies a regular expression for testing literal values according to the
+ * HTML spec.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function valuePattern($value)
+    {
+        $this->setProperty('valuePattern', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setValuePattern($value)
@@ -138,8 +135,21 @@ class PropertyValueSpecification extends Intangible
        return $this->getProperty('valuePattern');
     }
 
+
     /**
-    * @param array|string $value
+        * Specifies the minimum allowed range for number of characters in a literal
+ * value.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function valueMinLength($value)
+    {
+        $this->setProperty('valueMinLength', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setValueMinLength($value)
@@ -156,8 +166,21 @@ class PropertyValueSpecification extends Intangible
        return $this->getProperty('valueMinLength');
     }
 
+
     /**
-    * @param array|string $value
+        * Indicates the name of the PropertyValueSpecification to be used in URL
+ * templates and form encoding in a manner analogous to HTML's input@name.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function valueName($value)
+    {
+        $this->setProperty('valueName', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setValueName($value)
@@ -174,8 +197,22 @@ class PropertyValueSpecification extends Intangible
        return $this->getProperty('valueName');
     }
 
+
     /**
-    * @param array|string $value
+        * Whether or not a property is mutable.  Default is false. Specifying this for
+ * a property that also has a value makes it act similar to a "hidden" input in
+ * an HTML form.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function readonlyValue($value)
+    {
+        $this->setProperty('readonlyValue', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setReadonlyValue($value)
@@ -192,8 +229,20 @@ class PropertyValueSpecification extends Intangible
        return $this->getProperty('readonlyValue');
     }
 
+
     /**
-    * @param array|string $value
+        * Whether multiple values are allowed for the property.  Default is false.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function multipleValues($value)
+    {
+        $this->setProperty('multipleValues', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setMultipleValues($value)
@@ -210,8 +259,20 @@ class PropertyValueSpecification extends Intangible
        return $this->getProperty('multipleValues');
     }
 
+
     /**
-    * @param array|string $value
+        * Specifies the allowed range for number of characters in a literal value.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function valueMaxLength($value)
+    {
+        $this->setProperty('valueMaxLength', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setValueMaxLength($value)
@@ -228,8 +289,21 @@ class PropertyValueSpecification extends Intangible
        return $this->getProperty('valueMaxLength');
     }
 
+
     /**
-    * @param array|string $value
+        * Whether the property must be filled in to complete the action.  Default is
+ * false.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function valueRequired($value)
+    {
+        $this->setProperty('valueRequired', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setValueRequired($value)
@@ -246,8 +320,20 @@ class PropertyValueSpecification extends Intangible
        return $this->getProperty('valueRequired');
     }
 
+
     /**
-    * @param array|string $value
+        * The lower value of some characteristic or property.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function minValue($value)
+    {
+        $this->setProperty('minValue', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setMinValue($value)

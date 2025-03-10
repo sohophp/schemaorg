@@ -10,14 +10,22 @@ use Sohophp\SchemaOrg\Thing\CreativeWork\Article;
 */
 class Report extends Article
 {
-   /**
-        * The number or other unique designator assigned to a Report by the publishing organization.
-        */
-    protected $reportNumber = null;
 
 
     /**
-    * @param array|string $value
+        * The number or other unique designator assigned to a Report by the publishing
+ * organization.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function reportNumber($value)
+    {
+        $this->setProperty('reportNumber', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setReportNumber($value)

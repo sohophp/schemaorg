@@ -4,30 +4,28 @@ namespace Sohophp\SchemaOrg\Thing\Action\InteractAction\CommunicateAction\Inform
 use Sohophp\SchemaOrg\Thing\Action\InteractAction\CommunicateAction\InformAction;
 
 /**
-* The act of notifying an event organizer as to whether you expect to attend the event.
+* The act of notifying an event organizer as to whether you expect to attend
+ * the event.
 * @see schema:RsvpAction
 * @package Sohophp\SchemaOrg\Thing\Action\InteractAction\CommunicateAction\InformAction
 */
 class RsvpAction extends InformAction
 {
-   /**
-        * Comments, typically from users.
-        */
-    protected $comment = null;
-
-   /**
-        * The response (yes, no, maybe) to the RSVP.
-        */
-    protected $rsvpResponse = null;
-
-   /**
-        * If responding yes, the number of guests who will attend in addition to the invitee.
-        */
-    protected $additionalNumberOfGuests = null;
 
 
     /**
-    * @param array|string $value
+        * Comments, typically from users.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function comment($value)
+    {
+        $this->setProperty('comment', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setComment($value)
@@ -44,8 +42,20 @@ class RsvpAction extends InformAction
        return $this->getProperty('comment');
     }
 
+
     /**
-    * @param array|string $value
+        * The response (yes, no, maybe) to the RSVP.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function rsvpResponse($value)
+    {
+        $this->setProperty('rsvpResponse', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setRsvpResponse($value)
@@ -62,8 +72,21 @@ class RsvpAction extends InformAction
        return $this->getProperty('rsvpResponse');
     }
 
+
     /**
-    * @param array|string $value
+        * If responding yes, the number of guests who will attend in addition to the
+ * invitee.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function additionalNumberOfGuests($value)
+    {
+        $this->setProperty('additionalNumberOfGuests', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAdditionalNumberOfGuests($value)

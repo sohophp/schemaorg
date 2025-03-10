@@ -4,125 +4,29 @@ namespace Sohophp\SchemaOrg\Thing\Intangible;
 use Sohophp\SchemaOrg\Thing\Intangible;
 
 /**
-* An order is a confirmation of a transaction (a receipt), which can contain multiple line items, each represented by an Offer that has been accepted by the customer.
+* An order is a confirmation of a transaction (a receipt), which can contain
+ * multiple line items, each represented by an Offer that has been accepted by
+ * the customer.
 * @see schema:Order
 * @package Sohophp\SchemaOrg\Thing\Intangible
 */
 class Order extends Intangible
 {
-   /**
-        * Code used to redeem a discount.
-        */
-    protected $discountCode = null;
-
-   /**
-        * The billing address for the order.
-        */
-    protected $billingAddress = null;
-
-   /**
-        * The URL for sending a payment.
-        */
-    protected $paymentUrl = null;
-
-   /**
-        * The order is being paid as part of the referenced Invoice.
-        */
-    protected $partOfInvoice = null;
-
-   /**
-        * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
-        */
-    protected $paymentMethodId = null;
-
-   /**
-        * The name of the credit card or other method of payment for the order.
-        */
-    protected $paymentMethod = null;
-
-   /**
-        * The current status of the order.
-        */
-    protected $orderStatus = null;
-
-   /**
-        * A number that confirms the given order or payment has been received.
-        */
-    protected $confirmationNumber = null;
-
-   /**
-        * The date that payment is due.
-        */
-    protected $paymentDue = null;
-
-   /**
-        * The currency of the discount.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
-        */
-    protected $discountCurrency = null;
-
-   /**
-        * Indicates whether the offer was accepted as a gift for someone other than the buyer.
-        */
-    protected $isGift = null;
-
-   /**
-        * The date that payment is due.
-        */
-    protected $paymentDueDate = null;
-
-   /**
-        * The delivery of the parcel related to this order or order item.
-        */
-    protected $orderDelivery = null;
-
-   /**
-        * The offer(s) -- e.g., product, quantity and price combinations -- included in the order.
-        */
-    protected $acceptedOffer = null;
-
-   /**
-        * Date order was placed.
-        */
-    protected $orderDate = null;
-
-   /**
-        * 'merchant' is an out-dated term for 'seller'.
-        */
-    protected $merchant = null;
-
-   /**
-        * The identifier of the transaction.
-        */
-    protected $orderNumber = null;
-
-   /**
-        * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
-        */
-    protected $broker = null;
-
-   /**
-        * The item ordered.
-        */
-    protected $orderedItem = null;
-
-   /**
-        * Any discount applied (to an Order).
-        */
-    protected $discount = null;
-
-   /**
-        * Party placing the order or paying the invoice.
-        */
-    protected $customer = null;
-
-   /**
-        * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-        */
-    protected $seller = null;
 
 
     /**
-    * @param array|string $value
+        * Code used to redeem a discount.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function discountCode($value)
+    {
+        $this->setProperty('discountCode', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDiscountCode($value)
@@ -139,8 +43,20 @@ class Order extends Intangible
        return $this->getProperty('discountCode');
     }
 
+
     /**
-    * @param array|string $value
+        * The billing address for the order.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function billingAddress($value)
+    {
+        $this->setProperty('billingAddress', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setBillingAddress($value)
@@ -157,8 +73,20 @@ class Order extends Intangible
        return $this->getProperty('billingAddress');
     }
 
+
     /**
-    * @param array|string $value
+        * The URL for sending a payment.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function paymentUrl($value)
+    {
+        $this->setProperty('paymentUrl', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPaymentUrl($value)
@@ -175,8 +103,20 @@ class Order extends Intangible
        return $this->getProperty('paymentUrl');
     }
 
+
     /**
-    * @param array|string $value
+        * The order is being paid as part of the referenced Invoice.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function partOfInvoice($value)
+    {
+        $this->setProperty('partOfInvoice', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPartOfInvoice($value)
@@ -193,8 +133,21 @@ class Order extends Intangible
        return $this->getProperty('partOfInvoice');
     }
 
+
     /**
-    * @param array|string $value
+        * An identifier for the method of payment used (e.g. the last 4 digits of the
+ * credit card).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function paymentMethodId($value)
+    {
+        $this->setProperty('paymentMethodId', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPaymentMethodId($value)
@@ -211,8 +164,20 @@ class Order extends Intangible
        return $this->getProperty('paymentMethodId');
     }
 
+
     /**
-    * @param array|string $value
+        * The name of the credit card or other method of payment for the order.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function paymentMethod($value)
+    {
+        $this->setProperty('paymentMethod', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPaymentMethod($value)
@@ -229,8 +194,20 @@ class Order extends Intangible
        return $this->getProperty('paymentMethod');
     }
 
+
     /**
-    * @param array|string $value
+        * The current status of the order.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function orderStatus($value)
+    {
+        $this->setProperty('orderStatus', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setOrderStatus($value)
@@ -247,8 +224,20 @@ class Order extends Intangible
        return $this->getProperty('orderStatus');
     }
 
+
     /**
-    * @param array|string $value
+        * A number that confirms the given order or payment has been received.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function confirmationNumber($value)
+    {
+        $this->setProperty('confirmationNumber', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setConfirmationNumber($value)
@@ -265,8 +254,20 @@ class Order extends Intangible
        return $this->getProperty('confirmationNumber');
     }
 
+
     /**
-    * @param array|string $value
+        * The date that payment is due.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function paymentDue($value)
+    {
+        $this->setProperty('paymentDue', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPaymentDue($value)
@@ -283,8 +284,27 @@ class Order extends Intangible
        return $this->getProperty('paymentDue');
     }
 
+
     /**
-    * @param array|string $value
+        * The currency of the discount.
+ * 
+ * Use standard formats: [ISO 4217 currency
+ * format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker
+ * symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for
+ * cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading
+ * Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS)
+ * and other currency types, e.g. "Ithaca HOUR".
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function discountCurrency($value)
+    {
+        $this->setProperty('discountCurrency', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDiscountCurrency($value)
@@ -301,8 +321,21 @@ class Order extends Intangible
        return $this->getProperty('discountCurrency');
     }
 
+
     /**
-    * @param array|string $value
+        * Indicates whether the offer was accepted as a gift for someone other than the
+ * buyer.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function isGift($value)
+    {
+        $this->setProperty('isGift', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setIsGift($value)
@@ -319,8 +352,20 @@ class Order extends Intangible
        return $this->getProperty('isGift');
     }
 
+
     /**
-    * @param array|string $value
+        * The date that payment is due.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function paymentDueDate($value)
+    {
+        $this->setProperty('paymentDueDate', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPaymentDueDate($value)
@@ -337,8 +382,20 @@ class Order extends Intangible
        return $this->getProperty('paymentDueDate');
     }
 
+
     /**
-    * @param array|string $value
+        * The delivery of the parcel related to this order or order item.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function orderDelivery($value)
+    {
+        $this->setProperty('orderDelivery', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setOrderDelivery($value)
@@ -355,8 +412,21 @@ class Order extends Intangible
        return $this->getProperty('orderDelivery');
     }
 
+
     /**
-    * @param array|string $value
+        * The offer(s) -- e.g., product, quantity and price combinations -- included in
+ * the order.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function acceptedOffer($value)
+    {
+        $this->setProperty('acceptedOffer', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAcceptedOffer($value)
@@ -373,8 +443,20 @@ class Order extends Intangible
        return $this->getProperty('acceptedOffer');
     }
 
+
     /**
-    * @param array|string $value
+        * Date order was placed.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function orderDate($value)
+    {
+        $this->setProperty('orderDate', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setOrderDate($value)
@@ -391,8 +473,20 @@ class Order extends Intangible
        return $this->getProperty('orderDate');
     }
 
+
     /**
-    * @param array|string $value
+        * 'merchant' is an out-dated term for 'seller'.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function merchant($value)
+    {
+        $this->setProperty('merchant', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setMerchant($value)
@@ -409,8 +503,20 @@ class Order extends Intangible
        return $this->getProperty('merchant');
     }
 
+
     /**
-    * @param array|string $value
+        * The identifier of the transaction.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function orderNumber($value)
+    {
+        $this->setProperty('orderNumber', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setOrderNumber($value)
@@ -427,8 +533,23 @@ class Order extends Intangible
        return $this->getProperty('orderNumber');
     }
 
+
     /**
-    * @param array|string $value
+        * An entity that arranges for an exchange between a buyer and a seller.  In
+ * most cases a broker never acquires or releases ownership of a product or
+ * service involved in an exchange.  If it is not clear whether an entity is a
+ * broker, seller, or buyer, the latter two terms are preferred.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function broker($value)
+    {
+        $this->setProperty('broker', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setBroker($value)
@@ -445,8 +566,20 @@ class Order extends Intangible
        return $this->getProperty('broker');
     }
 
+
     /**
-    * @param array|string $value
+        * The item ordered.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function orderedItem($value)
+    {
+        $this->setProperty('orderedItem', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setOrderedItem($value)
@@ -463,8 +596,20 @@ class Order extends Intangible
        return $this->getProperty('orderedItem');
     }
 
+
     /**
-    * @param array|string $value
+        * Any discount applied (to an Order).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function discount($value)
+    {
+        $this->setProperty('discount', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDiscount($value)
@@ -481,8 +626,20 @@ class Order extends Intangible
        return $this->getProperty('discount');
     }
 
+
     /**
-    * @param array|string $value
+        * Party placing the order or paying the invoice.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function customer($value)
+    {
+        $this->setProperty('customer', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setCustomer($value)
@@ -499,8 +656,21 @@ class Order extends Intangible
        return $this->getProperty('customer');
     }
 
+
     /**
-    * @param array|string $value
+        * An entity which offers (sells / leases / lends / loans) the services / goods.
+ *  A seller may also be a provider.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function seller($value)
+    {
+        $this->setProperty('seller', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSeller($value)

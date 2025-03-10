@@ -10,34 +10,22 @@ use Sohophp\SchemaOrg\Thing\Place\LocalBusiness;
 */
 class FoodEstablishment extends LocalBusiness
 {
-   /**
-        * Either the actual menu as a structured representation, as text, or a URL of the menu.
-        */
-    protected $menu = null;
-
-   /**
-        * Either the actual menu as a structured representation, as text, or a URL of the menu.
-        */
-    protected $hasMenu = null;
-
-   /**
-        * The cuisine of the restaurant.
-        */
-    protected $servesCuisine = null;
-
-   /**
-        * Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, an URL at which reservations can be made or (for backwards compatibility) the strings ```Yes``` or ```No```.
-        */
-    protected $acceptsReservations = null;
-
-   /**
-        * An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).
-        */
-    protected $starRating = null;
 
 
     /**
-    * @param array|string $value
+        * Either the actual menu as a structured representation, as text, or a URL of
+ * the menu.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function menu($value)
+    {
+        $this->setProperty('menu', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setMenu($value)
@@ -54,8 +42,21 @@ class FoodEstablishment extends LocalBusiness
        return $this->getProperty('menu');
     }
 
+
     /**
-    * @param array|string $value
+        * Either the actual menu as a structured representation, as text, or a URL of
+ * the menu.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function hasMenu($value)
+    {
+        $this->setProperty('hasMenu', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setHasMenu($value)
@@ -72,8 +73,20 @@ class FoodEstablishment extends LocalBusiness
        return $this->getProperty('hasMenu');
     }
 
+
     /**
-    * @param array|string $value
+        * The cuisine of the restaurant.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function servesCuisine($value)
+    {
+        $this->setProperty('servesCuisine', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setServesCuisine($value)
@@ -90,8 +103,22 @@ class FoodEstablishment extends LocalBusiness
        return $this->getProperty('servesCuisine');
     }
 
+
     /**
-    * @param array|string $value
+        * Indicates whether a FoodEstablishment accepts reservations. Values can be
+ * Boolean, an URL at which reservations can be made or (for backwards
+ * compatibility) the strings ```Yes``` or ```No```.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function acceptsReservations($value)
+    {
+        $this->setProperty('acceptsReservations', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAcceptsReservations($value)
@@ -108,8 +135,23 @@ class FoodEstablishment extends LocalBusiness
        return $this->getProperty('acceptsReservations');
     }
 
+
     /**
-    * @param array|string $value
+        * An official rating for a lodging business or food establishment, e.g. from
+ * national associations or standards bodies. Use the author property to
+ * indicate the rating organization, e.g. as an Organization with name such as
+ * (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function starRating($value)
+    {
+        $this->setProperty('starRating', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setStarRating($value)

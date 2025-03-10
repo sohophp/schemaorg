@@ -10,14 +10,23 @@ use Sohophp\SchemaOrg\Thing\CreativeWork\Article\ScholarlyArticle;
 */
 class MedicalScholarlyArticle extends ScholarlyArticle
 {
-   /**
-        * The type of the medical article, taken from the US NLM MeSH publication type catalog. See also [MeSH documentation](http://www.nlm.nih.gov/mesh/pubtypes.html).
-        */
-    protected $publicationType = null;
 
 
     /**
-    * @param array|string $value
+        * The type of the medical article, taken from the US NLM MeSH publication type
+ * catalog. See also [MeSH
+ * documentation](http://www.nlm.nih.gov/mesh/pubtypes.html).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function publicationType($value)
+    {
+        $this->setProperty('publicationType', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPublicationType($value)

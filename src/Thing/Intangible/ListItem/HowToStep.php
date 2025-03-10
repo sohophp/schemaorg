@@ -4,7 +4,8 @@ namespace Sohophp\SchemaOrg\Thing\Intangible\ListItem;
 use Sohophp\SchemaOrg\Thing\Intangible\ListItem;
 
 /**
-* A step in the instructions for how to achieve a result. It is an ordered list with HowToDirection and/or HowToTip items.
+* A step in the instructions for how to achieve a result. It is an ordered list
+ * with HowToDirection and/or HowToTip items.
 * @see schema:HowToStep
 * @package Sohophp\SchemaOrg\Thing\Intangible\ListItem
 */

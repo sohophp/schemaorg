@@ -4,7 +4,9 @@ namespace Sohophp\SchemaOrg\Thing\CreativeWork\CreativeWorkSeries\Periodical;
 use Sohophp\SchemaOrg\Thing\CreativeWork\CreativeWorkSeries\Periodical;
 
 /**
-* A publication containing information about varied topics that are pertinent to general information, a geographic area, or a specific subject matter (i.e. business, culture, education). Often published daily.
+* A publication containing information about varied topics that are pertinent
+ * to general information, a geographic area, or a specific subject matter (i.e.
+ * business, culture, education). Often published daily.
 * @see schema:Newspaper
 * @package Sohophp\SchemaOrg\Thing\CreativeWork\CreativeWorkSeries\Periodical
 */

@@ -10,29 +10,22 @@ use Sohophp\SchemaOrg\Thing\CreativeWork\MediaObject;
 */
 class ImageObject extends MediaObject
 {
-   /**
-        * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
-        */
-    protected $caption = null;
-
-   /**
-        * exif data for this object.
-        */
-    protected $exifData = null;
-
-   /**
-        * Represents textual captioning from a [[MediaObject]], e.g. text of a 'meme'.
-        */
-    protected $embeddedTextCaption = null;
-
-   /**
-        * Indicates whether this image is representative of the content of the page.
-        */
-    protected $representativeOfPage = null;
 
 
     /**
-    * @param array|string $value
+        * The caption for this object. For downloadable machine formats (closed
+ * caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function caption($value)
+    {
+        $this->setProperty('caption', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setCaption($value)
@@ -49,8 +42,20 @@ class ImageObject extends MediaObject
        return $this->getProperty('caption');
     }
 
+
     /**
-    * @param array|string $value
+        * exif data for this object.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function exifData($value)
+    {
+        $this->setProperty('exifData', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setExifData($value)
@@ -67,8 +72,20 @@ class ImageObject extends MediaObject
        return $this->getProperty('exifData');
     }
 
+
     /**
-    * @param array|string $value
+        * Represents textual captioning from a [[MediaObject]], e.g. text of a 'meme'.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function embeddedTextCaption($value)
+    {
+        $this->setProperty('embeddedTextCaption', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setEmbeddedTextCaption($value)
@@ -85,8 +102,20 @@ class ImageObject extends MediaObject
        return $this->getProperty('embeddedTextCaption');
     }
 
+
     /**
-    * @param array|string $value
+        * Indicates whether this image is representative of the content of the page.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function representativeOfPage($value)
+    {
+        $this->setProperty('representativeOfPage', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setRepresentativeOfPage($value)

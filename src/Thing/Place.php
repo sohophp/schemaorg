@@ -10,247 +10,21 @@ use Sohophp\SchemaOrg\Thing;
 */
 class Place extends Thing
 {
-   /**
-        * The basic containment relation between a place and one that contains it.
-        */
-    protected $containedIn = null;
-
-   /**
-        * The opening hours of a certain place.
-        */
-    protected $openingHoursSpecification = null;
-
-   /**
-        * The basic containment relation between a place and another that it contains.
-        */
-    protected $containsPlace = null;
-
-   /**
-        * Indicates whether some facility (e.g. [[FoodEstablishment]], [[CovidTestingFacility]]) offers a service that can be used by driving through in a car. In the case of [[CovidTestingFacility]] such facilities could potentially help with social distancing from other potentially-infected users.
-        */
-    protected $hasDriveThroughService = null;
-
-   /**
-        * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-        */
-    protected $keywords = null;
-
-   /**
-        * A photograph of this place.
-        */
-    protected $photo = null;
-
-   /**
-        * A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.
-        */
-    protected $tourBookingPage = null;
-
-   /**
-        * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
-        */
-    protected $latitude = null;
-
-   /**
-        * Physical address of the item.
-        */
-    protected $address = null;
-
-   /**
-        * The total number of individuals that may attend an event or venue.
-        */
-    protected $maximumAttendeeCapacity = null;
-
-   /**
-        * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
-        */
-    protected $isicV4 = null;
-
-   /**
-        * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship).
-        */
-    protected $geoEquals = null;
-
-   /**
-        * A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.\n\nFor example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.
-      
-        */
-    protected $branchCode = null;
-
-   /**
-        * Represents spatial relations in which two geometries (or the places they represent) touch: "they have at least one boundary point in common, but no interior points." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
-        */
-    protected $geoTouches = null;
-
-   /**
-        * The telephone number.
-        */
-    protected $telephone = null;
-
-   /**
-        * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-        */
-    protected $geoContains = null;
-
-   /**
-        * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: "they have no point in common. They form a set of disconnected geometries." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
-        */
-    protected $geoDisjoint = null;
-
-   /**
-        * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-        */
-    protected $geoCoveredBy = null;
-
-   /**
-        * A slogan or motto associated with the item.
-        */
-    protected $slogan = null;
-
-   /**
-        * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
-        */
-    protected $globalLocationNumber = null;
-
-   /**
-        * A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\n\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
-
-        */
-    protected $additionalProperty = null;
-
-   /**
-        * The fax number.
-        */
-    protected $faxNumber = null;
-
-   /**
-        * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-        */
-    protected $geoOverlaps = null;
-
-   /**
-        * A URL to a map of the place.
-        */
-    protected $hasMap = null;
-
-   /**
-        * A review of the item.
-        */
-    protected $review = null;
-
-   /**
-        * The special opening hours of a certain place.\n\nUse this to explicitly override general opening hours brought in scope by [[openingHoursSpecification]] or [[openingHours]].
-      
-        */
-    protected $specialOpeningHoursSpecification = null;
-
-   /**
-        * Photographs of this place.
-        */
-    protected $photos = null;
-
-   /**
-        * Review of the item.
-        */
-    protected $reviews = null;
-
-   /**
-        * An associated logo.
-        */
-    protected $logo = null;
-
-   /**
-        * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
-        */
-    protected $longitude = null;
-
-   /**
-        * The basic containment relation between a place and one that contains it.
-        */
-    protected $containedInPlace = null;
-
-   /**
-        * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-        */
-    protected $geoWithin = null;
-
-   /**
-        * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value.
-        */
-    protected $publicAccess = null;
-
-   /**
-        * A URL to a map of the place.
-        */
-    protected $map = null;
-
-   /**
-        * A flag to signal that the item, event, or place is accessible for free.
-        */
-    protected $isAccessibleForFree = null;
-
-   /**
-        * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-        */
-    protected $geoCrosses = null;
-
-   /**
-        * The geo coordinates of the place.
-        */
-    protected $geo = null;
-
-   /**
-        * A URL to a map of the place.
-        */
-    protected $maps = null;
-
-   /**
-        * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-        */
-    protected $geoCovers = null;
-
-   /**
-        * The overall rating, based on a collection of reviews or ratings, of the item.
-        */
-    protected $aggregateRating = null;
-
-   /**
-        * The <a href="https://www.gs1.org/standards/gs1-digital-link">GS1 digital link</a> associated with the object. This URL should conform to the particular requirements of digital links. The link should only contain the Application Identifiers (AIs) that are relevant for the entity being annotated, for instance a [[Product]] or an [[Organization]], and for the correct granularity. In particular, for products:<ul><li>A Digital Link that contains a serial number (AI <code>21</code>) should only be present on instances of [[IndividualProduct]]</li><li>A Digital Link that contains a lot number (AI <code>10</code>) should be annotated as [[SomeProduct]] if only products from that lot are sold, or [[IndividualProduct]] if there is only a specific product.</li><li>A Digital Link that contains a global model number (AI <code>8013</code>)  should be attached to a [[Product]] or a [[ProductModel]].</li></ul> Other item types should be adapted similarly.
-        */
-    protected $hasGS1DigitalLink = null;
-
-   /**
-        * Upcoming or past events associated with this place or organization.
-        */
-    protected $events = null;
-
-   /**
-        * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-        */
-    protected $geoIntersects = null;
-
-   /**
-        * Upcoming or past event associated with this place, organization, or action.
-        */
-    protected $event = null;
-
-   /**
-        * Certification information about a product, organization, service, place, or person.
-        */
-    protected $hasCertification = null;
-
-   /**
-        * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
-        */
-    protected $amenityFeature = null;
-
-   /**
-        * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
-        */
-    protected $smokingAllowed = null;
 
 
     /**
-    * @param array|string $value
+        * The basic containment relation between a place and one that contains it.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function containedIn($value)
+    {
+        $this->setProperty('containedIn', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setContainedIn($value)
@@ -267,8 +41,20 @@ class Place extends Thing
        return $this->getProperty('containedIn');
     }
 
+
     /**
-    * @param array|string $value
+        * The opening hours of a certain place.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function openingHoursSpecification($value)
+    {
+        $this->setProperty('openingHoursSpecification', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setOpeningHoursSpecification($value)
@@ -285,8 +71,20 @@ class Place extends Thing
        return $this->getProperty('openingHoursSpecification');
     }
 
+
     /**
-    * @param array|string $value
+        * The basic containment relation between a place and another that it contains.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function containsPlace($value)
+    {
+        $this->setProperty('containsPlace', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setContainsPlace($value)
@@ -303,8 +101,24 @@ class Place extends Thing
        return $this->getProperty('containsPlace');
     }
 
+
     /**
-    * @param array|string $value
+        * Indicates whether some facility (e.g. [[FoodEstablishment]],
+ * [[CovidTestingFacility]]) offers a service that can be used by driving
+ * through in a car. In the case of [[CovidTestingFacility]] such facilities
+ * could potentially help with social distancing from other potentially-infected
+ * users.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function hasDriveThroughService($value)
+    {
+        $this->setProperty('hasDriveThroughService', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setHasDriveThroughService($value)
@@ -321,8 +135,22 @@ class Place extends Thing
        return $this->getProperty('hasDriveThroughService');
     }
 
+
     /**
-    * @param array|string $value
+        * Keywords or tags used to describe some item. Multiple textual entries in a
+ * keywords list are typically delimited by commas, or by repeating the
+ * property.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function keywords($value)
+    {
+        $this->setProperty('keywords', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setKeywords($value)
@@ -339,8 +167,20 @@ class Place extends Thing
        return $this->getProperty('keywords');
     }
 
+
     /**
-    * @param array|string $value
+        * A photograph of this place.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function photo($value)
+    {
+        $this->setProperty('photo', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPhoto($value)
@@ -357,8 +197,22 @@ class Place extends Thing
        return $this->getProperty('photo');
     }
 
+
     /**
-    * @param array|string $value
+        * A page providing information on how to book a tour of some [[Place]], such as
+ * an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as
+ * well as other kinds of tours as appropriate.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function tourBookingPage($value)
+    {
+        $this->setProperty('tourBookingPage', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setTourBookingPage($value)
@@ -375,8 +229,21 @@ class Place extends Thing
        return $this->getProperty('tourBookingPage');
     }
 
+
     /**
-    * @param array|string $value
+        * The latitude of a location. For example ```37.42242``` ([WGS
+ * 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function latitude($value)
+    {
+        $this->setProperty('latitude', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setLatitude($value)
@@ -393,8 +260,20 @@ class Place extends Thing
        return $this->getProperty('latitude');
     }
 
+
     /**
-    * @param array|string $value
+        * Physical address of the item.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function address($value)
+    {
+        $this->setProperty('address', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAddress($value)
@@ -411,8 +290,20 @@ class Place extends Thing
        return $this->getProperty('address');
     }
 
+
     /**
-    * @param array|string $value
+        * The total number of individuals that may attend an event or venue.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function maximumAttendeeCapacity($value)
+    {
+        $this->setProperty('maximumAttendeeCapacity', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setMaximumAttendeeCapacity($value)
@@ -429,8 +320,22 @@ class Place extends Thing
        return $this->getProperty('maximumAttendeeCapacity');
     }
 
+
     /**
-    * @param array|string $value
+        * The International Standard of Industrial Classification of All Economic
+ * Activities (ISIC), Revision 4 code for a particular organization, business
+ * person, or place.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function isicV4($value)
+    {
+        $this->setProperty('isicV4', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setIsicV4($value)
@@ -447,8 +352,25 @@ class Place extends Thing
        return $this->getProperty('isicV4');
     }
 
+
     /**
-    * @param array|string $value
+        * Represents spatial relations in which two geometries (or the places they
+ * represent) are topologically equal, as defined in
+ * [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are
+ * topologically equal if their interiors intersect and no part of the interior
+ * or boundary of one geometry intersects the exterior of the other" (a
+ * symmetric relationship).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function geoEquals($value)
+    {
+        $this->setProperty('geoEquals', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setGeoEquals($value)
@@ -465,8 +387,26 @@ class Place extends Thing
        return $this->getProperty('geoEquals');
     }
 
+
     /**
-    * @param array|string $value
+        * A short textual code (also called "store code") that uniquely identifies a
+ * place of business. The code is typically assigned by the parentOrganization
+ * and used in structured URLs.
+ * 
+ * For example, in the URL
+ * http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a
+ * branchCode for a particular branch.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function branchCode($value)
+    {
+        $this->setProperty('branchCode', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setBranchCode($value)
@@ -483,8 +423,23 @@ class Place extends Thing
        return $this->getProperty('branchCode');
     }
 
+
     /**
-    * @param array|string $value
+        * Represents spatial relations in which two geometries (or the places they
+ * represent) touch: "they have at least one boundary point in common, but no
+ * interior points." (A symmetric relationship, as defined in
+ * [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function geoTouches($value)
+    {
+        $this->setProperty('geoTouches', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setGeoTouches($value)
@@ -501,8 +456,20 @@ class Place extends Thing
        return $this->getProperty('geoTouches');
     }
 
+
     /**
-    * @param array|string $value
+        * The telephone number.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function telephone($value)
+    {
+        $this->setProperty('telephone', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setTelephone($value)
@@ -519,8 +486,24 @@ class Place extends Thing
        return $this->getProperty('telephone');
     }
 
+
     /**
-    * @param array|string $value
+        * Represents a relationship between two geometries (or the places they
+ * represent), relating a containing geometry to a contained geometry. "a
+ * contains b iff no points of b lie in the exterior of a, and at least one
+ * point of the interior of b lies in the interior of a". As defined in
+ * [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function geoContains($value)
+    {
+        $this->setProperty('geoContains', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setGeoContains($value)
@@ -537,8 +520,23 @@ class Place extends Thing
        return $this->getProperty('geoContains');
     }
 
+
     /**
-    * @param array|string $value
+        * Represents spatial relations in which two geometries (or the places they
+ * represent) are topologically disjoint: "they have no point in common. They
+ * form a set of disconnected geometries." (A symmetric relationship, as defined
+ * in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function geoDisjoint($value)
+    {
+        $this->setProperty('geoDisjoint', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setGeoDisjoint($value)
@@ -555,8 +553,22 @@ class Place extends Thing
        return $this->getProperty('geoDisjoint');
     }
 
+
     /**
-    * @param array|string $value
+        * Represents a relationship between two geometries (or the places they
+ * represent), relating a geometry to another that covers it. As defined in
+ * [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function geoCoveredBy($value)
+    {
+        $this->setProperty('geoCoveredBy', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setGeoCoveredBy($value)
@@ -573,8 +585,20 @@ class Place extends Thing
        return $this->getProperty('geoCoveredBy');
     }
 
+
     /**
-    * @param array|string $value
+        * A slogan or motto associated with the item.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function slogan($value)
+    {
+        $this->setProperty('slogan', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSlogan($value)
@@ -591,8 +615,23 @@ class Place extends Thing
        return $this->getProperty('slogan');
     }
 
+
     /**
-    * @param array|string $value
+        * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also
+ * referred to as International Location Number or ILN) of the respective
+ * organization, person, or place. The GLN is a 13-digit number used to identify
+ * parties and physical locations.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function globalLocationNumber($value)
+    {
+        $this->setProperty('globalLocationNumber', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setGlobalLocationNumber($value)
@@ -609,8 +648,28 @@ class Place extends Thing
        return $this->getProperty('globalLocationNumber');
     }
 
+
     /**
-    * @param array|string $value
+        * A property-value pair representing an additional characteristic of the
+ * entity, e.g. a product feature or another characteristic for which there is
+ * no matching property in schema.org.
+ * 
+ * Note: Publishers should be aware that applications designed to use specific
+ * schema.org properties (e.g. https://schema.org/width,
+ * https://schema.org/color, https://schema.org/gtin13, ...) will typically
+ * expect such data to be provided using those properties, rather than using the
+ * generic property/value mechanism.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function additionalProperty($value)
+    {
+        $this->setProperty('additionalProperty', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAdditionalProperty($value)
@@ -627,8 +686,20 @@ class Place extends Thing
        return $this->getProperty('additionalProperty');
     }
 
+
     /**
-    * @param array|string $value
+        * The fax number.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function faxNumber($value)
+    {
+        $this->setProperty('faxNumber', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setFaxNumber($value)
@@ -645,8 +716,23 @@ class Place extends Thing
        return $this->getProperty('faxNumber');
     }
 
+
     /**
-    * @param array|string $value
+        * Represents a relationship between two geometries (or the places they
+ * represent), relating a geometry to another that geospatially overlaps it,
+ * i.e. they have some but not all points in common. As defined in
+ * [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function geoOverlaps($value)
+    {
+        $this->setProperty('geoOverlaps', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setGeoOverlaps($value)
@@ -663,8 +749,20 @@ class Place extends Thing
        return $this->getProperty('geoOverlaps');
     }
 
+
     /**
-    * @param array|string $value
+        * A URL to a map of the place.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function hasMap($value)
+    {
+        $this->setProperty('hasMap', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setHasMap($value)
@@ -681,8 +779,20 @@ class Place extends Thing
        return $this->getProperty('hasMap');
     }
 
+
     /**
-    * @param array|string $value
+        * A review of the item.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function review($value)
+    {
+        $this->setProperty('review', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setReview($value)
@@ -699,8 +809,23 @@ class Place extends Thing
        return $this->getProperty('review');
     }
 
+
     /**
-    * @param array|string $value
+        * The special opening hours of a certain place.
+ * 
+ * Use this to explicitly override general opening hours brought in scope by
+ * [[openingHoursSpecification]] or [[openingHours]].
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function specialOpeningHoursSpecification($value)
+    {
+        $this->setProperty('specialOpeningHoursSpecification', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSpecialOpeningHoursSpecification($value)
@@ -717,8 +842,20 @@ class Place extends Thing
        return $this->getProperty('specialOpeningHoursSpecification');
     }
 
+
     /**
-    * @param array|string $value
+        * Photographs of this place.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function photos($value)
+    {
+        $this->setProperty('photos', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPhotos($value)
@@ -735,8 +872,20 @@ class Place extends Thing
        return $this->getProperty('photos');
     }
 
+
     /**
-    * @param array|string $value
+        * Review of the item.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function reviews($value)
+    {
+        $this->setProperty('reviews', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setReviews($value)
@@ -753,8 +902,20 @@ class Place extends Thing
        return $this->getProperty('reviews');
     }
 
+
     /**
-    * @param array|string $value
+        * An associated logo.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function logo($value)
+    {
+        $this->setProperty('logo', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setLogo($value)
@@ -771,8 +932,21 @@ class Place extends Thing
        return $this->getProperty('logo');
     }
 
+
     /**
-    * @param array|string $value
+        * The longitude of a location. For example ```-122.08585``` ([WGS
+ * 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function longitude($value)
+    {
+        $this->setProperty('longitude', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setLongitude($value)
@@ -789,8 +963,20 @@ class Place extends Thing
        return $this->getProperty('longitude');
     }
 
+
     /**
-    * @param array|string $value
+        * The basic containment relation between a place and one that contains it.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function containedInPlace($value)
+    {
+        $this->setProperty('containedInPlace', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setContainedInPlace($value)
@@ -807,8 +993,23 @@ class Place extends Thing
        return $this->getProperty('containedInPlace');
     }
 
+
     /**
-    * @param array|string $value
+        * Represents a relationship between two geometries (or the places they
+ * represent), relating a geometry to one that contains it, i.e. it is inside
+ * (i.e. within) its interior. As defined in
+ * [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function geoWithin($value)
+    {
+        $this->setProperty('geoWithin', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setGeoWithin($value)
@@ -825,8 +1026,21 @@ class Place extends Thing
        return $this->getProperty('geoWithin');
     }
 
+
     /**
-    * @param array|string $value
+        * A flag to signal that the [[Place]] is open to public visitors.  If this
+ * property is omitted there is no assumed default boolean value.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function publicAccess($value)
+    {
+        $this->setProperty('publicAccess', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPublicAccess($value)
@@ -843,8 +1057,20 @@ class Place extends Thing
        return $this->getProperty('publicAccess');
     }
 
+
     /**
-    * @param array|string $value
+        * A URL to a map of the place.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function map($value)
+    {
+        $this->setProperty('map', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setMap($value)
@@ -861,8 +1087,20 @@ class Place extends Thing
        return $this->getProperty('map');
     }
 
+
     /**
-    * @param array|string $value
+        * A flag to signal that the item, event, or place is accessible for free.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function isAccessibleForFree($value)
+    {
+        $this->setProperty('isAccessibleForFree', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setIsAccessibleForFree($value)
@@ -879,8 +1117,24 @@ class Place extends Thing
        return $this->getProperty('isAccessibleForFree');
     }
 
+
     /**
-    * @param array|string $value
+        * Represents a relationship between two geometries (or the places they
+ * represent), relating a geometry to another that crosses it: "a crosses b:
+ * they have some but not all interior points in common, and the dimension of
+ * the intersection is less than that of at least one of them". As defined in
+ * [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function geoCrosses($value)
+    {
+        $this->setProperty('geoCrosses', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setGeoCrosses($value)
@@ -897,8 +1151,20 @@ class Place extends Thing
        return $this->getProperty('geoCrosses');
     }
 
+
     /**
-    * @param array|string $value
+        * The geo coordinates of the place.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function geo($value)
+    {
+        $this->setProperty('geo', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setGeo($value)
@@ -915,8 +1181,20 @@ class Place extends Thing
        return $this->getProperty('geo');
     }
 
+
     /**
-    * @param array|string $value
+        * A URL to a map of the place.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function maps($value)
+    {
+        $this->setProperty('maps', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setMaps($value)
@@ -933,8 +1211,23 @@ class Place extends Thing
        return $this->getProperty('maps');
     }
 
+
     /**
-    * @param array|string $value
+        * Represents a relationship between two geometries (or the places they
+ * represent), relating a covering geometry to a covered geometry. "Every point
+ * of b is a point of (the interior or boundary of) a". As defined in
+ * [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function geoCovers($value)
+    {
+        $this->setProperty('geoCovers', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setGeoCovers($value)
@@ -951,8 +1244,20 @@ class Place extends Thing
        return $this->getProperty('geoCovers');
     }
 
+
     /**
-    * @param array|string $value
+        * The overall rating, based on a collection of reviews or ratings, of the item.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function aggregateRating($value)
+    {
+        $this->setProperty('aggregateRating', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAggregateRating($value)
@@ -969,8 +1274,32 @@ class Place extends Thing
        return $this->getProperty('aggregateRating');
     }
 
+
     /**
-    * @param array|string $value
+        * The [GS1 digital link](https://www.gs1.org/standards/gs1-digital-link)
+ * associated with the object. This URL should conform to the particular
+ * requirements of digital links. The link should only contain the Application
+ * Identifiers (AIs) that are relevant for the entity being annotated, for
+ * instance a [[Product]] or an [[Organization]], and for the correct
+ * granularity. In particular, for products:<ul>* A Digital Link that contains a
+ * serial number (AI ```21```) should only be present on instances of
+ * [[IndividualProduct]]* A Digital Link that contains a lot number (AI
+ * ```10```) should be annotated as [[SomeProduct]] if only products from that
+ * lot are sold, or [[IndividualProduct]] if there is only a specific product.*
+ * A Digital Link that contains a global model number (AI ```8013```)  should be
+ * attached to a [[Product]] or a [[ProductModel]]. Other item types should be
+ * adapted similarly.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function hasGS1DigitalLink($value)
+    {
+        $this->setProperty('hasGS1DigitalLink', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setHasGS1DigitalLink($value)
@@ -987,8 +1316,20 @@ class Place extends Thing
        return $this->getProperty('hasGS1DigitalLink');
     }
 
+
     /**
-    * @param array|string $value
+        * Upcoming or past events associated with this place or organization.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function events($value)
+    {
+        $this->setProperty('events', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setEvents($value)
@@ -1005,8 +1346,22 @@ class Place extends Thing
        return $this->getProperty('events');
     }
 
+
     /**
-    * @param array|string $value
+        * Represents spatial relations in which two geometries (or the places they
+ * represent) have at least one point in common. As defined in
+ * [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function geoIntersects($value)
+    {
+        $this->setProperty('geoIntersects', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setGeoIntersects($value)
@@ -1023,8 +1378,20 @@ class Place extends Thing
        return $this->getProperty('geoIntersects');
     }
 
+
     /**
-    * @param array|string $value
+        * Upcoming or past event associated with this place, organization, or action.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function event($value)
+    {
+        $this->setProperty('event', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setEvent($value)
@@ -1041,8 +1408,21 @@ class Place extends Thing
        return $this->getProperty('event');
     }
 
+
     /**
-    * @param array|string $value
+        * Certification information about a product, organization, service, place, or
+ * person.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function hasCertification($value)
+    {
+        $this->setProperty('hasCertification', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setHasCertification($value)
@@ -1059,8 +1439,22 @@ class Place extends Thing
        return $this->getProperty('hasCertification');
     }
 
+
     /**
-    * @param array|string $value
+        * An amenity feature (e.g. a characteristic or service) of the Accommodation.
+ * This generic property does not make a statement about whether the feature is
+ * included in an offer for the main accommodation or available at extra costs.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function amenityFeature($value)
+    {
+        $this->setProperty('amenityFeature', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAmenityFeature($value)
@@ -1077,8 +1471,21 @@ class Place extends Thing
        return $this->getProperty('amenityFeature');
     }
 
+
     /**
-    * @param array|string $value
+        * Indicates whether it is allowed to smoke in the place, e.g. in the
+ * restaurant, hotel or hotel room.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function smokingAllowed($value)
+    {
+        $this->setProperty('smokingAllowed', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSmokingAllowed($value)

@@ -4,35 +4,31 @@ namespace Sohophp\SchemaOrg\Thing\Intangible\Reservation;
 use Sohophp\SchemaOrg\Thing\Intangible\Reservation;
 
 /**
-* A reservation for air travel.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use [[Offer]].
+* A reservation for air travel.
+ * 
+ * Note: This type is for information about actual reservations, e.g. in
+ * confirmation emails or HTML pages with individual confirmations of
+ * reservations. For offers of tickets, use [[Offer]].
 * @see schema:FlightReservation
 * @package Sohophp\SchemaOrg\Thing\Intangible\Reservation
 */
 class FlightReservation extends Reservation
 {
-   /**
-        * The passenger's sequence number as assigned by the airline.
-        */
-    protected $passengerSequenceNumber = null;
-
-   /**
-        * The priority status assigned to a passenger for security or boarding (e.g. FastTrack or Priority).
-        */
-    protected $passengerPriorityStatus = null;
-
-   /**
-        * The airline-specific indicator of boarding order / preference.
-        */
-    protected $boardingGroup = null;
-
-   /**
-        * The type of security screening the passenger is subject to.
-        */
-    protected $securityScreening = null;
 
 
     /**
-    * @param array|string $value
+        * The passenger's sequence number as assigned by the airline.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function passengerSequenceNumber($value)
+    {
+        $this->setProperty('passengerSequenceNumber', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPassengerSequenceNumber($value)
@@ -49,8 +45,21 @@ class FlightReservation extends Reservation
        return $this->getProperty('passengerSequenceNumber');
     }
 
+
     /**
-    * @param array|string $value
+        * The priority status assigned to a passenger for security or boarding (e.g.
+ * FastTrack or Priority).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function passengerPriorityStatus($value)
+    {
+        $this->setProperty('passengerPriorityStatus', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setPassengerPriorityStatus($value)
@@ -67,8 +76,20 @@ class FlightReservation extends Reservation
        return $this->getProperty('passengerPriorityStatus');
     }
 
+
     /**
-    * @param array|string $value
+        * The airline-specific indicator of boarding order / preference.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function boardingGroup($value)
+    {
+        $this->setProperty('boardingGroup', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setBoardingGroup($value)
@@ -85,8 +106,20 @@ class FlightReservation extends Reservation
        return $this->getProperty('boardingGroup');
     }
 
+
     /**
-    * @param array|string $value
+        * The type of security screening the passenger is subject to.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function securityScreening($value)
+    {
+        $this->setProperty('securityScreening', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSecurityScreening($value)

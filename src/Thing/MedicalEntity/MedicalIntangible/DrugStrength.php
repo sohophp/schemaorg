@@ -4,40 +4,29 @@ namespace Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalIntangible;
 use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalIntangible;
 
 /**
-* A specific strength in which a medical drug is available in a specific country.
+* A specific strength in which a medical drug is available in a specific
+ * country.
 * @see schema:DrugStrength
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalIntangible
 */
 class DrugStrength extends MedicalIntangible
 {
-   /**
-        * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
-        */
-    protected $maximumIntake = null;
-
-   /**
-        * The units of an active ingredient's strength, e.g. mg.
-        */
-    protected $strengthUnit = null;
-
-   /**
-        * The location in which the strength is available.
-        */
-    protected $availableIn = null;
-
-   /**
-        * An active ingredient, typically chemical compounds and/or biologic substances.
-        */
-    protected $activeIngredient = null;
-
-   /**
-        * The value of an active ingredient's strength, e.g. 325.
-        */
-    protected $strengthValue = null;
 
 
     /**
-    * @param array|string $value
+        * Recommended intake of this supplement for a given population as defined by a
+ * specific recommending authority.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function maximumIntake($value)
+    {
+        $this->setProperty('maximumIntake', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setMaximumIntake($value)
@@ -54,8 +43,20 @@ class DrugStrength extends MedicalIntangible
        return $this->getProperty('maximumIntake');
     }
 
+
     /**
-    * @param array|string $value
+        * The units of an active ingredient's strength, e.g. mg.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function strengthUnit($value)
+    {
+        $this->setProperty('strengthUnit', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setStrengthUnit($value)
@@ -72,8 +73,20 @@ class DrugStrength extends MedicalIntangible
        return $this->getProperty('strengthUnit');
     }
 
+
     /**
-    * @param array|string $value
+        * The location in which the strength is available.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function availableIn($value)
+    {
+        $this->setProperty('availableIn', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAvailableIn($value)
@@ -90,8 +103,21 @@ class DrugStrength extends MedicalIntangible
        return $this->getProperty('availableIn');
     }
 
+
     /**
-    * @param array|string $value
+        * An active ingredient, typically chemical compounds and/or biologic
+ * substances.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function activeIngredient($value)
+    {
+        $this->setProperty('activeIngredient', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setActiveIngredient($value)
@@ -108,8 +134,20 @@ class DrugStrength extends MedicalIntangible
        return $this->getProperty('activeIngredient');
     }
 
+
     /**
-    * @param array|string $value
+        * The value of an active ingredient's strength, e.g. 325.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function strengthValue($value)
+    {
+        $this->setProperty('strengthValue', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setStrengthValue($value)

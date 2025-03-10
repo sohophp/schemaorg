@@ -10,14 +10,21 @@ use Sohophp\SchemaOrg\Thing;
 */
 class StupidType extends Thing
 {
-   /**
-        * This is a StupidProperty! - for testing only.
-        */
-    protected $stupidProperty = null;
 
 
     /**
-    * @param array|string $value
+        * This is a StupidProperty! - for testing only.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function stupidProperty($value)
+    {
+        $this->setProperty('stupidProperty', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setStupidProperty($value)

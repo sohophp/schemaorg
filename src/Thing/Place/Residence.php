@@ -10,14 +10,21 @@ use Sohophp\SchemaOrg\Thing\Place;
 */
 class Residence extends Place
 {
-   /**
-        * A floorplan of some [[Accommodation]].
-        */
-    protected $accommodationFloorPlan = null;
 
 
     /**
-    * @param array|string $value
+        * A floorplan of some [[Accommodation]].
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function accommodationFloorPlan($value)
+    {
+        $this->setProperty('accommodationFloorPlan', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAccommodationFloorPlan($value)

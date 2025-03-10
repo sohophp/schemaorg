@@ -10,14 +10,21 @@ use Sohophp\SchemaOrg\Thing\Action\InteractAction\CommunicateAction;
 */
 class InviteAction extends CommunicateAction
 {
-   /**
-        * Upcoming or past event associated with this place, organization, or action.
-        */
-    protected $event = null;
 
 
     /**
-    * @param array|string $value
+        * Upcoming or past event associated with this place, organization, or action.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function event($value)
+    {
+        $this->setProperty('event', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setEvent($value)

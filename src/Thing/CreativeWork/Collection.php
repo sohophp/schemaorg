@@ -10,14 +10,21 @@ use Sohophp\SchemaOrg\Thing\CreativeWork;
 */
 class Collection extends CreativeWork
 {
-   /**
-        * The number of items in the [[Collection]].
-        */
-    protected $collectionSize = null;
 
 
     /**
-    * @param array|string $value
+        * The number of items in the [[Collection]].
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function collectionSize($value)
+    {
+        $this->setProperty('collectionSize', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setCollectionSize($value)

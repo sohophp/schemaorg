@@ -10,19 +10,21 @@ use Sohophp\SchemaOrg\Thing\Intangible\Trip;
 */
 class BoatTrip extends Trip
 {
-   /**
-        * The terminal or port from which the boat departs.
-        */
-    protected $departureBoatTerminal = null;
-
-   /**
-        * The terminal or port from which the boat arrives.
-        */
-    protected $arrivalBoatTerminal = null;
 
 
     /**
-    * @param array|string $value
+        * The terminal or port from which the boat departs.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function departureBoatTerminal($value)
+    {
+        $this->setProperty('departureBoatTerminal', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDepartureBoatTerminal($value)
@@ -39,8 +41,20 @@ class BoatTrip extends Trip
        return $this->getProperty('departureBoatTerminal');
     }
 
+
     /**
-    * @param array|string $value
+        * The terminal or port from which the boat arrives.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function arrivalBoatTerminal($value)
+    {
+        $this->setProperty('arrivalBoatTerminal', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setArrivalBoatTerminal($value)

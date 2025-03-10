@@ -10,69 +10,21 @@ use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
 */
 class NutritionInformation extends StructuredValue
 {
-   /**
-        * The number of grams of fat.
-        */
-    protected $fatContent = null;
-
-   /**
-        * The number of milligrams of sodium.
-        */
-    protected $sodiumContent = null;
-
-   /**
-        * The number of grams of fiber.
-        */
-    protected $fiberContent = null;
-
-   /**
-        * The number of grams of sugar.
-        */
-    protected $sugarContent = null;
-
-   /**
-        * The number of grams of unsaturated fat.
-        */
-    protected $unsaturatedFatContent = null;
-
-   /**
-        * The number of grams of saturated fat.
-        */
-    protected $saturatedFatContent = null;
-
-   /**
-        * The serving size, in terms of the number of volume or mass.
-        */
-    protected $servingSize = null;
-
-   /**
-        * The number of milligrams of cholesterol.
-        */
-    protected $cholesterolContent = null;
-
-   /**
-        * The number of grams of trans fat.
-        */
-    protected $transFatContent = null;
-
-   /**
-        * The number of calories.
-        */
-    protected $calories = null;
-
-   /**
-        * The number of grams of carbohydrates.
-        */
-    protected $carbohydrateContent = null;
-
-   /**
-        * The number of grams of protein.
-        */
-    protected $proteinContent = null;
 
 
     /**
-    * @param array|string $value
+        * The number of grams of fat.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function fatContent($value)
+    {
+        $this->setProperty('fatContent', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setFatContent($value)
@@ -89,8 +41,20 @@ class NutritionInformation extends StructuredValue
        return $this->getProperty('fatContent');
     }
 
+
     /**
-    * @param array|string $value
+        * The number of milligrams of sodium.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function sodiumContent($value)
+    {
+        $this->setProperty('sodiumContent', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSodiumContent($value)
@@ -107,8 +71,20 @@ class NutritionInformation extends StructuredValue
        return $this->getProperty('sodiumContent');
     }
 
+
     /**
-    * @param array|string $value
+        * The number of grams of fiber.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function fiberContent($value)
+    {
+        $this->setProperty('fiberContent', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setFiberContent($value)
@@ -125,8 +101,20 @@ class NutritionInformation extends StructuredValue
        return $this->getProperty('fiberContent');
     }
 
+
     /**
-    * @param array|string $value
+        * The number of grams of sugar.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function sugarContent($value)
+    {
+        $this->setProperty('sugarContent', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSugarContent($value)
@@ -143,8 +131,20 @@ class NutritionInformation extends StructuredValue
        return $this->getProperty('sugarContent');
     }
 
+
     /**
-    * @param array|string $value
+        * The number of grams of unsaturated fat.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function unsaturatedFatContent($value)
+    {
+        $this->setProperty('unsaturatedFatContent', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setUnsaturatedFatContent($value)
@@ -161,8 +161,20 @@ class NutritionInformation extends StructuredValue
        return $this->getProperty('unsaturatedFatContent');
     }
 
+
     /**
-    * @param array|string $value
+        * The number of grams of saturated fat.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function saturatedFatContent($value)
+    {
+        $this->setProperty('saturatedFatContent', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSaturatedFatContent($value)
@@ -179,8 +191,20 @@ class NutritionInformation extends StructuredValue
        return $this->getProperty('saturatedFatContent');
     }
 
+
     /**
-    * @param array|string $value
+        * The serving size, in terms of the number of volume or mass.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function servingSize($value)
+    {
+        $this->setProperty('servingSize', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setServingSize($value)
@@ -197,8 +221,20 @@ class NutritionInformation extends StructuredValue
        return $this->getProperty('servingSize');
     }
 
+
     /**
-    * @param array|string $value
+        * The number of milligrams of cholesterol.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function cholesterolContent($value)
+    {
+        $this->setProperty('cholesterolContent', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setCholesterolContent($value)
@@ -215,8 +251,20 @@ class NutritionInformation extends StructuredValue
        return $this->getProperty('cholesterolContent');
     }
 
+
     /**
-    * @param array|string $value
+        * The number of grams of trans fat.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function transFatContent($value)
+    {
+        $this->setProperty('transFatContent', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setTransFatContent($value)
@@ -233,8 +281,20 @@ class NutritionInformation extends StructuredValue
        return $this->getProperty('transFatContent');
     }
 
+
     /**
-    * @param array|string $value
+        * The number of calories.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function calories($value)
+    {
+        $this->setProperty('calories', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setCalories($value)
@@ -251,8 +311,20 @@ class NutritionInformation extends StructuredValue
        return $this->getProperty('calories');
     }
 
+
     /**
-    * @param array|string $value
+        * The number of grams of carbohydrates.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function carbohydrateContent($value)
+    {
+        $this->setProperty('carbohydrateContent', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setCarbohydrateContent($value)
@@ -269,8 +341,20 @@ class NutritionInformation extends StructuredValue
        return $this->getProperty('carbohydrateContent');
     }
 
+
     /**
-    * @param array|string $value
+        * The number of grams of protein.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function proteinContent($value)
+    {
+        $this->setProperty('proteinContent', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setProteinContent($value)

@@ -10,29 +10,21 @@ use Sohophp\SchemaOrg\Thing\Event;
 */
 class SportsEvent extends Event
 {
-   /**
-        * A type of sport (e.g. Baseball).
-        */
-    protected $sport = null;
-
-   /**
-        * The home team in a sports event.
-        */
-    protected $homeTeam = null;
-
-   /**
-        * The away team in a sports event.
-        */
-    protected $awayTeam = null;
-
-   /**
-        * A competitor in a sports event.
-        */
-    protected $competitor = null;
 
 
     /**
-    * @param array|string $value
+        * A type of sport (e.g. Baseball).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function sport($value)
+    {
+        $this->setProperty('sport', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setSport($value)
@@ -49,8 +41,20 @@ class SportsEvent extends Event
        return $this->getProperty('sport');
     }
 
+
     /**
-    * @param array|string $value
+        * The home team in a sports event.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function homeTeam($value)
+    {
+        $this->setProperty('homeTeam', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setHomeTeam($value)
@@ -67,8 +71,20 @@ class SportsEvent extends Event
        return $this->getProperty('homeTeam');
     }
 
+
     /**
-    * @param array|string $value
+        * The away team in a sports event.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function awayTeam($value)
+    {
+        $this->setProperty('awayTeam', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setAwayTeam($value)
@@ -85,8 +101,20 @@ class SportsEvent extends Event
        return $this->getProperty('awayTeam');
     }
 
+
     /**
-    * @param array|string $value
+        * A competitor in a sports event.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function competitor($value)
+    {
+        $this->setProperty('competitor', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setCompetitor($value)

@@ -10,14 +10,21 @@ use Sohophp\SchemaOrg\Thing\CreativeWork\DefinedTermSet;
 */
 class CategoryCodeSet extends DefinedTermSet
 {
-   /**
-        * A Category code contained in this code set.
-        */
-    protected $hasCategoryCode = null;
 
 
     /**
-    * @param array|string $value
+        * A Category code contained in this code set.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function hasCategoryCode($value)
+    {
+        $this->setProperty('hasCategoryCode', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setHasCategoryCode($value)

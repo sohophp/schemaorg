@@ -4,20 +4,28 @@ namespace Sohophp\SchemaOrg\Thing\Action\AssessAction\ChooseAction;
 use Sohophp\SchemaOrg\Thing\Action\AssessAction\ChooseAction;
 
 /**
-* The act of expressing a preference from a fixed/finite/structured set of choices/options.
+* The act of expressing a preference from a fixed/finite/structured set of
+ * choices/options.
 * @see schema:VoteAction
 * @package Sohophp\SchemaOrg\Thing\Action\AssessAction\ChooseAction
 */
 class VoteAction extends ChooseAction
 {
-   /**
-        * A sub property of object. The candidate subject of this action.
-        */
-    protected $candidate = null;
 
 
     /**
-    * @param array|string $value
+        * A sub property of object. The candidate subject of this action.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function candidate($value)
+    {
+        $this->setProperty('candidate', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setCandidate($value)

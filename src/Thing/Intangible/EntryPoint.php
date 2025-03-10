@@ -10,44 +10,21 @@ use Sohophp\SchemaOrg\Thing\Intangible;
 */
 class EntryPoint extends Intangible
 {
-   /**
-        * An application that can complete the request.
-        */
-    protected $application = null;
-
-   /**
-        * The supported content type(s) for an EntryPoint response.
-        */
-    protected $contentType = null;
-
-   /**
-        * The high level platform(s) where the Action can be performed for the given URL. To specify a specific application or operating system instance, use actionApplication.
-        */
-    protected $actionPlatform = null;
-
-   /**
-        * An application that can complete the request.
-        */
-    protected $actionApplication = null;
-
-   /**
-        * The supported encoding type(s) for an EntryPoint request.
-        */
-    protected $encodingType = null;
-
-   /**
-        * An url template (RFC6570) that will be used to construct the target of the execution of the action.
-        */
-    protected $urlTemplate = null;
-
-   /**
-        * An HTTP method that specifies the appropriate HTTP method for a request to an HTTP EntryPoint. Values are capitalized strings as used in HTTP.
-        */
-    protected $httpMethod = null;
 
 
     /**
-    * @param array|string $value
+        * An application that can complete the request.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function application($value)
+    {
+        $this->setProperty('application', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setApplication($value)
@@ -64,8 +41,20 @@ class EntryPoint extends Intangible
        return $this->getProperty('application');
     }
 
+
     /**
-    * @param array|string $value
+        * The supported content type(s) for an EntryPoint response.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function contentType($value)
+    {
+        $this->setProperty('contentType', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setContentType($value)
@@ -82,8 +71,22 @@ class EntryPoint extends Intangible
        return $this->getProperty('contentType');
     }
 
+
     /**
-    * @param array|string $value
+        * The high level platform(s) where the Action can be performed for the given
+ * URL. To specify a specific application or operating system instance, use
+ * actionApplication.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function actionPlatform($value)
+    {
+        $this->setProperty('actionPlatform', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setActionPlatform($value)
@@ -100,8 +103,20 @@ class EntryPoint extends Intangible
        return $this->getProperty('actionPlatform');
     }
 
+
     /**
-    * @param array|string $value
+        * An application that can complete the request.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function actionApplication($value)
+    {
+        $this->setProperty('actionApplication', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setActionApplication($value)
@@ -118,8 +133,20 @@ class EntryPoint extends Intangible
        return $this->getProperty('actionApplication');
     }
 
+
     /**
-    * @param array|string $value
+        * The supported encoding type(s) for an EntryPoint request.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function encodingType($value)
+    {
+        $this->setProperty('encodingType', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setEncodingType($value)
@@ -136,8 +163,21 @@ class EntryPoint extends Intangible
        return $this->getProperty('encodingType');
     }
 
+
     /**
-    * @param array|string $value
+        * An url template (RFC6570) that will be used to construct the target of the
+ * execution of the action.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function urlTemplate($value)
+    {
+        $this->setProperty('urlTemplate', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setUrlTemplate($value)
@@ -154,8 +194,21 @@ class EntryPoint extends Intangible
        return $this->getProperty('urlTemplate');
     }
 
+
     /**
-    * @param array|string $value
+        * An HTTP method that specifies the appropriate HTTP method for a request to an
+ * HTTP EntryPoint. Values are capitalized strings as used in HTTP.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function httpMethod($value)
+    {
+        $this->setProperty('httpMethod', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setHttpMethod($value)

@@ -10,34 +10,22 @@ use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
 */
 class RepaymentSpecification extends StructuredValue
 {
-   /**
-        * Frequency of payments due, i.e. number of months between payments. This is defined as a frequency, i.e. the reciprocal of a period of time.
-        */
-    protected $loanPaymentFrequency = null;
-
-   /**
-        * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
-        */
-    protected $numberOfLoanPayments = null;
-
-   /**
-        * The amount of money to pay in a single payment.
-        */
-    protected $loanPaymentAmount = null;
-
-   /**
-        * a type of payment made in cash during the onset of the purchase of an expensive good/service. The payment typically represents only a percentage of the full purchase price.
-        */
-    protected $downPayment = null;
-
-   /**
-        * The amount to be paid as a penalty in the event of early payment of the loan.
-        */
-    protected $earlyPrepaymentPenalty = null;
 
 
     /**
-    * @param array|string $value
+        * Frequency of payments due, i.e. number of months between payments. This is
+ * defined as a frequency, i.e. the reciprocal of a period of time.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function loanPaymentFrequency($value)
+    {
+        $this->setProperty('loanPaymentFrequency', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setLoanPaymentFrequency($value)
@@ -54,8 +42,22 @@ class RepaymentSpecification extends StructuredValue
        return $this->getProperty('loanPaymentFrequency');
     }
 
+
     /**
-    * @param array|string $value
+        * The number of payments contractually required at origination to repay the
+ * loan. For monthly paying loans this is the number of months from the
+ * contractual first payment date to the maturity date.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function numberOfLoanPayments($value)
+    {
+        $this->setProperty('numberOfLoanPayments', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setNumberOfLoanPayments($value)
@@ -72,8 +74,20 @@ class RepaymentSpecification extends StructuredValue
        return $this->getProperty('numberOfLoanPayments');
     }
 
+
     /**
-    * @param array|string $value
+        * The amount of money to pay in a single payment.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function loanPaymentAmount($value)
+    {
+        $this->setProperty('loanPaymentAmount', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setLoanPaymentAmount($value)
@@ -90,8 +104,22 @@ class RepaymentSpecification extends StructuredValue
        return $this->getProperty('loanPaymentAmount');
     }
 
+
     /**
-    * @param array|string $value
+        * a type of payment made in cash during the onset of the purchase of an
+ * expensive good/service. The payment typically represents only a percentage of
+ * the full purchase price.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function downPayment($value)
+    {
+        $this->setProperty('downPayment', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDownPayment($value)
@@ -108,8 +136,20 @@ class RepaymentSpecification extends StructuredValue
        return $this->getProperty('downPayment');
     }
 
+
     /**
-    * @param array|string $value
+        * The amount to be paid as a penalty in the event of early payment of the loan.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function earlyPrepaymentPenalty($value)
+    {
+        $this->setProperty('earlyPrepaymentPenalty', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setEarlyPrepaymentPenalty($value)

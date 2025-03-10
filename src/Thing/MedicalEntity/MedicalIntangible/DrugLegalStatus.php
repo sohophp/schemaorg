@@ -10,14 +10,21 @@ use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalIntangible;
 */
 class DrugLegalStatus extends MedicalIntangible
 {
-   /**
-        * The location in which the status applies.
-        */
-    protected $applicableLocation = null;
 
 
     /**
-    * @param array|string $value
+        * The location in which the status applies.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function applicableLocation($value)
+    {
+        $this->setProperty('applicableLocation', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setApplicableLocation($value)

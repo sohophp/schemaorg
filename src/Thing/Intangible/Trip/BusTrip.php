@@ -10,29 +10,21 @@ use Sohophp\SchemaOrg\Thing\Intangible\Trip;
 */
 class BusTrip extends Trip
 {
-   /**
-        * The unique identifier for the bus.
-        */
-    protected $busNumber = null;
-
-   /**
-        * The stop or station from which the bus departs.
-        */
-    protected $departureBusStop = null;
-
-   /**
-        * The stop or station from which the bus arrives.
-        */
-    protected $arrivalBusStop = null;
-
-   /**
-        * The name of the bus (e.g. Bolt Express).
-        */
-    protected $busName = null;
 
 
     /**
-    * @param array|string $value
+        * The unique identifier for the bus.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function busNumber($value)
+    {
+        $this->setProperty('busNumber', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setBusNumber($value)
@@ -49,8 +41,20 @@ class BusTrip extends Trip
        return $this->getProperty('busNumber');
     }
 
+
     /**
-    * @param array|string $value
+        * The stop or station from which the bus departs.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function departureBusStop($value)
+    {
+        $this->setProperty('departureBusStop', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setDepartureBusStop($value)
@@ -67,8 +71,20 @@ class BusTrip extends Trip
        return $this->getProperty('departureBusStop');
     }
 
+
     /**
-    * @param array|string $value
+        * The stop or station from which the bus arrives.
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function arrivalBusStop($value)
+    {
+        $this->setProperty('arrivalBusStop', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setArrivalBusStop($value)
@@ -85,8 +101,20 @@ class BusTrip extends Trip
        return $this->getProperty('arrivalBusStop');
     }
 
+
     /**
-    * @param array|string $value
+        * The name of the bus (e.g. Bolt Express).
+        * @param array|string|mixed $value
+    * @return $this
+    */
+    public function busName($value)
+    {
+        $this->setProperty('busName', $value);
+        return $this;
+    }
+
+    /**
+    * @param array|string|mixed $value
     * @return $this
     */
     public function setBusName($value)
