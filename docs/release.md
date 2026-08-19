@@ -52,7 +52,7 @@ Composer resolves the package from Packagist. Packagist reads the source reposit
    ```bash
    git tag -a v5.0.4 -m "Release v5.0.4"
    git push origin master
-   git push origin v5.0.3
+   git push origin v5.0.4
    ```
 
 6. Confirm the workflow at GitHub Actions and the package at Packagist.
