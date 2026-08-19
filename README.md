@@ -1,16 +1,16 @@
 # phpschemaorg
 
 ###  schema.org PHP library
-- @since 2026/08/19 v30.0/schemaorg-all-https.jsonld
-- PHP 8.1 or newer
+- Current schema.org data: v30.0 (`data/manifest.json`)
+- PHP 8.1 - 8.5
 - @since 2021/12/23 v3.0.0 升级至 PHP8.1
 - @since 2020/03/12 v1.5.0   加入 set 和 get 方法
 - @since 2019/08/13 updated 3.9  ,  800 classes
 
 ## 特点:
 
-- 支持自动生成类目PHP类文件,现schema.org版本v3.4有598个类,877个属性,136个其它
-- 强类型检查
+- 支持根据 schema.org 数据自动生成 PHP 类文件
+- 提供 PHP 类型提示、PHPDoc 和 IDE 自动补全
 - 自定命名空间
 - PHP CS Fixer 代码格式化符合PSR标准
 - IDE中类与方法可自动完成.
@@ -24,6 +24,18 @@ $ composer require sohophp/schema-org
 ```
 
 Requires PHP 8.1 or newer.
+
+## Documentation
+
+- [Installation](docs/installation.md)
+- [Basic usage](docs/basic-usage.md)
+- [JSON-LD output](docs/json-ld.md)
+- [Schema generator](docs/generator.md)
+- [Google structured data](docs/google-structured-data.md)
+- [Troubleshooting](docs/troubleshooting.md)
+- [Compatibility](docs/compatibility.md)
+- [Migration notes](docs/migration-4.1.md)
+- [Changelog](CHANGELOG.md)
 
 #### Git: 
 ```shell

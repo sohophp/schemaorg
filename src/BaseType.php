@@ -34,7 +34,7 @@ class BaseType implements \ArrayAccess, \JsonSerializable
      */
     public function offsetGet(mixed $offset): mixed
     {
-        return $this->properties[$offset];
+        return $this->properties[$offset] ?? null;
     }
 
     /**
@@ -62,25 +62,35 @@ class BaseType implements \ArrayAccess, \JsonSerializable
         return $this->toArray();
     }
 
-    /**
-     * @param $name
-     * @param $arguments
-     * @return $this
-     */
-    public function __call($name, $arguments)
+    public function __call(string $name, array $arguments): mixed
     {
         if (str_starts_with($name, 'get')) {
-            $name = substr($name, 3);
-            $name[0] = strtolower($name[0]);
-            return $this->getProperty($name);
+            $property = substr($name, 3);
+            if ($property === '' || $arguments !== []) {
+                throw new \BadMethodCallException('Getter methods require a property name and no arguments.');
+            }
+            return $this->getProperty(lcfirst($property));
         }
 
+        $prefix = null;
         if (str_starts_with($name, 'set')) {
-            $name = substr($name, 3);
-            $name[0] = strtolower($name[0]);
+            $prefix = 'set';
+        } elseif (str_starts_with($name, 'add')) {
+            $prefix = 'add';
         }
-        $this->setProperty($name, ...$arguments);
-        return $this;
+
+        if ($prefix !== null) {
+            $property = substr($name, 3);
+            if ($property === '' || count($arguments) !== 1) {
+                throw new \BadMethodCallException(sprintf('%s methods require one value argument.', ucfirst($prefix)));
+            }
+            $property = lcfirst($property);
+            return $prefix === 'add'
+                ? $this->addProperty($property, $arguments[0])
+                : $this->setProperty($property, $arguments[0]);
+        }
+
+        throw new \BadMethodCallException(sprintf('Undefined method %s::%s().', static::class, $name));
     }
 
     /**
@@ -146,32 +156,35 @@ class BaseType implements \ArrayAccess, \JsonSerializable
         return $vars;
     }
 
-    /**
-     * @param $property
-     * @param $value
-     * @return $this
-     */
-    public function setProperty($property, $value): static
+    public function setProperty(string $property, mixed $value): static
     {
         $this->properties[$property] = $value;
         return $this;
     }
 
-    /**
-     * @param $property
-     * @return mixed
-     */
-    public function getProperty($property): mixed
+    public function addProperty(string $property, mixed $value): static
+    {
+        $current = $this->getProperty($property);
+        if ($current === null) {
+            $current = [];
+        } elseif (!is_array($current)) {
+            $current = [$current];
+        }
+        $current[] = $value;
+        return $this->setProperty($property, $current);
+    }
+
+    public function clearProperty(string $property): static
+    {
+        unset($this->properties[$property]);
+        return $this;
+    }
+
+    public function getProperty(string $property): mixed
     {
         return $this->properties[$property] ?? null;
     }
 
-    /**
-     * @return string
-     */
-    /**
-     * @return mixed
-     */
     public function getType(): mixed
     {
         if (array_key_exists('@type', $this->properties)) {
@@ -188,17 +201,16 @@ class BaseType implements \ArrayAccess, \JsonSerializable
 
     /**
      * @param int $options
-     * @return false|string
+     * @return string
      * @deprecated @see SchemaUtils::toJSON
      */
-    public function toJson(int $options = JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES): bool|string
+    public function toJson(int $options = JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES): string
     {
         return SchemaUtils::toJSON($this, $options);
     }
 
     /**
      * @param int $options
-     * @return string
      * @deprecated @see SchemaUtils::toScript
      */
 

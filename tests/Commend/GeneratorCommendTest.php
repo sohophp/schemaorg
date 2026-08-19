@@ -17,52 +17,89 @@ class GeneratorCommendTest extends TestCase
 {
     public function testGenerate()
     {
-
-        $baseDir = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'Entity';
-        $Configure = new Configure([
+        $baseDir = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'schemaorg-generator-' . uniqid('', true);
+        $configure = new Configure([
             'baseDir' => $baseDir,
             'fixCs' => true,
             'namespace' => 'Sohophp\\SchemaOrg\\Tests\\Entity',
-            'fullpath' => true
+            'fullpath' => true,
+            'consoleMessage' => false,
         ]);
 
-        $Parser = new Parser();
-        $Parser->parse($Configure);
-        $loader = new FilesystemLoader([realpath(__DIR__ . '/../../templates/')]);
-
-        $twig = new Environment($loader, ['autoescape' => false, 'debug' => $Configure->getTiwgDebug()]);
-        $filter = new TwigFilter('ucfirst', function ($str) {
-            return ucfirst($str);
-        });
-        $twig->addFilter($filter);
-
-        $inflector = InflectorFactory::create()->build();
-        $filter = new TwigFilter('pluralize', function ($str) use ($inflector) {
-            return $inflector->pluralize($str);
-        });
-
-        $twig->addFilter($filter);
-        $filter = new TwigFilter('singularize', function ($str) use ($inflector) {
-            return $inflector->singularize($str);
-        });
-
-        $twig->addFilter($filter);
-
-        if ($Configure->getTiwgDebug()) {
-            $twig->addExtension(new DebugExtension());
-        }
-        $Logger = new Logger('generator');
-        $Logger->info('test');
-        $TypesGenerator = new TypesGenerator($Configure, $Parser, $twig, $Logger);
+        $generator = $this->createGenerator($configure);
 
         try {
-            $classFiles = $TypesGenerator->generate();
-        } catch (\Exception $exception) {
-            $classFiles = [];
-            $Logger->warning($exception->getMessage(), $exception->getTrace());
+            $classFiles = $generator->generate();
+
+            $this->assertNotEmpty($classFiles);
+            $patientFile = $baseDir . '/Thing/Intangible/Audience/MedicalAudience/Patient.php';
+            $webPageFile = $baseDir . '/Thing/CreativeWork/WebPage.php';
+            $this->assertFileExists($patientFile);
+            $this->assertFileExists($webPageFile);
+            $this->assertStringContainsString('function addDiagnosis', file_get_contents($patientFile));
+        } finally {
+            $this->removeDirectory($baseDir);
+        }
+    }
+
+    public function testGenerateWithoutFullPath(): void
+    {
+        $baseDir = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'schemaorg-generator-' . uniqid('', true);
+        $configure = new Configure([
+            'baseDir' => $baseDir,
+            'fixCs' => true,
+            'namespace' => 'Sohophp\\SchemaOrg\\Tests\\Entity',
+            'fullpath' => false,
+            'consoleMessage' => false,
+        ]);
+
+        try {
+            $classFiles = $this->createGenerator($configure)->generate();
+
+            $this->assertNotEmpty($classFiles);
+            $webPageFile = $baseDir . '/WebPage.php';
+            $this->assertFileExists($webPageFile);
+            $this->assertDirectoryDoesNotExist($baseDir . '/Thing');
+            $this->assertStringContainsString('namespace Sohophp\\SchemaOrg\\Tests\\Entity;', file_get_contents($webPageFile));
+        } finally {
+            $this->removeDirectory($baseDir);
+        }
+    }
+
+    private function createGenerator(Configure $configure): TypesGenerator
+    {
+        $parser = new Parser();
+        $parser->parse($configure);
+        $loader = new FilesystemLoader([realpath(__DIR__ . '/../../templates/')]);
+        $twig = new Environment(
+            $loader,
+            ['autoescape' => false, 'debug' => $configure->getTiwgDebug()]
+        );
+        $twig->addFilter(new TwigFilter('ucfirst', 'ucfirst'));
+
+        $inflector = InflectorFactory::create()->build();
+        $twig->addFilter(new TwigFilter('pluralize', [$inflector, 'pluralize']));
+        $twig->addFilter(new TwigFilter('singularize', [$inflector, 'singularize']));
+
+        if ($configure->getTiwgDebug()) {
+            $twig->addExtension(new DebugExtension());
+        }
+        return new TypesGenerator($configure, $parser, $twig, new Logger('generator'));
+    }
+
+    private function removeDirectory(string $directory): void
+    {
+        if (!is_dir($directory)) {
+            return;
         }
 
-        $count = 925;
-        $this->assertCount($count, $classFiles, "classFiles:" . count($classFiles));
+        $iterator = new \RecursiveIteratorIterator(
+            new \RecursiveDirectoryIterator($directory, \FilesystemIterator::SKIP_DOTS),
+            \RecursiveIteratorIterator::CHILD_FIRST
+        );
+        foreach ($iterator as $item) {
+            $item->isDir() ? rmdir($item->getPathname()) : unlink($item->getPathname());
+        }
+        rmdir($directory);
     }
 }

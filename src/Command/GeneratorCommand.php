@@ -22,8 +22,6 @@ class GeneratorCommand extends Command
     /**
      * @var OutputInterface
      */
-    private OutputInterface $Output;
-
     protected function configure()
     {
         $this->setName("generator");
@@ -31,9 +29,13 @@ class GeneratorCommand extends Command
 
     public function execute(InputInterface $input, OutputInterface $output): int
     {
-        $this->Output = $output;
-        $this->generate();
-        return 0;
+        try {
+            $this->generate();
+            return Command::SUCCESS;
+        } catch (\Throwable $exception) {
+            $output->writeln('<error>' . $exception->getMessage() . '</error>');
+            return Command::FAILURE;
+        }
     }
 
 
@@ -68,13 +70,6 @@ class GeneratorCommand extends Command
 
         $TypesGenerator = new TypesGenerator($Configure, $Parser, $twig, new Logger('generator'));
 
-        try {
-            $TypesGenerator->clear();
-            $TypesGenerator->generate();
-        } catch (\Exception $exception) {
-            $this->Output->writeln('<error>' . $exception->getMessage() . '</error>');
-        }
-
+        $TypesGenerator->generate();
     }
-
 }

@@ -39,21 +39,37 @@ class Parser
      */
     public function parseJsonld(?string $filePath): bool
     {
-        $this->filePath = realpath($filePath);
-        if (!file_exists($this->filePath) || !is_readable($this->filePath)) {
-            $Logger = new Logger("parser");
-            $Logger->warning('The jsonld file is not exists!');
-            return false;
+        $resolvedPath = $filePath === null ? false : realpath($filePath);
+        if ($resolvedPath === false || !is_readable($resolvedPath)) {
+            throw new \RuntimeException('The JSON-LD file does not exist or is not readable: ' . ($filePath ?? ''));
         }
+        $this->filePath = $resolvedPath;
 
         $content = file_get_contents($this->filePath);
-        $this->data = json_decode($content, false);//['@graph'];
+        if ($content === false) {
+            throw new \RuntimeException('Unable to read JSON-LD file: ' . $this->filePath);
+        }
+        $this->data = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+        if (!isset($this->data->{'@graph'}) || !is_array($this->data->{'@graph'})) {
+            throw new \UnexpectedValueException('JSON-LD file does not contain a valid @graph: ' . $this->filePath);
+        }
 
         $this->graphs = [];
+        $this->classes = [];
+        $this->properties = [];
+        $this->dataTypes = [];
+        $this->relateds = [];
 
-        foreach ($this->data->{'@graph'} as $array) {
+        foreach ($this->data->{'@graph'} as $index => $array) {
             $item = new ParserItem($array, $this);
-            $this->graphs[$item->getId()] = $item;
+            $id = $item->getId();
+            if ($id === null || $id === '') {
+                throw new \UnexpectedValueException('JSON-LD graph item at index ' . $index . ' has no @id: ' . $this->filePath);
+            }
+            if (array_key_exists($id, $this->graphs)) {
+                throw new \UnexpectedValueException('JSON-LD graph contains duplicate @id "' . $id . '": ' . $this->filePath);
+            }
+            $this->graphs[$id] = $item;
         }
 
         /**
@@ -119,5 +135,4 @@ class Parser
         $graphs = $this->getGraphs();
         return $graphs[$id] ?? null;
     }
-
 }

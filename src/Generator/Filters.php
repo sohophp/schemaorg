@@ -1,6 +1,7 @@
 <?php
 
 namespace Sohophp\SchemaOrg\Generator;
+
 class Filters
 {
     public static function doc($text, array $options = []): string

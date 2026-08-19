@@ -3,10 +3,11 @@
 declare(strict_types=1);
 
 namespace Sohophp\SchemaOrg\Generator;
+
 /**
  *
  */
-class ArrayCollection implements \ArrayAccess, \JsonSerializable,\Countable
+class ArrayCollection implements \ArrayAccess, \JsonSerializable, \Countable
 {
     /**
      * @var array
@@ -28,7 +29,7 @@ class ArrayCollection implements \ArrayAccess, \JsonSerializable,\Countable
         return $data;
     }
 
-    public function offsetSet(mixed $offset,mixed $value):void
+    public function offsetSet(mixed $offset, mixed $value): void
     {
         $this->data[$offset] = $value;
     }
@@ -38,25 +39,23 @@ class ArrayCollection implements \ArrayAccess, \JsonSerializable,\Countable
         return $this->data[$offset] ?? null;
     }
 
-    public function offsetExists(mixed $offset):bool
+    public function offsetExists(mixed $offset): bool
     {
         return array_key_exists($offset, $this->data);
     }
 
-    public function offsetUnset(mixed $offset):void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->data[$offset]);
     }
 
-    public function jsonSerialize():array
+    public function jsonSerialize(): array
     {
         return $this->data;
     }
 
-    public function count():int
+    public function count(): int
     {
         return count($this->data);
     }
-
-
 }

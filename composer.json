@@ -15,7 +15,11 @@
   ],
   "homepage": "https://www.sohophp.app",
   "scripts": {
-    "build": "./bin/schema generator"
+    "build": "./bin/schema generator",
+    "test": "./vendor/bin/phpunit",
+    "lint": "find src tests -name '*.php' -print0 | xargs -0 -n1 php -l",
+    "analyse": "php -d memory_limit=512M vendor/bin/phpstan analyse --configuration=phpstan.neon",
+    "format:check": "php-cs-fixer fix --dry-run --diff --config=.php-cs-fixer.dist.php"
   },
   "require": {
     "php": "^8.1.0",
@@ -27,8 +31,9 @@
     "phpunit/phpunit": "^10.0",
     "twig/twig": "^3.3",
     "doctrine/inflector": "*",
-    "friendsofphp/php-cs-fixer": "*",
-    "monolog/monolog": "*"
+    "friendsofphp/php-cs-fixer": "^3.71",
+    "monolog/monolog": "*",
+    "phpstan/phpstan": "^2.0@stable"
   },
   "autoload": {
     "psr-4": {
@@ -44,6 +49,5 @@
   },
   "bin": [
     "bin/schema"
-  ],
-  "minimum-stability": "dev"
+  ]
 }

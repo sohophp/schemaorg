@@ -57,12 +57,14 @@ class SchemaCollection implements \JsonSerializable, \Countable
 
     public function toJson($options = JSON_UNESCAPED_UNICODE): string
     {
-        return json_encode($this->items, $options);
+        return json_encode($this->items, $options | JSON_THROW_ON_ERROR);
     }
 
-    public function toGraphJson(int $options = JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES): string
-    {
-        return json_encode($this->toGraphArray(), $options) ?: '';
+    public function toGraphJson(
+        int $options = JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES,
+        string|array $context = 'https://schema.org'
+    ): string {
+        return json_encode($this->toGraphArray($context), $options | JSON_THROW_ON_ERROR);
     }
 
     /**
@@ -75,11 +77,13 @@ class SchemaCollection implements \JsonSerializable, \Countable
         return $this->arrayToScript($this->items, $options);
     }
 
-    public function toGraphScript(int $options = JSON_UNESCAPED_UNICODE): string
-    {
+    public function toGraphScript(
+        int $options = JSON_UNESCAPED_UNICODE,
+        string|array $context = 'https://schema.org'
+    ): string {
         $script = [
             '<script type="application/ld+json">',
-            $this->toGraphJson($options),
+            $this->toGraphJson($options, $context),
             '</script>',
         ];
         return $options & JSON_PRETTY_PRINT ? implode(PHP_EOL, $script) : implode('', $script);
@@ -94,7 +98,7 @@ class SchemaCollection implements \JsonSerializable, \Countable
     {
         $script = [];
         $script[] = '<script type="application/ld+json">';
-        $script[] = json_encode($array, $options);
+        $script[] = json_encode($array, $options | JSON_THROW_ON_ERROR);
         $script[] = '</script>';
         if ($options & JSON_PRETTY_PRINT) {
             return implode(PHP_EOL, $script);

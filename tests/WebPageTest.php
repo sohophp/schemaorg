@@ -12,6 +12,7 @@ class WebPageTest extends TestCase
         $WebPage = new WebPage();
 
         $WebPage->setName('one test')->setText('one content');
+        $this->assertSame('one test', $WebPage->getName());
         $params = $WebPage->toArray();
         /*
         array(3) {
@@ -34,5 +35,24 @@ class WebPageTest extends TestCase
 
         $this->assertSame('https://example.test/page', $params['@id']);
         $this->assertSame(['First title', 'Second title'], $params['name']);
+    }
+
+    public function testGenericPropertyCollectionApi()
+    {
+        $webPage = new WebPage();
+        $webPage->addProperty('customProperty', 'first')
+            ->addProperty('customProperty', 'second')
+            ->clearProperty('unusedProperty');
+
+        $this->assertSame(['first', 'second'], $webPage->getProperty('customProperty'));
+        $this->assertNull($webPage->getProperty('unusedProperty'));
+    }
+
+    public function testMagicApiRejectsInvalidCalls(): void
+    {
+        $webPage = new WebPage();
+
+        $this->expectException(\BadMethodCallException::class);
+        $webPage->unknownProperty('value');
     }
 }

@@ -1,0 +1,10 @@
+parameters:
+    level: 3
+    paths:
+        - src/BaseType.php
+        - src/DataType.php
+        - src/SchemaCollection.php
+        - src/SchemaUtils.php
+        - src/Generator
+    excludePaths:
+        - src/Thing

@@ -4,10 +4,7 @@ namespace Sohophp\SchemaOrg\Generator;
 
 class HttpResponse
 {
-    /**
-     * @var resource
-     */
-    private $ch;
+    private \CurlHandle $ch;
     private $url = '';
     private $params = [];
     private $method = 'GET';
@@ -19,7 +16,11 @@ class HttpResponse
 
     public function __construct()
     {
-        $this->ch = curl_init();
+        $handle = curl_init();
+        if ($handle === false) {
+            throw new \RuntimeException('Unable to initialize cURL.');
+        }
+        $this->ch = $handle;
     }
 
     public function setOpt($name, $value)
@@ -64,7 +65,7 @@ class HttpResponse
             curl_setopt($this->ch, CURLOPT_URL, $this->url);
         }
 
-        $this->setOpt(CURLOPT_MAXREDIRS, 3);//
+        $this->setOpt(CURLOPT_MAXREDIRS, 3); //
         curl_setopt($ch, CURLOPT_USERAGENT, 'Opera/9.80 (Windows NT 6.2; Win64; x64) Presto/2.12.388 Version/12.15');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/x-www-form-urlencoded']);

@@ -28,27 +28,73 @@ class TypesGenerator
      * @var Environment
      */
     private Environment $twig;
+    private Logger $logger;
+    private ?string $outputBaseDir = null;
 
     /**
      * TypesGenerator constructor.
      * @param Configure $configure
      * @param Parser $parser
      * @param Environment $twig
-     * @param Logger $Logger
+     * @param Logger $logger
      */
-    public function __construct(Configure $configure, Parser $parser, Environment $twig, Logger $Logger)
+    public function __construct(Configure $configure, Parser $parser, Environment $twig, Logger $logger)
     {
         $this->configure = $configure;
         $this->parser = $parser;
         $this->twig = $twig;
-        $this->Logger = $Logger;
+        $this->logger = $logger;
     }
 
-    public function clear()
+    public function clear(): void
     {
         $dir = $this->configure->getBaseDir() . '/Thing';
-        $output = shell_exec('rm -rf ' . $dir);
-        echo $output, PHP_EOL;
+        $this->removeDirectory($dir);
+    }
+
+    private function removeDirectory(string $dir): void
+    {
+        if (!is_dir($dir)) {
+            return;
+        }
+
+        $iterator = new \RecursiveIteratorIterator(
+            new \RecursiveDirectoryIterator($dir, \FilesystemIterator::SKIP_DOTS),
+            \RecursiveIteratorIterator::CHILD_FIRST
+        );
+        foreach ($iterator as $item) {
+            if ($item->isDir()) {
+                rmdir($item->getPathname());
+            } else {
+                unlink($item->getPathname());
+            }
+        }
+        rmdir($dir);
+    }
+
+    private function replaceGeneratedDirectory(string $stagingDir, string $targetDir): void
+    {
+        $backupDir = $targetDir . '.backup-' . uniqid('', true);
+        $hasTarget = is_dir($targetDir);
+
+        if ($hasTarget && !rename($targetDir, $backupDir)) {
+            throw new \RuntimeException('Unable to move the existing generated directory: ' . $targetDir);
+        }
+
+        try {
+            if (!rename($stagingDir, $targetDir)) {
+                throw new \RuntimeException('Unable to install generated directory: ' . $targetDir);
+            }
+        } catch (\Throwable $exception) {
+            if ($hasTarget && is_dir($backupDir)) {
+                rename($backupDir, $targetDir);
+            }
+            throw $exception;
+        }
+
+        if ($hasTarget) {
+            $this->removeDirectory($backupDir);
+        }
     }
 
     /**
@@ -60,136 +106,162 @@ class TypesGenerator
      */
     public function generate(): array
     {
-
         $classFiles = [];
-        $entitiesMap = [];
-        /**
-         * @var ParserItem $graph
-         */
-        foreach ($this->parser->getClasses() as $i => $graph) {
-            //            if($graph->getId()=='schema:LocalBusiness') {
-            //
-            //            }else{
-            //                continue;
-            //            }
+        $baseDir = $this->configure->getBaseDir();
+        $stagingBaseDir = $baseDir . DIRECTORY_SEPARATOR . '.schemaorg-generation-' . uniqid('', true);
+        if (!mkdir($stagingBaseDir, 0777, true) && !is_dir($stagingBaseDir)) {
+            throw new \RuntimeException('Unable to create generation staging directory: ' . $stagingBaseDir);
+        }
+        $this->outputBaseDir = $stagingBaseDir;
 
-            if ($this->configure->get('consoleMessage')) {
-                echo ($i + 1), "\n";
-                echo $graph->getId(), "\n";
-            }
-
-
+        try {
             /**
-             * 有个3dmodel是数字开头 和class
-             * 2019-10-07
+             * @var ParserItem $graph
              */
-            $name = $graph->getName();
-            if (!is_string($name) || !preg_match('#^[a-zA-Z].*?#', $name) || in_array($name, ['Class', 'Function'], true)) {
-                continue;
-            };
+            foreach ($this->parser->getClasses() as $i => $graph) {
+                //            if($graph->getId()=='schema:LocalBusiness') {
+                //
+                //            }else{
+                //                continue;
+                //            }
 
-            $class = [];
-            $class['name'] = $name;
-            $class['annotations'] = [];
-            $class['annotations'][] = $graph->getComment();
-            $class['annotations'][] = sprintf('@see %s', $graph->getUri());
-            $class['namespace'] = $this->fullNamespace($graph->getNamespace());
-            $uses = [];
-            $parent = $graph->getParent();
-            $parentName = $parent?->getName();
-            if (is_string($parentName) && $parentName !== '') {
-                if ($this->configure->getFullPath()) {
-                    $uses[] = $this->fullNamespace($parent->getFullClassName());
+                if ($this->configure->get('consoleMessage')) {
+                    echo ($i + 1), "\n";
+                    echo $graph->getId(), "\n";
                 }
-                $class['parent'] = $parentName;
-            } else {
-                if ($this->configure->getFullPath()) {
-                    $uses[] = $this->fullNamespace($this->configure->getClassBase());
-                }
-                $class['parent'] = $this->configure->getClassBase();
-            }
 
-            $class['properties'] = [];
 
-            /**
-             * @var ParserItem $property
-             */
-            foreach ($graph->getProperties() as $property) {
-                $range = [];
                 /**
-                 * @var ParserItem $item
+                 * 有个3dmodel是数字开头 和class
+                 * 2019-10-07
                  */
-                foreach ($property->getPropertyRange() as $item) {
-                    if ($item->isClass() && !$item->isDataType()) {
-                        if ($item->getId() != $graph->getId()) {
-                            if ($this->configure->getFullPath()) {
-                                $uses[] = $this->fullNamespace($item->getFullClassName());
+                $name = $graph->getName();
+                if (!is_string($name) || !preg_match('#^[a-zA-Z].*?#', $name) || in_array($name, ['Class', 'Function'], true)) {
+                    continue;
+                };
+
+                $class = [];
+                $class['name'] = $name;
+                $class['annotations'] = [];
+                $class['annotations'][] = $graph->getComment();
+                $class['annotations'][] = sprintf('@see %s', $graph->getUri());
+                $class['namespace'] = $this->fullNamespace($graph->getNamespace());
+                $uses = [];
+                $parent = $graph->getParent();
+                $parentName = $parent?->getName();
+                if (is_string($parentName) && $parentName !== '') {
+                    if ($this->configure->getFullPath()) {
+                        $uses[] = $this->fullNamespace($parent->getFullClassName());
+                    }
+                    $class['parent'] = $parentName;
+                } else {
+                    if ($this->configure->getFullPath()) {
+                        $uses[] = $this->fullNamespace($this->configure->getClassBase());
+                    }
+                    $class['parent'] = $this->configure->getClassBase();
+                }
+
+                $class['properties'] = [];
+
+                /**
+                 * @var ParserItem $property
+                 */
+                foreach ($graph->getProperties() as $property) {
+                    $range = [];
+                    /**
+                     * @var ParserItem $item
+                     */
+                    foreach ($property->getPropertyRange() as $item) {
+                        if ($item->isClass() && !$item->isDataType()) {
+                            if ($item->getId() != $graph->getId()) {
+                                if ($this->configure->getFullPath()) {
+                                    $uses[] = $this->fullNamespace($item->getFullClassName());
+                                }
                             }
+                            $range[] = $item->getName();
+                        } else {
+                            $range[] = $this->rangeString($item);
                         }
-                        $range[] = $item->getName();
-                    } else {
-                        $range[] = $this->rangeString($item);
+                    }
+
+                    //rangeString可能有null
+                    $range = array_filter($range, function ($var) {
+                        return !empty(trim((string)$var));
+                    });
+                    $range = array_values(array_unique($range));
+                    if (!$range) {
+                        $range[] = 'mixed';
+                    }
+                    $rangeDoc = in_array('mixed', $range, true)
+                        ? 'mixed'
+                        : implode('|', $range) . '|array';
+                    $valueDoc = in_array('mixed', $range, true) ? 'mixed' : implode('|', $range);
+
+                    $class['properties'][] = [
+                        'name' => $property->getName(),
+                        'annotations' => [$property->getComment()],
+                        'range' => $rangeDoc,
+                        'value_range' => $valueDoc,
+                        'range_default' => null
+                        //                    'range_default' => count($range) === 1 && array_values($range)[0] ? '?' . array_values($range)[0] : null
+                    ];
+                }
+
+                $class['uses'] = array_unique($uses);
+                $dir = $this->itemToDir($graph);
+                $filename = $dir . DIRECTORY_SEPARATOR . $graph->getName() . '.php';
+
+                if ($this->configure->get('consoleMessage')) {
+                    echo str_replace($stagingBaseDir, $baseDir, $filename) . "\n";
+                }
+                if (!is_dir($dir)) {
+                    if (!mkdir($dir, 0777, true)) {
+                        throw new \Exception('Failed to create folders ' . $dir);
                     }
                 }
 
-                //rangeString可能有null
-                $range = array_filter($range, function ($var) {
-                    return !empty(trim((string)$var));
-                });
-                $range = array_values(array_unique($range));
-                if (!$range) {
-                    $range[] = 'mixed';
+                if (!file_put_contents($filename, $this->twig->render('class.php.twig', ['class' => $class]))) {
+                    throw new \Exception('Can not create file ' . $dir . DIRECTORY_SEPARATOR . $graph->getName() . '.php');
                 }
-                $rangeDoc = in_array('mixed', $range, true)
-                    ? 'mixed'
-                    : implode('|', $range) . '|array';
-                $valueDoc = in_array('mixed', $range, true) ? 'mixed' : implode('|', $range);
-
-                $class['properties'][] = [
-                    'name' => $property->getName(),
-                    'annotations' => [$property->getComment()],
-                    'range' => $rangeDoc,
-                    'value_range' => $valueDoc,
-                    'range_default' => null
-                    //                    'range_default' => count($range) === 1 && array_values($range)[0] ? '?' . array_values($range)[0] : null
-                ];
+                $classFiles[] = $filename;
             }
 
-            $class['uses'] = array_unique($uses);
-            $dir = $this->itemToDir($graph);
-            $filename = $dir . DIRECTORY_SEPARATOR . $graph->getName() . '.php';
-
-            if ($this->configure->get('consoleMessage')) {
-                echo $filename . "\n";
+            if (!$classFiles) {
+                throw new \RuntimeException('No schema classes were generated. The existing generated directory was not changed.');
             }
-            if (!is_dir($dir)) {
-                if (!mkdir($dir, 0777, true)) {
-                    throw new \Exception('Failed to create folders ' . $dir);
+
+            $stagingDir = $stagingBaseDir . DIRECTORY_SEPARATOR . 'Thing';
+            $targetDir = $baseDir . DIRECTORY_SEPARATOR . 'Thing';
+            if ($this->configure->getFullPath()) {
+                $this->replaceGeneratedDirectory($stagingDir, $targetDir);
+            } else {
+                foreach ($classFiles as $file) {
+                    $targetFile = str_replace($stagingBaseDir, $baseDir, $file);
+                    if (!is_dir(dirname($targetFile)) && !mkdir(dirname($targetFile), 0777, true) && !is_dir(dirname($targetFile))) {
+                        throw new \RuntimeException('Unable to create generated file directory: ' . dirname($targetFile));
+                    }
+                    if (!rename($file, $targetFile)) {
+                        throw new \RuntimeException('Unable to install generated file: ' . $targetFile);
+                    }
                 }
             }
 
-            if (!file_put_contents($filename, $this->twig->render('class.php.twig', ['class' => $class]))) {
-                throw new \Exception('Can not create file ' . $dir . DIRECTORY_SEPARATOR . $graph->getName() . '.php');
+            return array_map(
+                static fn(string $file): string => str_replace($stagingBaseDir, $baseDir, $file),
+                $classFiles
+            );
+        } finally {
+            $this->outputBaseDir = null;
+            if (is_dir($stagingBaseDir)) {
+                $this->removeDirectory($stagingBaseDir);
             }
-            $classFiles[] = $filename;
-            $entitiesMap[] = [
-                'name' => $graph->getName(),
-                'className' => $graph->getFullClassName()
-            ];
         }
-
-        /**
-         * @since 2021/12/23  不使用别名快捷方式了
-         */
-
-        // $this->generateEntities($entitiesMap);
-
-        return $classFiles;
     }
 
     public function generateEntities(array $entitiesMap)
     {
-        $entitiesMapFile = $this->configure->getBaseDir() . DIRECTORY_SEPARATOR . 'Entities.php';
+        $classFiles = [];
+        $entitiesMapFile = ($this->outputBaseDir ?? $this->configure->getBaseDir()) . DIRECTORY_SEPARATOR . 'Entities.php';
 
         file_put_contents(
             $entitiesMapFile,
@@ -205,16 +277,17 @@ class TypesGenerator
         if ($this->configure->getFixCs()) {
             $this->fixCs($classFiles);
         }
+        return $classFiles;
     }
 
     public function itemToDir(ParserItem $item): string
     {
         if ($this->configure->getFullPath()) {
-            return $this->configure->getBaseDir()
+            return ($this->outputBaseDir ?? $this->configure->getBaseDir())
                 . DIRECTORY_SEPARATOR
                 . implode(DIRECTORY_SEPARATOR, $item->getPath());
         }
-        return $this->configure->getBaseDir();
+        return $this->outputBaseDir ?? $this->configure->getBaseDir();
     }
 
     /**
