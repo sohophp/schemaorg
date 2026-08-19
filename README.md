@@ -35,6 +35,7 @@ Requires PHP 8.1 or newer.
 - [Troubleshooting](docs/troubleshooting.md)
 - [Compatibility](docs/compatibility.md)
 - [Migration notes](docs/migration-4.1.md)
+- [Release and distribution](docs/release.md)
 - [Changelog](CHANGELOG.md)
 
 #### Git: 
@@ -51,6 +52,8 @@ $Page->name("test one")->text('content');
 $script = $Page->toScript();
 echo $script;
 ``` 
+
+Current release: `v5.0.1`. See [release and distribution](docs/release.md) for Composer, GitHub, Packagist, npm status, and release procedures.
 
 ### JSON-LD metadata and repeated properties
 

@@ -1,5 +1,9 @@
 # Changelog
 
+## 5.0.1 - 2026-08-19
+
+- Make the generator executable portable across local and GitHub Actions PHP installations.
+
 ## 5.0.0 - 2026-08-19
 
 - Upgrade the bundled schema.org dataset to v30.0.
@@ -14,4 +18,4 @@
 
 ## Release history
 
-See the Git tags for previously published versions. The next package release should assign a version to the changes listed under `Unreleased`.
+See the Git tags for previously published versions.
