@@ -197,12 +197,28 @@ class TypesGenerator
                     $parents = [reset($parents)];
                 }
 
+                $parentVariants = [];
                 foreach ($parents as $parent) {
+                    if ($parent === null) {
+                        $parentVariants[] = null;
+                        continue;
+                    }
+                    $parentClassNames = $this->configure->getFullPath()
+                        ? $parent->getFullClassNames()
+                        : [$parent->getFullClassName()];
+                    foreach ($parentClassNames as $parentClassName) {
+                        $parentVariants[] = [$parent, $parentClassName];
+                    }
+                }
+
+                foreach ($parentVariants as $parentVariant) {
                     $variant = $class;
                     $uses = [];
+                    $parent = is_array($parentVariant) ? $parentVariant[0] : null;
+                    $parentClassName = is_array($parentVariant) ? $parentVariant[1] : null;
                     $parentName = $parent?->getName();
                     if (is_string($parentName) && $parentName !== '') {
-                        $variant['namespace'] = $this->fullNamespace($parent->getFullClassName());
+                        $variant['namespace'] = $this->fullNamespace($parentClassName);
                         if ($this->configure->getFullPath()) {
                             $uses[] = $variant['namespace'];
                         }

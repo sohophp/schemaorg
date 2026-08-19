@@ -50,6 +50,9 @@ class GeneratorCommendTest extends TestCase
             $this->assertFileExists($organizationLocalBusiness);
             $this->assertStringContainsString('class LocalBusiness extends Place', file_get_contents($placeLocalBusiness));
             $this->assertStringContainsString('class LocalBusiness extends Organization', file_get_contents($organizationLocalBusiness));
+            $organizationStore = $baseDir . '/Thing/Organization/LocalBusiness/Store.php';
+            $this->assertFileExists($organizationStore);
+            $this->assertStringContainsString('class Store extends LocalBusiness', file_get_contents($organizationStore));
         } finally {
             $this->removeDirectory($baseDir);
         }

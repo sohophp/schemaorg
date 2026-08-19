@@ -366,6 +366,26 @@ class ParserItem
     }
 
     /**
+     * @return list<string>
+     */
+    public function getFullClassNames(): array
+    {
+        $parents = $this->getDirectParents();
+        if (!$parents) {
+            return [$this->getName()];
+        }
+
+        $names = [];
+        foreach ($parents as $parent) {
+            foreach ($parent->getFullClassNames() as $parentName) {
+                $names[] = $parentName . '\\' . $this->getName();
+            }
+        }
+
+        return array_values(array_unique($names));
+    }
+
+    /**
      * @return array 属性取值范围
      */
 

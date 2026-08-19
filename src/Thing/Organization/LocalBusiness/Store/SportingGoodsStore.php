@@ -1,0 +1,16 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Sohophp\SchemaOrg\Thing\Organization\LocalBusiness\Store;
+
+use Sohophp\SchemaOrg\Thing\Organization\LocalBusiness\Store;
+
+/**
+ * A sporting goods store.
+ * @see https://schema.org/SportingGoodsStore
+ * @package Sohophp\SchemaOrg\Thing\Organization\LocalBusiness\Store
+ */
+class SportingGoodsStore extends Store
+{
+}

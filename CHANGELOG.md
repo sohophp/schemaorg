@@ -1,5 +1,13 @@
 # Changelog
 
+## 5.0.4 - 2026-08-19
+
+- Generate recursive parent-path variants for descendants of multiple-parent
+	types, including `Organization\LocalBusiness\Store`.
+- Preserve the existing single-path behavior when `fullpath` generation is
+	disabled.
+- Add regression coverage for concrete `LocalBusiness` descendants.
+
 ## 5.0.3 - 2026-08-19
 
 - Preserve Schema.org multiple-parent relationships by generating same-named classes under each parent path.

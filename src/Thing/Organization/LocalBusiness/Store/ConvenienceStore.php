@@ -1,0 +1,16 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Sohophp\SchemaOrg\Thing\Organization\LocalBusiness\Store;
+
+use Sohophp\SchemaOrg\Thing\Organization\LocalBusiness\Store;
+
+/**
+ * A convenience store.
+ * @see https://schema.org/ConvenienceStore
+ * @package Sohophp\SchemaOrg\Thing\Organization\LocalBusiness\Store
+ */
+class ConvenienceStore extends Store
+{
+}

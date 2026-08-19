@@ -1,0 +1,16 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Sohophp\SchemaOrg\Thing\Organization\LocalBusiness\FoodEstablishment;
+
+use Sohophp\SchemaOrg\Thing\Organization\LocalBusiness\FoodEstablishment;
+
+/**
+ * Brewery.
+ * @see https://schema.org/Brewery
+ * @package Sohophp\SchemaOrg\Thing\Organization\LocalBusiness\FoodEstablishment
+ */
+class Brewery extends FoodEstablishment
+{
+}
