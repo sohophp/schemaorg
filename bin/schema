@@ -1,4 +1,4 @@
-#!/usr/bin/env php8.1
+#!/usr/bin/env php
 <?php
 require(dirname(__DIR__) . DIRECTORY_SEPARATOR . 'bootstrap.php');
 $application = new \Symfony\Component\Console\Application();
