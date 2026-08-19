@@ -1,15 +1,16 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Sohophp\SchemaOrg\Thing\Place\Landform;
 
-  use Sohophp\SchemaOrg\Thing\Place\Landform;
+use Sohophp\SchemaOrg\Thing\Place\Landform;
 
 /**
-  * One of the continents (for example, Europe or Africa).
-  * @see schema:Continent
-* @package Sohophp\SchemaOrg\Thing\Place\Landform
-*/
+ * One of the continents (for example, Europe or Africa).
+ * @see https://schema.org/Continent
+ * @package Sohophp\SchemaOrg\Thing\Place\Landform
+ */
 class Continent extends Landform
 {
-
-
 }

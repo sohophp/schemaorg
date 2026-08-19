@@ -1,412 +1,389 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Sohophp\SchemaOrg\Thing\Intangible\Enumeration;
 
-  use Sohophp\SchemaOrg\Thing\Intangible\Enumeration;
-  use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\PropertyValue;
-  use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
-  use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MeasurementTypeEnumeration;
-  use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\QuantitativeValue;
-  use Sohophp\SchemaOrg\Thing\Intangible\DefinedTerm;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\PropertyValue;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MeasurementTypeEnumeration;
+use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\QuantitativeValue;
+use Sohophp\SchemaOrg\Thing\Intangible\DefinedTerm;
 
 /**
-  * A predefined value for a product characteristic, e.g. the power cord plug
- * type 'US' or the garment sizes 'S', 'M', 'L', and 'XL'.
-  * @see schema:QualitativeValue
-* @package Sohophp\SchemaOrg\Thing\Intangible\Enumeration
-*/
+ * A predefined value for a product characteristic, e.g. the power cord plug type 'US' or the garment sizes 'S', 'M', 'L', and 'XL'.
+ * @see https://schema.org/QualitativeValue
+ * @package Sohophp\SchemaOrg\Thing\Intangible\Enumeration
+ */
 class QualitativeValue extends Enumeration
 {
+    /**
+     * This ordering relation for qualitative values indicates that the subject is lesser than the object.
+     * @see https://schema.org/lesser
+     * @param QualitativeValue|array $value
+     * @return $this
+     */
+    public function lesser($value)
+    {
+        $this->setProperty('lesser', $value);
+        return $this;
+    }
 
+    /**
+     * @param QualitativeValue|array $value
+     * @return $this
+     */
+    public function setLesser($value)
+    {
+        $this->setProperty('lesser', $value);
+        return $this;
+    }
 
-  /**
-      * This ordering relation for qualitative values indicates that the subject is
- * lesser than the object.
-    * @param QualitativeValue|array $value
-  * @return $this
-  */
-  public function lesser($value)
-  {
-  $this->setProperty('lesser', $value);
-  return $this;
-  }
+    /**
+     * @param QualitativeValue $value
+     * @return $this
+     */
+    public function addLesser($value)
+    {
+        $current = $this->getProperty('lesser');
+        if ($current === null) {
+            $current = [];
+        } elseif (!is_array($current)) {
+            $current = [$current];
+        }
+        $current[] = $value;
+        $this->setProperty('lesser', $current);
+        return $this;
+    }
 
-  /**
-  * @param QualitativeValue|array $value
-  * @return $this
-  */
-  public function setLesser($value)
-  {
-  $this->setProperty('lesser', $value);
-  return $this;
-  }
+    /**
+     * @return QualitativeValue|array
+     */
+    public function getLesser()
+    {
+        return $this->getProperty('lesser');
+    }
+    /**
+     * A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org. Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     * @see https://schema.org/additionalProperty
+     * @param PropertyValue|array $value
+     * @return $this
+     */
+    public function additionalProperty($value)
+    {
+        $this->setProperty('additionalProperty', $value);
+        return $this;
+    }
 
-  /**
-  * @param QualitativeValue $value
-  * @return $this
-  */
-  public function addLesser($value)
-  {
-  $current = $this->getProperty('lesser');
-  if ($current === null) {
-  $current = [];
-  } elseif (!is_array($current)) {
-  $current = [$current];
-  }
-  $current[] = $value;
-  $this->setProperty('lesser', $current);
-  return $this;
-  }
+    /**
+     * @param PropertyValue|array $value
+     * @return $this
+     */
+    public function setAdditionalProperty($value)
+    {
+        $this->setProperty('additionalProperty', $value);
+        return $this;
+    }
 
-  /**
-  * @return QualitativeValue|array
-  */
-  public function getLesser()
-  {
-  return $this->getProperty('lesser');
-  }
+    /**
+     * @param PropertyValue $value
+     * @return $this
+     */
+    public function addAdditionalProperty($value)
+    {
+        $current = $this->getProperty('additionalProperty');
+        if ($current === null) {
+            $current = [];
+        } elseif (!is_array($current)) {
+            $current = [$current];
+        }
+        $current[] = $value;
+        $this->setProperty('additionalProperty', $current);
+        return $this;
+    }
 
+    /**
+     * @return PropertyValue|array
+     */
+    public function getAdditionalProperty()
+    {
+        return $this->getProperty('additionalProperty');
+    }
+    /**
+     * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+     * @see https://schema.org/valueReference
+     * @param StructuredValue|string|QualitativeValue|PropertyValue|MeasurementTypeEnumeration|QuantitativeValue|DefinedTerm|Enumeration|array $value
+     * @return $this
+     */
+    public function valueReference($value)
+    {
+        $this->setProperty('valueReference', $value);
+        return $this;
+    }
 
-  /**
-      * A property-value pair representing an additional characteristic of the
- * entity, e.g. a product feature or another characteristic for which there is
- * no matching property in schema.org.
- * 
- * Note: Publishers should be aware that applications designed to use specific
- * schema.org properties (e.g. https://schema.org/width,
- * https://schema.org/color, https://schema.org/gtin13, ...) will typically
- * expect such data to be provided using those properties, rather than using the
- * generic property/value mechanism.
-    * @param PropertyValue|array $value
-  * @return $this
-  */
-  public function additionalProperty($value)
-  {
-  $this->setProperty('additionalProperty', $value);
-  return $this;
-  }
+    /**
+     * @param StructuredValue|string|QualitativeValue|PropertyValue|MeasurementTypeEnumeration|QuantitativeValue|DefinedTerm|Enumeration|array $value
+     * @return $this
+     */
+    public function setValueReference($value)
+    {
+        $this->setProperty('valueReference', $value);
+        return $this;
+    }
 
-  /**
-  * @param PropertyValue|array $value
-  * @return $this
-  */
-  public function setAdditionalProperty($value)
-  {
-  $this->setProperty('additionalProperty', $value);
-  return $this;
-  }
+    /**
+     * @param StructuredValue|string|QualitativeValue|PropertyValue|MeasurementTypeEnumeration|QuantitativeValue|DefinedTerm|Enumeration $value
+     * @return $this
+     */
+    public function addValueReference($value)
+    {
+        $current = $this->getProperty('valueReference');
+        if ($current === null) {
+            $current = [];
+        } elseif (!is_array($current)) {
+            $current = [$current];
+        }
+        $current[] = $value;
+        $this->setProperty('valueReference', $current);
+        return $this;
+    }
 
-  /**
-  * @param PropertyValue $value
-  * @return $this
-  */
-  public function addAdditionalProperty($value)
-  {
-  $current = $this->getProperty('additionalProperty');
-  if ($current === null) {
-  $current = [];
-  } elseif (!is_array($current)) {
-  $current = [$current];
-  }
-  $current[] = $value;
-  $this->setProperty('additionalProperty', $current);
-  return $this;
-  }
+    /**
+     * @return StructuredValue|string|QualitativeValue|PropertyValue|MeasurementTypeEnumeration|QuantitativeValue|DefinedTerm|Enumeration|array
+     */
+    public function getValueReference()
+    {
+        return $this->getProperty('valueReference');
+    }
+    /**
+     * This ordering relation for qualitative values indicates that the subject is greater than the object.
+     * @see https://schema.org/greater
+     * @param QualitativeValue|array $value
+     * @return $this
+     */
+    public function greater($value)
+    {
+        $this->setProperty('greater', $value);
+        return $this;
+    }
 
-  /**
-  * @return PropertyValue|array
-  */
-  public function getAdditionalProperty()
-  {
-  return $this->getProperty('additionalProperty');
-  }
+    /**
+     * @param QualitativeValue|array $value
+     * @return $this
+     */
+    public function setGreater($value)
+    {
+        $this->setProperty('greater', $value);
+        return $this;
+    }
 
+    /**
+     * @param QualitativeValue $value
+     * @return $this
+     */
+    public function addGreater($value)
+    {
+        $current = $this->getProperty('greater');
+        if ($current === null) {
+            $current = [];
+        } elseif (!is_array($current)) {
+            $current = [$current];
+        }
+        $current[] = $value;
+        $this->setProperty('greater', $current);
+        return $this;
+    }
 
-  /**
-      * A secondary value that provides additional information on the original value,
- * e.g. a reference temperature or a type of measurement.
-    * @param StructuredValue|string|QualitativeValue|PropertyValue|MeasurementTypeEnumeration|QuantitativeValue|DefinedTerm|Enumeration|array $value
-  * @return $this
-  */
-  public function valueReference($value)
-  {
-  $this->setProperty('valueReference', $value);
-  return $this;
-  }
+    /**
+     * @return QualitativeValue|array
+     */
+    public function getGreater()
+    {
+        return $this->getProperty('greater');
+    }
+    /**
+     * This ordering relation for qualitative values indicates that the subject is greater than or equal to the object.
+     * @see https://schema.org/greaterOrEqual
+     * @param QualitativeValue|array $value
+     * @return $this
+     */
+    public function greaterOrEqual($value)
+    {
+        $this->setProperty('greaterOrEqual', $value);
+        return $this;
+    }
 
-  /**
-  * @param StructuredValue|string|QualitativeValue|PropertyValue|MeasurementTypeEnumeration|QuantitativeValue|DefinedTerm|Enumeration|array $value
-  * @return $this
-  */
-  public function setValueReference($value)
-  {
-  $this->setProperty('valueReference', $value);
-  return $this;
-  }
+    /**
+     * @param QualitativeValue|array $value
+     * @return $this
+     */
+    public function setGreaterOrEqual($value)
+    {
+        $this->setProperty('greaterOrEqual', $value);
+        return $this;
+    }
 
-  /**
-  * @param StructuredValue|string|QualitativeValue|PropertyValue|MeasurementTypeEnumeration|QuantitativeValue|DefinedTerm|Enumeration $value
-  * @return $this
-  */
-  public function addValueReference($value)
-  {
-  $current = $this->getProperty('valueReference');
-  if ($current === null) {
-  $current = [];
-  } elseif (!is_array($current)) {
-  $current = [$current];
-  }
-  $current[] = $value;
-  $this->setProperty('valueReference', $current);
-  return $this;
-  }
+    /**
+     * @param QualitativeValue $value
+     * @return $this
+     */
+    public function addGreaterOrEqual($value)
+    {
+        $current = $this->getProperty('greaterOrEqual');
+        if ($current === null) {
+            $current = [];
+        } elseif (!is_array($current)) {
+            $current = [$current];
+        }
+        $current[] = $value;
+        $this->setProperty('greaterOrEqual', $current);
+        return $this;
+    }
 
-  /**
-  * @return StructuredValue|string|QualitativeValue|PropertyValue|MeasurementTypeEnumeration|QuantitativeValue|DefinedTerm|Enumeration|array
-  */
-  public function getValueReference()
-  {
-  return $this->getProperty('valueReference');
-  }
+    /**
+     * @return QualitativeValue|array
+     */
+    public function getGreaterOrEqual()
+    {
+        return $this->getProperty('greaterOrEqual');
+    }
+    /**
+     * This ordering relation for qualitative values indicates that the subject is lesser than or equal to the object.
+     * @see https://schema.org/lesserOrEqual
+     * @param QualitativeValue|array $value
+     * @return $this
+     */
+    public function lesserOrEqual($value)
+    {
+        $this->setProperty('lesserOrEqual', $value);
+        return $this;
+    }
 
+    /**
+     * @param QualitativeValue|array $value
+     * @return $this
+     */
+    public function setLesserOrEqual($value)
+    {
+        $this->setProperty('lesserOrEqual', $value);
+        return $this;
+    }
 
-  /**
-      * This ordering relation for qualitative values indicates that the subject is
- * greater than the object.
-    * @param QualitativeValue|array $value
-  * @return $this
-  */
-  public function greater($value)
-  {
-  $this->setProperty('greater', $value);
-  return $this;
-  }
+    /**
+     * @param QualitativeValue $value
+     * @return $this
+     */
+    public function addLesserOrEqual($value)
+    {
+        $current = $this->getProperty('lesserOrEqual');
+        if ($current === null) {
+            $current = [];
+        } elseif (!is_array($current)) {
+            $current = [$current];
+        }
+        $current[] = $value;
+        $this->setProperty('lesserOrEqual', $current);
+        return $this;
+    }
 
-  /**
-  * @param QualitativeValue|array $value
-  * @return $this
-  */
-  public function setGreater($value)
-  {
-  $this->setProperty('greater', $value);
-  return $this;
-  }
+    /**
+     * @return QualitativeValue|array
+     */
+    public function getLesserOrEqual()
+    {
+        return $this->getProperty('lesserOrEqual');
+    }
+    /**
+     * This ordering relation for qualitative values indicates that the subject is not equal to the object.
+     * @see https://schema.org/nonEqual
+     * @param QualitativeValue|array $value
+     * @return $this
+     */
+    public function nonEqual($value)
+    {
+        $this->setProperty('nonEqual', $value);
+        return $this;
+    }
 
-  /**
-  * @param QualitativeValue $value
-  * @return $this
-  */
-  public function addGreater($value)
-  {
-  $current = $this->getProperty('greater');
-  if ($current === null) {
-  $current = [];
-  } elseif (!is_array($current)) {
-  $current = [$current];
-  }
-  $current[] = $value;
-  $this->setProperty('greater', $current);
-  return $this;
-  }
+    /**
+     * @param QualitativeValue|array $value
+     * @return $this
+     */
+    public function setNonEqual($value)
+    {
+        $this->setProperty('nonEqual', $value);
+        return $this;
+    }
 
-  /**
-  * @return QualitativeValue|array
-  */
-  public function getGreater()
-  {
-  return $this->getProperty('greater');
-  }
+    /**
+     * @param QualitativeValue $value
+     * @return $this
+     */
+    public function addNonEqual($value)
+    {
+        $current = $this->getProperty('nonEqual');
+        if ($current === null) {
+            $current = [];
+        } elseif (!is_array($current)) {
+            $current = [$current];
+        }
+        $current[] = $value;
+        $this->setProperty('nonEqual', $current);
+        return $this;
+    }
 
+    /**
+     * @return QualitativeValue|array
+     */
+    public function getNonEqual()
+    {
+        return $this->getProperty('nonEqual');
+    }
+    /**
+     * This ordering relation for qualitative values indicates that the subject is equal to the object.
+     * @see https://schema.org/equal
+     * @param QualitativeValue|array $value
+     * @return $this
+     */
+    public function equal($value)
+    {
+        $this->setProperty('equal', $value);
+        return $this;
+    }
 
-  /**
-      * This ordering relation for qualitative values indicates that the subject is
- * greater than or equal to the object.
-    * @param QualitativeValue|array $value
-  * @return $this
-  */
-  public function greaterOrEqual($value)
-  {
-  $this->setProperty('greaterOrEqual', $value);
-  return $this;
-  }
+    /**
+     * @param QualitativeValue|array $value
+     * @return $this
+     */
+    public function setEqual($value)
+    {
+        $this->setProperty('equal', $value);
+        return $this;
+    }
 
-  /**
-  * @param QualitativeValue|array $value
-  * @return $this
-  */
-  public function setGreaterOrEqual($value)
-  {
-  $this->setProperty('greaterOrEqual', $value);
-  return $this;
-  }
+    /**
+     * @param QualitativeValue $value
+     * @return $this
+     */
+    public function addEqual($value)
+    {
+        $current = $this->getProperty('equal');
+        if ($current === null) {
+            $current = [];
+        } elseif (!is_array($current)) {
+            $current = [$current];
+        }
+        $current[] = $value;
+        $this->setProperty('equal', $current);
+        return $this;
+    }
 
-  /**
-  * @param QualitativeValue $value
-  * @return $this
-  */
-  public function addGreaterOrEqual($value)
-  {
-  $current = $this->getProperty('greaterOrEqual');
-  if ($current === null) {
-  $current = [];
-  } elseif (!is_array($current)) {
-  $current = [$current];
-  }
-  $current[] = $value;
-  $this->setProperty('greaterOrEqual', $current);
-  return $this;
-  }
-
-  /**
-  * @return QualitativeValue|array
-  */
-  public function getGreaterOrEqual()
-  {
-  return $this->getProperty('greaterOrEqual');
-  }
-
-
-  /**
-      * This ordering relation for qualitative values indicates that the subject is
- * lesser than or equal to the object.
-    * @param QualitativeValue|array $value
-  * @return $this
-  */
-  public function lesserOrEqual($value)
-  {
-  $this->setProperty('lesserOrEqual', $value);
-  return $this;
-  }
-
-  /**
-  * @param QualitativeValue|array $value
-  * @return $this
-  */
-  public function setLesserOrEqual($value)
-  {
-  $this->setProperty('lesserOrEqual', $value);
-  return $this;
-  }
-
-  /**
-  * @param QualitativeValue $value
-  * @return $this
-  */
-  public function addLesserOrEqual($value)
-  {
-  $current = $this->getProperty('lesserOrEqual');
-  if ($current === null) {
-  $current = [];
-  } elseif (!is_array($current)) {
-  $current = [$current];
-  }
-  $current[] = $value;
-  $this->setProperty('lesserOrEqual', $current);
-  return $this;
-  }
-
-  /**
-  * @return QualitativeValue|array
-  */
-  public function getLesserOrEqual()
-  {
-  return $this->getProperty('lesserOrEqual');
-  }
-
-
-  /**
-      * This ordering relation for qualitative values indicates that the subject is
- * not equal to the object.
-    * @param QualitativeValue|array $value
-  * @return $this
-  */
-  public function nonEqual($value)
-  {
-  $this->setProperty('nonEqual', $value);
-  return $this;
-  }
-
-  /**
-  * @param QualitativeValue|array $value
-  * @return $this
-  */
-  public function setNonEqual($value)
-  {
-  $this->setProperty('nonEqual', $value);
-  return $this;
-  }
-
-  /**
-  * @param QualitativeValue $value
-  * @return $this
-  */
-  public function addNonEqual($value)
-  {
-  $current = $this->getProperty('nonEqual');
-  if ($current === null) {
-  $current = [];
-  } elseif (!is_array($current)) {
-  $current = [$current];
-  }
-  $current[] = $value;
-  $this->setProperty('nonEqual', $current);
-  return $this;
-  }
-
-  /**
-  * @return QualitativeValue|array
-  */
-  public function getNonEqual()
-  {
-  return $this->getProperty('nonEqual');
-  }
-
-
-  /**
-      * This ordering relation for qualitative values indicates that the subject is
- * equal to the object.
-    * @param QualitativeValue|array $value
-  * @return $this
-  */
-  public function equal($value)
-  {
-  $this->setProperty('equal', $value);
-  return $this;
-  }
-
-  /**
-  * @param QualitativeValue|array $value
-  * @return $this
-  */
-  public function setEqual($value)
-  {
-  $this->setProperty('equal', $value);
-  return $this;
-  }
-
-  /**
-  * @param QualitativeValue $value
-  * @return $this
-  */
-  public function addEqual($value)
-  {
-  $current = $this->getProperty('equal');
-  if ($current === null) {
-  $current = [];
-  } elseif (!is_array($current)) {
-  $current = [$current];
-  }
-  $current[] = $value;
-  $this->setProperty('equal', $current);
-  return $this;
-  }
-
-  /**
-  * @return QualitativeValue|array
-  */
-  public function getEqual()
-  {
-  return $this->getProperty('equal');
-  }
-
-
+    /**
+     * @return QualitativeValue|array
+     */
+    public function getEqual()
+    {
+        return $this->getProperty('equal');
+    }
 }

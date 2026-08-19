@@ -1,69 +1,63 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Sohophp\SchemaOrg\Thing\Intangible\Trip;
 
-  use Sohophp\SchemaOrg\Thing\Intangible\Trip;
-  use Sohophp\SchemaOrg\Thing\Intangible\Audience;
+use Sohophp\SchemaOrg\Thing\Intangible\Trip;
+use Sohophp\SchemaOrg\Thing\Intangible\Audience;
 
 /**
-  * A tourist trip. A created itinerary of visits to one or more places of
- * interest ([[TouristAttraction]]/[[TouristDestination]]) often linked by a
- * similar theme, geographic area, or interest to a particular [[touristType]].
- * The [UNWTO](http://www2.unwto.org/) defines tourism trip as the Trip taken by
- * visitors.
- *   (See examples below.)
-  * @see schema:TouristTrip
-* @package Sohophp\SchemaOrg\Thing\Intangible\Trip
-*/
+ * A tourist trip. A created itinerary of visits to one or more places of interest ([[TouristAttraction]]/[[TouristDestination]]) often linked by a similar theme, geographic area, or interest to a particular [[touristType]]. The [UNWTO](http://www2.unwto.org/) defines tourism trip as the Trip taken by visitors. (See examples below.)
+ * @see https://schema.org/TouristTrip
+ * @package Sohophp\SchemaOrg\Thing\Intangible\Trip
+ */
 class TouristTrip extends Trip
 {
+    /**
+     * Attraction suitable for type(s) of tourist. E.g. children, visitors from a particular country, etc.
+     * @see https://schema.org/touristType
+     * @param string|Audience|array $value
+     * @return $this
+     */
+    public function touristType($value)
+    {
+        $this->setProperty('touristType', $value);
+        return $this;
+    }
 
+    /**
+     * @param string|Audience|array $value
+     * @return $this
+     */
+    public function setTouristType($value)
+    {
+        $this->setProperty('touristType', $value);
+        return $this;
+    }
 
-  /**
-      * Attraction suitable for type(s) of tourist. E.g. children, visitors from a
- * particular country, etc.
-    * @param string|Audience|array $value
-  * @return $this
-  */
-  public function touristType($value)
-  {
-  $this->setProperty('touristType', $value);
-  return $this;
-  }
+    /**
+     * @param string|Audience $value
+     * @return $this
+     */
+    public function addTouristType($value)
+    {
+        $current = $this->getProperty('touristType');
+        if ($current === null) {
+            $current = [];
+        } elseif (!is_array($current)) {
+            $current = [$current];
+        }
+        $current[] = $value;
+        $this->setProperty('touristType', $current);
+        return $this;
+    }
 
-  /**
-  * @param string|Audience|array $value
-  * @return $this
-  */
-  public function setTouristType($value)
-  {
-  $this->setProperty('touristType', $value);
-  return $this;
-  }
-
-  /**
-  * @param string|Audience $value
-  * @return $this
-  */
-  public function addTouristType($value)
-  {
-  $current = $this->getProperty('touristType');
-  if ($current === null) {
-  $current = [];
-  } elseif (!is_array($current)) {
-  $current = [$current];
-  }
-  $current[] = $value;
-  $this->setProperty('touristType', $current);
-  return $this;
-  }
-
-  /**
-  * @return string|Audience|array
-  */
-  public function getTouristType()
-  {
-  return $this->getProperty('touristType');
-  }
-
-
+    /**
+     * @return string|Audience|array
+     */
+    public function getTouristType()
+    {
+        return $this->getProperty('touristType');
+    }
 }

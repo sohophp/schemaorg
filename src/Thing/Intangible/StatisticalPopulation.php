@@ -1,81 +1,63 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Sohophp\SchemaOrg\Thing\Intangible;
 
-  use Sohophp\SchemaOrg\Thing\Intangible;
-  use Sohophp\SchemaOrg\Thing\Intangible\Class;
+use Sohophp\SchemaOrg\Thing\Intangible;
+use Sohophp\SchemaOrg\Thing\Intangible\Class;
 
 /**
-  * A StatisticalPopulation is a set of instances of a certain given type that
- * satisfy some set of constraints. The property [[populationType]] is used to
- * specify the type. Any property that can be used on instances of that type can
- * appear on the statistical population. For example, a
- * [[StatisticalPopulation]] representing all [[Person]]s with a
- * [[homeLocation]] of East Podunk California would be described by applying the
- * appropriate [[homeLocation]] and [[populationType]] properties to a
- * [[StatisticalPopulation]] item that stands for that set of people.
- * The properties [[numConstraints]] and [[constraintProperty]] are used to
- * specify which of the populations properties are used to specify the
- * population. Note that the sense of "population" used here is the general
- * sense of a statistical
- * population, and does not imply that the population consists of people. For
- * example, a [[populationType]] of [[Event]] or [[NewsArticle]] could be used.
- * See also [[Observation]], where a [[populationType]] such as [[Person]] or
- * [[Event]] can be indicated directly. In most cases it may be better to use
- * [[StatisticalVariable]] instead of [[StatisticalPopulation]].
-  * @see schema:StatisticalPopulation
-* @package Sohophp\SchemaOrg\Thing\Intangible
-*/
+ * A StatisticalPopulation is a set of instances of a certain given type that satisfy some set of constraints. The property [[populationType]] is used to specify the type. Any property that can be used on instances of that type can appear on the statistical population. For example, a [[StatisticalPopulation]] representing all [[Person]]s with a [[homeLocation]] of East Podunk California would be described by applying the appropriate [[homeLocation]] and [[populationType]] properties to a [[StatisticalPopulation]] item that stands for that set of people. The properties [[numConstraints]] and [[constraintProperty]] are used to specify which of the populations properties are used to specify the population. Note that the sense of "population" used here is the general sense of a statistical population, and does not imply that the population consists of people. For example, a [[populationType]] of [[Event]] or [[NewsArticle]] could be used. See also [[Observation]], where a [[populationType]] such as [[Person]] or [[Event]] can be indicated directly. In most cases it may be better to use [[StatisticalVariable]] instead of [[StatisticalPopulation]].
+ * @see https://schema.org/StatisticalPopulation
+ * @package Sohophp\SchemaOrg\Thing\Intangible
+ */
 class StatisticalPopulation extends Intangible
 {
+    /**
+     * Indicates the populationType common to all members of a [[StatisticalPopulation]] or all cases within the scope of a [[StatisticalVariable]].
+     * @see https://schema.org/populationType
+     * @param Class|array $value
+     * @return $this
+     */
+    public function populationType($value)
+    {
+        $this->setProperty('populationType', $value);
+        return $this;
+    }
 
+    /**
+     * @param Class|array $value
+     * @return $this
+     */
+    public function setPopulationType($value)
+    {
+        $this->setProperty('populationType', $value);
+        return $this;
+    }
 
-  /**
-      * Indicates the populationType common to all members of a
- * [[StatisticalPopulation]] or all cases within the scope of a
- * [[StatisticalVariable]].
-    * @param Class|array $value
-  * @return $this
-  */
-  public function populationType($value)
-  {
-  $this->setProperty('populationType', $value);
-  return $this;
-  }
+    /**
+     * @param Class $value
+     * @return $this
+     */
+    public function addPopulationType($value)
+    {
+        $current = $this->getProperty('populationType');
+        if ($current === null) {
+            $current = [];
+        } elseif (!is_array($current)) {
+            $current = [$current];
+        }
+        $current[] = $value;
+        $this->setProperty('populationType', $current);
+        return $this;
+    }
 
-  /**
-  * @param Class|array $value
-  * @return $this
-  */
-  public function setPopulationType($value)
-  {
-  $this->setProperty('populationType', $value);
-  return $this;
-  }
-
-  /**
-  * @param Class $value
-  * @return $this
-  */
-  public function addPopulationType($value)
-  {
-  $current = $this->getProperty('populationType');
-  if ($current === null) {
-  $current = [];
-  } elseif (!is_array($current)) {
-  $current = [$current];
-  }
-  $current[] = $value;
-  $this->setProperty('populationType', $current);
-  return $this;
-  }
-
-  /**
-  * @return Class|array
-  */
-  public function getPopulationType()
-  {
-  return $this->getProperty('populationType');
-  }
-
-
+    /**
+     * @return Class|array
+     */
+    public function getPopulationType()
+    {
+        return $this->getProperty('populationType');
+    }
 }

@@ -1,15 +1,16 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Sohophp\SchemaOrg\Thing\Place\CivicStructure;
 
-  use Sohophp\SchemaOrg\Thing\Place\CivicStructure;
+use Sohophp\SchemaOrg\Thing\Place\CivicStructure;
 
 /**
-  * A crematorium.
-  * @see schema:Crematorium
-* @package Sohophp\SchemaOrg\Thing\Place\CivicStructure
-*/
+ * A crematorium.
+ * @see https://schema.org/Crematorium
+ * @package Sohophp\SchemaOrg\Thing\Place\CivicStructure
+ */
 class Crematorium extends CivicStructure
 {
-
-
 }

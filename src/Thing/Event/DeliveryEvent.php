@@ -1,204 +1,201 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Sohophp\SchemaOrg\Thing\Event;
 
-  use Sohophp\SchemaOrg\Thing\Event;
-  use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\DeliveryMethod;
+use Sohophp\SchemaOrg\Thing\Event;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\DeliveryMethod;
 
 /**
-  * An event involving the delivery of an item.
-  * @see schema:DeliveryEvent
-* @package Sohophp\SchemaOrg\Thing\Event
-*/
+ * An event involving the delivery of an item.
+ * @see https://schema.org/DeliveryEvent
+ * @package Sohophp\SchemaOrg\Thing\Event
+ */
 class DeliveryEvent extends Event
 {
+    /**
+     * Password, PIN, or access code needed for delivery (e.g. from a locker).
+     * @see https://schema.org/accessCode
+     * @param string|array $value
+     * @return $this
+     */
+    public function accessCode($value)
+    {
+        $this->setProperty('accessCode', $value);
+        return $this;
+    }
 
+    /**
+     * @param string|array $value
+     * @return $this
+     */
+    public function setAccessCode($value)
+    {
+        $this->setProperty('accessCode', $value);
+        return $this;
+    }
 
-  /**
-      * Password, PIN, or access code needed for delivery (e.g. from a locker).
-    * @param string|array $value
-  * @return $this
-  */
-  public function accessCode($value)
-  {
-  $this->setProperty('accessCode', $value);
-  return $this;
-  }
+    /**
+     * @param string $value
+     * @return $this
+     */
+    public function addAccessCode($value)
+    {
+        $current = $this->getProperty('accessCode');
+        if ($current === null) {
+            $current = [];
+        } elseif (!is_array($current)) {
+            $current = [$current];
+        }
+        $current[] = $value;
+        $this->setProperty('accessCode', $current);
+        return $this;
+    }
 
-  /**
-  * @param string|array $value
-  * @return $this
-  */
-  public function setAccessCode($value)
-  {
-  $this->setProperty('accessCode', $value);
-  return $this;
-  }
+    /**
+     * @return string|array
+     */
+    public function getAccessCode()
+    {
+        return $this->getProperty('accessCode');
+    }
+    /**
+     * Method used for delivery or shipping.
+     * @see https://schema.org/hasDeliveryMethod
+     * @param DeliveryMethod|array $value
+     * @return $this
+     */
+    public function hasDeliveryMethod($value)
+    {
+        $this->setProperty('hasDeliveryMethod', $value);
+        return $this;
+    }
 
-  /**
-  * @param string $value
-  * @return $this
-  */
-  public function addAccessCode($value)
-  {
-  $current = $this->getProperty('accessCode');
-  if ($current === null) {
-  $current = [];
-  } elseif (!is_array($current)) {
-  $current = [$current];
-  }
-  $current[] = $value;
-  $this->setProperty('accessCode', $current);
-  return $this;
-  }
+    /**
+     * @param DeliveryMethod|array $value
+     * @return $this
+     */
+    public function setHasDeliveryMethod($value)
+    {
+        $this->setProperty('hasDeliveryMethod', $value);
+        return $this;
+    }
 
-  /**
-  * @return string|array
-  */
-  public function getAccessCode()
-  {
-  return $this->getProperty('accessCode');
-  }
+    /**
+     * @param DeliveryMethod $value
+     * @return $this
+     */
+    public function addHasDeliveryMethod($value)
+    {
+        $current = $this->getProperty('hasDeliveryMethod');
+        if ($current === null) {
+            $current = [];
+        } elseif (!is_array($current)) {
+            $current = [$current];
+        }
+        $current[] = $value;
+        $this->setProperty('hasDeliveryMethod', $current);
+        return $this;
+    }
 
+    /**
+     * @return DeliveryMethod|array
+     */
+    public function getHasDeliveryMethod()
+    {
+        return $this->getProperty('hasDeliveryMethod');
+    }
+    /**
+     * When the item is available for pickup from the store, locker, etc.
+     * @see https://schema.org/availableFrom
+     * @param mixed $value
+     * @return $this
+     */
+    public function availableFrom($value)
+    {
+        $this->setProperty('availableFrom', $value);
+        return $this;
+    }
 
-  /**
-      * Method used for delivery or shipping.
-    * @param DeliveryMethod|array $value
-  * @return $this
-  */
-  public function hasDeliveryMethod($value)
-  {
-  $this->setProperty('hasDeliveryMethod', $value);
-  return $this;
-  }
+    /**
+     * @param mixed $value
+     * @return $this
+     */
+    public function setAvailableFrom($value)
+    {
+        $this->setProperty('availableFrom', $value);
+        return $this;
+    }
 
-  /**
-  * @param DeliveryMethod|array $value
-  * @return $this
-  */
-  public function setHasDeliveryMethod($value)
-  {
-  $this->setProperty('hasDeliveryMethod', $value);
-  return $this;
-  }
+    /**
+     * @param mixed $value
+     * @return $this
+     */
+    public function addAvailableFrom($value)
+    {
+        $current = $this->getProperty('availableFrom');
+        if ($current === null) {
+            $current = [];
+        } elseif (!is_array($current)) {
+            $current = [$current];
+        }
+        $current[] = $value;
+        $this->setProperty('availableFrom', $current);
+        return $this;
+    }
 
-  /**
-  * @param DeliveryMethod $value
-  * @return $this
-  */
-  public function addHasDeliveryMethod($value)
-  {
-  $current = $this->getProperty('hasDeliveryMethod');
-  if ($current === null) {
-  $current = [];
-  } elseif (!is_array($current)) {
-  $current = [$current];
-  }
-  $current[] = $value;
-  $this->setProperty('hasDeliveryMethod', $current);
-  return $this;
-  }
+    /**
+     * @return mixed
+     */
+    public function getAvailableFrom()
+    {
+        return $this->getProperty('availableFrom');
+    }
+    /**
+     * After this date, the item will no longer be available for pickup.
+     * @see https://schema.org/availableThrough
+     * @param mixed $value
+     * @return $this
+     */
+    public function availableThrough($value)
+    {
+        $this->setProperty('availableThrough', $value);
+        return $this;
+    }
 
-  /**
-  * @return DeliveryMethod|array
-  */
-  public function getHasDeliveryMethod()
-  {
-  return $this->getProperty('hasDeliveryMethod');
-  }
+    /**
+     * @param mixed $value
+     * @return $this
+     */
+    public function setAvailableThrough($value)
+    {
+        $this->setProperty('availableThrough', $value);
+        return $this;
+    }
 
+    /**
+     * @param mixed $value
+     * @return $this
+     */
+    public function addAvailableThrough($value)
+    {
+        $current = $this->getProperty('availableThrough');
+        if ($current === null) {
+            $current = [];
+        } elseif (!is_array($current)) {
+            $current = [$current];
+        }
+        $current[] = $value;
+        $this->setProperty('availableThrough', $current);
+        return $this;
+    }
 
-  /**
-      * When the item is available for pickup from the store, locker, etc.
-    * @param mixed $value
-  * @return $this
-  */
-  public function availableFrom($value)
-  {
-  $this->setProperty('availableFrom', $value);
-  return $this;
-  }
-
-  /**
-  * @param mixed $value
-  * @return $this
-  */
-  public function setAvailableFrom($value)
-  {
-  $this->setProperty('availableFrom', $value);
-  return $this;
-  }
-
-  /**
-  * @param mixed $value
-  * @return $this
-  */
-  public function addAvailableFrom($value)
-  {
-  $current = $this->getProperty('availableFrom');
-  if ($current === null) {
-  $current = [];
-  } elseif (!is_array($current)) {
-  $current = [$current];
-  }
-  $current[] = $value;
-  $this->setProperty('availableFrom', $current);
-  return $this;
-  }
-
-  /**
-  * @return mixed
-  */
-  public function getAvailableFrom()
-  {
-  return $this->getProperty('availableFrom');
-  }
-
-
-  /**
-      * After this date, the item will no longer be available for pickup.
-    * @param mixed $value
-  * @return $this
-  */
-  public function availableThrough($value)
-  {
-  $this->setProperty('availableThrough', $value);
-  return $this;
-  }
-
-  /**
-  * @param mixed $value
-  * @return $this
-  */
-  public function setAvailableThrough($value)
-  {
-  $this->setProperty('availableThrough', $value);
-  return $this;
-  }
-
-  /**
-  * @param mixed $value
-  * @return $this
-  */
-  public function addAvailableThrough($value)
-  {
-  $current = $this->getProperty('availableThrough');
-  if ($current === null) {
-  $current = [];
-  } elseif (!is_array($current)) {
-  $current = [$current];
-  }
-  $current[] = $value;
-  $this->setProperty('availableThrough', $current);
-  return $this;
-  }
-
-  /**
-  * @return mixed
-  */
-  public function getAvailableThrough()
-  {
-  return $this->getProperty('availableThrough');
-  }
-
-
+    /**
+     * @return mixed
+     */
+    public function getAvailableThrough()
+    {
+        return $this->getProperty('availableThrough');
+    }
 }

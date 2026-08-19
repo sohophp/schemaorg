@@ -1,15 +1,16 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Sohophp\SchemaOrg\Thing\Intangible\Enumeration;
 
-  use Sohophp\SchemaOrg\Thing\Intangible\Enumeration;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration;
 
 /**
-  * An enumeration of several kinds of Map.
-  * @see schema:MapCategoryType
-* @package Sohophp\SchemaOrg\Thing\Intangible\Enumeration
-*/
+ * An enumeration of several kinds of Map.
+ * @see https://schema.org/MapCategoryType
+ * @package Sohophp\SchemaOrg\Thing\Intangible\Enumeration
+ */
 class MapCategoryType extends Enumeration
 {
-
-
 }

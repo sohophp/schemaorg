@@ -1,110 +1,109 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Sohophp\SchemaOrg\Thing\Action;
 
-  use Sohophp\SchemaOrg\Thing\Action;
-  use Sohophp\SchemaOrg\Thing;
+use Sohophp\SchemaOrg\Thing\Action;
+use Sohophp\SchemaOrg\Thing;
 
 /**
-  * The act of managing by changing/editing the state of the object.
-  * @see schema:UpdateAction
-* @package Sohophp\SchemaOrg\Thing\Action
-*/
+ * The act of managing by changing/editing the state of the object.
+ * @see https://schema.org/UpdateAction
+ * @package Sohophp\SchemaOrg\Thing\Action
+ */
 class UpdateAction extends Action
 {
+    /**
+     * A sub property of object. The collection target of the action.
+     * @see https://schema.org/targetCollection
+     * @param Thing|array $value
+     * @return $this
+     */
+    public function targetCollection($value)
+    {
+        $this->setProperty('targetCollection', $value);
+        return $this;
+    }
 
+    /**
+     * @param Thing|array $value
+     * @return $this
+     */
+    public function setTargetCollection($value)
+    {
+        $this->setProperty('targetCollection', $value);
+        return $this;
+    }
 
-  /**
-      * A sub property of object. The collection target of the action.
-    * @param Thing|array $value
-  * @return $this
-  */
-  public function targetCollection($value)
-  {
-  $this->setProperty('targetCollection', $value);
-  return $this;
-  }
+    /**
+     * @param Thing $value
+     * @return $this
+     */
+    public function addTargetCollection($value)
+    {
+        $current = $this->getProperty('targetCollection');
+        if ($current === null) {
+            $current = [];
+        } elseif (!is_array($current)) {
+            $current = [$current];
+        }
+        $current[] = $value;
+        $this->setProperty('targetCollection', $current);
+        return $this;
+    }
 
-  /**
-  * @param Thing|array $value
-  * @return $this
-  */
-  public function setTargetCollection($value)
-  {
-  $this->setProperty('targetCollection', $value);
-  return $this;
-  }
+    /**
+     * @return Thing|array
+     */
+    public function getTargetCollection()
+    {
+        return $this->getProperty('targetCollection');
+    }
+    /**
+     * A sub property of object. The collection target of the action.
+     * @see https://schema.org/collection
+     * @param Thing|array $value
+     * @return $this
+     */
+    public function collection($value)
+    {
+        $this->setProperty('collection', $value);
+        return $this;
+    }
 
-  /**
-  * @param Thing $value
-  * @return $this
-  */
-  public function addTargetCollection($value)
-  {
-  $current = $this->getProperty('targetCollection');
-  if ($current === null) {
-  $current = [];
-  } elseif (!is_array($current)) {
-  $current = [$current];
-  }
-  $current[] = $value;
-  $this->setProperty('targetCollection', $current);
-  return $this;
-  }
+    /**
+     * @param Thing|array $value
+     * @return $this
+     */
+    public function setCollection($value)
+    {
+        $this->setProperty('collection', $value);
+        return $this;
+    }
 
-  /**
-  * @return Thing|array
-  */
-  public function getTargetCollection()
-  {
-  return $this->getProperty('targetCollection');
-  }
+    /**
+     * @param Thing $value
+     * @return $this
+     */
+    public function addCollection($value)
+    {
+        $current = $this->getProperty('collection');
+        if ($current === null) {
+            $current = [];
+        } elseif (!is_array($current)) {
+            $current = [$current];
+        }
+        $current[] = $value;
+        $this->setProperty('collection', $current);
+        return $this;
+    }
 
-
-  /**
-      * A sub property of object. The collection target of the action.
-    * @param Thing|array $value
-  * @return $this
-  */
-  public function collection($value)
-  {
-  $this->setProperty('collection', $value);
-  return $this;
-  }
-
-  /**
-  * @param Thing|array $value
-  * @return $this
-  */
-  public function setCollection($value)
-  {
-  $this->setProperty('collection', $value);
-  return $this;
-  }
-
-  /**
-  * @param Thing $value
-  * @return $this
-  */
-  public function addCollection($value)
-  {
-  $current = $this->getProperty('collection');
-  if ($current === null) {
-  $current = [];
-  } elseif (!is_array($current)) {
-  $current = [$current];
-  }
-  $current[] = $value;
-  $this->setProperty('collection', $current);
-  return $this;
-  }
-
-  /**
-  * @return Thing|array
-  */
-  public function getCollection()
-  {
-  return $this->getProperty('collection');
-  }
-
-
+    /**
+     * @return Thing|array
+     */
+    public function getCollection()
+    {
+        return $this->getProperty('collection');
+    }
 }

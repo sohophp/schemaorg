@@ -1,159 +1,156 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Sohophp\SchemaOrg\Thing\CreativeWork;
 
-  use Sohophp\SchemaOrg\Thing\CreativeWork;
-  use Sohophp\SchemaOrg\Thing\CreativeWork\MusicRecording;
-  use Sohophp\SchemaOrg\Thing\Intangible\ItemList;
+use Sohophp\SchemaOrg\Thing\CreativeWork;
+use Sohophp\SchemaOrg\Thing\CreativeWork\MusicRecording;
+use Sohophp\SchemaOrg\Thing\Intangible\ItemList;
 
 /**
-  * A collection of music tracks in playlist form.
-  * @see schema:MusicPlaylist
-* @package Sohophp\SchemaOrg\Thing\CreativeWork
-*/
+ * A collection of music tracks in playlist form.
+ * @see https://schema.org/MusicPlaylist
+ * @package Sohophp\SchemaOrg\Thing\CreativeWork
+ */
 class MusicPlaylist extends CreativeWork
 {
+    /**
+     * A music recording (track)&#x2014;usually a single song.
+     * @see https://schema.org/tracks
+     * @param MusicRecording|array $value
+     * @return $this
+     */
+    public function tracks($value)
+    {
+        $this->setProperty('tracks', $value);
+        return $this;
+    }
 
+    /**
+     * @param MusicRecording|array $value
+     * @return $this
+     */
+    public function setTracks($value)
+    {
+        $this->setProperty('tracks', $value);
+        return $this;
+    }
 
-  /**
-      * A music recording (track)&#x2014;usually a single song.
-    * @param MusicRecording|array $value
-  * @return $this
-  */
-  public function tracks($value)
-  {
-  $this->setProperty('tracks', $value);
-  return $this;
-  }
+    /**
+     * @param MusicRecording $value
+     * @return $this
+     */
+    public function addTracks($value)
+    {
+        $current = $this->getProperty('tracks');
+        if ($current === null) {
+            $current = [];
+        } elseif (!is_array($current)) {
+            $current = [$current];
+        }
+        $current[] = $value;
+        $this->setProperty('tracks', $current);
+        return $this;
+    }
 
-  /**
-  * @param MusicRecording|array $value
-  * @return $this
-  */
-  public function setTracks($value)
-  {
-  $this->setProperty('tracks', $value);
-  return $this;
-  }
+    /**
+     * @return MusicRecording|array
+     */
+    public function getTracks()
+    {
+        return $this->getProperty('tracks');
+    }
+    /**
+     * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
+     * @see https://schema.org/track
+     * @param ItemList|MusicRecording|array $value
+     * @return $this
+     */
+    public function track($value)
+    {
+        $this->setProperty('track', $value);
+        return $this;
+    }
 
-  /**
-  * @param MusicRecording $value
-  * @return $this
-  */
-  public function addTracks($value)
-  {
-  $current = $this->getProperty('tracks');
-  if ($current === null) {
-  $current = [];
-  } elseif (!is_array($current)) {
-  $current = [$current];
-  }
-  $current[] = $value;
-  $this->setProperty('tracks', $current);
-  return $this;
-  }
+    /**
+     * @param ItemList|MusicRecording|array $value
+     * @return $this
+     */
+    public function setTrack($value)
+    {
+        $this->setProperty('track', $value);
+        return $this;
+    }
 
-  /**
-  * @return MusicRecording|array
-  */
-  public function getTracks()
-  {
-  return $this->getProperty('tracks');
-  }
+    /**
+     * @param ItemList|MusicRecording $value
+     * @return $this
+     */
+    public function addTrack($value)
+    {
+        $current = $this->getProperty('track');
+        if ($current === null) {
+            $current = [];
+        } elseif (!is_array($current)) {
+            $current = [$current];
+        }
+        $current[] = $value;
+        $this->setProperty('track', $current);
+        return $this;
+    }
 
+    /**
+     * @return ItemList|MusicRecording|array
+     */
+    public function getTrack()
+    {
+        return $this->getProperty('track');
+    }
+    /**
+     * The number of tracks in this album or playlist.
+     * @see https://schema.org/numTracks
+     * @param int|array $value
+     * @return $this
+     */
+    public function numTracks($value)
+    {
+        $this->setProperty('numTracks', $value);
+        return $this;
+    }
 
-  /**
-      * A music recording (track)&#x2014;usually a single song. If an ItemList is
- * given, the list should contain items of type MusicRecording.
-    * @param ItemList|MusicRecording|array $value
-  * @return $this
-  */
-  public function track($value)
-  {
-  $this->setProperty('track', $value);
-  return $this;
-  }
+    /**
+     * @param int|array $value
+     * @return $this
+     */
+    public function setNumTracks($value)
+    {
+        $this->setProperty('numTracks', $value);
+        return $this;
+    }
 
-  /**
-  * @param ItemList|MusicRecording|array $value
-  * @return $this
-  */
-  public function setTrack($value)
-  {
-  $this->setProperty('track', $value);
-  return $this;
-  }
+    /**
+     * @param int $value
+     * @return $this
+     */
+    public function addNumTracks($value)
+    {
+        $current = $this->getProperty('numTracks');
+        if ($current === null) {
+            $current = [];
+        } elseif (!is_array($current)) {
+            $current = [$current];
+        }
+        $current[] = $value;
+        $this->setProperty('numTracks', $current);
+        return $this;
+    }
 
-  /**
-  * @param ItemList|MusicRecording $value
-  * @return $this
-  */
-  public function addTrack($value)
-  {
-  $current = $this->getProperty('track');
-  if ($current === null) {
-  $current = [];
-  } elseif (!is_array($current)) {
-  $current = [$current];
-  }
-  $current[] = $value;
-  $this->setProperty('track', $current);
-  return $this;
-  }
-
-  /**
-  * @return ItemList|MusicRecording|array
-  */
-  public function getTrack()
-  {
-  return $this->getProperty('track');
-  }
-
-
-  /**
-      * The number of tracks in this album or playlist.
-    * @param int|array $value
-  * @return $this
-  */
-  public function numTracks($value)
-  {
-  $this->setProperty('numTracks', $value);
-  return $this;
-  }
-
-  /**
-  * @param int|array $value
-  * @return $this
-  */
-  public function setNumTracks($value)
-  {
-  $this->setProperty('numTracks', $value);
-  return $this;
-  }
-
-  /**
-  * @param int $value
-  * @return $this
-  */
-  public function addNumTracks($value)
-  {
-  $current = $this->getProperty('numTracks');
-  if ($current === null) {
-  $current = [];
-  } elseif (!is_array($current)) {
-  $current = [$current];
-  }
-  $current[] = $value;
-  $this->setProperty('numTracks', $current);
-  return $this;
-  }
-
-  /**
-  * @return int|array
-  */
-  public function getNumTracks()
-  {
-  return $this->getProperty('numTracks');
-  }
-
-
+    /**
+     * @return int|array
+     */
+    public function getNumTracks()
+    {
+        return $this->getProperty('numTracks');
+    }
 }

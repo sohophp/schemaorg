@@ -5,7 +5,7 @@ This repository publishes a PHP package through Composer and Packagist. GitHub i
 ## Current release
 
 - Package: `sohophp/schema-org`
-- Current version: `v5.0.1`
+- Current version: `v5.0.2`
 - PHP requirement: `^8.1.0`
 - Bundled schema.org data: v30.0
 - Schema data manifest: [`data/manifest.json`](../data/manifest.json)
@@ -15,8 +15,8 @@ This repository publishes a PHP package through Composer and Packagist. GitHub i
 - GitHub repository: <https://github.com/sohophp/schemaorg>
 - GitHub releases: <https://github.com/sohophp/schemaorg/releases>
 - GitHub Actions: <https://github.com/sohophp/schemaorg/actions>
-- Current tag: <https://github.com/sohophp/schemaorg/tree/v5.0.1>
-- GitHub tag release page: <https://github.com/sohophp/schemaorg/releases/tag/v5.0.1> (create a GitHub Release from this tag if release notes should be shown there)
+- Current tag: <https://github.com/sohophp/schemaorg/tree/v5.0.2>
+- GitHub tag release page: <https://github.com/sohophp/schemaorg/releases/tag/v5.0.2> (create a GitHub Release from this tag if release notes should be shown there)
 - Packagist: <https://packagist.org/packages/sohophp/schema-org>
 - Composer metadata: <https://repo.packagist.org/p2/sohophp/schema-org.json>
 - Schema.org: <https://schema.org/>
@@ -27,7 +27,7 @@ This repository publishes a PHP package through Composer and Packagist. GitHub i
 composer require sohophp/schema-org:^5.0
 ```
 
-Composer resolves the package from Packagist. Packagist reads the source repository and its Git tags; the `v5.0.1` GitHub tag identifies the current release.
+Composer resolves the package from Packagist. Packagist reads the source repository and its Git tags; the `v5.0.2` GitHub tag identifies the current release.
 
 ## Release flow
 

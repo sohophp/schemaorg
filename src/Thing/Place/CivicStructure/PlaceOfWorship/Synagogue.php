@@ -1,15 +1,16 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Sohophp\SchemaOrg\Thing\Place\CivicStructure\PlaceOfWorship;
 
-  use Sohophp\SchemaOrg\Thing\Place\CivicStructure\PlaceOfWorship;
+use Sohophp\SchemaOrg\Thing\Place\CivicStructure\PlaceOfWorship;
 
 /**
-  * A synagogue.
-  * @see schema:Synagogue
-* @package Sohophp\SchemaOrg\Thing\Place\CivicStructure\PlaceOfWorship
-*/
+ * A synagogue.
+ * @see https://schema.org/Synagogue
+ * @package Sohophp\SchemaOrg\Thing\Place\CivicStructure\PlaceOfWorship
+ */
 class Synagogue extends PlaceOfWorship
 {
-
-
 }

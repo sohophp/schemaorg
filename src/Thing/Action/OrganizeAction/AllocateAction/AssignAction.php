@@ -1,16 +1,16 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Sohophp\SchemaOrg\Thing\Action\OrganizeAction\AllocateAction;
 
-  use Sohophp\SchemaOrg\Thing\Action\OrganizeAction\AllocateAction;
+use Sohophp\SchemaOrg\Thing\Action\OrganizeAction\AllocateAction;
 
 /**
-  * The act of allocating an action/event/task to some destination (someone or
- * something).
-  * @see schema:AssignAction
-* @package Sohophp\SchemaOrg\Thing\Action\OrganizeAction\AllocateAction
-*/
+ * The act of allocating an action/event/task to some destination (someone or something).
+ * @see https://schema.org/AssignAction
+ * @package Sohophp\SchemaOrg\Thing\Action\OrganizeAction\AllocateAction
+ */
 class AssignAction extends AllocateAction
 {
-
-
 }

@@ -1,16 +1,16 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MedicalEnumeration;
 
-  use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MedicalEnumeration;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MedicalEnumeration;
 
 /**
-  * Categories of medical devices, organized by the purpose or intended use of
- * the device.
-  * @see schema:MedicalDevicePurpose
-* @package Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MedicalEnumeration
-*/
+ * Categories of medical devices, organized by the purpose or intended use of the device.
+ * @see https://schema.org/MedicalDevicePurpose
+ * @package Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MedicalEnumeration
+ */
 class MedicalDevicePurpose extends MedicalEnumeration
 {
-
-
 }

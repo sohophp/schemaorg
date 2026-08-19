@@ -1,15 +1,16 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Sohophp\SchemaOrg\Thing\Event;
 
-  use Sohophp\SchemaOrg\Thing\Event;
+use Sohophp\SchemaOrg\Thing\Event;
 
 /**
-  * Event type: Sales event.
-  * @see schema:SaleEvent
-* @package Sohophp\SchemaOrg\Thing\Event
-*/
+ * Event type: Sales event.
+ * @see https://schema.org/SaleEvent
+ * @package Sohophp\SchemaOrg\Thing\Event
+ */
 class SaleEvent extends Event
 {
-
-
 }

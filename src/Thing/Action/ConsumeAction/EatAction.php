@@ -1,15 +1,16 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Sohophp\SchemaOrg\Thing\Action\ConsumeAction;
 
-  use Sohophp\SchemaOrg\Thing\Action\ConsumeAction;
+use Sohophp\SchemaOrg\Thing\Action\ConsumeAction;
 
 /**
-  * The act of swallowing solid objects.
-  * @see schema:EatAction
-* @package Sohophp\SchemaOrg\Thing\Action\ConsumeAction
-*/
+ * The act of swallowing solid objects.
+ * @see https://schema.org/EatAction
+ * @package Sohophp\SchemaOrg\Thing\Action\ConsumeAction
+ */
 class EatAction extends ConsumeAction
 {
-
-
 }

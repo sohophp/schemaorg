@@ -1,69 +1,62 @@
 <?php
+
 namespace {{ class.namespace }};
 
 {% for use in class.uses %}
-  use {{ use }};
+use {{ use }};
 {% endfor %}
 
 /**
-{% for annotation in class.annotations %}
-  * {{ annotation }}
-{% endfor %}
-* @package {{ class.namespace }}
-*/
+{% for annotation in class.annotations %} * {{ annotation }}
+{% endfor %} * @package {{ class.namespace }}
+ */
 class {{ class.name }} extends {{ class.parent }}
 {
-
 {% for property in class.properties %}
+    /**
+{% for annotation in property.annotations %}     * {{ annotation }}
+{% endfor %}     * @param {{ property.range }} $value
+     * @return $this
+     */
+    public function {{ property.name }}({{ property.range_default?property.range_default~' $value':'$value' }})
+    {
+        $this->setProperty('{{ property.name }}', $value);
+        return $this;
+    }
 
-  /**
-  {% for annotation in property.annotations %}
-    * {{ annotation }}
-  {% endfor %}
-  * @param {{ property.range }} $value
-  * @return $this
-  */
-  public function {{ property.name }}({{ property.range_default?property.range_default~' $value':'$value' }})
-  {
-  $this->setProperty('{{ property.name }}', $value);
-  return $this;
-  }
+    /**
+     * @param {{ property.range }} $value
+     * @return $this
+     */
+    public function set{{ property.name|ucfirst }}({{ property.range_default?property.range_default~' $value':'$value' }})
+    {
+        $this->setProperty('{{ property.name }}', $value);
+        return $this;
+    }
 
-  /**
-  * @param {{ property.range }} $value
-  * @return $this
-  */
-  public function set{{ property.name|ucfirst }}({{ property.range_default?property.range_default~' $value':'$value' }})
-  {
-  $this->setProperty('{{ property.name }}', $value);
-  return $this;
-  }
+    /**
+     * @param {{ property.value_range }} $value
+     * @return $this
+     */
+    public function add{{ property.name|ucfirst }}($value)
+    {
+        $current = $this->getProperty('{{ property.name }}');
+        if ($current === null) {
+            $current = [];
+        } elseif (!is_array($current)) {
+            $current = [$current];
+        }
+        $current[] = $value;
+        $this->setProperty('{{ property.name }}', $current);
+        return $this;
+    }
 
-  /**
-  * @param {{ property.value_range }} $value
-  * @return $this
-  */
-  public function add{{ property.name|ucfirst }}($value)
-  {
-  $current = $this->getProperty('{{ property.name }}');
-  if ($current === null) {
-  $current = [];
-  } elseif (!is_array($current)) {
-  $current = [$current];
-  }
-  $current[] = $value;
-  $this->setProperty('{{ property.name }}', $current);
-  return $this;
-  }
-
-  /**
-  * @return {{ property.range }}
-  */
-  public function get{{ property.name|ucfirst }}()
-  {
-  return $this->getProperty('{{ property.name }}');
-  }
-
+    /**
+     * @return {{ property.range }}
+     */
+    public function get{{ property.name|ucfirst }}()
+    {
+        return $this->getProperty('{{ property.name }}');
+    }
 {% endfor %}
-
 }

@@ -143,8 +143,8 @@ class TypesGenerator
                 $class = [];
                 $class['name'] = $name;
                 $class['annotations'] = [];
-                $class['annotations'][] = $graph->getComment();
-                $class['annotations'][] = sprintf('@see %s', $graph->getUri());
+                $class['annotations'][] = $this->formatDoc($graph->getComment());
+                $class['annotations'][] = sprintf('@see %s', $this->fullUri($graph->getUri()));
                 $class['namespace'] = $this->fullNamespace($graph->getNamespace());
                 $uses = [];
                 $parent = $graph->getParent();
@@ -199,7 +199,10 @@ class TypesGenerator
 
                     $class['properties'][] = [
                         'name' => $property->getName(),
-                        'annotations' => [$property->getComment()],
+                        'annotations' => [
+                            $this->formatDoc($property->getComment(), 4),
+                            sprintf('@see %s', $this->fullUri($property->getUri())),
+                        ],
                         'range' => $rangeDoc,
                         'value_range' => $valueDoc,
                         'range_default' => null
@@ -228,6 +231,10 @@ class TypesGenerator
 
             if (!$classFiles) {
                 throw new \RuntimeException('No schema classes were generated. The existing generated directory was not changed.');
+            }
+
+            if ($this->configure->getFixCs()) {
+                $this->fixCs($classFiles);
             }
 
             $stagingDir = $stagingBaseDir . DIRECTORY_SEPARATOR . 'Thing';
@@ -313,6 +320,24 @@ class TypesGenerator
             : $this->configure->getNamespace();
     }
 
+    private function fullUri(?string $uri): string
+    {
+        if ($uri === null || $uri === '') {
+            return '';
+        }
+
+        return str_starts_with($uri, 'schema:')
+            ? 'https://schema.org/' . substr($uri, strlen('schema:'))
+            : $uri;
+    }
+
+    private function formatDoc(string $comment, int $indent = 0): string
+    {
+        $comment = preg_replace('/\R\s*\*\s?/', ' ', $comment) ?? $comment;
+
+        return preg_replace('/\s+/', ' ', trim($comment)) ?? '';
+    }
+
 
     /**
      * Uses PHP CS Fixer to make generated files following PSR and Symfony Coding Standards.
@@ -327,8 +352,8 @@ class TypesGenerator
         $fixers = (new FixerFactory())
             ->registerBuiltInFixers()
             ->useRuleSet(new RuleSet([
+                '@PSR12' => true,
                 'array_syntax' => ['syntax' => 'short'],
-                'phpdoc_order' => true,
                 'declare_strict_types' => true,
             ]))
             ->getFixers();

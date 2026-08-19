@@ -36,7 +36,13 @@ class GeneratorCommendTest extends TestCase
             $webPageFile = $baseDir . '/Thing/CreativeWork/WebPage.php';
             $this->assertFileExists($patientFile);
             $this->assertFileExists($webPageFile);
-            $this->assertStringContainsString('function addDiagnosis', file_get_contents($patientFile));
+            $patientContents = file_get_contents($patientFile);
+            $this->assertStringContainsString('declare(strict_types=1);', $patientContents);
+            $this->assertStringContainsString('@see https://schema.org/Patient', $patientContents);
+            $this->assertStringContainsString('function addDiagnosis', $patientContents);
+
+            $webPageContents = file_get_contents($webPageFile);
+            $this->assertStringContainsString('@see https://schema.org/mainContentOfPage', $webPageContents);
         } finally {
             $this->removeDirectory($baseDir);
         }

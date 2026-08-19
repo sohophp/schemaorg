@@ -1,16 +1,16 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MedicalEnumeration;
 
-  use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MedicalEnumeration;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MedicalEnumeration;
 
 /**
-  * Categories that represent an assessment of the risk of fetal injury due to a
- * drug or pharmaceutical used as directed by the mother during pregnancy.
-  * @see schema:DrugPregnancyCategory
-* @package Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MedicalEnumeration
-*/
+ * Categories that represent an assessment of the risk of fetal injury due to a drug or pharmaceutical used as directed by the mother during pregnancy.
+ * @see https://schema.org/DrugPregnancyCategory
+ * @package Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MedicalEnumeration
+ */
 class DrugPregnancyCategory extends MedicalEnumeration
 {
-
-
 }

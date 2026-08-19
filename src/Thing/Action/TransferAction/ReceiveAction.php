@@ -1,122 +1,112 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Sohophp\SchemaOrg\Thing\Action\TransferAction;
 
-  use Sohophp\SchemaOrg\Thing\Action\TransferAction;
-  use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\DeliveryMethod;
-  use Sohophp\SchemaOrg\Thing\Organization;
-  use Sohophp\SchemaOrg\Thing\Person;
-  use Sohophp\SchemaOrg\Thing\Intangible\Audience;
+use Sohophp\SchemaOrg\Thing\Action\TransferAction;
+use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\DeliveryMethod;
+use Sohophp\SchemaOrg\Thing\Organization;
+use Sohophp\SchemaOrg\Thing\Person;
+use Sohophp\SchemaOrg\Thing\Intangible\Audience;
 
 /**
-  * The act of physically/electronically taking delivery of an object that has
- * been transferred from an origin to a destination. Reciprocal of SendAction.
- * 
- * Related actions:
- * 
- * * [[SendAction]]: The reciprocal of ReceiveAction.
- * * [[TakeAction]]: Unlike TakeAction, ReceiveAction does not imply that the
- * ownership has been transferred (e.g. I can receive a package, but it does not
- * mean the package is now mine).
-  * @see schema:ReceiveAction
-* @package Sohophp\SchemaOrg\Thing\Action\TransferAction
-*/
+ * The act of physically/electronically taking delivery of an object that has been transferred from an origin to a destination. Reciprocal of SendAction. Related actions: * [[SendAction]]: The reciprocal of ReceiveAction. * [[TakeAction]]: Unlike TakeAction, ReceiveAction does not imply that the ownership has been transferred (e.g. I can receive a package, but it does not mean the package is now mine).
+ * @see https://schema.org/ReceiveAction
+ * @package Sohophp\SchemaOrg\Thing\Action\TransferAction
+ */
 class ReceiveAction extends TransferAction
 {
+    /**
+     * A sub property of instrument. The method of delivery.
+     * @see https://schema.org/deliveryMethod
+     * @param DeliveryMethod|array $value
+     * @return $this
+     */
+    public function deliveryMethod($value)
+    {
+        $this->setProperty('deliveryMethod', $value);
+        return $this;
+    }
 
+    /**
+     * @param DeliveryMethod|array $value
+     * @return $this
+     */
+    public function setDeliveryMethod($value)
+    {
+        $this->setProperty('deliveryMethod', $value);
+        return $this;
+    }
 
-  /**
-      * A sub property of instrument. The method of delivery.
-    * @param DeliveryMethod|array $value
-  * @return $this
-  */
-  public function deliveryMethod($value)
-  {
-  $this->setProperty('deliveryMethod', $value);
-  return $this;
-  }
+    /**
+     * @param DeliveryMethod $value
+     * @return $this
+     */
+    public function addDeliveryMethod($value)
+    {
+        $current = $this->getProperty('deliveryMethod');
+        if ($current === null) {
+            $current = [];
+        } elseif (!is_array($current)) {
+            $current = [$current];
+        }
+        $current[] = $value;
+        $this->setProperty('deliveryMethod', $current);
+        return $this;
+    }
 
-  /**
-  * @param DeliveryMethod|array $value
-  * @return $this
-  */
-  public function setDeliveryMethod($value)
-  {
-  $this->setProperty('deliveryMethod', $value);
-  return $this;
-  }
+    /**
+     * @return DeliveryMethod|array
+     */
+    public function getDeliveryMethod()
+    {
+        return $this->getProperty('deliveryMethod');
+    }
+    /**
+     * A sub property of participant. The participant who is at the sending end of the action.
+     * @see https://schema.org/sender
+     * @param Organization|Person|Audience|array $value
+     * @return $this
+     */
+    public function sender($value)
+    {
+        $this->setProperty('sender', $value);
+        return $this;
+    }
 
-  /**
-  * @param DeliveryMethod $value
-  * @return $this
-  */
-  public function addDeliveryMethod($value)
-  {
-  $current = $this->getProperty('deliveryMethod');
-  if ($current === null) {
-  $current = [];
-  } elseif (!is_array($current)) {
-  $current = [$current];
-  }
-  $current[] = $value;
-  $this->setProperty('deliveryMethod', $current);
-  return $this;
-  }
+    /**
+     * @param Organization|Person|Audience|array $value
+     * @return $this
+     */
+    public function setSender($value)
+    {
+        $this->setProperty('sender', $value);
+        return $this;
+    }
 
-  /**
-  * @return DeliveryMethod|array
-  */
-  public function getDeliveryMethod()
-  {
-  return $this->getProperty('deliveryMethod');
-  }
+    /**
+     * @param Organization|Person|Audience $value
+     * @return $this
+     */
+    public function addSender($value)
+    {
+        $current = $this->getProperty('sender');
+        if ($current === null) {
+            $current = [];
+        } elseif (!is_array($current)) {
+            $current = [$current];
+        }
+        $current[] = $value;
+        $this->setProperty('sender', $current);
+        return $this;
+    }
 
-
-  /**
-      * A sub property of participant. The participant who is at the sending end of
- * the action.
-    * @param Organization|Person|Audience|array $value
-  * @return $this
-  */
-  public function sender($value)
-  {
-  $this->setProperty('sender', $value);
-  return $this;
-  }
-
-  /**
-  * @param Organization|Person|Audience|array $value
-  * @return $this
-  */
-  public function setSender($value)
-  {
-  $this->setProperty('sender', $value);
-  return $this;
-  }
-
-  /**
-  * @param Organization|Person|Audience $value
-  * @return $this
-  */
-  public function addSender($value)
-  {
-  $current = $this->getProperty('sender');
-  if ($current === null) {
-  $current = [];
-  } elseif (!is_array($current)) {
-  $current = [$current];
-  }
-  $current[] = $value;
-  $this->setProperty('sender', $current);
-  return $this;
-  }
-
-  /**
-  * @return Organization|Person|Audience|array
-  */
-  public function getSender()
-  {
-  return $this->getProperty('sender');
-  }
-
-
+    /**
+     * @return Organization|Person|Audience|array
+     */
+    public function getSender()
+    {
+        return $this->getProperty('sender');
+    }
 }

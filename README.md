@@ -9,10 +9,9 @@ A modern PHP library for building [Schema.org](https://schema.org/) objects and 
 
 The project ships generated PHP classes based on the official schema.org dataset and a small runtime API for fluent property access, repeated values, node identifiers, custom contexts, and `@graph` documents.
 
-> **Current release:** `v5.0.1` · **Schema.org dataset:** `v30.0` · **PHP:** `8.1 - 8.5`
+> **Current release:** `v5.0.2` · **Schema.org dataset:** `v30.0` · **PHP:** `8.1 - 8.5`
 
 ## What it provides
-
 - Generated classes covering the bundled schema.org vocabulary.
 - Fluent `setX()`, `getX()`, and `addX()` methods with IDE-friendly PHPDoc.
 - JSON-LD metadata support for `@id`, `@context`, and explicit `@type`.

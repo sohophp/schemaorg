@@ -1,5 +1,11 @@
 # Changelog
 
+## 5.0.2 - 2026-08-19
+
+- Add complete schema.org URLs to generated class and property PHPDoc `@see` annotations.
+- Apply PHP CS Fixer formatting and strict type declarations to generated classes.
+- Add generator regression coverage for generated documentation and formatting.
+
 ## 5.0.1 - 2026-08-19
 
 - Make the generator executable portable across local and GitHub Actions PHP installations.
