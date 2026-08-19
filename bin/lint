@@ -1,0 +1,19 @@
+#!/usr/bin/env php
+<?php
+
+$status = 0;
+
+foreach (['src', 'tests'] as $directory) {
+    $files = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($directory));
+
+    foreach ($files as $file) {
+        if (!$file->isFile() || $file->getExtension() !== 'php') {
+            continue;
+        }
+
+        passthru(PHP_BINARY . ' -l ' . escapeshellarg($file->getPathname()), $fileStatus);
+        $status = max($status, $fileStatus);
+    }
+}
+
+exit($status);
