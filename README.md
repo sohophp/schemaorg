@@ -1,7 +1,8 @@
 # phpschemaorg
 
 ###  schema.org PHP library
-- @since 2025/03/10 v4.0.0  v28.1/schemaorg-all-https.jsonld
+- @since 2026/08/19 v30.0/schemaorg-all-https.jsonld
+- PHP 8.1 or newer
 - @since 2021/12/23 v3.0.0 升级至 PHP8.1
 - @since 2020/03/12 v1.5.0   加入 set 和 get 方法
 - @since 2019/08/13 updated 3.9  ,  800 classes
@@ -22,6 +23,8 @@
 $ composer require sohophp/schema-org 
 ```
 
+Requires PHP 8.1 or newer.
+
 #### Git: 
 ```shell
 $ git clone https://github.com/sohophp/schemaorg.git
@@ -36,6 +39,24 @@ $Page->name("test one")->text('content');
 $script = $Page->toScript();
 echo $script;
 ``` 
+
+### JSON-LD metadata and repeated properties
+
+Use `setId()` for a JSON-LD node identifier. Use `addX()` when a property has multiple values; `setX()` remains available for replacing a value with a scalar, object, or array.
+
+```php
+$patient = new \Sohophp\SchemaOrg\Thing\Intangible\Audience\MedicalAudience\Patient();
+$patient->setId('https://example.com/patient/123')
+    ->addDiagnosis($conditionOne)
+    ->addDiagnosis($conditionTwo);
+```
+
+For multiple related nodes, `SchemaCollection` supports JSON-LD graph output:
+
+```php
+$json = $collection->toGraphJson();
+$script = $collection->toGraphScript();
+```
 
 ## 输出结果 / output: 
 

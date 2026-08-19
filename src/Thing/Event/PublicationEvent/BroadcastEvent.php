@@ -1,106 +1,206 @@
 <?php
 namespace Sohophp\SchemaOrg\Thing\Event\PublicationEvent;
 
-use Sohophp\SchemaOrg\Thing\Event\PublicationEvent;
-use Sohophp\SchemaOrg\Thing\Event;
+  use Sohophp\SchemaOrg\Thing\Event\PublicationEvent;
+  use Sohophp\SchemaOrg\Thing\Event;
+  use Sohophp\SchemaOrg\Thing\Intangible\Language;
 
 /**
-* An over the air or online broadcast event.
-* @see http://schema.org/BroadcastEvent
+  * An over the air or online broadcast event.
+  * @see schema:BroadcastEvent
 * @package Sohophp\SchemaOrg\Thing\Event\PublicationEvent
 */
 class BroadcastEvent extends PublicationEvent
 {
 
 
-    /**
-        * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
-        * @param string|array|mixed $value
-    * @return $this
-    */
-    public function videoFormat($value)
-    {
-        $this->setProperty('videoFormat', $value);
-        return $this;
-    }
+  /**
+      * The event being broadcast such as a sporting event or awards ceremony.
+    * @param Event|array $value
+  * @return $this
+  */
+  public function broadcastOfEvent($value)
+  {
+  $this->setProperty('broadcastOfEvent', $value);
+  return $this;
+  }
 
-    /**
-    * @param string|array|mixed $value
-    * @return $this
-    */
-    public function setVideoFormat($value)
-    {
-        $this->setProperty('videoFormat', $value);
-        return $this;
-    }
+  /**
+  * @param Event|array $value
+  * @return $this
+  */
+  public function setBroadcastOfEvent($value)
+  {
+  $this->setProperty('broadcastOfEvent', $value);
+  return $this;
+  }
 
-    /**
-    * @return string|array|mixed
-    */
-    public function getVideoFormat()
-    {
-       return $this->getProperty('videoFormat');
-    }
+  /**
+  * @param Event $value
+  * @return $this
+  */
+  public function addBroadcastOfEvent($value)
+  {
+  $current = $this->getProperty('broadcastOfEvent');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('broadcastOfEvent', $current);
+  return $this;
+  }
 
-
-    /**
-        * True is the broadcast is of a live event.
-        * @param bool|array|string|mixed $value
-    * @return $this
-    */
-    public function isLiveBroadcast($value)
-    {
-        $this->setProperty('isLiveBroadcast', $value);
-        return $this;
-    }
-
-    /**
-    * @param bool|array|string|mixed $value
-    * @return $this
-    */
-    public function setIsLiveBroadcast($value)
-    {
-        $this->setProperty('isLiveBroadcast', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getIsLiveBroadcast()
-    {
-       return $this->getProperty('isLiveBroadcast');
-    }
+  /**
+  * @return Event|array
+  */
+  public function getBroadcastOfEvent()
+  {
+  return $this->getProperty('broadcastOfEvent');
+  }
 
 
-    /**
-        * The event being broadcast such as a sporting event or awards ceremony.
-        * @param Event|array|string|mixed $value
-    * @return $this
-    */
-    public function broadcastOfEvent($value)
-    {
-        $this->setProperty('broadcastOfEvent', $value);
-        return $this;
-    }
+  /**
+      * Languages in which subtitles/captions are available, in [IETF BCP 47 standard
+ * format](http://tools.ietf.org/html/bcp47).
+    * @param string|Language|array $value
+  * @return $this
+  */
+  public function subtitleLanguage($value)
+  {
+  $this->setProperty('subtitleLanguage', $value);
+  return $this;
+  }
 
-    /**
-    * @param Event|array|string|mixed $value
-    * @return $this
-    */
-    public function setBroadcastOfEvent($value)
-    {
-        $this->setProperty('broadcastOfEvent', $value);
-        return $this;
-    }
+  /**
+  * @param string|Language|array $value
+  * @return $this
+  */
+  public function setSubtitleLanguage($value)
+  {
+  $this->setProperty('subtitleLanguage', $value);
+  return $this;
+  }
 
-    /**
-    * @return string|array|mixed
-    */
-    public function getBroadcastOfEvent()
-    {
-       return $this->getProperty('broadcastOfEvent');
-    }
+  /**
+  * @param string|Language $value
+  * @return $this
+  */
+  public function addSubtitleLanguage($value)
+  {
+  $current = $this->getProperty('subtitleLanguage');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('subtitleLanguage', $current);
+  return $this;
+  }
+
+  /**
+  * @return string|Language|array
+  */
+  public function getSubtitleLanguage()
+  {
+  return $this->getProperty('subtitleLanguage');
+  }
+
+
+  /**
+      * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
+    * @param string|array $value
+  * @return $this
+  */
+  public function videoFormat($value)
+  {
+  $this->setProperty('videoFormat', $value);
+  return $this;
+  }
+
+  /**
+  * @param string|array $value
+  * @return $this
+  */
+  public function setVideoFormat($value)
+  {
+  $this->setProperty('videoFormat', $value);
+  return $this;
+  }
+
+  /**
+  * @param string $value
+  * @return $this
+  */
+  public function addVideoFormat($value)
+  {
+  $current = $this->getProperty('videoFormat');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('videoFormat', $current);
+  return $this;
+  }
+
+  /**
+  * @return string|array
+  */
+  public function getVideoFormat()
+  {
+  return $this->getProperty('videoFormat');
+  }
+
+
+  /**
+      * True if the broadcast is of a live event.
+    * @param bool|array $value
+  * @return $this
+  */
+  public function isLiveBroadcast($value)
+  {
+  $this->setProperty('isLiveBroadcast', $value);
+  return $this;
+  }
+
+  /**
+  * @param bool|array $value
+  * @return $this
+  */
+  public function setIsLiveBroadcast($value)
+  {
+  $this->setProperty('isLiveBroadcast', $value);
+  return $this;
+  }
+
+  /**
+  * @param bool $value
+  * @return $this
+  */
+  public function addIsLiveBroadcast($value)
+  {
+  $current = $this->getProperty('isLiveBroadcast');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('isLiveBroadcast', $current);
+  return $this;
+  }
+
+  /**
+  * @return bool|array
+  */
+  public function getIsLiveBroadcast()
+  {
+  return $this->getProperty('isLiveBroadcast');
+  }
 
 
 }

@@ -1,106 +1,110 @@
 <?php
 namespace Sohophp\SchemaOrg\Thing\MedicalEntity\AnatomicalStructure\Vessel;
 
-use Sohophp\SchemaOrg\Thing\MedicalEntity\AnatomicalStructure\Vessel;
-use Sohophp\SchemaOrg\Thing\MedicalEntity\AnatomicalStructure;
+  use Sohophp\SchemaOrg\Thing\MedicalEntity\AnatomicalStructure\Vessel;
+  use Sohophp\SchemaOrg\Thing\MedicalEntity\AnatomicalStructure;
 
 /**
-* A type of blood vessel that specifically carries blood away from the heart.
-* @see http://schema.org/Artery
+  * A type of blood vessel that specifically carries blood away from the heart.
+  * @see schema:Artery
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity\AnatomicalStructure\Vessel
 */
 class Artery extends Vessel
 {
 
 
-    /**
-        * The area to which the artery supplies blood.
-        * @param AnatomicalStructure|array|string|mixed $value
-    * @return $this
-    */
-    public function supplyTo($value)
-    {
-        $this->setProperty('supplyTo', $value);
-        return $this;
-    }
+  /**
+      * The branches that comprise the arterial structure.
+    * @param AnatomicalStructure|array $value
+  * @return $this
+  */
+  public function arterialBranch($value)
+  {
+  $this->setProperty('arterialBranch', $value);
+  return $this;
+  }
 
-    /**
-    * @param AnatomicalStructure|array|string|mixed $value
-    * @return $this
-    */
-    public function setSupplyTo($value)
-    {
-        $this->setProperty('supplyTo', $value);
-        return $this;
-    }
+  /**
+  * @param AnatomicalStructure|array $value
+  * @return $this
+  */
+  public function setArterialBranch($value)
+  {
+  $this->setProperty('arterialBranch', $value);
+  return $this;
+  }
 
-    /**
-    * @return string|array|mixed
-    */
-    public function getSupplyTo()
-    {
-       return $this->getProperty('supplyTo');
-    }
+  /**
+  * @param AnatomicalStructure $value
+  * @return $this
+  */
+  public function addArterialBranch($value)
+  {
+  $current = $this->getProperty('arterialBranch');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('arterialBranch', $current);
+  return $this;
+  }
 
-
-    /**
-        * The anatomical or organ system that the artery originates from.
-        * @param AnatomicalStructure|array|string|mixed $value
-    * @return $this
-    */
-    public function source($value)
-    {
-        $this->setProperty('source', $value);
-        return $this;
-    }
-
-    /**
-    * @param AnatomicalStructure|array|string|mixed $value
-    * @return $this
-    */
-    public function setSource($value)
-    {
-        $this->setProperty('source', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getSource()
-    {
-       return $this->getProperty('source');
-    }
+  /**
+  * @return AnatomicalStructure|array
+  */
+  public function getArterialBranch()
+  {
+  return $this->getProperty('arterialBranch');
+  }
 
 
-    /**
-        * The branches that comprise the arterial structure.
-        * @param AnatomicalStructure|array|string|mixed $value
-    * @return $this
-    */
-    public function arterialBranch($value)
-    {
-        $this->setProperty('arterialBranch', $value);
-        return $this;
-    }
+  /**
+      * The area to which the artery supplies blood.
+    * @param AnatomicalStructure|array $value
+  * @return $this
+  */
+  public function supplyTo($value)
+  {
+  $this->setProperty('supplyTo', $value);
+  return $this;
+  }
 
-    /**
-    * @param AnatomicalStructure|array|string|mixed $value
-    * @return $this
-    */
-    public function setArterialBranch($value)
-    {
-        $this->setProperty('arterialBranch', $value);
-        return $this;
-    }
+  /**
+  * @param AnatomicalStructure|array $value
+  * @return $this
+  */
+  public function setSupplyTo($value)
+  {
+  $this->setProperty('supplyTo', $value);
+  return $this;
+  }
 
-    /**
-    * @return string|array|mixed
-    */
-    public function getArterialBranch()
-    {
-       return $this->getProperty('arterialBranch');
-    }
+  /**
+  * @param AnatomicalStructure $value
+  * @return $this
+  */
+  public function addSupplyTo($value)
+  {
+  $current = $this->getProperty('supplyTo');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('supplyTo', $current);
+  return $this;
+  }
+
+  /**
+  * @return AnatomicalStructure|array
+  */
+  public function getSupplyTo()
+  {
+  return $this->getProperty('supplyTo');
+  }
 
 
 }

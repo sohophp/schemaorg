@@ -1,46 +1,63 @@
 <?php
 namespace Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalTest;
 
-use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalTest;
-use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MedicalEnumeration\MedicalImagingTechnique;
+  use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalTest;
+  use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MedicalEnumeration\MedicalImagingTechnique;
 
 /**
-* Any medical imaging modality typically used for diagnostic purposes.
-* @see http://schema.org/ImagingTest
+  * Any medical imaging modality typically used for diagnostic purposes.
+  * @see schema:ImagingTest
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalTest
 */
 class ImagingTest extends MedicalTest
 {
 
 
-    /**
-        * Imaging technique used.
-        * @param MedicalImagingTechnique|array|string|mixed $value
-    * @return $this
-    */
-    public function imagingTechnique($value)
-    {
-        $this->setProperty('imagingTechnique', $value);
-        return $this;
-    }
+  /**
+      * Imaging technique used.
+    * @param MedicalImagingTechnique|array $value
+  * @return $this
+  */
+  public function imagingTechnique($value)
+  {
+  $this->setProperty('imagingTechnique', $value);
+  return $this;
+  }
 
-    /**
-    * @param MedicalImagingTechnique|array|string|mixed $value
-    * @return $this
-    */
-    public function setImagingTechnique($value)
-    {
-        $this->setProperty('imagingTechnique', $value);
-        return $this;
-    }
+  /**
+  * @param MedicalImagingTechnique|array $value
+  * @return $this
+  */
+  public function setImagingTechnique($value)
+  {
+  $this->setProperty('imagingTechnique', $value);
+  return $this;
+  }
 
-    /**
-    * @return string|array|mixed
-    */
-    public function getImagingTechnique()
-    {
-       return $this->getProperty('imagingTechnique');
-    }
+  /**
+  * @param MedicalImagingTechnique $value
+  * @return $this
+  */
+  public function addImagingTechnique($value)
+  {
+  $current = $this->getProperty('imagingTechnique');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('imagingTechnique', $current);
+  return $this;
+  }
+
+  /**
+  * @return MedicalImagingTechnique|array
+  */
+  public function getImagingTechnique()
+  {
+  return $this->getProperty('imagingTechnique');
+  }
 
 
 }

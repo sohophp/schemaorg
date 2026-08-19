@@ -1,80 +1,67 @@
 <?php
 namespace Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalCondition;
 
-use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalCondition;
-use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalCause;
-use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalProcedure\TherapeuticProcedure\MedicalTherapy;
+  use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalCondition;
+  use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalProcedure\TherapeuticProcedure\MedicalTherapy;
+  use Sohophp\SchemaOrg\Thing\Product\Drug;
+  use Sohophp\SchemaOrg\Thing\MedicalEntity\LifestyleModification;
+  use Sohophp\SchemaOrg\Thing\MedicalEntity\DrugClass;
 
 /**
-* Any feature associated or not with a medical condition. In medicine a symptom
+  * Any feature associated or not with a medical condition. In medicine a symptom
  * is generally subjective while a sign is objective.
-* @see http://schema.org/MedicalSignOrSymptom
+  * @see schema:MedicalSignOrSymptom
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalCondition
 */
 class MedicalSignOrSymptom extends MedicalCondition
 {
 
 
-    /**
-        * Specifying a cause of something in general. e.g in medicine , one of the
- * causative agent(s) that are most directly responsible for the
- * pathophysiologic process that eventually results in the occurrence.
-        * @param MedicalCause|array|string|mixed $value
-    * @return $this
-    */
-    public function cause($value)
-    {
-        $this->setProperty('cause', $value);
-        return $this;
-    }
+  /**
+      * A possible treatment to address this condition, sign or symptom.
+    * @param MedicalTherapy|Drug|LifestyleModification|DrugClass|array $value
+  * @return $this
+  */
+  public function possibleTreatment($value)
+  {
+  $this->setProperty('possibleTreatment', $value);
+  return $this;
+  }
 
-    /**
-    * @param MedicalCause|array|string|mixed $value
-    * @return $this
-    */
-    public function setCause($value)
-    {
-        $this->setProperty('cause', $value);
-        return $this;
-    }
+  /**
+  * @param MedicalTherapy|Drug|LifestyleModification|DrugClass|array $value
+  * @return $this
+  */
+  public function setPossibleTreatment($value)
+  {
+  $this->setProperty('possibleTreatment', $value);
+  return $this;
+  }
 
-    /**
-    * @return string|array|mixed
-    */
-    public function getCause()
-    {
-       return $this->getProperty('cause');
-    }
+  /**
+  * @param MedicalTherapy|Drug|LifestyleModification|DrugClass $value
+  * @return $this
+  */
+  public function addPossibleTreatment($value)
+  {
+  $current = $this->getProperty('possibleTreatment');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('possibleTreatment', $current);
+  return $this;
+  }
 
-
-    /**
-        * A possible treatment to address this condition, sign or symptom.
-        * @param MedicalTherapy|array|string|mixed $value
-    * @return $this
-    */
-    public function possibleTreatment($value)
-    {
-        $this->setProperty('possibleTreatment', $value);
-        return $this;
-    }
-
-    /**
-    * @param MedicalTherapy|array|string|mixed $value
-    * @return $this
-    */
-    public function setPossibleTreatment($value)
-    {
-        $this->setProperty('possibleTreatment', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getPossibleTreatment()
-    {
-       return $this->getProperty('possibleTreatment');
-    }
+  /**
+  * @return MedicalTherapy|Drug|LifestyleModification|DrugClass|array
+  */
+  public function getPossibleTreatment()
+  {
+  return $this->getProperty('possibleTreatment');
+  }
 
 
 }

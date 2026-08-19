@@ -1,11 +1,11 @@
 <?php
 namespace Sohophp\SchemaOrg\Thing\Intangible\BroadcastChannel\RadioChannel;
 
-use Sohophp\SchemaOrg\Thing\Intangible\BroadcastChannel\RadioChannel;
+  use Sohophp\SchemaOrg\Thing\Intangible\BroadcastChannel\RadioChannel;
 
 /**
-* A radio channel that uses AM.
-* @see http://schema.org/AMRadioChannel
+  * A radio channel that uses AM.
+  * @see schema:AMRadioChannel
 * @package Sohophp\SchemaOrg\Thing\Intangible\BroadcastChannel\RadioChannel
 */
 class AMRadioChannel extends RadioChannel

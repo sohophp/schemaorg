@@ -1,10 +1,10 @@
 <?php
 namespace Sohophp\SchemaOrg\Thing\CreativeWork\Article\NewsArticle;
 
-use Sohophp\SchemaOrg\Thing\CreativeWork\Article\NewsArticle;
+  use Sohophp\SchemaOrg\Thing\CreativeWork\Article\NewsArticle;
 
 /**
-* The [[ReportageNewsArticle]] type is a subtype of [[NewsArticle]]
+  * The [[ReportageNewsArticle]] type is a subtype of [[NewsArticle]]
  * representing
  *  news articles which are the result of journalistic news reporting
  * conventions.
@@ -26,7 +26,7 @@ use Sohophp\SchemaOrg\Thing\CreativeWork\Article\NewsArticle;
  * 
  * A [[ReportageNewsArticle]] which goes deeper into analysis can also be marked
  * with an additional type of [[AnalysisNewsArticle]].
-* @see http://schema.org/ReportageNewsArticle
+  * @see schema:ReportageNewsArticle
 * @package Sohophp\SchemaOrg\Thing\CreativeWork\Article\NewsArticle
 */
 class ReportageNewsArticle extends NewsArticle

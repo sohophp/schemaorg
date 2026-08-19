@@ -1,10 +1,12 @@
 <?php
 namespace Sohophp\SchemaOrg\Thing\CreativeWork;
 
-use Sohophp\SchemaOrg\Thing\CreativeWork;
+  use Sohophp\SchemaOrg\Thing\CreativeWork;
+  use Sohophp\SchemaOrg\Thing\Organization;
+  use Sohophp\SchemaOrg\Thing\Person;
 
 /**
-* A [[Claim]] in Schema.org represents a specific, factually-oriented claim
+  * A [[Claim]] in Schema.org represents a specific, factually-oriented claim
  * that could be the [[itemReviewed]] in a [[ClaimReview]]. The content of a
  * claim can be summarized with the [[text]] property. Variations on well known
  * claims can have their common identity indicated via [[sameAs]] links, and
@@ -13,77 +15,160 @@ use Sohophp\SchemaOrg\Thing\CreativeWork;
  * practice, many claims are better understood in the context in which they
  * appear or the interpretations provided by claim reviews.
  * 
- * Beyond [[ClaimReview]], the Claim type can be associated with related
- * creative works - for example a [[ScholaryArticle]] or [[Question]] might be
+ *   Beyond [[ClaimReview]], the Claim type can be associated with related
+ * creative works - for example a [[ScholarlyArticle]] or [[Question]] might be
  * [[about]] some [[Claim]].
  * 
- * At this time, Schema.org does not define any types of relationship between
+ *   At this time, Schema.org does not define any types of relationship between
  * claims. This is a natural area for future exploration.
-* @see http://schema.org/Claim
+  * @see schema:Claim
 * @package Sohophp\SchemaOrg\Thing\CreativeWork
 */
 class Claim extends CreativeWork
 {
 
 
-    /**
-        * Indicates the first known occurence of a [[Claim]] in some [[CreativeWork]].
-        * @param CreativeWork|array|string|mixed $value
-    * @return $this
-    */
-    public function firstAppearance($value)
-    {
-        $this->setProperty('firstAppearance', $value);
-        return $this;
-    }
+  /**
+      * For a [[Claim]] interpreted from [[MediaObject]] content, the
+ * [[interpretedAsClaim]] property can be used to indicate a claim contained,
+ * implied or refined from the content of a [[MediaObject]].
+    * @param Organization|Person|array $value
+  * @return $this
+  */
+  public function claimInterpreter($value)
+  {
+  $this->setProperty('claimInterpreter', $value);
+  return $this;
+  }
 
-    /**
-    * @param CreativeWork|array|string|mixed $value
-    * @return $this
-    */
-    public function setFirstAppearance($value)
-    {
-        $this->setProperty('firstAppearance', $value);
-        return $this;
-    }
+  /**
+  * @param Organization|Person|array $value
+  * @return $this
+  */
+  public function setClaimInterpreter($value)
+  {
+  $this->setProperty('claimInterpreter', $value);
+  return $this;
+  }
 
-    /**
-    * @return string|array|mixed
-    */
-    public function getFirstAppearance()
-    {
-       return $this->getProperty('firstAppearance');
-    }
+  /**
+  * @param Organization|Person $value
+  * @return $this
+  */
+  public function addClaimInterpreter($value)
+  {
+  $current = $this->getProperty('claimInterpreter');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('claimInterpreter', $current);
+  return $this;
+  }
+
+  /**
+  * @return Organization|Person|array
+  */
+  public function getClaimInterpreter()
+  {
+  return $this->getProperty('claimInterpreter');
+  }
 
 
-    /**
-        * Indicates an occurence of a [[Claim]] in some [[CreativeWork]].
-        * @param CreativeWork|array|string|mixed $value
-    * @return $this
-    */
-    public function appearance($value)
-    {
-        $this->setProperty('appearance', $value);
-        return $this;
-    }
+  /**
+      * Indicates the first known occurrence of a [[Claim]] in some [[CreativeWork]].
+    * @param CreativeWork|array $value
+  * @return $this
+  */
+  public function firstAppearance($value)
+  {
+  $this->setProperty('firstAppearance', $value);
+  return $this;
+  }
 
-    /**
-    * @param CreativeWork|array|string|mixed $value
-    * @return $this
-    */
-    public function setAppearance($value)
-    {
-        $this->setProperty('appearance', $value);
-        return $this;
-    }
+  /**
+  * @param CreativeWork|array $value
+  * @return $this
+  */
+  public function setFirstAppearance($value)
+  {
+  $this->setProperty('firstAppearance', $value);
+  return $this;
+  }
 
-    /**
-    * @return string|array|mixed
-    */
-    public function getAppearance()
-    {
-       return $this->getProperty('appearance');
-    }
+  /**
+  * @param CreativeWork $value
+  * @return $this
+  */
+  public function addFirstAppearance($value)
+  {
+  $current = $this->getProperty('firstAppearance');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('firstAppearance', $current);
+  return $this;
+  }
+
+  /**
+  * @return CreativeWork|array
+  */
+  public function getFirstAppearance()
+  {
+  return $this->getProperty('firstAppearance');
+  }
+
+
+  /**
+      * Indicates an occurrence of a [[Claim]] in some [[CreativeWork]].
+    * @param CreativeWork|array $value
+  * @return $this
+  */
+  public function appearance($value)
+  {
+  $this->setProperty('appearance', $value);
+  return $this;
+  }
+
+  /**
+  * @param CreativeWork|array $value
+  * @return $this
+  */
+  public function setAppearance($value)
+  {
+  $this->setProperty('appearance', $value);
+  return $this;
+  }
+
+  /**
+  * @param CreativeWork $value
+  * @return $this
+  */
+  public function addAppearance($value)
+  {
+  $current = $this->getProperty('appearance');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('appearance', $current);
+  return $this;
+  }
+
+  /**
+  * @return CreativeWork|array
+  */
+  public function getAppearance()
+  {
+  return $this->getProperty('appearance');
+  }
 
 
 }

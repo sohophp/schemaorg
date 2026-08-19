@@ -125,7 +125,6 @@ class ParserItem
             $comment = $comment->{'@value'} ?? '';
         }
         return Filters::doc((string)$comment);
-
     }
 
 
@@ -155,7 +154,7 @@ class ParserItem
                 $search[] = $s;
             }
         }
-        return $this->itemIds($this->getProperty('http://schema.org/rangeIncludes'));
+        return $this->itemIds($search);
     }
 
     /**
@@ -278,7 +277,6 @@ class ParserItem
         $ids = $this->itemIds($parents);
 
         return array_map([$this, 'getItemById'], $ids);
-
     }
 
     /**
@@ -376,5 +374,4 @@ class ParserItem
     {
         return ['item' => $this->item];
     }
-
 }

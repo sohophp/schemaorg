@@ -1,49 +1,115 @@
 <?php
 namespace Sohophp\SchemaOrg\Thing\Intangible\Service;
 
-use Sohophp\SchemaOrg\Thing\Intangible\Service;
-use Sohophp\SchemaOrg\Thing\Organization;
+  use Sohophp\SchemaOrg\Thing\Intangible\Service;
+  use Sohophp\SchemaOrg\Thing\Place\AdministrativeArea;
+  use Sohophp\SchemaOrg\Thing\Organization;
 
 /**
-* A service provided by a government organization, e.g. food stamps, veterans
+  * A service provided by a government organization, e.g. food stamps, veterans
  * benefits, etc.
-* @see http://schema.org/GovernmentService
+  * @see schema:GovernmentService
 * @package Sohophp\SchemaOrg\Thing\Intangible\Service
 */
 class GovernmentService extends Service
 {
 
 
-    /**
-        * The operating organization, if different from the provider.  This enables the
+  /**
+      * Indicates a legal jurisdiction, e.g. of some legislation, or where some
+ * government service is based.
+    * @param string|AdministrativeArea|array $value
+  * @return $this
+  */
+  public function jurisdiction($value)
+  {
+  $this->setProperty('jurisdiction', $value);
+  return $this;
+  }
+
+  /**
+  * @param string|AdministrativeArea|array $value
+  * @return $this
+  */
+  public function setJurisdiction($value)
+  {
+  $this->setProperty('jurisdiction', $value);
+  return $this;
+  }
+
+  /**
+  * @param string|AdministrativeArea $value
+  * @return $this
+  */
+  public function addJurisdiction($value)
+  {
+  $current = $this->getProperty('jurisdiction');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('jurisdiction', $current);
+  return $this;
+  }
+
+  /**
+  * @return string|AdministrativeArea|array
+  */
+  public function getJurisdiction()
+  {
+  return $this->getProperty('jurisdiction');
+  }
+
+
+  /**
+      * The operating organization, if different from the provider.  This enables the
  * representation of services that are provided by an organization, but operated
  * by another organization like a subcontractor.
-        * @param Organization|array|string|mixed $value
-    * @return $this
-    */
-    public function serviceOperator($value)
-    {
-        $this->setProperty('serviceOperator', $value);
-        return $this;
-    }
+    * @param Organization|array $value
+  * @return $this
+  */
+  public function serviceOperator($value)
+  {
+  $this->setProperty('serviceOperator', $value);
+  return $this;
+  }
 
-    /**
-    * @param Organization|array|string|mixed $value
-    * @return $this
-    */
-    public function setServiceOperator($value)
-    {
-        $this->setProperty('serviceOperator', $value);
-        return $this;
-    }
+  /**
+  * @param Organization|array $value
+  * @return $this
+  */
+  public function setServiceOperator($value)
+  {
+  $this->setProperty('serviceOperator', $value);
+  return $this;
+  }
 
-    /**
-    * @return string|array|mixed
-    */
-    public function getServiceOperator()
-    {
-       return $this->getProperty('serviceOperator');
-    }
+  /**
+  * @param Organization $value
+  * @return $this
+  */
+  public function addServiceOperator($value)
+  {
+  $current = $this->getProperty('serviceOperator');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('serviceOperator', $current);
+  return $this;
+  }
+
+  /**
+  * @return Organization|array
+  */
+  public function getServiceOperator()
+  {
+  return $this->getProperty('serviceOperator');
+  }
 
 
 }

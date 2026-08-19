@@ -1,82 +1,67 @@
 <?php
 namespace Sohophp\SchemaOrg\Thing\Action\TradeAction;
 
-use Sohophp\SchemaOrg\Thing\Action\TradeAction;
-use Sohophp\SchemaOrg\Thing\Person;
-use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\ContactPoint;
-use Sohophp\SchemaOrg\Thing\Organization;
-use Sohophp\SchemaOrg\Thing\Intangible\Audience;
-use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MedicalEnumeration\MedicalDevicePurpose;
-use Sohophp\SchemaOrg\Thing;
+  use Sohophp\SchemaOrg\Thing\Action\TradeAction;
+  use Sohophp\SchemaOrg\Thing\Organization;
+  use Sohophp\SchemaOrg\Thing\Person;
+  use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\ContactPoint;
+  use Sohophp\SchemaOrg\Thing\Intangible\Audience;
 
 /**
-* An agent pays a price to a participant.
-* @see http://schema.org/PayAction
+  * An agent pays a price to a participant.
+  * @see schema:PayAction
 * @package Sohophp\SchemaOrg\Thing\Action\TradeAction
 */
 class PayAction extends TradeAction
 {
 
 
-    /**
-        * A sub property of participant. The participant who is at the receiving end of
+  /**
+      * A sub property of participant. The participant who is at the receiving end of
  * the action.
-        * @param Person|ContactPoint|Organization|Audience|array|string|mixed $value
-    * @return $this
-    */
-    public function recipient($value)
-    {
-        $this->setProperty('recipient', $value);
-        return $this;
-    }
+    * @param Organization|Person|ContactPoint|Audience|array $value
+  * @return $this
+  */
+  public function recipient($value)
+  {
+  $this->setProperty('recipient', $value);
+  return $this;
+  }
 
-    /**
-    * @param Person|ContactPoint|Organization|Audience|array|string|mixed $value
-    * @return $this
-    */
-    public function setRecipient($value)
-    {
-        $this->setProperty('recipient', $value);
-        return $this;
-    }
+  /**
+  * @param Organization|Person|ContactPoint|Audience|array $value
+  * @return $this
+  */
+  public function setRecipient($value)
+  {
+  $this->setProperty('recipient', $value);
+  return $this;
+  }
 
-    /**
-    * @return string|array|mixed
-    */
-    public function getRecipient()
-    {
-       return $this->getProperty('recipient');
-    }
+  /**
+  * @param Organization|Person|ContactPoint|Audience $value
+  * @return $this
+  */
+  public function addRecipient($value)
+  {
+  $current = $this->getProperty('recipient');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('recipient', $current);
+  return $this;
+  }
 
-
-    /**
-        * A goal towards an action is taken. Can be concrete or abstract.
-        * @param MedicalDevicePurpose|Thing|array|string|mixed $value
-    * @return $this
-    */
-    public function purpose($value)
-    {
-        $this->setProperty('purpose', $value);
-        return $this;
-    }
-
-    /**
-    * @param MedicalDevicePurpose|Thing|array|string|mixed $value
-    * @return $this
-    */
-    public function setPurpose($value)
-    {
-        $this->setProperty('purpose', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getPurpose()
-    {
-       return $this->getProperty('purpose');
-    }
+  /**
+  * @return Organization|Person|ContactPoint|Audience|array
+  */
+  public function getRecipient()
+  {
+  return $this->getProperty('recipient');
+  }
 
 
 }

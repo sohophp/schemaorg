@@ -1,13 +1,17 @@
 <?php
 namespace Sohophp\SchemaOrg\Thing\Intangible;
 
-use Sohophp\SchemaOrg\Thing\Intangible;
-use Sohophp\SchemaOrg\Thing;
-use Sohophp\SchemaOrg\Thing\Person;
-use Sohophp\SchemaOrg\Thing\Organization;
+  use Sohophp\SchemaOrg\Thing\Intangible;
+  use Sohophp\SchemaOrg\Thing\Organization;
+  use Sohophp\SchemaOrg\Thing\Person;
+  use Sohophp\SchemaOrg\Thing\MedicalEntity;
+  use Sohophp\SchemaOrg\Thing\Event;
+  use Sohophp\SchemaOrg\Thing\CreativeWork;
+  use Sohophp\SchemaOrg\Thing\Product;
+  use Sohophp\SchemaOrg\Thing\BioChemEntity;
 
 /**
-* A grant, typically financial or otherwise quantifiable, of resources.
+  * A grant, typically financial or otherwise quantifiable, of resources.
  * Typically a [[funder]] sponsors some [[MonetaryAmount]] to an
  * [[Organization]] or [[Person]],
  *     sometimes not necessarily via a dedicated or long-lived [[Project]],
@@ -23,73 +27,156 @@ use Sohophp\SchemaOrg\Thing\Organization;
  * 
  * The amount of a [[Grant]] is represented using [[amount]] as a
  * [[MonetaryAmount]].
-* @see http://schema.org/Grant
+  * @see schema:Grant
 * @package Sohophp\SchemaOrg\Thing\Intangible
 */
 class Grant extends Intangible
 {
 
 
-    /**
-        * Indicates an item funded or sponsored through a [[Grant]].
-        * @param Thing|array|string|mixed $value
-    * @return $this
-    */
-    public function fundedItem($value)
-    {
-        $this->setProperty('fundedItem', $value);
-        return $this;
-    }
-
-    /**
-    * @param Thing|array|string|mixed $value
-    * @return $this
-    */
-    public function setFundedItem($value)
-    {
-        $this->setProperty('fundedItem', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getFundedItem()
-    {
-       return $this->getProperty('fundedItem');
-    }
-
-
-    /**
-        * A person or organization that supports a thing through a pledge, promise, or
- * financial contribution. e.g. a sponsor of a Medical Study or a corporate
+  /**
+      * A person or organization that supports a thing through a pledge, promise, or
+ * financial contribution. E.g. a sponsor of a Medical Study or a corporate
  * sponsor of an event.
-        * @param Person|Organization|array|string|mixed $value
-    * @return $this
-    */
-    public function sponsor($value)
-    {
-        $this->setProperty('sponsor', $value);
-        return $this;
-    }
+    * @param Organization|Person|array $value
+  * @return $this
+  */
+  public function sponsor($value)
+  {
+  $this->setProperty('sponsor', $value);
+  return $this;
+  }
 
-    /**
-    * @param Person|Organization|array|string|mixed $value
-    * @return $this
-    */
-    public function setSponsor($value)
-    {
-        $this->setProperty('sponsor', $value);
-        return $this;
-    }
+  /**
+  * @param Organization|Person|array $value
+  * @return $this
+  */
+  public function setSponsor($value)
+  {
+  $this->setProperty('sponsor', $value);
+  return $this;
+  }
 
-    /**
-    * @return string|array|mixed
-    */
-    public function getSponsor()
-    {
-       return $this->getProperty('sponsor');
-    }
+  /**
+  * @param Organization|Person $value
+  * @return $this
+  */
+  public function addSponsor($value)
+  {
+  $current = $this->getProperty('sponsor');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('sponsor', $current);
+  return $this;
+  }
+
+  /**
+  * @return Organization|Person|array
+  */
+  public function getSponsor()
+  {
+  return $this->getProperty('sponsor');
+  }
+
+
+  /**
+      * A person or organization that supports (sponsors) something through some kind
+ * of financial contribution.
+    * @param Organization|Person|array $value
+  * @return $this
+  */
+  public function funder($value)
+  {
+  $this->setProperty('funder', $value);
+  return $this;
+  }
+
+  /**
+  * @param Organization|Person|array $value
+  * @return $this
+  */
+  public function setFunder($value)
+  {
+  $this->setProperty('funder', $value);
+  return $this;
+  }
+
+  /**
+  * @param Organization|Person $value
+  * @return $this
+  */
+  public function addFunder($value)
+  {
+  $current = $this->getProperty('funder');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('funder', $current);
+  return $this;
+  }
+
+  /**
+  * @return Organization|Person|array
+  */
+  public function getFunder()
+  {
+  return $this->getProperty('funder');
+  }
+
+
+  /**
+      * Indicates something directly or indirectly funded or sponsored through a
+ * [[Grant]]. See also [[ownershipFundingInfo]].
+    * @param Person|MedicalEntity|Event|CreativeWork|Product|Organization|BioChemEntity|array $value
+  * @return $this
+  */
+  public function fundedItem($value)
+  {
+  $this->setProperty('fundedItem', $value);
+  return $this;
+  }
+
+  /**
+  * @param Person|MedicalEntity|Event|CreativeWork|Product|Organization|BioChemEntity|array $value
+  * @return $this
+  */
+  public function setFundedItem($value)
+  {
+  $this->setProperty('fundedItem', $value);
+  return $this;
+  }
+
+  /**
+  * @param Person|MedicalEntity|Event|CreativeWork|Product|Organization|BioChemEntity $value
+  * @return $this
+  */
+  public function addFundedItem($value)
+  {
+  $current = $this->getProperty('fundedItem');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('fundedItem', $current);
+  return $this;
+  }
+
+  /**
+  * @return Person|MedicalEntity|Event|CreativeWork|Product|Organization|BioChemEntity|array
+  */
+  public function getFundedItem()
+  {
+  return $this->getProperty('fundedItem');
+  }
 
 
 }

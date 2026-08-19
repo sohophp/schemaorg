@@ -62,8 +62,7 @@ class GeneratorCommendTest extends TestCase
             $Logger->warning($exception->getMessage(), $exception->getTrace());
         }
 
-        $count=800;
-        $count=901;
+        $count = 925;
         $this->assertCount($count, $classFiles, "classFiles:" . count($classFiles));
     }
 }

@@ -1,10 +1,10 @@
 <?php
 namespace Sohophp\SchemaOrg\Thing\Action\InteractAction;
 
-use Sohophp\SchemaOrg\Thing\Action\InteractAction;
+  use Sohophp\SchemaOrg\Thing\Action\InteractAction;
 
 /**
-* The act of forming a personal connection with someone/something (object)
+  * The act of forming a personal connection with someone/something (object)
  * unidirectionally/asymmetrically to get updates pushed to.
  * 
  * Related actions:
@@ -16,7 +16,7 @@ use Sohophp\SchemaOrg\Thing\Action\InteractAction;
  * agent is interested in continuing receiving updates from the object.
  * * [[JoinAction]]: Unlike JoinAction, SubscribeAction implies that the agent
  * is interested in continuing receiving updates from the object.
-* @see http://schema.org/SubscribeAction
+  * @see schema:SubscribeAction
 * @package Sohophp\SchemaOrg\Thing\Action\InteractAction
 */
 class SubscribeAction extends InteractAction

@@ -1,11 +1,11 @@
 <?php
 namespace Sohophp\SchemaOrg\Thing\Place\CivicStructure;
 
-use Sohophp\SchemaOrg\Thing\Place\CivicStructure;
+  use Sohophp\SchemaOrg\Thing\Place\CivicStructure;
 
 /**
-* A music venue.
-* @see http://schema.org/MusicVenue
+  * A music venue.
+  * @see schema:MusicVenue
 * @package Sohophp\SchemaOrg\Thing\Place\CivicStructure
 */
 class MusicVenue extends CivicStructure

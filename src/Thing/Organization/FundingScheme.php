@@ -1,10 +1,10 @@
 <?php
 namespace Sohophp\SchemaOrg\Thing\Organization;
 
-use Sohophp\SchemaOrg\Thing\Organization;
+  use Sohophp\SchemaOrg\Thing\Organization;
 
 /**
-* A FundingScheme combines organizational, project and policy aspects of
+  * A FundingScheme combines organizational, project and policy aspects of
  * grant-based funding
  *     that sets guidelines, principles and mechanisms to support other kinds of
  * projects and activities.
@@ -14,7 +14,7 @@ use Sohophp\SchemaOrg\Thing\Organization;
  * fund. For large scale public sector funding, the management and
  * administration of grant awards is often handled by other, dedicated,
  * organizations - [[FundingAgency]]s such as ERC, REA, ...
-* @see http://schema.org/FundingScheme
+  * @see schema:FundingScheme
 * @package Sohophp\SchemaOrg\Thing\Organization
 */
 class FundingScheme extends Organization

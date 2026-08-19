@@ -1,112 +1,163 @@
 <?php
 namespace Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalCondition;
 
-use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalCondition;
-use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MedicalEnumeration\InfectiousAgentClass;
+  use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalCondition;
+  use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\MedicalEnumeration\InfectiousAgentClass;
 
 /**
-* An infectious disease is a clinically evident human disease resulting from
+  * An infectious disease is a clinically evident human disease resulting from
  * the presence of pathogenic microbial agents, like pathogenic viruses,
  * pathogenic bacteria, fungi, protozoa, multicellular parasites, and prions. To
  * be considered an infectious disease, such pathogens are known to be able to
  * cause this disease.
-* @see http://schema.org/InfectiousDisease
+  * @see schema:InfectiousDisease
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalCondition
 */
 class InfectiousDisease extends MedicalCondition
 {
 
 
-    /**
-        * The actual infectious agent, such as a specific bacterium.
-        * @param string|array|mixed $value
-    * @return $this
-    */
-    public function infectiousAgent($value)
-    {
-        $this->setProperty('infectiousAgent', $value);
-        return $this;
-    }
-
-    /**
-    * @param string|array|mixed $value
-    * @return $this
-    */
-    public function setInfectiousAgent($value)
-    {
-        $this->setProperty('infectiousAgent', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getInfectiousAgent()
-    {
-       return $this->getProperty('infectiousAgent');
-    }
-
-
-    /**
-        * How the disease spreads, either as a route or vector, for example 'direct
- * contact', 'Aedes aegypti', etc.
-        * @param string|array|mixed $value
-    * @return $this
-    */
-    public function transmissionMethod($value)
-    {
-        $this->setProperty('transmissionMethod', $value);
-        return $this;
-    }
-
-    /**
-    * @param string|array|mixed $value
-    * @return $this
-    */
-    public function setTransmissionMethod($value)
-    {
-        $this->setProperty('transmissionMethod', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getTransmissionMethod()
-    {
-       return $this->getProperty('transmissionMethod');
-    }
-
-
-    /**
-        * The class of infectious agent (bacteria, prion, etc.) that causes the
+  /**
+      * The class of infectious agent (bacteria, prion, etc.) that causes the
  * disease.
-        * @param InfectiousAgentClass|array|string|mixed $value
-    * @return $this
-    */
-    public function infectiousAgentClass($value)
-    {
-        $this->setProperty('infectiousAgentClass', $value);
-        return $this;
-    }
+    * @param InfectiousAgentClass|array $value
+  * @return $this
+  */
+  public function infectiousAgentClass($value)
+  {
+  $this->setProperty('infectiousAgentClass', $value);
+  return $this;
+  }
 
-    /**
-    * @param InfectiousAgentClass|array|string|mixed $value
-    * @return $this
-    */
-    public function setInfectiousAgentClass($value)
-    {
-        $this->setProperty('infectiousAgentClass', $value);
-        return $this;
-    }
+  /**
+  * @param InfectiousAgentClass|array $value
+  * @return $this
+  */
+  public function setInfectiousAgentClass($value)
+  {
+  $this->setProperty('infectiousAgentClass', $value);
+  return $this;
+  }
 
-    /**
-    * @return string|array|mixed
-    */
-    public function getInfectiousAgentClass()
-    {
-       return $this->getProperty('infectiousAgentClass');
-    }
+  /**
+  * @param InfectiousAgentClass $value
+  * @return $this
+  */
+  public function addInfectiousAgentClass($value)
+  {
+  $current = $this->getProperty('infectiousAgentClass');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('infectiousAgentClass', $current);
+  return $this;
+  }
+
+  /**
+  * @return InfectiousAgentClass|array
+  */
+  public function getInfectiousAgentClass()
+  {
+  return $this->getProperty('infectiousAgentClass');
+  }
+
+
+  /**
+      * The actual infectious agent, such as a specific bacterium.
+    * @param string|array $value
+  * @return $this
+  */
+  public function infectiousAgent($value)
+  {
+  $this->setProperty('infectiousAgent', $value);
+  return $this;
+  }
+
+  /**
+  * @param string|array $value
+  * @return $this
+  */
+  public function setInfectiousAgent($value)
+  {
+  $this->setProperty('infectiousAgent', $value);
+  return $this;
+  }
+
+  /**
+  * @param string $value
+  * @return $this
+  */
+  public function addInfectiousAgent($value)
+  {
+  $current = $this->getProperty('infectiousAgent');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('infectiousAgent', $current);
+  return $this;
+  }
+
+  /**
+  * @return string|array
+  */
+  public function getInfectiousAgent()
+  {
+  return $this->getProperty('infectiousAgent');
+  }
+
+
+  /**
+      * How the disease spreads, either as a route or vector, for example 'direct
+ * contact', 'Aedes aegypti', etc.
+    * @param string|array $value
+  * @return $this
+  */
+  public function transmissionMethod($value)
+  {
+  $this->setProperty('transmissionMethod', $value);
+  return $this;
+  }
+
+  /**
+  * @param string|array $value
+  * @return $this
+  */
+  public function setTransmissionMethod($value)
+  {
+  $this->setProperty('transmissionMethod', $value);
+  return $this;
+  }
+
+  /**
+  * @param string $value
+  * @return $this
+  */
+  public function addTransmissionMethod($value)
+  {
+  $current = $this->getProperty('transmissionMethod');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('transmissionMethod', $current);
+  return $this;
+  }
+
+  /**
+  * @return string|array
+  */
+  public function getTransmissionMethod()
+  {
+  return $this->getProperty('transmissionMethod');
+  }
 
 
 }

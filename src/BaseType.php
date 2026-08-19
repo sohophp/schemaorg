@@ -100,7 +100,32 @@ class BaseType implements \ArrayAccess, \JsonSerializable
         }
 
         return $this->filterArray($vars);
+    }
 
+    public function setId(string $id): static
+    {
+        return $this->setProperty('@id', $id);
+    }
+
+    public function getId(): ?string
+    {
+        $id = $this->getProperty('@id');
+        return is_string($id) ? $id : null;
+    }
+
+    public function setContext(string|array $context): static
+    {
+        return $this->setProperty('@context', $context);
+    }
+
+    public function getContext(): string|array
+    {
+        return $this->properties['@context'] ?? 'https://schema.org';
+    }
+
+    public function setJsonLdType(string|array $type): static
+    {
+        return $this->setProperty('@type', $type);
     }
 
     /**
@@ -119,7 +144,6 @@ class BaseType implements \ArrayAccess, \JsonSerializable
             return array_map([$this, 'filterArray'], $vars);
         }
         return $vars;
-
     }
 
     /**
@@ -145,16 +169,15 @@ class BaseType implements \ArrayAccess, \JsonSerializable
     /**
      * @return string
      */
-    public function getContext(): string
-    {
-        return 'https://schema.org';
-    }
-
     /**
      * @return mixed
      */
     public function getType(): mixed
     {
+        if (array_key_exists('@type', $this->properties)) {
+            return $this->properties['@type'];
+        }
+
         try {
             return $this->type ?? (new \ReflectionClass($this))->getShortName();
         } catch (\Throwable) {

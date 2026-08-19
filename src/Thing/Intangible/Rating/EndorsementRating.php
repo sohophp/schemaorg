@@ -1,10 +1,10 @@
 <?php
 namespace Sohophp\SchemaOrg\Thing\Intangible\Rating;
 
-use Sohophp\SchemaOrg\Thing\Intangible\Rating;
+  use Sohophp\SchemaOrg\Thing\Intangible\Rating;
 
 /**
-* An EndorsementRating is a rating that expresses some level of endorsement,
+  * An EndorsementRating is a rating that expresses some level of endorsement,
  * for example inclusion in a "critic's pick" blog, a
  * "Like" or "+1" on a social network. It can be considered the [[result]] of an
  * [[EndorseAction]] in which the [[object]] of the action is rated positively
@@ -17,7 +17,7 @@ use Sohophp\SchemaOrg\Thing\Intangible\Rating;
  * but this is not required: having an explicit type for indicating a positive,
  * endorsement rating is particularly useful in the absence of numeric scales as
  * it helps consumers understand that the rating is broadly positive.
-* @see http://schema.org/EndorsementRating
+  * @see schema:EndorsementRating
 * @package Sohophp\SchemaOrg\Thing\Intangible\Rating
 */
 class EndorsementRating extends Rating

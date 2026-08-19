@@ -1,387 +1,591 @@
 <?php
 namespace Sohophp\SchemaOrg\Thing\Intangible;
 
-use Sohophp\SchemaOrg\Thing\Intangible;
-use Sohophp\SchemaOrg\Thing\Organization;
-use Sohophp\SchemaOrg\Thing\Person;
-use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\DeliveryMethod;
-use Sohophp\SchemaOrg\Thing\Event\DeliveryEvent;
-use Sohophp\SchemaOrg\Thing\Product;
-use Sohophp\SchemaOrg\Thing\Intangible\Order;
-use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\ContactPoint\PostalAddress;
+  use Sohophp\SchemaOrg\Thing\Intangible;
+  use Sohophp\SchemaOrg\Order;
+  use Sohophp\SchemaOrg\Thing\Event\DeliveryEvent;
+  use Sohophp\SchemaOrg\Thing\Product;
+  use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\ContactPoint\PostalAddress;
+  use Sohophp\SchemaOrg\Thing\Intangible\Enumeration\DeliveryMethod;
+  use Sohophp\SchemaOrg\Thing\Organization;
+  use Sohophp\SchemaOrg\Thing\Person;
 
 /**
-* The delivery of a parcel either via the postal service or a commercial
+  * The delivery of a parcel either via the postal service or a commercial
  * service.
-* @see http://schema.org/ParcelDelivery
+  * @see schema:ParcelDelivery
 * @package Sohophp\SchemaOrg\Thing\Intangible
 */
 class ParcelDelivery extends Intangible
 {
 
 
-    /**
-        * The service provider, service operator, or service performer; the goods
+  /**
+      * Tracking url for the parcel delivery.
+    * @param string|array $value
+  * @return $this
+  */
+  public function trackingUrl($value)
+  {
+  $this->setProperty('trackingUrl', $value);
+  return $this;
+  }
+
+  /**
+  * @param string|array $value
+  * @return $this
+  */
+  public function setTrackingUrl($value)
+  {
+  $this->setProperty('trackingUrl', $value);
+  return $this;
+  }
+
+  /**
+  * @param string $value
+  * @return $this
+  */
+  public function addTrackingUrl($value)
+  {
+  $current = $this->getProperty('trackingUrl');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('trackingUrl', $current);
+  return $this;
+  }
+
+  /**
+  * @return string|array
+  */
+  public function getTrackingUrl()
+  {
+  return $this->getProperty('trackingUrl');
+  }
+
+
+  /**
+      * The earliest date the package may arrive.
+    * @param mixed $value
+  * @return $this
+  */
+  public function expectedArrivalFrom($value)
+  {
+  $this->setProperty('expectedArrivalFrom', $value);
+  return $this;
+  }
+
+  /**
+  * @param mixed $value
+  * @return $this
+  */
+  public function setExpectedArrivalFrom($value)
+  {
+  $this->setProperty('expectedArrivalFrom', $value);
+  return $this;
+  }
+
+  /**
+  * @param mixed $value
+  * @return $this
+  */
+  public function addExpectedArrivalFrom($value)
+  {
+  $current = $this->getProperty('expectedArrivalFrom');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('expectedArrivalFrom', $current);
+  return $this;
+  }
+
+  /**
+  * @return mixed
+  */
+  public function getExpectedArrivalFrom()
+  {
+  return $this->getProperty('expectedArrivalFrom');
+  }
+
+
+  /**
+      * The overall order the items in this delivery were included in.
+    * @param Order|array $value
+  * @return $this
+  */
+  public function partOfOrder($value)
+  {
+  $this->setProperty('partOfOrder', $value);
+  return $this;
+  }
+
+  /**
+  * @param Order|array $value
+  * @return $this
+  */
+  public function setPartOfOrder($value)
+  {
+  $this->setProperty('partOfOrder', $value);
+  return $this;
+  }
+
+  /**
+  * @param Order $value
+  * @return $this
+  */
+  public function addPartOfOrder($value)
+  {
+  $current = $this->getProperty('partOfOrder');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('partOfOrder', $current);
+  return $this;
+  }
+
+  /**
+  * @return Order|array
+  */
+  public function getPartOfOrder()
+  {
+  return $this->getProperty('partOfOrder');
+  }
+
+
+  /**
+      * New entry added as the package passes through each leg of its journey (from
+ * shipment to final delivery).
+    * @param DeliveryEvent|array $value
+  * @return $this
+  */
+  public function deliveryStatus($value)
+  {
+  $this->setProperty('deliveryStatus', $value);
+  return $this;
+  }
+
+  /**
+  * @param DeliveryEvent|array $value
+  * @return $this
+  */
+  public function setDeliveryStatus($value)
+  {
+  $this->setProperty('deliveryStatus', $value);
+  return $this;
+  }
+
+  /**
+  * @param DeliveryEvent $value
+  * @return $this
+  */
+  public function addDeliveryStatus($value)
+  {
+  $current = $this->getProperty('deliveryStatus');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('deliveryStatus', $current);
+  return $this;
+  }
+
+  /**
+  * @return DeliveryEvent|array
+  */
+  public function getDeliveryStatus()
+  {
+  return $this->getProperty('deliveryStatus');
+  }
+
+
+  /**
+      * Item(s) being shipped.
+    * @param Product|array $value
+  * @return $this
+  */
+  public function itemShipped($value)
+  {
+  $this->setProperty('itemShipped', $value);
+  return $this;
+  }
+
+  /**
+  * @param Product|array $value
+  * @return $this
+  */
+  public function setItemShipped($value)
+  {
+  $this->setProperty('itemShipped', $value);
+  return $this;
+  }
+
+  /**
+  * @param Product $value
+  * @return $this
+  */
+  public function addItemShipped($value)
+  {
+  $current = $this->getProperty('itemShipped');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('itemShipped', $current);
+  return $this;
+  }
+
+  /**
+  * @return Product|array
+  */
+  public function getItemShipped()
+  {
+  return $this->getProperty('itemShipped');
+  }
+
+
+  /**
+      * Destination address.
+    * @param PostalAddress|array $value
+  * @return $this
+  */
+  public function deliveryAddress($value)
+  {
+  $this->setProperty('deliveryAddress', $value);
+  return $this;
+  }
+
+  /**
+  * @param PostalAddress|array $value
+  * @return $this
+  */
+  public function setDeliveryAddress($value)
+  {
+  $this->setProperty('deliveryAddress', $value);
+  return $this;
+  }
+
+  /**
+  * @param PostalAddress $value
+  * @return $this
+  */
+  public function addDeliveryAddress($value)
+  {
+  $current = $this->getProperty('deliveryAddress');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('deliveryAddress', $current);
+  return $this;
+  }
+
+  /**
+  * @return PostalAddress|array
+  */
+  public function getDeliveryAddress()
+  {
+  return $this->getProperty('deliveryAddress');
+  }
+
+
+  /**
+      * Method used for delivery or shipping.
+    * @param DeliveryMethod|array $value
+  * @return $this
+  */
+  public function hasDeliveryMethod($value)
+  {
+  $this->setProperty('hasDeliveryMethod', $value);
+  return $this;
+  }
+
+  /**
+  * @param DeliveryMethod|array $value
+  * @return $this
+  */
+  public function setHasDeliveryMethod($value)
+  {
+  $this->setProperty('hasDeliveryMethod', $value);
+  return $this;
+  }
+
+  /**
+  * @param DeliveryMethod $value
+  * @return $this
+  */
+  public function addHasDeliveryMethod($value)
+  {
+  $current = $this->getProperty('hasDeliveryMethod');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('hasDeliveryMethod', $current);
+  return $this;
+  }
+
+  /**
+  * @return DeliveryMethod|array
+  */
+  public function getHasDeliveryMethod()
+  {
+  return $this->getProperty('hasDeliveryMethod');
+  }
+
+
+  /**
+      * Shipper tracking number.
+    * @param string|array $value
+  * @return $this
+  */
+  public function trackingNumber($value)
+  {
+  $this->setProperty('trackingNumber', $value);
+  return $this;
+  }
+
+  /**
+  * @param string|array $value
+  * @return $this
+  */
+  public function setTrackingNumber($value)
+  {
+  $this->setProperty('trackingNumber', $value);
+  return $this;
+  }
+
+  /**
+  * @param string $value
+  * @return $this
+  */
+  public function addTrackingNumber($value)
+  {
+  $current = $this->getProperty('trackingNumber');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('trackingNumber', $current);
+  return $this;
+  }
+
+  /**
+  * @return string|array
+  */
+  public function getTrackingNumber()
+  {
+  return $this->getProperty('trackingNumber');
+  }
+
+
+  /**
+      * The service provider, service operator, or service performer; the goods
  * producer. Another party (a seller) may offer those services or goods on
  * behalf of the provider. A provider may also serve as the seller.
-        * @param Organization|Person|array|string|mixed $value
-    * @return $this
-    */
-    public function provider($value)
-    {
-        $this->setProperty('provider', $value);
-        return $this;
-    }
+    * @param Organization|Person|array $value
+  * @return $this
+  */
+  public function provider($value)
+  {
+  $this->setProperty('provider', $value);
+  return $this;
+  }
 
-    /**
-    * @param Organization|Person|array|string|mixed $value
-    * @return $this
-    */
-    public function setProvider($value)
-    {
-        $this->setProperty('provider', $value);
-        return $this;
-    }
+  /**
+  * @param Organization|Person|array $value
+  * @return $this
+  */
+  public function setProvider($value)
+  {
+  $this->setProperty('provider', $value);
+  return $this;
+  }
 
-    /**
-    * @return string|array|mixed
-    */
-    public function getProvider()
-    {
-       return $this->getProperty('provider');
-    }
+  /**
+  * @param Organization|Person $value
+  * @return $this
+  */
+  public function addProvider($value)
+  {
+  $current = $this->getProperty('provider');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('provider', $current);
+  return $this;
+  }
 
-
-    /**
-        * Tracking url for the parcel delivery.
-        * @param string|array|mixed $value
-    * @return $this
-    */
-    public function trackingUrl($value)
-    {
-        $this->setProperty('trackingUrl', $value);
-        return $this;
-    }
-
-    /**
-    * @param string|array|mixed $value
-    * @return $this
-    */
-    public function setTrackingUrl($value)
-    {
-        $this->setProperty('trackingUrl', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getTrackingUrl()
-    {
-       return $this->getProperty('trackingUrl');
-    }
+  /**
+  * @return Organization|Person|array
+  */
+  public function getProvider()
+  {
+  return $this->getProperty('provider');
+  }
 
 
-    /**
-        * Shipper tracking number.
-        * @param string|array|mixed $value
-    * @return $this
-    */
-    public function trackingNumber($value)
-    {
-        $this->setProperty('trackingNumber', $value);
-        return $this;
-    }
+  /**
+      * Shipper's address.
+    * @param PostalAddress|array $value
+  * @return $this
+  */
+  public function originAddress($value)
+  {
+  $this->setProperty('originAddress', $value);
+  return $this;
+  }
 
-    /**
-    * @param string|array|mixed $value
-    * @return $this
-    */
-    public function setTrackingNumber($value)
-    {
-        $this->setProperty('trackingNumber', $value);
-        return $this;
-    }
+  /**
+  * @param PostalAddress|array $value
+  * @return $this
+  */
+  public function setOriginAddress($value)
+  {
+  $this->setProperty('originAddress', $value);
+  return $this;
+  }
 
-    /**
-    * @return string|array|mixed
-    */
-    public function getTrackingNumber()
-    {
-       return $this->getProperty('trackingNumber');
-    }
+  /**
+  * @param PostalAddress $value
+  * @return $this
+  */
+  public function addOriginAddress($value)
+  {
+  $current = $this->getProperty('originAddress');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('originAddress', $current);
+  return $this;
+  }
 
-
-    /**
-        * Method used for delivery or shipping.
-        * @param DeliveryMethod|array|string|mixed $value
-    * @return $this
-    */
-    public function hasDeliveryMethod($value)
-    {
-        $this->setProperty('hasDeliveryMethod', $value);
-        return $this;
-    }
-
-    /**
-    * @param DeliveryMethod|array|string|mixed $value
-    * @return $this
-    */
-    public function setHasDeliveryMethod($value)
-    {
-        $this->setProperty('hasDeliveryMethod', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getHasDeliveryMethod()
-    {
-       return $this->getProperty('hasDeliveryMethod');
-    }
+  /**
+  * @return PostalAddress|array
+  */
+  public function getOriginAddress()
+  {
+  return $this->getProperty('originAddress');
+  }
 
 
-    /**
-        * New entry added as the package passes through each leg of its journey (from
- * shipment to final delivery).
-        * @param DeliveryEvent|array|string|mixed $value
-    * @return $this
-    */
-    public function deliveryStatus($value)
-    {
-        $this->setProperty('deliveryStatus', $value);
-        return $this;
-    }
+  /**
+      * The latest date the package may arrive.
+    * @param mixed $value
+  * @return $this
+  */
+  public function expectedArrivalUntil($value)
+  {
+  $this->setProperty('expectedArrivalUntil', $value);
+  return $this;
+  }
 
-    /**
-    * @param DeliveryEvent|array|string|mixed $value
-    * @return $this
-    */
-    public function setDeliveryStatus($value)
-    {
-        $this->setProperty('deliveryStatus', $value);
-        return $this;
-    }
+  /**
+  * @param mixed $value
+  * @return $this
+  */
+  public function setExpectedArrivalUntil($value)
+  {
+  $this->setProperty('expectedArrivalUntil', $value);
+  return $this;
+  }
 
-    /**
-    * @return string|array|mixed
-    */
-    public function getDeliveryStatus()
-    {
-       return $this->getProperty('deliveryStatus');
-    }
+  /**
+  * @param mixed $value
+  * @return $this
+  */
+  public function addExpectedArrivalUntil($value)
+  {
+  $current = $this->getProperty('expectedArrivalUntil');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('expectedArrivalUntil', $current);
+  return $this;
+  }
+
+  /**
+  * @return mixed
+  */
+  public function getExpectedArrivalUntil()
+  {
+  return $this->getProperty('expectedArrivalUntil');
+  }
 
 
-    /**
-        * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery
+  /**
+      * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery
  * and flights.
-        * @param Organization|array|string|mixed $value
-    * @return $this
-    */
-    public function carrier($value)
-    {
-        $this->setProperty('carrier', $value);
-        return $this;
-    }
+    * @param Organization|array $value
+  * @return $this
+  */
+  public function carrier($value)
+  {
+  $this->setProperty('carrier', $value);
+  return $this;
+  }
 
-    /**
-    * @param Organization|array|string|mixed $value
-    * @return $this
-    */
-    public function setCarrier($value)
-    {
-        $this->setProperty('carrier', $value);
-        return $this;
-    }
+  /**
+  * @param Organization|array $value
+  * @return $this
+  */
+  public function setCarrier($value)
+  {
+  $this->setProperty('carrier', $value);
+  return $this;
+  }
 
-    /**
-    * @return string|array|mixed
-    */
-    public function getCarrier()
-    {
-       return $this->getProperty('carrier');
-    }
+  /**
+  * @param Organization $value
+  * @return $this
+  */
+  public function addCarrier($value)
+  {
+  $current = $this->getProperty('carrier');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('carrier', $current);
+  return $this;
+  }
 
-
-    /**
-        * Item(s) being shipped.
-        * @param Product|array|string|mixed $value
-    * @return $this
-    */
-    public function itemShipped($value)
-    {
-        $this->setProperty('itemShipped', $value);
-        return $this;
-    }
-
-    /**
-    * @param Product|array|string|mixed $value
-    * @return $this
-    */
-    public function setItemShipped($value)
-    {
-        $this->setProperty('itemShipped', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getItemShipped()
-    {
-       return $this->getProperty('itemShipped');
-    }
-
-
-    /**
-        * The overall order the items in this delivery were included in.
-        * @param Order|array|string|mixed $value
-    * @return $this
-    */
-    public function partOfOrder($value)
-    {
-        $this->setProperty('partOfOrder', $value);
-        return $this;
-    }
-
-    /**
-    * @param Order|array|string|mixed $value
-    * @return $this
-    */
-    public function setPartOfOrder($value)
-    {
-        $this->setProperty('partOfOrder', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getPartOfOrder()
-    {
-       return $this->getProperty('partOfOrder');
-    }
-
-
-    /**
-        * The earliest date the package may arrive.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function expectedArrivalFrom($value)
-    {
-        $this->setProperty('expectedArrivalFrom', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setExpectedArrivalFrom($value)
-    {
-        $this->setProperty('expectedArrivalFrom', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getExpectedArrivalFrom()
-    {
-       return $this->getProperty('expectedArrivalFrom');
-    }
-
-
-    /**
-        * Shipper's address.
-        * @param PostalAddress|array|string|mixed $value
-    * @return $this
-    */
-    public function originAddress($value)
-    {
-        $this->setProperty('originAddress', $value);
-        return $this;
-    }
-
-    /**
-    * @param PostalAddress|array|string|mixed $value
-    * @return $this
-    */
-    public function setOriginAddress($value)
-    {
-        $this->setProperty('originAddress', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getOriginAddress()
-    {
-       return $this->getProperty('originAddress');
-    }
-
-
-    /**
-        * Destination address.
-        * @param PostalAddress|array|string|mixed $value
-    * @return $this
-    */
-    public function deliveryAddress($value)
-    {
-        $this->setProperty('deliveryAddress', $value);
-        return $this;
-    }
-
-    /**
-    * @param PostalAddress|array|string|mixed $value
-    * @return $this
-    */
-    public function setDeliveryAddress($value)
-    {
-        $this->setProperty('deliveryAddress', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getDeliveryAddress()
-    {
-       return $this->getProperty('deliveryAddress');
-    }
-
-
-    /**
-        * The latest date the package may arrive.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function expectedArrivalUntil($value)
-    {
-        $this->setProperty('expectedArrivalUntil', $value);
-        return $this;
-    }
-
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setExpectedArrivalUntil($value)
-    {
-        $this->setProperty('expectedArrivalUntil', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getExpectedArrivalUntil()
-    {
-       return $this->getProperty('expectedArrivalUntil');
-    }
+  /**
+  * @return Organization|array
+  */
+  public function getCarrier()
+  {
+  return $this->getProperty('carrier');
+  }
 
 
 }

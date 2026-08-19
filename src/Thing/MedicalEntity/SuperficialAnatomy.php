@@ -1,14 +1,14 @@
 <?php
 namespace Sohophp\SchemaOrg\Thing\MedicalEntity;
 
-use Sohophp\SchemaOrg\Thing\MedicalEntity;
-use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalCondition;
-use Sohophp\SchemaOrg\Thing\MedicalEntity\AnatomicalSystem;
-use Sohophp\SchemaOrg\Thing\MedicalEntity\AnatomicalStructure;
-use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalProcedure\TherapeuticProcedure\MedicalTherapy;
+  use Sohophp\SchemaOrg\Thing\MedicalEntity;
+  use Sohophp\SchemaOrg\Thing\MedicalEntity\AnatomicalSystem;
+  use Sohophp\SchemaOrg\Thing\MedicalEntity\AnatomicalStructure;
+  use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalProcedure\TherapeuticProcedure\MedicalTherapy;
+  use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalCondition;
 
 /**
-* Anatomical features that can be observed by sight (without dissection),
+  * Anatomical features that can be observed by sight (without dissection),
  * including the form and proportions of the human body as well as surface
  * landmarks that correspond to deeper subcutaneous structures. Superficial
  * anatomy plays an important role in sports medicine, phlebotomy, and other
@@ -26,165 +26,250 @@ use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalProcedure\TherapeuticProcedure\
  * scapula to be superficially visible. Here, the superficial anatomy is the
  * visible edges of the scapula, implying the underlying dislocation of the
  * joint (the related anatomical structure).
-* @see http://schema.org/SuperficialAnatomy
+  * @see schema:SuperficialAnatomy
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity
 */
 class SuperficialAnatomy extends MedicalEntity
 {
 
 
-    /**
-        * A medical condition associated with this anatomy.
-        * @param MedicalCondition|array|string|mixed $value
-    * @return $this
-    */
-    public function relatedCondition($value)
-    {
-        $this->setProperty('relatedCondition', $value);
-        return $this;
-    }
-
-    /**
-    * @param MedicalCondition|array|string|mixed $value
-    * @return $this
-    */
-    public function setRelatedCondition($value)
-    {
-        $this->setProperty('relatedCondition', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getRelatedCondition()
-    {
-       return $this->getProperty('relatedCondition');
-    }
-
-
-    /**
-        * If applicable, a description of the pathophysiology associated with the
- * anatomical system, including potential abnormal changes in the mechanical,
- * physical, and biochemical functions of the system.
-        * @param string|array|mixed $value
-    * @return $this
-    */
-    public function associatedPathophysiology($value)
-    {
-        $this->setProperty('associatedPathophysiology', $value);
-        return $this;
-    }
-
-    /**
-    * @param string|array|mixed $value
-    * @return $this
-    */
-    public function setAssociatedPathophysiology($value)
-    {
-        $this->setProperty('associatedPathophysiology', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getAssociatedPathophysiology()
-    {
-       return $this->getProperty('associatedPathophysiology');
-    }
-
-
-    /**
-        * The significance associated with the superficial anatomy; as an example, how
+  /**
+      * The significance associated with the superficial anatomy; as an example, how
  * characteristics of the superficial anatomy can suggest underlying medical
  * conditions or courses of treatment.
-        * @param string|array|mixed $value
-    * @return $this
-    */
-    public function significance($value)
-    {
-        $this->setProperty('significance', $value);
-        return $this;
-    }
+    * @param string|array $value
+  * @return $this
+  */
+  public function significance($value)
+  {
+  $this->setProperty('significance', $value);
+  return $this;
+  }
 
-    /**
-    * @param string|array|mixed $value
-    * @return $this
-    */
-    public function setSignificance($value)
-    {
-        $this->setProperty('significance', $value);
-        return $this;
-    }
+  /**
+  * @param string|array $value
+  * @return $this
+  */
+  public function setSignificance($value)
+  {
+  $this->setProperty('significance', $value);
+  return $this;
+  }
 
-    /**
-    * @return string|array|mixed
-    */
-    public function getSignificance()
-    {
-       return $this->getProperty('significance');
-    }
+  /**
+  * @param string $value
+  * @return $this
+  */
+  public function addSignificance($value)
+  {
+  $current = $this->getProperty('significance');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('significance', $current);
+  return $this;
+  }
 
-
-    /**
-        * Anatomical systems or structures that relate to the superficial anatomy.
-        * @param AnatomicalSystem|AnatomicalStructure|array|string|mixed $value
-    * @return $this
-    */
-    public function relatedAnatomy($value)
-    {
-        $this->setProperty('relatedAnatomy', $value);
-        return $this;
-    }
-
-    /**
-    * @param AnatomicalSystem|AnatomicalStructure|array|string|mixed $value
-    * @return $this
-    */
-    public function setRelatedAnatomy($value)
-    {
-        $this->setProperty('relatedAnatomy', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getRelatedAnatomy()
-    {
-       return $this->getProperty('relatedAnatomy');
-    }
+  /**
+  * @return string|array
+  */
+  public function getSignificance()
+  {
+  return $this->getProperty('significance');
+  }
 
 
-    /**
-        * A medical therapy related to this anatomy.
-        * @param MedicalTherapy|array|string|mixed $value
-    * @return $this
-    */
-    public function relatedTherapy($value)
-    {
-        $this->setProperty('relatedTherapy', $value);
-        return $this;
-    }
+  /**
+      * If applicable, a description of the pathophysiology associated with the
+ * anatomical system, including potential abnormal changes in the mechanical,
+ * physical, and biochemical functions of the system.
+    * @param string|array $value
+  * @return $this
+  */
+  public function associatedPathophysiology($value)
+  {
+  $this->setProperty('associatedPathophysiology', $value);
+  return $this;
+  }
 
-    /**
-    * @param MedicalTherapy|array|string|mixed $value
-    * @return $this
-    */
-    public function setRelatedTherapy($value)
-    {
-        $this->setProperty('relatedTherapy', $value);
-        return $this;
-    }
+  /**
+  * @param string|array $value
+  * @return $this
+  */
+  public function setAssociatedPathophysiology($value)
+  {
+  $this->setProperty('associatedPathophysiology', $value);
+  return $this;
+  }
 
-    /**
-    * @return string|array|mixed
-    */
-    public function getRelatedTherapy()
-    {
-       return $this->getProperty('relatedTherapy');
-    }
+  /**
+  * @param string $value
+  * @return $this
+  */
+  public function addAssociatedPathophysiology($value)
+  {
+  $current = $this->getProperty('associatedPathophysiology');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('associatedPathophysiology', $current);
+  return $this;
+  }
+
+  /**
+  * @return string|array
+  */
+  public function getAssociatedPathophysiology()
+  {
+  return $this->getProperty('associatedPathophysiology');
+  }
+
+
+  /**
+      * Anatomical systems or structures that relate to the superficial anatomy.
+    * @param AnatomicalSystem|AnatomicalStructure|array $value
+  * @return $this
+  */
+  public function relatedAnatomy($value)
+  {
+  $this->setProperty('relatedAnatomy', $value);
+  return $this;
+  }
+
+  /**
+  * @param AnatomicalSystem|AnatomicalStructure|array $value
+  * @return $this
+  */
+  public function setRelatedAnatomy($value)
+  {
+  $this->setProperty('relatedAnatomy', $value);
+  return $this;
+  }
+
+  /**
+  * @param AnatomicalSystem|AnatomicalStructure $value
+  * @return $this
+  */
+  public function addRelatedAnatomy($value)
+  {
+  $current = $this->getProperty('relatedAnatomy');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('relatedAnatomy', $current);
+  return $this;
+  }
+
+  /**
+  * @return AnatomicalSystem|AnatomicalStructure|array
+  */
+  public function getRelatedAnatomy()
+  {
+  return $this->getProperty('relatedAnatomy');
+  }
+
+
+  /**
+      * A medical therapy related to this anatomy.
+    * @param MedicalTherapy|array $value
+  * @return $this
+  */
+  public function relatedTherapy($value)
+  {
+  $this->setProperty('relatedTherapy', $value);
+  return $this;
+  }
+
+  /**
+  * @param MedicalTherapy|array $value
+  * @return $this
+  */
+  public function setRelatedTherapy($value)
+  {
+  $this->setProperty('relatedTherapy', $value);
+  return $this;
+  }
+
+  /**
+  * @param MedicalTherapy $value
+  * @return $this
+  */
+  public function addRelatedTherapy($value)
+  {
+  $current = $this->getProperty('relatedTherapy');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('relatedTherapy', $current);
+  return $this;
+  }
+
+  /**
+  * @return MedicalTherapy|array
+  */
+  public function getRelatedTherapy()
+  {
+  return $this->getProperty('relatedTherapy');
+  }
+
+
+  /**
+      * A medical condition associated with this anatomy.
+    * @param MedicalCondition|array $value
+  * @return $this
+  */
+  public function relatedCondition($value)
+  {
+  $this->setProperty('relatedCondition', $value);
+  return $this;
+  }
+
+  /**
+  * @param MedicalCondition|array $value
+  * @return $this
+  */
+  public function setRelatedCondition($value)
+  {
+  $this->setProperty('relatedCondition', $value);
+  return $this;
+  }
+
+  /**
+  * @param MedicalCondition $value
+  * @return $this
+  */
+  public function addRelatedCondition($value)
+  {
+  $current = $this->getProperty('relatedCondition');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('relatedCondition', $current);
+  return $this;
+  }
+
+  /**
+  * @return MedicalCondition|array
+  */
+  public function getRelatedCondition()
+  {
+  return $this->getProperty('relatedCondition');
+  }
 
 
 }

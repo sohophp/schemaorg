@@ -1,276 +1,413 @@
 <?php
 namespace Sohophp\SchemaOrg\Thing\Intangible;
 
-use Sohophp\SchemaOrg\Thing\Intangible;
-use Sohophp\SchemaOrg\Thing\Organization;
-use Sohophp\SchemaOrg\Thing\Person;
-use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\PriceSpecification;
-use Sohophp\SchemaOrg\Thing\Intangible\Seat;
+  use Sohophp\SchemaOrg\Thing\Intangible;
+  use Sohophp\SchemaOrg\Thing\Intangible\Seat;
+  use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\PriceSpecification;
+  use Sohophp\SchemaOrg\Thing\Organization;
+  use Sohophp\SchemaOrg\Thing\Person;
 
 /**
-* Used to describe a ticket to an event, a flight, a bus ride, etc.
-* @see http://schema.org/Ticket
+  * Used to describe a ticket to an event, a flight, a bus ride, etc.
+  * @see schema:Ticket
 * @package Sohophp\SchemaOrg\Thing\Intangible
 */
 class Ticket extends Intangible
 {
 
 
-    /**
-        * The person or organization the reservation or ticket is for.
-        * @param Organization|Person|array|string|mixed $value
-    * @return $this
-    */
-    public function underName($value)
-    {
-        $this->setProperty('underName', $value);
-        return $this;
-    }
+  /**
+      * The seat associated with the ticket.
+    * @param Seat|array $value
+  * @return $this
+  */
+  public function ticketedSeat($value)
+  {
+  $this->setProperty('ticketedSeat', $value);
+  return $this;
+  }
 
-    /**
-    * @param Organization|Person|array|string|mixed $value
-    * @return $this
-    */
-    public function setUnderName($value)
-    {
-        $this->setProperty('underName', $value);
-        return $this;
-    }
+  /**
+  * @param Seat|array $value
+  * @return $this
+  */
+  public function setTicketedSeat($value)
+  {
+  $this->setProperty('ticketedSeat', $value);
+  return $this;
+  }
 
-    /**
-    * @return string|array|mixed
-    */
-    public function getUnderName()
-    {
-       return $this->getProperty('underName');
-    }
+  /**
+  * @param Seat $value
+  * @return $this
+  */
+  public function addTicketedSeat($value)
+  {
+  $current = $this->getProperty('ticketedSeat');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('ticketedSeat', $current);
+  return $this;
+  }
+
+  /**
+  * @return Seat|array
+  */
+  public function getTicketedSeat()
+  {
+  return $this->getProperty('ticketedSeat');
+  }
 
 
-    /**
-        * The total price for the reservation or ticket, including applicable taxes,
+  /**
+      * The total price for the reservation or ticket, including applicable taxes,
  * shipping, etc.
  * 
  * Usage guidelines:
  * 
  * * Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE'
- * (U+0039)) rather than superficially similiar Unicode symbols.
+ * (U+0039)) rather than superficially similar Unicode symbols.
  * * Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a
  * decimal point. Avoid using these symbols as a readability separator.
-        * @param PriceSpecification|string|array|mixed $value
-    * @return $this
-    */
-    public function totalPrice($value)
-    {
-        $this->setProperty('totalPrice', $value);
-        return $this;
-    }
+    * @param PriceSpecification|string|array $value
+  * @return $this
+  */
+  public function totalPrice($value)
+  {
+  $this->setProperty('totalPrice', $value);
+  return $this;
+  }
 
-    /**
-    * @param PriceSpecification|string|array|mixed $value
-    * @return $this
-    */
-    public function setTotalPrice($value)
-    {
-        $this->setProperty('totalPrice', $value);
-        return $this;
-    }
+  /**
+  * @param PriceSpecification|string|array $value
+  * @return $this
+  */
+  public function setTotalPrice($value)
+  {
+  $this->setProperty('totalPrice', $value);
+  return $this;
+  }
 
-    /**
-    * @return string|array|mixed
-    */
-    public function getTotalPrice()
-    {
-       return $this->getProperty('totalPrice');
-    }
+  /**
+  * @param PriceSpecification|string $value
+  * @return $this
+  */
+  public function addTotalPrice($value)
+  {
+  $current = $this->getProperty('totalPrice');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('totalPrice', $current);
+  return $this;
+  }
+
+  /**
+  * @return PriceSpecification|string|array
+  */
+  public function getTotalPrice()
+  {
+  return $this->getProperty('totalPrice');
+  }
 
 
-    /**
-        * The currency of the price, or a price component when attached to
+  /**
+      * The unique identifier for the ticket.
+    * @param string|array $value
+  * @return $this
+  */
+  public function ticketNumber($value)
+  {
+  $this->setProperty('ticketNumber', $value);
+  return $this;
+  }
+
+  /**
+  * @param string|array $value
+  * @return $this
+  */
+  public function setTicketNumber($value)
+  {
+  $this->setProperty('ticketNumber', $value);
+  return $this;
+  }
+
+  /**
+  * @param string $value
+  * @return $this
+  */
+  public function addTicketNumber($value)
+  {
+  $current = $this->getProperty('ticketNumber');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('ticketNumber', $current);
+  return $this;
+  }
+
+  /**
+  * @return string|array
+  */
+  public function getTicketNumber()
+  {
+  return $this->getProperty('ticketNumber');
+  }
+
+
+  /**
+      * The currency of the price, or a price component when attached to
  * [[PriceSpecification]] and its subtypes.
  * 
  * Use standard formats: [ISO 4217 currency
- * format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker
+ * format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker
  * symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for
- * cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings
+ * cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading
  * Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS)
- * and other currency types e.g. "Ithaca HOUR".
-        * @param string|array|mixed $value
-    * @return $this
-    */
-    public function priceCurrency($value)
-    {
-        $this->setProperty('priceCurrency', $value);
-        return $this;
-    }
+ * and other currency types, e.g. "Ithaca HOUR".
+    * @param string|array $value
+  * @return $this
+  */
+  public function priceCurrency($value)
+  {
+  $this->setProperty('priceCurrency', $value);
+  return $this;
+  }
 
-    /**
-    * @param string|array|mixed $value
-    * @return $this
-    */
-    public function setPriceCurrency($value)
-    {
-        $this->setProperty('priceCurrency', $value);
-        return $this;
-    }
+  /**
+  * @param string|array $value
+  * @return $this
+  */
+  public function setPriceCurrency($value)
+  {
+  $this->setProperty('priceCurrency', $value);
+  return $this;
+  }
 
-    /**
-    * @return string|array|mixed
-    */
-    public function getPriceCurrency()
-    {
-       return $this->getProperty('priceCurrency');
-    }
+  /**
+  * @param string $value
+  * @return $this
+  */
+  public function addPriceCurrency($value)
+  {
+  $current = $this->getProperty('priceCurrency');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('priceCurrency', $current);
+  return $this;
+  }
 
-
-    /**
-        * The unique identifier for the ticket.
-        * @param string|array|mixed $value
-    * @return $this
-    */
-    public function ticketNumber($value)
-    {
-        $this->setProperty('ticketNumber', $value);
-        return $this;
-    }
-
-    /**
-    * @param string|array|mixed $value
-    * @return $this
-    */
-    public function setTicketNumber($value)
-    {
-        $this->setProperty('ticketNumber', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getTicketNumber()
-    {
-       return $this->getProperty('ticketNumber');
-    }
+  /**
+  * @return string|array
+  */
+  public function getPriceCurrency()
+  {
+  return $this->getProperty('priceCurrency');
+  }
 
 
-    /**
-        * The organization issuing the ticket or permit.
-        * @param Organization|array|string|mixed $value
-    * @return $this
-    */
-    public function issuedBy($value)
-    {
-        $this->setProperty('issuedBy', $value);
-        return $this;
-    }
-
-    /**
-    * @param Organization|array|string|mixed $value
-    * @return $this
-    */
-    public function setIssuedBy($value)
-    {
-        $this->setProperty('issuedBy', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getIssuedBy()
-    {
-       return $this->getProperty('issuedBy');
-    }
-
-
-    /**
-        * Reference to an asset (e.g., Barcode, QR code image or PDF) usable for
+  /**
+      * Reference to an asset (e.g., Barcode, QR code image or PDF) usable for
  * entrance.
-        * @param string|string|array|mixed $value
-    * @return $this
-    */
-    public function ticketToken($value)
-    {
-        $this->setProperty('ticketToken', $value);
-        return $this;
-    }
+    * @param string|array $value
+  * @return $this
+  */
+  public function ticketToken($value)
+  {
+  $this->setProperty('ticketToken', $value);
+  return $this;
+  }
 
-    /**
-    * @param string|string|array|mixed $value
-    * @return $this
-    */
-    public function setTicketToken($value)
-    {
-        $this->setProperty('ticketToken', $value);
-        return $this;
-    }
+  /**
+  * @param string|array $value
+  * @return $this
+  */
+  public function setTicketToken($value)
+  {
+  $this->setProperty('ticketToken', $value);
+  return $this;
+  }
 
-    /**
-    * @return string|array|mixed
-    */
-    public function getTicketToken()
-    {
-       return $this->getProperty('ticketToken');
-    }
+  /**
+  * @param string $value
+  * @return $this
+  */
+  public function addTicketToken($value)
+  {
+  $current = $this->getProperty('ticketToken');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('ticketToken', $current);
+  return $this;
+  }
 
-
-    /**
-        * The seat associated with the ticket.
-        * @param Seat|array|string|mixed $value
-    * @return $this
-    */
-    public function ticketedSeat($value)
-    {
-        $this->setProperty('ticketedSeat', $value);
-        return $this;
-    }
-
-    /**
-    * @param Seat|array|string|mixed $value
-    * @return $this
-    */
-    public function setTicketedSeat($value)
-    {
-        $this->setProperty('ticketedSeat', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getTicketedSeat()
-    {
-       return $this->getProperty('ticketedSeat');
-    }
+  /**
+  * @return string|array
+  */
+  public function getTicketToken()
+  {
+  return $this->getProperty('ticketToken');
+  }
 
 
-    /**
-        * The date the ticket was issued.
-        * @param array|string|mixed $value
-    * @return $this
-    */
-    public function dateIssued($value)
-    {
-        $this->setProperty('dateIssued', $value);
-        return $this;
-    }
+  /**
+      * The person or organization the reservation or ticket is for.
+    * @param Organization|Person|array $value
+  * @return $this
+  */
+  public function underName($value)
+  {
+  $this->setProperty('underName', $value);
+  return $this;
+  }
 
-    /**
-    * @param array|string|mixed $value
-    * @return $this
-    */
-    public function setDateIssued($value)
-    {
-        $this->setProperty('dateIssued', $value);
-        return $this;
-    }
+  /**
+  * @param Organization|Person|array $value
+  * @return $this
+  */
+  public function setUnderName($value)
+  {
+  $this->setProperty('underName', $value);
+  return $this;
+  }
 
-    /**
-    * @return string|array|mixed
-    */
-    public function getDateIssued()
-    {
-       return $this->getProperty('dateIssued');
-    }
+  /**
+  * @param Organization|Person $value
+  * @return $this
+  */
+  public function addUnderName($value)
+  {
+  $current = $this->getProperty('underName');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('underName', $current);
+  return $this;
+  }
+
+  /**
+  * @return Organization|Person|array
+  */
+  public function getUnderName()
+  {
+  return $this->getProperty('underName');
+  }
+
+
+  /**
+      * The organization issuing the item, for example a [[Permit]], [[Ticket]], or
+ * [[Certification]].
+    * @param Organization|array $value
+  * @return $this
+  */
+  public function issuedBy($value)
+  {
+  $this->setProperty('issuedBy', $value);
+  return $this;
+  }
+
+  /**
+  * @param Organization|array $value
+  * @return $this
+  */
+  public function setIssuedBy($value)
+  {
+  $this->setProperty('issuedBy', $value);
+  return $this;
+  }
+
+  /**
+  * @param Organization $value
+  * @return $this
+  */
+  public function addIssuedBy($value)
+  {
+  $current = $this->getProperty('issuedBy');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('issuedBy', $current);
+  return $this;
+  }
+
+  /**
+  * @return Organization|array
+  */
+  public function getIssuedBy()
+  {
+  return $this->getProperty('issuedBy');
+  }
+
+
+  /**
+      * The date the ticket was issued.
+    * @param mixed $value
+  * @return $this
+  */
+  public function dateIssued($value)
+  {
+  $this->setProperty('dateIssued', $value);
+  return $this;
+  }
+
+  /**
+  * @param mixed $value
+  * @return $this
+  */
+  public function setDateIssued($value)
+  {
+  $this->setProperty('dateIssued', $value);
+  return $this;
+  }
+
+  /**
+  * @param mixed $value
+  * @return $this
+  */
+  public function addDateIssued($value)
+  {
+  $current = $this->getProperty('dateIssued');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('dateIssued', $current);
+  return $this;
+  }
+
+  /**
+  * @return mixed
+  */
+  public function getDateIssued()
+  {
+  return $this->getProperty('dateIssued');
+  }
 
 
 }

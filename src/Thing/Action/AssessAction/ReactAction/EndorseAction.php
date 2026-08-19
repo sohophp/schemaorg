@@ -1,47 +1,64 @@
 <?php
 namespace Sohophp\SchemaOrg\Thing\Action\AssessAction\ReactAction;
 
-use Sohophp\SchemaOrg\Thing\Action\AssessAction\ReactAction;
-use Sohophp\SchemaOrg\Thing\Person;
-use Sohophp\SchemaOrg\Thing\Organization;
+  use Sohophp\SchemaOrg\Thing\Action\AssessAction\ReactAction;
+  use Sohophp\SchemaOrg\Thing\Organization;
+  use Sohophp\SchemaOrg\Thing\Person;
 
 /**
-* An agent approves/certifies/likes/supports/sanction an object.
-* @see http://schema.org/EndorseAction
+  * An agent approves/certifies/likes/supports/sanctions an object.
+  * @see schema:EndorseAction
 * @package Sohophp\SchemaOrg\Thing\Action\AssessAction\ReactAction
 */
 class EndorseAction extends ReactAction
 {
 
 
-    /**
-        * A sub property of participant. The person/organization being supported.
-        * @param Person|Organization|array|string|mixed $value
-    * @return $this
-    */
-    public function endorsee($value)
-    {
-        $this->setProperty('endorsee', $value);
-        return $this;
-    }
+  /**
+      * A sub property of participant. The person/organization being supported.
+    * @param Organization|Person|array $value
+  * @return $this
+  */
+  public function endorsee($value)
+  {
+  $this->setProperty('endorsee', $value);
+  return $this;
+  }
 
-    /**
-    * @param Person|Organization|array|string|mixed $value
-    * @return $this
-    */
-    public function setEndorsee($value)
-    {
-        $this->setProperty('endorsee', $value);
-        return $this;
-    }
+  /**
+  * @param Organization|Person|array $value
+  * @return $this
+  */
+  public function setEndorsee($value)
+  {
+  $this->setProperty('endorsee', $value);
+  return $this;
+  }
 
-    /**
-    * @return string|array|mixed
-    */
-    public function getEndorsee()
-    {
-       return $this->getProperty('endorsee');
-    }
+  /**
+  * @param Organization|Person $value
+  * @return $this
+  */
+  public function addEndorsee($value)
+  {
+  $current = $this->getProperty('endorsee');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('endorsee', $current);
+  return $this;
+  }
+
+  /**
+  * @return Organization|Person|array
+  */
+  public function getEndorsee()
+  {
+  return $this->getProperty('endorsee');
+  }
 
 
 }

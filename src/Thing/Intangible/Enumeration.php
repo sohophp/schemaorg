@@ -1,48 +1,65 @@
 <?php
 namespace Sohophp\SchemaOrg\Thing\Intangible;
 
-use Sohophp\SchemaOrg\Thing\Intangible;
-use Sohophp\SchemaOrg\Thing\Intangible\Class;
-use Sohophp\SchemaOrg\Thing\Intangible\Property;
+  use Sohophp\SchemaOrg\Thing\Intangible;
+  use Sohophp\SchemaOrg\Thing\Intangible\Property;
+  use Sohophp\SchemaOrg\Thing\Intangible\Class;
 
 /**
-* Lists or enumerations—for example, a list of cuisines or music genres, etc.
-* @see http://schema.org/Enumeration
+  * Lists or enumerations—for example, a list of cuisines or music genres, etc.
+  * @see schema:Enumeration
 * @package Sohophp\SchemaOrg\Thing\Intangible
 */
 class Enumeration extends Intangible
 {
 
 
-    /**
-        * Relates a term (i.e. a property, class or enumeration) to one that supersedes
+  /**
+      * Relates a term (i.e. a property, class or enumeration) to one that supersedes
  * it.
-        * @param Class|Enumeration|Property|array|string|mixed $value
-    * @return $this
-    */
-    public function supersededBy($value)
-    {
-        $this->setProperty('supersededBy', $value);
-        return $this;
-    }
+    * @param Enumeration|Property|Class|array $value
+  * @return $this
+  */
+  public function supersededBy($value)
+  {
+  $this->setProperty('supersededBy', $value);
+  return $this;
+  }
 
-    /**
-    * @param Class|Enumeration|Property|array|string|mixed $value
-    * @return $this
-    */
-    public function setSupersededBy($value)
-    {
-        $this->setProperty('supersededBy', $value);
-        return $this;
-    }
+  /**
+  * @param Enumeration|Property|Class|array $value
+  * @return $this
+  */
+  public function setSupersededBy($value)
+  {
+  $this->setProperty('supersededBy', $value);
+  return $this;
+  }
 
-    /**
-    * @return string|array|mixed
-    */
-    public function getSupersededBy()
-    {
-       return $this->getProperty('supersededBy');
-    }
+  /**
+  * @param Enumeration|Property|Class $value
+  * @return $this
+  */
+  public function addSupersededBy($value)
+  {
+  $current = $this->getProperty('supersededBy');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('supersededBy', $current);
+  return $this;
+  }
+
+  /**
+  * @return Enumeration|Property|Class|array
+  */
+  public function getSupersededBy()
+  {
+  return $this->getProperty('supersededBy');
+  }
 
 
 }

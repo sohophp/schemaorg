@@ -1,10 +1,10 @@
 <?php
 namespace Sohophp\SchemaOrg\Thing\MedicalEntity;
 
-use Sohophp\SchemaOrg\Thing\MedicalEntity;
+  use Sohophp\SchemaOrg\Thing\MedicalEntity;
 
 /**
-* The causative agent(s) that are responsible for the pathophysiologic process
+  * The causative agent(s) that are responsible for the pathophysiologic process
  * that eventually results in a medical condition, symptom or sign. In this
  * schema, unless otherwise specified this is meant to be the proximate cause of
  * the medical condition, symptom or sign. The proximate cause is defined as the
@@ -20,41 +20,58 @@ use Sohophp\SchemaOrg\Thing\MedicalEntity;
  * otolaryngologic, pharmacologic, psychiatric, pulmonary, renal, rheumatologic,
  * toxic, traumatic, or urologic causes; medical conditions can be causes as
  * well.
-* @see http://schema.org/MedicalCause
+  * @see schema:MedicalCause
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity
 */
 class MedicalCause extends MedicalEntity
 {
 
 
-    /**
-        * The condition, complication, symptom, sign, etc. caused.
-        * @param MedicalEntity|array|string|mixed $value
-    * @return $this
-    */
-    public function causeOf($value)
-    {
-        $this->setProperty('causeOf', $value);
-        return $this;
-    }
+  /**
+      * The condition, complication, symptom, sign, etc. caused.
+    * @param MedicalEntity|array $value
+  * @return $this
+  */
+  public function causeOf($value)
+  {
+  $this->setProperty('causeOf', $value);
+  return $this;
+  }
 
-    /**
-    * @param MedicalEntity|array|string|mixed $value
-    * @return $this
-    */
-    public function setCauseOf($value)
-    {
-        $this->setProperty('causeOf', $value);
-        return $this;
-    }
+  /**
+  * @param MedicalEntity|array $value
+  * @return $this
+  */
+  public function setCauseOf($value)
+  {
+  $this->setProperty('causeOf', $value);
+  return $this;
+  }
 
-    /**
-    * @return string|array|mixed
-    */
-    public function getCauseOf()
-    {
-       return $this->getProperty('causeOf');
-    }
+  /**
+  * @param MedicalEntity $value
+  * @return $this
+  */
+  public function addCauseOf($value)
+  {
+  $current = $this->getProperty('causeOf');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('causeOf', $current);
+  return $this;
+  }
+
+  /**
+  * @return MedicalEntity|array
+  */
+  public function getCauseOf()
+  {
+  return $this->getProperty('causeOf');
+  }
 
 
 }

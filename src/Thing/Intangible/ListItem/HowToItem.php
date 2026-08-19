@@ -1,47 +1,64 @@
 <?php
 namespace Sohophp\SchemaOrg\Thing\Intangible\ListItem;
 
-use Sohophp\SchemaOrg\Thing\Intangible\ListItem;
-use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\QuantitativeValue;
+  use Sohophp\SchemaOrg\Thing\Intangible\ListItem;
+  use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\QuantitativeValue;
 
 /**
-* An item used as either a tool or supply when performing the instructions for
- * how to to achieve a result.
-* @see http://schema.org/HowToItem
+  * An item used as either a tool or supply when performing the instructions for
+ * how to achieve a result.
+  * @see schema:HowToItem
 * @package Sohophp\SchemaOrg\Thing\Intangible\ListItem
 */
 class HowToItem extends ListItem
 {
 
 
-    /**
-        * The required quantity of the item(s).
-        * @param string|QuantitativeValue|array|mixed $value
-    * @return $this
-    */
-    public function requiredQuantity($value)
-    {
-        $this->setProperty('requiredQuantity', $value);
-        return $this;
-    }
+  /**
+      * The required quantity of the item(s).
+    * @param QuantitativeValue|string|array $value
+  * @return $this
+  */
+  public function requiredQuantity($value)
+  {
+  $this->setProperty('requiredQuantity', $value);
+  return $this;
+  }
 
-    /**
-    * @param string|QuantitativeValue|array|mixed $value
-    * @return $this
-    */
-    public function setRequiredQuantity($value)
-    {
-        $this->setProperty('requiredQuantity', $value);
-        return $this;
-    }
+  /**
+  * @param QuantitativeValue|string|array $value
+  * @return $this
+  */
+  public function setRequiredQuantity($value)
+  {
+  $this->setProperty('requiredQuantity', $value);
+  return $this;
+  }
 
-    /**
-    * @return string|array|mixed
-    */
-    public function getRequiredQuantity()
-    {
-       return $this->getProperty('requiredQuantity');
-    }
+  /**
+  * @param QuantitativeValue|string $value
+  * @return $this
+  */
+  public function addRequiredQuantity($value)
+  {
+  $current = $this->getProperty('requiredQuantity');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('requiredQuantity', $current);
+  return $this;
+  }
+
+  /**
+  * @return QuantitativeValue|string|array
+  */
+  public function getRequiredQuantity()
+  {
+  return $this->getProperty('requiredQuantity');
+  }
 
 
 }

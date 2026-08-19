@@ -67,14 +67,14 @@ class TypesGenerator
          * @var ParserItem $graph
          */
         foreach ($this->parser->getClasses() as $i => $graph) {
-//            if($graph->getId()=='schema:LocalBusiness') {
-//
-//            }else{
-//                continue;
-//            }
+            //            if($graph->getId()=='schema:LocalBusiness') {
+            //
+            //            }else{
+            //                continue;
+            //            }
 
             if ($this->configure->get('consoleMessage')) {
-                echo($i + 1), "\n";
+                echo ($i + 1), "\n";
                 echo $graph->getId(), "\n";
             }
 
@@ -83,23 +83,25 @@ class TypesGenerator
              * 有个3dmodel是数字开头 和class
              * 2019-10-07
              */
-            if (!preg_match('#^[a-zA-Z].*?#', $graph->getName()) || in_array($graph->getName(), ['Class', 'Function'])) {
+            $name = $graph->getName();
+            if (!is_string($name) || !preg_match('#^[a-zA-Z].*?#', $name) || in_array($name, ['Class', 'Function'], true)) {
                 continue;
             };
 
             $class = [];
-            $class['name'] = $graph->getName();
+            $class['name'] = $name;
             $class['annotations'] = [];
             $class['annotations'][] = $graph->getComment();
             $class['annotations'][] = sprintf('@see %s', $graph->getUri());
             $class['namespace'] = $this->fullNamespace($graph->getNamespace());
             $uses = [];
             $parent = $graph->getParent();
-            if ($parent) {
+            $parentName = $parent?->getName();
+            if (is_string($parentName) && $parentName !== '') {
                 if ($this->configure->getFullPath()) {
                     $uses[] = $this->fullNamespace($parent->getFullClassName());
                 }
-                $class['parent'] = $parent->getName();
+                $class['parent'] = $parentName;
             } else {
                 if ($this->configure->getFullPath()) {
                     $uses[] = $this->fullNamespace($this->configure->getClassBase());
@@ -134,20 +136,22 @@ class TypesGenerator
                 $range = array_filter($range, function ($var) {
                     return !empty(trim((string)$var));
                 });
-                if (!in_array("array", $range)) {
-                    $range[] = 'array';
+                $range = array_values(array_unique($range));
+                if (!$range) {
+                    $range[] = 'mixed';
                 }
-
-                if (!in_array('string', $range)) {
-                    $range[] = 'string';
-                }
+                $rangeDoc = in_array('mixed', $range, true)
+                    ? 'mixed'
+                    : implode('|', $range) . '|array';
+                $valueDoc = in_array('mixed', $range, true) ? 'mixed' : implode('|', $range);
 
                 $class['properties'][] = [
                     'name' => $property->getName(),
                     'annotations' => [$property->getComment()],
-                    'range' => implode('|', $range),
+                    'range' => $rangeDoc,
+                    'value_range' => $valueDoc,
                     'range_default' => null
-//                    'range_default' => count($range) === 1 && array_values($range)[0] ? '?' . array_values($range)[0] : null
+                    //                    'range_default' => count($range) === 1 && array_values($range)[0] ? '?' . array_values($range)[0] : null
                 ];
             }
 
@@ -259,5 +263,4 @@ class TypesGenerator
         $runner = new Runner(new \ArrayIterator($fileInfos), $fixers, new NullDiffer(), null, new ErrorsManager(), new Linter(), false, new NullCacheManager());
         $runner->fix();
     }
-
 }

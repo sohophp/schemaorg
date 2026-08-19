@@ -1,11 +1,11 @@
 <?php
 namespace Sohophp\SchemaOrg\Thing\Action\InteractAction;
 
-use Sohophp\SchemaOrg\Thing\Action\InteractAction;
-use Sohophp\SchemaOrg\Thing\Event;
+  use Sohophp\SchemaOrg\Thing\Action\InteractAction;
+  use Sohophp\SchemaOrg\Thing\Event;
 
 /**
-* An agent joins an event/group with participants/friends at a location.
+  * An agent joins an event/group with participants/friends at a location.
  * 
  * Related actions:
  * 
@@ -15,41 +15,58 @@ use Sohophp\SchemaOrg\Thing\Event;
  * you'll be receiving updates.
  * * [[FollowAction]]: Unlike FollowAction, JoinAction does not imply that
  * you'll be polling for updates.
-* @see http://schema.org/JoinAction
+  * @see schema:JoinAction
 * @package Sohophp\SchemaOrg\Thing\Action\InteractAction
 */
 class JoinAction extends InteractAction
 {
 
 
-    /**
-        * Upcoming or past event associated with this place, organization, or action.
-        * @param Event|array|string|mixed $value
-    * @return $this
-    */
-    public function event($value)
-    {
-        $this->setProperty('event', $value);
-        return $this;
-    }
+  /**
+      * Upcoming or past event associated with this place, organization, or action.
+    * @param Event|array $value
+  * @return $this
+  */
+  public function event($value)
+  {
+  $this->setProperty('event', $value);
+  return $this;
+  }
 
-    /**
-    * @param Event|array|string|mixed $value
-    * @return $this
-    */
-    public function setEvent($value)
-    {
-        $this->setProperty('event', $value);
-        return $this;
-    }
+  /**
+  * @param Event|array $value
+  * @return $this
+  */
+  public function setEvent($value)
+  {
+  $this->setProperty('event', $value);
+  return $this;
+  }
 
-    /**
-    * @return string|array|mixed
-    */
-    public function getEvent()
-    {
-       return $this->getProperty('event');
-    }
+  /**
+  * @param Event $value
+  * @return $this
+  */
+  public function addEvent($value)
+  {
+  $current = $this->getProperty('event');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('event', $current);
+  return $this;
+  }
+
+  /**
+  * @return Event|array
+  */
+  public function getEvent()
+  {
+  return $this->getProperty('event');
+  }
 
 
 }

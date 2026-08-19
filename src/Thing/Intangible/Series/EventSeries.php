@@ -1,10 +1,10 @@
 <?php
 namespace Sohophp\SchemaOrg\Thing\Intangible\Series;
 
-use Sohophp\SchemaOrg\Thing\Intangible\Series;
+  use Sohophp\SchemaOrg\Thing\Intangible\Series;
 
 /**
-* A series of [[Event]]s. Included events can relate with the series using the
+  * A series of [[Event]]s. Included events can relate with the series using the
  * [[superEvent]] property.
  * 
  * An EventSeries is a collection of events that share some unifying
@@ -27,7 +27,7 @@ use Sohophp\SchemaOrg\Thing\Intangible\Series;
  * such as location are fixed, but
  * it may also sometimes prove useful to describe a longer-term series as an
  * Event.
-* @see http://schema.org/EventSeries
+  * @see schema:EventSeries
 * @package Sohophp\SchemaOrg\Thing\Intangible\Series
 */
 class EventSeries extends Series

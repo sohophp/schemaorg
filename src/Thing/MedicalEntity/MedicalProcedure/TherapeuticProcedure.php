@@ -1,149 +1,165 @@
 <?php
 namespace Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalProcedure;
 
-use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalProcedure;
-use Sohophp\SchemaOrg\Thing\MedicalEntity\Substance\Drug;
-use Sohophp\SchemaOrg\Thing\MedicalEntity;
-use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalIntangible\DoseSchedule;
-use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalIndication;
+  use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalProcedure;
+  use Sohophp\SchemaOrg\Thing\MedicalEntity;
+  use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalIntangible\DoseSchedule;
+  use Sohophp\SchemaOrg\Thing\Product\Drug;
 
 /**
-* A medical procedure intended primarily for therapeutic purposes, aimed at
+  * A medical procedure intended primarily for therapeutic purposes, aimed at
  * improving a health condition.
-* @see http://schema.org/TherapeuticProcedure
+  * @see schema:TherapeuticProcedure
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalProcedure
 */
 class TherapeuticProcedure extends MedicalProcedure
 {
 
 
-    /**
-        * Specifying a drug or medicine used in a medication procedure
-        * @param Drug|array|string|mixed $value
-    * @return $this
-    */
-    public function drug($value)
-    {
-        $this->setProperty('drug', $value);
-        return $this;
-    }
-
-    /**
-    * @param Drug|array|string|mixed $value
-    * @return $this
-    */
-    public function setDrug($value)
-    {
-        $this->setProperty('drug', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getDrug()
-    {
-       return $this->getProperty('drug');
-    }
-
-
-    /**
-        * A possible complication and/or side effect of this therapy. If it is known
+  /**
+      * A possible complication and/or side effect of this therapy. If it is known
  * that an adverse outcome is serious (resulting in death, disability, or
- * permanent damage; requiring hospitalization; or is otherwise life-threatening
- * or requires immediate medical attention), tag it as a seriouseAdverseOutcome
+ * permanent damage; requiring hospitalization; or otherwise life-threatening or
+ * requiring immediate medical attention), tag it as a seriousAdverseOutcome
  * instead.
-        * @param MedicalEntity|array|string|mixed $value
-    * @return $this
-    */
-    public function adverseOutcome($value)
-    {
-        $this->setProperty('adverseOutcome', $value);
-        return $this;
-    }
+    * @param MedicalEntity|array $value
+  * @return $this
+  */
+  public function adverseOutcome($value)
+  {
+  $this->setProperty('adverseOutcome', $value);
+  return $this;
+  }
 
-    /**
-    * @param MedicalEntity|array|string|mixed $value
-    * @return $this
-    */
-    public function setAdverseOutcome($value)
-    {
-        $this->setProperty('adverseOutcome', $value);
-        return $this;
-    }
+  /**
+  * @param MedicalEntity|array $value
+  * @return $this
+  */
+  public function setAdverseOutcome($value)
+  {
+  $this->setProperty('adverseOutcome', $value);
+  return $this;
+  }
 
-    /**
-    * @return string|array|mixed
-    */
-    public function getAdverseOutcome()
-    {
-       return $this->getProperty('adverseOutcome');
-    }
+  /**
+  * @param MedicalEntity $value
+  * @return $this
+  */
+  public function addAdverseOutcome($value)
+  {
+  $current = $this->getProperty('adverseOutcome');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('adverseOutcome', $current);
+  return $this;
+  }
+
+  /**
+  * @return MedicalEntity|array
+  */
+  public function getAdverseOutcome()
+  {
+  return $this->getProperty('adverseOutcome');
+  }
 
 
-    /**
-        * A dosing schedule for the drug for a given population, either observed,
+  /**
+      * A dosing schedule for the drug for a given population, either observed,
  * recommended, or maximum dose based on the type used.
-        * @param DoseSchedule|array|string|mixed $value
-    * @return $this
-    */
-    public function doseSchedule($value)
-    {
-        $this->setProperty('doseSchedule', $value);
-        return $this;
-    }
+    * @param DoseSchedule|array $value
+  * @return $this
+  */
+  public function doseSchedule($value)
+  {
+  $this->setProperty('doseSchedule', $value);
+  return $this;
+  }
 
-    /**
-    * @param DoseSchedule|array|string|mixed $value
-    * @return $this
-    */
-    public function setDoseSchedule($value)
-    {
-        $this->setProperty('doseSchedule', $value);
-        return $this;
-    }
+  /**
+  * @param DoseSchedule|array $value
+  * @return $this
+  */
+  public function setDoseSchedule($value)
+  {
+  $this->setProperty('doseSchedule', $value);
+  return $this;
+  }
 
-    /**
-    * @return string|array|mixed
-    */
-    public function getDoseSchedule()
-    {
-       return $this->getProperty('doseSchedule');
-    }
+  /**
+  * @param DoseSchedule $value
+  * @return $this
+  */
+  public function addDoseSchedule($value)
+  {
+  $current = $this->getProperty('doseSchedule');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('doseSchedule', $current);
+  return $this;
+  }
+
+  /**
+  * @return DoseSchedule|array
+  */
+  public function getDoseSchedule()
+  {
+  return $this->getProperty('doseSchedule');
+  }
 
 
-    /**
-        * A factor that indicates use of this therapy for treatment and/or prevention
- * of a condition, symptom, etc. For therapies such as drugs, indications can
- * include both officially-approved indications as well as off-label uses. These
- * can be distinguished by using the ApprovedIndication subtype of
- * MedicalIndication.
-        * @param MedicalIndication|array|string|mixed $value
-    * @return $this
-    */
-    public function indication($value)
-    {
-        $this->setProperty('indication', $value);
-        return $this;
-    }
+  /**
+      * Specifying a drug or medicine used in a medication procedure.
+    * @param Drug|array $value
+  * @return $this
+  */
+  public function drug($value)
+  {
+  $this->setProperty('drug', $value);
+  return $this;
+  }
 
-    /**
-    * @param MedicalIndication|array|string|mixed $value
-    * @return $this
-    */
-    public function setIndication($value)
-    {
-        $this->setProperty('indication', $value);
-        return $this;
-    }
+  /**
+  * @param Drug|array $value
+  * @return $this
+  */
+  public function setDrug($value)
+  {
+  $this->setProperty('drug', $value);
+  return $this;
+  }
 
-    /**
-    * @return string|array|mixed
-    */
-    public function getIndication()
-    {
-       return $this->getProperty('indication');
-    }
+  /**
+  * @param Drug $value
+  * @return $this
+  */
+  public function addDrug($value)
+  {
+  $current = $this->getProperty('drug');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('drug', $current);
+  return $this;
+  }
+
+  /**
+  * @return Drug|array
+  */
+  public function getDrug()
+  {
+  return $this->getProperty('drug');
+  }
 
 
 }

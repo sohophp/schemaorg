@@ -1,11 +1,11 @@
 <?php
 namespace Sohophp\SchemaOrg\Thing\Action;
 
-use Sohophp\SchemaOrg\Thing\Action;
+  use Sohophp\SchemaOrg\Thing\Action;
 
 /**
-* The act of interacting with another person or organization.
-* @see http://schema.org/InteractAction
+  * The act of interacting with another person or organization.
+  * @see schema:InteractAction
 * @package Sohophp\SchemaOrg\Thing\Action
 */
 class InteractAction extends Action

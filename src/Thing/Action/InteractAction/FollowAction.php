@@ -1,12 +1,12 @@
 <?php
 namespace Sohophp\SchemaOrg\Thing\Action\InteractAction;
 
-use Sohophp\SchemaOrg\Thing\Action\InteractAction;
-use Sohophp\SchemaOrg\Thing\Organization;
-use Sohophp\SchemaOrg\Thing\Person;
+  use Sohophp\SchemaOrg\Thing\Action\InteractAction;
+  use Sohophp\SchemaOrg\Thing\Person;
+  use Sohophp\SchemaOrg\Thing\Organization;
 
 /**
-* The act of forming a personal connection with someone/something (object)
+  * The act of forming a personal connection with someone/something (object)
  * unidirectionally/asymmetrically to get updates polled from.
  * 
  * Related actions:
@@ -22,41 +22,58 @@ use Sohophp\SchemaOrg\Thing\Person;
  * * [[TrackAction]]: Unlike TrackAction, FollowAction refers to the polling of
  * updates of all aspects of animate objects rather than the location of
  * inanimate objects (e.g. you track a package, but you don't follow it).
-* @see http://schema.org/FollowAction
+  * @see schema:FollowAction
 * @package Sohophp\SchemaOrg\Thing\Action\InteractAction
 */
 class FollowAction extends InteractAction
 {
 
 
-    /**
-        * A sub property of object. The person or organization being followed.
-        * @param Organization|Person|array|string|mixed $value
-    * @return $this
-    */
-    public function followee($value)
-    {
-        $this->setProperty('followee', $value);
-        return $this;
-    }
+  /**
+      * A sub property of object. The person or organization being followed.
+    * @param Person|Organization|array $value
+  * @return $this
+  */
+  public function followee($value)
+  {
+  $this->setProperty('followee', $value);
+  return $this;
+  }
 
-    /**
-    * @param Organization|Person|array|string|mixed $value
-    * @return $this
-    */
-    public function setFollowee($value)
-    {
-        $this->setProperty('followee', $value);
-        return $this;
-    }
+  /**
+  * @param Person|Organization|array $value
+  * @return $this
+  */
+  public function setFollowee($value)
+  {
+  $this->setProperty('followee', $value);
+  return $this;
+  }
 
-    /**
-    * @return string|array|mixed
-    */
-    public function getFollowee()
-    {
-       return $this->getProperty('followee');
-    }
+  /**
+  * @param Person|Organization $value
+  * @return $this
+  */
+  public function addFollowee($value)
+  {
+  $current = $this->getProperty('followee');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('followee', $current);
+  return $this;
+  }
+
+  /**
+  * @return Person|Organization|array
+  */
+  public function getFollowee()
+  {
+  return $this->getProperty('followee');
+  }
 
 
 }

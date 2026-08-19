@@ -1,5 +1,6 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
 
 namespace Sohophp\SchemaOrg\Generator;
 
@@ -14,7 +15,7 @@ class Configure
             'classBase' => 'BaseType',
             'baseDir' => dirname(__DIR__),
             'tiwgDebug' => true,
-            'schemaJsonldFilePath' => realpath(__DIR__ . '/../../data/all-layers.jsonld'),//v28.1/schemaorg-all-https.jsonld
+            'schemaJsonldFilePath' => realpath(__DIR__ . '/../../data/v30.0/schemaorg-all-https.jsonld'),
             'consoleMessage' => true,
             'namespace' => $this->getNamespace(),
             'fixCs' => true,
@@ -23,7 +24,6 @@ class Configure
         ];
 
         $this->cfg = array_merge($defs, $cfg);
-
     }
 
     public function get(?string $key)
@@ -82,5 +82,4 @@ class Configure
     {
         return $this->get('fullpath');
     }
-
 }

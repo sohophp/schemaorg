@@ -1,46 +1,63 @@
 <?php
 namespace Sohophp\SchemaOrg\Thing\Organization\MedicalOrganization;
 
-use Sohophp\SchemaOrg\Thing\Organization\MedicalOrganization;
-use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalTest;
+  use Sohophp\SchemaOrg\Thing\Organization\MedicalOrganization;
+  use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalTest;
 
 /**
-* A medical laboratory that offers on-site or off-site diagnostic services.
-* @see http://schema.org/DiagnosticLab
+  * A medical laboratory that offers on-site or off-site diagnostic services.
+  * @see schema:DiagnosticLab
 * @package Sohophp\SchemaOrg\Thing\Organization\MedicalOrganization
 */
 class DiagnosticLab extends MedicalOrganization
 {
 
 
-    /**
-        * A diagnostic test or procedure offered by this lab.
-        * @param MedicalTest|array|string|mixed $value
-    * @return $this
-    */
-    public function availableTest($value)
-    {
-        $this->setProperty('availableTest', $value);
-        return $this;
-    }
+  /**
+      * A diagnostic test or procedure offered by this lab.
+    * @param MedicalTest|array $value
+  * @return $this
+  */
+  public function availableTest($value)
+  {
+  $this->setProperty('availableTest', $value);
+  return $this;
+  }
 
-    /**
-    * @param MedicalTest|array|string|mixed $value
-    * @return $this
-    */
-    public function setAvailableTest($value)
-    {
-        $this->setProperty('availableTest', $value);
-        return $this;
-    }
+  /**
+  * @param MedicalTest|array $value
+  * @return $this
+  */
+  public function setAvailableTest($value)
+  {
+  $this->setProperty('availableTest', $value);
+  return $this;
+  }
 
-    /**
-    * @return string|array|mixed
-    */
-    public function getAvailableTest()
-    {
-       return $this->getProperty('availableTest');
-    }
+  /**
+  * @param MedicalTest $value
+  * @return $this
+  */
+  public function addAvailableTest($value)
+  {
+  $current = $this->getProperty('availableTest');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('availableTest', $current);
+  return $this;
+  }
+
+  /**
+  * @return MedicalTest|array
+  */
+  public function getAvailableTest()
+  {
+  return $this->getProperty('availableTest');
+  }
 
 
 }

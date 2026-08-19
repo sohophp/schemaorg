@@ -1,46 +1,63 @@
 <?php
 namespace Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalRiskEstimator;
 
-use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalRiskEstimator;
+  use Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalRiskEstimator;
 
 /**
-* A simple system that adds up the number of risk factors to yield a score that
+  * A simple system that adds up the number of risk factors to yield a score that
  * is associated with prognosis, e.g. CHAD score, TIMI risk score.
-* @see http://schema.org/MedicalRiskScore
+  * @see schema:MedicalRiskScore
 * @package Sohophp\SchemaOrg\Thing\MedicalEntity\MedicalRiskEstimator
 */
 class MedicalRiskScore extends MedicalRiskEstimator
 {
 
 
-    /**
-        * The algorithm or rules to follow to compute the score.
-        * @param string|array|mixed $value
-    * @return $this
-    */
-    public function algorithm($value)
-    {
-        $this->setProperty('algorithm', $value);
-        return $this;
-    }
+  /**
+      * The algorithm or rules to follow to compute the score.
+    * @param string|array $value
+  * @return $this
+  */
+  public function algorithm($value)
+  {
+  $this->setProperty('algorithm', $value);
+  return $this;
+  }
 
-    /**
-    * @param string|array|mixed $value
-    * @return $this
-    */
-    public function setAlgorithm($value)
-    {
-        $this->setProperty('algorithm', $value);
-        return $this;
-    }
+  /**
+  * @param string|array $value
+  * @return $this
+  */
+  public function setAlgorithm($value)
+  {
+  $this->setProperty('algorithm', $value);
+  return $this;
+  }
 
-    /**
-    * @return string|array|mixed
-    */
-    public function getAlgorithm()
-    {
-       return $this->getProperty('algorithm');
-    }
+  /**
+  * @param string $value
+  * @return $this
+  */
+  public function addAlgorithm($value)
+  {
+  $current = $this->getProperty('algorithm');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('algorithm', $current);
+  return $this;
+  }
+
+  /**
+  * @return string|array
+  */
+  public function getAlgorithm()
+  {
+  return $this->getProperty('algorithm');
+  }
 
 
 }

@@ -3,7 +3,7 @@
 namespace Sohophp\SchemaOrg\Test;
 
 use Sohophp\SchemaOrg\Tests\TestCase;
-use Thing\WebPage;
+use Sohophp\SchemaOrg\Thing\CreativeWork\WebPage;
 
 class WebPageTest extends TestCase
 {
@@ -20,7 +20,19 @@ class WebPageTest extends TestCase
         ["text"]=>string(11) "one content"
         }
          */
-        $this->assertCount(3, $params);
+        $this->assertCount(4, $params);
     }
 
+    public function testMetadataAndRepeatedProperties()
+    {
+        $webPage = new WebPage();
+        $webPage->setId('https://example.test/page')
+            ->addName('First title')
+            ->addName('Second title');
+
+        $params = $webPage->toArray();
+
+        $this->assertSame('https://example.test/page', $params['@id']);
+        $this->assertSame(['First title', 'Second title'], $params['name']);
+    }
 }

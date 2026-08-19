@@ -1,305 +1,458 @@
 <?php
 namespace Sohophp\SchemaOrg\Thing\Intangible\Service\FinancialProduct;
 
-use Sohophp\SchemaOrg\Thing\Intangible\Service\FinancialProduct;
-use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\QuantitativeValue;
-use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\RepaymentSpecification;
-use Sohophp\SchemaOrg\Thing\Intangible\Quantity\Duration;
-use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\MonetaryAmount;
-use Sohophp\SchemaOrg\Thing;
+  use Sohophp\SchemaOrg\Thing\Intangible\Service\FinancialProduct;
+  use Sohophp\SchemaOrg\Thing;
+  use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\QuantitativeValue;
+  use Sohophp\SchemaOrg\Quantity\Duration;
+  use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\RepaymentSpecification;
+  use Sohophp\SchemaOrg\Thing\Intangible\StructuredValue\MonetaryAmount;
 
 /**
-* A financial product for the loaning of an amount of money under agreed terms
- * and charges.
-* @see http://schema.org/LoanOrCredit
+  * A financial product for the loaning of an amount of money, or line of credit,
+ * under agreed terms and charges.
+  * @see schema:LoanOrCredit
 * @package Sohophp\SchemaOrg\Thing\Intangible\Service\FinancialProduct
 */
 class LoanOrCredit extends FinancialProduct
 {
 
 
-    /**
-        * The duration of the loan or credit agreement.
-        * @param QuantitativeValue|array|string|mixed $value
-    * @return $this
-    */
-    public function loanTerm($value)
-    {
-        $this->setProperty('loanTerm', $value);
-        return $this;
-    }
-
-    /**
-    * @param QuantitativeValue|array|string|mixed $value
-    * @return $this
-    */
-    public function setLoanTerm($value)
-    {
-        $this->setProperty('loanTerm', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getLoanTerm()
-    {
-       return $this->getProperty('loanTerm');
-    }
-
-
-    /**
-        * Whether the terms for payment of interest can be renegotiated during the life
- * of the loan.
-        * @param bool|array|string|mixed $value
-    * @return $this
-    */
-    public function renegotiableLoan($value)
-    {
-        $this->setProperty('renegotiableLoan', $value);
-        return $this;
-    }
-
-    /**
-    * @param bool|array|string|mixed $value
-    * @return $this
-    */
-    public function setRenegotiableLoan($value)
-    {
-        $this->setProperty('renegotiableLoan', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getRenegotiableLoan()
-    {
-       return $this->getProperty('renegotiableLoan');
-    }
-
-
-    /**
-        * A form of paying back money previously borrowed from a lender. Repayment
- * usually takes the form of periodic payments that normally include part
- * principal plus interest in each payment.
-        * @param RepaymentSpecification|array|string|mixed $value
-    * @return $this
-    */
-    public function loanRepaymentForm($value)
-    {
-        $this->setProperty('loanRepaymentForm', $value);
-        return $this;
-    }
-
-    /**
-    * @param RepaymentSpecification|array|string|mixed $value
-    * @return $this
-    */
-    public function setLoanRepaymentForm($value)
-    {
-        $this->setProperty('loanRepaymentForm', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getLoanRepaymentForm()
-    {
-       return $this->getProperty('loanRepaymentForm');
-    }
-
-
-    /**
-        * The period of time after any due date that the borrower has to fulfil its
- * obligations before a default (failure to pay) is deemed to have occurred.
-        * @param Duration|array|string|mixed $value
-    * @return $this
-    */
-    public function gracePeriod($value)
-    {
-        $this->setProperty('gracePeriod', $value);
-        return $this;
-    }
-
-    /**
-    * @param Duration|array|string|mixed $value
-    * @return $this
-    */
-    public function setGracePeriod($value)
-    {
-        $this->setProperty('gracePeriod', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getGracePeriod()
-    {
-       return $this->getProperty('gracePeriod');
-    }
-
-
-    /**
-        * The amount of money.
-        * @param MonetaryAmount|array|string|mixed $value
-    * @return $this
-    */
-    public function amount($value)
-    {
-        $this->setProperty('amount', $value);
-        return $this;
-    }
-
-    /**
-    * @param MonetaryAmount|array|string|mixed $value
-    * @return $this
-    */
-    public function setAmount($value)
-    {
-        $this->setProperty('amount', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getAmount()
-    {
-       return $this->getProperty('amount');
-    }
-
-
-    /**
-        * Assets required to secure loan or credit repayments. It may take form of
+  /**
+      * Assets required to secure loan or credit repayments. It may take form of
  * third party pledge, goods, financial instruments (cash, securities, etc.)
-        * @param string|Thing|array|mixed $value
-    * @return $this
-    */
-    public function requiredCollateral($value)
-    {
-        $this->setProperty('requiredCollateral', $value);
-        return $this;
-    }
+    * @param Thing|string|array $value
+  * @return $this
+  */
+  public function requiredCollateral($value)
+  {
+  $this->setProperty('requiredCollateral', $value);
+  return $this;
+  }
 
-    /**
-    * @param string|Thing|array|mixed $value
-    * @return $this
-    */
-    public function setRequiredCollateral($value)
-    {
-        $this->setProperty('requiredCollateral', $value);
-        return $this;
-    }
+  /**
+  * @param Thing|string|array $value
+  * @return $this
+  */
+  public function setRequiredCollateral($value)
+  {
+  $this->setProperty('requiredCollateral', $value);
+  return $this;
+  }
 
-    /**
-    * @return string|array|mixed
-    */
-    public function getRequiredCollateral()
-    {
-       return $this->getProperty('requiredCollateral');
-    }
+  /**
+  * @param Thing|string $value
+  * @return $this
+  */
+  public function addRequiredCollateral($value)
+  {
+  $current = $this->getProperty('requiredCollateral');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('requiredCollateral', $current);
+  return $this;
+  }
+
+  /**
+  * @return Thing|string|array
+  */
+  public function getRequiredCollateral()
+  {
+  return $this->getProperty('requiredCollateral');
+  }
 
 
-    /**
-        * The only way you get the money back in the event of default is the security.
+  /**
+      * The type of a loan or credit.
+    * @param string|array $value
+  * @return $this
+  */
+  public function loanType($value)
+  {
+  $this->setProperty('loanType', $value);
+  return $this;
+  }
+
+  /**
+  * @param string|array $value
+  * @return $this
+  */
+  public function setLoanType($value)
+  {
+  $this->setProperty('loanType', $value);
+  return $this;
+  }
+
+  /**
+  * @param string $value
+  * @return $this
+  */
+  public function addLoanType($value)
+  {
+  $current = $this->getProperty('loanType');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('loanType', $current);
+  return $this;
+  }
+
+  /**
+  * @return string|array
+  */
+  public function getLoanType()
+  {
+  return $this->getProperty('loanType');
+  }
+
+
+  /**
+      * The duration of the loan or credit agreement.
+    * @param QuantitativeValue|array $value
+  * @return $this
+  */
+  public function loanTerm($value)
+  {
+  $this->setProperty('loanTerm', $value);
+  return $this;
+  }
+
+  /**
+  * @param QuantitativeValue|array $value
+  * @return $this
+  */
+  public function setLoanTerm($value)
+  {
+  $this->setProperty('loanTerm', $value);
+  return $this;
+  }
+
+  /**
+  * @param QuantitativeValue $value
+  * @return $this
+  */
+  public function addLoanTerm($value)
+  {
+  $current = $this->getProperty('loanTerm');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('loanTerm', $current);
+  return $this;
+  }
+
+  /**
+  * @return QuantitativeValue|array
+  */
+  public function getLoanTerm()
+  {
+  return $this->getProperty('loanTerm');
+  }
+
+
+  /**
+      * The only way you get the money back in the event of default is the security.
  * Recourse is where you still have the opportunity to go back to the borrower
  * for the rest of the money.
-        * @param bool|array|string|mixed $value
-    * @return $this
-    */
-    public function recourseLoan($value)
-    {
-        $this->setProperty('recourseLoan', $value);
-        return $this;
-    }
+    * @param bool|array $value
+  * @return $this
+  */
+  public function recourseLoan($value)
+  {
+  $this->setProperty('recourseLoan', $value);
+  return $this;
+  }
 
-    /**
-    * @param bool|array|string|mixed $value
-    * @return $this
-    */
-    public function setRecourseLoan($value)
-    {
-        $this->setProperty('recourseLoan', $value);
-        return $this;
-    }
+  /**
+  * @param bool|array $value
+  * @return $this
+  */
+  public function setRecourseLoan($value)
+  {
+  $this->setProperty('recourseLoan', $value);
+  return $this;
+  }
 
-    /**
-    * @return string|array|mixed
-    */
-    public function getRecourseLoan()
-    {
-       return $this->getProperty('recourseLoan');
-    }
+  /**
+  * @param bool $value
+  * @return $this
+  */
+  public function addRecourseLoan($value)
+  {
+  $current = $this->getProperty('recourseLoan');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('recourseLoan', $current);
+  return $this;
+  }
+
+  /**
+  * @return bool|array
+  */
+  public function getRecourseLoan()
+  {
+  return $this->getProperty('recourseLoan');
+  }
 
 
-    /**
-        * The currency in which the monetary amount is expressed.
+  /**
+      * The period of time after any due date that the borrower has to fulfil its
+ * obligations before a default (failure to pay) is deemed to have occurred.
+    * @param Duration|array $value
+  * @return $this
+  */
+  public function gracePeriod($value)
+  {
+  $this->setProperty('gracePeriod', $value);
+  return $this;
+  }
+
+  /**
+  * @param Duration|array $value
+  * @return $this
+  */
+  public function setGracePeriod($value)
+  {
+  $this->setProperty('gracePeriod', $value);
+  return $this;
+  }
+
+  /**
+  * @param Duration $value
+  * @return $this
+  */
+  public function addGracePeriod($value)
+  {
+  $current = $this->getProperty('gracePeriod');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('gracePeriod', $current);
+  return $this;
+  }
+
+  /**
+  * @return Duration|array
+  */
+  public function getGracePeriod()
+  {
+  return $this->getProperty('gracePeriod');
+  }
+
+
+  /**
+      * A form of paying back money previously borrowed from a lender. Repayment
+ * usually takes the form of periodic payments that normally include part
+ * principal plus interest in each payment.
+    * @param RepaymentSpecification|array $value
+  * @return $this
+  */
+  public function loanRepaymentForm($value)
+  {
+  $this->setProperty('loanRepaymentForm', $value);
+  return $this;
+  }
+
+  /**
+  * @param RepaymentSpecification|array $value
+  * @return $this
+  */
+  public function setLoanRepaymentForm($value)
+  {
+  $this->setProperty('loanRepaymentForm', $value);
+  return $this;
+  }
+
+  /**
+  * @param RepaymentSpecification $value
+  * @return $this
+  */
+  public function addLoanRepaymentForm($value)
+  {
+  $current = $this->getProperty('loanRepaymentForm');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('loanRepaymentForm', $current);
+  return $this;
+  }
+
+  /**
+  * @return RepaymentSpecification|array
+  */
+  public function getLoanRepaymentForm()
+  {
+  return $this->getProperty('loanRepaymentForm');
+  }
+
+
+  /**
+      * Whether the terms for payment of interest can be renegotiated during the life
+ * of the loan.
+    * @param bool|array $value
+  * @return $this
+  */
+  public function renegotiableLoan($value)
+  {
+  $this->setProperty('renegotiableLoan', $value);
+  return $this;
+  }
+
+  /**
+  * @param bool|array $value
+  * @return $this
+  */
+  public function setRenegotiableLoan($value)
+  {
+  $this->setProperty('renegotiableLoan', $value);
+  return $this;
+  }
+
+  /**
+  * @param bool $value
+  * @return $this
+  */
+  public function addRenegotiableLoan($value)
+  {
+  $current = $this->getProperty('renegotiableLoan');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('renegotiableLoan', $current);
+  return $this;
+  }
+
+  /**
+  * @return bool|array
+  */
+  public function getRenegotiableLoan()
+  {
+  return $this->getProperty('renegotiableLoan');
+  }
+
+
+  /**
+      * The amount of money.
+    * @param MonetaryAmount|array $value
+  * @return $this
+  */
+  public function amount($value)
+  {
+  $this->setProperty('amount', $value);
+  return $this;
+  }
+
+  /**
+  * @param MonetaryAmount|array $value
+  * @return $this
+  */
+  public function setAmount($value)
+  {
+  $this->setProperty('amount', $value);
+  return $this;
+  }
+
+  /**
+  * @param MonetaryAmount $value
+  * @return $this
+  */
+  public function addAmount($value)
+  {
+  $current = $this->getProperty('amount');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('amount', $current);
+  return $this;
+  }
+
+  /**
+  * @return MonetaryAmount|array
+  */
+  public function getAmount()
+  {
+  return $this->getProperty('amount');
+  }
+
+
+  /**
+      * The currency in which the monetary amount is expressed.
  * 
  * Use standard formats: [ISO 4217 currency
- * format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker
+ * format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker
  * symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for
- * cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings
+ * cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading
  * Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS)
- * and other currency types e.g. "Ithaca HOUR".
-        * @param string|array|mixed $value
-    * @return $this
-    */
-    public function currency($value)
-    {
-        $this->setProperty('currency', $value);
-        return $this;
-    }
+ * and other currency types, e.g. "Ithaca HOUR".
+    * @param string|array $value
+  * @return $this
+  */
+  public function currency($value)
+  {
+  $this->setProperty('currency', $value);
+  return $this;
+  }
 
-    /**
-    * @param string|array|mixed $value
-    * @return $this
-    */
-    public function setCurrency($value)
-    {
-        $this->setProperty('currency', $value);
-        return $this;
-    }
+  /**
+  * @param string|array $value
+  * @return $this
+  */
+  public function setCurrency($value)
+  {
+  $this->setProperty('currency', $value);
+  return $this;
+  }
 
-    /**
-    * @return string|array|mixed
-    */
-    public function getCurrency()
-    {
-       return $this->getProperty('currency');
-    }
+  /**
+  * @param string $value
+  * @return $this
+  */
+  public function addCurrency($value)
+  {
+  $current = $this->getProperty('currency');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('currency', $current);
+  return $this;
+  }
 
-
-    /**
-        * The type of a loan or credit.
-        * @param string|string|array|mixed $value
-    * @return $this
-    */
-    public function loanType($value)
-    {
-        $this->setProperty('loanType', $value);
-        return $this;
-    }
-
-    /**
-    * @param string|string|array|mixed $value
-    * @return $this
-    */
-    public function setLoanType($value)
-    {
-        $this->setProperty('loanType', $value);
-        return $this;
-    }
-
-    /**
-    * @return string|array|mixed
-    */
-    public function getLoanType()
-    {
-       return $this->getProperty('loanType');
-    }
+  /**
+  * @return string|array
+  */
+  public function getCurrency()
+  {
+  return $this->getProperty('currency');
+  }
 
 
 }

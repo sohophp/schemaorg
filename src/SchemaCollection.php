@@ -1,6 +1,7 @@
 <?php
 
 namespace Sohophp\SchemaOrg;
+
 /**
  *
  */
@@ -11,19 +12,29 @@ class SchemaCollection implements \JsonSerializable, \Countable
      */
     protected array $items = [];
 
-    public function __construct( array $items = [])
+    public function __construct(array $items = [])
     {
         $this->items = $items;
     }
 
-    public function count():int
+    public function count(): int
     {
         return count($this->items);
     }
 
-    public function toArray():array
+    public function toArray(): array
     {
         return (array) $this->items;
+    }
+
+    public function toGraphArray(string|array $context = 'https://schema.org'): array
+    {
+        return [
+            '@context' => $context,
+            '@graph' => array_map(static function (BaseType $item): array {
+                return $item->toArray(false);
+            }, $this->items),
+        ];
     }
 
     /**
@@ -49,6 +60,11 @@ class SchemaCollection implements \JsonSerializable, \Countable
         return json_encode($this->items, $options);
     }
 
+    public function toGraphJson(int $options = JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES): string
+    {
+        return json_encode($this->toGraphArray(), $options) ?: '';
+    }
+
     /**
      *
      * @param int $options
@@ -57,6 +73,16 @@ class SchemaCollection implements \JsonSerializable, \Countable
     public function toScript(int $options = JSON_UNESCAPED_UNICODE): string
     {
         return $this->arrayToScript($this->items, $options);
+    }
+
+    public function toGraphScript(int $options = JSON_UNESCAPED_UNICODE): string
+    {
+        $script = [
+            '<script type="application/ld+json">',
+            $this->toGraphJson($options),
+            '</script>',
+        ];
+        return $options & JSON_PRETTY_PRINT ? implode(PHP_EOL, $script) : implode('', $script);
     }
 
     /**

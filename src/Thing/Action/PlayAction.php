@@ -1,13 +1,13 @@
 <?php
 namespace Sohophp\SchemaOrg\Thing\Action;
 
-use Sohophp\SchemaOrg\Thing\Action;
-use Sohophp\SchemaOrg\Thing\Intangible\Audience;
-use Sohophp\SchemaOrg\Thing\Event;
+  use Sohophp\SchemaOrg\Thing\Action;
+  use Sohophp\SchemaOrg\Thing\Event;
+  use Sohophp\SchemaOrg\Thing\Intangible\Audience;
 
 /**
-* The act of playing/exercising/training/performing for enjoyment, leisure,
- * recreation, Competition or exercise.
+  * The act of playing/exercising/training/performing for enjoyment, leisure,
+ * recreation, competition or exercise.
  * 
  * Related actions:
  * 
@@ -17,71 +17,105 @@ use Sohophp\SchemaOrg\Thing\Event;
  * * [[WatchAction]]: Unlike WatchAction (which is under ConsumeAction),
  * PlayAction refers to showing/displaying for an audience or at an event,
  * rather than consuming visual content.
-* @see http://schema.org/PlayAction
+  * @see schema:PlayAction
 * @package Sohophp\SchemaOrg\Thing\Action
 */
 class PlayAction extends Action
 {
 
 
-    /**
-        * An intended audience, i.e. a group for whom something was created.
-        * @param Audience|array|string|mixed $value
-    * @return $this
-    */
-    public function audience($value)
-    {
-        $this->setProperty('audience', $value);
-        return $this;
-    }
+  /**
+      * Upcoming or past event associated with this place, organization, or action.
+    * @param Event|array $value
+  * @return $this
+  */
+  public function event($value)
+  {
+  $this->setProperty('event', $value);
+  return $this;
+  }
 
-    /**
-    * @param Audience|array|string|mixed $value
-    * @return $this
-    */
-    public function setAudience($value)
-    {
-        $this->setProperty('audience', $value);
-        return $this;
-    }
+  /**
+  * @param Event|array $value
+  * @return $this
+  */
+  public function setEvent($value)
+  {
+  $this->setProperty('event', $value);
+  return $this;
+  }
 
-    /**
-    * @return string|array|mixed
-    */
-    public function getAudience()
-    {
-       return $this->getProperty('audience');
-    }
+  /**
+  * @param Event $value
+  * @return $this
+  */
+  public function addEvent($value)
+  {
+  $current = $this->getProperty('event');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('event', $current);
+  return $this;
+  }
+
+  /**
+  * @return Event|array
+  */
+  public function getEvent()
+  {
+  return $this->getProperty('event');
+  }
 
 
-    /**
-        * Upcoming or past event associated with this place, organization, or action.
-        * @param Event|array|string|mixed $value
-    * @return $this
-    */
-    public function event($value)
-    {
-        $this->setProperty('event', $value);
-        return $this;
-    }
+  /**
+      * An intended audience, i.e. a group for whom something was created.
+    * @param Audience|array $value
+  * @return $this
+  */
+  public function audience($value)
+  {
+  $this->setProperty('audience', $value);
+  return $this;
+  }
 
-    /**
-    * @param Event|array|string|mixed $value
-    * @return $this
-    */
-    public function setEvent($value)
-    {
-        $this->setProperty('event', $value);
-        return $this;
-    }
+  /**
+  * @param Audience|array $value
+  * @return $this
+  */
+  public function setAudience($value)
+  {
+  $this->setProperty('audience', $value);
+  return $this;
+  }
 
-    /**
-    * @return string|array|mixed
-    */
-    public function getEvent()
-    {
-       return $this->getProperty('event');
-    }
+  /**
+  * @param Audience $value
+  * @return $this
+  */
+  public function addAudience($value)
+  {
+  $current = $this->getProperty('audience');
+  if ($current === null) {
+  $current = [];
+  } elseif (!is_array($current)) {
+  $current = [$current];
+  }
+  $current[] = $value;
+  $this->setProperty('audience', $current);
+  return $this;
+  }
+
+  /**
+  * @return Audience|array
+  */
+  public function getAudience()
+  {
+  return $this->getProperty('audience');
+  }
 
 
 }

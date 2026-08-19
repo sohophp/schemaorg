@@ -19,5 +19,9 @@ class SchemaCollectionTest extends TestCase
         $ContactPage->name("Contact Us")->description("test description");
         $Jsonld->add($ContactPage);
         $this->assertCount(2, $Jsonld);
+
+        $graph = $Jsonld->toGraphArray();
+        $this->assertSame('https://schema.org', $graph['@context']);
+        $this->assertCount(2, $graph['@graph']);
     }
 }
