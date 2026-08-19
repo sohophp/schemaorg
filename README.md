@@ -53,7 +53,7 @@ $script = $Page->toScript();
 echo $script;
 ``` 
 
-Current release: `v5.0.1`. See [release and distribution](docs/release.md) for Composer, GitHub, Packagist, npm status, and release procedures.
+Current release: `v5.0.1`. See [release and distribution](docs/release.md) for Composer, GitHub, Packagist, and release procedures.
 
 ### JSON-LD metadata and repeated properties
 

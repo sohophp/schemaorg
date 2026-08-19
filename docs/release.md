@@ -1,6 +1,6 @@
 # Release and Distribution
 
-This repository publishes a PHP package through Composer. It is not an npm package and does not contain a `package.json` or an npm publish workflow.
+This repository publishes a PHP package through Composer and Packagist. GitHub is the source repository and release-tag host.
 
 ## Current release
 
@@ -58,9 +58,3 @@ Composer resolves the package from Packagist. Packagist reads the source reposit
 6. Confirm the workflow at GitHub Actions and the package at Packagist.
 
 The repository workflow tests PHP 8.1 through PHP 8.5, validates generated classes, runs PHPStan and CS Fixer, and runs PHPUnit. A GitHub tag is the release source of truth; Packagist may take a short time to import the tag.
-
-## npm status
-
-There is currently no npm package for this project. Do not run `npm publish` from this repository, and do not use an npm version as the PHP package version.
-
-If a separate JavaScript or TypeScript package is introduced later, it should have its own `package.json`, npm package name, changelog, CI job, and release policy. It should not be added to this PHP package's Composer release flow without a deliberate package-design decision.
