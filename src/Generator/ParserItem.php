@@ -309,6 +309,14 @@ class ParserItem
     }
 
     /**
+     * @return array
+     */
+    public function getDirectParents(): array
+    {
+        return array_values(array_filter($this->parents($this->item)));
+    }
+
+    /**
      * @param $item
      * @param array $parents
      * @return array

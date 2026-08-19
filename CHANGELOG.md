@@ -1,5 +1,11 @@
 # Changelog
 
+## 5.0.3 - 2026-08-19
+
+- Preserve Schema.org multiple-parent relationships by generating same-named classes under each parent path.
+- Add regression coverage for `LocalBusiness` variants under `Place` and `Organization`.
+- Document the generated-class strategy for PHP's single inheritance model.
+
 ## 5.0.2 - 2026-08-19
 
 - Add complete schema.org URLs to generated class and property PHPDoc `@see` annotations.

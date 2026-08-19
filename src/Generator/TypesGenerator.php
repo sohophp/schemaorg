@@ -145,21 +145,6 @@ class TypesGenerator
                 $class['annotations'] = [];
                 $class['annotations'][] = $this->formatDoc($graph->getComment());
                 $class['annotations'][] = sprintf('@see %s', $this->fullUri($graph->getUri()));
-                $class['namespace'] = $this->fullNamespace($graph->getNamespace());
-                $uses = [];
-                $parent = $graph->getParent();
-                $parentName = $parent?->getName();
-                if (is_string($parentName) && $parentName !== '') {
-                    if ($this->configure->getFullPath()) {
-                        $uses[] = $this->fullNamespace($parent->getFullClassName());
-                    }
-                    $class['parent'] = $parentName;
-                } else {
-                    if ($this->configure->getFullPath()) {
-                        $uses[] = $this->fullNamespace($this->configure->getClassBase());
-                    }
-                    $class['parent'] = $this->configure->getClassBase();
-                }
 
                 $class['properties'] = [];
 
@@ -173,11 +158,6 @@ class TypesGenerator
                      */
                     foreach ($property->getPropertyRange() as $item) {
                         if ($item->isClass() && !$item->isDataType()) {
-                            if ($item->getId() != $graph->getId()) {
-                                if ($this->configure->getFullPath()) {
-                                    $uses[] = $this->fullNamespace($item->getFullClassName());
-                                }
-                            }
                             $range[] = $item->getName();
                         } else {
                             $range[] = $this->rangeString($item);
@@ -210,23 +190,55 @@ class TypesGenerator
                     ];
                 }
 
-                $class['uses'] = array_unique($uses);
-                $dir = $this->itemToDir($graph);
-                $filename = $dir . DIRECTORY_SEPARATOR . $graph->getName() . '.php';
-
-                if ($this->configure->get('consoleMessage')) {
-                    echo str_replace($stagingBaseDir, $baseDir, $filename) . "\n";
+                $parents = $graph->getDirectParents();
+                if (!$parents) {
+                    $parents = [null];
+                } elseif (!$this->configure->getFullPath()) {
+                    $parents = [reset($parents)];
                 }
-                if (!is_dir($dir)) {
-                    if (!mkdir($dir, 0777, true)) {
+
+                foreach ($parents as $parent) {
+                    $variant = $class;
+                    $uses = [];
+                    $parentName = $parent?->getName();
+                    if (is_string($parentName) && $parentName !== '') {
+                        $variant['namespace'] = $this->fullNamespace($parent->getFullClassName());
+                        if ($this->configure->getFullPath()) {
+                            $uses[] = $variant['namespace'];
+                        }
+                        $variant['parent'] = $parentName;
+                    } else {
+                        $variant['namespace'] = $this->fullNamespace('');
+                        if ($this->configure->getFullPath()) {
+                            $uses[] = $this->fullNamespace($this->configure->getClassBase());
+                        }
+                        $variant['parent'] = $this->configure->getClassBase();
+                    }
+
+                    foreach ($graph->getProperties() as $property) {
+                        foreach ($property->getPropertyRange() as $item) {
+                            if ($item->isClass() && !$item->isDataType() && $item->getId() !== $graph->getId() && $this->configure->getFullPath()) {
+                                $uses[] = $this->fullNamespace($item->getFullClassName());
+                            }
+                        }
+                    }
+
+                    $variant['uses'] = array_unique($uses);
+                    $dir = $this->variantToDir($variant['namespace']);
+                    $filename = $dir . DIRECTORY_SEPARATOR . $graph->getName() . '.php';
+
+                    if ($this->configure->get('consoleMessage')) {
+                        echo str_replace($stagingBaseDir, $baseDir, $filename) . "\n";
+                    }
+                    if (!is_dir($dir) && !mkdir($dir, 0777, true) && !is_dir($dir)) {
                         throw new \Exception('Failed to create folders ' . $dir);
                     }
-                }
 
-                if (!file_put_contents($filename, $this->twig->render('class.php.twig', ['class' => $class]))) {
-                    throw new \Exception('Can not create file ' . $dir . DIRECTORY_SEPARATOR . $graph->getName() . '.php');
+                    if (!file_put_contents($filename, $this->twig->render('class.php.twig', ['class' => $variant]))) {
+                        throw new \Exception('Can not create file ' . $filename);
+                    }
+                    $classFiles[] = $filename;
                 }
-                $classFiles[] = $filename;
             }
 
             if (!$classFiles) {
@@ -295,6 +307,22 @@ class TypesGenerator
                 . implode(DIRECTORY_SEPARATOR, $item->getPath());
         }
         return $this->outputBaseDir ?? $this->configure->getBaseDir();
+    }
+
+    private function variantToDir(string $namespace): string
+    {
+        if (!$this->configure->getFullPath()) {
+            return $this->outputBaseDir ?? $this->configure->getBaseDir();
+        }
+
+        $baseNamespace = trim($this->configure->getNamespace(), '\\');
+        $relativeNamespace = str_starts_with($namespace, $baseNamespace . '\\')
+            ? substr($namespace, strlen($baseNamespace) + 1)
+            : $namespace;
+
+        return ($this->outputBaseDir ?? $this->configure->getBaseDir())
+            . DIRECTORY_SEPARATOR
+            . str_replace('\\', DIRECTORY_SEPARATOR, trim($relativeNamespace, '\\'));
     }
 
     /**

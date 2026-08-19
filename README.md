@@ -9,7 +9,7 @@ A modern PHP library for building [Schema.org](https://schema.org/) objects and 
 
 The project ships generated PHP classes based on the official schema.org dataset and a small runtime API for fluent property access, repeated values, node identifiers, custom contexts, and `@graph` documents.
 
-> **Current release:** `v5.0.2` · **Schema.org dataset:** `v30.0` · **PHP:** `8.1 - 8.5`
+> **Current release:** `v5.0.3` · **Schema.org dataset:** `v30.0` · **PHP:** `8.1 - 8.5`
 
 ## What it provides
 - Generated classes covering the bundled schema.org vocabulary.
@@ -20,6 +20,16 @@ The project ships generated PHP classes based on the official schema.org dataset
 - A schema data parser and generator for upgrading the bundled vocabulary.
 - Exception-based JSON encoding and parsing failures.
 - PHP 8.1+ typing, PHPUnit tests, PHPStan analysis, and GitHub Actions coverage for PHP 8.1-8.5.
+
+### Multiple schema.org parents
+
+Schema.org allows a type to have multiple direct parents, while PHP classes can
+extend only one class. When `fullpath` generation is enabled, the generator
+creates one same-named class under each parent path. For example, `LocalBusiness`
+is generated as both `Thing\\Place\\LocalBusiness` and
+`Thing\\Organization\\LocalBusiness`, with each class extending its corresponding
+parent. This preserves both schema.org paths without pretending that PHP
+supports multiple class inheritance.
 
 ## Requirements
 

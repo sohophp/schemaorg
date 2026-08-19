@@ -1,0 +1,16 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Sohophp\SchemaOrg\Thing\Place\LocalBusiness\SportsActivityLocation;
+
+use Sohophp\SchemaOrg\Thing\Place\LocalBusiness\SportsActivityLocation;
+
+/**
+ * A health club.
+ * @see https://schema.org/HealthClub
+ * @package Sohophp\SchemaOrg\Thing\Place\LocalBusiness\SportsActivityLocation
+ */
+class HealthClub extends SportsActivityLocation
+{
+}

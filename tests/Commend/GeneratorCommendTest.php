@@ -43,6 +43,13 @@ class GeneratorCommendTest extends TestCase
 
             $webPageContents = file_get_contents($webPageFile);
             $this->assertStringContainsString('@see https://schema.org/mainContentOfPage', $webPageContents);
+
+            $placeLocalBusiness = $baseDir . '/Thing/Place/LocalBusiness.php';
+            $organizationLocalBusiness = $baseDir . '/Thing/Organization/LocalBusiness.php';
+            $this->assertFileExists($placeLocalBusiness);
+            $this->assertFileExists($organizationLocalBusiness);
+            $this->assertStringContainsString('class LocalBusiness extends Place', file_get_contents($placeLocalBusiness));
+            $this->assertStringContainsString('class LocalBusiness extends Organization', file_get_contents($organizationLocalBusiness));
         } finally {
             $this->removeDirectory($baseDir);
         }
